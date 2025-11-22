@@ -1,0 +1,322 @@
+// ============================================================================
+// Base Styles
+// ============================================================================
+// @file        assets/css/_base.scss
+// @description Global base styles, resets, dan typography
+// @version     1.0.0
+// @date        2025-11-22
+// @author      arisciwek
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// Global Reset & Box Sizing
+// ----------------------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  color: $color-dark;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+// ----------------------------------------------------------------------------
+// Typography Base
+// ----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading-base;
+  color: $color-wood;
+}
+
+h1 { font-size: $h1-font-size; }
+h2 { font-size: $h2-font-size; }
+h3 { font-size: $h3-font-size; }
+h4 { font-size: $h4-font-size; }
+h5 { font-size: $h5-font-size; }
+h6 { font-size: $h6-font-size; }
+
+// Responsive Headings
+@include media-down(md) {
+  h1 { font-size: $h1-font-size * 0.8; }
+  h2 { font-size: $h2-font-size * 0.85; }
+  h3 { font-size: $h3-font-size * 0.9; }
+}
+
+p {
+  margin-bottom: $spacing-md;
+  color: $color-dark;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  transition: $transition-fast;
+
+  &:hover {
+    color: darken($color-primary, 15%);
+    text-decoration: underline;
+  }
+}
+
+strong,
+b {
+  font-weight: $font-weight-bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+small {
+  font-size: $font-size-sm;
+}
+
+// ----------------------------------------------------------------------------
+// Lists
+// ----------------------------------------------------------------------------
+
+ul,
+ol {
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-xl;
+}
+
+li {
+  margin-bottom: $spacing-sm;
+}
+
+// ----------------------------------------------------------------------------
+// Images
+// ----------------------------------------------------------------------------
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: 0 0 $spacing-md 0;
+}
+
+figcaption {
+  font-size: $font-size-sm;
+  color: $color-secondary;
+  margin-top: $spacing-sm;
+  text-align: center;
+}
+
+// ----------------------------------------------------------------------------
+// Code & Pre
+// ----------------------------------------------------------------------------
+
+code {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  color: $color-danger;
+  background-color: rgba($color-danger, 0.1);
+  padding: 2px 6px;
+  border-radius: $border-radius-sm;
+}
+
+pre {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  background-color: $color-light;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  overflow-x: auto;
+  margin-bottom: $spacing-md;
+
+  code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Blockquote
+// ----------------------------------------------------------------------------
+
+blockquote {
+  margin: 0 0 $spacing-md 0;
+  padding: $spacing-md $spacing-lg;
+  border-left: 4px solid $color-primary;
+  background-color: rgba($color-primary, 0.05);
+  font-style: italic;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $color-secondary;
+    font-style: normal;
+
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Horizontal Rule
+// ----------------------------------------------------------------------------
+
+hr {
+  margin: $spacing-xl 0;
+  border: 0;
+  border-top: 1px solid rgba($color-dark, 0.1);
+}
+
+// ----------------------------------------------------------------------------
+// Selection
+// ----------------------------------------------------------------------------
+
+::selection {
+  background-color: rgba($color-primary, 0.2);
+  color: $color-dark;
+}
+
+::-moz-selection {
+  background-color: rgba($color-primary, 0.2);
+  color: $color-dark;
+}
+
+// ----------------------------------------------------------------------------
+// Focus Styles
+// ----------------------------------------------------------------------------
+
+:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// ----------------------------------------------------------------------------
+// Custom Text Colors
+// ----------------------------------------------------------------------------
+
+.text-wood {
+  color: $color-wood !important;
+}
+
+.text-wood-light {
+  color: $color-wood-light !important;
+}
+
+.text-wood-dark {
+  color: $color-wood-dark !important;
+}
+
+// ----------------------------------------------------------------------------
+// Utility Classes
+// ----------------------------------------------------------------------------
+
+// Container
+.container-custom {
+  max-width: $container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+// Section Spacing
+.section {
+  padding: $spacing-4xl 0;
+
+  @include media-down(md) {
+    padding: $spacing-3xl 0;
+  }
+}
+
+.section-sm {
+  padding: $spacing-3xl 0;
+
+  @include media-down(md) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+.section-lg {
+  padding: $spacing-5xl 0;
+
+  @include media-down(md) {
+    padding: $spacing-4xl 0;
+  }
+}
+
+// Background Colors
+.bg-wood {
+  background-color: $color-wood !important;
+}
+
+.bg-wood-light {
+  background-color: $color-wood-light !important;
+}
+
+.bg-wood-dark {
+  background-color: $color-wood-dark !important;
+}
+
+// Gradient Backgrounds
+.bg-gradient-green {
+  @include gradient-bg($gradient-green);
+}
+
+.bg-gradient-blue {
+  @include gradient-bg($gradient-blue);
+}
+
+.bg-gradient-coffee {
+  @include gradient-bg($gradient-coffee);
+}
+
+.bg-gradient-ocean {
+  @include gradient-bg($gradient-ocean);
+}
+
+// Shadows
+.shadow-custom {
+  box-shadow: $shadow;
+}
+
+.shadow-custom-lg {
+  box-shadow: $shadow-lg;
+}
+
+.shadow-custom-xl {
+  box-shadow: $shadow-xl;
+}
+
+// Hover Effects
+.hover-lift {
+  @include hover-lift;
+}
+
+.hover-scale {
+  @include hover-scale;
+}

@@ -1,0 +1,366 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// ============================================================================
+// Main SCSS Entry Point
+// ============================================================================
+// @file        assets/css/main.scss
+// @description Main SCSS file yang mengimport semua partials
+// @version     1.0.0
+// @date        2025-11-22
+// @author      arisciwek
+//
+// Compile Order:
+// 1. Variables (harus pertama)
+// 2. Mixins (menggunakan variables)
+// 3. Base styles (global resets & typography)
+// 4. Components (menggunakan variables & mixins)
+//
+// Jekyll akan compile file ini menjadi main.css
+// ============================================================================
+
+@charset "utf-8";
+
+// ----------------------------------------------------------------------------
+// 1. Import Variables
+// ----------------------------------------------------------------------------
+// Harus di-import pertama karena digunakan di semua file lain
+@import "variables";
+
+// ----------------------------------------------------------------------------
+// 2. Import Mixins
+// ----------------------------------------------------------------------------
+// Di-import kedua karena mixins menggunakan variables
+@import "mixins";
+
+// ----------------------------------------------------------------------------
+// 3. Import Base Styles
+// ----------------------------------------------------------------------------
+// Global resets, typography, dan utility classes
+@import "base";
+
+// ----------------------------------------------------------------------------
+// 4. Import Component Styles
+// ----------------------------------------------------------------------------
+// Styles untuk components yang dibuat di _includes/components/
+@import "components";
+
+// ----------------------------------------------------------------------------
+// Custom Project Styles (Optional)
+// ----------------------------------------------------------------------------
+// Tambahkan custom styles di sini jika diperlukan
+
+// Example: Homepage specific styles
+.hero-section {
+  min-height: 80vh;
+  @include flex-center;
+  background: $gradient-coffee;
+  color: #ffffff;
+  text-align: center;
+  padding: $spacing-5xl $spacing-md;
+
+  h1 {
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: $spacing-lg;
+  }
+
+  p {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-xl;
+    opacity: 0.9;
+  }
+
+  @include media-down(md) {
+    min-height: 60vh;
+    padding: $spacing-4xl $spacing-md;
+  }
+}
+
+// Services Grid
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-xl;
+  margin-bottom: $spacing-3xl;
+
+  @include media-down(md) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+// Blog Grid
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: $spacing-lg;
+
+  @include media-down(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Contact Info Cards
+.contact-info-card {
+  @include card-base;
+  text-align: center;
+  transition: $transition-base;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+
+  .contact-icon {
+    @include icon-circle(80px, $color-primary);
+    margin: 0 auto $spacing-md auto;
+
+    i {
+      font-size: $icon-size-2xl;
+    }
+  }
+
+  h4 {
+    margin-bottom: $spacing-sm;
+  }
+
+  a {
+    color: $color-primary;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-lg;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Testimonial Card
+.testimonial-card {
+  @include card-base;
+  position: relative;
+  padding: $spacing-xl;
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: $spacing-lg;
+    left: $spacing-lg;
+    font-size: 4rem;
+    color: rgba($color-primary, 0.1);
+    line-height: 1;
+  }
+
+  .testimonial-content {
+    position: relative;
+    z-index: 2;
+    margin-bottom: $spacing-md;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: $border-radius-circle;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .author-info {
+      strong {
+        display: block;
+        color: $color-wood;
+      }
+
+      small {
+        color: $color-secondary;
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  background: $gradient-ocean;
+  color: #ffffff;
+  padding: $spacing-4xl $spacing-md;
+  text-align: center;
+  border-radius: $border-radius-xl;
+  margin: $spacing-5xl 0;
+
+  h2, h3 {
+    color: #ffffff;
+  }
+
+  p {
+    font-size: $font-size-lg;
+    opacity: 0.9;
+    margin-bottom: $spacing-xl;
+  }
+
+  @include media-down(md) {
+    padding: $spacing-3xl $spacing-md;
+    margin: $spacing-3xl 0;
+  }
+}
+
+// Stats Counter
+.stats-counter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-xl;
+  padding: $spacing-3xl 0;
+
+  .stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: $font-weight-bold;
+      color: $color-primary;
+      line-height: 1;
+      margin-bottom: $spacing-sm;
+    }
+
+    .stat-label {
+      color: $color-secondary;
+      font-size: $font-size-sm;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  @include media-down(md) {
+    gap: $spacing-lg;
+
+    .stat-item {
+      min-width: 150px;
+
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  padding: $spacing-xl 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba($color-primary, 0.2);
+    transform: translateX(-50%);
+
+    @include media-down(md) {
+      left: 20px;
+    }
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: $spacing-3xl;
+
+    &:nth-child(odd) {
+      padding-right: 50%;
+      padding-left: 0;
+      text-align: right;
+
+      @include media-down(md) {
+        padding-right: 0;
+        padding-left: 60px;
+        text-align: left;
+      }
+    }
+
+    &:nth-child(even) {
+      padding-left: 50%;
+      padding-right: 0;
+      text-align: left;
+
+      @include media-down(md) {
+        padding-left: 60px;
+        padding-right: 0;
+      }
+    }
+
+    .timeline-marker {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: $color-primary;
+      border: 4px solid #ffffff;
+      border-radius: $border-radius-circle;
+      box-shadow: $shadow;
+
+      @include media-down(md) {
+        left: 20px;
+      }
+    }
+
+    .timeline-content {
+      @include card-base;
+      padding: $spacing-lg;
+    }
+  }
+}
+
+// Print Styles
+@media print {
+  .whatsapp-float,
+  .navbar-custom,
+  .footer-custom,
+  .btn,
+  .cta-section {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  a {
+    text-decoration: underline;
+    color: #000;
+
+    &[href^="http"]::after {
+      content: " (" attr(href) ")";
+      font-size: 10pt;
+    }
+  }
+}

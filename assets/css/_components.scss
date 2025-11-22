@@ -1,0 +1,550 @@
+// ============================================================================
+// Component Styles
+// ============================================================================
+// @file        assets/css/_components.scss
+// @description Styles untuk components yang dibuat di _includes/components/
+// @version     1.0.0
+// @date        2025-11-22
+// @author      arisciwek
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// Header & Navigation
+// ----------------------------------------------------------------------------
+
+.navbar-custom {
+  min-height: $navbar-height;
+  background: $navbar-bg;
+  box-shadow: $navbar-shadow;
+  padding: $navbar-padding-y 0;
+  transition: $transition-base;
+
+  .navbar-brand {
+    font-weight: $font-weight-bold;
+    color: $color-wood;
+    font-size: $font-size-xl;
+
+    &:hover {
+      color: $color-wood-dark;
+    }
+  }
+
+  .nav-link {
+    color: $color-dark;
+    font-weight: $font-weight-medium;
+    padding: $spacing-sm $spacing-md;
+    transition: $transition-fast;
+
+    &:hover,
+    &.active {
+      color: $color-primary;
+    }
+  }
+
+  @include media-down(lg) {
+    .navbar-collapse {
+      background: #ffffff;
+      padding: $spacing-md;
+      border-radius: $border-radius;
+      margin-top: $spacing-sm;
+      box-shadow: $shadow;
+    }
+  }
+}
+
+// Navbar Sticky
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+
+  &.scrolled {
+    box-shadow: $shadow-lg;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Footer
+// ----------------------------------------------------------------------------
+
+.footer-custom {
+  background: $footer-bg;
+  color: $footer-text;
+  padding: $footer-padding-y 0 $spacing-lg 0;
+
+  h4, h5, h6 {
+    color: #ffffff;
+    margin-bottom: $spacing-md;
+  }
+
+  a {
+    color: rgba(#ffffff, 0.8);
+    text-decoration: none;
+
+    &:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+
+  .footer-copyright {
+    border-top: 1px solid rgba(#ffffff, 0.1);
+    padding-top: $spacing-lg;
+    margin-top: $spacing-xl;
+    text-align: center;
+    font-size: $font-size-sm;
+    opacity: 0.7;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Cards
+// ----------------------------------------------------------------------------
+
+.card-custom {
+  @include card-hover;
+}
+
+.card-gradient {
+  @include card-base;
+  color: #ffffff;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+}
+
+.card-icon-top {
+  text-align: center;
+
+  .card-icon {
+    font-size: $icon-size-2xl;
+    margin-bottom: $spacing-md;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Buttons
+// ----------------------------------------------------------------------------
+
+.btn-custom {
+  @include btn-base;
+}
+
+.btn-primary-custom {
+  @include btn-color($color-primary);
+}
+
+.btn-success-custom {
+  @include btn-color($color-success);
+}
+
+.btn-wood {
+  @include btn-color($color-wood);
+}
+
+.btn-whatsapp {
+  @include btn-color($whatsapp-color);
+
+  i {
+    margin-right: $spacing-sm;
+  }
+
+  &:hover {
+    background-color: $whatsapp-hover;
+  }
+}
+
+// Button Sizes
+.btn-sm-custom {
+  padding: 0.375rem 0.75rem;
+  font-size: $font-size-sm;
+}
+
+.btn-lg-custom {
+  padding: 0.75rem 1.5rem;
+  font-size: $font-size-lg;
+}
+
+// ----------------------------------------------------------------------------
+// WhatsApp CTA
+// ----------------------------------------------------------------------------
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: $z-index-floating;
+
+  @include fade-in;
+
+  .btn-whatsapp {
+    width: 60px;
+    height: 60px;
+    border-radius: $border-radius-circle;
+    @include flex-center;
+    box-shadow: $shadow-lg;
+
+    i {
+      font-size: $icon-size-xl;
+      margin: 0;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @include media-down(md) {
+    bottom: 20px;
+    right: 20px;
+
+    .btn-whatsapp {
+      width: 50px;
+      height: 50px;
+
+      i {
+        font-size: $icon-size-lg;
+      }
+    }
+  }
+}
+
+// WhatsApp Card CTA
+.whatsapp-card-cta {
+  @include card-base;
+  background: linear-gradient(135deg, rgba($whatsapp-color, 0.1) 0%, rgba($whatsapp-color, 0.05) 100%);
+  border-left: 4px solid $whatsapp-color;
+  text-align: center;
+
+  @include media-up(md) {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Headings with Icons
+// ----------------------------------------------------------------------------
+
+// H3 with Circle Icon
+.heading-h3-circle {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-md;
+
+  .icon-circle {
+    @include icon-circle($circle-size-md, $color-success);
+    margin-right: $spacing-md;
+  }
+
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+// H4 with Inline Icon
+.heading-h4-icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-sm;
+
+  i {
+    margin-right: $spacing-sm;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Lists
+// ----------------------------------------------------------------------------
+
+// Item List with Strong Title
+.item-list-strong {
+  display: flex;
+  margin-bottom: $spacing-md;
+
+  .item-icon {
+    flex-shrink: 0;
+    margin-right: $spacing-md;
+    font-size: $icon-size-md;
+  }
+
+  .item-content {
+    flex: 1;
+
+    strong {
+      display: block;
+      margin-bottom: $spacing-xs;
+      color: $color-wood;
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: $font-size-sm;
+      color: $color-secondary;
+    }
+  }
+}
+
+// Simple Text List
+.list-with-icon {
+  @include list-reset;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: $spacing-sm;
+
+    i {
+      flex-shrink: 0;
+      margin-right: $spacing-sm;
+      margin-top: 2px;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Accordion
+// ----------------------------------------------------------------------------
+
+.accordion-custom {
+  .accordion-item {
+    border: 1px solid rgba($color-dark, 0.1);
+    margin-bottom: $spacing-sm;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    .accordion-button {
+      font-weight: $font-weight-semibold;
+      color: $color-wood;
+      padding: $spacing-md $spacing-lg;
+
+      &:not(.collapsed) {
+        background-color: rgba($color-primary, 0.05);
+        color: $color-primary;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-color: rgba($color-primary, 0.25);
+      }
+
+      i {
+        margin-right: $spacing-sm;
+      }
+    }
+  }
+
+  .accordion-body {
+    padding: $spacing-lg;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Carousel
+// ----------------------------------------------------------------------------
+
+.carousel-custom {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+
+  .carousel-item {
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .carousel-caption {
+    background: rgba($color-dark, 0.7);
+    padding: $spacing-md;
+    border-radius: $border-radius;
+    bottom: $spacing-lg;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 50px;
+    opacity: 0;
+    transition: $transition-base;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &:hover {
+    .carousel-control-prev,
+    .carousel-control-next {
+      opacity: 0.5;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Section Headers (H2 Cards)
+// ----------------------------------------------------------------------------
+
+.section-header-card {
+  margin-bottom: $spacing-3xl;
+
+  .card {
+    border: none;
+    box-shadow: $shadow-lg;
+    border-radius: $border-radius-xl;
+    overflow: hidden;
+  }
+
+  .card-body {
+    padding: $spacing-xl $spacing-lg;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 0;
+    color: #ffffff;
+  }
+
+  .subtitle {
+    opacity: 0.85;
+    font-size: $font-size-sm;
+    margin-top: $spacing-sm;
+
+    i {
+      margin: 0 $spacing-xs;
+    }
+  }
+
+  .section-icon {
+    font-size: $icon-size-2xl;
+    margin-bottom: $spacing-sm;
+  }
+
+  @include media-down(md) {
+    margin-bottom: $spacing-2xl;
+
+    .card-body {
+      padding: $spacing-lg $spacing-md;
+    }
+
+    h2 {
+      font-size: $h3-font-size;
+    }
+
+    .section-icon {
+      font-size: $icon-size-xl;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Breadcrumb
+// ----------------------------------------------------------------------------
+
+.breadcrumb-custom {
+  background: transparent;
+  padding: $spacing-md 0;
+  margin-bottom: $spacing-lg;
+
+  .breadcrumb-item {
+    font-size: $font-size-sm;
+
+    a {
+      color: $color-secondary;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    &.active {
+      color: $color-dark;
+      font-weight: $font-weight-medium;
+    }
+
+    + .breadcrumb-item::before {
+      color: $color-secondary;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Badges
+// ----------------------------------------------------------------------------
+
+.badge-custom {
+  padding: 0.35em 0.65em;
+  font-weight: $font-weight-medium;
+  border-radius: $border-radius;
+}
+
+.badge-wood {
+  background-color: $color-wood;
+  color: #ffffff;
+}
+
+// ----------------------------------------------------------------------------
+// Loading & Spinners
+// ----------------------------------------------------------------------------
+
+.spinner-custom {
+  @include flex-center;
+  padding: $spacing-3xl;
+}
+
+// ----------------------------------------------------------------------------
+// Alerts
+// ----------------------------------------------------------------------------
+
+.alert-custom {
+  border-left: 4px solid;
+  border-radius: $border-radius;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-md;
+
+  &.alert-info-custom {
+    border-color: $color-info;
+    background-color: rgba($color-info, 0.1);
+    color: darken($color-info, 30%);
+  }
+
+  &.alert-success-custom {
+    border-color: $color-success;
+    background-color: rgba($color-success, 0.1);
+    color: darken($color-success, 30%);
+  }
+
+  &.alert-warning-custom {
+    border-color: $color-warning;
+    background-color: rgba($color-warning, 0.1);
+    color: darken($color-warning, 40%);
+  }
+
+  &.alert-danger-custom {
+    border-color: $color-danger;
+    background-color: rgba($color-danger, 0.1);
+    color: darken($color-danger, 20%);
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Responsive Utilities
+// ----------------------------------------------------------------------------
+
+@include media-down(md) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@include media-up(md) {
+  .show-mobile {
+    display: none !important;
+  }
+}

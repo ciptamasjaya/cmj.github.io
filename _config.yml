@@ -22,8 +22,15 @@ keywords: "riksa uji k3, jasa riksa uji, inspeksi k3, sertifikasi k3, pesawat an
 # Build Settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
+
+# SCSS/Sass Settings
 sass:
+  sass_dir: assets/css
   style: compressed
+  sourcemap: never
+  load_paths:
+    - _sass
+    - assets/css
 
 # Plugins
 plugins:
