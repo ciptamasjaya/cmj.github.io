@@ -47,6 +47,12 @@
 @import "components";
 
 // ----------------------------------------------------------------------------
+// 5. Import Page-Specific Styles
+// ----------------------------------------------------------------------------
+// Styles untuk halaman khusus (404, privacy, terms, dll)
+@import "pages";
+
+// ----------------------------------------------------------------------------
 // Custom Project Styles (Optional)
 // ----------------------------------------------------------------------------
 // Tambahkan custom styles di sini jika diperlukan
