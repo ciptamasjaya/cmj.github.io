@@ -4,26 +4,28 @@ Contact Cards Block
 ============================================================================
 
 @file        _includes/reusable/block--contact-cards.html
-@description Contact information cards for WhatsApp, Phone, and Email
-@version     1.0.0
-@date        2025-11-22
+@description Contact information cards for WhatsApp, Phone, and Email (data-driven)
+@version     2.0.0
+@date        2025-11-23
 @author      arisciwek (PT. Cipta Mas Jaya)
 
 Features:
 ---------
+- Data-driven contact cards
 - Three contact method cards (WhatsApp, Phone, Email)
 - Icon-based design with Bootstrap cards
 - Hover lift effect for interactivity
 - Responsive grid (3 columns on desktop, stack on mobile)
 - Direct action buttons (call, message, email)
+- Template variable support ({company_name})
 
 Data Source:
 ------------
-Uses site.business data from _config.yml:
-- site.business.phone
-- site.business.whatsapp
-- site.business.email
-- site.business.location
+Labels dan UI text dari:
+- _data/contact_cards.yml
+
+Contact details dari:
+- site.business.* (_config.yml)
 
 Usage:
 ------
@@ -32,6 +34,8 @@ Usage:
 ============================================================================
 {% endcomment %}
 
+{% assign data = site.data.contact_cards %}
+
 <div class="block--contact-cards py-5">
   <div class="container">
 
@@ -39,88 +43,77 @@ Usage:
     <div class="row mb-5">
       <div class="col-lg-8 mx-auto text-center">
         <h2 class="h2 fw-bold mb-3">
-          <i class="bi bi-chat-dots text-primary me-2"></i>
-          Hubungi Kami
+          <i class="bi {{ data.header.icon }} {{ data.header.icon_color }} me-2"></i>
+          {{ data.header.title }}
         </h2>
         <p class="lead text-muted">
-          Pilih cara terbaik untuk menghubungi tim kami
+          {{ data.header.description }}
         </p>
       </div>
     </div>
 
     <!-- Contact Cards Grid -->
     <div class="row g-4">
-
-      <!-- WhatsApp Card -->
-      <div class="col-md-6 col-lg-4">
+      {% for card in data.cards %}
+      <!-- {{ card.title }} Card -->
+      <div class="{{ card.col_class }}">
         <div class="card border-0 shadow-sm h-100 text-center contact-card">
           <div class="card-body p-4">
             <div class="contact-icon mb-3">
-              <i class="bi bi-whatsapp text-success"></i>
+              <i class="bi {{ card.icon }} {{ card.icon_color }}"></i>
             </div>
-            <h3 class="h5 card-title fw-bold">WhatsApp</h3>
-            <p class="text-muted mb-3">Cara tercepat untuk menghubungi kami</p>
-            <h4 class="h6 text-primary mb-3">{{ site.business.phone }}</h4>
-            <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20ingin%20konsultasi%20tentang%20layanan%20riksa%20uji%20K3"
-               class="btn btn-success btn-lg w-100"
-               target="_blank"
-               rel="noopener noreferrer">
-              <i class="bi bi-whatsapp me-2"></i>Chat Sekarang
-            </a>
+            <h3 class="h5 card-title fw-bold">{{ card.title }}</h3>
+            <p class="text-muted mb-3">{{ card.description }}</p>
+            <h4 class="h6 text-primary mb-3">
+              {% if card.type == "email" %}
+                {{ site.business.email }}
+              {% else %}
+                {{ site.business.phone }}
+              {% endif %}
+            </h4>
+            {% if card.type == "whatsapp" %}
+              {% assign wa_message = card.whatsapp_message | replace: '{company_name}', site.business.name %}
+              <a href="https://wa.me/{{ site.business.whatsapp }}?text={{ wa_message | url_encode }}"
+                 class="btn {{ card.button.class }} btn-lg w-100"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <i class="bi {{ card.button.icon }} me-2"></i>{{ card.button.text }}
+              </a>
+            {% elsif card.type == "phone" %}
+              <a href="tel:{{ site.business.phone }}"
+                 class="btn {{ card.button.class }} btn-lg w-100">
+                <i class="bi {{ card.button.icon }} me-2"></i>{{ card.button.text }}
+              </a>
+            {% elsif card.type == "email" %}
+              <a href="mailto:{{ site.business.email }}?subject={{ card.email_subject | url_encode }}"
+                 class="btn {{ card.button.class }} btn-lg w-100">
+                <i class="bi {{ card.button.icon }} me-2"></i>{{ card.button.text }}
+              </a>
+            {% endif %}
           </div>
         </div>
       </div>
-
-      <!-- Phone Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card border-0 shadow-sm h-100 text-center contact-card">
-          <div class="card-body p-4">
-            <div class="contact-icon mb-3">
-              <i class="bi bi-telephone-fill text-primary"></i>
-            </div>
-            <h3 class="h5 card-title fw-bold">Telepon</h3>
-            <p class="text-muted mb-3">Hubungi langsung untuk konsultasi</p>
-            <h4 class="h6 text-primary mb-3">{{ site.business.phone }}</h4>
-            <a href="tel:{{ site.business.phone }}"
-               class="btn btn-primary btn-lg w-100">
-              <i class="bi bi-telephone me-2"></i>Telepon Sekarang
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Email Card -->
-      <div class="col-md-12 col-lg-4">
-        <div class="card border-0 shadow-sm h-100 text-center contact-card">
-          <div class="card-body p-4">
-            <div class="contact-icon mb-3">
-              <i class="bi bi-envelope-fill text-info"></i>
-            </div>
-            <h3 class="h5 card-title fw-bold">Email</h3>
-            <p class="text-muted mb-3">Kirim pertanyaan Anda via email</p>
-            <h4 class="h6 text-primary mb-3">{{ site.business.email }}</h4>
-            <a href="mailto:{{ site.business.email }}?subject=Konsultasi%20Layanan%20Riksa%20Uji%20K3"
-               class="btn btn-info btn-lg w-100 text-white">
-              <i class="bi bi-envelope me-2"></i>Kirim Email
-            </a>
-          </div>
-        </div>
-      </div>
-
+      {% endfor %}
     </div>
 
     <!-- Additional Info -->
     <div class="row mt-5">
       <div class="col-12">
-        <div class="alert alert-light border text-center">
-          <i class="bi bi-info-circle text-primary me-2"></i>
-          <strong>Jam Operasional:</strong> Senin - Jumat: 08:00 - 17:00 | Sabtu: 08:00 - 12:00
-          <br>
-          <i class="bi bi-geo-alt text-danger me-2 ms-3"></i>
-          <strong>Lokasi:</strong> {{ site.business.location }}
+        <div class="alert {{ data.additional_info.alert_class }} text-center">
+          {% for item in data.additional_info.items %}
+            {% if forloop.index > 1 %}<br>{% endif %}
+            <i class="bi {{ item.icon }} {{ item.icon_color }} me-2{% if forloop.index > 1 %} ms-3{% endif %}"></i>
+            <strong>{{ item.label }}</strong>
+            {% if item.value_path %}
+              {{ site.business.location }}
+            {% else %}
+              {{ item.value }}
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
 
   </div>
 </div>
+

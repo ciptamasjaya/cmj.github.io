@@ -1,0 +1,176 @@
+# ============================================================================
+# Contact Form Data
+# ============================================================================
+#
+# @file        _data/contact_form.yml
+# @description Data untuk block--quick-contact-form.html
+# @version     1.0.0
+# @date        2025-11-23
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--quick-contact-form.html
+#
+# Structure:
+# ----------
+# header:         Section header
+# form_fields:    9 form field configurations
+# service_options: 6 service dropdown options
+# buttons:        Submit button configurations
+# info_alert:     Alert message below buttons
+# quick_contact:  Quick contact section labels
+# messages:       WhatsApp/Email message templates
+#
+# Notes:
+# ------
+# Contact details dari site.business.*
+# Form labels dan UI text dari file ini
+#
+# ============================================================================
+
+header:
+  title: "Hubungi Kami"
+  icon: "bi-envelope-paper"
+  icon_color: "text-primary"
+  description: "Silakan isi formulir di bawah ini untuk konsultasi atau permintaan informasi lebih lanjut"
+
+form_fields:
+  name:
+    label: "Nama Lengkap"
+    icon: "bi-person"
+    icon_color: "text-primary"
+    placeholder: "Masukkan nama lengkap Anda"
+    required: true
+    error_message: "Nama lengkap wajib diisi"
+    type: "text"
+    col_class: "col-md-6"
+
+  company:
+    label: "Nama Perusahaan"
+    icon: "bi-building"
+    icon_color: "text-primary"
+    placeholder: "Nama perusahaan (opsional)"
+    required: false
+    type: "text"
+    col_class: "col-md-6"
+
+  email:
+    label: "Email"
+    icon: "bi-envelope"
+    icon_color: "text-primary"
+    placeholder: "nama@email.com"
+    required: true
+    error_message: "Email valid wajib diisi"
+    type: "email"
+    col_class: "col-md-6"
+
+  phone:
+    label: "Nomor Telepon"
+    icon: "bi-telephone"
+    icon_color: "text-primary"
+    placeholder: "08xx-xxxx-xxxx"
+    required: true
+    error_message: "Nomor telepon wajib diisi"
+    type: "tel"
+    col_class: "col-md-6"
+
+  service:
+    label: "Layanan yang Diminati"
+    icon: "bi-shield-check"
+    icon_color: "text-primary"
+    placeholder: "Pilih layanan..."
+    required: true
+    error_message: "Pilih layanan yang diminati"
+    type: "select"
+    col_class: "col-12"
+
+  message:
+    label: "Pesan / Pertanyaan"
+    icon: "bi-chat-text"
+    icon_color: "text-primary"
+    placeholder: "Tuliskan pertanyaan atau informasi yang Anda butuhkan..."
+    required: true
+    error_message: "Pesan wajib diisi"
+    type: "textarea"
+    rows: 5
+    col_class: "col-12"
+
+service_options:
+  - value: "Riksa Uji Pesawat Angkat & Angkut"
+    label: "Riksa Uji Pesawat Angkat & Angkut"
+
+  - value: "Riksa Uji Pesawat Uap & Bejana Tekan"
+    label: "Riksa Uji Pesawat Uap & Bejana Tekan"
+
+  - value: "Riksa Uji Instalasi Listrik & Petir"
+    label: "Riksa Uji Instalasi Listrik & Petir"
+
+  - value: "Riksa Uji Proteksi Kebakaran"
+    label: "Riksa Uji Proteksi Kebakaran"
+
+  - value: "Konsultasi K3"
+    label: "Konsultasi K3"
+
+  - value: "Lainnya"
+    label: "Lainnya"
+
+buttons:
+  whatsapp:
+    text: "Kirim via WhatsApp"
+    icon: "bi-whatsapp"
+    class: "btn-success"
+    id: "sendWhatsApp"
+
+  email:
+    text: "Kirim via Email"
+    icon: "bi-envelope"
+    class: "btn-primary"
+    id: "sendEmail"
+
+info_alert:
+  icon: "bi-info-circle"
+  title: "Catatan:"
+  message: "Pesan Anda akan dikirim melalui WhatsApp atau Email. Kami akan merespons dalam waktu 1x24 jam pada hari kerja."
+  type: "alert-info"
+
+quick_contact:
+  title: "Kontak Langsung"
+  items:
+    - label: "Telepon"
+      icon: "bi-telephone-fill"
+      icon_color: "text-primary"
+      type: "phone"
+
+    - label: "WhatsApp"
+      icon: "bi-whatsapp"
+      icon_color: "text-success"
+      type: "whatsapp"
+
+    - label: "Email"
+      icon: "bi-envelope-fill"
+      icon_color: "text-info"
+      type: "email"
+
+messages:
+  whatsapp_intro: "Halo {company_name}, saya ingin konsultasi:"
+  whatsapp_template: |
+    Nama: {name}
+    Perusahaan: {company}
+    Email: {email}
+    Telepon: {phone}
+    Layanan: {service}
+
+    Pesan:
+    {message}
+
+  email_subject: "Konsultasi {service} - {name}"
+  email_template: |
+    Nama: {name}
+    Perusahaan: {company}
+    Email: {email}
+    Telepon: {phone}
+    Layanan: {service}
+
+    Pesan:
+    {message}

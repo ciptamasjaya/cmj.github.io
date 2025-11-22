@@ -4,27 +4,28 @@ Quick Contact Form Block
 ============================================================================
 
 @file        _includes/reusable/block--quick-contact-form.html
-@description Contact form dengan validasi dan integrasi WhatsApp/Email
-@version     1.0.0
-@date        2025-11-22
+@description Contact form dengan validasi dan integrasi WhatsApp/Email (data-driven)
+@version     2.0.0
+@date        2025-11-23
 @author      arisciwek (PT. Cipta Mas Jaya)
-
-Features:
----------
-- Modern contact form design
-- Form fields: Name, Email, Phone, Company, Service Type, Message
-- Service type dropdown dari data
-- WhatsApp dan Email fallback options
-- Client-side validation
-- Responsive layout
 
 Data Source:
 ------------
-Uses site.business data from _config.yml:
-- site.business.name
-- site.business.phone
-- site.business.whatsapp
-- site.business.email
+Labels dan UI text dari:
+- _data/contact_form.yml
+
+Contact details dari:
+- site.business.* (_config.yml)
+
+Features:
+---------
+- Data-driven form fields, labels, and messages
+- Dynamic service options from YAML
+- Configurable validation messages
+- WhatsApp and Email integration
+- Client-side validation
+- Responsive layout
+- Template variable support in messages
 
 Usage:
 ------
@@ -40,11 +41,11 @@ Usage:
     <div class="row mb-5">
       <div class="col-lg-8 mx-auto text-center">
         <h2 class="h2 fw-bold mb-3">
-          <i class="bi bi-envelope-paper text-primary me-2"></i>
-          Hubungi Kami
+          <i class="bi {{ site.data.contact_form.header.icon }} {{ site.data.contact_form.header.icon_color }} me-2"></i>
+          {{ site.data.contact_form.header.title }}
         </h2>
         <p class="lead text-muted">
-          Silakan isi formulir di bawah ini untuk konsultasi atau permintaan informasi lebih lanjut
+          {{ site.data.contact_form.header.description }}
         </p>
       </div>
     </div>
@@ -61,107 +62,121 @@ Usage:
               <div class="row g-3">
 
                 <!-- Name Field -->
-                <div class="col-md-6">
+                <div class="{{ site.data.contact_form.form_fields.name.col_class }}">
                   <label for="contactName" class="form-label fw-semibold">
-                    <i class="bi bi-person text-primary me-1"></i>
-                    Nama Lengkap <span class="text-danger">*</span>
+                    <i class="bi {{ site.data.contact_form.form_fields.name.icon }} {{ site.data.contact_form.form_fields.name.icon_color }} me-1"></i>
+                    {{ site.data.contact_form.form_fields.name.label }}
+                    {% if site.data.contact_form.form_fields.name.required %}<span class="text-danger">*</span>{% endif %}
                   </label>
-                  <input type="text"
+                  <input type="{{ site.data.contact_form.form_fields.name.type }}"
                          class="form-control form-control-lg"
                          id="contactName"
                          name="name"
-                         placeholder="Masukkan nama lengkap Anda"
-                         required>
+                         placeholder="{{ site.data.contact_form.form_fields.name.placeholder }}"
+                         {% if site.data.contact_form.form_fields.name.required %}required{% endif %}>
+                  {% if site.data.contact_form.form_fields.name.error_message %}
                   <div class="invalid-feedback">
-                    Nama lengkap wajib diisi
+                    {{ site.data.contact_form.form_fields.name.error_message }}
                   </div>
+                  {% endif %}
                 </div>
 
                 <!-- Company Field -->
-                <div class="col-md-6">
+                <div class="{{ site.data.contact_form.form_fields.company.col_class }}">
                   <label for="contactCompany" class="form-label fw-semibold">
-                    <i class="bi bi-building text-primary me-1"></i>
-                    Nama Perusahaan
+                    <i class="bi {{ site.data.contact_form.form_fields.company.icon }} {{ site.data.contact_form.form_fields.company.icon_color }} me-1"></i>
+                    {{ site.data.contact_form.form_fields.company.label }}
+                    {% if site.data.contact_form.form_fields.company.required %}<span class="text-danger">*</span>{% endif %}
                   </label>
-                  <input type="text"
+                  <input type="{{ site.data.contact_form.form_fields.company.type }}"
                          class="form-control form-control-lg"
                          id="contactCompany"
                          name="company"
-                         placeholder="Nama perusahaan (opsional)">
+                         placeholder="{{ site.data.contact_form.form_fields.company.placeholder }}"
+                         {% if site.data.contact_form.form_fields.company.required %}required{% endif %}>
                 </div>
 
                 <!-- Email Field -->
-                <div class="col-md-6">
+                <div class="{{ site.data.contact_form.form_fields.email.col_class }}">
                   <label for="contactEmail" class="form-label fw-semibold">
-                    <i class="bi bi-envelope text-primary me-1"></i>
-                    Email <span class="text-danger">*</span>
+                    <i class="bi {{ site.data.contact_form.form_fields.email.icon }} {{ site.data.contact_form.form_fields.email.icon_color }} me-1"></i>
+                    {{ site.data.contact_form.form_fields.email.label }}
+                    {% if site.data.contact_form.form_fields.email.required %}<span class="text-danger">*</span>{% endif %}
                   </label>
-                  <input type="email"
+                  <input type="{{ site.data.contact_form.form_fields.email.type }}"
                          class="form-control form-control-lg"
                          id="contactEmail"
                          name="email"
-                         placeholder="nama@email.com"
-                         required>
+                         placeholder="{{ site.data.contact_form.form_fields.email.placeholder }}"
+                         {% if site.data.contact_form.form_fields.email.required %}required{% endif %}>
+                  {% if site.data.contact_form.form_fields.email.error_message %}
                   <div class="invalid-feedback">
-                    Email valid wajib diisi
+                    {{ site.data.contact_form.form_fields.email.error_message }}
                   </div>
+                  {% endif %}
                 </div>
 
                 <!-- Phone Field -->
-                <div class="col-md-6">
+                <div class="{{ site.data.contact_form.form_fields.phone.col_class }}">
                   <label for="contactPhone" class="form-label fw-semibold">
-                    <i class="bi bi-telephone text-primary me-1"></i>
-                    Nomor Telepon <span class="text-danger">*</span>
+                    <i class="bi {{ site.data.contact_form.form_fields.phone.icon }} {{ site.data.contact_form.form_fields.phone.icon_color }} me-1"></i>
+                    {{ site.data.contact_form.form_fields.phone.label }}
+                    {% if site.data.contact_form.form_fields.phone.required %}<span class="text-danger">*</span>{% endif %}
                   </label>
-                  <input type="tel"
+                  <input type="{{ site.data.contact_form.form_fields.phone.type }}"
                          class="form-control form-control-lg"
                          id="contactPhone"
                          name="phone"
-                         placeholder="08xx-xxxx-xxxx"
-                         required>
+                         placeholder="{{ site.data.contact_form.form_fields.phone.placeholder }}"
+                         {% if site.data.contact_form.form_fields.phone.required %}required{% endif %}>
+                  {% if site.data.contact_form.form_fields.phone.error_message %}
                   <div class="invalid-feedback">
-                    Nomor telepon wajib diisi
+                    {{ site.data.contact_form.form_fields.phone.error_message }}
                   </div>
+                  {% endif %}
                 </div>
 
                 <!-- Service Type Field -->
-                <div class="col-12">
+                <div class="{{ site.data.contact_form.form_fields.service.col_class }}">
                   <label for="contactService" class="form-label fw-semibold">
-                    <i class="bi bi-shield-check text-primary me-1"></i>
-                    Layanan yang Diminati <span class="text-danger">*</span>
+                    <i class="bi {{ site.data.contact_form.form_fields.service.icon }} {{ site.data.contact_form.form_fields.service.icon_color }} me-1"></i>
+                    {{ site.data.contact_form.form_fields.service.label }}
+                    {% if site.data.contact_form.form_fields.service.required %}<span class="text-danger">*</span>{% endif %}
                   </label>
                   <select class="form-select form-select-lg"
                           id="contactService"
                           name="service"
-                          required>
-                    <option value="" selected disabled>Pilih layanan...</option>
-                    <option value="Riksa Uji Pesawat Angkat & Angkut">Riksa Uji Pesawat Angkat & Angkut</option>
-                    <option value="Riksa Uji Pesawat Uap & Bejana Tekan">Riksa Uji Pesawat Uap & Bejana Tekan</option>
-                    <option value="Riksa Uji Instalasi Listrik & Petir">Riksa Uji Instalasi Listrik & Petir</option>
-                    <option value="Riksa Uji Proteksi Kebakaran">Riksa Uji Proteksi Kebakaran</option>
-                    <option value="Konsultasi K3">Konsultasi K3</option>
-                    <option value="Lainnya">Lainnya</option>
+                          {% if site.data.contact_form.form_fields.service.required %}required{% endif %}>
+                    <option value="" selected disabled>{{ site.data.contact_form.form_fields.service.placeholder }}</option>
+                    {% for option in site.data.contact_form.service_options %}
+                    <option value="{{ option.value }}">{{ option.label }}</option>
+                    {% endfor %}
                   </select>
+                  {% if site.data.contact_form.form_fields.service.error_message %}
                   <div class="invalid-feedback">
-                    Pilih layanan yang diminati
+                    {{ site.data.contact_form.form_fields.service.error_message }}
                   </div>
+                  {% endif %}
                 </div>
 
                 <!-- Message Field -->
-                <div class="col-12">
+                <div class="{{ site.data.contact_form.form_fields.message.col_class }}">
                   <label for="contactMessage" class="form-label fw-semibold">
-                    <i class="bi bi-chat-text text-primary me-1"></i>
-                    Pesan / Pertanyaan <span class="text-danger">*</span>
+                    <i class="bi {{ site.data.contact_form.form_fields.message.icon }} {{ site.data.contact_form.form_fields.message.icon_color }} me-1"></i>
+                    {{ site.data.contact_form.form_fields.message.label }}
+                    {% if site.data.contact_form.form_fields.message.required %}<span class="text-danger">*</span>{% endif %}
                   </label>
                   <textarea class="form-control"
                             id="contactMessage"
                             name="message"
-                            rows="5"
-                            placeholder="Tuliskan pertanyaan atau informasi yang Anda butuhkan..."
-                            required></textarea>
+                            rows="{{ site.data.contact_form.form_fields.message.rows }}"
+                            placeholder="{{ site.data.contact_form.form_fields.message.placeholder }}"
+                            {% if site.data.contact_form.form_fields.message.required %}required{% endif %}></textarea>
+                  {% if site.data.contact_form.form_fields.message.error_message %}
                   <div class="invalid-feedback">
-                    Pesan wajib diisi
+                    {{ site.data.contact_form.form_fields.message.error_message }}
                   </div>
+                  {% endif %}
                 </div>
 
                 <!-- Submit Buttons -->
@@ -170,18 +185,18 @@ Usage:
 
                     <!-- WhatsApp Button -->
                     <button type="button"
-                            id="sendWhatsApp"
-                            class="btn btn-success btn-lg">
-                      <i class="bi bi-whatsapp me-2"></i>
-                      Kirim via WhatsApp
+                            id="{{ site.data.contact_form.buttons.whatsapp.id }}"
+                            class="btn {{ site.data.contact_form.buttons.whatsapp.class }} btn-lg">
+                      <i class="bi {{ site.data.contact_form.buttons.whatsapp.icon }} me-2"></i>
+                      {{ site.data.contact_form.buttons.whatsapp.text }}
                     </button>
 
                     <!-- Email Button -->
                     <button type="button"
-                            id="sendEmail"
-                            class="btn btn-primary btn-lg">
-                      <i class="bi bi-envelope me-2"></i>
-                      Kirim via Email
+                            id="{{ site.data.contact_form.buttons.email.id }}"
+                            class="btn {{ site.data.contact_form.buttons.email.class }} btn-lg">
+                      <i class="bi {{ site.data.contact_form.buttons.email.icon }} me-2"></i>
+                      {{ site.data.contact_form.buttons.email.text }}
                     </button>
 
                   </div>
@@ -189,11 +204,10 @@ Usage:
 
                 <!-- Info Text -->
                 <div class="col-12 mt-3">
-                  <div class="alert alert-info border-0 mb-0">
-                    <i class="bi bi-info-circle me-2"></i>
+                  <div class="alert {{ site.data.contact_form.info_alert.type }} border-0 mb-0">
+                    <i class="bi {{ site.data.contact_form.info_alert.icon }} me-2"></i>
                     <small>
-                      <strong>Catatan:</strong> Pesan Anda akan dikirim melalui WhatsApp atau Email.
-                      Kami akan merespons dalam waktu 1x24 jam pada hari kerja.
+                      <strong>{{ site.data.contact_form.info_alert.title }}</strong> {{ site.data.contact_form.info_alert.message }}
                     </small>
                   </div>
                 </div>
@@ -207,36 +221,31 @@ Usage:
 
         <!-- Quick Contact Info Below Form -->
         <div class="row g-3 mt-4">
+          {% for item in site.data.contact_form.quick_contact.items %}
           <div class="col-md-4">
             <div class="text-center">
-              <i class="bi bi-telephone-fill text-primary fs-4 mb-2 d-block"></i>
-              <small class="text-muted d-block mb-1">Telepon</small>
-              <a href="tel:{{ site.business.phone }}" class="text-decoration-none fw-semibold">
-                {{ site.business.phone }}
-              </a>
+              <i class="bi {{ item.icon }} {{ item.icon_color }} fs-4 mb-2 d-block"></i>
+              <small class="text-muted d-block mb-1">{{ item.label }}</small>
+
+              {% if item.type == 'phone' %}
+                <a href="tel:{{ site.business.phone }}" class="text-decoration-none fw-semibold">
+                  {{ site.business.phone }}
+                </a>
+              {% elsif item.type == 'whatsapp' %}
+                <a href="https://wa.me/{{ site.business.whatsapp }}"
+                   class="text-decoration-none fw-semibold"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  {{ site.business.phone }}
+                </a>
+              {% elsif item.type == 'email' %}
+                <a href="mailto:{{ site.business.email }}" class="text-decoration-none fw-semibold">
+                  {{ site.business.email }}
+                </a>
+              {% endif %}
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="text-center">
-              <i class="bi bi-whatsapp text-success fs-4 mb-2 d-block"></i>
-              <small class="text-muted d-block mb-1">WhatsApp</small>
-              <a href="https://wa.me/{{ site.business.whatsapp }}"
-                 class="text-decoration-none fw-semibold"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                {{ site.business.phone }}
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="text-center">
-              <i class="bi bi-envelope-fill text-info fs-4 mb-2 d-block"></i>
-              <small class="text-muted d-block mb-1">Email</small>
-              <a href="mailto:{{ site.business.email }}" class="text-decoration-none fw-semibold">
-                {{ site.business.email }}
-              </a>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
       </div>
@@ -249,8 +258,8 @@ Usage:
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contactForm');
-  const sendWhatsApp = document.getElementById('sendWhatsApp');
-  const sendEmail = document.getElementById('sendEmail');
+  const sendWhatsApp = document.getElementById('{{ site.data.contact_form.buttons.whatsapp.id }}');
+  const sendEmail = document.getElementById('{{ site.data.contact_form.buttons.email.id }}');
 
   // WhatsApp Send Handler
   sendWhatsApp.addEventListener('click', function(e) {
@@ -268,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const service = document.getElementById('contactService').value;
     const message = document.getElementById('contactMessage').value;
 
-    let whatsappMessage = `Halo {{ site.business.name }}, saya ingin konsultasi:\n\n`;
+    let whatsappMessage = `{{ site.data.contact_form.messages.whatsapp_intro | replace: '{company_name}', site.business.name }}\n\n`;
     whatsappMessage += `Nama: ${name}\n`;
     if (company) whatsappMessage += `Perusahaan: ${company}\n`;
     whatsappMessage += `Email: ${email}\n`;

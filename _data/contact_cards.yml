@@ -1,0 +1,81 @@
+# ============================================================================
+# Contact Cards Data
+# ============================================================================
+#
+# @file        _data/contact_cards.yml
+# @description Data untuk block--contact-cards.html
+# @version     1.0.0
+# @date        2025-11-23
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--contact-cards.html
+#
+# Structure:
+# ----------
+# header:        Section header dengan title dan description
+# cards:         3 contact cards (WhatsApp, Phone, Email)
+# additional_info: Additional info section dengan operating hours dan location
+#
+# Notes:
+# ------
+# Values (actual contact data) tetap dari site.business.*
+# File ini hanya menyimpan labels dan UI text
+#
+# ============================================================================
+
+header:
+  title: "Hubungi Kami"
+  icon: "bi-chat-dots"
+  icon_color: "text-primary"
+  description: "Pilih cara terbaik untuk menghubungi tim kami"
+
+cards:
+  - type: "whatsapp"
+    title: "WhatsApp"
+    description: "Cara tercepat untuk menghubungi kami"
+    icon: "bi-whatsapp"
+    icon_color: "text-success"
+    button:
+      text: "Chat Sekarang"
+      icon: "bi-whatsapp"
+      class: "btn-success"
+    whatsapp_message: "Halo {company_name}, saya ingin konsultasi tentang layanan riksa uji K3"
+    col_class: "col-md-6 col-lg-4"
+
+  - type: "phone"
+    title: "Telepon"
+    description: "Hubungi langsung untuk konsultasi"
+    icon: "bi-telephone-fill"
+    icon_color: "text-primary"
+    button:
+      text: "Telepon Sekarang"
+      icon: "bi-telephone"
+      class: "btn-primary"
+    col_class: "col-md-6 col-lg-4"
+
+  - type: "email"
+    title: "Email"
+    description: "Kirim pertanyaan Anda via email"
+    icon: "bi-envelope-fill"
+    icon_color: "text-info"
+    button:
+      text: "Kirim Email"
+      icon: "bi-envelope"
+      class: "btn-info text-white"
+    email_subject: "Konsultasi Layanan Riksa Uji K3"
+    col_class: "col-md-12 col-lg-4"
+
+additional_info:
+  alert_class: "alert-light border"
+  items:
+    - icon: "bi-info-circle"
+      icon_color: "text-primary"
+      label: "Jam Operasional:"
+      value: "Senin - Jumat: 08:00 - 17:00 | Sabtu: 08:00 - 12:00"
+
+    - icon: "bi-geo-alt"
+      icon_color: "text-danger"
+      label: "Lokasi:"
+      value_path: "site.business.location"
