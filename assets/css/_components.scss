@@ -12,6 +12,20 @@
 // Header & Navigation
 // ----------------------------------------------------------------------------
 
+// Sticky Header
+.site-header {
+  &.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: $z-index-sticky;
+    transition: all 0.3s ease;
+
+    .navbar {
+      transition: all 0.3s ease;
+    }
+  }
+}
+
 .navbar-custom {
   min-height: $navbar-height;
   background: $navbar-bg;

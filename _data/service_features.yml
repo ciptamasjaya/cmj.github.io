@@ -1,0 +1,95 @@
+# ============================================================================
+# Service Features Data
+# ============================================================================
+# @file        _data/service_features.yml
+# @description Data untuk service features dan proses layanan
+# @version     1.0.0
+# @date        2025-11-22
+# @author      arisciwek (PT. Cipta Mas Jaya)
+# ============================================================================
+
+# Section Header
+header:
+  title: "Keunggulan Layanan Kami"
+  icon: "bi-stars"
+  icon_color: "warning"
+  description: "Mengapa memilih {{ site.business.name }} sebagai partner riksa uji K3 Anda?"
+
+# Features List
+features:
+  - icon: "bi-shield-check"
+    icon_color: "primary"
+    title: "Sertifikat Resmi"
+    description: "Sertifikat riksa uji yang sah dan diakui oleh Kementerian Ketenagakerjaan RI"
+
+  - icon: "bi-people"
+    icon_color: "success"
+    title: "Inspector Ahli"
+    description: "Tim inspector bersertifikat dengan pengalaman bertahun-tahun di bidang K3"
+
+  - icon: "bi-tools"
+    icon_color: "warning"
+    title: "Alat Terkalibrasi"
+    description: "Menggunakan peralatan yang terkalibrasi dan sesuai standar internasional"
+
+  - icon: "bi-clock-history"
+    icon_color: "info"
+    title: "Respon Cepat"
+    description: "Layanan responsif dengan waktu respon maksimal 24 jam untuk area prioritas"
+
+  - icon: "bi-file-earmark-check"
+    icon_color: "primary"
+    title: "Laporan Lengkap"
+    description: "Dokumentasi dan laporan hasil riksa uji yang detail dan komprehensif"
+
+  - icon: "bi-geo-alt"
+    icon_color: "danger"
+    title: "Mobile Service"
+    description: "Tim mobile siap datang ke lokasi Anda di seluruh Indonesia"
+
+  - icon: "bi-currency-dollar"
+    icon_color: "success"
+    title: "Harga Kompetitif"
+    description: "Harga yang kompetitif dengan kualitas layanan terbaik dan tanpa biaya tersembunyi"
+
+  - icon: "bi-headset"
+    icon_color: "info"
+    title: "Konsultasi Gratis"
+    description: "Konsultasi gratis untuk membantu Anda memahami kebutuhan riksa uji"
+
+# Process Section
+process:
+  header:
+    title: "Proses Layanan Kami"
+    description: "Mudah, cepat, dan transparan"
+
+  steps:
+    - number: 1
+      title: "Konsultasi"
+      description: "Hubungi kami untuk konsultasi dan survey awal kebutuhan Anda"
+      color: "primary"
+
+    - number: 2
+      title: "Penawaran"
+      description: "Kami memberikan penawaran harga yang transparan dan kompetitif"
+      color: "success"
+
+    - number: 3
+      title: "Purchase Order"
+      description: "Konfirmasi pesanan dan kesepakatan kerja sama oleh Pelanggan"
+      color: "warning"
+
+    - number: 4
+      title: "Inspeksi"
+      description: "Tim kami melakukan riksa uji dengan peralatan standar"
+      color: "info"
+
+    - number: 5
+      title: "Pelaporan"
+      description: "Menyerahkan laporan hasil inspeksi ke dinas setempat"
+      color: "danger"
+
+    - number: 6
+      title: "Sertifikat"
+      description: "Penerbitan sertifikat resmi dari disnaker setempat dan laporan lengkap"
+      color: "secondary"
