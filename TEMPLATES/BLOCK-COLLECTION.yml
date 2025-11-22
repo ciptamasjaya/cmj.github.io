@@ -1,0 +1,153 @@
+# ============================================================================
+# BLOCK COLLECTION - Component Registry
+# ============================================================================
+#
+# @file        TEMPLATES/BLOCK-COLLECTION.yml
+# @description Central registry untuk semua block components. File ini berisi
+#              metadata dan struktur heading dari setiap block component yang
+#              tersedia. Digunakan untuk memilih block yang sesuai tanpa
+#              perlu scan semua files.
+#
+# @version     1.0.0
+# @date        2025-11-22
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# WAJIB: Setiap block baru harus didaftarkan di file ini!
+#
+# ============================================================================
+
+blocks:
+  - id: h2-with-3-cards
+    file: reusable-blocks/block--h2-with-3-cards.html
+    name: "H2 Section with 3 Cards"
+    category: general
+    tags:
+      - general-purpose
+      - features
+      - benefits
+      - services
+      - 3-column
+      - flexible
+    use_cases:
+      - service_showcase
+      - company_benefits
+      - features_showcase
+      - benefits_list
+      - general
+      - k3_services
+    description: |
+      Block umum dengan H2 heading, 1 intro paragraph, dan 3 cards dengan icon.
+      Setiap card berisi H3 title dan 2 paragraphs. Layout 3-column responsive.
+      Sangat flexible untuk berbagai use case: jasa K3, keunggulan perusahaan, atau informasi umum.
+      Block ini menggunakan explicit frontmatter (no loops) untuk kontrol penuh setiap card.
+      Cocok untuk showcase layanan riksa uji K3, sertifikasi, dan keunggulan perusahaan.
+
+    heading_structure:
+      h2: 1  # Main section title (heading_2_title)
+      h3: 3  # Card titles (heading_3_title_1, heading_3_title_2, heading_3_title_3)
+      h4: 0
+      h5: 0
+      h6: 0
+      total: 4
+
+    frontmatter_variables:
+      section_name: "section_h2_with_3_cards"
+      required_fields:
+        - heading_2_title
+        - intro_paragraph
+        - heading_3_title_1
+        - icon_name_1
+        - icon_size_1
+        - icon_color_1
+        - paragraph_1_1
+        - paragraph_2_1
+        - heading_3_title_2
+        - icon_name_2
+        - icon_size_2
+        - icon_color_2
+        - paragraph_1_2
+        - paragraph_2_2
+        - heading_3_title_3
+        - icon_name_3
+        - icon_size_3
+        - icon_color_3
+        - paragraph_1_3
+        - paragraph_2_3
+
+    component_dependencies:
+      - components/card.html
+
+    css_classes:
+      - block--h2-with-3-cards
+      - block__header
+      - block__card
+      - block__card-1
+      - block__card-2
+      - block__card-3
+      - heading-2-title
+      - intro-paragraph
+      - heading-3-title-1
+      - heading-3-title-2
+      - heading-3-title-3
+      - paragraph-1-1
+      - paragraph-2-1
+      - paragraph-1-2
+      - paragraph-2-2
+      - paragraph-1-3
+      - paragraph-2-3
+
+# ============================================================================
+# USAGE NOTES
+# ============================================================================
+#
+# Categories:
+# -----------
+# - general: Block umum untuk berbagai keperluan
+# - service: Fokus ke layanan/jasa K3
+# - company: Fokus ke perusahaan
+# - about: Informasi tentang perusahaan/organisasi
+# - contact: Informasi kontak dan CTA
+# - certification: Terkait sertifikasi dan compliance
+#
+# Use Cases:
+# ----------
+# - service_showcase: Showcase layanan riksa uji K3
+# - company_benefits: Keunggulan perusahaan
+# - features_showcase: Fitur dan kelebihan
+# - k3_services: Layanan K3 (crane, forklift, lift, dll)
+# - certification: Sertifikasi dan legalitas
+# - general: Bisa untuk berbagai jenis konten
+#
+# Icon Options (Bootstrap Icons):
+# --------------------------------
+# Untuk K3 Services:
+# - bi-award: Sertifikasi
+# - bi-shield-check: Keselamatan
+# - bi-tools: Peralatan
+# - bi-check-circle: Verifikasi
+# - bi-clipboard-check: Inspeksi
+# - bi-graph-up: Peningkatan
+# - bi-people: Tim profesional
+# - bi-clock: Waktu/deadline
+# - bi-geo-alt: Lokasi/area kerja
+#
+# Icon Sizes:
+# -----------
+# - sm: 1rem (16px)
+# - md: 1.5rem (24px)
+# - lg: 2rem (32px)
+# - xl: 2.5rem (40px)
+# - 2xl: 3rem (48px)
+#
+# Icon Colors:
+# ------------
+# - text-primary: Biru (default Bootstrap)
+# - text-secondary: Abu-abu
+# - text-success: Hijau
+# - text-danger: Merah
+# - text-warning: Kuning
+# - text-info: Cyan
+# - text-dark: Hitam
+# - text-wood: Coklat kayu (custom CMJ color)
+#
+# ============================================================================
