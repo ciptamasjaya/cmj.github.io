@@ -1,0 +1,414 @@
+{% comment %}
+============================================================================
+Block: H2 Section with 3 Detailed Cards
+============================================================================
+
+@file        _includes/reusable-blocks/block--h2-with-3-cards-detailed.html
+@description H2 heading section dengan 2 paragraf intro dan 3 detailed cards
+             Setiap card berisi H3 heading, 1 paragraf intro, dan 3 H4 sub-sections
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- H2 heading untuk section title
+- 2 intro paragraphs untuk section description
+- 3 cards dalam row (col-md-4 each)
+- Setiap card: icon + H3 title + 1 paragraph + 3 H4 headings dengan content
+- Responsive grid layout
+- CSS classes match frontmatter variable names untuk easy debugging
+
+Heading Structure:
+------------------
+- h2: 1  (Main title)
+- h3: 3  (Card titles)
+- h4: 9  (3 H4 per card × 3 cards)
+- Total: 13 headings
+
+Instructions:
+-------------
+Copy frontmatter template di bawah ke page Anda, isi sesuai kebutuhan,
+lalu include block ini di content area.
+
+Frontmatter Template:
+---------------------
+---
+section_h2_with_3_cards_detailed:
+  # ========================================================================
+  # H2 SECTION HEADER
+  # ========================================================================
+
+  # INSTRUKSI: Isi judul H2 section utama
+  heading_2_title: "Isi judul H2 section di sini"
+
+  # INSTRUKSI: Isi paragraf pertama pembuka section
+  intro_paragraph_1: "<p>Isi paragraf pertama pembuka section di sini</p>"
+
+  # INSTRUKSI: Isi paragraf kedua pembuka section
+  intro_paragraph_2: "<p>Isi paragraf kedua pembuka section di sini</p>"
+
+  # ========================================================================
+  # CARD 1
+  # ========================================================================
+
+  # INSTRUKSI: Isi judul H3 untuk card pertama
+  heading_3_title_1: "Isi judul H3 card 1 di sini"
+
+  # INSTRUKSI: Pilih icon untuk card 1
+  # Pilihan: bi-award | bi-shield-check | bi-lightning | bi-heart | bi-star |
+  #          bi-trophy | bi-badge-check | bi-check-circle | bi-gear | etc
+  icon_name_1: "bi-award"
+
+  # INSTRUKSI: Pilih ukuran icon card 1
+  # Pilihan: sm | md | lg | xl | 2xl
+  icon_size_1: "xl"
+
+  # INSTRUKSI: Pilih warna icon card 1
+  # Pilihan: text-primary | text-secondary | text-success | text-danger |
+  #          text-warning | text-info | text-dark | text-wood
+  icon_color_1: "text-primary"
+
+  # INSTRUKSI: Isi paragraf intro card 1
+  card_paragraph_1: "<p>Isi paragraf intro card 1 di sini</p>"
+
+  # --- H4 Sub-sections Card 1 ---
+
+  # INSTRUKSI: Isi judul H4 pertama card 1
+  h4_title_1_1: "Isi H4 pertama card 1"
+
+  # INSTRUKSI: Pilih icon H4 pertama card 1
+  h4_icon_1_1: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 pertama card 1
+  h4_icon_color_1_1: "text-success"
+
+  # INSTRUKSI: Isi konten H4 pertama card 1
+  h4_content_1_1: "<p>Isi konten H4 pertama card 1 di sini</p>"
+
+  # INSTRUKSI: Isi judul H4 kedua card 1
+  h4_title_1_2: "Isi H4 kedua card 1"
+
+  # INSTRUKSI: Pilih icon H4 kedua card 1
+  h4_icon_1_2: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 kedua card 1
+  h4_icon_color_1_2: "text-success"
+
+  # INSTRUKSI: Isi konten H4 kedua card 1
+  h4_content_1_2: "<p>Isi konten H4 kedua card 1 di sini</p>"
+
+  # INSTRUKSI: Isi judul H4 ketiga card 1
+  h4_title_1_3: "Isi H4 ketiga card 1"
+
+  # INSTRUKSI: Pilih icon H4 ketiga card 1
+  h4_icon_1_3: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 ketiga card 1
+  h4_icon_color_1_3: "text-success"
+
+  # INSTRUKSI: Isi konten H4 ketiga card 1
+  h4_content_1_3: "<p>Isi konten H4 ketiga card 1 di sini</p>"
+
+  # ========================================================================
+  # CARD 2
+  # ========================================================================
+
+  # INSTRUKSI: Isi judul H3 untuk card kedua
+  heading_3_title_2: "Isi judul H3 card 2 di sini"
+
+  # INSTRUKSI: Pilih icon untuk card 2
+  icon_name_2: "bi-shield-check"
+
+  # INSTRUKSI: Pilih ukuran icon card 2
+  icon_size_2: "xl"
+
+  # INSTRUKSI: Pilih warna icon card 2
+  icon_color_2: "text-success"
+
+  # INSTRUKSI: Isi paragraf intro card 2
+  card_paragraph_2: "<p>Isi paragraf intro card 2 di sini</p>"
+
+  # --- H4 Sub-sections Card 2 ---
+
+  # INSTRUKSI: Isi judul H4 pertama card 2
+  h4_title_2_1: "Isi H4 pertama card 2"
+
+  # INSTRUKSI: Pilih icon H4 pertama card 2
+  h4_icon_2_1: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 pertama card 2
+  h4_icon_color_2_1: "text-primary"
+
+  # INSTRUKSI: Isi konten H4 pertama card 2
+  h4_content_2_1: "<p>Isi konten H4 pertama card 2 di sini</p>"
+
+  # INSTRUKSI: Isi judul H4 kedua card 2
+  h4_title_2_2: "Isi H4 kedua card 2"
+
+  # INSTRUKSI: Pilih icon H4 kedua card 2
+  h4_icon_2_2: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 kedua card 2
+  h4_icon_color_2_2: "text-primary"
+
+  # INSTRUKSI: Isi konten H4 kedua card 2
+  h4_content_2_2: "<p>Isi konten H4 kedua card 2 di sini</p>"
+
+  # INSTRUKSI: Isi judul H4 ketiga card 2
+  h4_title_2_3: "Isi H4 ketiga card 2"
+
+  # INSTRUKSI: Pilih icon H4 ketiga card 2
+  h4_icon_2_3: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 ketiga card 2
+  h4_icon_color_2_3: "text-primary"
+
+  # INSTRUKSI: Isi konten H4 ketiga card 2
+  h4_content_2_3: "<p>Isi konten H4 ketiga card 2 di sini</p>"
+
+  # ========================================================================
+  # CARD 3
+  # ========================================================================
+
+  # INSTRUKSI: Isi judul H3 untuk card ketiga
+  heading_3_title_3: "Isi judul H3 card 3 di sini"
+
+  # INSTRUKSI: Pilih icon untuk card 3
+  icon_name_3: "bi-lightning"
+
+  # INSTRUKSI: Pilih ukuran icon card 3
+  icon_size_3: "xl"
+
+  # INSTRUKSI: Pilih warna icon card 3
+  icon_color_3: "text-warning"
+
+  # INSTRUKSI: Isi paragraf intro card 3
+  card_paragraph_3: "<p>Isi paragraf intro card 3 di sini</p>"
+
+  # --- H4 Sub-sections Card 3 ---
+
+  # INSTRUKSI: Isi judul H4 pertama card 3
+  h4_title_3_1: "Isi H4 pertama card 3"
+
+  # INSTRUKSI: Pilih icon H4 pertama card 3
+  h4_icon_3_1: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 pertama card 3
+  h4_icon_color_3_1: "text-danger"
+
+  # INSTRUKSI: Isi konten H4 pertama card 3
+  h4_content_3_1: "<p>Isi konten H4 pertama card 3 di sini</p>"
+
+  # INSTRUKSI: Isi judul H4 kedua card 3
+  h4_title_3_2: "Isi H4 kedua card 3"
+
+  # INSTRUKSI: Pilih icon H4 kedua card 3
+  h4_icon_3_2: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 kedua card 3
+  h4_icon_color_3_2: "text-danger"
+
+  # INSTRUKSI: Isi konten H4 kedua card 3
+  h4_content_3_2: "<p>Isi konten H4 kedua card 3 di sini</p>"
+
+  # INSTRUKSI: Isi judul H4 ketiga card 3
+  h4_title_3_3: "Isi H4 ketiga card 3"
+
+  # INSTRUKSI: Pilih icon H4 ketiga card 3
+  h4_icon_3_3: "bi-check-circle-fill"
+
+  # INSTRUKSI: Pilih warna icon H4 ketiga card 3
+  h4_icon_color_3_3: "text-danger"
+
+  # INSTRUKSI: Isi konten H4 ketiga card 3
+  h4_content_3_3: "<p>Isi konten H4 ketiga card 3 di sini</p>"
+---
+
+Usage di Content:
+-----------------
+{% include reusable-blocks/block--h2-with-3-cards-detailed.html %}
+
+CSS Classes Mapping:
+--------------------
+- .heading-2-title           → heading_2_title
+- .intro-paragraph-1         → intro_paragraph_1
+- .intro-paragraph-2         → intro_paragraph_2
+- .heading-3-title-1         → heading_3_title_1
+- .card-paragraph-1          → card_paragraph_1
+- .h4-title-1-1              → h4_title_1_1
+- .h4-content-1-1            → h4_content_1_1
+- dst...
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_h2_with_3_cards_detailed %}
+<section class="block--h2-with-3-cards-detailed my-5">
+
+  <!-- H2 Section Header -->
+  <div class="block__header text-center mb-4">
+    <h2 class="heading-2-title mb-3">{{ page.section_h2_with_3_cards_detailed.heading_2_title }}</h2>
+    <div class="intro-paragraph-1 lead mb-2">{{ page.section_h2_with_3_cards_detailed.intro_paragraph_1 }}</div>
+    <div class="intro-paragraph-2 lead">{{ page.section_h2_with_3_cards_detailed.intro_paragraph_2 }}</div>
+  </div>
+
+  <!-- 3 Detailed Cards Grid - EXPLICIT (NO LOOP) -->
+  <div class="row g-4">
+
+    <!-- ================================================================ -->
+    <!-- Card 1 -->
+    <!-- ================================================================ -->
+    <div class="col-md-4">
+      <div class="block__card block__card-1">
+        {% capture card_1_content %}
+          <div class="card-paragraph-1 mb-3">{{ page.section_h2_with_3_cards_detailed.card_paragraph_1 }}</div>
+
+          <!-- H4 Section 1 -->
+          <div class="h4-section-1-1 mb-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_1_1
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_1_1
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_1_1
+            %}
+            <div class="h4-content-1-1">{{ page.section_h2_with_3_cards_detailed.h4_content_1_1 }}</div>
+          </div>
+
+          <!-- H4 Section 2 -->
+          <div class="h4-section-1-2 mb-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_1_2
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_1_2
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_1_2
+            %}
+            <div class="h4-content-1-2">{{ page.section_h2_with_3_cards_detailed.h4_content_1_2 }}</div>
+          </div>
+
+          <!-- H4 Section 3 -->
+          <div class="h4-section-1-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_1_3
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_1_3
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_1_3
+            %}
+            <div class="h4-content-1-3">{{ page.section_h2_with_3_cards_detailed.h4_content_1_3 }}</div>
+          </div>
+        {% endcapture %}
+
+        {% include components/card.html
+           icon=page.section_h2_with_3_cards_detailed.icon_name_1
+           icon_size=page.section_h2_with_3_cards_detailed.icon_size_1
+           icon_color=page.section_h2_with_3_cards_detailed.icon_color_1
+           title=page.section_h2_with_3_cards_detailed.heading_3_title_1
+           content=card_1_content
+           hover_effect=true
+           shadow="shadow-sm"
+        %}
+      </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- Card 2 -->
+    <!-- ================================================================ -->
+    <div class="col-md-4">
+      <div class="block__card block__card-2">
+        {% capture card_2_content %}
+          <div class="card-paragraph-2 mb-3">{{ page.section_h2_with_3_cards_detailed.card_paragraph_2 }}</div>
+
+          <!-- H4 Section 1 -->
+          <div class="h4-section-2-1 mb-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_2_1
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_2_1
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_2_1
+            %}
+            <div class="h4-content-2-1">{{ page.section_h2_with_3_cards_detailed.h4_content_2_1 }}</div>
+          </div>
+
+          <!-- H4 Section 2 -->
+          <div class="h4-section-2-2 mb-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_2_2
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_2_2
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_2_2
+            %}
+            <div class="h4-content-2-2">{{ page.section_h2_with_3_cards_detailed.h4_content_2_2 }}</div>
+          </div>
+
+          <!-- H4 Section 3 -->
+          <div class="h4-section-2-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_2_3
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_2_3
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_2_3
+            %}
+            <div class="h4-content-2-3">{{ page.section_h2_with_3_cards_detailed.h4_content_2_3 }}</div>
+          </div>
+        {% endcapture %}
+
+        {% include components/card.html
+           icon=page.section_h2_with_3_cards_detailed.icon_name_2
+           icon_size=page.section_h2_with_3_cards_detailed.icon_size_2
+           icon_color=page.section_h2_with_3_cards_detailed.icon_color_2
+           title=page.section_h2_with_3_cards_detailed.heading_3_title_2
+           content=card_2_content
+           hover_effect=true
+           shadow="shadow-sm"
+        %}
+      </div>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- Card 3 -->
+    <!-- ================================================================ -->
+    <div class="col-md-4">
+      <div class="block__card block__card-3">
+        {% capture card_3_content %}
+          <div class="card-paragraph-3 mb-3">{{ page.section_h2_with_3_cards_detailed.card_paragraph_3 }}</div>
+
+          <!-- H4 Section 1 -->
+          <div class="h4-section-3-1 mb-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_3_1
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_3_1
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_3_1
+            %}
+            <div class="h4-content-3-1">{{ page.section_h2_with_3_cards_detailed.h4_content_3_1 }}</div>
+          </div>
+
+          <!-- H4 Section 2 -->
+          <div class="h4-section-3-2 mb-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_3_2
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_3_2
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_3_2
+            %}
+            <div class="h4-content-3-2">{{ page.section_h2_with_3_cards_detailed.h4_content_3_2 }}</div>
+          </div>
+
+          <!-- H4 Section 3 -->
+          <div class="h4-section-3-3">
+            {% include components/heading--h4-icon.html
+               title=page.section_h2_with_3_cards_detailed.h4_title_3_3
+               icon=page.section_h2_with_3_cards_detailed.h4_icon_3_3
+               icon_color=page.section_h2_with_3_cards_detailed.h4_icon_color_3_3
+            %}
+            <div class="h4-content-3-3">{{ page.section_h2_with_3_cards_detailed.h4_content_3_3 }}</div>
+          </div>
+        {% endcapture %}
+
+        {% include components/card.html
+           icon=page.section_h2_with_3_cards_detailed.icon_name_3
+           icon_size=page.section_h2_with_3_cards_detailed.icon_size_3
+           icon_color=page.section_h2_with_3_cards_detailed.icon_color_3
+           title=page.section_h2_with_3_cards_detailed.heading_3_title_3
+           content=card_3_content
+           hover_effect=true
+           shadow="shadow-sm"
+        %}
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}

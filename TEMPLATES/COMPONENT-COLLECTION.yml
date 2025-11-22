@@ -1,0 +1,2882 @@
+# ============================================================================
+# COMPONENT COLLECTION - Component Registry
+# ============================================================================
+#
+# @file        TEMPLATES/COMPONENT-COLLECTION.yml
+# @description Central registry untuk semua UI components. File ini berisi
+#              metadata, parameters, dan dokumentasi dari setiap component
+#              yang tersedia. Digunakan untuk referensi cepat parameter dan
+#              opsi styling tanpa perlu membuka file component.
+#
+# @version     1.0.0
+# @date        2025-11-22
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# WAJIB: Setiap component baru harus didaftarkan di file ini!
+#
+# ============================================================================
+
+components:
+  - id: card
+    file: components/card.html
+    name: "Card Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - card
+      - reusable
+      - flexible
+      - responsive
+    use_cases:
+      - service_showcase
+      - feature_display
+      - content_container
+      - product_card
+      - info_card
+    description: |
+      Bootstrap 5 card component yang sangat fleksibel dengan berbagai opsi kustomisasi.
+      Support untuk image (top/bottom), icon, header, body, footer, badge, link/button,
+      hover effects, dan berbagai styling options. Cocok untuk berbagai use case:
+      service cards, feature cards, product cards, atau content containers.
+
+    features:
+      - Bootstrap 5 card dengan customizable content
+      - Support image positioning (top/bottom)
+      - Icon support dengan berbagai ukuran dan warna
+      - Badge support untuk labels
+      - Link/button dalam footer
+      - Hover effects (optional)
+      - Border dan shadow customization
+      - Responsive layout
+      - Text alignment options
+
+    parameters:
+      # Image Options
+      - name: image
+        type: string
+        required: false
+        description: "URL gambar untuk card (optional)"
+        example: "/assets/images/service-crane.jpg"
+
+      - name: image_position
+        type: string
+        required: false
+        default: "top"
+        options:
+          - top
+          - bottom
+        description: "Posisi gambar di card"
+
+      - name: image_alt
+        type: string
+        required: false
+        default: "value dari title parameter"
+        description: "Alt text untuk gambar"
+
+      # Icon Options
+      - name: icon
+        type: string
+        required: false
+        description: "Bootstrap icon class (tanpa prefix 'bi')"
+        example: "bi-shield-check"
+        common_icons:
+          - bi-award
+          - bi-shield-check
+          - bi-lightning
+          - bi-heart
+          - bi-star
+          - bi-trophy
+          - bi-badge-check
+          - bi-check-circle
+          - bi-gear
+          - bi-tools
+          - bi-people
+
+      - name: icon_size
+        type: string
+        required: false
+        default: "lg"
+        options:
+          - sm: "1rem (16px)"
+          - md: "1.5rem (24px)"
+          - lg: "2rem (32px)"
+          - xl: "2.5rem (40px)"
+          - 2xl: "3rem (48px)"
+        description: "Ukuran icon"
+
+      - name: icon_color
+        type: string
+        required: false
+        default: "text-primary"
+        options:
+          - text-primary
+          - text-secondary
+          - text-success
+          - text-danger
+          - text-warning
+          - text-info
+          - text-dark
+          - text-wood
+        description: "Bootstrap text color utility class untuk icon"
+
+      # Content Options
+      - name: title
+        type: string
+        required: false
+        description: "Judul card (H5 heading)"
+
+      - name: subtitle
+        type: string
+        required: false
+        description: "Subjudul card (H6 heading)"
+
+      - name: content
+        type: string
+        required: true
+        description: "Konten utama card body (bisa HTML)"
+        example: "<p>Isi konten card di sini</p>"
+
+      - name: footer
+        type: string
+        required: false
+        description: "Konten footer card (optional)"
+
+      # Badge Options
+      - name: badge
+        type: string
+        required: false
+        description: "Text untuk badge label"
+        example: "Populer"
+
+      - name: badge_color
+        type: string
+        required: false
+        default: "bg-primary"
+        options:
+          - bg-primary
+          - bg-secondary
+          - bg-success
+          - bg-danger
+          - bg-warning
+          - bg-info
+          - bg-wood
+        description: "Background class untuk badge"
+
+      # Link Options
+      - name: link_url
+        type: string
+        required: false
+        description: "URL untuk link/button di card body"
+
+      - name: link_text
+        type: string
+        required: false
+        default: "Selengkapnya"
+        description: "Text untuk link/button"
+
+      # Styling Options
+      - name: hover_effect
+        type: boolean
+        required: false
+        default: true
+        description: "Enable/disable hover transform effect"
+
+      - name: border
+        type: string
+        required: false
+        description: "Border class untuk card"
+        example: "border-primary"
+        options:
+          - border-primary
+          - border-secondary
+          - border-success
+          - border-danger
+          - border-warning
+          - border-info
+
+      - name: shadow
+        type: string
+        required: false
+        default: "shadow-sm"
+        options:
+          - shadow-sm
+          - shadow
+          - shadow-lg
+        description: "Shadow class untuk card"
+
+      - name: text_center
+        type: boolean
+        required: false
+        default: false
+        description: "Center align text dalam card"
+
+    css_classes:
+      - component-card
+      - component-card--hover
+      - component-card__image
+      - component-card__image--top
+      - component-card__image--bottom
+      - component-card__header
+      - component-card__badge
+      - component-card__icon-wrapper
+      - component-card__icon
+      - component-card__icon--sm
+      - component-card__icon--md
+      - component-card__icon--lg
+      - component-card__icon--xl
+      - component-card__icon--2xl
+      - component-card__body
+      - component-card__title
+      - component-card__subtitle
+      - component-card__content
+      - component-card__link
+      - component-card__footer
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Simple card with icon"
+        code: |
+          {% include components/card.html
+             icon="bi-shield-check"
+             icon_size="xl"
+             icon_color="text-primary"
+             title="Jasa Riksa Uji K3"
+             content="<p>Layanan riksa uji peralatan K3 terpercaya...</p>"
+             hover_effect=true
+          %}
+
+      - name: "Card with image and badge"
+        code: |
+          {% include components/card.html
+             image="/assets/images/service-crane.jpg"
+             image_alt="Riksa Uji Crane"
+             title="Riksa Uji Crane"
+             badge="Populer"
+             badge_color="bg-warning"
+             content="<p>Pemeriksaan dan pengujian crane...</p>"
+             link_url="/layanan/riksa-uji-crane"
+             link_text="Lihat Detail"
+             shadow="shadow-lg"
+          %}
+
+      - name: "Card with custom styling"
+        code: |
+          {% include components/card.html
+             icon="bi-check-circle"
+             icon_size="2xl"
+             icon_color="text-success"
+             title="Sertifikat Resmi"
+             content="<p>Mendapatkan sertifikat resmi...</p>"
+             shadow="shadow-lg"
+             border="border-success"
+             text_center=true
+             hover_effect=false
+          %}
+
+      - name: "Card with captured content (for complex content)"
+        code: |
+          {% capture card_content %}
+            <p>Paragraf pertama</p>
+            <p>Paragraf kedua</p>
+            <ul>
+              <li>Item 1</li>
+              <li>Item 2</li>
+            </ul>
+          {% endcapture %}
+
+          {% include components/card.html
+             icon="bi-tools"
+             title="Layanan Lengkap"
+             content=card_content
+          %}
+
+  - id: accordion
+    file: components/accordion.html
+    name: "Accordion Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - accordion
+      - collapse
+      - faq
+      - expandable
+      - responsive
+    use_cases:
+      - faq_section
+      - collapsible_content
+      - structured_information
+      - nested_content
+      - documentation
+    description: |
+      Bootstrap 5 accordion component dengan collapse functionality untuk menampilkan
+      konten yang dapat di-expand/collapse. Support multiple items, icon pada setiap item,
+      auto-collapse atau allow multiple open items, dan flush style. Cocok untuk FAQ,
+      dokumentasi, atau konten terstruktur yang perlu ditampilkan secara bertahap.
+
+    features:
+      - Bootstrap 5 accordion dengan collapse functionality
+      - Support multiple items dalam satu accordion
+      - Icon support untuk setiap item
+      - Auto-collapse atau allow multiple open items
+      - Flush style (removes border dan rounded corners)
+      - Nested accordion support
+      - Customizable expanded state per item
+      - Responsive design
+
+    parameters:
+      - name: accordion_id
+        type: string
+        required: true
+        description: "Unique ID untuk accordion element"
+        example: "faqAccordion"
+
+      - name: items
+        type: array
+        required: true
+        description: "Array of accordion items (JSON format)"
+        structure:
+          - title: "Item title/heading"
+          - content: "Item content (HTML)"
+          - icon: "bi-icon-name (optional)"
+          - expanded: "true/false (optional, default: false)"
+        example: |
+          [
+            {
+              "title": "Apa itu Riksa Uji K3?",
+              "content": "<p>Riksa uji K3 adalah...</p>",
+              "icon": "bi-question-circle",
+              "expanded": true
+            }
+          ]
+
+      - name: flush
+        type: boolean
+        required: false
+        default: false
+        description: "Remove border dan rounded corners"
+
+      - name: allow_multiple
+        type: boolean
+        required: false
+        default: false
+        description: "Allow multiple items to be open (disable auto-collapse)"
+
+      - name: parent_id
+        type: string
+        required: false
+        description: "Parent accordion ID untuk nested accordions"
+
+    css_classes:
+      - accordion
+      - accordion-flush
+      - accordion-item
+      - accordion-header
+      - accordion-button
+      - accordion-collapse
+      - accordion-body
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Basic FAQ accordion"
+        code: |
+          {% capture items %}
+          [
+            {
+              "title": "Apa itu Riksa Uji K3?",
+              "content": "<p>Riksa uji K3 adalah pemeriksaan...</p>",
+              "icon": "bi-question-circle",
+              "expanded": true
+            },
+            {
+              "title": "Berapa lama proses riksa uji?",
+              "content": "<p>Proses riksa uji biasanya 1-3 hari...</p>",
+              "icon": "bi-clock"
+            }
+          ]
+          {% endcapture %}
+
+          {% include components/accordion.html
+             accordion_id="faqAccordion"
+             items=items
+          %}
+
+      - name: "Flush accordion (borderless)"
+        code: |
+          {% include components/accordion.html
+             accordion_id="flushAccordion"
+             items=items
+             flush=true
+          %}
+
+      - name: "Allow multiple items open"
+        code: |
+          {% include components/accordion.html
+             accordion_id="multiAccordion"
+             items=items
+             allow_multiple=true
+          %}
+
+  - id: alert
+    file: components/alert.html
+    name: "Alert Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - alert
+      - notification
+      - message
+      - dismissible
+      - responsive
+    use_cases:
+      - success_message
+      - error_message
+      - warning_notice
+      - info_banner
+      - notification
+    description: |
+      Bootstrap 5 alert component yang fleksibel untuk menampilkan berbagai jenis pesan:
+      success, error, warning, info, dll. Support icon, heading, dismissible dengan close button,
+      berbagai border styles, custom colors, dan fade animation. Cocok untuk feedback messages,
+      notifications, atau informasi penting yang perlu ditampilkan ke user.
+
+    features:
+      - Bootstrap 5 alert variants (8 variants)
+      - Dismissible dengan close button
+      - Icon support (customizable size dan position)
+      - Optional heading
+      - Link styling support
+      - Border variants (solid, left-accent, none)
+      - Custom background dan text colors
+      - Fade animation
+      - Customizable classes dan attributes
+
+    parameters:
+      - name: content
+        type: string
+        required: true
+        description: "Alert content/message (dapat berisi HTML)"
+        example: "This is a basic alert message."
+
+      - name: variant
+        type: string
+        required: false
+        default: "info"
+        options:
+          - primary
+          - secondary
+          - success
+          - danger
+          - warning
+          - info
+          - light
+          - dark
+        description: "Bootstrap alert variant"
+
+      - name: heading
+        type: string
+        required: false
+        description: "Alert heading/title (optional)"
+
+      - name: icon
+        type: string
+        required: false
+        description: "Bootstrap icon class"
+        example: "bi-info-circle-fill"
+
+      - name: icon_size
+        type: string
+        required: false
+        default: "lg"
+        options:
+          - sm
+          - md
+          - lg
+          - xl
+        description: "Icon size"
+
+      - name: icon_position
+        type: string
+        required: false
+        default: "left"
+        options:
+          - left
+          - top
+        description: "Icon position"
+
+      - name: dismissible
+        type: boolean
+        required: false
+        default: false
+        description: "Add close button"
+
+      - name: fade
+        type: boolean
+        required: false
+        default: true
+        description: "Fade animation"
+
+      - name: border_style
+        type: string
+        required: false
+        default: "default"
+        options:
+          - default
+          - left-accent
+          - none
+        description: "Border style variant"
+
+      - name: bg_color
+        type: string
+        required: false
+        description: "Custom background color class"
+        example: "bg-wood"
+
+      - name: text_color
+        type: string
+        required: false
+        description: "Custom text color class"
+        example: "text-white"
+
+      - name: additional_classes
+        type: string
+        required: false
+        description: "Extra CSS classes"
+
+      - name: id
+        type: string
+        required: false
+        description: "Alert ID attribute"
+
+    css_classes:
+      - component-alert
+      - component-alert--border-default
+      - component-alert--border-left-accent
+      - component-alert--border-none
+      - component-alert--icon-left
+      - component-alert--icon-top
+      - component-alert__icon-wrapper
+      - component-alert__icon
+      - component-alert__icon--sm
+      - component-alert__icon--md
+      - component-alert__icon--lg
+      - component-alert__icon--xl
+      - component-alert__content-wrapper
+      - component-alert__content
+      - component-alert__heading
+      - component-alert__text
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Success alert with icon"
+        code: |
+          {% include components/alert.html
+             content="Your form has been submitted successfully!"
+             variant="success"
+             icon="bi-check-circle-fill"
+          %}
+
+      - name: "Danger alert with heading"
+        code: |
+          {% include components/alert.html
+             heading="Error!"
+             content="Something went wrong. Please try again."
+             variant="danger"
+             icon="bi-exclamation-triangle-fill"
+          %}
+
+      - name: "Dismissible alert"
+        code: |
+          {% include components/alert.html
+             content="This alert can be closed."
+             variant="primary"
+             dismissible=true
+          %}
+
+      - name: "Alert with left accent border"
+        code: |
+          {% include components/alert.html
+             content="Important information with accent."
+             variant="info"
+             icon="bi-info-circle-fill"
+             border_style="left-accent"
+          %}
+
+  - id: badge
+    file: components/badge.html
+    name: "Badge Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - badge
+      - label
+      - tag
+      - pill
+      - notification
+    use_cases:
+      - status_indicator
+      - label
+      - counter
+      - notification_badge
+      - tag
+    description: |
+      Bootstrap 5 badge component yang sangat fleksibel untuk labels, tags, counters,
+      atau status indicators. Support pill shape, icon (left/right), berbagai ukuran,
+      positioned badges (untuk notification counter), link badges, dan custom colors.
+      Cocok untuk status, labels, notification counters, atau tags.
+
+    features:
+      - Bootstrap 5 badge variants (8 variants)
+      - Pill shape option (rounded badges)
+      - Icon support (left atau right position)
+      - Size variants (sm, md, lg, xl)
+      - Position variants (untuk badges on buttons/headings)
+      - Custom background dan text colors
+      - Notification badge dengan counter
+      - Link badge option
+      - Customizable classes dan attributes
+
+    parameters:
+      - name: text
+        type: string
+        required: true
+        description: "Badge text/label"
+        example: "New"
+
+      - name: variant
+        type: string
+        required: false
+        default: "primary"
+        options:
+          - primary
+          - secondary
+          - success
+          - danger
+          - warning
+          - info
+          - light
+          - dark
+        description: "Bootstrap badge variant"
+
+      - name: pill
+        type: boolean
+        required: false
+        default: false
+        description: "Rounded pill shape"
+
+      - name: icon
+        type: string
+        required: false
+        description: "Bootstrap icon class"
+        example: "bi-check-circle"
+
+      - name: icon_position
+        type: string
+        required: false
+        default: "left"
+        options:
+          - left
+          - right
+        description: "Icon position"
+
+      - name: icon_size
+        type: string
+        required: false
+        default: "sm"
+        options:
+          - sm
+          - md
+          - lg
+        description: "Icon size"
+
+      - name: size
+        type: string
+        required: false
+        default: "md"
+        options:
+          - sm: "0.65rem font, 0.35rem padding"
+          - md: "0.75rem font, 0.5rem padding"
+          - lg: "0.875rem font, 0.6rem padding"
+          - xl: "1rem font, 0.75rem padding"
+        description: "Badge size"
+
+      - name: position
+        type: string
+        required: false
+        options:
+          - top-right
+          - top-left
+          - bottom-right
+          - bottom-left
+        description: "Position for notification badges"
+
+      - name: bg_color
+        type: string
+        required: false
+        description: "Custom background color class"
+        example: "bg-wood"
+
+      - name: text_color
+        type: string
+        required: false
+        description: "Custom text color class"
+        example: "text-white"
+
+      - name: href
+        type: string
+        required: false
+        description: "URL for link badge"
+
+      - name: target
+        type: string
+        required: false
+        options:
+          - _blank
+          - _self
+        description: "Link target (for link badges)"
+
+      - name: additional_classes
+        type: string
+        required: false
+        description: "Extra CSS classes"
+
+      - name: id
+        type: string
+        required: false
+        description: "Badge ID attribute"
+
+    css_classes:
+      - component-badge
+      - component-badge--sm
+      - component-badge--md
+      - component-badge--lg
+      - component-badge--xl
+      - component-badge--top-right
+      - component-badge--top-left
+      - component-badge--bottom-right
+      - component-badge--bottom-left
+      - component-badge__icon
+      - component-badge__icon--sm
+      - component-badge__icon--md
+      - component-badge__icon--lg
+      - component-badge__text
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Basic pill badge"
+        code: |
+          {% include components/badge.html
+             text="Featured"
+             variant="success"
+             pill=true
+          %}
+
+      - name: "Badge with icon"
+        code: |
+          {% include components/badge.html
+             text="Verified"
+             variant="success"
+             icon="bi-check-circle-fill"
+          %}
+
+      - name: "Notification badge on button"
+        code: |
+          <button class="btn btn-primary position-relative">
+            Notifications
+            {% include components/badge.html
+               text="4"
+               variant="danger"
+               pill=true
+               position="top-right"
+            %}
+          </button>
+
+      - name: "Link badge"
+        code: |
+          {% include components/badge.html
+             text="Visit Documentation"
+             variant="primary"
+             href="/docs"
+             icon="bi-book"
+          %}
+
+  - id: button
+    file: components/button.html
+    name: "Button Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - button
+      - cta
+      - action
+      - link
+      - responsive
+    use_cases:
+      - call_to_action
+      - form_submit
+      - navigation_link
+      - modal_trigger
+      - action_button
+    description: |
+      Bootstrap 5 button component yang sangat fleksibel dengan berbagai variants,
+      sizes, dan styling options. Support outline variants, icon (left/right),
+      block button, disabled state, dan dapat render sebagai button atau link element.
+      Cocok untuk CTA, form submit, navigation, modal triggers, atau action buttons.
+
+    features:
+      - Bootstrap 5 button variants (9 variants)
+      - Outline variants untuk semua colors
+      - Size variants (sm, md, lg)
+      - Block button option (full-width)
+      - Disabled state support
+      - Icon support (left atau right position)
+      - Icon size presets (5 sizes)
+      - Render sebagai button atau link
+      - Data attributes support (modal, collapse, dll)
+      - Customizable classes dan attributes
+
+    parameters:
+      - name: text
+        type: string
+        required: true
+        description: "Button text/label"
+        example: "Hubungi Kami"
+
+      - name: variant
+        type: string
+        required: false
+        default: "primary"
+        options:
+          - primary
+          - secondary
+          - success
+          - danger
+          - warning
+          - info
+          - light
+          - dark
+          - link
+        description: "Bootstrap button variant"
+
+      - name: outline
+        type: boolean
+        required: false
+        default: false
+        description: "Use outline variant"
+
+      - name: size
+        type: string
+        required: false
+        default: "md"
+        options:
+          - sm
+          - md
+          - lg
+        description: "Button size"
+
+      - name: block
+        type: boolean
+        required: false
+        default: false
+        description: "Full-width button"
+
+      - name: disabled
+        type: boolean
+        required: false
+        default: false
+        description: "Disabled state"
+
+      - name: type
+        type: string
+        required: false
+        default: "button"
+        options:
+          - button
+          - submit
+          - reset
+        description: "Button type (hanya untuk button element)"
+
+      - name: href
+        type: string
+        required: false
+        description: "URL untuk link button (render sebagai <a>)"
+
+      - name: target
+        type: string
+        required: false
+        options:
+          - _blank
+          - _self
+          - _parent
+          - _top
+        description: "Link target (untuk link buttons)"
+
+      - name: icon
+        type: string
+        required: false
+        description: "Bootstrap icon class"
+        example: "bi-check-circle"
+
+      - name: icon_position
+        type: string
+        required: false
+        default: "left"
+        options:
+          - left
+          - right
+        description: "Icon position"
+
+      - name: icon_size
+        type: string
+        required: false
+        default: "md"
+        options:
+          - sm
+          - md
+          - lg
+          - xl
+          - 2xl
+        description: "Icon size"
+
+      - name: icon_color
+        type: string
+        required: false
+        description: "Icon color class (default: inherits button color)"
+
+      - name: additional_classes
+        type: string
+        required: false
+        description: "Extra CSS classes"
+
+      - name: id
+        type: string
+        required: false
+        description: "Button ID attribute"
+
+      - name: data_bs_toggle
+        type: string
+        required: false
+        description: "Bootstrap data-bs-toggle attribute"
+        example: "modal"
+
+      - name: data_bs_target
+        type: string
+        required: false
+        description: "Bootstrap data-bs-target attribute"
+        example: "#myModal"
+
+      - name: data_bs_dismiss
+        type: string
+        required: false
+        description: "Bootstrap data-bs-dismiss attribute"
+
+    css_classes:
+      - component-button
+      - component-button__icon
+      - component-button__icon--sm
+      - component-button__icon--md
+      - component-button__icon--lg
+      - component-button__icon--xl
+      - component-button__icon--2xl
+      - component-button__text
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Primary button with icon"
+        code: |
+          {% include components/button.html
+             text="Download Brosur"
+             variant="primary"
+             icon="bi-download"
+          %}
+
+      - name: "Outline button"
+        code: |
+          {% include components/button.html
+             text="Pelajari Lebih Lanjut"
+             variant="success"
+             outline=true
+          %}
+
+      - name: "Link button"
+        code: |
+          {% include components/button.html
+             text="Visit Website"
+             variant="primary"
+             href="https://example.com"
+             target="_blank"
+             icon="bi-box-arrow-up-right"
+             icon_position="right"
+          %}
+
+      - name: "Large block button"
+        code: |
+          {% include components/button.html
+             text="Minta Penawaran"
+             variant="success"
+             size="lg"
+             block=true
+          %}
+
+      - name: "Modal trigger button"
+        code: |
+          {% include components/button.html
+             text="Open Modal"
+             variant="info"
+             data_bs_toggle="modal"
+             data_bs_target="#myModal"
+          %}
+
+  - id: card-h2-basic
+    file: components/card--h2-basic.html
+    name: "Card H2 Basic Component"
+    category: ui-component
+    type: component
+    tags:
+      - card
+      - heading
+      - h2
+      - gradient
+      - banner
+      - hero
+    use_cases:
+      - section_header
+      - page_banner
+      - category_header
+      - feature_highlight
+      - content_separator
+    description: |
+      Card wrapper untuk H2 heading dengan gradient background, icon, dan subtitle.
+      Support berbagai gradient presets (green, blue, red, purple, orange, primary)
+      atau custom gradient. Cocok untuk section headers, page banners, atau category
+      headers dengan visual impact yang kuat.
+
+    features:
+      - Card dengan gradient background
+      - H2 heading dengan icon
+      - Optional subtitle/description
+      - 6 gradient presets + custom
+      - Customizable colors dan spacing
+      - Shadow dan border options
+      - Text alignment options
+      - Responsive design
+
+    parameters:
+      - name: title
+        type: string
+        required: true
+        description: "H2 heading text"
+        example: "Harga dan Pengiriman"
+
+      - name: subtitle
+        type: string
+        required: false
+        description: "Optional subtitle/description"
+        example: "Harga terjangkau dengan sistem COD yang aman"
+
+      - name: icon
+        type: string
+        required: false
+        description: "Bootstrap icon class"
+        example: "bi-cash-coin"
+
+      - name: icon_size
+        type: string
+        required: false
+        default: "2xl"
+        options:
+          - sm: "1rem (16px)"
+          - md: "1.5rem (24px)"
+          - lg: "2rem (32px)"
+          - xl: "2.5rem (40px)"
+          - 2xl: "3rem (48px)"
+        description: "Icon size"
+
+      - name: gradient
+        type: string
+        required: false
+        default: "green"
+        options:
+          - green
+          - blue
+          - red
+          - purple
+          - orange
+          - primary
+          - custom
+        description: "Gradient preset"
+
+      - name: custom_gradient
+        type: string
+        required: false
+        description: "Custom gradient CSS (jika gradient='custom')"
+        example: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+
+      - name: text_color
+        type: string
+        required: false
+        default: "text-white"
+        description: "Text color class"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "my-5"
+        description: "Margin spacing"
+
+      - name: shadow
+        type: string
+        required: false
+        default: "shadow-sm"
+        options:
+          - shadow-sm
+          - shadow
+          - shadow-lg
+        description: "Shadow class"
+
+      - name: border
+        type: string
+        required: false
+        description: "Border class (optional)"
+
+      - name: padding
+        type: string
+        required: false
+        default: "py-4 px-3"
+        description: "Padding class"
+
+      - name: text_align
+        type: string
+        required: false
+        default: "center"
+        options:
+          - start
+          - center
+          - end
+        description: "Text alignment"
+
+    css_classes:
+      - component-h2-card
+      - component-h2-card__wrapper
+      - component-h2-card__body
+      - component-h2-card__icon
+      - component-h2-card__icon--sm
+      - component-h2-card__icon--md
+      - component-h2-card__icon--lg
+      - component-h2-card__icon--xl
+      - component-h2-card__icon--2xl
+      - component-h2-card__title
+      - component-h2-card__subtitle
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Green gradient with icon"
+        code: |
+          {% include components/card--h2-basic.html
+             title="Harga dan Pengiriman"
+             subtitle="Harga terjangkau dengan sistem COD yang aman"
+             icon="bi-cash-coin"
+             icon_size="2xl"
+             gradient="green"
+          %}
+
+      - name: "Blue gradient"
+        code: |
+          {% include components/card--h2-basic.html
+             title="Layanan Kami"
+             subtitle="Jasa riksa uji K3 terpercaya"
+             icon="bi-shield-check"
+             gradient="blue"
+          %}
+
+      - name: "Custom gradient"
+        code: |
+          {% include components/card--h2-basic.html
+             title="Hubungi Kami"
+             icon="bi-telephone"
+             gradient="custom"
+             custom_gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+          %}
+
+  - id: card-h2-gradient
+    file: components/card--h2-gradient.html
+    name: "Card H2 Gradient Component (Decorative)"
+    category: ui-component
+    type: component
+    tags:
+      - card
+      - heading
+      - h2
+      - gradient
+      - decorative
+      - theme
+    use_cases:
+      - themed_section_header
+      - decorative_banner
+      - category_showcase
+      - content_highlight
+      - feature_section
+    description: |
+      Enhanced card untuk H2 heading dengan theme-based gradients dan decorative icons.
+      Berbeda dari card--h2-basic, komponen ini memiliki 8 theme presets (coffee, ocean,
+      sunset, forest, royal, fire, night, sky) dan customizable subtitle icons.
+      Larger shadow dan more decorative, cocok untuk themed content sections.
+
+    features:
+      - 8 theme-based gradient presets
+      - Customizable subtitle icons
+      - Larger shadow by default (shadow-lg)
+      - Decorative subtitle dengan icons
+      - Custom gradient support
+      - Enhanced visual styling
+      - Responsive design
+
+    parameters:
+      - name: title
+        type: string
+        required: true
+        description: "H2 heading text"
+        example: "6 Aplikasi Kayu Dolken di Interior Cafe"
+
+      - name: subtitle
+        type: string
+        required: false
+        description: "Optional subtitle/description"
+
+      - name: icon
+        type: string
+        required: false
+        description: "Main Bootstrap icon class"
+        example: "bi-cup-hot-fill"
+
+      - name: icon_size
+        type: string
+        required: false
+        default: "2xl"
+        options:
+          - sm: "1rem"
+          - md: "1.5rem"
+          - lg: "2rem"
+          - xl: "2.5rem"
+          - 2xl: "3rem"
+        description: "Icon size"
+
+      - name: subtitle_icon
+        type: string
+        required: false
+        default: "bi-stars"
+        description: "Icon untuk subtitle (decorative)"
+        example: "bi-shield-fill-check"
+
+      - name: gradient
+        type: string
+        required: false
+        default: "coffee"
+        options:
+          - coffee
+          - ocean
+          - sunset
+          - forest
+          - royal
+          - fire
+          - night
+          - sky
+          - custom
+        description: "Theme gradient preset"
+
+      - name: custom_gradient
+        type: string
+        required: false
+        description: "Custom gradient CSS (jika gradient='custom')"
+
+      - name: text_color
+        type: string
+        required: false
+        default: "text-white"
+        description: "Text color class"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "my-5"
+        description: "Margin spacing"
+
+      - name: shadow
+        type: string
+        required: false
+        default: "shadow-lg"
+        options:
+          - shadow-sm
+          - shadow
+          - shadow-lg
+        description: "Shadow class"
+
+      - name: padding
+        type: string
+        required: false
+        default: "py-4 px-3"
+        description: "Padding class"
+
+    css_classes:
+      - component-h2-card
+      - component-h2-card__wrapper
+      - component-h2-card__body
+      - component-h2-card__icon
+      - component-h2-card__icon--sm
+      - component-h2-card__icon--md
+      - component-h2-card__icon--lg
+      - component-h2-card__icon--xl
+      - component-h2-card__icon--2xl
+      - component-h2-card__title
+      - component-h2-card__subtitle
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Coffee theme"
+        code: |
+          {% include components/card--h2-gradient.html
+             title="6 Aplikasi Kayu Dolken di Interior Cafe"
+             subtitle="Temukan inspirasi implementasi yang sesuai konsep cafe"
+             icon="bi-cup-hot-fill"
+             gradient="coffee"
+          %}
+
+      - name: "Ocean theme with custom subtitle icon"
+        code: |
+          {% include components/card--h2-gradient.html
+             title="Layanan Riksa Uji K3"
+             subtitle="Profesional, Terpercaya, dan Bersertifikat"
+             icon="bi-shield-check"
+             subtitle_icon="bi-check-circle"
+             gradient="ocean"
+          %}
+
+  - id: carousel
+    file: components/carousel.html
+    name: "Carousel Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - carousel
+      - slider
+      - gallery
+      - images
+      - webp
+    use_cases:
+      - image_gallery
+      - product_showcase
+      - service_gallery
+      - hero_slider
+      - portfolio
+    description: |
+      Bootstrap 5 carousel/image slider dengan WebP optimization, lazy loading,
+      dan caption support. Support simple image arrays atau objects dengan captions.
+      Auto-play, fade transition, responsive design, dan prev/next controls.
+      Cocok untuk image galleries, product showcases, atau hero sliders.
+
+    features:
+      - Bootstrap 5 carousel dengan slide animation
+      - WebP optimization dengan picture element
+      - Lazy loading (kecuali first image)
+      - Responsive design dengan object-fit
+      - Carousel indicators untuk navigation
+      - Previous/Next controls
+      - Caption support per slide
+      - Auto-play option
+      - Fade transition option
+
+    parameters:
+      - name: carousel_id
+        type: string
+        required: true
+        description: "Unique ID untuk carousel element"
+        example: "craneGallery"
+
+      - name: images
+        type: array
+        required: true
+        description: "Array of image paths OR objects with image and caption"
+        example: |
+          Simple: ["/assets/img1.jpg", "/assets/img2.jpg"]
+          With captions: [
+            {"image": "/assets/img1.jpg", "caption": "Caption 1", "title": "Title 1"},
+            {"image": "/assets/img2.jpg", "caption": "Caption 2"}
+          ]
+
+      - name: title
+        type: string
+        required: true
+        description: "Default title untuk alt text"
+
+      - name: max_height
+        type: string
+        required: false
+        default: "500px"
+        description: "Max height untuk images"
+
+      - name: autoplay
+        type: boolean
+        required: false
+        default: false
+        description: "Enable auto-play"
+
+      - name: interval
+        type: number
+        required: false
+        default: 5000
+        description: "Auto-play interval dalam ms"
+
+      - name: controls
+        type: boolean
+        required: false
+        default: true
+        description: "Show prev/next controls"
+
+      - name: indicators
+        type: boolean
+        required: false
+        default: true
+        description: "Show slide indicators"
+
+      - name: fade
+        type: boolean
+        required: false
+        default: false
+        description: "Use fade transition instead of slide"
+
+    css_classes:
+      - carousel
+      - carousel-fade
+      - carousel-inner
+      - carousel-item
+      - carousel-indicators
+      - carousel-control-prev
+      - carousel-control-next
+      - carousel-caption
+
+    dependencies:
+      - Bootstrap 5
+
+    usage_examples:
+      - name: "Simple image carousel"
+        code: |
+          {% assign gallery = "/assets/images/1.jpg,/assets/images/2.jpg" | split: "," %}
+          {% include components/carousel.html
+             carousel_id="craneGallery"
+             images=gallery
+             title="Riksa Uji Crane"
+          %}
+
+      - name: "Carousel with captions and autoplay"
+        code: |
+          {% capture slides %}
+          [
+            {
+              "image": "/assets/images/service-1.jpg",
+              "title": "Riksa Uji Crane",
+              "caption": "Pemeriksaan menyeluruh alat angkat"
+            },
+            {
+              "image": "/assets/images/service-2.jpg",
+              "title": "Riksa Uji Boiler",
+              "caption": "Inspeksi bejana tekan"
+            }
+          ]
+          {% endcapture %}
+
+          {% include components/carousel.html
+             carousel_id="servicesCarousel"
+             images=slides
+             title="Layanan Riksa Uji K3"
+             autoplay=true
+             interval=3000
+          %}
+
+  - id: cta-whatsapp
+    file: components/cta-whatsapp.html
+    name: "CTA WhatsApp Component"
+    category: ui-component
+    type: component
+    tags:
+      - whatsapp
+      - cta
+      - contact
+      - floating
+      - button
+      - social
+    use_cases:
+      - contact_cta
+      - floating_chat
+      - inquiry_button
+      - customer_support
+      - lead_generation
+    description: |
+      WhatsApp CTA component dengan 4 display styles: floating, button, card, inline.
+      Auto-fetch phone number dari site config, customizable message, gradient backgrounds,
+      dan hover effects. Cocok untuk contact CTAs, floating chat buttons, atau
+      inquiry/lead generation sections.
+
+    features:
+      - 4 display styles (floating, button, card, inline)
+      - Auto phone number dari site.business.whatsapp
+      - Customizable WhatsApp message
+      - Icon-only option untuk floating
+      - Gradient background untuk card style
+      - Position options (left/right) untuk floating
+      - Phone number display option
+      - Responsive design
+
+    parameters:
+      - name: style
+        type: string
+        required: false
+        default: "button"
+        options:
+          - floating
+          - button
+          - card
+          - inline
+        description: "Display style"
+
+      - name: message
+        type: string
+        required: false
+        default: "Halo, saya ingin informasi lebih lanjut"
+        description: "Custom WhatsApp message (URL encoded otomatis)"
+
+      - name: button_text
+        type: string
+        required: false
+        default: "Hubungi via WhatsApp"
+        description: "Text for button"
+
+      - name: button_size
+        type: string
+        required: false
+        default: "md"
+        options:
+          - sm
+          - md
+          - lg
+        description: "Button size"
+
+      - name: button_color
+        type: string
+        required: false
+        default: "success"
+        options:
+          - success
+          - primary
+          - danger
+        description: "Button color"
+
+      - name: phone
+        type: string
+        required: false
+        description: "Custom phone number (default: site.business.whatsapp)"
+
+      - name: icon_only
+        type: boolean
+        required: false
+        default: false
+        description: "Icon only (floating button only)"
+
+      - name: position
+        type: string
+        required: false
+        default: "right"
+        options:
+          - left
+          - right
+        description: "Position (floating button only)"
+
+      - name: title
+        type: string
+        required: false
+        description: "Title for card/inline style"
+
+      - name: description
+        type: string
+        required: false
+        description: "Description for card/inline style"
+
+      - name: show_phone
+        type: boolean
+        required: false
+        default: true
+        description: "Display phone number (card style)"
+
+    css_classes:
+      - component-whatsapp-float
+      - component-whatsapp-float--left
+      - component-whatsapp-float--right
+      - component-whatsapp-float--icon-only
+      - component-whatsapp-float--with-text
+      - component-whatsapp-float__text
+      - component-whatsapp-card
+      - component-whatsapp-card__icon
+      - component-whatsapp-card__title
+      - component-whatsapp-card__description
+      - component-whatsapp-card__phone
+      - component-whatsapp-card__button
+      - component-whatsapp-card__footer-note
+      - component-whatsapp-inline
+      - component-whatsapp-inline__icon-wrapper
+      - component-whatsapp-inline__icon
+      - component-whatsapp-inline__content
+      - component-whatsapp-inline__title
+      - component-whatsapp-inline__description
+      - component-whatsapp-inline__action
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Floating button (default)"
+        code: |
+          {% include components/cta-whatsapp.html
+             style="floating"
+          %}
+
+      - name: "Simple button with custom message"
+        code: |
+          {% include components/cta-whatsapp.html
+             style="button"
+             button_text="Chat Sekarang"
+             button_size="lg"
+             message="Halo, saya ingin konsultasi tentang riksa uji K3"
+          %}
+
+      - name: "Card style with gradient"
+        code: |
+          {% include components/cta-whatsapp.html
+             style="card"
+             title="Butuh Konsultasi?"
+             description="Hubungi kami untuk konsultasi gratis"
+             button_text="Hubungi Kami"
+             show_phone=true
+          %}
+
+  - id: heading-h3-circle
+    file: components/heading--h3-circle.html
+    name: "Heading H3 Circle Component"
+    category: heading
+    type: component
+    tags:
+      - heading
+      - h3
+      - icon
+      - circle
+      - badge
+      - list
+    use_cases:
+      - section_heading
+      - numbered_list
+      - feature_list
+      - step_indicator
+      - categorized_content
+    description: |
+      H3 heading dengan icon dalam rounded circle background. Perfect alignment
+      dengan flex layout, customizable colors (7 color themes), adjustable sizes
+      (4 size presets), dan optional heading level. Cocok untuk section headings,
+      numbered lists, feature lists, atau step indicators.
+
+    features:
+      - H3 heading dengan icon dalam circle
+      - Flex layout untuk perfect alignment
+      - 7 color themes (success, primary, danger, warning, info, secondary, dark)
+      - 4 size presets (sm, md, lg, xl)
+      - Optional heading level (h3, h4, h5, h6)
+      - Customizable spacing dan alignment
+      - Text color customization
+      - Responsive design
+
+    parameters:
+      - name: title
+        type: string
+        required: true
+        description: "Heading text"
+        example: "5. Kontras Material untuk Visual Interest"
+
+      - name: icon
+        type: string
+        required: true
+        description: "Bootstrap icon class"
+        example: "bi-grid-3x3"
+
+      - name: color
+        type: string
+        required: false
+        default: "success"
+        options:
+          - success
+          - primary
+          - danger
+          - warning
+          - info
+          - secondary
+          - dark
+        description: "Color theme"
+
+      - name: size
+        type: string
+        required: false
+        default: "md"
+        options:
+          - sm: "40px circle, 1rem icon"
+          - md: "50px circle, 1.5rem icon"
+          - lg: "60px circle, 2rem icon"
+          - xl: "80px circle, 2.5rem icon"
+        description: "Circle and icon size preset"
+
+      - name: heading_level
+        type: string
+        required: false
+        default: "h3"
+        options:
+          - h3
+          - h4
+          - h5
+          - h6
+        description: "HTML heading tag"
+
+      - name: heading_class
+        type: string
+        required: false
+        default: "h6 mb-0"
+        description: "Additional heading classes"
+
+      - name: text_color
+        type: string
+        required: false
+        default: "text-wood"
+        description: "Text color class"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "mb-3"
+        description: "Margin bottom"
+
+      - name: align
+        type: string
+        required: false
+        default: "align-items-center"
+        description: "Flex alignment"
+
+    css_classes:
+      - component-heading-circle
+      - component-heading-circle__circle
+      - component-heading-circle__circle--sm
+      - component-heading-circle__circle--md
+      - component-heading-circle__circle--lg
+      - component-heading-circle__circle--xl
+      - component-heading-circle__title
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Basic (green theme, medium size)"
+        code: |
+          {% include components/heading--h3-circle.html
+             title="5. Kontras Material untuk Visual Interest"
+             icon="bi-grid-3x3"
+             size="md"
+          %}
+
+      - name: "Primary color, larger size"
+        code: |
+          {% include components/heading--h3-circle.html
+             title="Langkah Pertama: Konsultasi"
+             icon="bi-chat-dots"
+             color="primary"
+             size="lg"
+          %}
+
+      - name: "Warning theme as H4"
+        code: |
+          {% include components/heading--h3-circle.html
+             title="Keunggulan Layanan"
+             icon="bi-award-fill"
+             color="warning"
+             heading_level="h4"
+          %}
+
+  - id: heading-h4-icon
+    file: components/heading--h4-icon.html
+    name: "Heading H4 Icon Component"
+    category: heading
+    type: component
+    tags:
+      - heading
+      - h4
+      - icon
+      - inline
+      - simple
+      - minimal
+    use_cases:
+      - subsection_heading
+      - feature_title
+      - list_item_heading
+      - content_marker
+      - section_divider
+    description: |
+      Simple H4 heading dengan inline icon prefix (no circle background).
+      Lightweight dan minimal markup, flexible heading level (h1-h6),
+      customizable icon dan colors. Cocok untuk subsection headings, feature titles,
+      list item headings, atau content markers yang butuh visual hierarchy sederhana.
+
+    features:
+      - Simple heading dengan icon prefix inline
+      - Flexible heading level (h1-h6)
+      - Semantic vs visual heading size mixing
+      - Customizable icon dan colors
+      - Lightweight dan minimal markup
+      - Font weight customization
+      - Spacing customization
+      - Bootstrap icon support
+
+    parameters:
+      - name: title
+        type: string
+        required: true
+        description: "Heading text"
+        example: "Kegunaan Utama & Aplikasi Spesial"
+
+      - name: icon
+        type: string
+        required: true
+        description: "Bootstrap icon class"
+        example: "bi-check-circle-fill"
+
+      - name: icon_color
+        type: string
+        required: false
+        default: "text-primary"
+        options:
+          - text-primary
+          - text-success
+          - text-danger
+          - text-warning
+          - text-info
+          - text-secondary
+          - text-dark
+          - text-wood
+        description: "Icon color class"
+
+      - name: heading_level
+        type: string
+        required: false
+        default: "h4"
+        options:
+          - h1
+          - h2
+          - h3
+          - h4
+          - h5
+          - h6
+        description: "HTML heading tag (semantic)"
+
+      - name: heading_size
+        type: string
+        required: false
+        default: "h6"
+        options:
+          - h1
+          - h2
+          - h3
+          - h4
+          - h5
+          - h6
+        description: "Heading size class (visual)"
+
+      - name: text_color
+        type: string
+        required: false
+        default: "text-wood"
+        description: "Text color class"
+
+      - name: font_weight
+        type: string
+        required: false
+        default: "fw-bold"
+        description: "Font weight class"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "mb-2"
+        description: "Margin bottom"
+
+      - name: icon_spacing
+        type: string
+        required: false
+        default: "me-2"
+        description: "Space between icon and text"
+
+      - name: custom_class
+        type: string
+        required: false
+        description: "Additional classes (optional)"
+
+    css_classes:
+      - No specific component classes (uses Bootstrap utilities)
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Basic usage"
+        code: |
+          {% include components/heading--h4-icon.html
+             title="Kegunaan Utama & Aplikasi Spesial"
+             icon="bi-check-circle-fill"
+             icon_color="text-danger"
+          %}
+
+      - name: "Success theme"
+        code: |
+          {% include components/heading--h4-icon.html
+             title="Keunggulan Produk"
+             icon="bi-check-circle-fill"
+             icon_color="text-success"
+             text_color="text-success"
+          %}
+
+      - name: "Custom heading level and size"
+        code: |
+          {% include components/heading--h4-icon.html
+             title="Section Title"
+             icon="bi-star-fill"
+             icon_color="text-warning"
+             heading_level="h3"
+             heading_size="h5"
+          %}
+
+  - id: item-list-strong-title
+    file: components/item-list--strong-title.html
+    name: "Item List Strong Title Component"
+    category: ui-component
+    type: component
+    tags:
+      - list
+      - item
+      - icon
+      - flex
+      - description
+      - feature
+    use_cases:
+      - feature_list
+      - benefit_list
+      - spec_list
+      - info_list
+      - detail_item
+    description: |
+      Individual list item dengan flex layout: icon (left) + content (right).
+      Strong/bold title dengan optional description text. Customizable icon size,
+      colors, spacing, dan text styling. Cocok untuk feature lists, benefit lists,
+      spec lists, atau detail items yang butuh visual hierarchy dengan icon.
+
+    features:
+      - Flex layout (icon left + content right)
+      - Strong/bold title
+      - Optional description text
+      - Icon customization (size, color)
+      - Text color customization
+      - Spacing options
+      - Responsive design
+
+    parameters:
+      - name: title
+        type: string
+        required: true
+        description: "Item title"
+        example: "Tahan Kelembaban Tinggi"
+
+      - name: description
+        type: string
+        required: false
+        description: "Item description text (optional)"
+        example: "Ideal untuk area yang sering terpapar air"
+
+      - name: icon
+        type: string
+        required: true
+        description: "Bootstrap icon class"
+        example: "bi-droplet-fill"
+
+      - name: icon_color
+        type: string
+        required: false
+        default: "text-primary"
+        description: "Icon color class"
+
+      - name: icon_size
+        type: string
+        required: false
+        default: "md"
+        options:
+          - sm: "1rem"
+          - md: "1.5rem"
+          - lg: "2rem"
+          - xl: "2.5rem"
+          - 2xl: "3rem"
+        description: "Icon size"
+
+      - name: title_color
+        type: string
+        required: false
+        default: "text-wood"
+        description: "Title text color"
+
+      - name: desc_color
+        type: string
+        required: false
+        default: "text-muted"
+        description: "Description text color"
+
+      - name: desc_size
+        type: string
+        required: false
+        default: "small"
+        description: "Description text size"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "mb-3"
+        description: "Margin bottom"
+
+      - name: icon_spacing
+        type: string
+        required: false
+        default: "me-3"
+        description: "Space between icon and text"
+
+    css_classes:
+      - component-item-list
+      - component-item-list__icon-wrapper
+      - component-item-list__icon
+      - component-item-list__icon--sm
+      - component-item-list__icon--md
+      - component-item-list__icon--lg
+      - component-item-list__icon--xl
+      - component-item-list__icon--2xl
+      - component-item-list__content
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Basic usage"
+        code: |
+          {% include components/item-list--strong-title.html
+             title="Tahan Kelembaban Tinggi"
+             description="Ideal untuk area dapur atau outdoor"
+             icon="bi-droplet-fill"
+          %}
+
+      - name: "Without description"
+        code: |
+          {% include components/item-list--strong-title.html
+             title="Konsultasi Gratis"
+             icon="bi-chat-dots"
+             icon_color="text-success"
+          %}
+
+      - name: "Custom colors and size"
+        code: |
+          {% include components/item-list--strong-title.html
+             title="Sertifikat Resmi"
+             description="Terdaftar dan diakui Kemnaker RI"
+             icon="bi-award-fill"
+             icon_color="text-warning"
+             icon_size="lg"
+          %}
+
+  - id: modal
+    file: components/modal.html
+    name: "Modal Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - modal
+      - dialog
+      - popup
+      - overlay
+      - form
+    use_cases:
+      - dialog_box
+      - form_popup
+      - confirmation
+      - information_display
+      - image_lightbox
+    description: |
+      Bootstrap 5 modal dengan berbagai customization options. Support 5 size variants
+      (sm, md, lg, xl, fullscreen), centered/top positioning, scrollable content,
+      static backdrop, header dengan icon, dan footer dengan customizable buttons.
+      Cocok untuk dialogs, forms, confirmations, atau information displays.
+
+    features:
+      - Bootstrap 5 modal dengan customizable content
+      - 5 size variants (sm, md, lg, xl, fullscreen)
+      - Centered atau top-aligned positioning
+      - Scrollable content option
+      - Static backdrop option (prevent close on outside click)
+      - Header dengan title dan optional icon
+      - Footer dengan customizable buttons
+      - Fade animation support
+      - Custom classes dan attributes
+      - Keyboard ESC close option
+
+    parameters:
+      - name: id
+        type: string
+        required: true
+        description: "Modal ID (harus unique)"
+        example: "basicModal"
+
+      - name: title
+        type: string
+        required: true
+        description: "Modal title/heading"
+
+      - name: content
+        type: string
+        required: true
+        description: "Modal body content (HTML)"
+
+      - name: size
+        type: string
+        required: false
+        default: "md"
+        options:
+          - sm
+          - md
+          - lg
+          - xl
+          - fullscreen
+        description: "Modal size"
+
+      - name: centered
+        type: boolean
+        required: false
+        default: false
+        description: "Vertically center modal"
+
+      - name: scrollable
+        type: boolean
+        required: false
+        default: false
+        description: "Scrollable modal body"
+
+      - name: static_backdrop
+        type: boolean
+        required: false
+        default: false
+        description: "Prevent close on outside click"
+
+      - name: keyboard
+        type: boolean
+        required: false
+        default: true
+        description: "Close on ESC key"
+
+      - name: fade
+        type: boolean
+        required: false
+        default: true
+        description: "Fade animation"
+
+      - name: icon
+        type: string
+        required: false
+        description: "Bootstrap icon class for header"
+        example: "bi-info-circle-fill"
+
+      - name: icon_color
+        type: string
+        required: false
+        default: "text-primary"
+        description: "Icon color class"
+
+      - name: header_bg
+        type: string
+        required: false
+        description: "Header background class"
+        example: "bg-primary text-white"
+
+      - name: footer_buttons
+        type: string
+        required: false
+        description: "Footer buttons HTML"
+
+      - name: footer_align
+        type: string
+        required: false
+        default: "end"
+        options:
+          - start
+          - center
+          - end
+          - between
+        description: "Footer alignment"
+
+      - name: show_close_button
+        type: boolean
+        required: false
+        default: true
+        description: "Show X button in header"
+
+      - name: show_footer
+        type: boolean
+        required: false
+        description: "Show footer section (auto-detect dari footer_buttons)"
+
+      - name: additional_classes
+        type: string
+        required: false
+        description: "Extra CSS classes for modal-dialog"
+
+    css_classes:
+      - component-modal
+      - component-modal__header-icon
+      - component-modal__body
+      - component-modal__footer
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Basic modal"
+        code: |
+          {% include components/modal.html
+             id="basicModal"
+             title="Modal Title"
+             content="<p>This is a basic modal.</p>"
+          %}
+
+          <!-- Trigger button -->
+          <button type="button" class="btn btn-primary"
+                  data-bs-toggle="modal" data-bs-target="#basicModal">
+            Launch Modal
+          </button>
+
+      - name: "Large modal with icon"
+        code: |
+          {% include components/modal.html
+             id="largeModal"
+             title="Large Modal"
+             icon="bi-info-circle-fill"
+             size="lg"
+             content="<p>Large modal content here.</p>"
+          %}
+
+      - name: "Centered confirmation modal"
+        code: |
+          {% include components/modal.html
+             id="confirmModal"
+             title="Confirm Action"
+             size="sm"
+             centered=true
+             content="<p>Are you sure?</p>"
+             footer_buttons='<button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                             <button class="btn btn-primary">Confirm</button>'
+          %}
+
+  - id: ordered-list
+    file: components/ordered-list.html
+    name: "Ordered List Component"
+    category: ui-component
+    type: component
+    tags:
+      - list
+      - ordered
+      - numbered
+      - steps
+      - process
+      - sequential
+    use_cases:
+      - step_by_step
+      - process_flow
+      - instruction_list
+      - sequential_guide
+      - ranking
+    description: |
+      Styled ordered list dengan customizable numbering styles (decimal, alpha, roman),
+      icon support per item, bold titles dengan descriptions, optional card wrapper,
+      dan spacing customization. Cocok untuk step-by-step guides, process flows,
+      instructions, atau ranked lists.
+
+    features:
+      - Styled ordered list dengan customizable appearance
+      - Support icon per item
+      - Bold titles dengan descriptions
+      - 5 custom numbering styles
+      - Spacing dan color customization
+      - Optional card wrapper
+      - Responsive design
+
+    parameters:
+      - name: items
+        type: array
+        required: true
+        description: "Array of list items"
+        example: |
+          Simple: ["Item 1", "Item 2"]
+          Complex: [
+            {"title": "Title", "content": "Content", "icon": "bi-check"}
+          ]
+
+      - name: list_style
+        type: string
+        required: false
+        default: "decimal"
+        options:
+          - decimal
+          - upper-alpha
+          - lower-alpha
+          - upper-roman
+          - lower-roman
+        description: "Numbering style"
+
+      - name: icon_color
+        type: string
+        required: false
+        default: "text-primary"
+        description: "Color class for icons"
+
+      - name: title_bold
+        type: boolean
+        required: false
+        default: true
+        description: "Bold titles"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "mb-3"
+        description: "Spacing between items"
+
+      - name: wrapper
+        type: string
+        required: false
+        default: "none"
+        options:
+          - card
+          - none
+        description: "Wrapper type"
+
+      - name: card_title
+        type: string
+        required: false
+        description: "Title for card wrapper"
+
+    css_classes:
+      - component-ordered-list
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Simple ordered list"
+        code: |
+          {% assign steps = "Hubungi kami|Jadwalkan inspeksi|Terima sertifikat" | split: "|" %}
+          {% include components/ordered-list.html
+             items=steps
+          %}
+
+      - name: "With icons in card"
+        code: |
+          {% capture steps %}
+          [
+            {"title": "Konsultasi", "content": "Diskusi kebutuhan", "icon": "bi-chat"},
+            {"title": "Inspeksi", "content": "Pemeriksaan lokasi", "icon": "bi-tools"}
+          ]
+          {% endcapture %}
+
+          {% include components/ordered-list.html
+             items=steps
+             wrapper="card"
+             card_title="Alur Proses"
+          %}
+
+  - id: table
+    file: components/table.html
+    name: "Table Component"
+    category: ui-component
+    type: component
+    tags:
+      - bootstrap5
+      - table
+      - data
+      - grid
+      - responsive
+      - tabular
+    use_cases:
+      - data_display
+      - pricing_table
+      - comparison_table
+      - schedule
+      - report
+    description: |
+      Bootstrap 5 table dengan berbagai styling options (striped, bordered, hover),
+      responsive wrapper, small/compact option, custom thead styling, caption support,
+      dan data array support. Cocok untuk data displays, pricing tables, comparison
+      tables, schedules, atau reports.
+
+    features:
+      - Bootstrap 5 table dengan customizable styling
+      - Striped, bordered, borderless, hover variants
+      - Color themes untuk rows
+      - Responsive wrapper dengan horizontal scrolling
+      - Small/compact table option
+      - Custom thead styling (light/dark)
+      - Caption support (top/bottom)
+      - Customizable alignment (left, center, right)
+      - Data array support dengan headers
+
+    parameters:
+      - name: headers
+        type: array
+        required: false
+        description: "Array of table headers (required jika pakai data array)"
+
+      - name: data
+        type: array
+        required: false
+        description: "Array of row data (alternative to content)"
+
+      - name: content
+        type: string
+        required: false
+        description: "Direct table content HTML (alternative to data)"
+
+      - name: striped
+        type: boolean
+        required: false
+        default: false
+        description: "Striped rows"
+
+      - name: bordered
+        type: boolean
+        required: false
+        default: false
+        description: "Bordered table"
+
+      - name: borderless
+        type: boolean
+        required: false
+        default: false
+        description: "Borderless table"
+
+      - name: hover
+        type: boolean
+        required: false
+        default: false
+        description: "Hover effect on rows"
+
+      - name: small
+        type: boolean
+        required: false
+        default: false
+        description: "Compact table"
+
+      - name: responsive
+        type: boolean
+        required: false
+        default: true
+        description: "Responsive wrapper"
+
+      - name: thead_variant
+        type: string
+        required: false
+        default: "light"
+        options:
+          - light
+          - dark
+          - ""
+        description: "Thead styling"
+
+      - name: caption
+        type: string
+        required: false
+        description: "Caption text"
+
+      - name: caption_top
+        type: boolean
+        required: false
+        default: false
+        description: "Caption position (top/bottom)"
+
+      - name: align
+        type: string
+        required: false
+        default: "start"
+        options:
+          - start
+          - center
+          - end
+        description: "Text alignment"
+
+      - name: additional_classes
+        type: string
+        required: false
+        description: "Extra CSS classes"
+
+      - name: id
+        type: string
+        required: false
+        description: "Table ID attribute"
+
+    css_classes:
+      - component-table
+      - component-table-wrapper
+
+    dependencies:
+      - Bootstrap 5
+
+    usage_examples:
+      - name: "Basic table with data array"
+        code: |
+          {% assign headers = "Name|Email|Role" | split: "|" %}
+          {% assign data = "John,john@ex.com,Admin|Jane,jane@ex.com,User" | split: "|" %}
+          {% include components/table.html
+             headers=headers
+             data=data
+          %}
+
+      - name: "Striped and bordered table"
+        code: |
+          {% include components/table.html
+             headers=headers
+             data=data
+             striped=true
+             bordered=true
+          %}
+
+  - id: unordered-list
+    file: components/unordered-list.html
+    name: "Unordered List Component"
+    category: ui-component
+    type: component
+    tags:
+      - list
+      - unordered
+      - bullet
+      - check
+      - icon
+      - feature
+    use_cases:
+      - feature_list
+      - benefit_list
+      - checklist
+      - bullet_points
+      - icon_list
+    description: |
+      Styled unordered list dengan 4 style options (check, icon, bullet, none),
+      support custom icons per item atau default icon, bold titles dengan descriptions,
+      color customization, dan optional card wrapper. Cocok untuk feature lists,
+      benefit lists, checklists, atau icon-based lists.
+
+    features:
+      - Styled unordered list dengan customizable appearance
+      - 4 style options (check, icon, bullet, none)
+      - Support icons instead of bullets
+      - Check icons, custom icons, atau standard bullets
+      - Bold titles dengan descriptions
+      - Color customization
+      - Optional card wrapper
+      - Responsive design
+
+    parameters:
+      - name: items
+        type: array
+        required: true
+        description: "Array of list items"
+        example: |
+          Simple: ["Item 1", "Item 2"]
+          Complex: [
+            {"title": "Title", "content": "Content", "icon": "bi-check"}
+          ]
+
+      - name: style
+        type: string
+        required: false
+        default: "check"
+        options:
+          - check
+          - icon
+          - bullet
+          - none
+        description: "List style"
+
+      - name: default_icon
+        type: string
+        required: false
+        default: "bi-check-circle-fill"
+        description: "Default icon for all items"
+
+      - name: icon_color
+        type: string
+        required: false
+        default: "text-success"
+        description: "Color class for icons"
+
+      - name: title_bold
+        type: boolean
+        required: false
+        default: true
+        description: "Bold titles"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "mb-2"
+        description: "Spacing between items"
+
+      - name: wrapper
+        type: string
+        required: false
+        default: "none"
+        options:
+          - card
+          - none
+        description: "Wrapper type"
+
+      - name: card_title
+        type: string
+        required: false
+        description: "Title for card wrapper"
+
+    css_classes:
+      - component-unordered-list
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Simple check list"
+        code: |
+          {% assign features = "Sertifikat resmi|Teknisi bersertifikat|Harga kompetitif" | split: "|" %}
+          {% include components/unordered-list.html
+             items=features
+             style="check"
+          %}
+
+      - name: "List with custom icons in card"
+        code: |
+          {% capture benefits %}
+          [
+            {"content": "Sertifikat resmi", "icon": "bi-award-fill"},
+            {"content": "Teknisi berpengalaman", "icon": "bi-person-badge"}
+          ]
+          {% endcapture %}
+
+          {% include components/unordered-list.html
+             items=benefits
+             style="icon"
+             wrapper="card"
+             card_title="Keunggulan Kami"
+          %}
+
+  - id: unordered-list-with-text
+    file: components/unordered-list--with-text.html
+    name: "Unordered List With Text (Simple)"
+    category: ui-component
+    type: component
+    tags:
+      - list
+      - unordered
+      - simple
+      - minimal
+      - icon
+      - text
+    use_cases:
+      - simple_list
+      - bullet_points
+      - quick_list
+      - tips_list
+      - notes
+    description: |
+      Simple lightweight unordered list dengan icon + text inline (no titles/descriptions).
+      Minimal parameters untuk quick usage, support berbagai icon options (square, circle,
+      dash, arrow, chevron, check, dot), text size options, dan color themes.
+      Cocok untuk simple lists, bullet points, tips, atau notes.
+
+    features:
+      - Lightweight simple list dengan icon + text
+      - Minimal parameters untuk quick usage
+      - Icon customization (8 common icons)
+      - Text size options
+      - Color themes
+      - No complex structure (no title/content separation)
+      - Responsive design
+
+    parameters:
+      - name: items
+        type: array
+        required: true
+        description: "Array of strings - Simple text items"
+        example: '["Item 1", "Item 2", "Item 3"]'
+
+      - name: icon
+        type: string
+        required: false
+        default: "bi-square"
+        options:
+          - bi-square
+          - bi-circle
+          - bi-dash
+          - bi-arrow-right
+          - bi-chevron-right
+          - bi-caret-right
+          - bi-check
+          - bi-dot
+        description: "Bootstrap icon class"
+
+      - name: icon_color
+        type: string
+        required: false
+        default: "text-secondary"
+        description: "Icon color class"
+
+      - name: text_size
+        type: string
+        required: false
+        default: "small"
+        description: "Text size class"
+
+      - name: spacing
+        type: string
+        required: false
+        default: "mb-2"
+        description: "Item spacing"
+
+      - name: custom_class
+        type: string
+        required: false
+        description: "Additional list classes"
+
+    css_classes:
+      - No specific component classes (uses Bootstrap utilities)
+
+    dependencies:
+      - Bootstrap 5
+      - Bootstrap Icons
+
+    usage_examples:
+      - name: "Simple usage"
+        code: |
+          {% assign tips = "Combine dengan smooth surface|Use natural lighting|Perhatikan proporsi" | split: "|" %}
+          {% include components/unordered-list--with-text.html
+             items=tips
+          %}
+
+      - name: "With check icon"
+        code: |
+          {% assign features = "Sertifikat resmi|Teknisi berpengalaman|Harga kompetitif" | split: "|" %}
+          {% include components/unordered-list--with-text.html
+             items=features
+             icon="bi-check"
+             icon_color="text-success"
+          %}
+
+      - name: "With arrow icon"
+        code: |
+          {% assign steps = "Hubungi kami|Jadwalkan inspeksi|Terima sertifikat" | split: "|" %}
+          {% include components/unordered-list--with-text.html
+             items=steps
+             icon="bi-arrow-right"
+             icon_color="text-primary"
+          %}
+
+# ============================================================================
+# USAGE NOTES
+# ============================================================================
+#
+# Component Categories:
+# ---------------------
+# - ui-component: Komponen UI umum (card, button, badge, dll)
+# - layout: Komponen layout (grid, container, section, dll)
+# - navigation: Komponen navigasi (navbar, breadcrumb, pagination, dll)
+# - form: Komponen form (input, select, checkbox, dll)
+# - heading: Komponen heading (H1-H6 dengan styling khusus)
+# - media: Komponen media (image, video, gallery, dll)
+# - utility: Komponen utility (separator, spacer, dll)
+#
+# Icon Sizes:
+# -----------
+# - sm: 1rem (16px) - Untuk icon kecil inline
+# - md: 1.5rem (24px) - Untuk icon dalam button
+# - lg: 2rem (32px) - Default, cocok untuk card
+# - xl: 2.5rem (40px) - Untuk icon utama/prominent
+# - 2xl: 3rem (48px) - Untuk hero icons atau emphasis
+#
+# Color Options:
+# --------------
+# Bootstrap colors:
+# - text-primary / bg-primary: Biru (brand color)
+# - text-secondary / bg-secondary: Abu-abu
+# - text-success / bg-success: Hijau
+# - text-danger / bg-danger: Merah
+# - text-warning / bg-warning: Kuning
+# - text-info / bg-info: Cyan
+# - text-dark / bg-dark: Hitam
+#
+# Custom CMJ colors:
+# - text-wood / bg-wood: Coklat kayu (brand color)
+#
+# Shadow Options:
+# ---------------
+# - shadow-sm: Subtle shadow untuk depth minimal
+# - shadow: Medium shadow untuk card biasa
+# - shadow-lg: Large shadow untuk card prominent/featured
+#
+# Best Practices:
+# ---------------
+# 1. Gunakan icon untuk visual identity setiap card
+# 2. Gunakan badge untuk highlight/label penting (New, Popular, dll)
+# 3. Gunakan hover_effect untuk interactive cards
+# 4. Gunakan consistent shadow level untuk cards dalam satu section
+# 5. Untuk content yang kompleks, gunakan {% capture %} pattern
+# 6. Selalu sediakan image_alt untuk accessibility
+# 7. Gunakan relative_url untuk image paths
+# 8. Test responsive behavior di berbagai ukuran screen
+#
+# ============================================================================
