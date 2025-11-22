@@ -1065,6 +1065,79 @@
 }
 
 // ----------------------------------------------------------------------------
+// Tables
+// ----------------------------------------------------------------------------
+
+// Component Table (_includes/components/table.html)
+.component-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: $spacing-lg;
+
+  // Custom scrollbar styling
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba($color-dark, 0.05);
+    border-radius: $border-radius;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color-dark, 0.2);
+    border-radius: $border-radius;
+
+    &:hover {
+      background: rgba($color-dark, 0.3);
+    }
+  }
+}
+
+.component-table {
+  margin-bottom: 0;
+
+  // Caption styling
+  caption {
+    padding: $spacing-sm $spacing-md;
+    font-weight: $font-weight-semibold;
+    color: $color-dark;
+    font-size: $font-size-sm;
+
+    &.caption-top {
+      caption-side: top;
+    }
+  }
+
+  // Enhanced header
+  thead {
+    th {
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      font-size: $font-size-sm;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid rgba($color-dark, 0.1);
+    }
+  }
+
+  // Row hover enhancement
+  &.table-hover {
+    tbody tr {
+      transition: background-color 0.2s ease;
+    }
+  }
+
+  // Responsive behavior
+  @include media-down(md) {
+    font-size: $font-size-sm;
+
+    th, td {
+      padding: $spacing-xs $spacing-sm;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
 // Responsive Utilities
 // ----------------------------------------------------------------------------
 

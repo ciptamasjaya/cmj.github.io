@@ -1,0 +1,283 @@
+{% comment %}
+============================================================================
+Table Component
+============================================================================
+
+@file        _includes/components/table.html
+@description Reusable Bootstrap 5 table component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Bootstrap 5 table with customizable styling
+- Striped, bordered, borderless, and hover variants
+- Color themes for rows (primary, secondary, success, danger, warning, info, light, dark)
+- Responsive wrapper with horizontal scrolling
+- Small/compact table option
+- Custom thead styling
+- Caption support
+- Optional sorting indicators
+- Customizable alignment (left, center, right)
+- Data array support with headers
+
+Parameters:
+-----------
+- headers: Array of table headers (required if using data array)
+- data: Array of row data (optional, alternative to content)
+- content: Direct table content HTML (optional, alternative to data)
+- striped: true | false - Striped rows (default: false)
+- bordered: true | false - Bordered table (default: false)
+- borderless: true | false - Borderless table (default: false)
+- hover: true | false - Hover effect on rows (default: false)
+- small: true | false - Compact table (default: false)
+- responsive: true | false - Responsive wrapper (default: true)
+- thead_variant: "light" | "dark" | "" (default: "light")
+- caption: Caption text (optional)
+- caption_top: true | false - Caption position (default: false, shows at bottom)
+- align: "start" | "center" | "end" (default: "start")
+- additional_classes: Extra CSS classes (optional)
+- id: Table ID attribute (optional)
+
+Data Structure (when using data parameter):
+- headers: ["Column 1", "Column 2", "Column 3"]
+- data: [
+    ["Row 1 Col 1", "Row 1 Col 2", "Row 1 Col 3"],
+    ["Row 2 Col 1", "Row 2 Col 2", "Row 2 Col 3"]
+  ]
+
+Usage:
+------
+Basic table with data array:
+{% assign table_headers = "Name|Email|Role" | split: "|" %}
+{% assign table_data = "John Doe,john@example.com,Admin|Jane Smith,jane@example.com,User" | split: "|" %}
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+%}
+
+Striped and bordered table:
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   striped=true
+   bordered=true
+%}
+
+Hover table with dark header:
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   hover=true
+   thead_variant="dark"
+%}
+
+Small compact table:
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   small=true
+   striped=true
+%}
+
+Table with caption:
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   caption="User List - Updated 2025"
+   caption_top=true
+%}
+
+Borderless table:
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   borderless=true
+   hover=true
+%}
+
+Centered table content:
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   align="center"
+   bordered=true
+%}
+
+Custom HTML content (without data array):
+{% capture table_content %}
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Service</th>
+    <th scope="col">Price</th>
+    <th scope="col">Status</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Riksa Uji Crane</td>
+    <td>Rp 5.000.000</td>
+    <td><span class="badge bg-success">Active</span></td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Riksa Uji Forklift</td>
+    <td>Rp 3.500.000</td>
+    <td><span class="badge bg-warning">Pending</span></td>
+  </tr>
+</tbody>
+{% endcapture %}
+
+{% include components/table.html
+   content=table_content
+   striped=true
+   hover=true
+   bordered=true
+%}
+
+Responsive table (default):
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   responsive=true
+   striped=true
+%}
+
+Non-responsive table:
+{% include components/table.html
+   headers=table_headers
+   data=table_data
+   responsive=false
+%}
+
+Complex pricing table:
+{% capture pricing_table %}
+<thead class="table-dark">
+  <tr>
+    <th scope="col">Package</th>
+    <th scope="col">Features</th>
+    <th scope="col" class="text-end">Price</th>
+    <th scope="col" class="text-center">Action</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">Basic</th>
+    <td>
+      <ul class="mb-0">
+        <li>1 Equipment</li>
+        <li>Basic Report</li>
+      </ul>
+    </td>
+    <td class="text-end">Rp 2.500.000</td>
+    <td class="text-center">
+      <button class="btn btn-sm btn-primary">Select</button>
+    </td>
+  </tr>
+  <tr class="table-primary">
+    <th scope="row">Professional</th>
+    <td>
+      <ul class="mb-0">
+        <li>Up to 5 Equipment</li>
+        <li>Detailed Report</li>
+        <li>Certificate</li>
+      </ul>
+    </td>
+    <td class="text-end">Rp 10.000.000</td>
+    <td class="text-center">
+      <button class="btn btn-sm btn-success">Select</button>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">Enterprise</th>
+    <td>
+      <ul class="mb-0">
+        <li>Unlimited Equipment</li>
+        <li>Premium Report</li>
+        <li>Certificate</li>
+        <li>Priority Support</li>
+      </ul>
+    </td>
+    <td class="text-end">Custom</td>
+    <td class="text-center">
+      <button class="btn btn-sm btn-warning">Contact</button>
+    </td>
+  </tr>
+</tbody>
+{% endcapture %}
+
+{% include components/table.html
+   content=pricing_table
+   hover=true
+   bordered=true
+   caption="Service Packages - 2025"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign table_headers = include.headers %}
+{% assign table_data = include.data %}
+{% assign table_content = include.content %}
+{% assign table_striped = include.striped | default: false %}
+{% assign table_bordered = include.bordered | default: false %}
+{% assign table_borderless = include.borderless | default: false %}
+{% assign table_hover = include.hover | default: false %}
+{% assign table_small = include.small | default: false %}
+{% assign table_responsive = include.responsive | default: true %}
+{% assign thead_variant = include.thead_variant | default: "light" %}
+{% assign table_caption = include.caption %}
+{% assign caption_top = include.caption_top | default: false %}
+{% assign table_align = include.align | default: "start" %}
+{% assign table_additional_classes = include.additional_classes %}
+{% assign table_id = include.id %}
+
+{% comment %} Build table classes {% endcomment %}
+{% capture table_classes %}component-table table{% if table_striped %} table-striped{% endif %}{% if table_bordered %} table-bordered{% endif %}{% if table_borderless %} table-borderless{% endif %}{% if table_hover %} table-hover{% endif %}{% if table_small %} table-sm{% endif %} text-{{ table_align }}{% if table_additional_classes %} {{ table_additional_classes }}{% endif %}{% endcapture %}
+
+{% comment %} Build caption class {% endcomment %}
+{% if caption_top %}
+  {% assign caption_class = "caption-top" %}
+{% else %}
+  {% assign caption_class = "" %}
+{% endif %}
+
+{% comment %} Responsive wrapper {% endcomment %}
+{% if table_responsive %}
+<div class="component-table-wrapper table-responsive">
+{% endif %}
+
+  <table{% if table_id %} id="{{ table_id }}"{% endif %} class="{{ table_classes | strip }}">
+    {% if table_caption %}
+    <caption class="{{ caption_class }}">{{ table_caption }}</caption>
+    {% endif %}
+
+    {% if table_content %}
+      {{ table_content }}
+    {% elsif table_headers and table_data %}
+      <thead{% if thead_variant != "" %} class="table-{{ thead_variant }}"{% endif %}>
+        <tr>
+          {% for header in table_headers %}
+          <th scope="col">{{ header }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in table_data %}
+          {% assign row_cells = row | split: "," %}
+          <tr>
+            {% for cell in row_cells %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    {% endif %}
+  </table>
+
+{% if table_responsive %}
+</div>
+{% endif %}
