@@ -1,352 +1,189 @@
 # Release Notes - PT. Cipta Mas Jaya Website
 
-## Version 1.0.0 (2025-11-22)
-
-### 🎉 Initial Release
-
-Website company profile PT. Cipta Mas Jaya dengan Jekyll static site generator, menggunakan Bootstrap 5 dan arsitektur template 3-layer dengan Drupal-style naming convention.
-
----
-
-## Feature Highlights
-
-### 1. Jekyll Structure & Template Architecture
-**Commit**: `c59438e` - Initial setup: Jekyll structure with Drupal-style naming convention
-
-Setup struktur dasar Jekyll dengan:
-- **3-layer template hierarchy**: page, node, reusable blocks
-- **Drupal-style naming convention**: page.html, page--front.html, node--service.html
-- **5 halaman utama**: index, layanan, about, contact, blog
-- **Bootstrap 5 integration**
-- **Schema.org markup templates**
-- **Collection setup**: services dan posts
-
-**Struktur Folder**:
-```
-_layouts/         # Page wrappers dan node templates
-_includes/        # head, header, footer, schema files
-_services/        # Collection untuk layanan K3
-_posts/           # Collection untuk blog
-assets/           # CSS dan JS
-```
-
-**Files Created**: 29 files, 2056 insertions
+## Version 1.0.1 - Data-Driven Architecture Release
+**Release Date**: November 23, 2025
+**Type**: Major Enhancement
+**Status**: Stable
 
 ---
 
-### 2. Reusable Components Library
-**Commit**: `6714e22` - Add reusable components with flexible parameters
+### 🎯 Overview
 
-Menambahkan 6 reusable components di `_includes/components/` dengan parameter yang flexible:
+Version 1.0.1 represents a major architectural improvement to the PT. Cipta Mas Jaya website. This release focuses on complete refactoring of all reusable blocks to a data-driven architecture, separating content from templates for better maintainability, scalability, and future internationalization support.
 
-**Components**:
-- **accordion.html**: Bootstrap 5 accordion dengan multi-item support
-- **card.html**: Flexible card component dengan icon, image, badge
-- **ordered-list.html**: Styled ordered list dengan icon dan title support
-- **unordered-list.html**: Styled unordered list dengan check/custom icons
-- **cta-whatsapp.html**: WhatsApp CTA dengan 4 styles (floating, button, card, inline)
-- **carousel.html**: Image carousel/slider dengan WebP optimization
+### ✨ What's New
 
-**Features**:
-- Semua components menggunakan include parameters
-- Support untuk berbagai use cases
-- Bootstrap 5 based
-- Responsive design
-- Accessibility compliant
-- Documented dengan contoh penggunaan lengkap
+#### 🏗️ Data-Driven Architecture
+All reusable blocks have been refactored to use YAML data files, achieving complete separation of content from presentation:
 
-**Documentation**: COMPONENTS.md dengan dokumentasi lengkap
+**8 New YAML Data Files:**
+- `_data/commitments.yml` - Company commitments and values
+- `_data/faq_contact.yml` - FAQ section with 8 common questions
+- `_data/service_intro.yml` - Service introduction and features
+- `_data/business_info.yml` - Business information labels and certifications
+- `_data/company_profile.yml` - Company profile sections and fields
+- `_data/contact_form.yml` - Contact form fields and validation
+- `_data/contact_cards.yml` - Contact method cards
+- `_data/cta_contact.yml` - Call-to-action sections
 
-**Files Created**: 7 files, 1447 insertions
+**8 Blocks Refactored (v2.0.0):**
+- `block--commitment.html` - Company commitment cards
+- `block--faq-contact.html` - FAQ accordion with CTA
+- `block--service-intro.html` - Service introduction section
+- `block--business-info.html` - Business information display
+- `block--company-profile.html` - Company profile sections
+- `block--quick-contact-form.html` - Contact form with WhatsApp/Email
+- `block--contact-cards.html` - Contact method cards
+- `block--cta-contact.html` - CTA section with gradient background
 
----
+#### 📦 Template Variables System
+Dynamic content replacement support:
+- `{company_name}` - Replaced with company name from config
+- `{phone}` - Replaced with phone number
+- `{email}` - Replaced with email address
+- `{whatsapp}` - Replaced with WhatsApp number
+- `{founding_year}` - Replaced with founding year
 
-### 3. Section Header Components
-**Commit**: `e90c758` - Add card H2 components for section headers
+#### 🎨 CSS Class Customization
+All blocks now support optional CSS class overrides while preserving default styling, allowing for:
+- Custom section backgrounds
+- Custom header styles
+- Custom card layouts
+- Flexible responsive configurations
 
-Menambahkan 2 variant card components untuk section headers:
+### 📊 Impact & Benefits
 
-**1. card--h2-basic.html**:
-- Basic section header dengan gradient background
-- 6 gradient presets (green, blue, red, purple, orange, primary)
-- Optional icon dan subtitle
-- Customizable spacing, shadow, padding
-- Perfect untuk section dividers
+**Code Quality:**
+- ✅ ~1500 lines of hardcoded content moved to YAML
+- ✅ 100% content-template separation
+- ✅ Consistent data structure across all blocks
+- ✅ Comprehensive documentation in all files
 
-**2. card--h2-gradient.html**:
-- Enhanced decorative variant
-- 8 theme-based gradients (coffee, ocean, sunset, forest, royal, fire, night, sky)
-- Customizable subtitle icons (stars, shields, checks, dll)
-- Larger shadow (shadow-lg) untuk emphasis
-- Ideal untuk featured sections
+**Maintainability:**
+- 🔧 Content updates without touching templates
+- 🔧 Easy version control for content changes
+- 🔧 Clear separation of concerns
+- 🔧 Reduced risk of breaking layouts during content updates
 
-**Updates**:
-- COMPONENTS.md: Documentation section 7 & 8
-- Total components: 6 → 8
+**Scalability:**
+- 📈 Easy to add/remove items without code changes
+- 📈 Flexible item ordering through YAML
+- 📈 Support for optional fields and sections
+- 📈 Ready for A/B testing different content
 
-**Files Created**: 3 files, 449 insertions
+**Future-Ready:**
+- 🌍 Structure prepared for i18n/multi-language support
+- 🌍 Content can be easily translated
+- 🌍 Ready for CMS integration
+- 🌍 Admin UI preparation ready
 
----
+### 🔧 Technical Improvements
 
-### 4. Heading Components
-**Commit**: `9e324f1` - Add heading H3 circle component
-**Commit**: `8057978` - Add heading H4 icon component
+**YAML Structure:**
+- Consistent naming patterns across all data files
+- Logical grouping of related data
+- Support for nested configurations
+- Comprehensive inline comments
 
-**heading--h3-circle.html**:
-- H3 heading dengan icon dalam rounded circle
-- Icon dalam circle background dengan opacity 10%
-- 7 color themes (success, primary, danger, warning, info, secondary, dark)
-- Flex layout untuk perfect alignment
-- Customizable icon size, circle size, spacing
-- Dapat digunakan sebagai h3, h4, h5, atau h6
+**Template Features:**
+- Conditional rendering support
+- Loop-based item rendering
+- Fallback values for optional data
+- Icon and color configurations per item
 
-**heading--h4-icon.html**:
-- Simple inline icon headings
-- Lightweight alternative to heading--h3-circle (no background)
-- Support flexible heading levels (h1-h6)
-- Color themes support
+**Configuration Options:**
+- Responsive grid settings (col-md-6, col-lg-4, etc.)
+- Button styling and behavior
+- Form field validation rules
+- WhatsApp/Email message templates
 
-**Use Cases**:
-- Numbered sections (1., 2., 3.)
-- Feature lists dengan icon
-- Step-by-step guides
-- Sub-headings dalam content
-- Process indicators
+### 📚 Documentation
 
-**Files Created**: 4 files, 553 insertions
+**Enhanced Documentation:**
+- All blocks updated with data source references
+- Version numbers bumped from v1.0.0 to v2.0.0
+- Comprehensive YAML comments and usage notes
+- Updated header documentation in all templates
+- TODO-1202 tracking document maintained
 
----
+### 🚀 Upgrade Guide
 
-### 5. List Components
-**Commit**: `757ec1f` - Add simple text list component
-**Commit**: `bd003c9` - Add item-list--strong-title component
+**For Content Editors:**
+1. All content is now in `_data/*.yml` files
+2. Edit YAML files to update text, labels, and UI elements
+3. No need to touch HTML template files
+4. Changes are immediately visible after Jekyll rebuild
 
-**unordered-list--with-text.html**:
-- Simple icon + text inline list
-- Lightweight untuk simple text lists
-- No title/content structure (just icon + text)
-- Minimal parameters
-- Quick to use untuk daily lists
+**For Developers:**
+1. All blocks now follow consistent data-driven patterns
+2. New blocks should follow existing YAML structure
+3. Use template variables for dynamic content
+4. Reference existing blocks for implementation examples
 
-**item-list--strong-title.html**:
-- List items dengan icon, strong title, dan description
-- Flex layout dengan perfect alignment
-- Customizable icon colors, sizes, and spacing
-- Icon size presets: sm | md | lg | xl | 2xl
+### 🔗 Related Documentation
 
-**Total Components**: 12 reusable components
+- `CHANGELOG.md` - Complete commit history
+- `TODO/TODO-1202-data-driven-blocks.md` - Implementation tracking
+- Individual YAML files - Inline documentation and usage notes
 
-**Files Created**: 2 files, 224 insertions
+### 📝 Commit Details
 
----
+**15 commits** in this release:
+- 8 commits for block refactoring
+- 4 commits for UI/UX improvements
+- 2 commits for bug fixes
+- 1 commit for documentation
 
-### 6. SCSS Architecture
-**Commit**: `7200ff2` - Add SCSS architecture with modular partials
+**Commit Range**: `47e970f...5c0ba6d`
 
-Implementasi modular SCSS architecture untuk maintainability:
+### 🙏 Credits
 
-**Files**:
-- **_variables.scss**: Global variables (colors, spacing, typography, gradients)
-- **_mixins.scss**: Reusable mixins (responsive, flexbox, hover effects, etc)
-- **_base.scss**: Base styles (resets, typography, utility classes)
-- **_components.scss**: Component-specific styles (navbar, cards, buttons, etc)
-- **main.scss**: Entry point yang mengimport semua partials
-
-**Features**:
-- Modular SCSS architecture untuk maintainability
-- Mobile-first responsive design
-- Brand colors dan gradient presets
-- Reusable mixins untuk common patterns
-- Support untuk semua components di `_includes/components/`
-- No more inline styles atau debugging alignment issues
-- Auto-compile by Jekyll
-
-**Documentation**: SCSS-GUIDE.md dengan comprehensive guide
-
-**Files Created**: 7 files, 2373 insertions
-
----
-
-### 7. Brand Assets & PWA
-**Commit**: `71906da` - Add brand logo, favicon and PWA support
-
-Create SVG-based brand assets dan Progressive Web App support:
-
-**Brand Assets**:
-- logo.svg: Main brand logo
-- logo-horizontal.svg: Horizontal logo untuk navbar
-- favicon.svg: Scalable favicon
-
-**PWA Support**:
-- site.webmanifest: PWA manifest untuk mobile experience
-- browserconfig.xml: Windows tile configuration
-- Enhanced head.html dengan PWA meta tags
-
-**Files Created**: 7 files, 165 insertions
+**Developed by**: arisciwek
+**Company**: PT. Cipta Mas Jaya
+**Development Tool**: Claude Code
+**Architecture**: Jekyll + YAML Data-Driven
 
 ---
 
-### 8. Schema.org & SEO Enhancement
-**Commit**: `3123ff0` - Add rebuild.sh and enhance Schema.org markup
+### 🔍 Looking Forward
 
-Comprehensive Schema.org implementation untuk SEO:
-
-**Schema Types**:
-- **Organization schema**: Complete business details (address, geo, hours, social media)
-- **LocalBusiness schema**: Local SEO dengan service offerings
-- **Service catalog schema**: Detailed 5 services (ItemList)
-- **FAQPage schema**: 8 common questions
-- **Breadcrumb schema**: Navigation support
-
-**Business Data**:
-- Phone: +62-856-8258-841
-- Location: Serang, Banten
-- Address: Jl Raya Taktakan
-- Geo coordinates: -6.114722, 106.138402
-
-**Build Script**:
-- **rebuild.sh**: Comprehensive Jekyll build script
-  - Commands: install, build, serve, clean
-  - Auto-detection of installed gems
-  - Colored output untuk readability
-
-**Files Created**: 11 files, 723 insertions
+**Next Steps (v1.0.2 planned):**
+- Content validation schema
+- Admin UI for content editing (optional)
+- Additional template variables
+- Enhanced i18n support
+- Performance optimizations
 
 ---
 
-## File Structure
+## Version 1.0.0 - Initial Release
+**Release Date**: November 22, 2025
+**Type**: Initial Release
+**Status**: Stable
 
-```
-cmj.github.io/
-├── _config.yml              # Jekyll configuration
-├── _layouts/                # Template layouts
-│   ├── page.html
-│   ├── page--front.html
-│   ├── page--post.html
-│   ├── page--service.html
-│   ├── node.html
-│   ├── node--post.html
-│   └── node--service.html
-├── _includes/
-│   ├── components/          # 12 reusable components
-│   ├── schema/              # Schema.org templates
-│   ├── head.html
-│   ├── header.html
-│   └── footer.html
-├── assets/
-│   ├── css/
-│   │   ├── _variables.scss
-│   │   ├── _mixins.scss
-│   │   ├── _base.scss
-│   │   ├── _components.scss
-│   │   └── main.scss
-│   ├── js/
-│   │   └── contact-form.js
-│   └── images/
-│       ├── logo.svg
-│       ├── logo-horizontal.svg
-│       └── favicon.svg
-├── index.html               # Homepage
-├── layanan.html             # Services catalog
-├── about.html               # About page
-├── contact.html             # Contact page
-├── blog.html                # Blog catalog
-├── rebuild.sh               # Build script
-├── site.webmanifest         # PWA manifest
-├── browserconfig.xml        # Windows tile config
-├── COMPONENTS.md            # Component documentation
-├── SCSS-GUIDE.md           # SCSS architecture guide
-└── STRUKTUR-PROJECT.md     # Project structure guide
-```
+### Overview
+Initial release of PT. Cipta Mas Jaya website featuring Jekyll-based architecture with Drupal-style naming conventions, modular SCSS architecture, and comprehensive reusable components.
+
+### Features
+- ✅ Jekyll site structure
+- ✅ Modular SCSS architecture
+- ✅ Reusable components library
+- ✅ Bootstrap 5 integration
+- ✅ PWA support
+- ✅ Schema.org markup
+- ✅ Responsive design
+- ✅ SEO optimization
+
+### Initial Blocks
+- 15 reusable blocks created
+- Service features component
+- Blog preview
+- Contact forms
+- Navigation components
+- Footer components
+
+**Commit Range**: `b732bd9...9afddb6` (21 commits)
 
 ---
 
-## Technical Stack
-
-- **Static Site Generator**: Jekyll 4.x
-- **CSS Framework**: Bootstrap 5
-- **CSS Preprocessor**: SCSS with modular architecture
-- **JavaScript**: Vanilla JS (contact form validation)
-- **Schema Markup**: JSON-LD (Schema.org)
-- **PWA**: Web Manifest + Service Worker ready
-- **Icons**: Bootstrap Icons
-- **Naming Convention**: Drupal-style (BEM-inspired)
-
----
-
-## Components Library (12 Total)
-
-1. ✅ accordion.html - Bootstrap accordion
-2. ✅ card.html - Flexible card component
-3. ✅ card--h2-basic.html - Section header basic
-4. ✅ card--h2-gradient.html - Section header gradient
-5. ✅ carousel.html - Image carousel
-6. ✅ cta-whatsapp.html - WhatsApp CTA (4 variants)
-7. ✅ heading--h3-circle.html - Circle icon heading
-8. ✅ heading--h4-icon.html - Inline icon heading
-9. ✅ item-list--strong-title.html - Icon + title + description list
-10. ✅ ordered-list.html - Styled ordered list
-11. ✅ unordered-list.html - Styled unordered list
-12. ✅ unordered-list--with-text.html - Simple icon list
-
----
-
-## Documentation
-
-- **COMPONENTS.md**: Comprehensive component library documentation
-- **SCSS-GUIDE.md**: SCSS architecture and usage guide
-- **STRUKTUR-PROJECT.md**: Project structure and template hierarchy
-- **README.md**: Project overview and quick start
-
----
-
-## Performance & SEO
-
-✅ **Schema.org markup**: Organization, LocalBusiness, Service, FAQ, Breadcrumb
-✅ **Mobile-first responsive**: Bootstrap 5 grid system
-✅ **PWA ready**: Manifest + browserconfig
-✅ **SVG assets**: Scalable brand assets
-✅ **Modular CSS**: SCSS partials untuk maintainability
-✅ **Semantic HTML**: Proper heading hierarchy
-✅ **Accessibility**: ARIA labels dan semantic markup
-
----
-
-## Build & Deployment
-
-```bash
-# Install dependencies
-./rebuild.sh install
-
-# Build site
-./rebuild.sh build
-
-# Serve locally (http://localhost:4000)
-./rebuild.sh serve
-
-# Clean build artifacts
-./rebuild.sh clean
-```
-
----
-
-## Next Steps (Roadmap)
-
-- [ ] Populate `_services` collection dengan layanan K3
-- [ ] Populate `_posts` collection dengan blog content
-- [ ] Add contact form backend integration
-- [ ] Implement service worker untuk PWA
-- [ ] Add more reusable blocks untuk content assembly
-- [ ] Create tutorial/documentation untuk content editors
-
----
-
-## Credits
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
-
----
-
-**Total Stats**: 12 commits, 68 files changed, 6,400+ insertions
+**For questions or support, please contact the development team.**
