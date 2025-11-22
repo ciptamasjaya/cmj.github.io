@@ -8,47 +8,24 @@ custom_schema:
   - schema/schema--global.html
   - schema/schema--breadcrumb.html
   - schema/schema--service-catalog.html
+breadcrumbs:
+  - title: Beranda
+    url: /
+  - title: Layanan
+    url: /layanan
 ---
 
-<div class="container py-5">
+<!-- Breadcrumb Navigation -->
+{% include reusable/block--breadcrumb.html %}
 
-  <!-- Breadcrumb Navigation -->
-  <!-- {% include reusable/block--breadcrumb.html current_title="Layanan" %} -->
+<!-- Service Intro Section -->
+{% include reusable/block--service-intro.html %}
 
-  <!-- Service Intro Section -->
-  <section class="service-intro-section py-3">
-    <!-- {% include reusable/block--service-intro.html %} -->
-    <div class="text-center mb-5">
-      <h1 class="display-4 fw-bold">Halaman Layanan</h1>
-      <p class="lead">Daftar Layanan Riksa Uji K3</p>
-    </div>
-  </section>
+<!-- Service List Component -->
+{% include reusable/block--service-list.html %}
 
-  <!-- Service List Component (with Schema) -->
-  <!-- {% include reusable/block--service-list.html %} -->
-  <section class="service-list-section">
-    <div class="text-center">
-      <h2>Daftar Layanan</h2>
-      <p>Reusable block untuk service list akan ditambahkan di sini</p>
-    </div>
-  </section>
+<!-- Features Section -->
+{% include reusable/block--service-features.html %}
 
-  <!-- Features Section -->
-  <section class="service-features-section py-5">
-    <!-- {% include reusable/block--service-features.html %} -->
-    <div class="text-center">
-      <h2>Keunggulan Layanan Kami</h2>
-      <p>Reusable block untuk service features akan ditambahkan di sini</p>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section py-5 bg-primary text-white">
-    <!-- {% include reusable/block--cta-contact.html %} -->
-    <div class="text-center">
-      <h2>Tertarik dengan Layanan Kami?</h2>
-      <p>Hubungi kami sekarang untuk konsultasi gratis!</p>
-    </div>
-  </section>
-
-</div>
+<!-- CTA Section -->
+{% include reusable/block--cta-contact.html %}
