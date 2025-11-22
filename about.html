@@ -11,60 +11,19 @@ custom_schema:
 ---
 
 <!-- Breadcrumb Navigation -->
-<!-- {% include reusable/block--breadcrumb.html current_title="Tentang Kami" %} -->
+{% include reusable/block--breadcrumb.html %}
 
-<div class="container py-5">
+<!-- Company Profile Section -->
+{% include reusable/block--company-profile.html %}
 
-  <div class="row mb-5">
-    <div class="col-lg-8 mx-auto text-center">
-      <h1 class="display-4 fw-bold">Halaman Tentang Kami</h1>
-      <p class="lead">PT. Cipta Mas Jaya</p>
-    </div>
-  </div>
+<!-- Why Choose Us Section -->
+{% include reusable/block--why-choose-us.html %}
 
-  <!-- Company Profile Section -->
-  <section class="company-profile-section mb-5">
-    <!-- {% include reusable/block--company-profile.html %} -->
-    <div class="text-center">
-      <h2>Profil Perusahaan</h2>
-      <p>Reusable block untuk company profile akan ditambahkan di sini</p>
-    </div>
-  </section>
+<!-- Service Coverage Section -->
+{% include reusable/block--service-coverage.html %}
 
-  <!-- Why Choose Us Section -->
-  <section class="why-choose-section mb-5">
-    <!-- {% include reusable/block--why-choose-us.html %} -->
-    <div class="text-center">
-      <h2>Mengapa Memilih Kami?</h2>
-      <p>Reusable block untuk why choose us akan ditambahkan di sini</p>
-    </div>
-  </section>
+<!-- Commitment Section -->
+{% include reusable/block--commitment.html %}
 
-  <!-- Service Coverage Section -->
-  <section class="service-coverage-section mb-5">
-    <!-- {% include reusable/block--service-coverage.html %} -->
-    <div class="text-center">
-      <h2>Area Layanan</h2>
-      <p>Reusable block untuk service coverage akan ditambahkan di sini</p>
-    </div>
-  </section>
-
-  <!-- Commitment Section -->
-  <section class="commitment-section mb-5">
-    <!-- {% include reusable/block--commitment.html %} -->
-    <div class="text-center">
-      <h2>Komitmen Kami</h2>
-      <p>Reusable block untuk commitment akan ditambahkan di sini</p>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <section class="cta-section">
-    <!-- {% include reusable/block--cta-contact.html %} -->
-    <div class="text-center py-5 bg-primary text-white rounded">
-      <h2>Ingin Bekerja Sama dengan Kami?</h2>
-      <p>Hubungi kami untuk konsultasi gratis!</p>
-    </div>
-  </section>
-
-</div>
+<!-- Contact CTA -->
+{% include reusable/block--cta-contact.html %}

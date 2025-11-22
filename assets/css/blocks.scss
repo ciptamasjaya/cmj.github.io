@@ -1,0 +1,153 @@
+---
+# Styles for Reusable Blocks
+# PT. Cipta Mas Jaya
+---
+
+/* ============================================================================
+   BREADCRUMB BLOCK
+   ============================================================================ */
+.block--breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  font-family: "bootstrap-icons";
+  content: "\f285"; /* bi-chevron-right */
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.block--breadcrumb .breadcrumb-item a {
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #0a58ca;
+    text-decoration: underline;
+  }
+}
+
+.block--breadcrumb .breadcrumb-item.active {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .block--breadcrumb .breadcrumb {
+    font-size: 0.875rem;
+  }
+}
+
+/* ============================================================================
+   COMPANY PROFILE BLOCK
+   ============================================================================ */
+.block--company-profile .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+.block--company-profile a {
+  color: #0d6efd;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #0a58ca;
+  }
+}
+
+/* ============================================================================
+   WHY CHOOSE US BLOCK
+   ============================================================================ */
+.block--why-choose-us .card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+
+    .feature-icon i {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.block--why-choose-us .feature-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .block--why-choose-us .feature-icon i {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================================================
+   SERVICE COVERAGE BLOCK
+   ============================================================================ */
+.block--service-coverage .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+.block--service-coverage .coverage-item {
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+/* ============================================================================
+   COMMITMENT BLOCK
+   ============================================================================ */
+.block--commitment .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+
+    .commitment-icon i {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.block--commitment .commitment-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* ============================================================================
+   CTA CONTACT BLOCK
+   ============================================================================ */
+.block--cta-contact {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+}
+
+.block--cta-contact .btn {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ============================================================================
+   REUSABLE BLOCKS - Common Styles
+   ============================================================================ */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%) !important;
+}

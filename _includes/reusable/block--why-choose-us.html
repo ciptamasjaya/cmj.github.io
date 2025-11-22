@@ -1,0 +1,78 @@
+{% comment %}
+============================================================================
+Block: Why Choose Us
+============================================================================
+
+@file        _includes/reusable/block--why-choose-us.html
+@description Why choose us section dengan features dari _data/services.yml
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Auto-load features dari site.data.services.features
+- 3-column responsive grid
+- Bootstrap icons
+- Card dengan hover effect
+
+Data Source:
+------------
+Data diambil dari _data/services.yml:
+- site.data.services.features (array)
+  - title
+  - description
+  - icon
+
+Usage:
+------
+{% include reusable/block--why-choose-us.html %}
+
+No parameters needed - automatically uses site.data.services.features
+
+============================================================================
+{% endcomment %}
+
+<section class="block--why-choose-us py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h2 fw-bold mb-3">
+          <i class="bi bi-star text-warning me-2"></i>
+          Mengapa Memilih Kami?
+        </h2>
+        <p class="lead text-muted">
+          Kepercayaan Anda adalah prioritas kami. Berikut alasan mengapa ribuan perusahaan mempercayai layanan kami
+        </p>
+      </div>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="row g-4">
+      {% for feature in site.data.services.features %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body p-4 text-center">
+
+            <!-- Icon -->
+            <div class="feature-icon mb-3">
+              <i class="bi {{ feature.icon }} text-primary"></i>
+            </div>
+
+            <!-- Title -->
+            <h3 class="h5 fw-bold mb-3">{{ feature.title }}</h3>
+
+            <!-- Description -->
+            <p class="text-muted mb-0">{{ feature.description }}</p>
+
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+

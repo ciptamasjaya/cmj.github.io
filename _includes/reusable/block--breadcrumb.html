@@ -1,0 +1,85 @@
+{% comment %}
+============================================================================
+Block: Breadcrumb Navigation
+============================================================================
+
+@file        _includes/reusable/block--breadcrumb.html
+@description Bootstrap 5 breadcrumb navigation untuk halaman
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Bootstrap 5 breadcrumb component
+- Auto-generate dari page.breadcrumbs frontmatter
+- Support custom separator
+- Schema.org markup untuk SEO
+- Responsive design
+
+Usage:
+------
+1. Tambahkan frontmatter di halaman:
+
+---
+breadcrumbs:
+  - title: "Home"
+    url: "/"
+  - title: "Layanan"
+    url: "/layanan/"
+  - title: "Riksa Uji K3"
+    active: true
+---
+
+2. Include di halaman:
+{% include reusable/block--breadcrumb.html %}
+
+Parameters (Optional):
+---------------------
+- separator: Custom separator icon (default: bi-chevron-right)
+- background: Background color class (default: bg-light)
+- padding: Padding class (default: py-3)
+- margin: Margin class (default: mb-4)
+
+Example dengan custom parameters:
+{% include reusable/block--breadcrumb.html
+   separator="bi-arrow-right"
+   background="bg-white"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% if page.breadcrumbs %}
+{% assign separator = include.separator | default: "bi-chevron-right" %}
+{% assign background = include.background | default: "bg-light" %}
+{% assign padding = include.padding | default: "py-3" %}
+{% assign margin = include.margin | default: "mb-4" %}
+
+<div class="block--breadcrumb {{ background }} {{ padding }} {{ margin }}">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {% for item in page.breadcrumbs %}
+        <li class="breadcrumb-item{% if item.active %} active{% endif %}"
+            {% if item.active %}aria-current="page"{% endif %}
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem">
+
+          {% if item.active %}
+            <span itemprop="name">{{ item.title }}</span>
+          {% else %}
+            <a href="{{ item.url | relative_url }}" itemprop="item">
+              <span itemprop="name">{{ item.title }}</span>
+            </a>
+          {% endif %}
+
+          <meta itemprop="position" content="{{ forloop.index }}" />
+        </li>
+        {% endfor %}
+      </ol>
+    </nav>
+  </div>
+</div>
+{% endif %}

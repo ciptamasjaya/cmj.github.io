@@ -1,0 +1,173 @@
+{% comment %}
+============================================================================
+Block: Service Coverage Area
+============================================================================
+
+@file        _includes/reusable/block--service-coverage.html
+@description Service coverage area dengan map dan list area layanan
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Coverage area dari site.business.coverage
+- List area dengan icons
+- Responsive layout
+
+Data Source:
+------------
+Data diambil dari _config.yml:
+- site.business.coverage
+- site.business.location
+
+Usage:
+------
+{% include reusable/block--service-coverage.html %}
+
+No parameters needed - automatically uses site.business data
+
+============================================================================
+{% endcomment %}
+
+<section class="block--service-coverage py-5 bg-light">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h2 fw-bold mb-3">
+          <i class="bi bi-geo-alt text-danger me-2"></i>
+          Area Layanan
+        </h2>
+        <p class="lead text-muted">
+          Kami melayani seluruh wilayah Indonesia dengan fokus utama di:
+        </p>
+      </div>
+    </div>
+
+    <!-- Coverage Content -->
+    <div class="row align-items-center">
+
+      <!-- Left Column - Coverage List -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+
+            <h3 class="h5 fw-bold mb-4">
+              <i class="bi bi-map text-primary me-2"></i>
+              Jangkauan Wilayah
+            </h3>
+
+            <!-- Coverage Areas -->
+            <div class="coverage-list">
+
+              <!-- Banten -->
+              <div class="coverage-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block">Banten</strong>
+                    <small class="text-muted">Serang, Cilegon, Tangerang, Pandeglang, Lebak</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DKI Jakarta -->
+              <div class="coverage-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block">DKI Jakarta</strong>
+                    <small class="text-muted">Jakarta Pusat, Utara, Selatan, Timur, Barat</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Jawa Barat -->
+              <div class="coverage-item mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                  <div>
+                    <strong class="d-block">Jawa Barat</strong>
+                    <small class="text-muted">Bogor, Bekasi, Depok, Bandung, Karawang</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Seluruh Indonesia -->
+              <div class="coverage-item">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-globe text-primary me-3 mt-1 fs-5"></i>
+                  <div>
+                    <strong class="d-block">Seluruh Indonesia</strong>
+                    <small class="text-muted">Melayani seluruh wilayah Indonesia dengan mobilitas tinggi</small>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Info -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm bg-primary text-white">
+          <div class="card-body p-5">
+
+            <h3 class="h4 fw-bold mb-4">
+              <i class="bi bi-info-circle me-2"></i>
+              Informasi Layanan
+            </h3>
+
+            <!-- Headquarters -->
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-building me-3 fs-4"></i>
+                <div>
+                  <strong class="d-block mb-1">Kantor Pusat</strong>
+                  <p class="mb-0 opacity-75">
+                    {{ site.business.address.street }},<br>
+                    {{ site.business.address.city }}, {{ site.business.address.province }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Service -->
+            <div class="mb-4">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-truck me-3 fs-4"></i>
+                <div>
+                  <strong class="d-block mb-1">Mobile Service</strong>
+                  <p class="mb-0 opacity-75">
+                    Tim kami siap datang ke lokasi Anda di seluruh Indonesia
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Response Time -->
+            <div>
+              <div class="d-flex align-items-start">
+                <i class="bi bi-clock me-3 fs-4"></i>
+                <div>
+                  <strong class="d-block mb-1">Response Time</strong>
+                  <p class="mb-0 opacity-75">
+                    Respon cepat maksimal 24 jam untuk wilayah Jabodetabek dan Banten
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+

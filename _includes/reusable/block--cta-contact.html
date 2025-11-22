@@ -1,0 +1,118 @@
+{% comment %}
+============================================================================
+Block: CTA Contact
+============================================================================
+
+@file        _includes/reusable/block--cta-contact.html
+@description Call-to-action untuk kontak dengan WhatsApp dan phone
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- CTA section dengan gradient background
+- WhatsApp dan Phone buttons
+- Responsive layout
+- Auto-load contact info dari _config.yml
+
+Data Source:
+------------
+Data diambil dari _config.yml:
+- site.business.whatsapp
+- site.business.phone
+
+Usage:
+------
+{% include reusable/block--cta-contact.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--cta-contact py-5 bg-gradient-primary text-white">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Column - Message -->
+      <div class="col-lg-8 mb-4 mb-lg-0">
+        <h2 class="h2 fw-bold mb-3">
+          <i class="bi bi-chat-dots me-2"></i>
+          Ingin Bekerja Sama dengan Kami?
+        </h2>
+        <p class="lead mb-0 opacity-90">
+          Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk kebutuhan riksa uji K3 perusahaan Anda
+        </p>
+      </div>
+
+      <!-- Right Column - CTA Buttons -->
+      <div class="col-lg-4 text-lg-end">
+        <div class="d-grid gap-3">
+
+          <!-- WhatsApp Button -->
+          <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20ingin%20konsultasi%20tentang%20layanan%20riksa%20uji%20K3"
+             class="btn btn-success btn-lg"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="bi bi-whatsapp me-2"></i>
+            WhatsApp Kami
+          </a>
+
+          <!-- Phone Button -->
+          <a href="tel:{{ site.business.phone }}"
+             class="btn btn-light btn-lg">
+            <i class="bi bi-telephone me-2"></i>
+            Telepon Kami
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Additional Info -->
+    <div class="row mt-5">
+      <div class="col-12">
+        <div class="border-top border-light opacity-25 pt-4 mt-2">
+          <div class="row text-center text-md-start">
+
+            <!-- Operating Hours -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                <i class="bi bi-clock me-2 fs-5"></i>
+                <div>
+                  <small class="d-block opacity-75">Jam Operasional</small>
+                  <strong>Senin - Jumat: 08:00 - 17:00</strong><br>
+                  <strong>Sabtu: 08:00 - 12:00</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                <i class="bi bi-envelope me-2 fs-5"></i>
+                <div>
+                  <small class="d-block opacity-75">Email</small>
+                  <strong>{{ site.business.email }}</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="col-md-4">
+              <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                <i class="bi bi-geo-alt me-2 fs-5"></i>
+                <div>
+                  <small class="d-block opacity-75">Lokasi</small>
+                  <strong>{{ site.business.location }}</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
