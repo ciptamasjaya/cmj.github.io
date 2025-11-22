@@ -1,0 +1,78 @@
+# ============================================================================
+# CTA Contact Data
+# ============================================================================
+#
+# @file        _data/cta_contact.yml
+# @description Data untuk block--cta-contact.html
+# @version     1.0.0
+# @date        2025-11-23
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--cta-contact.html
+#
+# Structure:
+# ----------
+# section:           Section settings (background, text color)
+# content:           Main heading dan description
+# buttons:           2 CTA buttons (WhatsApp dan Phone)
+# additional_info:   Footer info dengan 3 items (Hours, Email, Location)
+#
+# Template Variables Support:
+# ---------------------------
+# {company_name} → site.business.name
+#
+# Notes:
+# ------
+# Values (actual contact data) tetap dari site.business.*
+# File ini hanya menyimpan labels dan UI text
+#
+# ============================================================================
+
+section:
+  class: "bg-gradient-primary text-white"
+  py: "py-5"
+
+content:
+  heading:
+    icon: "bi-chat-dots"
+    text: "Ingin Bekerja Sama dengan Kami?"
+  description: "Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk kebutuhan riksa uji K3 perusahaan Anda"
+  description_class: "opacity-90"
+
+buttons:
+  - type: "whatsapp"
+    text: "WhatsApp Kami"
+    icon: "bi-whatsapp"
+    class: "btn-success"
+    whatsapp_message: "Halo {company_name}, saya ingin konsultasi tentang layanan riksa uji K3"
+    target: "_blank"
+    rel: "noopener noreferrer"
+
+  - type: "phone"
+    text: "Telepon Kami"
+    icon: "bi-telephone"
+    class: "btn-light"
+
+additional_info:
+  show: true
+  border_class: "border-top border-light opacity-25"
+
+  items:
+    - icon: "bi-clock"
+      label: "Jam Operasional"
+      values:
+        - "Senin - Jumat: 08:00 - 17:00"
+        - "Sabtu: 08:00 - 12:00"
+      col_class: "col-md-4"
+
+    - icon: "bi-envelope"
+      label: "Email"
+      value_path: "site.business.email"
+      col_class: "col-md-4"
+
+    - icon: "bi-geo-alt"
+      label: "Lokasi"
+      value_path: "site.business.location"
+      col_class: "col-md-4"
