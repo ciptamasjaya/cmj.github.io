@@ -5,32 +5,26 @@ Business Info Block
 
 @file        _includes/reusable/block--business-info.html
 @description Comprehensive business information with modern design
-@version     1.0.0
+@version     1.0.1
 @date        2025-11-22
 @author      arisciwek (PT. Cipta Mas Jaya)
 
-Features:
----------
-- Modern card design with gradient header
-- Comprehensive business details
-- Icon-based information display
-- Two-column responsive grid
-- Operating hours with availability badge
-- Service highlights and certifications
-- Coverage area display
-
 Data Source:
 ------------
-Uses site.business data from _config.yml:
-- site.business.name
-- site.business.owner
-- site.business.location
-- site.business.address
-- site.business.coverage
-- site.business.phone
-- site.business.email
-- site.business.openingHours
-- site.business.services
+Labels dari:
+- _data/business_info.yml
+
+Values dari:
+- site.business.* (_config.yml)
+
+Features:
+---------
+- Data-driven labels and UI text
+- Template variable support ({company_name}, {founding_year})
+- Modern card design with gradient header
+- Icon-based information display
+- Two-column responsive grid
+- Dynamic certifications and footer
 
 Usage:
 ------
@@ -45,12 +39,15 @@ Usage:
     <!-- Section Header -->
     <div class="row mb-4">
       <div class="col-lg-10 mx-auto text-center">
+        {% assign header_desc = site.data.business_info.header.description_template
+           | replace: '{company_name}', site.business.name %}
+
         <h2 class="h3 fw-bold mb-3">
-          <i class="bi bi-building text-primary me-2"></i>
-          Informasi Perusahaan
+          <i class="bi {{ site.data.business_info.header.icon }} {{ site.data.business_info.header.icon_color }} me-2"></i>
+          {{ site.data.business_info.header.title }}
         </h2>
         <p class="text-muted">
-          Informasi lengkap tentang {{ site.business.name }}
+          {{ header_desc }}
         </p>
       </div>
     </div>
@@ -64,11 +61,11 @@ Usage:
           <div class="card-header bg-gradient-primary text-white py-3">
             <div class="d-flex align-items-center justify-content-between">
               <h3 class="h5 mb-0">
-                <i class="bi bi-info-circle me-2"></i>
-                Detail Bisnis
+                <i class="bi {{ site.data.business_info.card_header.icon }} me-2"></i>
+                {{ site.data.business_info.card_header.title }}
               </h3>
-              <span class="badge bg-success">
-                <i class="bi bi-check-circle me-1"></i>Terverifikasi
+              <span class="badge {{ site.data.business_info.card_header.badge_color }}">
+                <i class="bi {{ site.data.business_info.card_header.badge_icon }} me-1"></i>{{ site.data.business_info.card_header.badge_text }}
               </span>
             </div>
           </div>
@@ -81,10 +78,10 @@ Usage:
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-building-fill text-primary"></i>
+                    <i class="bi {{ site.data.business_info.fields.company_name.icon }} {{ site.data.business_info.fields.company_name.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-1">Nama Perusahaan</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-1">{{ site.data.business_info.fields.company_name.label }}</h4>
                     <p class="mb-0 fw-bold">{{ site.business.name }}</p>
                   </div>
                 </div>
@@ -95,10 +92,10 @@ Usage:
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-person-badge text-success"></i>
+                    <i class="bi {{ site.data.business_info.fields.owner.icon }} {{ site.data.business_info.fields.owner.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-1">Penanggung Jawab</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-1">{{ site.data.business_info.fields.owner.label }}</h4>
                     <p class="mb-0 fw-bold">{{ site.business.owner }}</p>
                   </div>
                 </div>
@@ -109,10 +106,10 @@ Usage:
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-telephone-fill text-info"></i>
+                    <i class="bi {{ site.data.business_info.fields.phone.icon }} {{ site.data.business_info.fields.phone.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-1">Telepon</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-1">{{ site.data.business_info.fields.phone.label }}</h4>
                     <p class="mb-0">
                       <a href="tel:{{ site.business.phone }}" class="text-decoration-none fw-bold">
                         {{ site.business.phone }}
@@ -126,10 +123,10 @@ Usage:
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-envelope-fill text-warning"></i>
+                    <i class="bi {{ site.data.business_info.fields.email.icon }} {{ site.data.business_info.fields.email.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-1">Email</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-1">{{ site.data.business_info.fields.email.label }}</h4>
                     <p class="mb-0">
                       <a href="mailto:{{ site.business.email }}" class="text-decoration-none fw-bold">
                         {{ site.business.email }}
@@ -143,10 +140,10 @@ Usage:
               <div class="col-12">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-geo-alt-fill text-danger"></i>
+                    <i class="bi {{ site.data.business_info.fields.address.icon }} {{ site.data.business_info.fields.address.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-1">Alamat Lengkap</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-1">{{ site.data.business_info.fields.address.label }}</h4>
                     <p class="mb-0 fw-bold">
                       {{ site.business.address.street }}<br>
                       {{ site.business.address.city }}, {{ site.business.address.province }} {{ site.business.address.postalCode }}<br>
@@ -160,18 +157,18 @@ Usage:
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-clock-fill text-primary"></i>
+                    <i class="bi {{ site.data.business_info.fields.opening_hours.icon }} {{ site.data.business_info.fields.opening_hours.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-2">Jam Operasional</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-2">{{ site.data.business_info.fields.opening_hours.label }}</h4>
                     {% for hours in site.business.openingHours %}
                     <p class="mb-1 small">
                       <i class="bi bi-chevron-right text-success me-1"></i>
                       {{ hours }}
                     </p>
                     {% endfor %}
-                    <span class="badge bg-success mt-2">
-                      <i class="bi bi-lightning-fill me-1"></i>Fast Response
+                    <span class="badge {{ site.data.business_info.fields.opening_hours.badge_color }} mt-2">
+                      <i class="bi {{ site.data.business_info.fields.opening_hours.badge_icon }} me-1"></i>{{ site.data.business_info.fields.opening_hours.badge_text }}
                     </span>
                   </div>
                 </div>
@@ -182,13 +179,13 @@ Usage:
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-shield-check text-success"></i>
+                    <i class="bi {{ site.data.business_info.fields.services.icon }} {{ site.data.business_info.fields.services.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-2">Layanan Utama</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-2">{{ site.data.business_info.fields.services.label }}</h4>
                     {% for service in site.business.services %}
                     <p class="mb-1 small">
-                      <i class="bi {{ service.icon | default: 'bi-check-circle-fill' }} text-success me-1"></i>
+                      <i class="bi {{ service.icon | default: site.data.business_info.fields.services.default_service_icon }} text-success me-1"></i>
                       {{ service.name }}
                     </p>
                     {% endfor %}
@@ -201,14 +198,14 @@ Usage:
               <div class="col-12">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-truck text-info"></i>
+                    <i class="bi {{ site.data.business_info.fields.coverage.icon }} {{ site.data.business_info.fields.coverage.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-1">Area Layanan</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-1">{{ site.data.business_info.fields.coverage.label }}</h4>
                     <p class="mb-0 fw-bold">{{ site.business.coverage }}</p>
                     <p class="mb-0 small text-muted mt-1">
                       <i class="bi bi-info-circle me-1"></i>
-                      Tim kami siap melayani dengan mobilitas tinggi ke seluruh Indonesia
+                      {{ site.data.business_info.fields.coverage.additional_info }}
                     </p>
                   </div>
                 </div>
@@ -218,23 +215,16 @@ Usage:
               <div class="col-12">
                 <div class="info-item">
                   <div class="info-icon">
-                    <i class="bi bi-award-fill text-warning"></i>
+                    <i class="bi {{ site.data.business_info.certifications.icon }} {{ site.data.business_info.certifications.icon_color }}"></i>
                   </div>
                   <div class="info-content">
-                    <h4 class="h6 fw-semibold text-muted mb-2">Sertifikasi & Legalitas</h4>
+                    <h4 class="h6 fw-semibold text-muted mb-2">{{ site.data.business_info.certifications.title }}</h4>
                     <div class="d-flex flex-wrap gap-2">
-                      <span class="badge bg-primary">
-                        <i class="bi bi-check-circle me-1"></i>Kemnaker RI
+                      {% for badge in site.data.business_info.certifications.badges %}
+                      <span class="badge {{ badge.color }}">
+                        <i class="bi {{ badge.icon }} me-1"></i>{{ badge.text }}
                       </span>
-                      <span class="badge bg-success">
-                        <i class="bi bi-check-circle me-1"></i>ISO Certified
-                      </span>
-                      <span class="badge bg-info">
-                        <i class="bi bi-check-circle me-1"></i>Inspector Bersertifikat
-                      </span>
-                      <span class="badge bg-warning text-dark">
-                        <i class="bi bi-check-circle me-1"></i>Peralatan Terkalibrasi
-                      </span>
+                      {% endfor %}
                     </div>
                   </div>
                 </div>
@@ -246,24 +236,20 @@ Usage:
           <!-- Card Footer -->
           <div class="card-footer bg-light border-0 py-3">
             <div class="row text-center">
-              <div class="col-md-4 mb-2 mb-md-0">
+              {% for item in site.data.business_info.footer %}
+                {% if item.text_template %}
+                  {% assign footer_text = item.text_template | replace: '{founding_year}', site.business.foundingDate | date: "%Y" %}
+                {% else %}
+                  {% assign footer_text = item.text %}
+                {% endif %}
+
+              <div class="col-md-4{% unless forloop.last %} mb-2 mb-md-0{% endunless %}">
                 <small class="text-muted">
-                  <i class="bi bi-star-fill text-warning me-1"></i>
-                  <strong>Terpercaya</strong> sejak {{ site.business.foundingDate | date: "%Y" }}
+                  <i class="bi {{ item.icon }} {{ item.icon_color }} me-1"></i>
+                  {{ footer_text }}
                 </small>
               </div>
-              <div class="col-md-4 mb-2 mb-md-0">
-                <small class="text-muted">
-                  <i class="bi bi-people-fill text-primary me-1"></i>
-                  <strong>Tim Profesional</strong> Bersertifikat
-                </small>
-              </div>
-              <div class="col-md-4">
-                <small class="text-muted">
-                  <i class="bi bi-shield-check text-success me-1"></i>
-                  <strong>Laporan Lengkap</strong> & Dokumentasi
-                </small>
-              </div>
+              {% endfor %}
             </div>
           </div>
 

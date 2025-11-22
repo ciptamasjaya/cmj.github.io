@@ -1,0 +1,121 @@
+# ============================================================================
+# Business Info Data
+# ============================================================================
+#
+# @file        _data/business_info.yml
+# @description Data untuk block--business-info.html (labels only, values from site.business)
+# @version     1.0.0
+# @date        2025-11-22
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--business-info.html
+#
+# Structure:
+# ----------
+# header:         Section header
+# card_header:    Card header dengan badge
+# fields:         Field labels (12 fields)
+# certifications: Badge items (4 badges)
+# footer:         Footer stats (3 items)
+#
+# Notes:
+# ------
+# Values (actual data) tetap dari site.business.*
+# File ini hanya menyimpan labels dan UI text
+#
+# ============================================================================
+
+header:
+  title: "Informasi Perusahaan"
+  icon: "bi-building"
+  icon_color: "text-primary"
+  description_template: "Informasi lengkap tentang {company_name}"
+
+card_header:
+  title: "Detail Bisnis"
+  icon: "bi-info-circle"
+  badge_text: "Terverifikasi"
+  badge_icon: "bi-check-circle"
+  badge_color: "bg-success"
+
+fields:
+  company_name:
+    label: "Nama Perusahaan"
+    icon: "bi-building-fill"
+    icon_color: "text-primary"
+
+  owner:
+    label: "Penanggung Jawab"
+    icon: "bi-person-badge"
+    icon_color: "text-success"
+
+  phone:
+    label: "Telepon"
+    icon: "bi-telephone-fill"
+    icon_color: "text-info"
+
+  email:
+    label: "Email"
+    icon: "bi-envelope-fill"
+    icon_color: "text-warning"
+
+  address:
+    label: "Alamat Lengkap"
+    icon: "bi-geo-alt-fill"
+    icon_color: "text-danger"
+
+  opening_hours:
+    label: "Jam Operasional"
+    icon: "bi-clock-fill"
+    icon_color: "text-primary"
+    badge_text: "Fast Response"
+    badge_icon: "bi-lightning-fill"
+    badge_color: "bg-success"
+
+  services:
+    label: "Layanan Utama"
+    icon: "bi-shield-check"
+    icon_color: "text-success"
+    default_service_icon: "bi-check-circle-fill"
+
+  coverage:
+    label: "Area Layanan"
+    icon: "bi-truck"
+    icon_color: "text-info"
+    additional_info: "Tim kami siap melayani dengan mobilitas tinggi ke seluruh Indonesia"
+
+certifications:
+  title: "Sertifikasi & Legalitas"
+  icon: "bi-award-fill"
+  icon_color: "text-warning"
+  badges:
+    - text: "Kemnaker RI"
+      color: "bg-primary"
+      icon: "bi-check-circle"
+
+    - text: "ISO Certified"
+      color: "bg-success"
+      icon: "bi-check-circle"
+
+    - text: "Inspector Bersertifikat"
+      color: "bg-info"
+      icon: "bi-check-circle"
+
+    - text: "Peralatan Terkalibrasi"
+      color: "bg-warning text-dark"
+      icon: "bi-check-circle"
+
+footer:
+  - icon: "bi-star-fill"
+    icon_color: "text-warning"
+    text_template: "<strong>Terpercaya</strong> sejak {founding_year}"
+
+  - icon: "bi-people-fill"
+    icon_color: "text-primary"
+    text: "<strong>Tim Profesional</strong> Bersertifikat"
+
+  - icon: "bi-shield-check"
+    icon_color: "text-success"
+    text: "<strong>Laporan Lengkap</strong> & Dokumentasi"
