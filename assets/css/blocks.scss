@@ -525,6 +525,22 @@
 /* ============================================================================
    SERVICE INTRO BLOCK
    ============================================================================ */
+.block--service-intro .service-intro-heading {
+  position: relative;
+}
+
+.block--service-intro .service-intro-heading i {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-intro .service-intro-heading:hover i {
+  transform: scale(1.1) rotate(-5deg);
+  filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+}
+
 .block--service-intro .feature-badge {
   display: inline-flex;
   align-items: center;
@@ -546,6 +562,15 @@
 .block--service-intro .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--service-intro .card i {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-intro .card:hover i {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
 /* ============================================================================
@@ -626,11 +651,17 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0 auto;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .block--service-features .process-step {
   position: relative;
   padding: 0 15px;
+}
+
+.block--service-features .process-step:hover .step-number {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
