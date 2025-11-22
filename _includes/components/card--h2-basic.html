@@ -23,16 +23,23 @@ Parameters:
 - title: H2 text (required)
 - subtitle: Optional subtitle/description text
 - icon: Bootstrap icon class (optional, e.g., "bi-cash-coin")
-- icon_size: Icon font size (default: "2.5rem")
+- icon_size: "sm" | "md" | "lg" | "xl" | "2xl" (default: "2xl")
+  * sm  = 1rem (16px)
+  * md  = 1.5rem (24px)
+  * lg  = 2rem (32px)
+  * xl  = 2.5rem (40px)
+  * 2xl = 3rem (48px)
 - gradient: Gradient preset (default: "green")
-  Options: "green", "blue", "red", "purple", "orange", "custom"
+  Options: "green" | "blue" | "red" | "purple" | "orange" | "primary" | "custom"
 - custom_gradient: Custom gradient CSS jika gradient="custom"
 - text_color: Text color class (default: "text-white")
 - spacing: Margin spacing (default: "my-5")
 - shadow: Shadow class (default: "shadow-sm")
+  Options: "shadow-sm" | "shadow" | "shadow-lg"
 - border: Border class (optional)
 - padding: Padding class (default: "py-4 px-3")
 - text_align: Text alignment (default: "center")
+  Options: "start" | "center" | "end"
 
 Gradient Presets:
 -----------------
@@ -50,13 +57,16 @@ Basic usage (green gradient):
    title="Harga dan Pengiriman"
    subtitle="Harga terjangkau dengan sistem pembayaran COD yang aman"
    icon="bi-cash-coin"
+   icon_size="2xl"
+   gradient="green"
 %}
 
-With custom gradient:
+With blue gradient:
 {% include components/card--h2-basic.html
    title="Layanan Kami"
    subtitle="Jasa riksa uji K3 terpercaya"
    icon="bi-shield-check"
+   icon_size="xl"
    gradient="blue"
 %}
 
@@ -89,7 +99,7 @@ With left alignment:
 {% assign h2_title = include.title %}
 {% assign h2_subtitle = include.subtitle %}
 {% assign h2_icon = include.icon %}
-{% assign icon_size = include.icon_size | default: "2.5rem" %}
+{% assign icon_size = include.icon_size | default: "2xl" %}
 {% assign gradient_preset = include.gradient | default: "green" %}
 {% assign custom_gradient = include.custom_gradient %}
 {% assign text_color = include.text_color | default: "text-white" %}
@@ -119,17 +129,17 @@ With left alignment:
     {% assign gradient_css = "linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)" %}
 {% endcase %}
 
-<div class="{{ spacing }}">
-  <div class="card border-0 {{ shadow }} {{ border }}">
-    <div class="card-body {{ text_color }} text-{{ text_align }} {{ padding }}" style="background: {{ gradient_css }};">
+<div class="component-h2-card {{ spacing }}">
+  <div class="component-h2-card__wrapper card border-0 {{ shadow }} {{ border }}">
+    <div class="component-h2-card__body card-body {{ text_color }} text-{{ text_align }} {{ padding }}" style="background: {{ gradient_css }};">
       {% if h2_icon %}
-      <i class="bi {{ h2_icon }} mb-2" style="font-size: {{ icon_size }};"></i>
+      <i class="component-h2-card__icon component-h2-card__icon--{{ icon_size }} bi {{ h2_icon }} mb-2"></i>
       {% endif %}
 
-      <h2 class="h2 mb-0 fw-bold {{ text_color }}">{{ h2_title }}</h2>
+      <h2 class="component-h2-card__title h2 mb-0 fw-bold {{ text_color }}">{{ h2_title }}</h2>
 
       {% if h2_subtitle %}
-      <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+      <p class="component-h2-card__subtitle mb-0 mt-2 small">
         <i class="bi bi-shield-check me-1"></i>
         {{ h2_subtitle }}
         <i class="bi bi-shield-check ms-1"></i>
@@ -138,9 +148,3 @@ With left alignment:
     </div>
   </div>
 </div>
-
-<style>
-.card-body i.bi {
-  display: inline-block;
-}
-</style>

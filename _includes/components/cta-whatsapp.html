@@ -90,64 +90,15 @@ Inline style:
 {% if cta_style == "floating" %}
 <!-- Floating WhatsApp Button -->
 <a href="{{ wa_url }}"
-   class="whatsapp-float whatsapp-float-{{ position }}"
+   class="component-whatsapp-float component-whatsapp-float--{{ position }} {% if icon_only %}component-whatsapp-float--icon-only{% else %}component-whatsapp-float--with-text{% endif %}"
    target="_blank"
    rel="noopener"
    aria-label="Hubungi via WhatsApp">
   <i class="bi bi-whatsapp"></i>
   {% unless icon_only %}
-  <span class="wa-float-text">Chat WhatsApp</span>
+  <span class="component-whatsapp-float__text">Chat WhatsApp</span>
   {% endunless %}
 </a>
-
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  z-index: 1000;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: white;
-  width: {% if icon_only %}60px{% else %}auto{% endif %};
-  height: 60px;
-  border-radius: {% if icon_only %}50%{% else %}30px{% endif %};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: {% if icon_only %}0{% else %}0 1.5rem{% endif %};
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-weight: 600;
-}
-.whatsapp-float-right {
-  right: 20px;
-}
-.whatsapp-float-left {
-  left: 20px;
-}
-.whatsapp-float:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  color: white;
-}
-.whatsapp-float i {
-  font-size: 1.8rem;
-}
-.wa-float-text {
-  white-space: nowrap;
-}
-@media (max-width: 768px) {
-  .whatsapp-float {
-    width: 60px;
-    border-radius: 50%;
-    padding: 0;
-  }
-  .wa-float-text {
-    display: none;
-  }
-}
-</style>
 
 {% elsif cta_style == "button" %}
 <!-- WhatsApp Button -->
@@ -160,45 +111,45 @@ Inline style:
 
 {% elsif cta_style == "card" %}
 <!-- WhatsApp Card -->
-<div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);">
+<div class="component-whatsapp-card card border-0 shadow-lg">
   <div class="card-body text-white text-center p-4">
-    <i class="bi bi-whatsapp mb-3" style="font-size: 3rem;"></i>
+    <i class="component-whatsapp-card__icon bi bi-whatsapp mb-3"></i>
     {% if cta_title %}
-    <h3 class="h4 fw-bold mb-2">{{ cta_title }}</h3>
+    <h3 class="component-whatsapp-card__title h4 fw-bold mb-2">{{ cta_title }}</h3>
     {% endif %}
     {% if cta_description %}
-    <p class="mb-3" style="opacity: 0.95;">{{ cta_description }}</p>
+    <p class="component-whatsapp-card__description mb-3">{{ cta_description }}</p>
     {% endif %}
     {% if show_phone %}
-    <p class="h4 fw-bold mb-3">{{ site.business.phone }}</p>
+    <p class="component-whatsapp-card__phone h4 fw-bold mb-3">{{ site.business.phone }}</p>
     {% endif %}
     <a href="{{ wa_url }}"
-       class="btn btn-light btn-lg px-5"
+       class="component-whatsapp-card__button btn btn-light btn-lg px-5"
        target="_blank"
        rel="noopener">
       <i class="bi bi-whatsapp me-2"></i>{{ button_text }}
     </a>
-    <p class="small mt-2 mb-0" style="opacity: 0.9;">
-      <i class="bi bi-clock-fill me-1"></i>Respon cepat 24/7
+    <p class="component-whatsapp-card__footer-note small mt-2 mb-0">
+      <i class="bi bi-clock-fill"></i>Respon cepat 24/7
     </p>
   </div>
 </div>
 
 {% elsif cta_style == "inline" %}
 <!-- WhatsApp Inline -->
-<div class="d-flex align-items-center gap-3 p-3 bg-light rounded">
-  <div class="flex-shrink-0">
-    <i class="bi bi-whatsapp text-success" style="font-size: 2.5rem;"></i>
+<div class="component-whatsapp-inline">
+  <div class="component-whatsapp-inline__icon-wrapper">
+    <i class="component-whatsapp-inline__icon bi bi-whatsapp"></i>
   </div>
-  <div class="flex-grow-1">
+  <div class="component-whatsapp-inline__content">
     {% if cta_title %}
-    <h5 class="mb-1">{{ cta_title }}</h5>
+    <h5 class="component-whatsapp-inline__title">{{ cta_title }}</h5>
     {% endif %}
     {% if cta_description %}
-    <p class="text-muted mb-0 small">{{ cta_description }}</p>
+    <p class="component-whatsapp-inline__description">{{ cta_description }}</p>
     {% endif %}
   </div>
-  <div class="flex-shrink-0">
+  <div class="component-whatsapp-inline__action">
     <a href="{{ wa_url }}"
        class="btn btn-{{ button_color }} btn-{{ button_size }}"
        target="_blank"

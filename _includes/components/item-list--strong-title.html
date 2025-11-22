@@ -24,7 +24,12 @@ Parameters:
 - description: Item description text (optional)
 - icon: Bootstrap icon class (required)
 - icon_color: Icon color class (default: "text-primary")
-- icon_size: Icon font size (default: "1.5rem")
+- icon_size: "sm" | "md" | "lg" | "xl" | "2xl" (default: "md")
+  * sm  = 1rem (16px)
+  * md  = 1.5rem (24px)
+  * lg  = 2rem (32px)
+  * xl  = 2.5rem (40px)
+  * 2xl = 3rem (48px)
 - title_color: Title text color (default: "text-wood")
 - desc_color: Description text color (default: "text-muted")
 - desc_size: Description text size (default: "small")
@@ -46,7 +51,7 @@ With custom icon color and size:
    description="Terdaftar dan diakui oleh Kementerian Ketenagakerjaan RI"
    icon="bi-award-fill"
    icon_color="text-warning"
-   icon_size="2rem"
+   icon_size="lg"
 %}
 
 Without description (title only):
@@ -104,21 +109,21 @@ In a loop (multiple items):
 {% assign item_description = include.description %}
 {% assign item_icon = include.icon %}
 {% assign icon_color = include.icon_color | default: "text-primary" %}
-{% assign icon_size = include.icon_size | default: "1.5rem" %}
+{% assign icon_size = include.icon_size | default: "md" %}
 {% assign title_color = include.title_color | default: "text-wood" %}
 {% assign desc_color = include.desc_color | default: "text-muted" %}
 {% assign desc_size = include.desc_size | default: "small" %}
 {% assign spacing = include.spacing | default: "mb-3" %}
 {% assign icon_spacing = include.icon_spacing | default: "me-3" %}
 
-<div class="d-flex {{ spacing }}">
-  <div class="{{ icon_spacing }}" style="flex-shrink: 0;">
-    <i class="bi {{ item_icon }} {{ icon_color }}" style="font-size: {{ icon_size }};"></i>
+<div class="component-item-list {{ spacing }}">
+  <div class="component-item-list__icon-wrapper {{ icon_spacing }}">
+    <i class="component-item-list__icon component-item-list__icon--{{ icon_size }} bi {{ item_icon }} {{ icon_color }}"></i>
   </div>
-  <div>
+  <div class="component-item-list__content">
     <strong class="{{ title_color }}">{{ item_title }}</strong>
     {% if item_description %}
-    <p class="mb-0 {{ desc_color }} {{ desc_size }}">{{ item_description }}</p>
+    <p class="{{ desc_color }} {{ desc_size }}">{{ item_description }}</p>
     {% endif %}
   </div>
 </div>

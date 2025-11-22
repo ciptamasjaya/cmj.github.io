@@ -24,10 +24,15 @@ Parameters:
 - title: Heading text (required)
 - icon: Bootstrap icon class (required, e.g., "bi-grid-3x3")
 - color: Color theme (default: "success")
-  Options: "success", "primary", "danger", "warning", "info", "secondary", "dark"
-- icon_size: Icon font size (default: "1.5rem")
-- circle_size: Circle width/height (default: "50px")
+  Options: "success" | "primary" | "danger" | "warning" | "info" | "secondary" | "dark"
+- size: Circle and icon size preset (default: "md")
+  Options: "sm" | "md" | "lg" | "xl"
+  * sm = 40px circle, 1rem icon
+  * md = 50px circle, 1.5rem icon
+  * lg = 60px circle, 2rem icon
+  * xl = 80px circle, 2.5rem icon
 - heading_level: HTML heading tag (default: "h3")
+  Options: "h3" | "h4" | "h5" | "h6"
 - heading_class: Additional heading classes (default: "h6 mb-0")
 - text_color: Text color class (default: "text-wood")
 - spacing: Margin bottom (default: "mb-3")
@@ -45,10 +50,11 @@ Color Themes:
 
 Usage:
 ------
-Basic (green theme):
+Basic (green theme, medium size):
 {% include components/heading--h3-circle.html
    title="5. Kontras Material untuk Visual Interest"
    icon="bi-grid-3x3"
+   size="md"
 %}
 
 With custom color:
@@ -56,15 +62,15 @@ With custom color:
    title="Langkah Pertama: Konsultasi"
    icon="bi-chat-dots"
    color="primary"
+   size="md"
 %}
 
-Larger icon and circle:
+Larger size:
 {% include components/heading--h3-circle.html
    title="Keunggulan Layanan"
    icon="bi-award-fill"
    color="warning"
-   icon_size="2rem"
-   circle_size="60px"
+   size="lg"
 %}
 
 As H4 instead of H3:
@@ -97,18 +103,16 @@ Different text color:
 {% assign h3_title = include.title %}
 {% assign h3_icon = include.icon %}
 {% assign color_theme = include.color | default: "success" %}
-{% assign icon_size = include.icon_size | default: "1.5rem" %}
-{% assign circle_size = include.circle_size | default: "50px" %}
+{% assign circle_size = include.size | default: "md" %}
 {% assign heading_level = include.heading_level | default: "h3" %}
 {% assign heading_class = include.heading_class | default: "h6 mb-0" %}
 {% assign text_color = include.text_color | default: "text-wood" %}
 {% assign spacing = include.spacing | default: "mb-3" %}
 {% assign align = include.align | default: "align-items-center" %}
 
-<div class="d-flex {{ align }} {{ spacing }}">
-  <div class="bg-{{ color_theme }} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3"
-       style="width: {{ circle_size }}; height: {{ circle_size }}; flex-shrink: 0;">
-    <i class="bi {{ h3_icon }} text-{{ color_theme }}" style="font-size: {{ icon_size }};"></i>
+<div class="component-heading-circle d-flex {{ align }} {{ spacing }}">
+  <div class="component-heading-circle__circle component-heading-circle__circle--{{ circle_size }} bg-{{ color_theme }} bg-opacity-10 me-3">
+    <i class="bi {{ h3_icon }} text-{{ color_theme }}"></i>
   </div>
-  <{{ heading_level }} class="{{ heading_class }} {{ text_color }}">{{ h3_title }}</{{ heading_level }}>
+  <{{ heading_level }} class="component-heading-circle__title {{ heading_class }} {{ text_color }}">{{ h3_title }}</{{ heading_level }}>
 </div>

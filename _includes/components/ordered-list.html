@@ -109,7 +109,7 @@ With custom numbering:
 {% endif %}
 
 {% if list_items %}
-<ol class="styled-ordered-list" style="list-style-type: {{ list_style }};">
+<ol class="component-ordered-list" style="list-style-type: {{ list_style }};">
   {% for item in list_items %}
   <li class="{{ spacing }}">
     {% if item.icon %}
@@ -134,16 +134,3 @@ With custom numbering:
   </div>
 </div>
 {% endif %}
-
-<style>
-.styled-ordered-list {
-  padding-left: 1.5rem;
-}
-.styled-ordered-list li {
-  padding-left: 0.5rem;
-  line-height: 1.6;
-}
-.styled-ordered-list li:last-child {
-  margin-bottom: 0 !important;
-}
-</style>

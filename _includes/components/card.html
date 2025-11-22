@@ -23,31 +23,44 @@ Features:
 Parameters:
 -----------
 - image: Image URL (optional)
-- image_position: "top" or "bottom" (default: "top")
+- image_position: "top" | "bottom" (default: "top")
 - image_alt: Alt text for image (optional)
 - icon: Bootstrap icon class (optional, e.g., "bi-shield-check")
-- icon_size: Icon font size (default: "3rem")
-- icon_color: Icon color class (default: "text-primary")
+- icon_size: "sm" | "md" | "lg" | "xl" | "2xl" (default: "lg")
+  * sm  = 1rem (16px)
+  * md  = 1.5rem (24px)
+  * lg  = 2rem (32px)
+  * xl  = 2.5rem (40px)
+  * 2xl = 3rem (48px)
+- icon_color: Bootstrap text color utility class (default: "text-primary")
+  * Options: "text-primary" | "text-secondary" | "text-success" | "text-danger" |
+             "text-warning" | "text-info" | "text-dark" | "text-wood"
 - title: Card title (optional)
 - subtitle: Card subtitle (optional)
 - badge: Badge text (optional)
 - badge_color: Badge background class (default: "bg-primary")
+  * Options: "bg-primary" | "bg-secondary" | "bg-success" | "bg-danger" |
+             "bg-warning" | "bg-info" | "bg-wood"
 - content: Card body content (required)
 - footer: Card footer content (optional)
 - link_url: URL for card link (optional)
 - link_text: Text for card link (default: "Selengkapnya")
-- hover_effect: true/false (default: true - adds transform on hover)
+- hover_effect: true | false (default: true - adds transform on hover)
 - border: Border class (optional, e.g., "border-primary")
 - shadow: Shadow class (default: "shadow-sm")
-- text_center: true/false (default: false)
+  * Options: "shadow-sm" | "shadow" | "shadow-lg"
+- text_center: true | false (default: false)
 
 Usage:
 ------
 Simple card with icon and content:
 {% include components/card.html
    icon="bi-shield-check"
+   icon_size="xl"
+   icon_color="text-primary"
    title="Jasa Riksa Uji K3"
    content="<p>Layanan riksa uji peralatan K3 terpercaya...</p>"
+   hover_effect=true
 %}
 
 Card with image:
@@ -56,20 +69,24 @@ Card with image:
    image_alt="Riksa Uji Crane"
    title="Riksa Uji Crane"
    badge="Populer"
+   badge_color="bg-warning"
    content="<p>Pemeriksaan dan pengujian crane...</p>"
    link_url="/layanan/riksa-uji-crane"
    link_text="Lihat Detail"
+   shadow="shadow-lg"
 %}
 
 Card with custom styling:
 {% include components/card.html
    icon="bi-check-circle"
+   icon_size="2xl"
    icon_color="text-success"
    title="Sertifikat Resmi"
    content="<p>Mendapatkan sertifikat resmi...</p>"
    shadow="shadow-lg"
    border="border-success"
    text_center=true
+   hover_effect=false
 %}
 
 ============================================================================
@@ -79,7 +96,7 @@ Card with custom styling:
 {% assign image_position = include.image_position | default: "top" %}
 {% assign image_alt = include.image_alt | default: include.title %}
 {% assign card_icon = include.icon %}
-{% assign icon_size = include.icon_size | default: "3rem" %}
+{% assign icon_size = include.icon_size | default: "lg" %}
 {% assign icon_color = include.icon_color | default: "text-primary" %}
 {% assign card_title = include.title %}
 {% assign card_subtitle = include.subtitle %}
@@ -94,60 +111,50 @@ Card with custom styling:
 {% assign card_shadow = include.shadow | default: "shadow-sm" %}
 {% assign text_center = include.text_center | default: false %}
 
-<div class="card h-100 {{ card_border }} {{ card_shadow }} {% if hover_effect %}card-hover{% endif %}">
+<div class="component-card card h-100 {{ card_border }} {{ card_shadow }} {% if hover_effect %}component-card--hover{% endif %}">
   {% if card_image and image_position == "top" %}
-  <img src="{{ card_image | relative_url }}" class="card-img-top" alt="{{ image_alt }}" loading="lazy">
+  <img src="{{ card_image | relative_url }}" class="component-card__image component-card__image--top card-img-top" alt="{{ image_alt }}" loading="lazy">
   {% endif %}
 
   {% if card_badge or card_icon %}
-  <div class="card-header bg-transparent border-0 {% if text_center %}text-center{% endif %}">
+  <div class="component-card__header card-header bg-transparent border-0 {% if text_center %}text-center{% endif %}">
     {% if card_badge %}
-    <span class="badge {{ badge_color }}">{{ card_badge }}</span>
+    <span class="component-card__badge badge {{ badge_color }}">{{ card_badge }}</span>
     {% endif %}
     {% if card_icon %}
-    <div class="{% if text_center %}text-center{% endif %} {% if card_badge %}mt-3{% endif %}">
-      <i class="bi {{ card_icon }} {{ icon_color }}" style="font-size: {{ icon_size }};"></i>
+    <div class="component-card__icon-wrapper {% if text_center %}text-center{% endif %} {% if card_badge %}mt-3{% endif %}">
+      <i class="component-card__icon component-card__icon--{{ icon_size }} bi {{ card_icon }} {{ icon_color }}"></i>
     </div>
     {% endif %}
   </div>
   {% endif %}
 
-  <div class="card-body {% if text_center %}text-center{% endif %}">
+  <div class="component-card__body card-body {% if text_center %}text-center{% endif %}">
     {% if card_title %}
-    <h5 class="card-title">{{ card_title }}</h5>
+    <h5 class="component-card__title card-title">{{ card_title }}</h5>
     {% endif %}
     {% if card_subtitle %}
-    <h6 class="card-subtitle mb-2 text-muted">{{ card_subtitle }}</h6>
+    <h6 class="component-card__subtitle card-subtitle mb-2 text-muted">{{ card_subtitle }}</h6>
     {% endif %}
     {% if card_content %}
-    <div class="card-text">
+    <div class="component-card__content card-text">
       {{ card_content }}
     </div>
     {% endif %}
     {% if link_url %}
-    <a href="{{ link_url | relative_url }}" class="btn btn-outline-primary mt-3">
+    <a href="{{ link_url | relative_url }}" class="component-card__link btn btn-outline-primary mt-3">
       {{ link_text }} <i class="bi bi-arrow-right ms-1"></i>
     </a>
     {% endif %}
   </div>
 
   {% if card_footer %}
-  <div class="card-footer bg-transparent {% if text_center %}text-center{% endif %}">
+  <div class="component-card__footer card-footer bg-transparent {% if text_center %}text-center{% endif %}">
     {{ card_footer }}
   </div>
   {% endif %}
 
   {% if card_image and image_position == "bottom" %}
-  <img src="{{ card_image | relative_url }}" class="card-img-bottom" alt="{{ image_alt }}" loading="lazy">
+  <img src="{{ card_image | relative_url }}" class="component-card__image component-card__image--bottom card-img-bottom" alt="{{ image_alt }}" loading="lazy">
   {% endif %}
 </div>
-
-<style>
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
-}
-</style>

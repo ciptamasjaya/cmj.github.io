@@ -123,6 +123,79 @@
   }
 }
 
+// Component Card (_includes/components/card.html)
+.component-card {
+  // Hover effect variant
+  &--hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $shadow-lg;
+    }
+  }
+
+  // Icon size variants
+  &__icon {
+    &--sm {
+      font-size: $icon-size-sm;
+    }
+
+    &--md {
+      font-size: $icon-size-md;
+    }
+
+    &--lg {
+      font-size: $icon-size-lg;
+    }
+
+    &--xl {
+      font-size: $icon-size-xl;
+    }
+
+    &--2xl {
+      font-size: $icon-size-2xl;
+    }
+  }
+}
+
+// Component H2 Card (_includes/components/card--h2-basic.html & card--h2-gradient.html)
+.component-h2-card {
+  // Icon size variants
+  &__icon {
+    display: inline-block;
+
+    &--sm {
+      font-size: $icon-size-sm;
+    }
+
+    &--md {
+      font-size: $icon-size-md;
+    }
+
+    &--lg {
+      font-size: $icon-size-lg;
+    }
+
+    &--xl {
+      font-size: $icon-size-xl;
+    }
+
+    &--2xl {
+      font-size: $icon-size-2xl;
+    }
+  }
+
+  // Subtitle styling
+  &__subtitle {
+    opacity: 0.85;
+
+    i {
+      display: inline-block;
+    }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Buttons
 // ----------------------------------------------------------------------------
@@ -167,46 +240,133 @@
 }
 
 // ----------------------------------------------------------------------------
-// WhatsApp CTA
+// WhatsApp CTA (_includes/components/cta-whatsapp.html)
 // ----------------------------------------------------------------------------
 
-.whatsapp-float {
+// Floating WhatsApp Button
+.component-whatsapp-float {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
   z-index: $z-index-floating;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: $font-weight-semibold;
 
-  @include fade-in;
-
-  .btn-whatsapp {
-    width: 60px;
-    height: 60px;
-    border-radius: $border-radius-circle;
-    @include flex-center;
-    box-shadow: $shadow-lg;
-
-    i {
-      font-size: $icon-size-xl;
-      margin: 0;
-    }
-
-    &:hover {
-      transform: scale(1.1);
-    }
+  // Position modifiers
+  &--right {
+    right: 20px;
   }
 
+  &--left {
+    left: 20px;
+  }
+
+  // Icon only variant (circular)
+  &--icon-only {
+    width: 60px;
+    border-radius: $border-radius-circle;
+    padding: 0;
+  }
+
+  // With text variant (rounded rectangle)
+  &--with-text {
+    width: auto;
+    border-radius: 30px;
+    padding: 0 $spacing-lg;
+  }
+
+  // Hover state
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    color: white;
+  }
+
+  // Icon styling
+  i {
+    font-size: 1.8rem;
+  }
+
+  // Text label
+  &__text {
+    white-space: nowrap;
+  }
+
+  // Responsive
   @include media-down(md) {
-    bottom: 20px;
-    right: 20px;
+    width: 60px;
+    border-radius: $border-radius-circle;
+    padding: 0;
 
-    .btn-whatsapp {
-      width: 50px;
-      height: 50px;
-
-      i {
-        font-size: $icon-size-lg;
-      }
+    &__text {
+      display: none;
     }
+  }
+}
+
+// WhatsApp Card CTA
+.component-whatsapp-card {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+
+  &__icon {
+    font-size: $icon-size-2xl;
+  }
+
+  &__description {
+    opacity: 0.95;
+  }
+
+  &__footer-note {
+    opacity: 0.9;
+
+    i {
+      margin-right: $spacing-xs;
+    }
+  }
+}
+
+// WhatsApp Inline CTA
+.component-whatsapp-inline {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  background: $color-light;
+  border-radius: $border-radius;
+
+  &__icon-wrapper {
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    font-size: $icon-size-xl;
+    color: $color-success;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__title {
+    margin-bottom: $spacing-xs;
+  }
+
+  &__description {
+    color: $color-secondary;
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+  }
+
+  &__action {
+    flex-shrink: 0;
   }
 }
 
@@ -229,18 +389,59 @@
 // Headings with Icons
 // ----------------------------------------------------------------------------
 
-// H3 with Circle Icon
-.heading-h3-circle {
+// H3 with Circle Icon (_includes/components/heading--h3-circle.html)
+.component-heading-circle {
   display: flex;
   align-items: center;
-  margin-bottom: $spacing-md;
 
-  .icon-circle {
-    @include icon-circle($circle-size-md, $color-success);
-    margin-right: $spacing-md;
+  // Circle wrapper with size variants
+  &__circle {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-circle;
+
+    // Size variants (coupled: circle + icon)
+    &--sm {
+      width: $circle-size-sm;
+      height: $circle-size-sm;
+
+      i {
+        font-size: $icon-size-sm;
+      }
+    }
+
+    &--md {
+      width: $circle-size-md;
+      height: $circle-size-md;
+
+      i {
+        font-size: $icon-size-md;
+      }
+    }
+
+    &--lg {
+      width: $circle-size-lg;
+      height: $circle-size-lg;
+
+      i {
+        font-size: $icon-size-lg;
+      }
+    }
+
+    &--xl {
+      width: $circle-size-xl;
+      height: $circle-size-xl;
+
+      i {
+        font-size: $icon-size-xl;
+      }
+    }
   }
 
-  h3 {
+  // Heading text
+  &__title {
     margin-bottom: 0;
   }
 }
@@ -260,30 +461,46 @@
 // Lists
 // ----------------------------------------------------------------------------
 
-// Item List with Strong Title
-.item-list-strong {
+// Item List with Strong Title (_includes/components/item-list--strong-title.html)
+.component-item-list {
   display: flex;
-  margin-bottom: $spacing-md;
 
-  .item-icon {
+  &__icon-wrapper {
     flex-shrink: 0;
-    margin-right: $spacing-md;
-    font-size: $icon-size-md;
   }
 
-  .item-content {
+  &__icon {
+    // Icon size variants
+    &--sm {
+      font-size: $icon-size-sm;
+    }
+
+    &--md {
+      font-size: $icon-size-md;
+    }
+
+    &--lg {
+      font-size: $icon-size-lg;
+    }
+
+    &--xl {
+      font-size: $icon-size-xl;
+    }
+
+    &--2xl {
+      font-size: $icon-size-2xl;
+    }
+  }
+
+  &__content {
     flex: 1;
 
     strong {
       display: block;
-      margin-bottom: $spacing-xs;
-      color: $color-wood;
     }
 
     p {
       margin-bottom: 0;
-      font-size: $font-size-sm;
-      color: $color-secondary;
     }
   }
 }
@@ -301,6 +518,39 @@
       flex-shrink: 0;
       margin-right: $spacing-sm;
       margin-top: 2px;
+    }
+  }
+}
+
+// Styled Ordered List (_includes/components/ordered-list.html)
+.component-ordered-list {
+  padding-left: 1.5rem;
+
+  li {
+    padding-left: 0.5rem;
+    line-height: 1.6;
+
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+// Styled Unordered List (_includes/components/unordered-list.html)
+.component-unordered-list {
+  padding-left: 0;
+  list-style-position: inside;
+
+  &.list-unstyled {
+    padding-left: 0;
+  }
+
+  li {
+    padding-left: 0.5rem;
+    line-height: 1.6;
+
+    &:last-child {
+      margin-bottom: 0 !important;
     }
   }
 }

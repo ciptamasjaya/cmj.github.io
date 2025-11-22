@@ -122,7 +122,7 @@ List with titles:
 {% endif %}
 
 {% if list_items %}
-<ul class="styled-unordered-list {% if list_style == 'none' %}list-unstyled{% endif %}">
+<ul class="component-unordered-list {% if list_style == 'none' %}list-unstyled{% endif %}">
   {% for item in list_items %}
   <li class="{{ spacing }}">
     {% if list_style == "check" or list_style == "icon" %}
@@ -154,20 +154,3 @@ List with titles:
   </div>
 </div>
 {% endif %}
-
-<style>
-.styled-unordered-list {
-  padding-left: 0;
-  list-style-position: inside;
-}
-.styled-unordered-list.list-unstyled {
-  padding-left: 0;
-}
-.styled-unordered-list li {
-  padding-left: 0.5rem;
-  line-height: 1.6;
-}
-.styled-unordered-list li:last-child {
-  margin-bottom: 0 !important;
-}
-</style>
