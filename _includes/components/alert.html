@@ -1,0 +1,187 @@
+{% comment %}
+============================================================================
+Alert Component
+============================================================================
+
+@file        _includes/components/alert.html
+@description Reusable Bootstrap 5 alert component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Bootstrap 5 alert variants (primary, secondary, success, danger, warning, info, light, dark)
+- Dismissible alerts with close button
+- Icon support (customizable size and position)
+- Optional heading
+- Link styling support
+- Border variants (solid, left-accent)
+- Custom background and text colors
+- Fade animation support
+- Customizable classes and attributes
+
+Parameters:
+-----------
+- content: Alert content/message (required)
+- variant: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" (default: "info")
+- heading: Alert heading/title (optional)
+- icon: Bootstrap icon class (optional, e.g., "bi-info-circle-fill")
+- icon_size: "sm" | "md" | "lg" | "xl" (default: "lg")
+- icon_position: "left" | "top" (default: "left")
+- dismissible: true | false - Add close button (default: false)
+- fade: true | false - Fade animation (default: true)
+- border_style: "default" | "left-accent" | "none" (default: "default")
+- bg_color: Custom background color class (optional)
+- text_color: Custom text color class (optional)
+- additional_classes: Extra CSS classes (optional)
+- id: Alert ID attribute (optional)
+
+Usage:
+------
+Basic alert:
+{% include components/alert.html
+   content="This is a basic info alert message."
+   variant="info"
+%}
+
+Success alert with icon:
+{% include components/alert.html
+   content="Your form has been submitted successfully!"
+   variant="success"
+   icon="bi-check-circle-fill"
+%}
+
+Danger alert with heading:
+{% include components/alert.html
+   heading="Error!"
+   content="Something went wrong. Please try again."
+   variant="danger"
+   icon="bi-exclamation-triangle-fill"
+%}
+
+Warning alert with icon on top:
+{% include components/alert.html
+   heading="Warning"
+   content="This action cannot be undone. Please proceed with caution."
+   variant="warning"
+   icon="bi-exclamation-circle-fill"
+   icon_position="top"
+%}
+
+Dismissible alert:
+{% include components/alert.html
+   content="This alert can be closed by clicking the X button."
+   variant="primary"
+   dismissible=true
+%}
+
+Alert with left accent border:
+{% include components/alert.html
+   content="This is an alert with a left accent border."
+   variant="info"
+   icon="bi-info-circle-fill"
+   border_style="left-accent"
+%}
+
+Alert with no border:
+{% include components/alert.html
+   content="This alert has no border."
+   variant="success"
+   border_style="none"
+%}
+
+Large icon alert:
+{% include components/alert.html
+   heading="Important Notice"
+   content="Please read the terms and conditions before proceeding."
+   variant="warning"
+   icon="bi-megaphone-fill"
+   icon_size="xl"
+%}
+
+Alert with link:
+{% include components/alert.html
+   content='New update available. <a href="/updates" class="alert-link">Click here</a> to view details.'
+   variant="info"
+   icon="bi-bell-fill"
+%}
+
+Dismissible success alert:
+{% include components/alert.html
+   heading="Success!"
+   content="Your profile has been updated successfully."
+   variant="success"
+   icon="bi-check-circle-fill"
+   dismissible=true
+%}
+
+Custom color alert:
+{% include components/alert.html
+   content="Custom themed alert message."
+   bg_color="bg-wood"
+   text_color="text-white"
+   icon="bi-star-fill"
+%}
+
+Secondary alert (minimal):
+{% include components/alert.html
+   content="This is a secondary alert for less important information."
+   variant="secondary"
+%}
+
+Alert without fade:
+{% include components/alert.html
+   content="This alert appears without fade animation."
+   variant="danger"
+   fade=false
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign alert_content = include.content %}
+{% assign alert_variant = include.variant | default: "info" %}
+{% assign alert_heading = include.heading %}
+{% assign alert_icon = include.icon %}
+{% assign alert_icon_size = include.icon_size | default: "lg" %}
+{% assign alert_icon_position = include.icon_position | default: "left" %}
+{% assign alert_dismissible = include.dismissible | default: false %}
+{% assign alert_fade = include.fade | default: true %}
+{% assign alert_border_style = include.border_style | default: "default" %}
+{% assign alert_bg_color = include.bg_color %}
+{% assign alert_text_color = include.text_color %}
+{% assign alert_additional_classes = include.additional_classes %}
+{% assign alert_id = include.id %}
+
+{% comment %} Build alert classes {% endcomment %}
+{% capture alert_classes %}component-alert alert{% if alert_bg_color %} {{ alert_bg_color }}{% else %} alert-{{ alert_variant }}{% endif %}{% if alert_text_color %} {{ alert_text_color }}{% endif %}{% if alert_dismissible %} alert-dismissible{% endif %}{% if alert_fade %} fade show{% endif %} component-alert--border-{{ alert_border_style }}{% if alert_icon and alert_icon_position == "top" %} component-alert--icon-top{% elsif alert_icon %} component-alert--icon-left{% endif %}{% if alert_additional_classes %} {{ alert_additional_classes }}{% endif %}{% endcapture %}
+
+<div{% if alert_id %} id="{{ alert_id }}"{% endif %} class="{{ alert_classes | strip }}" role="alert">
+  {% if alert_icon and alert_icon_position == "top" %}
+  <div class="component-alert__icon-wrapper text-center mb-3">
+    <i class="component-alert__icon component-alert__icon--{{ alert_icon_size }} bi {{ alert_icon }}"></i>
+  </div>
+  {% endif %}
+
+  <div class="component-alert__content-wrapper d-flex{% if alert_icon and alert_icon_position == "left" %} align-items-start{% endif %}">
+    {% if alert_icon and alert_icon_position == "left" %}
+    <div class="component-alert__icon-wrapper me-3 flex-shrink-0">
+      <i class="component-alert__icon component-alert__icon--{{ alert_icon_size }} bi {{ alert_icon }}"></i>
+    </div>
+    {% endif %}
+
+    <div class="component-alert__content flex-grow-1">
+      {% if alert_heading %}
+      <h4 class="component-alert__heading alert-heading mb-2">{{ alert_heading }}</h4>
+      {% endif %}
+      <div class="component-alert__text">
+        {{ alert_content }}
+      </div>
+    </div>
+  </div>
+
+  {% if alert_dismissible %}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  {% endif %}
+</div>

@@ -907,6 +907,106 @@
   }
 }
 
+// Component Alert (_includes/components/alert.html)
+.component-alert {
+  position: relative;
+
+  // Border style variants
+  &--border-default {
+    border: 1px solid transparent;
+  }
+
+  &--border-left-accent {
+    border: 1px solid transparent;
+    border-left: 4px solid currentColor;
+  }
+
+  &--border-none {
+    border: none;
+  }
+
+  // Icon position variants
+  &--icon-top {
+    text-align: center;
+  }
+
+  &--icon-left {
+    .component-alert__content-wrapper {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  // Icon wrapper
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Icon size variants
+  &__icon {
+    &--sm {
+      font-size: $icon-size-sm;
+    }
+
+    &--md {
+      font-size: $icon-size-md;
+    }
+
+    &--lg {
+      font-size: $icon-size-lg;
+    }
+
+    &--xl {
+      font-size: $icon-size-xl;
+    }
+  }
+
+  // Content wrapper
+  &__content-wrapper {
+    width: 100%;
+  }
+
+  // Heading
+  &__heading {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+  }
+
+  // Text content
+  &__text {
+    margin-bottom: 0;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Alert link styling (Bootstrap default enhancement)
+  .alert-link {
+    font-weight: $font-weight-bold;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // Close button positioning
+  &.alert-dismissible {
+    padding-right: 3rem;
+
+    .btn-close {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      padding: 0.75rem;
+    }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Responsive Utilities
 // ----------------------------------------------------------------------------
