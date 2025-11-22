@@ -1,0 +1,142 @@
+{% comment %}
+============================================================================
+Services Grid Block
+============================================================================
+
+@file        _includes/reusable/block--services-grid.html
+@description Grid layanan K3 untuk homepage
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Service cards dalam grid layout
+- Auto-load dari _data/services.yml
+- Icon untuk setiap service
+- Link ke detail service page
+- Responsive 2-4 column grid
+
+Data Source:
+------------
+Uses site.data.services from _data/services.yml:
+- site.data.services.categories (list of service categories)
+
+Usage:
+------
+{% include reusable/block--services-grid.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--services-grid py-5" id="services">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h1 fw-bold mb-3">
+          <i class="bi bi-shield-check text-primary me-2"></i>
+          Layanan Riksa Uji K3
+        </h2>
+        <p class="lead text-muted">
+          Kami menyediakan layanan riksa uji K3 yang lengkap dan terpercaya
+          dengan sertifikasi resmi dari Kementerian Ketenagakerjaan RI
+        </p>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="row g-4">
+
+      {% for service in site.data.services.categories %}
+      <div class="col-md-6 col-lg-3">
+        <div class="card service-card border-0 shadow-sm h-100">
+          <div class="card-body p-4 text-center">
+
+            <!-- Service Icon -->
+            <div class="service-icon mb-3">
+              <i class="bi {{ service.icon }} text-primary"></i>
+            </div>
+
+            <!-- Service Title -->
+            <h3 class="h5 card-title fw-bold mb-3">
+              {{ service.name }}
+            </h3>
+
+            <!-- Service Description -->
+            <p class="card-text text-muted small mb-3">
+              {{ service.description }}
+            </p>
+
+            <!-- Service Link -->
+            {% if service.slug %}
+            <a href="{{ '/layanan/' | append: service.slug | relative_url }}"
+               class="btn btn-outline-primary btn-sm">
+              <i class="bi bi-arrow-right me-1"></i>
+              Selengkapnya
+            </a>
+            {% endif %}
+
+          </div>
+
+          <!-- Service Badge (if featured) -->
+          {% if service.featured %}
+          <div class="card-footer bg-primary border-0 py-2">
+            <small class="text-white fw-semibold">
+              <i class="bi bi-star-fill me-1"></i>
+              Layanan Unggulan
+            </small>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+    <!-- View All Services Link -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <a href="{{ '/layanan' | relative_url }}" class="btn btn-primary btn-lg">
+          <i class="bi bi-grid-3x3 me-2"></i>
+          Lihat Semua Layanan
+        </a>
+      </div>
+    </div>
+
+    <!-- Service Features Info -->
+    <div class="row mt-5 pt-4 border-top">
+      <div class="col-md-3 col-6 mb-3 mb-md-0">
+        <div class="text-center">
+          <i class="bi bi-patch-check-fill text-success fs-3 mb-2 d-block"></i>
+          <h4 class="h6 fw-semibold">Sertifikat Resmi</h4>
+          <small class="text-muted">Kemnaker RI</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-6 mb-3 mb-md-0">
+        <div class="text-center">
+          <i class="bi bi-people-fill text-primary fs-3 mb-2 d-block"></i>
+          <h4 class="h6 fw-semibold">Inspector Bersertifikat</h4>
+          <small class="text-muted">Profesional & Ahli</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="text-center">
+          <i class="bi bi-tools text-warning fs-3 mb-2 d-block"></i>
+          <h4 class="h6 fw-semibold">Peralatan Terkalibrasi</h4>
+          <small class="text-muted">Standar Internasional</small>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="text-center">
+          <i class="bi bi-clock-history text-info fs-3 mb-2 d-block"></i>
+          <h4 class="h6 fw-semibold">Fast Response</h4>
+          <small class="text-muted">Layanan Cepat</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

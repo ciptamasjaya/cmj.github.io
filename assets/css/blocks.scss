@@ -228,3 +228,365 @@
 .bg-gradient-primary {
   background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%) !important;
 }
+
+/* ============================================================================
+   QUICK CONTACT FORM BLOCK
+   ============================================================================ */
+.block--quick-contact-form .form-control {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.block--quick-contact-form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+}
+
+.block--quick-contact-form .form-select {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.block--quick-contact-form .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+}
+
+.block--quick-contact-form .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.block--quick-contact-form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.block--quick-contact-form .card {
+  border-radius: 12px;
+}
+
+.block--quick-contact-form label {
+  margin-bottom: 0.5rem;
+}
+
+.block--quick-contact-form .form-label i {
+  opacity: 0.7;
+}
+
+.block--quick-contact-form .invalid-feedback {
+  font-size: 0.875rem;
+}
+
+.block--quick-contact-form .was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+
+.block--quick-contact-form .was-validated .form-control:valid {
+  border-color: #198754;
+}
+
+.block--quick-contact-form .was-validated .form-select:invalid {
+  border-color: #dc3545;
+}
+
+.block--quick-contact-form .was-validated .form-select:valid {
+  border-color: #198754;
+}
+
+/* ============================================================================
+   FAQ CONTACT BLOCK
+   ============================================================================ */
+.block--faq-contact .accordion-item {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.block--faq-contact .accordion-item:hover {
+  transform: translateY(-2px);
+}
+
+.block--faq-contact .accordion-button {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.05rem;
+  background-color: #fff;
+  border: none;
+}
+
+.block--faq-contact .accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: #0d6efd;
+  box-shadow: none;
+}
+
+.block--faq-contact .accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.block--faq-contact .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.block--faq-contact .accordion-body {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.block--faq-contact .accordion-body ul {
+  padding-left: 1.5rem;
+}
+
+.block--faq-contact .accordion-body li {
+  margin-bottom: 0.5rem;
+}
+
+.block--faq-contact .accordion-body a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.block--faq-contact .accordion-body a:hover {
+  text-decoration: underline;
+}
+
+.block--faq-contact h3 {
+  margin-bottom: 0;
+}
+
+/* ============================================================================
+   SERVICES GRID BLOCK
+   ============================================================================ */
+.block--services-grid .service-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.block--services-grid .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--services-grid .service-icon i {
+  font-size: 3.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.block--services-grid .service-card:hover .service-icon i {
+  transform: scale(1.1);
+}
+
+.block--services-grid .card-footer {
+  text-align: center;
+}
+
+.block--services-grid .btn {
+  transition: all 0.3s ease;
+}
+
+.block--services-grid .btn:hover {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .block--services-grid .service-icon i {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================================================
+   BLOG PREVIEW BLOCK
+   ============================================================================ */
+.block--blog-preview .blog-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.block--blog-preview .blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--blog-preview .blog-card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.block--blog-preview .blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.block--blog-preview .blog-card:hover .blog-card-image img {
+  transform: scale(1.1);
+}
+
+.block--blog-preview .blog-card-image.bg-gradient-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block--blog-preview .placeholder-icon i {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+.block--blog-preview .category-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  font-size: 0.75rem;
+  padding: 4px 12px;
+}
+
+.block--blog-preview .post-meta {
+  font-size: 0.875rem;
+}
+
+.block--blog-preview .card-title a {
+  transition: color 0.2s ease;
+}
+
+.block--blog-preview .card-title a:hover {
+  color: #0d6efd !important;
+}
+
+.block--blog-preview .btn {
+  transition: all 0.3s ease;
+}
+
+.block--blog-preview .btn:hover {
+  transform: translateX(5px);
+}
+
+.block--blog-preview .card-footer .badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* ============================================================================
+   SERVICE INTRO BLOCK
+   ============================================================================ */
+.block--service-intro .feature-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.block--service-intro .feature-badge:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.block--service-intro .card {
+  transition: all 0.3s ease;
+}
+
+.block--service-intro .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ============================================================================
+   SERVICE LIST BLOCK
+   ============================================================================ */
+.block--service-list .service-list-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.block--service-list .service-list-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--service-list .service-icon-large i {
+  font-size: 4rem;
+  display: inline-block;
+}
+
+.block--service-list .service-items ul {
+  margin-left: 0;
+}
+
+.block--service-list .btn {
+  transition: all 0.3s ease;
+}
+
+.block--service-list .btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .block--service-list .service-icon-large i {
+    font-size: 3rem;
+  }
+}
+
+/* ============================================================================
+   SERVICE FEATURES BLOCK
+   ============================================================================ */
+.block--service-features .feature-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.block--service-features .feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--service-features .feature-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.block--service-features .feature-card:hover .feature-icon i {
+  transform: scale(1.1);
+}
+
+.block--service-features .step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.block--service-features .process-step {
+  position: relative;
+  padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  .block--service-features .feature-icon i {
+    font-size: 2.5rem;
+  }
+
+  .block--service-features .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}

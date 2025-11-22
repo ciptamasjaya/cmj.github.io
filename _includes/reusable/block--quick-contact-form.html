@@ -1,0 +1,311 @@
+{% comment %}
+============================================================================
+Quick Contact Form Block
+============================================================================
+
+@file        _includes/reusable/block--quick-contact-form.html
+@description Contact form dengan validasi dan integrasi WhatsApp/Email
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Modern contact form design
+- Form fields: Name, Email, Phone, Company, Service Type, Message
+- Service type dropdown dari data
+- WhatsApp dan Email fallback options
+- Client-side validation
+- Responsive layout
+
+Data Source:
+------------
+Uses site.business data from _config.yml:
+- site.business.name
+- site.business.phone
+- site.business.whatsapp
+- site.business.email
+
+Usage:
+------
+{% include reusable/block--quick-contact-form.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--quick-contact-form py-5 bg-light">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h2 fw-bold mb-3">
+          <i class="bi bi-envelope-paper text-primary me-2"></i>
+          Hubungi Kami
+        </h2>
+        <p class="lead text-muted">
+          Silakan isi formulir di bawah ini untuk konsultasi atau permintaan informasi lebih lanjut
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- Contact Form -->
+      <div class="col-lg-8 mx-auto">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4 p-md-5">
+
+            <form id="contactForm" class="contact-form" novalidate>
+
+              <div class="row g-3">
+
+                <!-- Name Field -->
+                <div class="col-md-6">
+                  <label for="contactName" class="form-label fw-semibold">
+                    <i class="bi bi-person text-primary me-1"></i>
+                    Nama Lengkap <span class="text-danger">*</span>
+                  </label>
+                  <input type="text"
+                         class="form-control form-control-lg"
+                         id="contactName"
+                         name="name"
+                         placeholder="Masukkan nama lengkap Anda"
+                         required>
+                  <div class="invalid-feedback">
+                    Nama lengkap wajib diisi
+                  </div>
+                </div>
+
+                <!-- Company Field -->
+                <div class="col-md-6">
+                  <label for="contactCompany" class="form-label fw-semibold">
+                    <i class="bi bi-building text-primary me-1"></i>
+                    Nama Perusahaan
+                  </label>
+                  <input type="text"
+                         class="form-control form-control-lg"
+                         id="contactCompany"
+                         name="company"
+                         placeholder="Nama perusahaan (opsional)">
+                </div>
+
+                <!-- Email Field -->
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label fw-semibold">
+                    <i class="bi bi-envelope text-primary me-1"></i>
+                    Email <span class="text-danger">*</span>
+                  </label>
+                  <input type="email"
+                         class="form-control form-control-lg"
+                         id="contactEmail"
+                         name="email"
+                         placeholder="nama@email.com"
+                         required>
+                  <div class="invalid-feedback">
+                    Email valid wajib diisi
+                  </div>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="col-md-6">
+                  <label for="contactPhone" class="form-label fw-semibold">
+                    <i class="bi bi-telephone text-primary me-1"></i>
+                    Nomor Telepon <span class="text-danger">*</span>
+                  </label>
+                  <input type="tel"
+                         class="form-control form-control-lg"
+                         id="contactPhone"
+                         name="phone"
+                         placeholder="08xx-xxxx-xxxx"
+                         required>
+                  <div class="invalid-feedback">
+                    Nomor telepon wajib diisi
+                  </div>
+                </div>
+
+                <!-- Service Type Field -->
+                <div class="col-12">
+                  <label for="contactService" class="form-label fw-semibold">
+                    <i class="bi bi-shield-check text-primary me-1"></i>
+                    Layanan yang Diminati <span class="text-danger">*</span>
+                  </label>
+                  <select class="form-select form-select-lg"
+                          id="contactService"
+                          name="service"
+                          required>
+                    <option value="" selected disabled>Pilih layanan...</option>
+                    <option value="Riksa Uji Pesawat Angkat & Angkut">Riksa Uji Pesawat Angkat & Angkut</option>
+                    <option value="Riksa Uji Pesawat Uap & Bejana Tekan">Riksa Uji Pesawat Uap & Bejana Tekan</option>
+                    <option value="Riksa Uji Instalasi Listrik & Petir">Riksa Uji Instalasi Listrik & Petir</option>
+                    <option value="Riksa Uji Proteksi Kebakaran">Riksa Uji Proteksi Kebakaran</option>
+                    <option value="Konsultasi K3">Konsultasi K3</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Pilih layanan yang diminati
+                  </div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="col-12">
+                  <label for="contactMessage" class="form-label fw-semibold">
+                    <i class="bi bi-chat-text text-primary me-1"></i>
+                    Pesan / Pertanyaan <span class="text-danger">*</span>
+                  </label>
+                  <textarea class="form-control"
+                            id="contactMessage"
+                            name="message"
+                            rows="5"
+                            placeholder="Tuliskan pertanyaan atau informasi yang Anda butuhkan..."
+                            required></textarea>
+                  <div class="invalid-feedback">
+                    Pesan wajib diisi
+                  </div>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="col-12 mt-4">
+                  <div class="d-grid gap-3">
+
+                    <!-- WhatsApp Button -->
+                    <button type="button"
+                            id="sendWhatsApp"
+                            class="btn btn-success btn-lg">
+                      <i class="bi bi-whatsapp me-2"></i>
+                      Kirim via WhatsApp
+                    </button>
+
+                    <!-- Email Button -->
+                    <button type="button"
+                            id="sendEmail"
+                            class="btn btn-primary btn-lg">
+                      <i class="bi bi-envelope me-2"></i>
+                      Kirim via Email
+                    </button>
+
+                  </div>
+                </div>
+
+                <!-- Info Text -->
+                <div class="col-12 mt-3">
+                  <div class="alert alert-info border-0 mb-0">
+                    <i class="bi bi-info-circle me-2"></i>
+                    <small>
+                      <strong>Catatan:</strong> Pesan Anda akan dikirim melalui WhatsApp atau Email.
+                      Kami akan merespons dalam waktu 1x24 jam pada hari kerja.
+                    </small>
+                  </div>
+                </div>
+
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+        <!-- Quick Contact Info Below Form -->
+        <div class="row g-3 mt-4">
+          <div class="col-md-4">
+            <div class="text-center">
+              <i class="bi bi-telephone-fill text-primary fs-4 mb-2 d-block"></i>
+              <small class="text-muted d-block mb-1">Telepon</small>
+              <a href="tel:{{ site.business.phone }}" class="text-decoration-none fw-semibold">
+                {{ site.business.phone }}
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <i class="bi bi-whatsapp text-success fs-4 mb-2 d-block"></i>
+              <small class="text-muted d-block mb-1">WhatsApp</small>
+              <a href="https://wa.me/{{ site.business.whatsapp }}"
+                 class="text-decoration-none fw-semibold"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                {{ site.business.phone }}
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <i class="bi bi-envelope-fill text-info fs-4 mb-2 d-block"></i>
+              <small class="text-muted d-block mb-1">Email</small>
+              <a href="mailto:{{ site.business.email }}" class="text-decoration-none fw-semibold">
+                {{ site.business.email }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contactForm');
+  const sendWhatsApp = document.getElementById('sendWhatsApp');
+  const sendEmail = document.getElementById('sendEmail');
+
+  // WhatsApp Send Handler
+  sendWhatsApp.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      return;
+    }
+
+    const name = document.getElementById('contactName').value;
+    const company = document.getElementById('contactCompany').value;
+    const email = document.getElementById('contactEmail').value;
+    const phone = document.getElementById('contactPhone').value;
+    const service = document.getElementById('contactService').value;
+    const message = document.getElementById('contactMessage').value;
+
+    let whatsappMessage = `Halo {{ site.business.name }}, saya ingin konsultasi:\n\n`;
+    whatsappMessage += `Nama: ${name}\n`;
+    if (company) whatsappMessage += `Perusahaan: ${company}\n`;
+    whatsappMessage += `Email: ${email}\n`;
+    whatsappMessage += `Telepon: ${phone}\n`;
+    whatsappMessage += `Layanan: ${service}\n\n`;
+    whatsappMessage += `Pesan:\n${message}`;
+
+    const whatsappUrl = `https://wa.me/{{ site.business.whatsapp }}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+  });
+
+  // Email Send Handler
+  sendEmail.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+      return;
+    }
+
+    const name = document.getElementById('contactName').value;
+    const company = document.getElementById('contactCompany').value;
+    const email = document.getElementById('contactEmail').value;
+    const phone = document.getElementById('contactPhone').value;
+    const service = document.getElementById('contactService').value;
+    const message = document.getElementById('contactMessage').value;
+
+    const subject = `Konsultasi ${service} - ${name}`;
+    let body = `Nama: ${name}\n`;
+    if (company) body += `Perusahaan: ${company}\n`;
+    body += `Email: ${email}\n`;
+    body += `Telepon: ${phone}\n`;
+    body += `Layanan: ${service}\n\n`;
+    body += `Pesan:\n${message}`;
+
+    const mailtoUrl = `mailto:{{ site.business.email }}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  });
+});
+</script>
