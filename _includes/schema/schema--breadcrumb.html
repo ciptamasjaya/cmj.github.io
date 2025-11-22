@@ -1,0 +1,53 @@
+{% comment %}
+============================================================================
+Schema: Breadcrumb (schema--breadcrumb.html)
+============================================================================
+
+@file        schema--breadcrumb.html
+@path        _includes/schema/schema--breadcrumb.html
+@type        Schema (breadcrumb navigation)
+@description Schema markup for breadcrumb navigation
+@author      ciptamasjaya
+
+Generates breadcrumb navigation schema for SEO.
+Automatically creates breadcrumb path based on page URL.
+
+Usage:
+------
+Include in page front matter:
+custom_schema:
+  - schema/schema--breadcrumb.html
+
+Or include directly in page:
+{% include schema/schema--breadcrumb.html %}
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Build breadcrumb items based on URL path {% endcomment %}
+{% assign url_parts = page.url | split: '/' %}
+{% assign breadcrumb_path = '' %}
+{% assign position = 1 %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "{{ site.url }}{{ site.baseurl }}/"
+    }
+    {% if page.url != '/' and page.url != '/index.html' %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title }}",
+      "item": "{{ page.url | absolute_url }}"
+    }
+    {% endif %}
+  ]
+}
+</script>

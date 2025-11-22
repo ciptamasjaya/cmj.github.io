@@ -6,8 +6,8 @@ Schema: Service Catalog (schema--service-catalog.html)
 @file        schema--service-catalog.html
 @path        _includes/schema/schema--service-catalog.html
 @type        Schema (service catalog)
-@description Schema markup for service catalog page
-@author      arisciwek
+@description Schema markup for service catalog page with detailed services
+@author      ciptamasjaya
 
 ============================================================================
 {% endcomment %}
@@ -20,6 +20,119 @@ Schema: Service Catalog (schema--service-catalog.html)
   "url": "{{ page.url | absolute_url }}",
   "name": "{{ page.title }}",
   "description": "{{ page.description }}",
-  "inLanguage": "id"
+  "inLanguage": "id",
+  "about": {
+    "@type": "Service",
+    "serviceType": "Jasa Riksa Uji K3",
+    "provider": {
+      "@type": "Organization",
+      "name": "{{ site.business.name }}",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+    }
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Service",
+          "@id": "{{ site.url }}{{ site.baseurl }}/layanan/pesawat-angkat",
+          "name": "Riksa Uji Pesawat Angkat & Angkut",
+          "description": "Inspeksi dan sertifikasi K3 untuk crane, hoist, forklift, dan peralatan angkat lainnya sesuai standar Kemnaker RI",
+          "provider": {
+            "@type": "Organization",
+            "name": "{{ site.business.name }}"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Indonesia"
+          },
+          "serviceType": "Safety Inspection",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Industrial Companies"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Service",
+          "@id": "{{ site.url }}{{ site.baseurl }}/layanan/bejana-tekan",
+          "name": "Riksa Uji Bejana Tekan",
+          "description": "Inspeksi dan sertifikasi K3 untuk boiler, pressure vessel, kompresor, dan bejana tekan lainnya",
+          "provider": {
+            "@type": "Organization",
+            "name": "{{ site.business.name }}"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Indonesia"
+          },
+          "serviceType": "Safety Inspection"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Service",
+          "@id": "{{ site.url }}{{ site.baseurl }}/layanan/instalasi-listrik",
+          "name": "Riksa Uji Instalasi Listrik",
+          "description": "Inspeksi dan sertifikasi instalasi listrik tegangan rendah dan menengah sesuai standar K3",
+          "provider": {
+            "@type": "Organization",
+            "name": "{{ site.business.name }}"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Indonesia"
+          },
+          "serviceType": "Safety Inspection"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Service",
+          "@id": "{{ site.url }}{{ site.baseurl }}/layanan/proteksi-kebakaran",
+          "name": "Riksa Uji Instalasi Proteksi Kebakaran",
+          "description": "Inspeksi sistem proteksi kebakaran, APAR, hydrant, sprinkler, dan alarm kebakaran",
+          "provider": {
+            "@type": "Organization",
+            "name": "{{ site.business.name }}"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Indonesia"
+          },
+          "serviceType": "Safety Inspection"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Service",
+          "@id": "{{ site.url }}{{ site.baseurl }}/layanan/elevator",
+          "name": "Riksa Uji Elevator & Eskalator",
+          "description": "Inspeksi dan sertifikasi lift penumpang, lift barang, dan eskalator sesuai regulasi K3",
+          "provider": {
+            "@type": "Organization",
+            "name": "{{ site.business.name }}"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Indonesia"
+          },
+          "serviceType": "Safety Inspection"
+        }
+      }
+    ]
+  }
 }
 </script>

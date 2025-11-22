@@ -7,12 +7,40 @@ baseurl: ""
 # Business Info
 business:
   name: "PT. Cipta Mas Jaya"
-  phone: "+62-21-XXXX-XXXX"
-  whatsapp: "62812XXXXXXXX"
-  location: "Jakarta, Indonesia"
-  coverage: "DKI Jakarta, Jawa Barat, Banten, dan seluruh Indonesia"
+  phone: "+62-856-8258-841"
+  whatsapp: "6285682588841"
+  location: "Serang, Banten, Indonesia"
+  coverage: "Banten, DKI Jakarta, Jawa Barat, dan seluruh Indonesia"
   owner: "PT. Cipta Mas Jaya"
   email: "info@ciptamasjaya.co.id"
+
+  # Address (lengkapi dengan alamat lengkap)
+  address:
+    street: "Jl Raya Taktakan Ruko Golden Paradise No 7, Kecamatan Taktakan"
+    city: "Kota Serang"
+    province: "Banten"
+    postalCode: "42116"
+    country: "Indonesia"
+
+  # Geo Coordinates (dari Google Maps)
+  geo:
+    latitude: "-6.114722"
+    longitude: "106.138402"
+
+  # Opening Hours
+  openingHours:
+    - "Mo-Fr 08:00-17:00"
+    - "Sa 08:00-12:00"
+
+  # Social Media
+  social:
+    facebook: "https://facebook.com/ciptamasjaya"
+    instagram: "https://instagram.com/ciptamasjaya"
+    linkedin: "https://linkedin.com/company/ciptamasjaya"
+
+  # Additional Info
+  foundingDate: "2000-01-01"  # ganti dengan tanggal berdiri sebenarnya
+  priceRange: "$$"
 
 # SEO Settings
 lang: id

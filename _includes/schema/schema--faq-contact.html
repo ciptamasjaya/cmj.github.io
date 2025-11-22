@@ -7,11 +7,83 @@ Schema: FAQ Contact (schema--faq-contact.html)
 @path        _includes/schema/schema--faq-contact.html
 @type        Schema (FAQ)
 @description Schema markup for FAQ section in contact page
-@author      arisciwek
+@author      ciptamasjaya
 
-This will be populated when reusable blocks are created.
+Common questions about contacting PT. Cipta Mas Jaya and their services
 
 ============================================================================
 {% endcomment %}
 
-<!-- FAQ Schema placeholder - will be populated with actual FAQ data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ page.url | absolute_url }}#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bagaimana cara menghubungi PT. Cipta Mas Jaya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anda dapat menghubungi kami melalui telepon di {{ site.business.phone }}, WhatsApp di {{ site.business.whatsapp }}, atau email di {{ site.business.email }}. Kami siap melayani Anda pada hari Senin-Jumat pukul 08:00-17:00 dan Sabtu pukul 08:00-12:00."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa saja layanan riksa uji K3 yang tersedia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kami menyediakan layanan riksa uji K3 untuk Pesawat Angkat & Angkut (crane, hoist, forklift), Bejana Tekan (boiler, pressure vessel), Instalasi Listrik, Instalasi Proteksi Kebakaran, dan Elevator & Eskalator. Semua sertifikat yang kami terbitkan resmi dan diakui sesuai regulasi Kemnaker RI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa lama proses riksa uji K3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Waktu proses riksa uji bervariasi tergantung jenis peralatan dan kondisi. Secara umum, proses inspeksi membutuhkan 1-3 hari kerja, dan penerbitan sertifikat membutuhkan 3-7 hari kerja setelah inspeksi selesai. Untuk informasi lebih detail, silakan hubungi kami."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah melayani riksa uji di luar kota Serang?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, kami melayani riksa uji K3 di seluruh wilayah Banten, DKI Jakarta, Jawa Barat, dan seluruh Indonesia. Tim kami siap datang ke lokasi Anda untuk melakukan inspeksi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa biaya jasa riksa uji K3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Biaya riksa uji bervariasi tergantung jenis peralatan, lokasi, dan kompleksitas inspeksi. Untuk penawaran harga yang akurat, silakan hubungi kami dengan menyertakan detail peralatan yang akan di-riksa uji. Kami akan memberikan penawaran terbaik untuk Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah sertifikat riksa uji berlaku secara nasional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya, sertifikat riksa uji K3 yang kami terbitkan berlaku secara nasional di seluruh Indonesia dan diakui oleh Kementerian Ketenagakerjaan RI. Sertifikat ini wajib dimiliki untuk memenuhi standar keselamatan kerja."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kapan waktu operasional PT. Cipta Mas Jaya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kami beroperasi pada hari Senin hingga Jumat pukul 08:00-17:00 WIB dan Sabtu pukul 08:00-12:00 WIB. Untuk konsultasi darurat, Anda dapat menghubungi kami melalui WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa saja dokumen yang diperlukan untuk riksa uji?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dokumen yang umumnya diperlukan meliputi: sertifikat riksa uji sebelumnya (jika ada), dokumen spesifikasi peralatan, dan identitas perusahaan. Untuk informasi lengkap mengenai dokumen yang dibutuhkan sesuai jenis peralatan, silakan hubungi tim kami."
+      }
+    }
+  ]
+}
+</script>

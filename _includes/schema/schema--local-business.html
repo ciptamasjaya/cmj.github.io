@@ -1,0 +1,180 @@
+{% comment %}
+============================================================================
+Schema: LocalBusiness (schema--local-business.html)
+============================================================================
+
+@file        schema--local-business.html
+@path        _includes/schema/schema--local-business.html
+@type        Schema (local business)
+@description Schema markup for local business with physical location
+@author      ciptamasjaya
+
+This schema provides detailed local business information including:
+- Business type (ProfessionalService)
+- Address and geo location
+- Contact information
+- Opening hours
+- Service area
+- Social media profiles
+
+Usage:
+------
+Include in page front matter:
+custom_schema:
+  - schema/schema--local-business.html
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#localbusiness",
+  "name": "{{ site.business.name }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ '/assets/images/logo.svg' | absolute_url }}",
+    "width": "200",
+    "height": "200"
+  },
+  "image": [
+    "{{ '/assets/images/logo.svg' | absolute_url }}",
+    "{{ '/assets/images/logo-horizontal.svg' | absolute_url }}"
+  ],
+  "telephone": "{{ site.business.phone }}",
+  "email": "{{ site.business.email }}",
+  "priceRange": "{{ site.business.priceRange }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.business.address.street }}",
+    "addressLocality": "{{ site.business.address.city }}",
+    "addressRegion": "{{ site.business.address.province }}",
+    "postalCode": "{{ site.business.address.postalCode }}",
+    "addressCountry": "{{ site.business.address.country }}"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": {{ site.business.geo.latitude }},
+    "longitude": {{ site.business.geo.longitude }}
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query={{ site.business.geo.latitude }},{{ site.business.geo.longitude }}",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "12:00"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "DKI Jakarta"
+    },
+    {
+      "@type": "State",
+      "name": "Jawa Barat"
+    },
+    {
+      "@type": "State",
+      "name": "Banten"
+    },
+    {
+      "@type": "Country",
+      "name": "Indonesia"
+    }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.business.geo.latitude }},
+      "longitude": {{ site.business.geo.longitude }}
+    },
+    "geoRadius": "500000"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "{{ site.business.phone }}",
+      "contactType": "Customer Service",
+      "email": "{{ site.business.email }}",
+      "areaServed": "ID",
+      "availableLanguage": ["Indonesian", "English"],
+      "contactOption": ["TollFree", "HearingImpairedSupported"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+{{ site.business.whatsapp }}",
+      "contactType": "Customer Support",
+      "availableLanguage": "Indonesian",
+      "contactOption": "TollFree"
+    }
+  ],
+  "sameAs": [
+    "{{ site.business.social.facebook }}",
+    "{{ site.business.social.instagram }}",
+    "{{ site.business.social.linkedin }}"
+  ],
+  "slogan": "Jasa Riksa Uji K3 Terpercaya",
+  "foundingDate": "{{ site.business.foundingDate }}",
+  "keywords": "{{ site.keywords }}",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Riksa Uji Pesawat Angkat & Angkut",
+        "description": "Inspeksi dan sertifikasi K3 untuk crane, hoist, dan peralatan angkat lainnya"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Riksa Uji Bejana Tekan",
+        "description": "Inspeksi dan sertifikasi K3 untuk boiler, pressure vessel, dan kompresor"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Riksa Uji Instalasi Listrik",
+        "description": "Inspeksi dan sertifikasi instalasi listrik sesuai standar K3"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Riksa Uji Instalasi Proteksi Kebakaran",
+        "description": "Inspeksi sistem proteksi kebakaran dan alat pemadam"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Riksa Uji Elevator & Eskalator",
+        "description": "Inspeksi dan sertifikasi lift dan eskalator"
+      }
+    }
+  ]
+}
+</script>

@@ -45,12 +45,66 @@ Include in head.html or page.html (once per page):
       "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
       "name": "{{ site.business.name }}",
       "url": "{{ site.url }}{{ site.baseurl }}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ '/assets/images/logo.svg' | absolute_url }}",
+        "width": "200",
+        "height": "200"
+      },
+      "image": "{{ '/assets/images/logo.svg' | absolute_url }}",
+      "email": "{{ site.business.email }}",
+      "telephone": "{{ site.business.phone }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site.business.address.street }}",
+        "addressLocality": "{{ site.business.address.city }}",
+        "addressRegion": "{{ site.business.address.province }}",
+        "postalCode": "{{ site.business.address.postalCode }}",
+        "addressCountry": "{{ site.business.address.country }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "{{ site.business.geo.latitude }}",
+        "longitude": "{{ site.business.geo.longitude }}"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "{{ site.business.coverage }}"
+      },
+      "foundingDate": "{{ site.business.foundingDate }}",
+      "priceRange": "{{ site.business.priceRange }}",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "sameAs": [
+        "{{ site.business.social.facebook }}",
+        "{{ site.business.social.instagram }}",
+        "{{ site.business.social.linkedin }}"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "{{ site.business.phone }}",
+        "email": "{{ site.business.email }}",
         "contactType": "Customer Service",
         "areaServed": "ID",
-        "availableLanguage": "Indonesian"
+        "availableLanguage": ["Indonesian", "English"],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
       }
     },
     {
