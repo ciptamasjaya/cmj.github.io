@@ -1,0 +1,77 @@
+# ============================================================================
+# Service Intro Data
+# ============================================================================
+#
+# @file        _data/service_intro.yml
+# @description Data untuk block--service-intro.html
+# @version     1.0.0
+# @date        2025-11-22
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--service-intro.html
+#
+# Structure:
+# ----------
+# heading:         Section heading dengan title dan icon
+# content:         Lead dan description text
+# feature_badges:  3 badge items untuk fitur utama
+# cta:             Call-to-action button
+# info_cards:      4 info cards di sebelah kanan
+#
+# Template Variables Support:
+# ---------------------------
+# {company_name}   → site.business.name
+# {founding_year}  → site.business.foundingDate | date: "%Y"
+#
+# ============================================================================
+
+heading:
+  title: "Layanan Riksa Uji K3 Profesional"
+  icon: "bi-shield-check"
+  icon_color: "text-primary"
+
+content:
+  lead_template: "<strong>{company_name}</strong> adalah penyedia jasa riksa uji dan inspeksi K3 terpercaya yang telah berpengalaman melayani berbagai industri di seluruh Indonesia sejak {founding_year}."
+  description: "Kami menyediakan layanan riksa uji yang lengkap dan sesuai dengan peraturan Kementerian Ketenagakerjaan RI, dilakukan oleh inspector bersertifikat dengan peralatan yang terkalibrasi dan sesuai standar internasional."
+
+feature_badges:
+  - icon: "bi-patch-check-fill"
+    icon_color: "text-success"
+    text: "Sertifikat Resmi"
+
+  - icon: "bi-people-fill"
+    icon_color: "text-primary"
+    text: "Tim Profesional"
+
+  - icon: "bi-tools"
+    icon_color: "text-warning"
+    text: "Peralatan Standar"
+
+cta:
+  text: "Konsultasi Gratis"
+  icon: "bi-telephone"
+  url: "/contact"
+  class: "btn btn-primary btn-lg"
+
+info_cards:
+  - icon: "bi-geo-alt-fill"
+    icon_color: "text-danger"
+    title: "Seluruh Indonesia"
+    subtitle: "Area Layanan"
+
+  - icon: "bi-award-fill"
+    icon_color: "text-warning"
+    title: "Bersertifikat"
+    subtitle: "Kemnaker RI"
+
+  - icon: "bi-clock-history"
+    icon_color: "text-info"
+    title: "24 Jam"
+    subtitle: "Fast Response"
+
+  - icon: "bi-star-fill"
+    icon_color: "text-success"
+    title: "ISO Certified"
+    subtitle: "Quality Assurance"

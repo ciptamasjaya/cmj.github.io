@@ -5,16 +5,22 @@ Service Intro Block
 
 @file        _includes/reusable/block--service-intro.html
 @description Introduction section untuk halaman layanan
-@version     1.0.0
+@version     1.0.1
 @date        2025-11-22
 @author      arisciwek (PT. Cipta Mas Jaya)
 
+Data Source:
+------------
+Data YAML berasal dari:
+- _data/service_intro.yml
+
 Features:
 ---------
-- Service introduction text
-- Company credentials
-- Why choose our services
-- Certification badges
+- Data-driven service introduction
+- Template variable support ({company_name}, {founding_year})
+- Dynamic heading, content, badges, dan cards
+- Responsive 2-column layout
+- CTA button configuration
 
 Usage:
 ------
@@ -30,92 +36,52 @@ Usage:
 
       <!-- Left Column - Text Content -->
       <div class="col-lg-6 mb-4 mb-lg-0">
+        {% assign lead_text = site.data.service_intro.content.lead_template
+           | replace: '{company_name}', site.business.name
+           | replace: '{founding_year}', site.business.foundingDate | date: "%Y" %}
+
         <div class="service-intro-heading mb-4">
-          <i class="bi bi-shield-check text-primary"></i>
-          <h2 class="h1 fw-bold mb-0">Layanan Riksa Uji K3 Profesional</h2>
+          <i class="bi {{ site.data.service_intro.heading.icon }} {{ site.data.service_intro.heading.icon_color }}"></i>
+          <h2 class="h1 fw-bold mb-0">{{ site.data.service_intro.heading.title }}</h2>
         </div>
 
         <p class="lead mb-4">
-          <strong>{{ site.business.name }}</strong> adalah penyedia jasa riksa uji dan inspeksi
-          K3 terpercaya yang telah berpengalaman melayani berbagai industri di seluruh Indonesia
-          sejak {{ site.business.foundingDate | date: "%Y" }}.
+          {{ lead_text }}
         </p>
 
         <p class="mb-4">
-          Kami menyediakan layanan riksa uji yang lengkap dan sesuai dengan peraturan
-          Kementerian Ketenagakerjaan RI, dilakukan oleh inspector bersertifikat dengan
-          peralatan yang terkalibrasi dan sesuai standar internasional.
+          {{ site.data.service_intro.content.description }}
         </p>
 
         <div class="d-flex flex-wrap gap-3 mb-4">
+          {% for badge in site.data.service_intro.feature_badges %}
           <div class="feature-badge">
-            <i class="bi bi-patch-check-fill text-success fs-5 me-2"></i>
-            <span class="fw-semibold">Sertifikat Resmi</span>
+            <i class="bi {{ badge.icon }} {{ badge.icon_color }} fs-5 me-2"></i>
+            <span class="fw-semibold">{{ badge.text }}</span>
           </div>
-          <div class="feature-badge">
-            <i class="bi bi-people-fill text-primary fs-5 me-2"></i>
-            <span class="fw-semibold">Tim Profesional</span>
-          </div>
-          <div class="feature-badge">
-            <i class="bi bi-tools text-warning fs-5 me-2"></i>
-            <span class="fw-semibold">Peralatan Standar</span>
-          </div>
+          {% endfor %}
         </div>
 
-        <a href="{{ '/contact' | relative_url }}" class="btn btn-primary btn-lg">
-          <i class="bi bi-telephone me-2"></i>
-          Konsultasi Gratis
+        <a href="{{ site.data.service_intro.cta.url | relative_url }}" class="{{ site.data.service_intro.cta.class }}">
+          <i class="bi {{ site.data.service_intro.cta.icon }} me-2"></i>
+          {{ site.data.service_intro.cta.text }}
         </a>
       </div>
 
       <!-- Right Column - Stats/Info Cards -->
       <div class="col-lg-6">
         <div class="row g-3">
-
-          <!-- Card 1: Coverage -->
+          {% for card in site.data.service_intro.info_cards %}
           <div class="col-6">
             <div class="card border-0 shadow-sm text-center p-4">
               <div class="card-body">
-                <i class="bi bi-geo-alt-fill text-danger fs-1 mb-3 d-block"></i>
-                <h3 class="h4 fw-bold mb-2">Seluruh Indonesia</h3>
-                <p class="text-muted mb-0 small">Area Layanan</p>
+                <i class="bi {{ card.icon }} {{ card.icon_color }} fs-1 mb-3 d-block"></i>
+                <h3 class="h4 fw-bold mb-2">{{ card.title }}</h3>
+                <p class="text-muted mb-0 small">{{ card.subtitle }}</p>
               </div>
             </div>
           </div>
-
-          <!-- Card 2: Experience -->
-          <div class="col-6">
-            <div class="card border-0 shadow-sm text-center p-4">
-              <div class="card-body">
-                <i class="bi bi-award-fill text-warning fs-1 mb-3 d-block"></i>
-                <h3 class="h4 fw-bold mb-2">Bersertifikat</h3>
-                <p class="text-muted mb-0 small">Kemnaker RI</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: Response Time -->
-          <div class="col-6">
-            <div class="card border-0 shadow-sm text-center p-4">
-              <div class="card-body">
-                <i class="bi bi-clock-history text-info fs-1 mb-3 d-block"></i>
-                <h3 class="h4 fw-bold mb-2">24 Jam</h3>
-                <p class="text-muted mb-0 small">Fast Response</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4: Quality -->
-          <div class="col-6">
-            <div class="card border-0 shadow-sm text-center p-4">
-              <div class="card-body">
-                <i class="bi bi-star-fill text-success fs-1 mb-3 d-block"></i>
-                <h3 class="h4 fw-bold mb-2">ISO Certified</h3>
-                <p class="text-muted mb-0 small">Quality Assurance</p>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
         </div>
       </div>
 
