@@ -776,6 +776,93 @@
   color: #ffffff;
 }
 
+// Component Badge (_includes/components/badge.html)
+.component-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: $font-weight-semibold;
+
+  // Size variants
+  &--sm {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  &--md {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  &--lg {
+    font-size: 0.875rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  &--xl {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  // Position variants (for badges on buttons/headings)
+  &--top-right {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  &--top-left {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  &--bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+  }
+
+  &--bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+  }
+
+  // Icon sizes
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+
+    &--sm {
+      font-size: 0.75rem;
+    }
+
+    &--md {
+      font-size: 0.875rem;
+    }
+
+    &--lg {
+      font-size: 1rem;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    line-height: 1;
+  }
+
+  // Link variant
+  &[href] {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}
+
 // ----------------------------------------------------------------------------
 // Loading & Spinners
 // ----------------------------------------------------------------------------

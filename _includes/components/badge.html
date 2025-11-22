@@ -1,0 +1,193 @@
+{% comment %}
+============================================================================
+Badge Component
+============================================================================
+
+@file        _includes/components/badge.html
+@description Reusable Bootstrap 5 badge component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Bootstrap 5 badge variants (primary, secondary, success, danger, warning, info, light, dark)
+- Pill shape option (rounded badges)
+- Icon support (left or right position)
+- Size variants (sm, md, lg, xl)
+- Position variants (for badges on buttons/headings)
+- Custom background and text colors
+- Notification badge with counter
+- Link badge option
+- Customizable classes and attributes
+
+Parameters:
+-----------
+- text: Badge text/label (required)
+- variant: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" (default: "primary")
+- pill: true | false - Rounded pill shape (default: false)
+- icon: Bootstrap icon class (optional, e.g., "bi-check-circle")
+- icon_position: "left" | "right" (default: "left")
+- icon_size: "sm" | "md" | "lg" (default: "sm")
+- size: "sm" | "md" | "lg" | "xl" (default: "md")
+  * sm  = 0.65rem font, 0.35rem padding
+  * md  = 0.75rem font, 0.5rem padding (default Bootstrap)
+  * lg  = 0.875rem font, 0.6rem padding
+  * xl  = 1rem font, 0.75rem padding
+- position: "top-right" | "top-left" | "bottom-right" | "bottom-left" (optional, for positioned badges)
+- bg_color: Custom background color class (optional, e.g., "bg-wood")
+- text_color: Custom text color class (optional, e.g., "text-white")
+- href: URL for link badge (optional)
+- target: "_blank" | "_self" (default: "", for link badges)
+- additional_classes: Extra CSS classes (optional)
+- id: Badge ID attribute (optional)
+
+Usage:
+------
+Basic badge:
+{% include components/badge.html
+   text="New"
+   variant="primary"
+%}
+
+Pill badge:
+{% include components/badge.html
+   text="Featured"
+   variant="success"
+   pill=true
+%}
+
+Badge with icon (left):
+{% include components/badge.html
+   text="Verified"
+   variant="success"
+   icon="bi-check-circle-fill"
+   icon_size="sm"
+%}
+
+Badge with icon (right):
+{% include components/badge.html
+   text="Download"
+   variant="info"
+   icon="bi-download"
+   icon_position="right"
+%}
+
+Small badge:
+{% include components/badge.html
+   text="Beta"
+   variant="warning"
+   size="sm"
+%}
+
+Large badge:
+{% include components/badge.html
+   text="Premium"
+   variant="danger"
+   size="lg"
+   pill=true
+%}
+
+XL badge with icon:
+{% include components/badge.html
+   text="Certified"
+   variant="success"
+   size="xl"
+   icon="bi-award-fill"
+%}
+
+Notification badge (counter):
+{% include components/badge.html
+   text="99+"
+   variant="danger"
+   pill=true
+   size="sm"
+%}
+
+Link badge:
+{% include components/badge.html
+   text="Visit Documentation"
+   variant="primary"
+   href="/docs"
+   icon="bi-book"
+%}
+
+External link badge:
+{% include components/badge.html
+   text="GitHub"
+   variant="dark"
+   href="https://github.com"
+   target="_blank"
+   icon="bi-github"
+%}
+
+Custom color badge:
+{% include components/badge.html
+   text="Wood Theme"
+   bg_color="bg-wood"
+   text_color="text-white"
+%}
+
+Badge on button (positioned):
+<button class="btn btn-primary position-relative">
+  Notifications
+  {% include components/badge.html
+     text="4"
+     variant="danger"
+     pill=true
+     position="top-right"
+  %}
+</button>
+
+Multiple badges:
+<h3>
+  Article Title
+  {% include components/badge.html text="New" variant="success" size="sm" pill=true %}
+  {% include components/badge.html text="Hot" variant="danger" size="sm" pill=true %}
+</h3>
+
+Light badge with dark text:
+{% include components/badge.html
+   text="Draft"
+   variant="light"
+   text_color="text-dark"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign badge_text = include.text %}
+{% assign badge_variant = include.variant | default: "primary" %}
+{% assign badge_pill = include.pill | default: false %}
+{% assign badge_icon = include.icon %}
+{% assign badge_icon_position = include.icon_position | default: "left" %}
+{% assign badge_icon_size = include.icon_size | default: "sm" %}
+{% assign badge_size = include.size | default: "md" %}
+{% assign badge_position = include.position %}
+{% assign badge_bg_color = include.bg_color %}
+{% assign badge_text_color = include.text_color %}
+{% assign badge_href = include.href %}
+{% assign badge_target = include.target %}
+{% assign badge_additional_classes = include.additional_classes %}
+{% assign badge_id = include.id %}
+
+{% comment %} Build badge classes {% endcomment %}
+{% capture badge_classes %}component-badge badge{% if badge_bg_color %} {{ badge_bg_color }}{% else %} bg-{{ badge_variant }}{% endif %}{% if badge_text_color %} {{ badge_text_color }}{% endif %}{% if badge_pill %} rounded-pill{% endif %} component-badge--{{ badge_size }}{% if badge_position %} position-absolute component-badge--{{ badge_position }}{% endif %}{% if badge_additional_classes %} {{ badge_additional_classes }}{% endif %}{% endcapture %}
+
+{% comment %} Render badge content {% endcomment %}
+{% capture badge_content %}
+  {% if badge_icon and badge_icon_position == "left" %}
+    <i class="component-badge__icon component-badge__icon--{{ badge_icon_size }} bi {{ badge_icon }}"></i>
+  {% endif %}
+  <span class="component-badge__text">{{ badge_text }}</span>
+  {% if badge_icon and badge_icon_position == "right" %}
+    <i class="component-badge__icon component-badge__icon--{{ badge_icon_size }} bi {{ badge_icon }}"></i>
+  {% endif %}
+{% endcapture %}
+
+{% comment %} Render as link or span {% endcomment %}
+{% if badge_href %}
+  <a href="{{ badge_href }}"{% if badge_target %} target="{{ badge_target }}"{% endif %}{% if badge_id %} id="{{ badge_id }}"{% endif %} class="{{ badge_classes | strip }}">{{ badge_content }}</a>
+{% else %}
+  <span{% if badge_id %} id="{{ badge_id }}"{% endif %} class="{{ badge_classes | strip }}">{{ badge_content }}</span>
+{% endif %}
