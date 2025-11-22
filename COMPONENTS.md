@@ -539,7 +539,79 @@ Enhanced variant dari card H2 dengan theme-based gradients dan decorative subtit
 
 ---
 
-## 9. Heading H3 Circle Component
+## 9. Unordered List With Text Component
+
+**File:** `_includes/components/unordered-list--with-text.html`
+
+### Deskripsi
+Simple variant dari unordered list - hanya icon + text inline tanpa title/description separation. Lebih lightweight dan praktis untuk simple text lists.
+
+### Perbedaan dari unordered-list.html:
+- Lebih simple (no title/content structure)
+- Minimal parameters
+- Focus untuk text-only lists
+- Lightweight & quick to use
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `items` | array | - | Array of simple text strings (required) |
+| `icon` | string | `"bi-square"` | Bootstrap icon class |
+| `icon_color` | string | `"text-secondary"` | Icon color class |
+| `text_size` | string | `"small"` | Text size class |
+| `spacing` | string | `"mb-2"` | Item spacing |
+| `custom_class` | string | - | Additional list classes |
+
+### Common Icons
+- `bi-square` (default)
+- `bi-circle`, `bi-dash`
+- `bi-arrow-right`, `bi-chevron-right`, `bi-caret-right`
+- `bi-check`, `bi-dot`
+
+### Contoh Penggunaan
+
+**Simple usage:**
+```liquid
+{% assign tips = "Combine dengan smooth surface|Use natural lighting|Perhatikan proporsi" | split: "|" %}
+{% include components/unordered-list--with-text.html
+   items=tips
+%}
+```
+
+**With check icon (green):**
+```liquid
+{% assign features = "Sertifikat resmi|Teknisi berpengalaman|Harga kompetitif" | split: "|" %}
+{% include components/unordered-list--with-text.html
+   items=features
+   icon="bi-check"
+   icon_color="text-success"
+%}
+```
+
+**With arrow icon:**
+```liquid
+{% assign steps = "Hubungi kami|Jadwalkan inspeksi|Terima sertifikat" | split: "|" %}
+{% include components/unordered-list--with-text.html
+   items=steps
+   icon="bi-arrow-right"
+   icon_color="text-primary"
+   text_size=""
+%}
+```
+
+**Larger spacing:**
+```liquid
+{% include components/unordered-list--with-text.html
+   items=benefits
+   icon="bi-chevron-right"
+   spacing="mb-3"
+%}
+```
+
+---
+
+## 10. Heading H3 Circle Component
 
 **File:** `_includes/components/heading--h3-circle.html`
 
@@ -698,17 +770,18 @@ Anda dapat mengkombinasikan multiple components dalam satu section:
 
 - arisciwek
 - Date: 2025-11-22
-- Version: 1.2.0
+- Version: 1.3.0
 
-**Status:** ✅ 9 reusable components siap digunakan
+**Status:** ✅ 10 reusable components siap digunakan
 
 ### Components List:
 1. accordion.html - Bootstrap 5 accordion
 2. card.html - Flexible card component
 3. ordered-list.html - Styled ordered list
-4. unordered-list.html - Styled unordered list
-5. cta-whatsapp.html - WhatsApp CTA (4 styles)
-6. carousel.html - Image carousel/slider
-7. card--h2-basic.html - Section header dengan gradient
-8. card--h2-gradient.html - Decorative section header dengan themes
-9. **heading--h3-circle.html** - H3 heading dengan icon circle ✨ NEW
+4. unordered-list.html - Styled unordered list (with title/content)
+5. **unordered-list--with-text.html** - Simple text-only list ✨ NEW
+6. cta-whatsapp.html - WhatsApp CTA (4 styles)
+7. carousel.html - Image carousel/slider
+8. card--h2-basic.html - Section header dengan gradient
+9. card--h2-gradient.html - Decorative section header dengan themes
+10. heading--h3-circle.html - H3 heading dengan icon circle

@@ -1,0 +1,101 @@
+{% comment %}
+============================================================================
+Unordered List With Text Component (Simple Variant)
+============================================================================
+
+@file        _includes/components/unordered-list--with-text.html
+@description Simple unordered list - icon + text inline (no titles/descriptions)
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Lightweight simple list dengan icon + text
+- Minimal parameters untuk quick usage
+- Icon customization
+- Text size options
+- Color themes
+- No complex structure (no title/content separation)
+
+Parameters:
+-----------
+- items: Array of strings (required) - Simple text items
+  Example: ["Item 1", "Item 2", "Item 3"]
+  Or: "Item 1|Item 2|Item 3" | split: "|"
+- icon: Bootstrap icon class (default: "bi-square")
+- icon_color: Icon color class (default: "text-secondary")
+- text_size: Text size class (default: "small")
+- spacing: Item spacing (default: "mb-2")
+- custom_class: Additional list classes (optional)
+
+Common Icons:
+-------------
+- bi-square (default - simple square)
+- bi-circle
+- bi-dash
+- bi-arrow-right
+- bi-chevron-right
+- bi-caret-right
+- bi-check
+- bi-dot
+
+Usage:
+------
+Simple usage (array):
+{% assign tips = "Combine dengan smooth surface|Use natural lighting|Perhatikan proporsi" | split: "|" %}
+{% include components/unordered-list--with-text.html
+   items=tips
+%}
+
+With custom icon:
+{% assign features = "Sertifikat resmi|Teknisi berpengalaman|Harga kompetitif" | split: "|" %}
+{% include components/unordered-list--with-text.html
+   items=features
+   icon="bi-check"
+   icon_color="text-success"
+%}
+
+With arrow icon:
+{% assign steps = "Hubungi kami|Jadwalkan inspeksi|Terima sertifikat" | split: "|" %}
+{% include components/unordered-list--with-text.html
+   items=steps
+   icon="bi-arrow-right"
+   icon_color="text-primary"
+   text_size=""
+%}
+
+Larger spacing:
+{% include components/unordered-list--with-text.html
+   items=benefits
+   icon="bi-chevron-right"
+   spacing="mb-3"
+%}
+
+With custom class:
+{% include components/unordered-list--with-text.html
+   items=notes
+   icon="bi-dot"
+   custom_class="text-muted"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign list_items = include.items %}
+{% assign list_icon = include.icon | default: "bi-square" %}
+{% assign icon_color = include.icon_color | default: "text-secondary" %}
+{% assign text_size = include.text_size | default: "small" %}
+{% assign spacing = include.spacing | default: "mb-2" %}
+{% assign custom_class = include.custom_class %}
+
+{% if list_items and list_items.size > 0 %}
+<ul class="list-unstyled {{ custom_class }} mb-0">
+  {% for item in list_items %}
+  <li class="{{ spacing }}">
+    <i class="bi {{ list_icon }} {{ icon_color }} me-2"></i>
+    <span class="{{ text_size }}">{{ item }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
