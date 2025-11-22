@@ -3,6 +3,9 @@
 ## v.1.0.0
 
 ```
+9afddb6 - Move 404 page inline CSS to modular SCSS architecture (2025-11-22 17:40:31 +0700)
+142a27a - Add standard pages, PWA icons, and site configuration (2025-11-22 17:35:47 +0700)
+51d2dc4 - Standardize components with BEM naming and documentation (2025-11-22 17:34:12 +0700)
 3123ff0 - Add rebuild.sh and enhance Schema.org markup (2025-11-22 16:00:00 +0700)
 71906da - Add brand logo, favicon and PWA support (2025-11-22 15:40:03 +0700)
 bd003c9 - Add item-list--strong-title component (missing file) (2025-11-22 15:21:53 +0700)
