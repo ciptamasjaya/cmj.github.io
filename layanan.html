@@ -13,6 +13,49 @@ breadcrumbs:
     url: /
   - title: Layanan
     url: /layanan
+
+service_coverage:
+  heading:
+    title: "Area Layanan"
+    icon: "bi-geo-alt"
+    icon_class: "text-danger"
+  lead_text: "Kami melayani seluruh wilayah Indonesia dengan fokus utama di:"
+  coverage_list_title: "Jangkauan Wilayah"
+  coverage_areas:
+    - title: "Banten"
+      details: "Serang, Cilegon, Tangerang, Pandeglang, Lebak"
+      icon: "bi-check-circle-fill"
+      icon_class: "text-success"
+    - title: "DKI Jakarta"
+      details: "Jakarta Pusat, Utara, Selatan, Timur, Barat"
+      icon: "bi-check-circle-fill"
+      icon_class: "text-success"
+    - title: "Jawa Barat"
+      details: "Bogor, Bekasi, Depok, Bandung, Karawang"
+      icon: "bi-check-circle-fill"
+      icon_class: "text-success"
+    - title: "Seluruh Indonesia"
+      details: "Melayani seluruh wilayah Indonesia dengan mobilitas tinggi"
+      icon: "bi-globe"
+      icon_class: "text-primary"
+  info_card_title: "Informasi Layanan"
+  info_items:
+    - title: "Kantor Pusat"
+      description: "Jl. Raya Serang KM 24.5 No. 99, Balaraja, Tangerang, Banten 15610"
+      icon: "bi-building"
+    - title: "Mobile Service"
+      description: "Tim kami siap datang ke lokasi Anda di seluruh Indonesia"
+      icon: "bi-truck"
+    - title: "Response Time"
+      description: "Respon cepat maksimal 24 jam untuk wilayah Jabodetabek dan Banten"
+      icon: "bi-clock"
+  css_class:
+    section: ""
+    header: ""
+    coverage_card: "coverage_card"
+    coverage_item: "coverage_item"
+    info_card: "info_card"
+    info_item: "info_item"
 ---
 
 <!-- Breadcrumb Navigation -->
@@ -26,6 +69,9 @@ breadcrumbs:
 
 <!-- Features Section -->
 {% include reusable/block--service-features.html %}
+
+<!-- Service Coverage Section -->
+{% include reusable/block--service-coverage.html %}
 
 <!-- CTA Section -->
 {% include reusable/block--cta-contact.html %}

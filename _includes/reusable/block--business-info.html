@@ -30,6 +30,7 @@ Uses site.business data from _config.yml:
 - site.business.phone
 - site.business.email
 - site.business.openingHours
+- site.business.services
 
 Usage:
 ------
@@ -177,6 +178,7 @@ Usage:
               </div>
 
               <!-- Services -->
+              {% if site.business.services and site.business.services.size > 0 %}
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
@@ -184,25 +186,16 @@ Usage:
                   </div>
                   <div class="info-content">
                     <h4 class="h6 fw-semibold text-muted mb-2">Layanan Utama</h4>
+                    {% for service in site.business.services %}
                     <p class="mb-1 small">
-                      <i class="bi bi-check-circle-fill text-success me-1"></i>
-                      Riksa Uji Pesawat Angkat & Angkut
+                      <i class="bi {{ service.icon | default: 'bi-check-circle-fill' }} text-success me-1"></i>
+                      {{ service.name }}
                     </p>
-                    <p class="mb-1 small">
-                      <i class="bi bi-check-circle-fill text-success me-1"></i>
-                      Riksa Uji Pesawat Uap & Bejana Tekan
-                    </p>
-                    <p class="mb-1 small">
-                      <i class="bi bi-check-circle-fill text-success me-1"></i>
-                      Riksa Uji Instalasi Listrik & Petir
-                    </p>
-                    <p class="mb-1 small">
-                      <i class="bi bi-check-circle-fill text-success me-1"></i>
-                      Riksa Uji Proteksi Kebakaran
-                    </p>
+                    {% endfor %}
                   </div>
                 </div>
               </div>
+              {% endif %}
 
               <!-- Coverage Area -->
               <div class="col-12">

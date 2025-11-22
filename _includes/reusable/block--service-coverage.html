@@ -5,169 +5,199 @@ Block: Service Coverage Area
 
 @file        _includes/reusable/block--service-coverage.html
 @description Service coverage area dengan map dan list area layanan
-@version     1.0.0
+@version     2.0.0
 @date        2025-11-22
 @author      arisciwek (PT. Cipta Mas Jaya)
 
-Features:
----------
-- Coverage area dari site.business.coverage
-- List area dengan icons
-- Responsive layout
-
 Data Source:
 ------------
-Data diambil dari _config.yml:
-- site.business.coverage
-- site.business.location
+Data YAML berasal dari frontmatter file berikut:
+- layanan.html (service_coverage)
+
+Atau bisa juga dari:
+- _data/service_coverage.yml (jika menggunakan site.data.service_coverage)
+- _config.yml (jika menggunakan site.service_coverage)
+
+Features:
+---------
+- Data-driven dari frontmatter
+- Support css_class untuk customization
+- Coverage area dengan icons
+- Info items yang flexible
+- Responsive layout
+
+Parameters:
+-----------
+- heading (object):
+    - title (string): Judul section
+    - icon (string): Bootstrap icon class (default: bi-geo-alt)
+    - icon_class (string): CSS class untuk icon (default: text-danger)
+- lead_text (string): Teks lead di bawah heading
+- coverage_list_title (string): Judul untuk coverage list
+- coverage_areas (array): Daftar area coverage
+    - title (string): Nama area
+    - details (string): Detail wilayah
+    - icon (string): Bootstrap icon class (default: bi-check-circle-fill)
+    - icon_class (string): CSS class untuk icon (default: text-success)
+- info_card_title (string): Judul untuk info card
+- info_items (array): Informasi layanan
+    - title (string): Judul info
+    - description (string): Deskripsi detail
+    - icon (string): Bootstrap icon class
+- css_class (object): CSS class tambahan untuk berbagai elemen HTML
+    - section (string): Class tambahan untuk <section> (default: "py-5 bg-light")
+    - header (string): Class tambahan untuk header row (default: "row mb-5")
+    - coverage_card (string): Class tambahan untuk coverage card (default: "card border-0 shadow-sm")
+    - coverage_item (string): Class tambahan untuk coverage item (default: "coverage-item mb-3")
+    - info_card (string): Class tambahan untuk info card (default: "card border-0 shadow-sm bg-primary text-white")
+    - info_item (string): Class tambahan untuk info item (default: "mb-4")
+
+  Note: Custom class akan di-append (ditambahkan) ke class default, tidak mengganti.
 
 Usage:
 ------
-{% include reusable/block--service-coverage.html %}
+Di frontmatter halaman:
+service_coverage:
+  heading:
+    title: "Area Layanan"
+    icon: "bi-geo-alt"
+    icon_class: "text-danger"
+  lead_text: "Kami melayani seluruh wilayah Indonesia dengan fokus utama di:"
+  coverage_list_title: "Jangkauan Wilayah"
+  coverage_areas:
+    - title: "Banten"
+      details: "Serang, Cilegon, Tangerang, Pandeglang, Lebak"
+      icon: "bi-check-circle-fill"
+      icon_class: "text-success"
+  info_card_title: "Informasi Layanan"
+  info_items:
+    - title: "Kantor Pusat"
+      description: "{{ site.business.address.street }}"
+      icon: "bi-building"
+  css_class:
+    section: "fade-in"                    # Hasil: "py-5 bg-light fade-in"
+    coverage_card: "hover-lift"           # Hasil: "card border-0 shadow-sm hover-lift"
+    info_card: "gradient-bg"              # Hasil: "card border-0 shadow-sm bg-primary text-white gradient-bg"
+    info_item: "slide-in-right"           # Hasil: "mb-4 slide-in-right"
 
-No parameters needed - automatically uses site.business data
+Kemudian include dengan:
+{% include reusable/block--service-coverage.html
+   data=page.service_coverage
+%}
 
 ============================================================================
 {% endcomment %}
 
-<section class="block--service-coverage py-5 bg-light">
-  <div class="container">
+{% if include.data %}
+  {% assign block_data = include.data %}
+{% else %}
+  {% assign block_data = page.service_coverage %}
+{% endif %}
 
-    <!-- Section Header -->
-    <div class="row mb-5">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 class="h2 fw-bold mb-3">
-          <i class="bi bi-geo-alt text-danger me-2"></i>
-          Area Layanan
-        </h2>
-        <p class="lead text-muted">
-          Kami melayani seluruh wilayah Indonesia dengan fokus utama di:
-        </p>
-      </div>
-    </div>
+{% if block_data %}
+  {% assign css_class = block_data.css_class %}
+  {% assign heading = block_data.heading %}
+  {% assign lead_text = block_data.lead_text %}
+  {% assign coverage_list_title = block_data.coverage_list_title | default: "Jangkauan Wilayah" %}
+  {% assign coverage_areas = block_data.coverage_areas %}
+  {% assign info_card_title = block_data.info_card_title | default: "Informasi Layanan" %}
+  {% assign info_items = block_data.info_items %}
 
-    <!-- Coverage Content -->
-    <div class="row align-items-center">
+  <section class="block--service-coverage py-5 bg-light {{ css_class.section }}">
+    <div class="container">
 
-      <!-- Left Column - Coverage List -->
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-
-            <h3 class="h5 fw-bold mb-4">
-              <i class="bi bi-map text-primary me-2"></i>
-              Jangkauan Wilayah
-            </h3>
-
-            <!-- Coverage Areas -->
-            <div class="coverage-list">
-
-              <!-- Banten -->
-              <div class="coverage-item mb-3">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                  <div>
-                    <strong class="d-block">Banten</strong>
-                    <small class="text-muted">Serang, Cilegon, Tangerang, Pandeglang, Lebak</small>
-                  </div>
-                </div>
-              </div>
-
-              <!-- DKI Jakarta -->
-              <div class="coverage-item mb-3">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                  <div>
-                    <strong class="d-block">DKI Jakarta</strong>
-                    <small class="text-muted">Jakarta Pusat, Utara, Selatan, Timur, Barat</small>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Jawa Barat -->
-              <div class="coverage-item mb-3">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                  <div>
-                    <strong class="d-block">Jawa Barat</strong>
-                    <small class="text-muted">Bogor, Bekasi, Depok, Bandung, Karawang</small>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Seluruh Indonesia -->
-              <div class="coverage-item">
-                <div class="d-flex align-items-start">
-                  <i class="bi bi-globe text-primary me-3 mt-1 fs-5"></i>
-                  <div>
-                    <strong class="d-block">Seluruh Indonesia</strong>
-                    <small class="text-muted">Melayani seluruh wilayah Indonesia dengan mobilitas tinggi</small>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
+      <!-- Section Header -->
+      {% if heading %}
+      <div class="row mb-5 {{ css_class.header }}">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="h2 fw-bold mb-3">
+            {% if heading.icon %}
+              <i class="bi {{ heading.icon }} {{ heading.icon_class | default: 'text-danger' }} me-2"></i>
+            {% endif %}
+            {{ heading.title }}
+          </h2>
+          {% if lead_text %}
+          <p class="lead text-muted">
+            {{ lead_text }}
+          </p>
+          {% endif %}
         </div>
       </div>
+      {% endif %}
 
-      <!-- Right Column - Info -->
-      <div class="col-lg-6">
-        <div class="card border-0 shadow-sm bg-primary text-white">
-          <div class="card-body p-5">
+      <!-- Coverage Content -->
+      <div class="row align-items-center">
 
-            <h3 class="h4 fw-bold mb-4">
-              <i class="bi bi-info-circle me-2"></i>
-              Informasi Layanan
-            </h3>
+        <!-- Left Column - Coverage List -->
+        {% if coverage_areas and coverage_areas.size > 0 %}
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="card border-0 shadow-sm {{ css_class.coverage_card }}">
+            <div class="card-body p-4">
 
-            <!-- Headquarters -->
-            <div class="mb-4">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-building me-3 fs-4"></i>
-                <div>
-                  <strong class="d-block mb-1">Kantor Pusat</strong>
-                  <p class="mb-0 opacity-75">
-                    {{ site.business.address.street }},<br>
-                    {{ site.business.address.city }}, {{ site.business.address.province }}
-                  </p>
+              <h3 class="h5 fw-bold mb-4">
+                <i class="bi bi-map text-primary me-2"></i>
+                {{ coverage_list_title }}
+              </h3>
+
+              <!-- Coverage Areas -->
+              <div class="coverage-list">
+                {% for area in coverage_areas %}
+                <div class="coverage-item {% unless forloop.last %}mb-3{% endunless %} {{ css_class.coverage_item }}">
+                  <div class="d-flex align-items-start">
+                    <i class="bi {{ area.icon | default: 'bi-check-circle-fill' }} {{ area.icon_class | default: 'text-success' }} me-3 mt-1"></i>
+                    <div>
+                      <strong class="d-block">{{ area.title }}</strong>
+                      {% if area.details %}
+                      <small class="text-muted">{{ area.details }}</small>
+                      {% endif %}
+                    </div>
+                  </div>
                 </div>
+                {% endfor %}
               </div>
-            </div>
 
-            <!-- Mobile Service -->
-            <div class="mb-4">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-truck me-3 fs-4"></i>
-                <div>
-                  <strong class="d-block mb-1">Mobile Service</strong>
-                  <p class="mb-0 opacity-75">
-                    Tim kami siap datang ke lokasi Anda di seluruh Indonesia
-                  </p>
-                </div>
-              </div>
             </div>
-
-            <!-- Response Time -->
-            <div>
-              <div class="d-flex align-items-start">
-                <i class="bi bi-clock me-3 fs-4"></i>
-                <div>
-                  <strong class="d-block mb-1">Response Time</strong>
-                  <p class="mb-0 opacity-75">
-                    Respon cepat maksimal 24 jam untuk wilayah Jabodetabek dan Banten
-                  </p>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
+        {% endif %}
+
+        <!-- Right Column - Info -->
+        {% if info_items and info_items.size > 0 %}
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm bg-primary text-white {{ css_class.info_card }}">
+            <div class="card-body p-5">
+
+              <h3 class="h4 fw-bold mb-4">
+                <i class="bi bi-info-circle me-2"></i>
+                {{ info_card_title }}
+              </h3>
+
+              {% for item in info_items %}
+              <div class="{% unless forloop.last %}mb-4{% endunless %} {{ css_class.info_item }}">
+                <div class="d-flex align-items-start">
+                  {% if item.icon %}
+                  <i class="bi {{ item.icon }} me-3 fs-4"></i>
+                  {% endif %}
+                  <div>
+                    <strong class="d-block mb-1">{{ item.title }}</strong>
+                    {% if item.description %}
+                    <p class="mb-0 opacity-75">
+                      {{ item.description }}
+                    </p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
       </div>
 
     </div>
-
-  </div>
-</section>
+  </section>
+{% endif %}
 

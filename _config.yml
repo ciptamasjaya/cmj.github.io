@@ -14,6 +14,27 @@ business:
   owner: "PT. Cipta Mas Jaya"
   email: "info@ciptamasjaya.co.id"
 
+  # Main Services
+  services:
+    - name: "Riksa Uji Pesawat Angkat Angkut"
+      icon: "bi-check-circle-fill"
+    - name: "Riksa Uji Pesawat Tenaga dan Produksi"
+      icon: "bi-check-circle-fill"
+    - name: "Riksa Uji Pesawat Uap & Bejana Tekan"
+      icon: "bi-check-circle-fill"
+    - name: "Riksa Uji Instalasi Listrik & Petir"
+      icon: "bi-check-circle-fill"
+    - name: "Riksa Uji Proteksi Kebakaran"
+      icon: "bi-check-circle-fill"
+    - name: "Riksa Uji Elevator dan Eskalator"
+      icon: "bi-check-circle-fill"
+    - name: "Riksa Uji Lifeline"
+      icon: "bi-check-circle-fill"
+    - name: "Riksa Uji Lingkungan Kerja"
+      icon: "bi-check-circle-fill"
+    - name: "Pengesahan Gambar Kemnaker RI"
+      icon: "bi-check-circle-fill"
+
   # Address (lengkapi dengan alamat lengkap)
   address:
     street: "Jl Raya Taktakan Ruko Golden Paradise No 7, Kecamatan Taktakan"
