@@ -1,36 +1,34 @@
 {% comment %}
 ============================================================================
-Block: Company Profile
+Company Profile Block
 ============================================================================
 
 @file        _includes/reusable/block--company-profile.html
-@description Company profile section dengan info bisnis dari _config.yml
-@version     1.0.0
-@date        2025-11-22
+@description Company profile section dengan info bisnis (data-driven)
+@version     2.0.0
+@date        2025-11-23
 @author      arisciwek (PT. Cipta Mas Jaya)
-
-Features:
----------
-- Auto-load company info dari site.business
-- Responsive 2-column layout
-- Bootstrap icons
-- Company details (name, phone, location, etc)
 
 Data Source:
 ------------
-Data diambil dari _config.yml:
-- site.business.name
-- site.business.phone
-- site.business.email
-- site.business.location
-- site.business.coverage
-- site.business.foundingDate
+Labels dari:
+- _data/company_profile.yml
+
+Values dari:
+- site.business.* (_config.yml)
+
+Features:
+---------
+- Data-driven labels and UI text
+- Template variable support ({company_name})
+- Responsive 2-column layout
+- Dynamic field rendering
+- Auto-detect link types (tel, mailto, whatsapp)
+- Optional fields support
 
 Usage:
 ------
 {% include reusable/block--company-profile.html %}
-
-No parameters needed - automatically uses site.business data
 
 ============================================================================
 {% endcomment %}
@@ -41,12 +39,15 @@ No parameters needed - automatically uses site.business data
     <!-- Section Header -->
     <div class="row mb-5">
       <div class="col-lg-8 mx-auto text-center">
+        {% assign header_desc = site.data.company_profile.header.description_template
+           | replace: '{company_name}', site.business.name %}
+
         <h2 class="h2 fw-bold mb-3">
-          <i class="bi bi-building text-primary me-2"></i>
-          Profil Perusahaan
+          <i class="bi {{ site.data.company_profile.header.icon }} {{ site.data.company_profile.header.icon_color }} me-2"></i>
+          {{ site.data.company_profile.header.title }}
         </h2>
         <p class="lead text-muted">
-          {{ site.business.name }} adalah penyedia jasa riksa uji K3 profesional dan terpercaya
+          {{ header_desc }}
         </p>
       </div>
     </div>
@@ -54,131 +55,109 @@ No parameters needed - automatically uses site.business data
     <!-- Company Info Grid -->
     <div class="row g-4">
 
-      <!-- Left Column -->
+      <!-- Left Column - Information Section -->
       <div class="col-lg-6">
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body p-4">
 
             <h3 class="h5 fw-bold mb-4">
-              <i class="bi bi-info-circle text-primary me-2"></i>
-              Informasi Perusahaan
+              <i class="bi {{ site.data.company_profile.sections.information.icon }} {{ site.data.company_profile.sections.information.icon_color }} me-2"></i>
+              {{ site.data.company_profile.sections.information.title }}
             </h3>
 
-            <!-- Company Name -->
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-building text-primary me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">Nama Perusahaan</strong>
-                  <span>{{ site.business.name }}</span>
-                </div>
-              </div>
-            </div>
+            <!-- Render Information Fields -->
+            {% for field in site.data.company_profile.sections.information.fields %}
+              {% if field.key == 'name' %}
+                {% assign field_value = site.business.name %}
+              {% elsif field.key == 'phone' %}
+                {% assign field_value = site.business.phone %}
+              {% elsif field.key == 'whatsapp' %}
+                {% assign field_value = site.business.whatsapp %}
+              {% elsif field.key == 'email' %}
+                {% assign field_value = site.business.email %}
+              {% endif %}
 
-            <!-- Phone -->
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-telephone text-success me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">Telepon</strong>
-                  <a href="tel:{{ site.business.phone }}" class="text-decoration-none">
-                    {{ site.business.phone }}
-                  </a>
-                </div>
-              </div>
-            </div>
+              <div class="mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="bi {{ field.icon }} {{ field.icon_color }} me-3 fs-5"></i>
+                  <div>
+                    <strong class="d-block text-muted small">{{ field.label }}</strong>
 
-            <!-- WhatsApp -->
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-whatsapp text-success me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">WhatsApp</strong>
-                  <a href="https://wa.me/{{ site.business.whatsapp }}"
-                     class="text-decoration-none"
-                     target="_blank">
-                    +{{ site.business.whatsapp }}
-                  </a>
-                </div>
-              </div>
-            </div>
+                    {% if field.link_type == 'tel' %}
+                      <a href="tel:{{ field_value }}" class="text-decoration-none">
+                        {{ field_value }}
+                      </a>
+                    {% elsif field.link_type == 'whatsapp' %}
+                      <a href="https://wa.me/{{ field_value }}"
+                         class="text-decoration-none"
+                         target="{{ field.link_target | default: '_self' }}">
+                        +{{ field_value }}
+                      </a>
+                    {% elsif field.link_type == 'mailto' %}
+                      <a href="mailto:{{ field_value }}" class="text-decoration-none">
+                        {{ field_value }}
+                      </a>
+                    {% else %}
+                      <span>{{ field_value }}</span>
+                    {% endif %}
 
-            <!-- Email -->
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-envelope text-primary me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">Email</strong>
-                  <a href="mailto:{{ site.business.email }}" class="text-decoration-none">
-                    {{ site.business.email }}
-                  </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            {% endfor %}
 
           </div>
         </div>
       </div>
 
-      <!-- Right Column -->
+      <!-- Right Column - Location Section -->
       <div class="col-lg-6">
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body p-4">
 
             <h3 class="h5 fw-bold mb-4">
-              <i class="bi bi-geo-alt text-danger me-2"></i>
-              Lokasi & Layanan
+              <i class="bi {{ site.data.company_profile.sections.location.icon }} {{ site.data.company_profile.sections.location.icon_color }} me-2"></i>
+              {{ site.data.company_profile.sections.location.title }}
             </h3>
 
-            <!-- Location -->
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-pin-map text-danger me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">Lokasi Kantor</strong>
-                  <span>{{ site.business.location }}</span>
-                </div>
-              </div>
-            </div>
+            <!-- Render Location Fields -->
+            {% for field in site.data.company_profile.sections.location.fields %}
+              {% if field.key == 'location' %}
+                {% assign field_value = site.business.location %}
+              {% elsif field.key == 'address' %}
+                {% assign field_value = site.business.address %}
+              {% elsif field.key == 'coverage' %}
+                {% assign field_value = site.business.coverage %}
+              {% elsif field.key == 'founding_date' %}
+                {% assign field_value = site.business.foundingDate %}
+              {% endif %}
 
-            <!-- Address -->
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-map text-info me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">Alamat</strong>
-                  <span>
-                    {{ site.business.address.street }}<br>
-                    {{ site.business.address.city }}, {{ site.business.address.province }}<br>
-                    {{ site.business.address.postalCode }}, {{ site.business.address.country }}
-                  </span>
-                </div>
-              </div>
-            </div>
+              {% if field.optional and field_value == nil or field_value == '' %}
+                {% continue %}
+              {% endif %}
 
-            <!-- Coverage Area -->
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-globe text-warning me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">Area Layanan</strong>
-                  <span>{{ site.business.coverage }}</span>
-                </div>
-              </div>
-            </div>
+              <div class="mb-3">
+                <div class="d-flex align-items-start">
+                  <i class="bi {{ field.icon }} {{ field.icon_color }} me-3 fs-5"></i>
+                  <div>
+                    <strong class="d-block text-muted small">{{ field.label }}</strong>
 
-            <!-- Founding Date -->
-            {% if site.business.foundingDate %}
-            <div class="mb-3">
-              <div class="d-flex align-items-start">
-                <i class="bi bi-calendar-check text-success me-3 fs-5"></i>
-                <div>
-                  <strong class="d-block text-muted small">Berdiri Sejak</strong>
-                  <span>{{ site.business.foundingDate | date: "%Y" }}</span>
+                    {% if field.multi_line %}
+                      <span>
+                        {{ field_value.street }}<br>
+                        {{ field_value.city }}, {{ field_value.province }}<br>
+                        {{ field_value.postalCode }}, {{ field_value.country }}
+                      </span>
+                    {% elsif field.date_format %}
+                      <span>{{ field_value | date: field.date_format }}</span>
+                    {% else %}
+                      <span>{{ field_value }}</span>
+                    {% endif %}
+
+                  </div>
                 </div>
               </div>
-            </div>
-            {% endif %}
+            {% endfor %}
 
           </div>
         </div>
@@ -188,4 +167,3 @@ No parameters needed - automatically uses site.business data
 
   </div>
 </section>
-

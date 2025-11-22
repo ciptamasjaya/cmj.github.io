@@ -1,0 +1,98 @@
+# ============================================================================
+# Company Profile Data
+# ============================================================================
+#
+# @file        _data/company_profile.yml
+# @description Data untuk block--company-profile.html (labels only, values from site.business)
+# @version     1.0.0
+# @date        2025-11-23
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--company-profile.html
+#
+# Structure:
+# ----------
+# header:       Section header dengan title dan description
+# sections:     2 sections (information dan location)
+# fields:       9 field labels dengan icons
+#
+# Notes:
+# ------
+# Values (actual data) tetap dari site.business.*
+# File ini hanya menyimpan labels dan UI text
+#
+# ============================================================================
+
+header:
+  title: "Profil Perusahaan"
+  icon: "bi-building"
+  icon_color: "text-primary"
+  description_template: "{company_name} adalah penyedia jasa riksa uji K3 profesional dan terpercaya"
+
+sections:
+  information:
+    title: "Informasi Perusahaan"
+    icon: "bi-info-circle"
+    icon_color: "text-primary"
+    fields:
+      - key: "name"
+        label: "Nama Perusahaan"
+        icon: "bi-building"
+        icon_color: "text-primary"
+        value_path: "site.business.name"
+
+      - key: "phone"
+        label: "Telepon"
+        icon: "bi-telephone"
+        icon_color: "text-success"
+        value_path: "site.business.phone"
+        link_type: "tel"
+
+      - key: "whatsapp"
+        label: "WhatsApp"
+        icon: "bi-whatsapp"
+        icon_color: "text-success"
+        value_path: "site.business.whatsapp"
+        link_type: "whatsapp"
+        link_target: "_blank"
+
+      - key: "email"
+        label: "Email"
+        icon: "bi-envelope"
+        icon_color: "text-primary"
+        value_path: "site.business.email"
+        link_type: "mailto"
+
+  location:
+    title: "Lokasi & Layanan"
+    icon: "bi-geo-alt"
+    icon_color: "text-danger"
+    fields:
+      - key: "location"
+        label: "Lokasi Kantor"
+        icon: "bi-pin-map"
+        icon_color: "text-danger"
+        value_path: "site.business.location"
+
+      - key: "address"
+        label: "Alamat"
+        icon: "bi-map"
+        icon_color: "text-info"
+        value_path: "site.business.address"
+        multi_line: true
+
+      - key: "coverage"
+        label: "Area Layanan"
+        icon: "bi-globe"
+        icon_color: "text-warning"
+        value_path: "site.business.coverage"
+
+      - key: "founding_date"
+        label: "Berdiri Sejak"
+        icon: "bi-calendar-check"
+        icon_color: "text-success"
+        value_path: "site.business.foundingDate"
+        date_format: "%Y"
+        optional: true
