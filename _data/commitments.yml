@@ -1,0 +1,67 @@
+# ============================================================================
+# Commitments Data
+# ============================================================================
+#
+# @file        _data/commitments.yml
+# @description Data untuk block--commitment.html
+# @version     1.0.0
+# @date        2025-11-22
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--commitment.html
+#
+# Structure:
+# ----------
+# header:        Section header dengan title, icon, dan description
+# items:         Array of commitment items (8 items)
+#
+# ============================================================================
+
+header:
+  title: "Komitmen Kami"
+  icon: "bi-hand-thumbs-up"
+  icon_color: "text-success"
+  description: "Kami berkomitmen memberikan layanan terbaik untuk keselamatan dan keamanan perusahaan Anda"
+
+items:
+  - title: "Kualitas Terjamin"
+    description: "Layanan berkualitas dengan standar internasional dan sertifikasi resmi"
+    icon: "bi-award"
+    icon_color: "text-primary"
+
+  - title: "Profesionalisme"
+    description: "Tim inspector bersertifikat dan berpengalaman di bidang K3"
+    icon: "bi-people"
+    icon_color: "text-success"
+
+  - title: "Transparansi"
+    description: "Laporan lengkap dan jelas dengan dokumentasi foto serta rekomendasi"
+    icon: "bi-eye"
+    icon_color: "text-info"
+
+  - title: "Integritas"
+    description: "Berpegang pada etika profesional dan peraturan yang berlaku"
+    icon: "bi-shield-check"
+    icon_color: "text-warning"
+
+  - title: "Keamanan Data"
+    description: "Menjaga kerahasiaan data dan informasi perusahaan klien"
+    icon: "bi-lock"
+    icon_color: "text-danger"
+
+  - title: "Ketepatan Waktu"
+    description: "Penerbitan sertifikat maksimal 7 hari kerja setelah inspeksi"
+    icon: "bi-clock"
+    icon_color: "text-primary"
+
+  - title: "After Sales Support"
+    description: "Konsultasi dan pendampingan pasca inspeksi"
+    icon: "bi-headset"
+    icon_color: "text-success"
+
+  - title: "Continuous Improvement"
+    description: "Senantiasa meningkatkan kualitas layanan dan kompetensi tim"
+    icon: "bi-graph-up-arrow"
+    icon_color: "text-warning"

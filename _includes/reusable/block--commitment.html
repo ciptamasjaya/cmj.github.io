@@ -5,13 +5,19 @@ Block: Our Commitment
 
 @file        _includes/reusable/block--commitment.html
 @description Komitmen perusahaan untuk kualitas layanan
-@version     1.0.0
+@version     2.0.0
 @date        2025-11-22
 @author      arisciwek (PT. Cipta Mas Jaya)
 
+Data Source:
+------------
+Data YAML berasal dari:
+- _data/commitments.yml
+
 Features:
 ---------
-- Commitment statements dengan icons
+- Data-driven commitment cards
+- Dynamic header dan items
 - Responsive grid layout
 - Bootstrap cards
 
@@ -29,138 +35,32 @@ Usage:
     <div class="row mb-5">
       <div class="col-lg-8 mx-auto text-center">
         <h2 class="h2 fw-bold mb-3">
-          <i class="bi bi-hand-thumbs-up text-success me-2"></i>
-          Komitmen Kami
+          <i class="bi {{ site.data.commitments.header.icon }} {{ site.data.commitments.header.icon_color }} me-2"></i>
+          {{ site.data.commitments.header.title }}
         </h2>
         <p class="lead text-muted">
-          Kami berkomitmen memberikan layanan terbaik untuk keselamatan dan keamanan perusahaan Anda
+          {{ site.data.commitments.header.description }}
         </p>
       </div>
     </div>
 
     <!-- Commitment Grid -->
     <div class="row g-4">
-
-      <!-- Kualitas Terjamin -->
+      {% for item in site.data.commitments.items %}
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 border-0 shadow-sm text-center">
           <div class="card-body p-4">
             <div class="commitment-icon mb-3">
-              <i class="bi bi-award text-primary"></i>
+              <i class="bi {{ item.icon }} {{ item.icon_color }}"></i>
             </div>
-            <h3 class="h6 fw-bold mb-3">Kualitas Terjamin</h3>
+            <h3 class="h6 fw-bold mb-3">{{ item.title }}</h3>
             <p class="text-muted small mb-0">
-              Layanan berkualitas dengan standar internasional dan sertifikasi resmi
+              {{ item.description }}
             </p>
           </div>
         </div>
       </div>
-
-      <!-- Profesionalisme -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body p-4">
-            <div class="commitment-icon mb-3">
-              <i class="bi bi-people text-success"></i>
-            </div>
-            <h3 class="h6 fw-bold mb-3">Profesionalisme</h3>
-            <p class="text-muted small mb-0">
-              Tim inspector bersertifikat dan berpengalaman di bidang K3
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Transparansi -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body p-4">
-            <div class="commitment-icon mb-3">
-              <i class="bi bi-eye text-info"></i>
-            </div>
-            <h3 class="h6 fw-bold mb-3">Transparansi</h3>
-            <p class="text-muted small mb-0">
-              Laporan lengkap dan jelas dengan dokumentasi foto serta rekomendasi
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Integritas -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body p-4">
-            <div class="commitment-icon mb-3">
-              <i class="bi bi-shield-check text-warning"></i>
-            </div>
-            <h3 class="h6 fw-bold mb-3">Integritas</h3>
-            <p class="text-muted small mb-0">
-              Berpegang pada etika profesional dan peraturan yang berlaku
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Keamanan Data -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body p-4">
-            <div class="commitment-icon mb-3">
-              <i class="bi bi-lock text-danger"></i>
-            </div>
-            <h3 class="h6 fw-bold mb-3">Keamanan Data</h3>
-            <p class="text-muted small mb-0">
-              Menjaga kerahasiaan data dan informasi perusahaan klien
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ketepatan Waktu -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body p-4">
-            <div class="commitment-icon mb-3">
-              <i class="bi bi-clock text-primary"></i>
-            </div>
-            <h3 class="h6 fw-bold mb-3">Ketepatan Waktu</h3>
-            <p class="text-muted small mb-0">
-              Penerbitan sertifikat maksimal 7 hari kerja setelah inspeksi
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- After Sales Support -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body p-4">
-            <div class="commitment-icon mb-3">
-              <i class="bi bi-headset text-success"></i>
-            </div>
-            <h3 class="h6 fw-bold mb-3">After Sales Support</h3>
-            <p class="text-muted small mb-0">
-              Konsultasi dan pendampingan pasca inspeksi
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Continuous Improvement -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body p-4">
-            <div class="commitment-icon mb-3">
-              <i class="bi bi-graph-up-arrow text-warning"></i>
-            </div>
-            <h3 class="h6 fw-bold mb-3">Continuous Improvement</h3>
-            <p class="text-muted small mb-0">
-              Senantiasa meningkatkan kualitas layanan dan kompetensi tim
-            </p>
-          </div>
-        </div>
-      </div>
-
+      {% endfor %}
     </div>
 
   </div>
