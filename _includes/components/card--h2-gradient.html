@@ -1,0 +1,150 @@
+{% comment %}
+============================================================================
+Card H2 Gradient Component (Decorative Variant)
+============================================================================
+
+@file        _includes/components/card--h2-gradient.html
+@description Enhanced card untuk h2 heading dengan custom gradient dan decorative icons
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Differences from card--h2-basic:
+--------------------------------
+- Larger shadow by default (shadow-lg)
+- More custom gradient options with theme presets
+- Decorative subtitle icons (customizable)
+- Additional styling options
+
+Features:
+---------
+- Card dengan custom gradient backgrounds
+- H2 heading dengan main icon
+- Decorative subtitle dengan customizable icons
+- Theme-based gradient presets (coffee, ocean, sunset, forest, etc.)
+- Enhanced shadow and spacing
+- Responsive design
+
+Parameters:
+-----------
+- title: H2 text (required)
+- subtitle: Optional subtitle/description text
+- icon: Main Bootstrap icon class (optional, e.g., "bi-cup-hot-fill")
+- icon_size: Main icon font size (default: "2.5rem")
+- subtitle_icon: Icon untuk subtitle (default: "bi-stars")
+- gradient: Gradient preset or "custom" (default: "coffee")
+  Presets: "coffee", "ocean", "sunset", "forest", "royal", "fire", "night", "custom"
+- custom_gradient: Custom gradient CSS jika gradient="custom"
+- text_color: Text color class (default: "text-white")
+- spacing: Margin spacing (default: "my-5")
+- shadow: Shadow class (default: "shadow-lg")
+- padding: Padding class (default: "py-4 px-3")
+
+Gradient Theme Presets:
+-----------------------
+- coffee: linear-gradient(135deg, #D4A574 0%, #8B6914 50%, #6B5310 100%)
+- ocean: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%)
+- sunset: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%)
+- forest: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)
+- royal: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%)
+- fire: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%)
+- night: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%)
+- sky: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)
+
+Usage:
+------
+Coffee theme (for cafe/restaurant content):
+{% include components/card--h2-gradient.html
+   title="6 Aplikasi Kayu Dolken di Interior Cafe"
+   subtitle="Dari area indoor hingga outdoor, temukan inspirasi implementasi yang sesuai konsep cafe Anda"
+   icon="bi-cup-hot-fill"
+   gradient="coffee"
+%}
+
+Ocean theme:
+{% include components/card--h2-gradient.html
+   title="Layanan Riksa Uji K3"
+   subtitle="Profesional, Terpercaya, dan Bersertifikat"
+   icon="bi-shield-check"
+   subtitle_icon="bi-check-circle"
+   gradient="ocean"
+%}
+
+Custom gradient:
+{% include components/card--h2-gradient.html
+   title="Hubungi Kami"
+   subtitle="Siap melayani kebutuhan inspeksi K3 Anda"
+   icon="bi-telephone"
+   gradient="custom"
+   custom_gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+%}
+
+With different subtitle icon:
+{% include components/card--h2-gradient.html
+   title="Sertifikasi Resmi"
+   subtitle="Terdaftar dan diakui oleh Kementerian Ketenagakerjaan"
+   icon="bi-award-fill"
+   subtitle_icon="bi-shield-fill-check"
+   gradient="royal"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign h2_title = include.title %}
+{% assign h2_subtitle = include.subtitle %}
+{% assign h2_icon = include.icon %}
+{% assign icon_size = include.icon_size | default: "2.5rem" %}
+{% assign subtitle_icon = include.subtitle_icon | default: "bi-stars" %}
+{% assign gradient_preset = include.gradient | default: "coffee" %}
+{% assign custom_gradient = include.custom_gradient %}
+{% assign text_color = include.text_color | default: "text-white" %}
+{% assign spacing = include.spacing | default: "my-5" %}
+{% assign shadow = include.shadow | default: "shadow-lg" %}
+{% assign padding = include.padding | default: "py-4 px-3" %}
+
+{% comment %} Theme-based gradient definitions {% endcomment %}
+{% case gradient_preset %}
+  {% when "coffee" %}
+    {% assign gradient_css = "linear-gradient(135deg, #D4A574 0%, #8B6914 50%, #6B5310 100%)" %}
+  {% when "ocean" %}
+    {% assign gradient_css = "linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%)" %}
+  {% when "sunset" %}
+    {% assign gradient_css = "linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%)" %}
+  {% when "forest" %}
+    {% assign gradient_css = "linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)" %}
+  {% when "royal" %}
+    {% assign gradient_css = "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%)" %}
+  {% when "fire" %}
+    {% assign gradient_css = "linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%)" %}
+  {% when "night" %}
+    {% assign gradient_css = "linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #020617 100%)" %}
+  {% when "sky" %}
+    {% assign gradient_css = "linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)" %}
+  {% when "custom" %}
+    {% assign gradient_css = custom_gradient %}
+  {% else %}
+    {% assign gradient_css = "linear-gradient(135deg, #D4A574 0%, #8B6914 50%, #6B5310 100%)" %}
+{% endcase %}
+
+<div class="{{ spacing }}">
+  <div class="card border-0 {{ shadow }}">
+    <div class="card-body {{ text_color }} text-center {{ padding }}" style="background: {{ gradient_css }};">
+
+      {% if h2_icon %}
+      <i class="bi {{ h2_icon }} mb-2" style="font-size: {{ icon_size }};"></i>
+      {% endif %}
+
+      <h2 class="h2 mb-0 fw-bold {{ text_color }}">{{ h2_title }}</h2>
+
+      {% if h2_subtitle %}
+      <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+        <i class="bi {{ subtitle_icon }} me-1"></i>
+        {{ h2_subtitle }}
+        <i class="bi {{ subtitle_icon }} ms-1"></i>
+      </p>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

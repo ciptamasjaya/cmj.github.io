@@ -1,0 +1,146 @@
+{% comment %}
+============================================================================
+Card H2 Basic Component
+============================================================================
+
+@file        _includes/components/card--h2-basic.html
+@description Card wrapper untuk h2 heading dengan icon, gradient, dan subtitle
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Card dengan gradient background
+- H2 heading dengan icon
+- Optional subtitle/description
+- Customizable colors dan spacing
+- Responsive design
+- Shadow dan border options
+
+Parameters:
+-----------
+- title: H2 text (required)
+- subtitle: Optional subtitle/description text
+- icon: Bootstrap icon class (optional, e.g., "bi-cash-coin")
+- icon_size: Icon font size (default: "2.5rem")
+- gradient: Gradient preset (default: "green")
+  Options: "green", "blue", "red", "purple", "orange", "custom"
+- custom_gradient: Custom gradient CSS jika gradient="custom"
+- text_color: Text color class (default: "text-white")
+- spacing: Margin spacing (default: "my-5")
+- shadow: Shadow class (default: "shadow-sm")
+- border: Border class (optional)
+- padding: Padding class (default: "py-4 px-3")
+- text_align: Text alignment (default: "center")
+
+Gradient Presets:
+-----------------
+- green: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)
+- blue: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)
+- red: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)
+- purple: linear-gradient(135deg, #a855f7 0%, #9333ea 50%, #7e22ce 100%)
+- orange: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%)
+- primary: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%)
+
+Usage:
+------
+Basic usage (green gradient):
+{% include components/card--h2-basic.html
+   title="Harga dan Pengiriman"
+   subtitle="Harga terjangkau dengan sistem pembayaran COD yang aman"
+   icon="bi-cash-coin"
+%}
+
+With custom gradient:
+{% include components/card--h2-basic.html
+   title="Layanan Kami"
+   subtitle="Jasa riksa uji K3 terpercaya"
+   icon="bi-shield-check"
+   gradient="blue"
+%}
+
+Custom gradient:
+{% include components/card--h2-basic.html
+   title="Hubungi Kami"
+   icon="bi-telephone"
+   gradient="custom"
+   custom_gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+%}
+
+Without icon:
+{% include components/card--h2-basic.html
+   title="Tentang Kami"
+   subtitle="PT. Cipta Mas Jaya - Jasa Riksa Uji K3 Terpercaya"
+   gradient="primary"
+%}
+
+With left alignment:
+{% include components/card--h2-basic.html
+   title="Proses Kami"
+   icon="bi-gear"
+   text_align="start"
+   spacing="mb-4"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign h2_title = include.title %}
+{% assign h2_subtitle = include.subtitle %}
+{% assign h2_icon = include.icon %}
+{% assign icon_size = include.icon_size | default: "2.5rem" %}
+{% assign gradient_preset = include.gradient | default: "green" %}
+{% assign custom_gradient = include.custom_gradient %}
+{% assign text_color = include.text_color | default: "text-white" %}
+{% assign spacing = include.spacing | default: "my-5" %}
+{% assign shadow = include.shadow | default: "shadow-sm" %}
+{% assign border = include.border %}
+{% assign padding = include.padding | default: "py-4 px-3" %}
+{% assign text_align = include.text_align | default: "center" %}
+
+{% comment %} Gradient definitions {% endcomment %}
+{% case gradient_preset %}
+  {% when "green" %}
+    {% assign gradient_css = "linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)" %}
+  {% when "blue" %}
+    {% assign gradient_css = "linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%)" %}
+  {% when "red" %}
+    {% assign gradient_css = "linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)" %}
+  {% when "purple" %}
+    {% assign gradient_css = "linear-gradient(135deg, #a855f7 0%, #9333ea 50%, #7e22ce 100%)" %}
+  {% when "orange" %}
+    {% assign gradient_css = "linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%)" %}
+  {% when "primary" %}
+    {% assign gradient_css = "linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%)" %}
+  {% when "custom" %}
+    {% assign gradient_css = custom_gradient %}
+  {% else %}
+    {% assign gradient_css = "linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%)" %}
+{% endcase %}
+
+<div class="{{ spacing }}">
+  <div class="card border-0 {{ shadow }} {{ border }}">
+    <div class="card-body {{ text_color }} text-{{ text_align }} {{ padding }}" style="background: {{ gradient_css }};">
+      {% if h2_icon %}
+      <i class="bi {{ h2_icon }} mb-2" style="font-size: {{ icon_size }};"></i>
+      {% endif %}
+
+      <h2 class="h2 mb-0 fw-bold {{ text_color }}">{{ h2_title }}</h2>
+
+      {% if h2_subtitle %}
+      <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+        <i class="bi bi-shield-check me-1"></i>
+        {{ h2_subtitle }}
+        <i class="bi bi-shield-check ms-1"></i>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+.card-body i.bi {
+  display: inline-block;
+}
+</style>

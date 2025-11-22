@@ -399,6 +399,146 @@ Bootstrap 5 image carousel/slider dengan WebP optimization dan lazy loading.
 
 ---
 
+## 7. Card H2 Basic Component
+
+**File:** `_includes/components/card--h2-basic.html`
+
+### Deskripsi
+Card wrapper untuk H2 heading dengan icon, gradient background, dan optional subtitle. Cocok untuk section headers.
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `title` | string | - | H2 heading text (required) |
+| `subtitle` | string | - | Optional subtitle/description |
+| `icon` | string | - | Bootstrap icon class (e.g., `"bi-cash-coin"`) |
+| `icon_size` | string | `"2.5rem"` | Icon font size |
+| `gradient` | string | `"green"` | Gradient preset: green, blue, red, purple, orange, primary, custom |
+| `custom_gradient` | string | - | Custom gradient CSS jika gradient="custom" |
+| `text_color` | string | `"text-white"` | Text color class |
+| `spacing` | string | `"my-5"` | Margin spacing class |
+| `shadow` | string | `"shadow-sm"` | Shadow class |
+| `border` | string | - | Optional border class |
+| `padding` | string | `"py-4 px-3"` | Padding class |
+| `text_align` | string | `"center"` | Text alignment |
+
+### Gradient Presets
+- `green`: #10b981 → #047857
+- `blue`: #3b82f6 → #1d4ed8
+- `red`: #ef4444 → #b91c1c
+- `purple`: #a855f7 → #7e22ce
+- `orange`: #f97316 → #c2410c
+- `primary`: #0d6efd → #084298
+
+### Contoh Penggunaan
+
+**Basic dengan green gradient:**
+```liquid
+{% include components/card--h2-basic.html
+   title="Harga dan Pengiriman"
+   subtitle="Harga terjangkau dengan sistem pembayaran COD yang aman"
+   icon="bi-cash-coin"
+%}
+```
+
+**Blue gradient untuk layanan:**
+```liquid
+{% include components/card--h2-basic.html
+   title="Layanan Kami"
+   subtitle="Jasa riksa uji K3 terpercaya"
+   icon="bi-shield-check"
+   gradient="blue"
+%}
+```
+
+**Custom gradient:**
+```liquid
+{% include components/card--h2-basic.html
+   title="Hubungi Kami"
+   icon="bi-telephone"
+   gradient="custom"
+   custom_gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+%}
+```
+
+---
+
+## 8. Card H2 Gradient Component
+
+**File:** `_includes/components/card--h2-gradient.html`
+
+### Deskripsi
+Enhanced variant dari card H2 dengan theme-based gradients dan decorative subtitle icons. Lebih decorative untuk content yang ingin lebih menonjol.
+
+### Perbedaan dari card--h2-basic:
+- Shadow lebih besar (shadow-lg default)
+- More theme presets (coffee, ocean, sunset, dll)
+- Customizable subtitle icons
+- Lebih decorative
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `title` | string | - | H2 heading text (required) |
+| `subtitle` | string | - | Optional subtitle/description |
+| `icon` | string | - | Main Bootstrap icon class |
+| `icon_size` | string | `"2.5rem"` | Main icon font size |
+| `subtitle_icon` | string | `"bi-stars"` | Icon untuk subtitle (decorative) |
+| `gradient` | string | `"coffee"` | Theme preset atau "custom" |
+| `custom_gradient` | string | - | Custom gradient CSS |
+| `text_color` | string | `"text-white"` | Text color class |
+| `spacing` | string | `"my-5"` | Margin spacing |
+| `shadow` | string | `"shadow-lg"` | Shadow class |
+| `padding` | string | `"py-4 px-3"` | Padding class |
+
+### Theme Gradient Presets
+- `coffee`: #D4A574 → #6B5310 (untuk cafe/restaurant)
+- `ocean`: #0ea5e9 → #0369a1 (biru laut)
+- `sunset`: #f97316 → #dc2626 (orange-red)
+- `forest`: #10b981 → #047857 (hijau)
+- `royal`: #8b5cf6 → #6d28d9 (ungu)
+- `fire`: #dc2626 → #991b1b (merah)
+- `night`: #1e293b → #020617 (gelap)
+- `sky`: #38bdf8 → #0284c7 (biru cerah)
+
+### Contoh Penggunaan
+
+**Coffee theme:**
+```liquid
+{% include components/card--h2-gradient.html
+   title="6 Aplikasi Kayu Dolken di Interior Cafe"
+   subtitle="Dari area indoor hingga outdoor, temukan inspirasi implementasi yang sesuai konsep cafe Anda"
+   icon="bi-cup-hot-fill"
+   gradient="coffee"
+%}
+```
+
+**Ocean theme untuk layanan:**
+```liquid
+{% include components/card--h2-gradient.html
+   title="Layanan Riksa Uji K3"
+   subtitle="Profesional, Terpercaya, dan Bersertifikat"
+   icon="bi-shield-check"
+   subtitle_icon="bi-check-circle"
+   gradient="ocean"
+%}
+```
+
+**Custom subtitle icon:**
+```liquid
+{% include components/card--h2-gradient.html
+   title="Sertifikasi Resmi"
+   subtitle="Terdaftar dan diakui oleh Kementerian Ketenagakerjaan"
+   icon="bi-award-fill"
+   subtitle_icon="bi-shield-fill-check"
+   gradient="royal"
+%}
+```
+
+---
+
 ## Best Practices
 
 ### 1. Naming Convention
@@ -475,6 +615,16 @@ Anda dapat mengkombinasikan multiple components dalam satu section:
 
 - arisciwek
 - Date: 2025-11-22
-- Version: 1.0.0
+- Version: 1.1.0
 
-**Status:** ✅ 6 reusable components siap digunakan
+**Status:** ✅ 8 reusable components siap digunakan
+
+### Components List:
+1. accordion.html - Bootstrap 5 accordion
+2. card.html - Flexible card component
+3. ordered-list.html - Styled ordered list
+4. unordered-list.html - Styled unordered list
+5. cta-whatsapp.html - WhatsApp CTA (4 styles)
+6. carousel.html - Image carousel/slider
+7. **card--h2-basic.html** - Section header dengan gradient ✨ NEW
+8. **card--h2-gradient.html** - Decorative section header dengan themes ✨ NEW
