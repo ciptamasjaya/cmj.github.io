@@ -539,6 +539,89 @@ Enhanced variant dari card H2 dengan theme-based gradients dan decorative subtit
 
 ---
 
+## 9. Heading H3 Circle Component
+
+**File:** `_includes/components/heading--h3-circle.html`
+
+### Deskripsi
+H3 heading dengan icon dalam rounded circle background. Cocok untuk sub-sections, numbered lists, feature items, atau step indicators.
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `title` | string | - | Heading text (required) |
+| `icon` | string | - | Bootstrap icon class (required) |
+| `color` | string | `"success"` | Color theme |
+| `icon_size` | string | `"1.5rem"` | Icon font size |
+| `circle_size` | string | `"50px"` | Circle width/height |
+| `heading_level` | string | `"h3"` | HTML heading tag (h3, h4, h5, h6) |
+| `heading_class` | string | `"h6 mb-0"` | Additional heading classes |
+| `text_color` | string | `"text-wood"` | Text color class |
+| `spacing` | string | `"mb-3"` | Margin bottom spacing |
+| `align` | string | `"align-items-center"` | Flex alignment |
+
+### Color Themes
+- `success`: Green (#198754)
+- `primary`: Blue (#0d6efd)
+- `danger`: Red (#dc3545)
+- `warning`: Yellow (#ffc107)
+- `info`: Cyan (#0dcaf0)
+- `secondary`: Gray (#6c757d)
+- `dark`: Dark (#212529)
+
+### Contoh Penggunaan
+
+**Basic green theme:**
+```liquid
+{% include components/heading--h3-circle.html
+   title="5. Kontras Material untuk Visual Interest"
+   icon="bi-grid-3x3"
+%}
+```
+
+**Blue theme untuk steps:**
+```liquid
+{% include components/heading--h3-circle.html
+   title="Langkah 1: Konsultasi Awal"
+   icon="bi-chat-dots"
+   color="primary"
+%}
+```
+
+**Warning theme dengan icon lebih besar:**
+```liquid
+{% include components/heading--h3-circle.html
+   title="Keunggulan Layanan Kami"
+   icon="bi-award-fill"
+   color="warning"
+   icon_size="2rem"
+   circle_size="60px"
+%}
+```
+
+**Sebagai H4 dengan spacing custom:**
+```liquid
+{% include components/heading--h3-circle.html
+   title="Sub Section Detail"
+   icon="bi-check-circle"
+   heading_level="h4"
+   spacing="mb-4"
+%}
+```
+
+**Danger theme untuk peringatan:**
+```liquid
+{% include components/heading--h3-circle.html
+   title="Perhatian Penting"
+   icon="bi-exclamation-triangle"
+   color="danger"
+   text_color="text-danger"
+%}
+```
+
+---
+
 ## Best Practices
 
 ### 1. Naming Convention
@@ -615,9 +698,9 @@ Anda dapat mengkombinasikan multiple components dalam satu section:
 
 - arisciwek
 - Date: 2025-11-22
-- Version: 1.1.0
+- Version: 1.2.0
 
-**Status:** ✅ 8 reusable components siap digunakan
+**Status:** ✅ 9 reusable components siap digunakan
 
 ### Components List:
 1. accordion.html - Bootstrap 5 accordion
@@ -626,5 +709,6 @@ Anda dapat mengkombinasikan multiple components dalam satu section:
 4. unordered-list.html - Styled unordered list
 5. cta-whatsapp.html - WhatsApp CTA (4 styles)
 6. carousel.html - Image carousel/slider
-7. **card--h2-basic.html** - Section header dengan gradient ✨ NEW
-8. **card--h2-gradient.html** - Decorative section header dengan themes ✨ NEW
+7. card--h2-basic.html - Section header dengan gradient
+8. card--h2-gradient.html - Decorative section header dengan themes
+9. **heading--h3-circle.html** - H3 heading dengan icon circle ✨ NEW

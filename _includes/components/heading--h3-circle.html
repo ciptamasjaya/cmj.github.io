@@ -1,0 +1,114 @@
+{% comment %}
+============================================================================
+Heading H3 Circle Component
+============================================================================
+
+@file        _includes/components/heading--h3-circle.html
+@description H3 heading dengan icon dalam rounded circle background
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- H3 heading dengan icon dalam circle
+- Flex layout untuk perfect alignment
+- Customizable colors (success, primary, danger, warning, info, dll)
+- Adjustable icon dan circle size
+- Optional heading level (h3, h4, h5, h6)
+- Spacing customization
+- Responsive design
+
+Parameters:
+-----------
+- title: Heading text (required)
+- icon: Bootstrap icon class (required, e.g., "bi-grid-3x3")
+- color: Color theme (default: "success")
+  Options: "success", "primary", "danger", "warning", "info", "secondary", "dark"
+- icon_size: Icon font size (default: "1.5rem")
+- circle_size: Circle width/height (default: "50px")
+- heading_level: HTML heading tag (default: "h3")
+- heading_class: Additional heading classes (default: "h6 mb-0")
+- text_color: Text color class (default: "text-wood")
+- spacing: Margin bottom (default: "mb-3")
+- align: Flex alignment (default: "align-items-center")
+
+Color Themes:
+-------------
+- success: Green (#198754)
+- primary: Blue (#0d6efd)
+- danger: Red (#dc3545)
+- warning: Yellow (#ffc107)
+- info: Cyan (#0dcaf0)
+- secondary: Gray (#6c757d)
+- dark: Dark (#212529)
+
+Usage:
+------
+Basic (green theme):
+{% include components/heading--h3-circle.html
+   title="5. Kontras Material untuk Visual Interest"
+   icon="bi-grid-3x3"
+%}
+
+With custom color:
+{% include components/heading--h3-circle.html
+   title="Langkah Pertama: Konsultasi"
+   icon="bi-chat-dots"
+   color="primary"
+%}
+
+Larger icon and circle:
+{% include components/heading--h3-circle.html
+   title="Keunggulan Layanan"
+   icon="bi-award-fill"
+   color="warning"
+   icon_size="2rem"
+   circle_size="60px"
+%}
+
+As H4 instead of H3:
+{% include components/heading--h3-circle.html
+   title="Sub Section Title"
+   icon="bi-check-circle"
+   heading_level="h4"
+   heading_class="h6 mb-0 fw-bold"
+%}
+
+With custom spacing:
+{% include components/heading--h3-circle.html
+   title="Important Notice"
+   icon="bi-exclamation-triangle"
+   color="danger"
+   spacing="mb-4"
+%}
+
+Different text color:
+{% include components/heading--h3-circle.html
+   title="Dark Theme Heading"
+   icon="bi-moon-stars"
+   color="dark"
+   text_color="text-dark"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign h3_title = include.title %}
+{% assign h3_icon = include.icon %}
+{% assign color_theme = include.color | default: "success" %}
+{% assign icon_size = include.icon_size | default: "1.5rem" %}
+{% assign circle_size = include.circle_size | default: "50px" %}
+{% assign heading_level = include.heading_level | default: "h3" %}
+{% assign heading_class = include.heading_class | default: "h6 mb-0" %}
+{% assign text_color = include.text_color | default: "text-wood" %}
+{% assign spacing = include.spacing | default: "mb-3" %}
+{% assign align = include.align | default: "align-items-center" %}
+
+<div class="d-flex {{ align }} {{ spacing }}">
+  <div class="bg-{{ color_theme }} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3"
+       style="width: {{ circle_size }}; height: {{ circle_size }}; flex-shrink: 0;">
+    <i class="bi {{ h3_icon }} text-{{ color_theme }}" style="font-size: {{ icon_size }};"></i>
+  </div>
+  <{{ heading_level }} class="{{ heading_class }} {{ text_color }}">{{ h3_title }}</{{ heading_level }}>
+</div>
