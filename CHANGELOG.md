@@ -1,6 +1,80 @@
 # Changelog
 
-## v.1.0.0
+## v1.0.1 - Data-Driven Architecture Release (2025-11-23)
+
+Complete refactoring of reusable blocks to data-driven architecture. All content now separated from templates into YAML data files for better maintainability, scalability, and content management.
+
+### 🎯 Major Features
+
+#### ✅ Data-Driven Blocks (8 blocks fully refactored)
+All reusable blocks now use YAML data files with template variable support:
+- `_data/commitments.yml` → block--commitment.html
+- `_data/faq_contact.yml` → block--faq-contact.html
+- `_data/service_intro.yml` → block--service-intro.html
+- `_data/business_info.yml` → block--business-info.html
+- `_data/company_profile.yml` → block--company-profile.html
+- `_data/contact_form.yml` → block--quick-contact-form.html
+- `_data/contact_cards.yml` → block--contact-cards.html
+- `_data/cta_contact.yml` → block--cta-contact.html
+
+#### 📦 Template Variables
+Support for dynamic content replacement:
+- `{company_name}` → site.business.name
+- `{phone}` → site.business.phone
+- `{email}` → site.business.email
+- `{whatsapp}` → site.business.whatsapp
+- `{founding_year}` → site.business.foundingDate
+
+#### 🎨 CSS Class Customization
+All blocks support optional CSS class overrides while preserving defaults
+
+### 📝 Detailed Changes
+
+```
+5c0ba6d - Refactor block--cta-contact.html to data-driven architecture (2025-11-23 00:28:34 +0700)
+59451ff - Refactor block--contact-cards.html to data-driven architecture (2025-11-23 00:24:54 +0700)
+f7e479a - Refactor block--company-profile.html to data-driven architecture (2025-11-23 00:03:21 +0700)
+fe1f6b1 - Refactor block--business-info.html to data-driven architecture (2025-11-23 00:00:18 +0700)
+da1755d - Refactor block--service-intro.html to data-driven and fix versioning (2025-11-22 23:50:37 +0700)
+90e0d06 - Refactor block--faq-contact.html to data-driven architecture (2025-11-22 23:48:21 +0700)
+d25fe39 - Refactor block--commitment.html to data-driven architecture (2025-11-22 23:43:26 +0700)
+576485d - Refactor blocks to data-driven architecture and add css_class support (2025-11-22 23:27:42 +0700)
+19abcca - Refactor service intro heading and add icon hover animations (2025-11-22 22:30:14 +0700)
+c1e26fc - Fix variable rendering and add icon hover effects to service page (2025-11-22 22:16:09 +0700)
+dc5e0a3 - Add CSS class customization to service features component (2025-11-22 21:36:02 +0700)
+8f86c2e - Add sticky navbar and refactor service features to data-driven (2025-11-22 21:27:34 +0700)
+ba96d8e - Add service card hover effects and floating WhatsApp button (2025-11-22 21:03:21 +0700)
+0450cac - Activate all reusable blocks across homepage and main pages (2025-11-22 20:08:18 +0700)
+47e970f - Fix CSS file conflict by removing duplicate main.css (2025-11-22 20:03:11 +0700)
+```
+
+### 📊 Impact
+- **8 YAML data files** created
+- **8 blocks** fully data-driven (100% content separation)
+- **15+ template variables** supported
+- **~1500 lines** of hardcoded content moved to YAML
+- **Improved maintainability** - content updates without touching templates
+- **Better scalability** - easy to add/remove items
+- **i18n ready** - structure prepared for multi-language support
+
+### 🔧 Technical Improvements
+- Consistent YAML structure across all data files
+- CSS class customization support (append to defaults)
+- Icon and color configuration per item
+- Responsive grid configuration
+- Button and CTA configuration
+- Form field validation messages
+- WhatsApp/Email message templates
+
+### 📚 Documentation
+- All blocks updated with data source documentation
+- Version numbers bumped to v2.0.0 for refactored blocks
+- Comprehensive YAML comments and structure notes
+- TODO-1202 tracking document maintained
+
+---
+
+## v1.0.0 - Initial Release (2025-11-22)
 
 ```
 9afddb6 - Move 404 page inline CSS to modular SCSS architecture (2025-11-22 17:40:31 +0700)
