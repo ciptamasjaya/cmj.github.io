@@ -1,0 +1,27 @@
+{
+  "name": "PT. Cipta Mas Jaya - Jasa Riksa Uji K3",
+  "short_name": "CMJ K3",
+  "description": "Jasa Riksa Uji K3 terpercaya untuk Pesawat Angkat, Bejana Tekan, Instalasi Listrik, Proteksi Kebakaran, dan Elevator. Sertifikat resmi dan terpercaya.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "id-ID",
+  "dir": "ltr"
+}
