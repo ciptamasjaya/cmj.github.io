@@ -17,11 +17,11 @@
   color: #0d6efd;
   text-decoration: none;
   transition: color 0.2s ease;
+}
 
-  &:hover {
-    color: #0a58ca;
-    text-decoration: underline;
-  }
+.block--breadcrumb .breadcrumb-item a:hover {
+  color: #0a58ca;
+  text-decoration: underline;
 }
 
 .block--breadcrumb .breadcrumb-item.active {
@@ -40,20 +40,20 @@
    ============================================================================ */
 .block--company-profile .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  }
+.block--company-profile .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .block--company-profile a {
   color: #0d6efd;
   transition: color 0.2s ease;
+}
 
-  &:hover {
-    color: #0a58ca;
-  }
+.block--company-profile a:hover {
+  color: #0a58ca;
 }
 
 /* ============================================================================
@@ -62,21 +62,21 @@
 .block--why-choose-us .card {
   transition: all 0.3s ease;
   border-radius: 12px;
+}
 
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
-
-    .feature-icon i {
-      transform: scale(1.1);
-    }
-  }
+.block--why-choose-us .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .block--why-choose-us .feature-icon i {
   font-size: 3rem;
   display: inline-block;
   transition: transform 0.3s ease;
+}
+
+.block--why-choose-us .card:hover .feature-icon i {
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -90,21 +90,21 @@
    ============================================================================ */
 .block--service-coverage .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  }
+.block--service-coverage .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .block--service-coverage .coverage-item {
   padding: 12px;
   border-radius: 8px;
   transition: background-color 0.2s ease;
+}
 
-  &:hover {
-    background-color: #f8f9fa;
-  }
+.block--service-coverage .coverage-item:hover {
+  background-color: #f8f9fa;
 }
 
 /* ============================================================================
@@ -112,21 +112,21 @@
    ============================================================================ */
 .block--commitment .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-
-    .commitment-icon i {
-      transform: scale(1.1);
-    }
-  }
+.block--commitment .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .block--commitment .commitment-icon i {
   font-size: 3rem;
   display: inline-block;
   transition: transform 0.3s ease;
+}
+
+.block--commitment .card:hover .commitment-icon i {
+  transform: scale(1.1);
 }
 
 /* ============================================================================
@@ -138,11 +138,11 @@
 
 .block--cta-contact .btn {
   transition: all 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
-  }
+.block--cta-contact .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
 }
 
 /* ============================================================================
@@ -150,15 +150,11 @@
    ============================================================================ */
 .block--contact-cards .contact-card {
   transition: all 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
-
-    .contact-icon i {
-      transform: scale(1.1);
-    }
-  }
+.block--contact-cards .contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .block--contact-cards .contact-icon i {
@@ -167,13 +163,63 @@
   transition: transform 0.3s ease;
 }
 
+.block--contact-cards .contact-card:hover .contact-icon i {
+  transform: scale(1.1);
+}
+
 .block--contact-cards .btn {
   transition: all 0.3s ease;
+}
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
-  }
+.block--contact-cards .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================================
+   BUSINESS INFO BLOCK
+   ============================================================================ */
+.block--business-info .info-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.block--business-info .info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.block--business-info .info-icon i {
+  font-size: 1.25rem;
+}
+
+.block--business-info .info-content {
+  flex: 1;
+}
+
+.block--business-info .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--business-info .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--business-info a {
+  color: #0d6efd;
+  transition: color 0.2s ease;
+}
+
+.block--business-info a:hover {
+  color: #0a58ca;
 }
 
 /* ============================================================================
