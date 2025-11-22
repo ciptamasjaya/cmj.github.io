@@ -1,0 +1,149 @@
+{% comment %}
+============================================================================
+Ordered List Component (Styled)
+============================================================================
+
+@file        _includes/components/ordered-list.html
+@description Reusable styled ordered list component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Styled ordered list with customizable appearance
+- Support for icons per item
+- Bold titles with descriptions
+- Custom numbering styles
+- Spacing and color customization
+- Optional card wrapper
+- Responsive design
+
+Parameters:
+-----------
+- items: Array of list items with structure:
+  [
+    {
+      "title": "Item Title" (optional),
+      "content": "Item content",
+      "icon": "bi-check-circle" (optional)
+    }
+  ]
+  OR simple array of strings: ["Item 1", "Item 2", "Item 3"]
+- list_style: Numbering style (default: "decimal")
+  Options: "decimal", "upper-alpha", "lower-alpha", "upper-roman", "lower-roman"
+- icon_color: Color class for icons (default: "text-primary")
+- title_bold: true/false (default: true)
+- spacing: Spacing between items (default: "mb-3")
+- wrapper: "card", "none" (default: "none")
+- card_title: Title for card wrapper (optional)
+
+Usage:
+------
+Simple ordered list:
+{% assign steps = "Hubungi kami|Jadwalkan inspeksi|Proses riksa uji|Terima sertifikat" | split: "|" %}
+{% include components/ordered-list.html
+   items=steps
+%}
+
+List with titles and descriptions:
+{% capture list_items %}
+[
+  {
+    "title": "Konsultasi Awal",
+    "content": "Tim kami akan melakukan konsultasi untuk memahami kebutuhan Anda",
+    "icon": "bi-chat-dots"
+  },
+  {
+    "title": "Jadwal Inspeksi",
+    "content": "Tentukan jadwal yang sesuai untuk melakukan riksa uji",
+    "icon": "bi-calendar-check"
+  },
+  {
+    "title": "Proses Pengujian",
+    "content": "Teknisi bersertifikat melakukan pemeriksaan menyeluruh",
+    "icon": "bi-tools"
+  },
+  {
+    "title": "Laporan & Sertifikat",
+    "content": "Dapatkan laporan lengkap dan sertifikat resmi",
+    "icon": "bi-file-earmark-check"
+  }
+]
+{% endcapture %}
+
+{% include components/ordered-list.html
+   items=list_items
+   list_style="decimal"
+   icon_color="text-success"
+   wrapper="card"
+   card_title="Alur Proses Riksa Uji"
+%}
+
+With custom numbering:
+{% include components/ordered-list.html
+   items=steps
+   list_style="upper-roman"
+   spacing="mb-4"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign list_items = include.items %}
+{% assign list_style = include.list_style | default: "decimal" %}
+{% assign icon_color = include.icon_color | default: "text-primary" %}
+{% assign title_bold = include.title_bold | default: true %}
+{% assign spacing = include.spacing | default: "mb-3" %}
+{% assign wrapper = include.wrapper | default: "none" %}
+{% assign card_title = include.card_title %}
+
+{% if wrapper == "card" %}
+<div class="card shadow-sm">
+  {% if card_title %}
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0">{{ card_title }}</h5>
+  </div>
+  {% endif %}
+  <div class="card-body">
+{% endif %}
+
+{% if list_items %}
+<ol class="styled-ordered-list" style="list-style-type: {{ list_style }};">
+  {% for item in list_items %}
+  <li class="{{ spacing }}">
+    {% if item.icon %}
+    <i class="bi {{ item.icon }} {{ icon_color }} me-2"></i>
+    {% endif %}
+    {% if item.title %}
+      {% if title_bold %}
+      <strong>{{ item.title }}:</strong>
+      {% else %}
+      {{ item.title }}:
+      {% endif %}
+      {{ item.content }}
+    {% else %}
+      {{ item }}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}
+
+{% if wrapper == "card" %}
+  </div>
+</div>
+{% endif %}
+
+<style>
+.styled-ordered-list {
+  padding-left: 1.5rem;
+}
+.styled-ordered-list li {
+  padding-left: 0.5rem;
+  line-height: 1.6;
+}
+.styled-ordered-list li:last-child {
+  margin-bottom: 0 !important;
+}
+</style>

@@ -1,0 +1,106 @@
+{% comment %}
+============================================================================
+Accordion Component (Bootstrap 5)
+============================================================================
+
+@file        _includes/components/accordion.html
+@description Reusable Bootstrap 5 accordion component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Bootstrap 5 accordion with collapse functionality
+- Supports multiple items
+- Customizable ID, title, and flush style
+- Icon support for each item
+- Auto-collapse or allow multiple open items
+- Responsive design
+
+Parameters:
+-----------
+- accordion_id: Unique ID for accordion element (required)
+- items: Array of accordion items with structure:
+  [
+    {
+      "title": "Item Title",
+      "content": "Item content HTML",
+      "icon": "bi-info-circle" (optional),
+      "expanded": true/false (optional, default: false)
+    }
+  ]
+- flush: true/false (optional, removes border and rounded corners)
+- allow_multiple: true/false (optional, default: false - auto collapse others)
+- parent_id: Parent accordion ID for nested accordions (optional)
+
+Usage:
+------
+{% capture items %}
+[
+  {
+    "title": "Apa itu Riksa Uji K3?",
+    "content": "<p>Riksa uji K3 adalah pemeriksaan dan pengujian...</p>",
+    "icon": "bi-question-circle",
+    "expanded": true
+  },
+  {
+    "title": "Berapa lama proses riksa uji?",
+    "content": "<p>Proses riksa uji biasanya memakan waktu 1-3 hari...</p>",
+    "icon": "bi-clock"
+  }
+]
+{% endcapture %}
+
+{% include components/accordion.html
+   accordion_id="faqAccordion"
+   items=items
+   flush=false
+   allow_multiple=false
+%}
+
+Example with nested accordion:
+{% include components/accordion.html
+   accordion_id="nestedAccordion"
+   parent_id="parentAccordion"
+   items=nested_items
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign accordion_id = include.accordion_id | default: "defaultAccordion" %}
+{% assign accordion_items = include.items %}
+{% assign flush = include.flush | default: false %}
+{% assign allow_multiple = include.allow_multiple | default: false %}
+{% assign parent_id = include.parent_id %}
+
+{% if accordion_items %}
+<div class="accordion {% if flush %}accordion-flush{% endif %}" id="{{ accordion_id }}">
+  {% for item in accordion_items %}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading{{ accordion_id }}{{ forloop.index }}">
+      <button class="accordion-button {% unless item.expanded or forloop.first %}collapsed{% endunless %}"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse{{ accordion_id }}{{ forloop.index }}"
+              aria-expanded="{% if item.expanded or forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="collapse{{ accordion_id }}{{ forloop.index }}">
+        {% if item.icon %}
+        <i class="bi {{ item.icon }} me-2"></i>
+        {% endif %}
+        {{ item.title }}
+      </button>
+    </h2>
+    <div id="collapse{{ accordion_id }}{{ forloop.index }}"
+         class="accordion-collapse collapse {% if item.expanded or forloop.first %}show{% endif %}"
+         aria-labelledby="heading{{ accordion_id }}{{ forloop.index }}"
+         {% unless allow_multiple %}data-bs-parent="#{{ accordion_id }}"{% endunless %}>
+      <div class="accordion-body">
+        {{ item.content }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

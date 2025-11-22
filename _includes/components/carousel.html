@@ -1,0 +1,176 @@
+{% comment %}
+============================================================================
+Image Carousel Component (Bootstrap 5)
+============================================================================
+
+@file        _includes/components/carousel.html
+@description Reusable Bootstrap 5 carousel/image slider with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Bootstrap 5 carousel with slide animation
+- WebP optimization with picture element
+- Lazy loading (except first image)
+- Responsive design with object-fit
+- Carousel indicators for navigation
+- Previous/Next controls
+- Customizable carousel ID and max height
+- Caption support per slide
+- Auto-play option
+
+Parameters:
+-----------
+- carousel_id: Unique ID for carousel element (required)
+- images: Array of image paths OR array of objects with image and caption (required)
+  Simple: ["/assets/img1.jpg", "/assets/img2.jpg"]
+  With captions: [
+    {"image": "/assets/img1.jpg", "caption": "Caption 1", "title": "Title 1"},
+    {"image": "/assets/img2.jpg", "caption": "Caption 2"}
+  ]
+- title: Default title for alt text (required)
+- max_height: Max height for images (default: "500px")
+- autoplay: true/false (default: false)
+- interval: Auto-play interval in ms (default: 5000)
+- controls: Show prev/next controls (default: true)
+- indicators: Show slide indicators (default: true)
+- fade: Use fade transition instead of slide (default: false)
+
+Usage:
+------
+Simple carousel with images only:
+{% assign gallery = "/assets/images/crane-1.jpg,/assets/images/crane-2.jpg,/assets/images/crane-3.jpg" | split: "," %}
+{% include components/carousel.html
+   carousel_id="craneGallery"
+   images=gallery
+   title="Riksa Uji Crane"
+%}
+
+Carousel with captions:
+{% capture slides %}
+[
+  {
+    "image": "/assets/images/service-1.jpg",
+    "title": "Riksa Uji Crane",
+    "caption": "Pemeriksaan menyeluruh alat angkat"
+  },
+  {
+    "image": "/assets/images/service-2.jpg",
+    "title": "Riksa Uji Boiler",
+    "caption": "Inspeksi bejana tekan dan pesawat uap"
+  },
+  {
+    "image": "/assets/images/service-3.jpg",
+    "title": "Riksa Uji Instalasi Listrik",
+    "caption": "Pemeriksaan kelistrikan dan grounding"
+  }
+]
+{% endcapture %}
+
+{% include components/carousel.html
+   carousel_id="servicesCarousel"
+   images=slides
+   title="Layanan Riksa Uji K3"
+   autoplay=true
+   interval=3000
+   max_height="600px"
+%}
+
+Carousel with fade effect:
+{% include components/carousel.html
+   carousel_id="heroCarousel"
+   images=hero_images
+   title="PT. Cipta Mas Jaya"
+   fade=true
+   autoplay=true
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign carousel_id = include.carousel_id | default: "imageCarousel" %}
+{% assign carousel_images = include.images %}
+{% assign carousel_title = include.title %}
+{% assign max_height = include.max_height | default: "500px" %}
+{% assign autoplay = include.autoplay | default: false %}
+{% assign interval = include.interval | default: 5000 %}
+{% assign controls = include.controls | default: true %}
+{% assign indicators = include.indicators | default: true %}
+{% assign fade = include.fade | default: false %}
+
+{% if carousel_images and carousel_images.size > 0 %}
+
+<!-- Image Carousel -->
+<div id="{{ carousel_id }}"
+     class="carousel slide {% if fade %}carousel-fade{% endif %} shadow rounded"
+     {% if autoplay %}data-bs-ride="carousel"{% endif %}
+     data-bs-interval="{{ interval }}">
+
+  {% if indicators %}
+  <!-- Carousel Indicators -->
+  <div class="carousel-indicators">
+    {% for item in carousel_images %}
+    <button type="button"
+            data-bs-target="#{{ carousel_id }}"
+            data-bs-slide-to="{{ forloop.index0 }}"
+            {% if forloop.first %}class="active" aria-current="true"{% endif %}
+            aria-label="Slide {{ forloop.index }}">
+    </button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Carousel Inner -->
+  <div class="carousel-inner">
+    {% for item in carousel_images %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      {% if item.image %}
+        {% assign img_src = item.image %}
+        {% assign img_title = item.title | default: carousel_title %}
+        {% assign img_caption = item.caption %}
+      {% else %}
+        {% assign img_src = item %}
+        {% assign img_title = carousel_title %}
+        {% assign img_caption = nil %}
+      {% endif %}
+
+      <picture>
+        <source srcset="{{ img_src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | relative_url }}" type="image/webp">
+        <img src="{{ img_src | relative_url }}"
+             class="d-block w-100 rounded"
+             alt="{{ img_title }} - Foto {{ forloop.index }}"
+             loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+             style="max-height: {{ max_height }}; object-fit: cover;">
+      </picture>
+
+      {% if img_caption or img_title %}
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded px-3 py-2">
+        {% if img_title and img_title != carousel_title %}
+        <h5>{{ img_title }}</h5>
+        {% endif %}
+        {% if img_caption %}
+        <p class="mb-0">{{ img_caption }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if controls %}
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#{{ carousel_id }}" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#{{ carousel_id }}" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  {% endif %}
+
+</div>
+
+{% endif %}

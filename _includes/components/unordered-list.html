@@ -1,0 +1,173 @@
+{% comment %}
+============================================================================
+Unordered List Component (Styled)
+============================================================================
+
+@file        _includes/components/unordered-list.html
+@description Reusable styled unordered list component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Styled unordered list with customizable appearance
+- Support for icons instead of bullets
+- Check icons, custom icons, or standard bullets
+- Bold titles with descriptions
+- Color customization
+- Optional card wrapper
+- Responsive design
+
+Parameters:
+-----------
+- items: Array of list items with structure:
+  [
+    {
+      "title": "Item Title" (optional),
+      "content": "Item content",
+      "icon": "bi-check-circle" (optional)
+    }
+  ]
+  OR simple array of strings: ["Item 1", "Item 2", "Item 3"]
+- style: "check", "icon", "bullet", "none" (default: "check")
+- default_icon: Default icon for all items (default: "bi-check-circle-fill")
+- icon_color: Color class for icons (default: "text-success")
+- title_bold: true/false (default: true)
+- spacing: Spacing between items (default: "mb-2")
+- wrapper: "card", "none" (default: "none")
+- card_title: Title for card wrapper (optional)
+
+Usage:
+------
+Simple check list:
+{% assign features = "Sertifikat resmi|Teknisi bersertifikat|Harga kompetitif|Proses cepat" | split: "|" %}
+{% include components/unordered-list.html
+   items=features
+   style="check"
+%}
+
+List with custom icons:
+{% capture benefits %}
+[
+  {
+    "content": "Sertifikat resmi dari Kemnaker",
+    "icon": "bi-award-fill"
+  },
+  {
+    "content": "Teknisi bersertifikat dan berpengalaman",
+    "icon": "bi-person-badge"
+  },
+  {
+    "content": "Laporan detail dan komprehensif",
+    "icon": "bi-file-earmark-text"
+  },
+  {
+    "content": "Harga transparan dan kompetitif",
+    "icon": "bi-cash-coin"
+  }
+]
+{% endcapture %}
+
+{% include components/unordered-list.html
+   items=benefits
+   style="icon"
+   icon_color="text-primary"
+   wrapper="card"
+   card_title="Keunggulan Layanan Kami"
+%}
+
+List with titles:
+{% capture services %}
+[
+  {
+    "title": "Riksa Uji Crane",
+    "content": "Pemeriksaan dan pengujian alat angkat",
+    "icon": "bi-truck"
+  },
+  {
+    "title": "Riksa Uji Boiler",
+    "content": "Inspeksi bejana tekan dan pesawat uap",
+    "icon": "bi-speedometer"
+  }
+]
+{% endcapture %}
+
+{% include components/unordered-list.html
+   items=services
+   style="icon"
+   spacing="mb-3"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign list_items = include.items %}
+{% assign list_style = include.style | default: "check" %}
+{% assign default_icon = include.default_icon | default: "bi-check-circle-fill" %}
+{% assign icon_color = include.icon_color | default: "text-success" %}
+{% assign title_bold = include.title_bold | default: true %}
+{% assign spacing = include.spacing | default: "mb-2" %}
+{% assign wrapper = include.wrapper | default: "none" %}
+{% assign card_title = include.card_title %}
+
+{% if wrapper == "card" %}
+<div class="card shadow-sm">
+  {% if card_title %}
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0">{{ card_title }}</h5>
+  </div>
+  {% endif %}
+  <div class="card-body">
+{% endif %}
+
+{% if list_items %}
+<ul class="styled-unordered-list {% if list_style == 'none' %}list-unstyled{% endif %}">
+  {% for item in list_items %}
+  <li class="{{ spacing }}">
+    {% if list_style == "check" or list_style == "icon" %}
+      {% if item.icon %}
+        <i class="bi {{ item.icon }} {{ icon_color }} me-2"></i>
+      {% else %}
+        <i class="bi {{ default_icon }} {{ icon_color }} me-2"></i>
+      {% endif %}
+    {% endif %}
+
+    {% if item.title %}
+      {% if title_bold %}
+      <strong>{{ item.title }}:</strong>
+      {% else %}
+      {{ item.title }}:
+      {% endif %}
+      {{ item.content }}
+    {% elsif item.content %}
+      {{ item.content }}
+    {% else %}
+      {{ item }}
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if wrapper == "card" %}
+  </div>
+</div>
+{% endif %}
+
+<style>
+.styled-unordered-list {
+  padding-left: 0;
+  list-style-position: inside;
+}
+.styled-unordered-list.list-unstyled {
+  padding-left: 0;
+}
+.styled-unordered-list li {
+  padding-left: 0.5rem;
+  line-height: 1.6;
+}
+.styled-unordered-list li:last-child {
+  margin-bottom: 0 !important;
+}
+</style>
