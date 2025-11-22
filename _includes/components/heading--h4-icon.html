@@ -1,0 +1,142 @@
+{% comment %}
+============================================================================
+Heading H4 Icon Component
+============================================================================
+
+@file        _includes/components/heading--h4-icon.html
+@description H4 heading dengan inline icon prefix (no circle background)
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Simple heading dengan icon prefix inline
+- Flexible heading level (h1-h6)
+- Customizable icon dan colors
+- Lightweight dan minimal markup
+- Bootstrap icon support
+
+Parameters:
+-----------
+- title: Heading text (required)
+- icon: Bootstrap icon class (required, e.g., "bi-check-circle-fill")
+- icon_color: Icon color class (default: "text-primary")
+- heading_level: HTML heading tag (default: "h4")
+- heading_size: Heading size class (default: "h6")
+- text_color: Text color class (default: "text-wood")
+- font_weight: Font weight class (default: "fw-bold")
+- spacing: Margin bottom (default: "mb-2")
+- icon_spacing: Space between icon and text (default: "me-2")
+- custom_class: Additional classes (optional)
+
+Color Options:
+--------------
+- text-primary (blue)
+- text-success (green)
+- text-danger (red)
+- text-warning (yellow/orange)
+- text-info (cyan)
+- text-secondary (gray)
+- text-dark (dark)
+- text-wood (custom brand color)
+
+Heading Sizes:
+--------------
+- h1, h2, h3, h4, h5, h6
+- Can mix heading_level (semantic) with heading_size (visual)
+
+Usage:
+------
+Basic usage:
+{% include components/heading--h4-icon.html
+   title="Kegunaan Utama & Aplikasi Spesial"
+   icon="bi-check-circle-fill"
+   icon_color="text-danger"
+%}
+
+With custom heading level and size:
+{% include components/heading--h4-icon.html
+   title="Section Title"
+   icon="bi-star-fill"
+   icon_color="text-warning"
+   heading_level="h3"
+   heading_size="h5"
+%}
+
+Success theme:
+{% include components/heading--h4-icon.html
+   title="Keunggulan Produk"
+   icon="bi-check-circle-fill"
+   icon_color="text-success"
+   text_color="text-success"
+%}
+
+Primary blue theme:
+{% include components/heading--h4-icon.html
+   title="Informasi Penting"
+   icon="bi-info-circle-fill"
+   icon_color="text-primary"
+   text_color="text-primary"
+%}
+
+With more spacing:
+{% include components/heading--h4-icon.html
+   title="Main Features"
+   icon="bi-stars"
+   spacing="mb-4"
+%}
+
+Larger heading:
+{% include components/heading--h4-icon.html
+   title="Big Section"
+   icon="bi-lightning-fill"
+   icon_color="text-warning"
+   heading_level="h2"
+   heading_size="h4"
+   spacing="mb-3"
+%}
+
+With custom class:
+{% include components/heading--h4-icon.html
+   title="Custom Styled Heading"
+   icon="bi-gear-fill"
+   custom_class="text-uppercase border-bottom pb-2"
+%}
+
+Multiple headings in sequence:
+{% include components/heading--h4-icon.html
+   title="Kegunaan Utama"
+   icon="bi-check-circle-fill"
+   icon_color="text-danger"
+%}
+
+{% include components/heading--h4-icon.html
+   title="Spesifikasi Teknis"
+   icon="bi-tools"
+   icon_color="text-secondary"
+%}
+
+{% include components/heading--h4-icon.html
+   title="Cara Pemasangan"
+   icon="bi-hammer"
+   icon_color="text-warning"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign h4_title = include.title %}
+{% assign h4_icon = include.icon %}
+{% assign icon_color = include.icon_color | default: "text-primary" %}
+{% assign heading_level = include.heading_level | default: "h4" %}
+{% assign heading_size = include.heading_size | default: "h6" %}
+{% assign text_color = include.text_color | default: "text-wood" %}
+{% assign font_weight = include.font_weight | default: "fw-bold" %}
+{% assign spacing = include.spacing | default: "mb-2" %}
+{% assign icon_spacing = include.icon_spacing | default: "me-2" %}
+{% assign custom_class = include.custom_class %}
+
+<{{ heading_level }} class="{{ heading_level }} {{ heading_size }} {{ font_weight }} {{ text_color }} {{ spacing }} {{ custom_class }}">
+  <i class="bi {{ h4_icon }} {{ icon_color }} {{ icon_spacing }}"></i><span>{{ h4_title }}</span>
+</{{ heading_level }}>

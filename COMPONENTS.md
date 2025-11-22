@@ -611,7 +611,98 @@ Simple variant dari unordered list - hanya icon + text inline tanpa title/descri
 
 ---
 
-## 10. Heading H3 Circle Component
+## 10. Item List Strong Title Component
+
+**File:** `_includes/components/item-list--strong-title.html`
+
+### Deskripsi
+Individual list item dengan icon, strong/bold title, dan optional description. Flex layout untuk perfect alignment antara icon dan content.
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `title` | string | - | Item title (required) |
+| `description` | string | - | Item description (optional) |
+| `icon` | string | - | Bootstrap icon class (required) |
+| `icon_color` | string | `"text-primary"` | Icon color class |
+| `icon_size` | string | `"1.5rem"` | Icon font size |
+| `title_color` | string | `"text-wood"` | Title text color |
+| `desc_color` | string | `"text-muted"` | Description color |
+| `desc_size` | string | `"small"` | Description size |
+| `spacing` | string | `"mb-3"` | Margin bottom |
+| `icon_spacing` | string | `"me-3"` | Space between icon and text |
+
+### Contoh Penggunaan
+
+**Basic dengan description:**
+```liquid
+{% include components/item-list--strong-title.html
+   title="Tahan Kelembaban Tinggi"
+   description="Ideal untuk area dapur, bar basah, atau outdoor area yang sering terpapar air dan kelembaban"
+   icon="bi-droplet-fill"
+%}
+```
+
+**Custom icon color dan size:**
+```liquid
+{% include components/item-list--strong-title.html
+   title="Sertifikat Resmi"
+   description="Terdaftar dan diakui oleh Kementerian Ketenagakerjaan RI"
+   icon="bi-award-fill"
+   icon_color="text-warning"
+   icon_size="2rem"
+%}
+```
+
+**Tanpa description (title saja):**
+```liquid
+{% include components/item-list--strong-title.html
+   title="Konsultasi Gratis"
+   icon="bi-chat-dots"
+   icon_color="text-success"
+%}
+```
+
+**Success theme:**
+```liquid
+{% include components/item-list--strong-title.html
+   title="Proses Cepat"
+   description="Pengerjaan efisien tanpa mengorbankan kualitas"
+   icon="bi-lightning-fill"
+   icon_color="text-success"
+   title_color="text-success"
+%}
+```
+
+**Dalam loop (multiple items):**
+```liquid
+<div class="benefits-list">
+  {% include components/item-list--strong-title.html
+     title="Tahan Lama"
+     description="Material berkualitas tinggi"
+     icon="bi-shield-fill-check"
+  %}
+
+  {% include components/item-list--strong-title.html
+     title="Ramah Lingkungan"
+     description="Produk eco-friendly"
+     icon="bi-tree-fill"
+     icon_color="text-success"
+  %}
+
+  {% include components/item-list--strong-title.html
+     title="Harga Kompetitif"
+     description="Kualitas terbaik dengan harga terjangkau"
+     icon="bi-cash-coin"
+     icon_color="text-warning"
+  %}
+</div>
+```
+
+---
+
+## 11. Heading H3 Circle Component
 
 **File:** `_includes/components/heading--h3-circle.html`
 
@@ -694,6 +785,113 @@ H3 heading dengan icon dalam rounded circle background. Cocok untuk sub-sections
 
 ---
 
+## 12. Heading H4 Icon Component
+
+**File:** `_includes/components/heading--h4-icon.html`
+
+### Deskripsi
+Simple heading dengan inline icon prefix (tanpa circle background). Lebih lightweight daripada heading--h3-circle, cocok untuk sub-headings atau quick section titles.
+
+### Perbedaan dari heading--h3-circle:
+- Tidak ada circle background
+- Lebih minimal dan lightweight
+- Icon langsung inline dengan text
+- Lebih compact
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `title` | string | - | Heading text (required) |
+| `icon` | string | - | Bootstrap icon class (required) |
+| `icon_color` | string | `"text-primary"` | Icon color class |
+| `heading_level` | string | `"h4"` | HTML heading tag (h1-h6) |
+| `heading_size` | string | `"h6"` | Heading size class |
+| `text_color` | string | `"text-wood"` | Text color class |
+| `font_weight` | string | `"fw-bold"` | Font weight class |
+| `spacing` | string | `"mb-2"` | Margin bottom |
+| `icon_spacing` | string | `"me-2"` | Space between icon and text |
+| `custom_class` | string | - | Additional classes |
+
+### Color Options
+- `text-primary` (blue)
+- `text-success` (green)
+- `text-danger` (red)
+- `text-warning` (yellow/orange)
+- `text-info` (cyan)
+- `text-secondary` (gray)
+- `text-dark`, `text-wood`
+
+### Contoh Penggunaan
+
+**Basic usage:**
+```liquid
+{% include components/heading--h4-icon.html
+   title="Kegunaan Utama & Aplikasi Spesial"
+   icon="bi-check-circle-fill"
+   icon_color="text-danger"
+%}
+```
+
+**Success theme (green):**
+```liquid
+{% include components/heading--h4-icon.html
+   title="Keunggulan Produk"
+   icon="bi-check-circle-fill"
+   icon_color="text-success"
+   text_color="text-success"
+%}
+```
+
+**Primary blue theme:**
+```liquid
+{% include components/heading--h4-icon.html
+   title="Informasi Penting"
+   icon="bi-info-circle-fill"
+   icon_color="text-primary"
+   text_color="text-primary"
+%}
+```
+
+**Custom heading level and size:**
+```liquid
+{% include components/heading--h4-icon.html
+   title="Section Title"
+   icon="bi-star-fill"
+   icon_color="text-warning"
+   heading_level="h3"
+   heading_size="h5"
+%}
+```
+
+**Multiple headings in sequence:**
+```liquid
+<div class="content-section">
+  {% include components/heading--h4-icon.html
+     title="Kegunaan Utama"
+     icon="bi-check-circle-fill"
+     icon_color="text-danger"
+  %}
+  <p>Content here...</p>
+
+  {% include components/heading--h4-icon.html
+     title="Spesifikasi Teknis"
+     icon="bi-tools"
+     icon_color="text-secondary"
+  %}
+  <p>Technical specs...</p>
+
+  {% include components/heading--h4-icon.html
+     title="Cara Pemasangan"
+     icon="bi-hammer"
+     icon_color="text-warning"
+  %}
+  <p>Installation guide...</p>
+</div>
+```
+
+---
+
 ## Best Practices
 
 ### 1. Naming Convention
@@ -770,18 +968,20 @@ Anda dapat mengkombinasikan multiple components dalam satu section:
 
 - arisciwek
 - Date: 2025-11-22
-- Version: 1.3.0
+- Version: 1.5.0
 
-**Status:** ✅ 10 reusable components siap digunakan
+**Status:** ✅ 12 reusable components siap digunakan
 
 ### Components List:
 1. accordion.html - Bootstrap 5 accordion
 2. card.html - Flexible card component
 3. ordered-list.html - Styled ordered list
 4. unordered-list.html - Styled unordered list (with title/content)
-5. **unordered-list--with-text.html** - Simple text-only list ✨ NEW
-6. cta-whatsapp.html - WhatsApp CTA (4 styles)
-7. carousel.html - Image carousel/slider
-8. card--h2-basic.html - Section header dengan gradient
-9. card--h2-gradient.html - Decorative section header dengan themes
-10. heading--h3-circle.html - H3 heading dengan icon circle
+5. unordered-list--with-text.html - Simple text-only list
+6. item-list--strong-title.html - List item dengan icon, title, description
+7. cta-whatsapp.html - WhatsApp CTA (4 styles)
+8. carousel.html - Image carousel/slider
+9. card--h2-basic.html - Section header dengan gradient
+10. card--h2-gradient.html - Decorative section header dengan themes
+11. heading--h3-circle.html - H3 heading dengan icon circle
+12. **heading--h4-icon.html** - H4 heading dengan inline icon ✨ NEW
