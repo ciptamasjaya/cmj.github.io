@@ -564,6 +564,13 @@
 .block--service-list .service-icon-large i {
   font-size: 4rem;
   display: inline-block;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-list .service-list-card:hover .service-icon-large i {
+  transform: scale(1.15) rotate(5deg);
+  color: #0a58ca !important;
+  filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
 }
 
 .block--service-list .service-items ul {
@@ -600,11 +607,13 @@
 .block--service-features .feature-icon i {
   font-size: 3rem;
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .block--service-features .feature-card:hover .feature-icon i {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(5deg);
+  color: #0a58ca !important;
+  filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
 }
 
 .block--service-features .step-number {

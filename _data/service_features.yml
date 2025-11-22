@@ -21,7 +21,7 @@ header:
   title: "Keunggulan Layanan Kami"
   icon: "bi-stars"
   icon_color: "warning"
-  description: "Mengapa memilih {{ site.business.name }} sebagai partner riksa uji K3 Anda?"
+  description: "Mengapa memilih PT. Cipta Mas Jaya sebagai partner riksa uji K3 Anda?"
   css_class: "features-header"            # Additional class for header
 
 # Features List
