@@ -1,0 +1,651 @@
+{% comment %}
+============================================================================
+Block: H2 with 5 Detailed Cards (Full Width)
+============================================================================
+
+@file        _includes/reusable-blocks/block--h2-with-5-detailed-cards-fullwidth.html
+@description Block dengan H2, 2 intro paragraphs, dan 5 detailed cards full width.
+             Setiap card (H3) berisi 2 paragraf dan 4 H4 sub-sections.
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- H2 section header dengan gradient
+- 2 intro paragraphs setelah H2 (WAJIB untuk SEO)
+- 5 cards full width (col-lg-12)
+- Setiap card:
+  * H3 title dengan icon
+  * 2 paragraf intro card (WAJIB)
+  * 4 H4 sub-sections dengan icons
+- Responsive layout dengan Bootstrap grid
+- Customizable icons dan colors
+- Shadow dan hover effects
+
+Heading Structure:
+------------------
+- h2: 1   (Main section title)
+- h3: 5   (Card titles - full width)
+- h4: 20  (4 H4 per card × 5 cards)
+- Total: 26 headings
+
+Layout:
+-------
+- H2: Full width dengan gradient background
+- Intro paragraphs: Full width container
+- Cards: 5 × Full width (col-lg-12) - stacked vertically
+- Each card: H3 + 2 paragraphs + 4 H4 sub-sections
+
+Instructions:
+-------------
+1. Copy frontmatter template di bawah ke halaman Anda
+2. Ganti semua "section_h2_5_cards_fullwidth" dengan nama section Anda
+3. Isi semua heading_2_title, heading_3_title_*, dan h4_title_*
+4. Isi intro_paragraph_1 dan intro_paragraph_2 (WAJIB)
+5. Isi card_paragraph_*_1 dan card_paragraph_*_2 untuk setiap card (WAJIB)
+6. Optional: Isi h4_content_* jika perlu paragraf untuk H4
+7. Sesuaikan icons dan colors
+8. Include block di halaman dengan: {% include reusable-blocks/block--h2-with-5-detailed-cards-fullwidth.html %}
+
+Frontmatter Template:
+---------------------
+---
+section_h2_5_cards_fullwidth:
+  # ========================================================================
+  # H2 SECTION HEADER
+  # ========================================================================
+  heading_2_title: "Isi judul H2 section di sini"
+  subtitle: "Isi subtitle section di sini (optional)"
+  icon: "bi-award"
+  gradient: "green"  # Options: green | blue | red | purple | orange | primary
+
+  # ========================================================================
+  # INTRO PARAGRAPHS (WAJIB - minimal 1 paragraf untuk SEO)
+  # ========================================================================
+  intro_paragraph_1: "<p>Isi paragraf pertama di sini. Paragraf ini penting untuk memberikan konteks pada section dan membantu SEO.</p>"
+  intro_paragraph_2: "<p>Isi paragraf kedua di sini untuk penjelasan lebih detail tentang section ini.</p>"
+
+  # ========================================================================
+  # CARD 1 (Full Width)
+  # ========================================================================
+  heading_3_title_1: "Isi judul H3 card 1 di sini"
+  card_icon_1: "bi-shield-check"
+  card_icon_color_1: "text-primary"
+
+  # ⚠️ WAJIB: Card intro paragraphs (minimal 1)
+  card_paragraph_1_1: "<p>Paragraf pertama untuk card 1. Berikan penjelasan tentang topik card ini.</p>"
+  card_paragraph_1_2: "<p>Paragraf kedua untuk card 1. Tambahkan detail dan informasi pendukung.</p>"
+
+  # H4 Sub-sections Card 1 (4 buah)
+  h4_title_1_1: "H4 pertama card 1"
+  h4_icon_1_1: "bi-check-circle-fill"
+  h4_icon_color_1_1: "text-success"
+  h4_content_1_1: "<p>Konten H4 pertama (optional)</p>"
+
+  h4_title_1_2: "H4 kedua card 1"
+  h4_icon_1_2: "bi-check-circle-fill"
+  h4_icon_color_1_2: "text-success"
+  h4_content_1_2: "<p>Konten H4 kedua (optional)</p>"
+
+  h4_title_1_3: "H4 ketiga card 1"
+  h4_icon_1_3: "bi-check-circle-fill"
+  h4_icon_color_1_3: "text-success"
+  h4_content_1_3: "<p>Konten H4 ketiga (optional)</p>"
+
+  h4_title_1_4: "H4 keempat card 1"
+  h4_icon_1_4: "bi-check-circle-fill"
+  h4_icon_color_1_4: "text-success"
+  h4_content_1_4: "<p>Konten H4 keempat (optional)</p>"
+
+  # ========================================================================
+  # CARD 2 (Full Width)
+  # ========================================================================
+  heading_3_title_2: "Isi judul H3 card 2 di sini"
+  card_icon_2: "bi-lightning-fill"
+  card_icon_color_2: "text-warning"
+
+  # ⚠️ WAJIB: Card intro paragraphs
+  card_paragraph_2_1: "<p>Paragraf pertama untuk card 2.</p>"
+  card_paragraph_2_2: "<p>Paragraf kedua untuk card 2.</p>"
+
+  # H4 Sub-sections Card 2
+  h4_title_2_1: "H4 pertama card 2"
+  h4_icon_2_1: "bi-check-circle-fill"
+  h4_icon_color_2_1: "text-info"
+  h4_content_2_1: "<p>Konten H4 pertama (optional)</p>"
+
+  h4_title_2_2: "H4 kedua card 2"
+  h4_icon_2_2: "bi-check-circle-fill"
+  h4_icon_color_2_2: "text-info"
+  h4_content_2_2: "<p>Konten H4 kedua (optional)</p>"
+
+  h4_title_2_3: "H4 ketiga card 2"
+  h4_icon_2_3: "bi-check-circle-fill"
+  h4_icon_color_2_3: "text-info"
+  h4_content_2_3: "<p>Konten H4 ketiga (optional)</p>"
+
+  h4_title_2_4: "H4 keempat card 2"
+  h4_icon_2_4: "bi-check-circle-fill"
+  h4_icon_color_2_4: "text-info"
+  h4_content_2_4: "<p>Konten H4 keempat (optional)</p>"
+
+  # ========================================================================
+  # CARD 3 (Full Width)
+  # ========================================================================
+  heading_3_title_3: "Isi judul H3 card 3 di sini"
+  card_icon_3: "bi-gear-fill"
+  card_icon_color_3: "text-secondary"
+
+  # ⚠️ WAJIB: Card intro paragraphs
+  card_paragraph_3_1: "<p>Paragraf pertama untuk card 3.</p>"
+  card_paragraph_3_2: "<p>Paragraf kedua untuk card 3.</p>"
+
+  # H4 Sub-sections Card 3
+  h4_title_3_1: "H4 pertama card 3"
+  h4_icon_3_1: "bi-check-circle-fill"
+  h4_icon_color_3_1: "text-danger"
+  h4_content_3_1: "<p>Konten H4 pertama (optional)</p>"
+
+  h4_title_3_2: "H4 kedua card 3"
+  h4_icon_3_2: "bi-check-circle-fill"
+  h4_icon_color_3_2: "text-danger"
+  h4_content_3_2: "<p>Konten H4 kedua (optional)</p>"
+
+  h4_title_3_3: "H4 ketiga card 3"
+  h4_icon_3_3: "bi-check-circle-fill"
+  h4_icon_color_3_3: "text-danger"
+  h4_content_3_3: "<p>Konten H4 ketiga (optional)</p>"
+
+  h4_title_3_4: "H4 keempat card 3"
+  h4_icon_3_4: "bi-check-circle-fill"
+  h4_icon_color_3_4: "text-danger"
+  h4_content_3_4: "<p>Konten H4 keempat (optional)</p>"
+
+  # ========================================================================
+  # CARD 4 (Full Width)
+  # ========================================================================
+  heading_3_title_4: "Isi judul H3 card 4 di sini"
+  card_icon_4: "bi-trophy-fill"
+  card_icon_color_4: "text-success"
+
+  # ⚠️ WAJIB: Card intro paragraphs
+  card_paragraph_4_1: "<p>Paragraf pertama untuk card 4.</p>"
+  card_paragraph_4_2: "<p>Paragraf kedua untuk card 4.</p>"
+
+  # H4 Sub-sections Card 4
+  h4_title_4_1: "H4 pertama card 4"
+  h4_icon_4_1: "bi-check-circle-fill"
+  h4_icon_color_4_1: "text-primary"
+  h4_content_4_1: "<p>Konten H4 pertama (optional)</p>"
+
+  h4_title_4_2: "H4 kedua card 4"
+  h4_icon_4_2: "bi-check-circle-fill"
+  h4_icon_color_4_2: "text-primary"
+  h4_content_4_2: "<p>Konten H4 kedua (optional)</p>"
+
+  h4_title_4_3: "H4 ketiga card 4"
+  h4_icon_4_3: "bi-check-circle-fill"
+  h4_icon_color_4_3: "text-primary"
+  h4_content_4_3: "<p>Konten H4 ketiga (optional)</p>"
+
+  h4_title_4_4: "H4 keempat card 4"
+  h4_icon_4_4: "bi-check-circle-fill"
+  h4_icon_color_4_4: "text-primary"
+  h4_content_4_4: "<p>Konten H4 keempat (optional)</p>"
+
+  # ========================================================================
+  # CARD 5 (Full Width)
+  # ========================================================================
+  heading_3_title_5: "Isi judul H3 card 5 di sini"
+  card_icon_5: "bi-star-fill"
+  card_icon_color_5: "text-warning"
+
+  # ⚠️ WAJIB: Card intro paragraphs
+  card_paragraph_5_1: "<p>Paragraf pertama untuk card 5.</p>"
+  card_paragraph_5_2: "<p>Paragraf kedua untuk card 5.</p>"
+
+  # H4 Sub-sections Card 5
+  h4_title_5_1: "H4 pertama card 5"
+  h4_icon_5_1: "bi-check-circle-fill"
+  h4_icon_color_5_1: "text-success"
+  h4_content_5_1: "<p>Konten H4 pertama (optional)</p>"
+
+  h4_title_5_2: "H4 kedua card 5"
+  h4_icon_5_2: "bi-check-circle-fill"
+  h4_icon_color_5_2: "text-success"
+  h4_content_5_2: "<p>Konten H4 kedua (optional)</p>"
+
+  h4_title_5_3: "H4 ketiga card 5"
+  h4_icon_5_3: "bi-check-circle-fill"
+  h4_icon_color_5_3: "text-success"
+  h4_content_5_3: "<p>Konten H4 ketiga (optional)</p>"
+
+  h4_title_5_4: "H4 keempat card 5"
+  h4_icon_5_4: "bi-check-circle-fill"
+  h4_icon_color_5_4: "text-success"
+  h4_content_5_4: "<p>Konten H4 keempat (optional)</p>"
+---
+
+Component Dependencies:
+-----------------------
+- components/card--h2-basic.html (untuk H2 header)
+- components/heading--h4-icon.html (untuk 20 H4 sub-sections)
+
+CSS Classes:
+------------
+- block--h2-with-5-detailed-cards-fullwidth (main container)
+- component-h2-card (dari card--h2-basic.html)
+- Bootstrap: container, row, col-lg-12, card, shadow-sm
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_h2_5_cards_fullwidth %}
+<section class="block--h2-with-5-detailed-cards-fullwidth my-5">
+
+  <!-- ====================================================================
+       H2 SECTION HEADER
+       ==================================================================== -->
+  {% include components/card--h2-basic.html
+     title=page.section_h2_5_cards_fullwidth.heading_2_title
+     subtitle=page.section_h2_5_cards_fullwidth.subtitle
+     icon=page.section_h2_5_cards_fullwidth.icon
+     gradient=page.section_h2_5_cards_fullwidth.gradient
+  %}
+
+  <!-- ====================================================================
+       INTRO PARAGRAPHS (WAJIB untuk SEO)
+       ==================================================================== -->
+  <div class="container mb-4">
+    <div class="row">
+      <div class="col-12">
+        {{ page.section_h2_5_cards_fullwidth.intro_paragraph_1 }}
+        {% if page.section_h2_5_cards_fullwidth.intro_paragraph_2 %}
+        {{ page.section_h2_5_cards_fullwidth.intro_paragraph_2 }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       5 CARDS GRID (Full Width)
+       ==================================================================== -->
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- ==================================================================
+           CARD 1 (Full Width)
+           ================================================================== -->
+      <div class="col-lg-12">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body p-4">
+
+            <!-- H3 Card Title with Icon -->
+            <div class="d-flex align-items-center mb-3">
+              {% if page.section_h2_5_cards_fullwidth.card_icon_1 %}
+              <i class="bi {{ page.section_h2_5_cards_fullwidth.card_icon_1 }} {{ page.section_h2_5_cards_fullwidth.card_icon_color_1 }} fs-1 me-3"></i>
+              {% endif %}
+              <h3 class="h3 mb-0 fw-bold">{{ page.section_h2_5_cards_fullwidth.heading_3_title_1 }}</h3>
+            </div>
+
+            <!-- ⚠️ WAJIB: Card intro paragraphs -->
+            <div class="mb-3">
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_1_1 }}
+              {% if page.section_h2_5_cards_fullwidth.card_paragraph_1_2 %}
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_1_2 }}
+              {% endif %}
+            </div>
+
+            <!-- 4 H4 Sub-sections -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_1_1
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_1_1
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_1_1
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_1_1 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_1_1 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_1_2
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_1_2
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_1_2
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_1_2 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_1_2 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_1_3
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_1_3
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_1_3
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_1_3 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_1_3 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_1_4
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_1_4
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_1_4
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_1_4 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_1_4 }}
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           CARD 2 (Full Width)
+           ================================================================== -->
+      <div class="col-lg-12">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body p-4">
+
+            <!-- H3 Card Title with Icon -->
+            <div class="d-flex align-items-center mb-3">
+              {% if page.section_h2_5_cards_fullwidth.card_icon_2 %}
+              <i class="bi {{ page.section_h2_5_cards_fullwidth.card_icon_2 }} {{ page.section_h2_5_cards_fullwidth.card_icon_color_2 }} fs-1 me-3"></i>
+              {% endif %}
+              <h3 class="h3 mb-0 fw-bold">{{ page.section_h2_5_cards_fullwidth.heading_3_title_2 }}</h3>
+            </div>
+
+            <!-- ⚠️ WAJIB: Card intro paragraphs -->
+            <div class="mb-3">
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_2_1 }}
+              {% if page.section_h2_5_cards_fullwidth.card_paragraph_2_2 %}
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_2_2 }}
+              {% endif %}
+            </div>
+
+            <!-- 4 H4 Sub-sections -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_2_1
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_2_1
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_2_1
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_2_1 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_2_1 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_2_2
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_2_2
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_2_2
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_2_2 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_2_2 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_2_3
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_2_3
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_2_3
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_2_3 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_2_3 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_2_4
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_2_4
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_2_4
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_2_4 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_2_4 }}
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           CARD 3 (Full Width)
+           ================================================================== -->
+      <div class="col-lg-12">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body p-4">
+
+            <!-- H3 Card Title with Icon -->
+            <div class="d-flex align-items-center mb-3">
+              {% if page.section_h2_5_cards_fullwidth.card_icon_3 %}
+              <i class="bi {{ page.section_h2_5_cards_fullwidth.card_icon_3 }} {{ page.section_h2_5_cards_fullwidth.card_icon_color_3 }} fs-1 me-3"></i>
+              {% endif %}
+              <h3 class="h3 mb-0 fw-bold">{{ page.section_h2_5_cards_fullwidth.heading_3_title_3 }}</h3>
+            </div>
+
+            <!-- ⚠️ WAJIB: Card intro paragraphs -->
+            <div class="mb-3">
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_3_1 }}
+              {% if page.section_h2_5_cards_fullwidth.card_paragraph_3_2 %}
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_3_2 }}
+              {% endif %}
+            </div>
+
+            <!-- 4 H4 Sub-sections -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_3_1
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_3_1
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_3_1
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_3_1 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_3_1 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_3_2
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_3_2
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_3_2
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_3_2 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_3_2 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_3_3
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_3_3
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_3_3
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_3_3 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_3_3 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_3_4
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_3_4
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_3_4
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_3_4 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_3_4 }}
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           CARD 4 (Full Width)
+           ================================================================== -->
+      <div class="col-lg-12">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body p-4">
+
+            <!-- H3 Card Title with Icon -->
+            <div class="d-flex align-items-center mb-3">
+              {% if page.section_h2_5_cards_fullwidth.card_icon_4 %}
+              <i class="bi {{ page.section_h2_5_cards_fullwidth.card_icon_4 }} {{ page.section_h2_5_cards_fullwidth.card_icon_color_4 }} fs-1 me-3"></i>
+              {% endif %}
+              <h3 class="h3 mb-0 fw-bold">{{ page.section_h2_5_cards_fullwidth.heading_3_title_4 }}</h3>
+            </div>
+
+            <!-- ⚠️ WAJIB: Card intro paragraphs -->
+            <div class="mb-3">
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_4_1 }}
+              {% if page.section_h2_5_cards_fullwidth.card_paragraph_4_2 %}
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_4_2 }}
+              {% endif %}
+            </div>
+
+            <!-- 4 H4 Sub-sections -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_4_1
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_4_1
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_4_1
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_4_1 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_4_1 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_4_2
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_4_2
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_4_2
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_4_2 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_4_2 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_4_3
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_4_3
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_4_3
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_4_3 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_4_3 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_4_4
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_4_4
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_4_4
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_4_4 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_4_4 }}
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================================
+           CARD 5 (Full Width)
+           ================================================================== -->
+      <div class="col-lg-12">
+        <div class="card shadow-sm h-100 border-0">
+          <div class="card-body p-4">
+
+            <!-- H3 Card Title with Icon -->
+            <div class="d-flex align-items-center mb-3">
+              {% if page.section_h2_5_cards_fullwidth.card_icon_5 %}
+              <i class="bi {{ page.section_h2_5_cards_fullwidth.card_icon_5 }} {{ page.section_h2_5_cards_fullwidth.card_icon_color_5 }} fs-1 me-3"></i>
+              {% endif %}
+              <h3 class="h3 mb-0 fw-bold">{{ page.section_h2_5_cards_fullwidth.heading_3_title_5 }}</h3>
+            </div>
+
+            <!-- ⚠️ WAJIB: Card intro paragraphs -->
+            <div class="mb-3">
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_5_1 }}
+              {% if page.section_h2_5_cards_fullwidth.card_paragraph_5_2 %}
+              {{ page.section_h2_5_cards_fullwidth.card_paragraph_5_2 }}
+              {% endif %}
+            </div>
+
+            <!-- 4 H4 Sub-sections -->
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_5_1
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_5_1
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_5_1
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_5_1 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_5_1 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_5_2
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_5_2
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_5_2
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_5_2 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_5_2 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_5_3
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_5_3
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_5_3
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_5_3 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_5_3 }}
+                {% endif %}
+              </div>
+
+              <div class="col-md-6 mb-3">
+                {% include components/heading--h4-icon.html
+                   title=page.section_h2_5_cards_fullwidth.h4_title_5_4
+                   icon=page.section_h2_5_cards_fullwidth.h4_icon_5_4
+                   icon_color=page.section_h2_5_cards_fullwidth.h4_icon_color_5_4
+                %}
+                {% if page.section_h2_5_cards_fullwidth.h4_content_5_4 %}
+                {{ page.section_h2_5_cards_fullwidth.h4_content_5_4 }}
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+{% endif %}

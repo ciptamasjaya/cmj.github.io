@@ -237,6 +237,175 @@ blocks:
       - h4-title-3-3
       - h4-content-3-3
 
+  - id: h2-with-5-detailed-cards-fullwidth
+    file: reusable-blocks/block--h2-with-5-detailed-cards-fullwidth.html
+    name: "H2 Section with 5 Detailed Cards (Full Width)"
+    category: general
+    tags:
+      - general-purpose
+      - detailed
+      - features
+      - benefits
+      - services
+      - full-width
+      - h4-subsections
+      - comprehensive
+    use_cases:
+      - comprehensive_service_showcase
+      - detailed_features_list
+      - extensive_benefits
+      - structured_content
+      - k3_services_comprehensive
+      - multi_section_content
+    description: |
+      Block dengan H2 heading, 2 intro paragraphs, dan 5 detailed cards full width.
+      Setiap card berisi icon, H3 title, 2 intro paragraphs, dan 4 H4 sub-sections dengan icon.
+      Layout full-width stacked (col-lg-12) untuk setiap card, cocok untuk content yang membutuhkan
+      banyak ruang dan detail. Total 26 headings dengan struktur yang sangat kompleks.
+      Ideal untuk showcase layanan K3 comprehensive atau dokumentasi detail.
+
+    heading_structure:
+      h2: 1   # Main section title
+      h3: 5   # Card titles (full width)
+      h4: 20  # 4 H4 per card × 5 cards
+      h5: 0
+      h6: 0
+      total: 26
+
+    frontmatter_variables:
+      section_name: "section_h2_5_cards_fullwidth"
+      required_fields:
+        - heading_2_title
+        - intro_paragraph_1
+        - intro_paragraph_2
+        # Card 1
+        - heading_3_title_1
+        - card_icon_1
+        - card_icon_color_1
+        - card_paragraph_1_1
+        - card_paragraph_1_2
+        - h4_title_1_1
+        - h4_icon_1_1
+        - h4_icon_color_1_1
+        - h4_title_1_2
+        - h4_icon_1_2
+        - h4_icon_color_1_2
+        - h4_title_1_3
+        - h4_icon_1_3
+        - h4_icon_color_1_3
+        - h4_title_1_4
+        - h4_icon_1_4
+        - h4_icon_color_1_4
+        # Card 2
+        - heading_3_title_2
+        - card_icon_2
+        - card_icon_color_2
+        - card_paragraph_2_1
+        - card_paragraph_2_2
+        - h4_title_2_1
+        - h4_icon_2_1
+        - h4_icon_color_2_1
+        - h4_title_2_2
+        - h4_icon_2_2
+        - h4_icon_color_2_2
+        - h4_title_2_3
+        - h4_icon_2_3
+        - h4_icon_color_2_3
+        - h4_title_2_4
+        - h4_icon_2_4
+        - h4_icon_color_2_4
+        # Card 3
+        - heading_3_title_3
+        - card_icon_3
+        - card_icon_color_3
+        - card_paragraph_3_1
+        - card_paragraph_3_2
+        - h4_title_3_1
+        - h4_icon_3_1
+        - h4_icon_color_3_1
+        - h4_title_3_2
+        - h4_icon_3_2
+        - h4_icon_color_3_2
+        - h4_title_3_3
+        - h4_icon_3_3
+        - h4_icon_color_3_3
+        - h4_title_3_4
+        - h4_icon_3_4
+        - h4_icon_color_3_4
+        # Card 4
+        - heading_3_title_4
+        - card_icon_4
+        - card_icon_color_4
+        - card_paragraph_4_1
+        - card_paragraph_4_2
+        - h4_title_4_1
+        - h4_icon_4_1
+        - h4_icon_color_4_1
+        - h4_title_4_2
+        - h4_icon_4_2
+        - h4_icon_color_4_2
+        - h4_title_4_3
+        - h4_icon_4_3
+        - h4_icon_color_4_3
+        - h4_title_4_4
+        - h4_icon_4_4
+        - h4_icon_color_4_4
+        # Card 5
+        - heading_3_title_5
+        - card_icon_5
+        - card_icon_color_5
+        - card_paragraph_5_1
+        - card_paragraph_5_2
+        - h4_title_5_1
+        - h4_icon_5_1
+        - h4_icon_color_5_1
+        - h4_title_5_2
+        - h4_icon_5_2
+        - h4_icon_color_5_2
+        - h4_title_5_3
+        - h4_icon_5_3
+        - h4_icon_color_5_3
+        - h4_title_5_4
+        - h4_icon_5_4
+        - h4_icon_color_5_4
+
+      optional_fields:
+        - subtitle
+        - icon
+        - gradient
+        - h4_content_1_1
+        - h4_content_1_2
+        - h4_content_1_3
+        - h4_content_1_4
+        - h4_content_2_1
+        - h4_content_2_2
+        - h4_content_2_3
+        - h4_content_2_4
+        - h4_content_3_1
+        - h4_content_3_2
+        - h4_content_3_3
+        - h4_content_3_4
+        - h4_content_4_1
+        - h4_content_4_2
+        - h4_content_4_3
+        - h4_content_4_4
+        - h4_content_5_1
+        - h4_content_5_2
+        - h4_content_5_3
+        - h4_content_5_4
+
+    component_dependencies:
+      - components/card--h2-basic.html
+      - components/heading--h4-icon.html
+
+    css_classes:
+      - block--h2-with-5-detailed-cards-fullwidth
+      - component-h2-card
+      - card
+      - shadow-sm
+      - h-100
+      - border-0
+
 # ============================================================================
 # USAGE NOTES
 # ============================================================================
