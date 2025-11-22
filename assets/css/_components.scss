@@ -1008,6 +1008,63 @@
 }
 
 // ----------------------------------------------------------------------------
+// Modals
+// ----------------------------------------------------------------------------
+
+// Component Modal (_includes/components/modal.html)
+.component-modal {
+  // Header icon
+  &__header-icon {
+    font-size: $icon-size-lg;
+  }
+
+  // Modal body enhancements
+  &__body {
+    // Ensure proper spacing for common elements
+    > p:last-child,
+    > div:last-child > p:last-child {
+      margin-bottom: 0;
+    }
+
+    // Form styling within modal
+    .form-label {
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  // Footer enhancements
+  &__footer {
+    gap: $spacing-sm;
+
+    // Button spacing
+    .btn + .btn {
+      margin-left: $spacing-xs;
+    }
+  }
+
+  // Header with colored background
+  .modal-header {
+    display: flex;
+    align-items: center;
+
+    .modal-title {
+      margin-bottom: 0;
+    }
+
+    // Icon alignment
+    i {
+      flex-shrink: 0;
+    }
+  }
+
+  // Content wrapper for better spacing
+  .modal-content {
+    border: none;
+    box-shadow: $shadow-lg;
+  }
+}
+
+// ----------------------------------------------------------------------------
 // Responsive Utilities
 // ----------------------------------------------------------------------------
 

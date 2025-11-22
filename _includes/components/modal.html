@@ -1,0 +1,231 @@
+{% comment %}
+============================================================================
+Modal Component
+============================================================================
+
+@file        _includes/components/modal.html
+@description Reusable Bootstrap 5 modal component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Bootstrap 5 modal with customizable content
+- Size variants (sm, default, lg, xl, fullscreen)
+- Centered or top-aligned positioning
+- Scrollable content option
+- Static backdrop option (prevent close on outside click)
+- Header with title and optional icon
+- Footer with customizable buttons
+- Fade animation support
+- Custom classes and attributes
+
+Parameters:
+-----------
+- id: Modal ID (required, must be unique)
+- title: Modal title/heading (required)
+- content: Modal body content (required)
+- size: "sm" | "md" | "lg" | "xl" | "fullscreen" (default: "md")
+- centered: true | false - Vertically center modal (default: false)
+- scrollable: true | false - Scrollable modal body (default: false)
+- static_backdrop: true | false - Prevent close on outside click (default: false)
+- keyboard: true | false - Close on ESC key (default: true)
+- fade: true | false - Fade animation (default: true)
+- icon: Bootstrap icon class for header (optional)
+- icon_color: Icon color class (default: "text-primary")
+- header_bg: Header background class (optional, e.g., "bg-primary text-white")
+- footer_buttons: Footer buttons HTML (optional)
+- footer_align: "start" | "center" | "end" | "between" (default: "end")
+- show_close_button: true | false - Show X button in header (default: true)
+- show_footer: true | false - Show footer section (default: true when footer_buttons provided)
+- additional_classes: Extra CSS classes for modal-dialog (optional)
+
+Usage:
+------
+Basic modal:
+{% include components/modal.html
+   id="basicModal"
+   title="Modal Title"
+   content="<p>This is a basic modal with default settings.</p>"
+%}
+
+Trigger button:
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+  Launch Modal
+</button>
+
+Large modal with icon:
+{% include components/modal.html
+   id="largeModal"
+   title="Large Modal"
+   icon="bi-info-circle-fill"
+   icon_color="text-primary"
+   size="lg"
+   content="<p>This is a large modal with an icon in the header.</p>"
+%}
+
+Small centered modal:
+{% include components/modal.html
+   id="smallModal"
+   title="Confirm Action"
+   size="sm"
+   centered=true
+   content="<p>Are you sure you want to proceed?</p>"
+   footer_buttons='<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                   <button type="button" class="btn btn-primary">Confirm</button>'
+%}
+
+Scrollable modal:
+{% include components/modal.html
+   id="scrollableModal"
+   title="Terms and Conditions"
+   scrollable=true
+   content="<p>Long content here...</p><p>More content...</p>"
+   footer_buttons='<button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Agree</button>'
+%}
+
+Modal with colored header:
+{% include components/modal.html
+   id="successModal"
+   title="Success!"
+   icon="bi-check-circle-fill"
+   header_bg="bg-success text-white"
+   content="<p>Your action was completed successfully.</p>"
+   footer_buttons='<button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>'
+%}
+
+Static backdrop modal (cannot close by clicking outside):
+{% include components/modal.html
+   id="staticModal"
+   title="Important Notice"
+   static_backdrop=true
+   content="<p>You must take action on this modal. Clicking outside won't close it.</p>"
+   footer_buttons='<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Acknowledge</button>'
+%}
+
+XL Modal:
+{% include components/modal.html
+   id="xlModal"
+   title="Extra Large Modal"
+   size="xl"
+   content="<p>This is an extra large modal for extensive content.</p>"
+%}
+
+Fullscreen modal:
+{% include components/modal.html
+   id="fullscreenModal"
+   title="Fullscreen Experience"
+   size="fullscreen"
+   content="<div class='p-4'><h3>Fullscreen Content</h3><p>This modal takes up the entire viewport.</p></div>"
+%}
+
+Modal without footer:
+{% include components/modal.html
+   id="noFooterModal"
+   title="Information"
+   content="<p>This modal has no footer section.</p>"
+   show_footer=false
+%}
+
+Modal without close button:
+{% include components/modal.html
+   id="noCloseModal"
+   title="Mandatory Action"
+   show_close_button=false
+   content="<p>This modal cannot be closed with the X button.</p>"
+   footer_buttons='<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Complete</button>'
+%}
+
+Form modal:
+{% include components/modal.html
+   id="formModal"
+   title="Contact Form"
+   icon="bi-envelope-fill"
+   content='<form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+            </form>'
+   footer_buttons='<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                   <button type="button" class="btn btn-primary">Submit</button>'
+   footer_align="between"
+%}
+
+Danger modal with centered footer:
+{% include components/modal.html
+   id="deleteModal"
+   title="Delete Confirmation"
+   icon="bi-exclamation-triangle-fill"
+   icon_color="text-danger"
+   centered=true
+   content="<p class='text-center'>This action cannot be undone. Are you absolutely sure?</p>"
+   footer_buttons='<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                   <button type="button" class="btn btn-danger">Delete</button>'
+   footer_align="center"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign modal_id = include.id %}
+{% assign modal_title = include.title %}
+{% assign modal_content = include.content %}
+{% assign modal_size = include.size | default: "md" %}
+{% assign modal_centered = include.centered | default: false %}
+{% assign modal_scrollable = include.scrollable | default: false %}
+{% assign modal_static_backdrop = include.static_backdrop | default: false %}
+{% assign modal_keyboard = include.keyboard | default: true %}
+{% assign modal_fade = include.fade | default: true %}
+{% assign modal_icon = include.icon %}
+{% assign modal_icon_color = include.icon_color | default: "text-primary" %}
+{% assign modal_header_bg = include.header_bg %}
+{% assign modal_footer_buttons = include.footer_buttons %}
+{% assign modal_footer_align = include.footer_align | default: "end" %}
+{% assign modal_show_close_button = include.show_close_button | default: true %}
+{% assign modal_show_footer = include.show_footer %}
+{% assign modal_additional_classes = include.additional_classes %}
+
+{% comment %} Auto-detect if footer should be shown {% endcomment %}
+{% if modal_show_footer == nil %}
+  {% if modal_footer_buttons %}
+    {% assign modal_show_footer = true %}
+  {% else %}
+    {% assign modal_show_footer = false %}
+  {% endif %}
+{% endif %}
+
+{% comment %} Build modal-dialog classes {% endcomment %}
+{% capture modal_dialog_classes %}modal-dialog{% if modal_size != "md" %}{% if modal_size == "fullscreen" %} modal-fullscreen{% else %} modal-{{ modal_size }}{% endif %}{% endif %}{% if modal_centered %} modal-dialog-centered{% endif %}{% if modal_scrollable %} modal-dialog-scrollable{% endif %}{% if modal_additional_classes %} {{ modal_additional_classes }}{% endif %}{% endcapture %}
+
+{% comment %} Build data attributes {% endcomment %}
+{% capture modal_data_attrs %}{% if modal_static_backdrop %}data-bs-backdrop="static"{% endif %}{% if modal_keyboard == false %} data-bs-keyboard="false"{% endif %}{% endcapture %}
+
+<div class="modal{% if modal_fade %} fade{% endif %} component-modal" id="{{ modal_id }}" tabindex="-1" aria-labelledby="{{ modal_id }}Label" aria-hidden="true" {{ modal_data_attrs }}>
+  <div class="{{ modal_dialog_classes | strip }}">
+    <div class="modal-content">
+      <div class="modal-header{% if modal_header_bg %} {{ modal_header_bg }}{% endif %}">
+        {% if modal_icon %}
+        <i class="component-modal__header-icon bi {{ modal_icon }} {{ modal_icon_color }} me-2"></i>
+        {% endif %}
+        <h5 class="modal-title" id="{{ modal_id }}Label">{{ modal_title }}</h5>
+        {% if modal_show_close_button %}
+        <button type="button" class="btn-close{% if modal_header_bg contains 'text-white' %} btn-close-white{% endif %}" data-bs-dismiss="modal" aria-label="Close"></button>
+        {% endif %}
+      </div>
+      <div class="modal-body component-modal__body">
+        {{ modal_content }}
+      </div>
+      {% if modal_show_footer %}
+      <div class="modal-footer component-modal__footer justify-content-{{ modal_footer_align }}">
+        {{ modal_footer_buttons }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
