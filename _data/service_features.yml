@@ -3,10 +3,18 @@
 # ============================================================================
 # @file        _data/service_features.yml
 # @description Data untuk service features dan proses layanan
-# @version     1.0.0
+# @version     1.0.1
 # @date        2025-11-22
 # @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Notes:
+# - css_class: Optional custom CSS class untuk additional styling
 # ============================================================================
+
+# Section Settings
+section:
+  css_class: "service-features-section"  # Additional class for section
+  background: "bg-light"                  # Background color class
 
 # Section Header
 header:
@@ -14,6 +22,7 @@ header:
   icon: "bi-stars"
   icon_color: "warning"
   description: "Mengapa memilih {{ site.business.name }} sebagai partner riksa uji K3 Anda?"
+  css_class: "features-header"            # Additional class for header
 
 # Features List
 features:
@@ -21,75 +30,92 @@ features:
     icon_color: "primary"
     title: "Sertifikat Resmi"
     description: "Sertifikat riksa uji yang sah dan diakui oleh Kementerian Ketenagakerjaan RI"
+    css_class: "feature-certificate"
 
   - icon: "bi-people"
     icon_color: "success"
     title: "Inspector Ahli"
     description: "Tim inspector bersertifikat dengan pengalaman bertahun-tahun di bidang K3"
+    css_class: "feature-inspector"
 
   - icon: "bi-tools"
     icon_color: "warning"
     title: "Alat Terkalibrasi"
     description: "Menggunakan peralatan yang terkalibrasi dan sesuai standar internasional"
+    css_class: "feature-equipment"
 
   - icon: "bi-clock-history"
     icon_color: "info"
     title: "Respon Cepat"
     description: "Layanan responsif dengan waktu respon maksimal 24 jam untuk area prioritas"
+    css_class: "feature-response"
 
   - icon: "bi-file-earmark-check"
     icon_color: "primary"
     title: "Laporan Lengkap"
     description: "Dokumentasi dan laporan hasil riksa uji yang detail dan komprehensif"
+    css_class: "feature-report"
 
   - icon: "bi-geo-alt"
     icon_color: "danger"
     title: "Mobile Service"
     description: "Tim mobile siap datang ke lokasi Anda di seluruh Indonesia"
+    css_class: "feature-mobile"
 
   - icon: "bi-currency-dollar"
     icon_color: "success"
     title: "Harga Kompetitif"
     description: "Harga yang kompetitif dengan kualitas layanan terbaik dan tanpa biaya tersembunyi"
+    css_class: "feature-price"
 
   - icon: "bi-headset"
     icon_color: "info"
     title: "Konsultasi Gratis"
     description: "Konsultasi gratis untuk membantu Anda memahami kebutuhan riksa uji"
+    css_class: "feature-consultation"
 
 # Process Section
 process:
+  css_class: "service-process"  # Additional class for process section
+
   header:
     title: "Proses Layanan Kami"
     description: "Mudah, cepat, dan transparan"
+    css_class: "process-header"
 
   steps:
     - number: 1
       title: "Konsultasi"
       description: "Hubungi kami untuk konsultasi dan survey awal kebutuhan Anda"
       color: "primary"
+      css_class: "step-consultation"
 
     - number: 2
       title: "Penawaran"
       description: "Kami memberikan penawaran harga yang transparan dan kompetitif"
       color: "success"
+      css_class: "step-quotation"
 
     - number: 3
       title: "Purchase Order"
       description: "Konfirmasi pesanan dan kesepakatan kerja sama oleh Pelanggan"
       color: "warning"
+      css_class: "step-purchase-order"
 
     - number: 4
       title: "Inspeksi"
       description: "Tim kami melakukan riksa uji dengan peralatan standar"
       color: "info"
+      css_class: "step-inspection"
 
     - number: 5
       title: "Pelaporan"
       description: "Menyerahkan laporan hasil inspeksi ke dinas setempat"
       color: "danger"
+      css_class: "step-reporting"
 
     - number: 6
       title: "Sertifikat"
       description: "Penerbitan sertifikat resmi dari disnaker setempat dan laporan lengkap"
       color: "secondary"
+      css_class: "step-certificate"
