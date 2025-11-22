@@ -1,0 +1,374 @@
+# Services Configuration for PT. Cipta Mas Jaya
+# This file defines all available services and their details
+
+# Main Service Categories
+categories:
+  - id: "pesawat-uap"
+    name: "Riksa Uji Pesawat Uap dan Bejana Tekan"
+    slug: "pesawat-uap"
+    icon: "bi-droplet"
+    color: "primary"
+    description: "Inspeksi dan riksa uji pesawat uap dan bejana tekan sesuai Permenaker No. 3 Tahun 2016"
+    image: "/assets/img/services/boiler-service.jpg"
+    featured: true
+    order: 1
+
+  - id: "pesawat-angkat"
+    name: "Riksa Uji Pesawat Angkat Angkut"
+    slug: "pesawat-angkat"
+    icon: "bi-box-arrow-up"
+    color: "info"
+    description: "Inspeksi dan riksa uji pesawat angkat dan angkut sesuai Permenaker No. 8 Tahun 2020"
+    image: "/assets/img/services/crane-service.jpg"
+    featured: true
+    order: 2
+
+  - id: "pesawat-tenaga"
+    name: "Riksa Uji Pesawat Tenaga Dan Produksi"
+    slug: "pesawat-tenaga"
+    icon: "bi-gear-wide-connected"
+    color: "success"
+    description: "Inspeksi dan riksa uji pesawat tenaga dan produksi"
+    image: "/assets/img/services/machinery-service.jpg"
+    featured: true
+    order: 3
+
+  - id: "elevator-eskalator"
+    name: "Riksa Uji Elevator dan Eskalator"
+    slug: "elevator-eskalator"
+    icon: "bi-arrow-up-square"
+    color: "warning"
+    description: "Inspeksi dan riksa uji elevator, eskalator, dan lift barang"
+    image: "/assets/img/services/elevator-service.jpg"
+    featured: true
+    order: 4
+
+  - id: "instalasi-listrik-petir"
+    name: "Riksa Uji Instalasi Listrik dan Penyalur Petir"
+    slug: "instalasi-listrik-petir"
+    icon: "bi-lightning-charge"
+    color: "danger"
+    description: "Inspeksi dan pengujian instalasi listrik dan sistem penyalur petir"
+    image: "/assets/img/services/electrical-service.jpg"
+    featured: true
+    order: 5
+
+  - id: "proteksi-kebakaran"
+    name: "Riksa Uji Proteksi Sarana Kebakaran"
+    slug: "proteksi-kebakaran"
+    icon: "bi-fire"
+    color: "danger"
+    description: "Inspeksi dan pengujian sistem proteksi sarana kebakaran"
+    image: "/assets/img/services/fire-service.jpg"
+    featured: true
+    order: 6
+
+  - id: "lifeline"
+    name: "Riksa Uji Lifeline"
+    slug: "lifeline"
+    icon: "bi-shield-check"
+    color: "secondary"
+    description: "Inspeksi dan pengujian sistem lifeline untuk keselamatan kerja di ketinggian"
+    image: "/assets/img/services/lifeline-service.jpg"
+    featured: true
+    order: 7
+
+  - id: "lingkungan-kerja"
+    name: "Riksa Uji Lingkungan Kerja"
+    slug: "lingkungan-kerja"
+    icon: "bi-heart-pulse"
+    color: "info"
+    description: "Pengukuran dan monitoring kualitas lingkungan kerja (kebisingan, pencahayaan, suhu, dll)"
+    image: "/assets/img/services/environment-service.jpg"
+    featured: true
+    order: 8
+
+  - id: "pengesahan-gambar"
+    name: "Pengesahan Gambar Kemnaker RI"
+    slug: "pengesahan-gambar"
+    icon: "bi-file-earmark-check"
+    color: "primary"
+    description: "Layanan pengesahan gambar teknis peralatan K3 oleh Kementerian Ketenagakerjaan RI"
+    image: "/assets/img/services/document-service.jpg"
+    featured: true
+    order: 9
+
+# Detailed Services
+services:
+  # Pesawat Angkat & Angkut
+  - category: "pesawat-angkat"
+    name: "Crane"
+    slug: "crane"
+    description: "Inspeksi dan riksa uji crane (overhead crane, gantry crane, mobile crane)"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 8 Tahun 2020"
+      - "SNI ISO 4301"
+    requirements:
+      - "Gambar teknis dan spesifikasi"
+      - "Buku operasional"
+      - "Sertifikat sebelumnya (jika ada)"
+
+  - category: "pesawat-angkat"
+    name: "Hoist"
+    slug: "hoist"
+    description: "Inspeksi dan riksa uji electric hoist dan chain block"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 8 Tahun 2020"
+    requirements:
+      - "Nameplate yang jelas"
+      - "Manual operasional"
+
+  - category: "pesawat-angkat"
+    name: "Lift / Elevator"
+    slug: "lift"
+    description: "Inspeksi dan riksa uji lift penumpang dan barang"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 8 Tahun 2020"
+      - "SNI 03-7011-2012"
+    requirements:
+      - "Gambar instalasi lift"
+      - "Sertifikat komponen utama"
+      - "Buku pemeliharaan"
+
+  - category: "pesawat-angkat"
+    name: "Forklift"
+    slug: "forklift"
+    description: "Inspeksi dan riksa uji forklift (diesel, electric, LPG)"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 8 Tahun 2020"
+    requirements:
+      - "STNK dan BPKB"
+      - "Manual operasional"
+
+  - category: "pesawat-angkat"
+    name: "Gondola"
+    slug: "gondola"
+    description: "Inspeksi dan riksa uji gondola / building maintenance unit"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 8 Tahun 2020"
+    requirements:
+      - "Gambar instalasi"
+      - "Sertifikat wire rope"
+
+  # Pesawat Uap & Bejana Tekan
+  - category: "pesawat-uap"
+    name: "Boiler"
+    slug: "boiler"
+    description: "Inspeksi dan riksa uji boiler steam dan thermal oil"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 3 Tahun 2016"
+      - "ASME Section I"
+    requirements:
+      - "Gambar teknis dan spesifikasi"
+      - "Prosedur operasional"
+      - "Log book operasional"
+
+  - category: "pesawat-uap"
+    name: "Air Receiver"
+    slug: "air-receiver"
+    description: "Inspeksi dan riksa uji tangki udara bertekanan"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 3 Tahun 2016"
+      - "ASME Section VIII"
+    requirements:
+      - "Nameplate yang jelas"
+      - "Gambar teknis"
+
+  - category: "pesawat-uap"
+    name: "Autoclave"
+    slug: "autoclave"
+    description: "Inspeksi dan riksa uji autoclave untuk sterilisasi"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 3 Tahun 2016"
+    requirements:
+      - "Manual operasional"
+      - "Sertifikat kalibrasi pressure gauge"
+
+  - category: "pesawat-uap"
+    name: "Pressure Vessel"
+    slug: "pressure-vessel"
+    description: "Inspeksi dan riksa uji bejana tekan lainnya"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 3 Tahun 2016"
+      - "ASME Section VIII"
+    requirements:
+      - "Gambar teknis lengkap"
+      - "Sertifikat material"
+
+  # Instalasi Listrik
+  - category: "instalasi-listrik"
+    name: "Instalasi Tegangan Tinggi"
+    slug: "tegangan-tinggi"
+    description: "Inspeksi dan pengujian instalasi listrik >1000V (trafo, panel, dll)"
+    certification_period: "3 tahun"
+    regulations:
+      - "PUIL 2011"
+      - "SNI 04-0225-2011"
+    requirements:
+      - "Single line diagram"
+      - "Spesifikasi peralatan"
+
+  - category: "instalasi-listrik"
+    name: "Instalasi Tegangan Rendah"
+    slug: "tegangan-rendah"
+    description: "Inspeksi dan pengujian instalasi listrik ≤1000V"
+    certification_period: "3 tahun"
+    regulations:
+      - "PUIL 2011"
+    requirements:
+      - "Diagram instalasi"
+      - "Spesifikasi panel dan kabel"
+
+  - category: "instalasi-listrik"
+    name: "Panel Listrik"
+    slug: "panel-listrik"
+    description: "Inspeksi panel distribusi (MDP, SDP, LVMDP)"
+    certification_period: "3 tahun"
+    regulations:
+      - "PUIL 2011"
+      - "IEC 61439"
+    requirements:
+      - "Single line diagram"
+      - "Layout panel"
+
+  - category: "instalasi-listrik"
+    name: "Transformator"
+    slug: "transformator"
+    description: "Inspeksi dan pengujian transformator distribusi"
+    certification_period: "3 tahun"
+    regulations:
+      - "PUIL 2011"
+      - "SPLN"
+    requirements:
+      - "Nameplate"
+      - "Test report pabrik"
+
+  # Penyalur Petir
+  - category: "penyalur-petir"
+    name: "Grounding System"
+    slug: "grounding"
+    description: "Pengukuran tahanan pentanahan sistem grounding"
+    certification_period: "1 tahun"
+    regulations:
+      - "SNI 03-7015-2004"
+      - "PUIL 2011"
+    requirements:
+      - "Gambar sistem grounding"
+      - "Lokasi elektroda pentanahan"
+
+  - category: "penyalur-petir"
+    name: "Lightning Rod"
+    slug: "lightning-rod"
+    description: "Inspeksi sistem penangkal petir konvensional dan ESE"
+    certification_period: "1 tahun"
+    regulations:
+      - "SNI 03-7015-2004"
+    requirements:
+      - "Gambar instalasi"
+      - "Radius proteksi"
+
+  - category: "penyalur-petir"
+    name: "Surge Protection"
+    slug: "surge-protection"
+    description: "Inspeksi dan pengujian Surge Protection Device (SPD)"
+    certification_period: "1 tahun"
+    regulations:
+      - "IEC 61643"
+    requirements:
+      - "Spesifikasi SPD"
+      - "Diagram instalasi"
+
+  # Proteksi Kebakaran
+  - category: "proteksi-kebakaran"
+    name: "APAR"
+    slug: "apar"
+    description: "Inspeksi dan pengujian Alat Pemadam Api Ringan"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 4 Tahun 1980"
+      - "NFPA 10"
+    requirements:
+      - "Daftar APAR"
+      - "Lokasi penempatan"
+
+  - category: "proteksi-kebakaran"
+    name: "Hydrant"
+    slug: "hydrant"
+    description: "Inspeksi dan flow test sistem hydrant"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 4 Tahun 1980"
+      - "NFPA 14"
+    requirements:
+      - "Gambar instalasi hydrant"
+      - "Spesifikasi pompa"
+
+  - category: "proteksi-kebakaran"
+    name: "Sprinkler"
+    slug: "sprinkler"
+    description: "Inspeksi dan pengujian sistem sprinkler otomatis"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 4 Tahun 1980"
+      - "NFPA 13"
+    requirements:
+      - "Gambar instalasi sprinkler"
+      - "Hydraulic calculation"
+
+  - category: "proteksi-kebakaran"
+    name: "Fire Alarm"
+    slug: "fire-alarm"
+    description: "Inspeksi dan pengujian sistem alarm kebakaran"
+    certification_period: "1 tahun"
+    regulations:
+      - "Permenaker No. 4 Tahun 1980"
+      - "NFPA 72"
+    requirements:
+      - "Diagram sistem"
+      - "Lokasi detektor dan alarm"
+
+  - category: "proteksi-kebakaran"
+    name: "Fire Door"
+    slug: "fire-door"
+    description: "Inspeksi pintu tahan api dan fire damper"
+    certification_period: "1 tahun"
+    regulations:
+      - "SNI 1741:2008"
+    requirements:
+      - "Sertifikat fire rating"
+      - "Lokasi pemasangan"
+
+# Service Features
+features:
+  - title: "Inspector Bersertifikat"
+    description: "Tim inspector kami memiliki sertifikat Kemnaker RI"
+    icon: "bi-award"
+
+  - title: "Peralatan Modern"
+    description: "Menggunakan alat ukur dan testing yang terkalibrasi"
+    icon: "bi-tools"
+
+  - title: "Laporan Detail"
+    description: "Laporan inspeksi lengkap dengan foto dan rekomendasi"
+    icon: "bi-file-earmark-text"
+
+  - title: "Proses Cepat"
+    description: "Penerbitan sertifikat maksimal 7 hari kerja"
+    icon: "bi-lightning-charge"
+
+  - title: "Harga Kompetitif"
+    description: "Tarif yang kompetitif dengan kualitas terjamin"
+    icon: "bi-cash-coin"
+
+  - title: "Support 24/7"
+    description: "Tim support siap membantu Anda kapan saja"
+    icon: "bi-headset"

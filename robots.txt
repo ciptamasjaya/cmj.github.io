@@ -1,0 +1,29 @@
+# robots.txt for PT. Cipta Mas Jaya
+# https://www.ciptamasjaya.co.id
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and temporary files
+Disallow: /assets/css/*.map
+Disallow: /assets/js/*.map
+
+# Crawl-delay (optional, adjust if needed)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://ciptamasjaya.github.io/sitemap.xml
+
+# Block bad bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

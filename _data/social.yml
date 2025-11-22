@@ -1,0 +1,138 @@
+# Social Media and Contact Configuration for PT. Cipta Mas Jaya
+
+# Company Contact Information
+company:
+  name: "PT. Cipta Mas Jaya"
+  email: "info@ciptamasjaya.co.id"
+  phone: "+62 21 8243 3033"
+  whatsapp: "+62 21 8243 3033"
+  fax: "+62 21 8243 3034"
+
+  address:
+    street: "Jalan Raya Cikunir No. 88"
+    city: "Bekasi"
+    province: "Jawa Barat"
+    postal_code: "17530"
+    country: "Indonesia"
+
+  business_hours:
+    weekday: "Senin - Jumat: 08:00 - 17:00 WIB"
+    saturday: "Sabtu: 08:00 - 12:00 WIB"
+    sunday: "Minggu: Tutup"
+
+# Social Media Links
+social_media:
+  - name: "Facebook"
+    url: "https://facebook.com/ciptamasjaya"
+    icon: "bi-facebook"
+    color: "#1877F2"
+    enabled: false
+
+  - name: "Instagram"
+    url: "https://instagram.com/ciptamasjaya"
+    icon: "bi-instagram"
+    color: "#E4405F"
+    enabled: false
+
+  - name: "LinkedIn"
+    url: "https://linkedin.com/company/ciptamasjaya"
+    icon: "bi-linkedin"
+    color: "#0A66C2"
+    enabled: false
+
+  - name: "Twitter"
+    url: "https://twitter.com/ciptamasjaya"
+    icon: "bi-twitter-x"
+    color: "#000000"
+    enabled: false
+
+  - name: "YouTube"
+    url: "https://youtube.com/@ciptamasjaya"
+    icon: "bi-youtube"
+    color: "#FF0000"
+    enabled: false
+
+  - name: "WhatsApp"
+    url: "https://wa.me/622182433033"
+    icon: "bi-whatsapp"
+    color: "#25D366"
+    enabled: true
+
+# Quick Contact Methods
+quick_contact:
+  - type: "phone"
+    label: "Telepon"
+    value: "+62 21 8243 3033"
+    href: "tel:+622182433033"
+    icon: "bi-telephone-fill"
+    color: "primary"
+    description: "Hubungi kami langsung"
+
+  - type: "whatsapp"
+    label: "WhatsApp"
+    value: "+62 21 8243 3033"
+    href: "https://wa.me/622182433033"
+    icon: "bi-whatsapp"
+    color: "success"
+    description: "Chat via WhatsApp"
+
+  - type: "email"
+    label: "Email"
+    value: "info@ciptamasjaya.co.id"
+    href: "mailto:info@ciptamasjaya.co.id"
+    icon: "bi-envelope-fill"
+    color: "info"
+    description: "Kirim email kepada kami"
+
+  - type: "location"
+    label: "Alamat"
+    value: "Jl. Raya Cikunir No. 88, Bekasi"
+    href: "https://maps.google.com/?q=Jalan+Raya+Cikunir+No.+88+Bekasi"
+    icon: "bi-geo-alt-fill"
+    color: "danger"
+    description: "Lihat lokasi di peta"
+
+# Contact Form Recipients
+contact_recipients:
+  general: "info@ciptamasjaya.co.id"
+  sales: "sales@ciptamasjaya.co.id"
+  support: "support@ciptamasjaya.co.id"
+  complaint: "complaint@ciptamasjaya.co.id"
+
+# Maps Configuration
+maps:
+  google_maps_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0!2d106.9!3d-6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMDAuMCJTIDEwNsKwNTQnMDAuMCJF!5e0!3m2!1sen!2sid!4v1234567890"
+  latitude: "-6.2"
+  longitude: "106.9"
+  zoom_level: 15
+
+# Emergency Contact
+emergency:
+  enabled: true
+  phone: "+62 21 8243 3033"
+  available_247: false
+  response_time: "24 jam"
+
+# Newsletter
+newsletter:
+  enabled: false
+  mailchimp_action: ""
+  description: "Dapatkan update terbaru seputar layanan kami dan informasi K3"
+
+# Social Share Buttons
+share_buttons:
+  facebook: true
+  twitter: true
+  linkedin: true
+  whatsapp: true
+  email: true
+  print: false
+
+# Footer Contact Display
+footer_contact:
+  show_address: true
+  show_phone: true
+  show_email: true
+  show_fax: false
+  show_whatsapp: true
+  show_business_hours: true

@@ -1,0 +1,151 @@
+# Navigation Menu Configuration for PT. Cipta Mas Jaya
+# This file defines the main navigation menu structure
+
+# Main Navigation
+main:
+  - title: "Beranda"
+    url: "/"
+    icon: "bi-house-door"
+    description: "Halaman utama"
+
+  - title: "Tentang Kami"
+    url: "/about/"
+    icon: "bi-info-circle"
+    description: "Profil perusahaan dan sejarah"
+
+  - title: "Layanan"
+    url: "/layanan/"
+    icon: "bi-gear"
+    description: "Jasa inspeksi K3 yang kami tawarkan"
+    dropdown:
+      - title: "Pesawat Angkat & Angkut"
+        url: "/layanan/pesawat-angkat/"
+        icon: "bi-box-arrow-up"
+        items:
+          - "Crane"
+          - "Hoist"
+          - "Lift / Elevator"
+          - "Forklift"
+          - "Gondola"
+
+      - title: "Pesawat Uap & Bejana Tekan"
+        url: "/layanan/pesawat-uap/"
+        icon: "bi-droplet"
+        items:
+          - "Boiler"
+          - "Air Receiver"
+          - "Autoclave"
+          - "Pressure Vessel"
+
+      - title: "Instalasi Listrik"
+        url: "/layanan/instalasi-listrik/"
+        icon: "bi-lightning"
+        items:
+          - "Instalasi Tegangan Tinggi"
+          - "Instalasi Tegangan Rendah"
+          - "Panel Listrik"
+          - "Transformator"
+
+      - title: "Instalasi Penyalur Petir"
+        url: "/layanan/penyalur-petir/"
+        icon: "bi-cloud-lightning"
+        items:
+          - "Grounding System"
+          - "Lightning Rod"
+          - "Surge Protection"
+
+      - title: "Proteksi Kebakaran"
+        url: "/layanan/proteksi-kebakaran/"
+        icon: "bi-fire"
+        items:
+          - "APAR"
+          - "Hydrant"
+          - "Sprinkler"
+          - "Fire Alarm"
+          - "Fire Door"
+
+  - title: "Sertifikasi"
+    url: "/sertifikasi/"
+    icon: "bi-award"
+    description: "Proses dan persyaratan sertifikasi"
+
+  - title: "Blog"
+    url: "/blog/"
+    icon: "bi-newspaper"
+    description: "Artikel dan berita terkini"
+
+  - title: "Kontak"
+    url: "/contact/"
+    icon: "bi-envelope"
+    description: "Hubungi kami"
+
+# Footer Navigation
+footer:
+  - title: "Perusahaan"
+    links:
+      - title: "Tentang Kami"
+        url: "/about/"
+      - title: "Tim Kami"
+        url: "/team/"
+      - title: "Karir"
+        url: "/karir/"
+      - title: "Media"
+        url: "/media/"
+
+  - title: "Layanan"
+    links:
+      - title: "Pesawat Angkat & Angkut"
+        url: "/layanan/pesawat-angkat/"
+      - title: "Pesawat Uap & Bejana Tekan"
+        url: "/layanan/pesawat-uap/"
+      - title: "Instalasi Listrik"
+        url: "/layanan/instalasi-listrik/"
+      - title: "Penyalur Petir"
+        url: "/layanan/penyalur-petir/"
+      - title: "Proteksi Kebakaran"
+        url: "/layanan/proteksi-kebakaran/"
+
+  - title: "Sumber Daya"
+    links:
+      - title: "FAQ"
+        url: "/faq/"
+      - title: "Download"
+        url: "/download/"
+      - title: "Blog"
+        url: "/blog/"
+      - title: "Regulasi K3"
+        url: "/regulasi/"
+
+  - title: "Legal"
+    links:
+      - title: "Kebijakan Privasi"
+        url: "/privacy/"
+      - title: "Syarat & Ketentuan"
+        url: "/terms/"
+      - title: "Disclaimer"
+        url: "/disclaimer/"
+      - title: "Sitemap"
+        url: "/sitemap.xml"
+
+# Mobile Quick Links
+mobile_quick:
+  - title: "Call Us"
+    url: "tel:+622182433033"
+    icon: "bi-telephone"
+    class: "btn-primary"
+
+  - title: "WhatsApp"
+    url: "https://wa.me/622182433033"
+    icon: "bi-whatsapp"
+    class: "btn-success"
+
+  - title: "Email"
+    url: "mailto:info@ciptamasjaya.co.id"
+    icon: "bi-envelope"
+    class: "btn-info"
+
+# Breadcrumb Configuration
+breadcrumb:
+  home_text: "Beranda"
+  separator: "/"
+  show_current: true
