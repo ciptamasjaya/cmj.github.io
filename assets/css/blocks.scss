@@ -146,6 +146,37 @@
 }
 
 /* ============================================================================
+   CONTACT CARDS BLOCK
+   ============================================================================ */
+.block--contact-cards .contact-card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+
+    .contact-icon i {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.block--contact-cards .contact-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.block--contact-cards .btn {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ============================================================================
    REUSABLE BLOCKS - Common Styles
    ============================================================================ */
 .bg-gradient-primary {
