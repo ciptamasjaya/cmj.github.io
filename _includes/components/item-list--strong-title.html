@@ -1,0 +1,124 @@
+{% comment %}
+============================================================================
+Item List Strong Title Component
+============================================================================
+
+@file        _includes/components/item-list--strong-title.html
+@description Individual list item dengan icon, strong title, dan description
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Flex layout: icon (left) + content (right)
+- Strong/bold title
+- Optional description text
+- Icon customization (size, color)
+- Text color customization
+- Spacing options
+
+Parameters:
+-----------
+- title: Item title (required)
+- description: Item description text (optional)
+- icon: Bootstrap icon class (required)
+- icon_color: Icon color class (default: "text-primary")
+- icon_size: Icon font size (default: "1.5rem")
+- title_color: Title text color (default: "text-wood")
+- desc_color: Description text color (default: "text-muted")
+- desc_size: Description text size (default: "small")
+- spacing: Margin bottom (default: "mb-3")
+- icon_spacing: Space between icon and text (default: "me-3")
+
+Usage:
+------
+Basic usage:
+{% include components/item-list--strong-title.html
+   title="Tahan Kelembaban Tinggi"
+   description="Ideal untuk area dapur, bar basah, atau outdoor area yang sering terpapar air dan kelembaban"
+   icon="bi-droplet-fill"
+%}
+
+With custom icon color and size:
+{% include components/item-list--strong-title.html
+   title="Sertifikat Resmi"
+   description="Terdaftar dan diakui oleh Kementerian Ketenagakerjaan RI"
+   icon="bi-award-fill"
+   icon_color="text-warning"
+   icon_size="2rem"
+%}
+
+Without description (title only):
+{% include components/item-list--strong-title.html
+   title="Konsultasi Gratis"
+   icon="bi-chat-dots"
+   icon_color="text-success"
+%}
+
+Custom spacing:
+{% include components/item-list--strong-title.html
+   title="Garansi Layanan"
+   description="Jaminan kepuasan pelanggan dengan garansi resmi"
+   icon="bi-shield-check"
+   spacing="mb-4"
+%}
+
+Success theme:
+{% include components/item-list--strong-title.html
+   title="Proses Cepat"
+   description="Pengerjaan efisien tanpa mengorbankan kualitas"
+   icon="bi-lightning-fill"
+   icon_color="text-success"
+   title_color="text-success"
+%}
+
+In a loop (multiple items):
+{% capture items %}
+[
+  {
+    "title": "Tahan Lama",
+    "description": "Material berkualitas tinggi untuk ketahanan maksimal",
+    "icon": "bi-shield-fill-check"
+  },
+  {
+    "title": "Ramah Lingkungan",
+    "description": "Produk eco-friendly yang aman untuk lingkungan",
+    "icon": "bi-tree-fill"
+  }
+]
+{% endcapture %}
+
+{% for item in items %}
+  {% include components/item-list--strong-title.html
+     title=item.title
+     description=item.description
+     icon=item.icon
+  %}
+{% endfor %}
+
+============================================================================
+{% endcomment %}
+
+{% assign item_title = include.title %}
+{% assign item_description = include.description %}
+{% assign item_icon = include.icon %}
+{% assign icon_color = include.icon_color | default: "text-primary" %}
+{% assign icon_size = include.icon_size | default: "1.5rem" %}
+{% assign title_color = include.title_color | default: "text-wood" %}
+{% assign desc_color = include.desc_color | default: "text-muted" %}
+{% assign desc_size = include.desc_size | default: "small" %}
+{% assign spacing = include.spacing | default: "mb-3" %}
+{% assign icon_spacing = include.icon_spacing | default: "me-3" %}
+
+<div class="d-flex {{ spacing }}">
+  <div class="{{ icon_spacing }}" style="flex-shrink: 0;">
+    <i class="bi {{ item_icon }} {{ icon_color }}" style="font-size: {{ icon_size }};"></i>
+  </div>
+  <div>
+    <strong class="{{ title_color }}">{{ item_title }}</strong>
+    {% if item_description %}
+    <p class="mb-0 {{ desc_color }} {{ desc_size }}">{{ item_description }}</p>
+    {% endif %}
+  </div>
+</div>
