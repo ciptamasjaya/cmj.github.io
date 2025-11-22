@@ -5,16 +5,23 @@ FAQ Contact Block
 
 @file        _includes/reusable/block--faq-contact.html
 @description Frequently Asked Questions untuk halaman kontak
-@version     1.0.0
+@version     2.0.0
 @date        2025-11-22
 @author      arisciwek (PT. Cipta Mas Jaya)
 
+Data Source:
+------------
+Data YAML berasal dari:
+- _data/faq_contact.yml
+
 Features:
 ---------
+- Data-driven FAQ dengan 8 items
+- Template variable support ({phone}, {whatsapp}, {email})
 - Bootstrap accordion untuk FAQ
-- Pertanyaan umum terkait kontak dan layanan
-- Responsive design
 - Schema.org FAQ markup
+- Dynamic CTA section
+- Responsive design
 
 Usage:
 ------
@@ -30,11 +37,11 @@ Usage:
     <div class="row mb-5">
       <div class="col-lg-8 mx-auto text-center">
         <h2 class="h2 fw-bold mb-3">
-          <i class="bi bi-question-circle text-primary me-2"></i>
-          Pertanyaan yang Sering Diajukan
+          <i class="bi {{ site.data.faq_contact.header.icon }} {{ site.data.faq_contact.header.icon_color }} me-2"></i>
+          {{ site.data.faq_contact.header.title }}
         </h2>
         <p class="lead text-muted">
-          Temukan jawaban untuk pertanyaan umum tentang layanan kami
+          {{ site.data.faq_contact.header.description }}
         </p>
       </div>
     </div>
@@ -43,215 +50,54 @@ Usage:
     <div class="row">
       <div class="col-lg-10 mx-auto">
         <div class="accordion" id="faqAccordion" itemscope itemtype="https://schema.org/FAQPage">
+          {% for faq in site.data.faq_contact.faqs %}
+          {% assign answer_text = faq.answer
+             | replace: '{phone}', site.business.phone
+             | replace: '{whatsapp}', site.business.whatsapp
+             | replace: '{email}', site.business.email
+             | replace: '{company_name}', site.business.name %}
 
-          <!-- FAQ 1 -->
-          <div class="accordion-item border-0 shadow-sm mb-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="accordion-item border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
             <h3 class="accordion-header">
-              <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
-                <i class="bi bi-clock-history text-primary me-2"></i>
-                <span itemprop="name">Berapa lama waktu yang dibutuhkan untuk mendapat respon?</span>
+              <button class="accordion-button{% unless faq.default_open %} collapsed{% endunless %} fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#{{ faq.id }}"{% if faq.default_open %} aria-expanded="true"{% endif %}>
+                <i class="bi {{ faq.icon }} {{ faq.icon_color }} me-2"></i>
+                <span itemprop="name">{{ faq.question }}</span>
               </button>
             </h3>
-            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <div id="{{ faq.id }}" class="accordion-collapse collapse{% if faq.default_open %} show{% endif %}" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
               <div class="accordion-body" itemprop="text">
-                <p class="mb-0">
-                  Kami berkomitmen memberikan respon maksimal <strong>1x24 jam pada hari kerja</strong>.
-                  Untuk area Jabodetabek dan Banten, kami dapat memberikan respon lebih cepat melalui
-                  WhatsApp atau telepon langsung di <strong>{{ site.business.phone }}</strong>.
-                </p>
+                {{ answer_text }}
               </div>
             </div>
           </div>
-
-          <!-- FAQ 2 -->
-          <div class="accordion-item border-0 shadow-sm mb-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                <i class="bi bi-geo-alt text-primary me-2"></i>
-                <span itemprop="name">Apakah melayani ke seluruh Indonesia?</span>
-              </button>
-            </h3>
-            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
-                <p class="mb-2">
-                  Ya, kami melayani <strong>seluruh wilayah Indonesia</strong>. Tim mobile kami siap
-                  datang ke lokasi Anda dengan peralatan lengkap dan terkalibrasi.
-                </p>
-                <p class="mb-0">
-                  <strong>Area Prioritas:</strong> Banten, DKI Jakarta, Jawa Barat dengan respon time lebih cepat.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="accordion-item border-0 shadow-sm mb-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                <i class="bi bi-calendar-check text-primary me-2"></i>
-                <span itemprop="name">Bagaimana cara menjadwalkan inspeksi?</span>
-              </button>
-            </h3>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
-                <p class="mb-2">
-                  Anda dapat menjadwalkan inspeksi melalui:
-                </p>
-                <ul class="mb-2">
-                  <li><strong>WhatsApp:</strong> <a href="https://wa.me/{{ site.business.whatsapp }}" target="_blank">{{ site.business.phone }}</a></li>
-                  <li><strong>Telepon:</strong> <a href="tel:{{ site.business.phone }}">{{ site.business.phone }}</a></li>
-                  <li><strong>Email:</strong> <a href="mailto:{{ site.business.email }}">{{ site.business.email }}</a></li>
-                  <li><strong>Form Kontak:</strong> Isi form di halaman ini</li>
-                </ul>
-                <p class="mb-0 small text-muted">
-                  Tim kami akan membantu menentukan jadwal terbaik sesuai ketersediaan Anda.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="accordion-item border-0 shadow-sm mb-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                <i class="bi bi-file-earmark-text text-primary me-2"></i>
-                <span itemprop="name">Dokumen apa saja yang diperlukan untuk riksa uji?</span>
-              </button>
-            </h3>
-            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
-                <p class="mb-2">
-                  Dokumen yang biasanya diperlukan:
-                </p>
-                <ul class="mb-2">
-                  <li>Dokumen kepemilikan peralatan</li>
-                  <li>Sertifikat riksa uji sebelumnya (jika ada)</li>
-                  <li>Spesifikasi teknis peralatan</li>
-                  <li>Buku manual peralatan (jika tersedia)</li>
-                </ul>
-                <p class="mb-0 small text-muted">
-                  <i class="bi bi-info-circle me-1"></i>
-                  Tim kami akan memberikan checklist lengkap saat konfirmasi jadwal.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div class="accordion-item border-0 shadow-sm mb-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                <i class="bi bi-currency-dollar text-primary me-2"></i>
-                <span itemprop="name">Bagaimana cara mendapatkan penawaran harga?</span>
-              </button>
-            </h3>
-            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
-                <p class="mb-2">
-                  Untuk mendapatkan penawaran harga yang akurat, silakan hubungi kami dengan informasi:
-                </p>
-                <ul class="mb-2">
-                  <li>Jenis layanan yang dibutuhkan</li>
-                  <li>Spesifikasi dan jumlah peralatan</li>
-                  <li>Lokasi inspeksi</li>
-                  <li>Timeline yang diinginkan</li>
-                </ul>
-                <p class="mb-0">
-                  Tim kami akan memberikan penawaran harga yang kompetitif dan transparan dalam 1x24 jam.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 6 -->
-          <div class="accordion-item border-0 shadow-sm mb-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                <i class="bi bi-shield-check text-primary me-2"></i>
-                <span itemprop="name">Apakah inspector sudah bersertifikat resmi?</span>
-              </button>
-            </h3>
-            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
-                <p class="mb-2">
-                  <strong>Ya, semua inspector kami memiliki sertifikasi resmi dari Kemnaker RI</strong>
-                  dan berpengalaman dalam melakukan riksa uji K3.
-                </p>
-                <p class="mb-0">
-                  Kami juga menggunakan peralatan yang terkalibrasi dan sesuai standar untuk
-                  menjamin akurasi hasil inspeksi.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 7 -->
-          <div class="accordion-item border-0 shadow-sm mb-3" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
-                <i class="bi bi-clock text-primary me-2"></i>
-                <span itemprop="name">Berapa lama proses inspeksi dan penerbitan sertifikat?</span>
-              </button>
-            </h3>
-            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
-                <p class="mb-2">
-                  Durasi inspeksi tergantung jenis dan jumlah peralatan. Secara umum:
-                </p>
-                <ul class="mb-2">
-                  <li><strong>Inspeksi:</strong> 1-3 hari kerja (tergantung kompleksitas)</li>
-                  <li><strong>Laporan:</strong> 3-7 hari kerja setelah inspeksi</li>
-                  <li><strong>Sertifikat:</strong> 7-14 hari kerja (termasuk proses Kemnaker)</li>
-                </ul>
-                <p class="mb-0 small text-muted">
-                  <i class="bi bi-lightning-fill text-warning me-1"></i>
-                  Fast track service tersedia untuk kebutuhan urgent.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 8 -->
-          <div class="accordion-item border-0 shadow-sm" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
-                <i class="bi bi-headset text-primary me-2"></i>
-                <span itemprop="name">Apakah tersedia layanan konsultasi gratis?</span>
-              </button>
-            </h3>
-            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
-                <p class="mb-0">
-                  <strong>Ya, kami menyediakan konsultasi gratis!</strong> Anda dapat berkonsultasi
-                  mengenai kebutuhan riksa uji, persyaratan dokumen, timeline, dan hal teknis lainnya
-                  melalui WhatsApp, telepon, atau email. Tim kami siap membantu Anda.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          {% endfor %}
         </div>
 
         <!-- Still Have Questions CTA -->
         <div class="card border-0 shadow-sm mt-5 bg-primary text-white">
           <div class="card-body p-4 text-center">
             <h3 class="h5 fw-bold mb-3">
-              <i class="bi bi-chat-dots me-2"></i>
-              Masih Ada Pertanyaan?
+              <i class="bi {{ site.data.faq_contact.cta.icon }} me-2"></i>
+              {{ site.data.faq_contact.cta.title }}
             </h3>
             <p class="mb-3 opacity-75">
-              Tim kami siap membantu menjawab semua pertanyaan Anda
+              {{ site.data.faq_contact.cta.description }}
             </p>
             <div class="d-flex gap-2 justify-content-center flex-wrap">
-              <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20punya%20pertanyaan%20tentang%20layanan%20K3"
-                 class="btn btn-light btn-lg"
-                 target="_blank"
-                 rel="noopener noreferrer">
-                <i class="bi bi-whatsapp me-2"></i>Chat WhatsApp
-              </a>
-              <a href="tel:{{ site.business.phone }}" class="btn btn-outline-light btn-lg">
-                <i class="bi bi-telephone me-2"></i>Telepon Kami
-              </a>
+              {% for button in site.data.faq_contact.cta.buttons %}
+                {% if button.type == 'whatsapp' %}
+                  <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20punya%20pertanyaan%20tentang%20layanan%20K3"
+                     class="{{ button.class }}"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    <i class="bi {{ button.icon }} me-2"></i>{{ button.text }}
+                  </a>
+                {% elsif button.type == 'phone' %}
+                  <a href="tel:{{ site.business.phone }}" class="{{ button.class }}">
+                    <i class="bi {{ button.icon }} me-2"></i>{{ button.text }}
+                  </a>
+                {% endif %}
+              {% endfor %}
             </div>
           </div>
         </div>

@@ -1,0 +1,179 @@
+# ============================================================================
+# FAQ Contact Data
+# ============================================================================
+#
+# @file        _data/faq_contact.yml
+# @description Data untuk block--faq-contact.html
+# @version     1.0.0
+# @date        2025-11-22
+# @author      arisciwek (PT. Cipta Mas Jaya)
+#
+# Usage:
+# ------
+# Digunakan oleh: _includes/reusable/block--faq-contact.html
+#
+# Structure:
+# ----------
+# header:        Section header dengan title, icon, dan description
+# faqs:          Array of FAQ items (8 items)
+# cta:           Call-to-action section at the bottom
+#
+# Template Variables Support:
+# ---------------------------
+# {company_name} → site.business.name
+# {phone}        → site.business.phone
+# {whatsapp}     → site.business.whatsapp
+# {email}        → site.business.email
+#
+# ============================================================================
+
+header:
+  title: "Pertanyaan yang Sering Diajukan"
+  icon: "bi-question-circle"
+  icon_color: "text-primary"
+  description: "Temukan jawaban untuk pertanyaan umum tentang layanan kami"
+
+faqs:
+  - id: "faq1"
+    icon: "bi-clock-history"
+    icon_color: "text-primary"
+    question: "Berapa lama waktu yang dibutuhkan untuk mendapat respon?"
+    answer: |
+      <p class="mb-0">
+        Kami berkomitmen memberikan respon maksimal <strong>1x24 jam pada hari kerja</strong>.
+        Untuk area Jabodetabek dan Banten, kami dapat memberikan respon lebih cepat melalui
+        WhatsApp atau telepon langsung di <strong>{phone}</strong>.
+      </p>
+    default_open: true
+
+  - id: "faq2"
+    icon: "bi-geo-alt"
+    icon_color: "text-primary"
+    question: "Apakah melayani ke seluruh Indonesia?"
+    answer: |
+      <p class="mb-2">
+        Ya, kami melayani <strong>seluruh wilayah Indonesia</strong>. Tim mobile kami siap
+        datang ke lokasi Anda dengan peralatan lengkap dan terkalibrasi.
+      </p>
+      <p class="mb-0">
+        <strong>Area Prioritas:</strong> Banten, DKI Jakarta, Jawa Barat dengan respon time lebih cepat.
+      </p>
+    default_open: false
+
+  - id: "faq3"
+    icon: "bi-calendar-check"
+    icon_color: "text-primary"
+    question: "Bagaimana cara menjadwalkan inspeksi?"
+    answer: |
+      <p class="mb-2">
+        Anda dapat menjadwalkan inspeksi melalui:
+      </p>
+      <ul class="mb-2">
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/{whatsapp}" target="_blank">{phone}</a></li>
+        <li><strong>Telepon:</strong> <a href="tel:{phone}">{phone}</a></li>
+        <li><strong>Email:</strong> <a href="mailto:{email}">{email}</a></li>
+        <li><strong>Form Kontak:</strong> Isi form di halaman ini</li>
+      </ul>
+      <p class="mb-0 small text-muted">
+        Tim kami akan membantu menentukan jadwal terbaik sesuai ketersediaan Anda.
+      </p>
+    default_open: false
+
+  - id: "faq4"
+    icon: "bi-file-earmark-text"
+    icon_color: "text-primary"
+    question: "Dokumen apa saja yang diperlukan untuk riksa uji?"
+    answer: |
+      <p class="mb-2">
+        Dokumen yang biasanya diperlukan:
+      </p>
+      <ul class="mb-2">
+        <li>Dokumen kepemilikan peralatan</li>
+        <li>Sertifikat riksa uji sebelumnya (jika ada)</li>
+        <li>Spesifikasi teknis peralatan</li>
+        <li>Buku manual peralatan (jika tersedia)</li>
+      </ul>
+      <p class="mb-0 small text-muted">
+        <i class="bi bi-info-circle me-1"></i>
+        Tim kami akan memberikan checklist lengkap saat konfirmasi jadwal.
+      </p>
+    default_open: false
+
+  - id: "faq5"
+    icon: "bi-currency-dollar"
+    icon_color: "text-primary"
+    question: "Bagaimana cara mendapatkan penawaran harga?"
+    answer: |
+      <p class="mb-2">
+        Untuk mendapatkan penawaran harga yang akurat, silakan hubungi kami dengan informasi:
+      </p>
+      <ul class="mb-2">
+        <li>Jenis layanan yang dibutuhkan</li>
+        <li>Spesifikasi dan jumlah peralatan</li>
+        <li>Lokasi inspeksi</li>
+        <li>Timeline yang diinginkan</li>
+      </ul>
+      <p class="mb-0">
+        Tim kami akan memberikan penawaran harga yang kompetitif dan transparan dalam 1x24 jam.
+      </p>
+    default_open: false
+
+  - id: "faq6"
+    icon: "bi-shield-check"
+    icon_color: "text-primary"
+    question: "Apakah inspector sudah bersertifikat resmi?"
+    answer: |
+      <p class="mb-2">
+        <strong>Ya, semua inspector kami memiliki sertifikasi resmi dari Kemnaker RI</strong>
+        dan berpengalaman dalam melakukan riksa uji K3.
+      </p>
+      <p class="mb-0">
+        Kami juga menggunakan peralatan yang terkalibrasi dan sesuai standar untuk
+        menjamin akurasi hasil inspeksi.
+      </p>
+    default_open: false
+
+  - id: "faq7"
+    icon: "bi-clock"
+    icon_color: "text-primary"
+    question: "Berapa lama proses inspeksi dan penerbitan sertifikat?"
+    answer: |
+      <p class="mb-2">
+        Durasi inspeksi tergantung jenis dan jumlah peralatan. Secara umum:
+      </p>
+      <ul class="mb-2">
+        <li><strong>Inspeksi:</strong> 1-3 hari kerja (tergantung kompleksitas)</li>
+        <li><strong>Laporan:</strong> 3-7 hari kerja setelah inspeksi</li>
+        <li><strong>Sertifikat:</strong> 7-14 hari kerja (termasuk proses Kemnaker)</li>
+      </ul>
+      <p class="mb-0 small text-muted">
+        <i class="bi bi-lightning-fill text-warning me-1"></i>
+        Fast track service tersedia untuk kebutuhan urgent.
+      </p>
+    default_open: false
+
+  - id: "faq8"
+    icon: "bi-headset"
+    icon_color: "text-primary"
+    question: "Apakah tersedia layanan konsultasi gratis?"
+    answer: |
+      <p class="mb-0">
+        <strong>Ya, kami menyediakan konsultasi gratis!</strong> Anda dapat berkonsultasi
+        mengenai kebutuhan riksa uji, persyaratan dokumen, timeline, dan hal teknis lainnya
+        melalui WhatsApp, telepon, atau email. Tim kami siap membantu Anda.
+      </p>
+    default_open: false
+
+cta:
+  title: "Masih Ada Pertanyaan?"
+  icon: "bi-chat-dots"
+  description: "Tim kami siap membantu menjawab semua pertanyaan Anda"
+  buttons:
+    - text: "Chat WhatsApp"
+      icon: "bi-whatsapp"
+      type: "whatsapp"
+      class: "btn btn-light btn-lg"
+    - text: "Telepon Kami"
+      icon: "bi-telephone"
+      type: "phone"
+      class: "btn btn-outline-light btn-lg"
