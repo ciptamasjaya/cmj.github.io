@@ -1,0 +1,182 @@
+{% comment %}
+============================================================================
+Button Component
+============================================================================
+
+@file        _includes/components/button.html
+@description Reusable Bootstrap 5 button component with flexible parameters
+@version     1.0.0
+@date        2025-11-22
+@author      arisciwek
+
+Features:
+---------
+- Bootstrap 5 button variants (primary, secondary, success, danger, warning, info, light, dark, link)
+- Outline variants for all colors
+- Size variants (sm, md, lg)
+- Block button option (full-width)
+- Disabled state support
+- Icon support (left or right position)
+- Icon size presets (sm|md|lg|xl|2xl)
+- Can render as <button> or <a> element
+- Customizable classes and attributes
+
+Parameters:
+-----------
+- text: Button text/label (required)
+- variant: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark" | "link" (default: "primary")
+- outline: true | false - Use outline variant (default: false)
+- size: "sm" | "md" | "lg" (default: "md")
+- block: true | false - Full-width button (default: false)
+- disabled: true | false - Disabled state (default: false)
+- type: "button" | "submit" | "reset" (default: "button", only for <button> element)
+- href: URL untuk link button (jika ada, render sebagai <a>)
+- target: "_blank" | "_self" | "_parent" | "_top" (default: "", for link buttons)
+- icon: Bootstrap icon class (optional, e.g., "bi-check-circle")
+- icon_position: "left" | "right" (default: "left")
+- icon_size: "sm" | "md" | "lg" | "xl" | "2xl" (default: "md")
+- icon_color: Color class (default: inherits button color)
+- additional_classes: Extra CSS classes (optional)
+- id: Button ID attribute (optional)
+- data_*: Data attributes (optional, e.g., data_bs_toggle="modal")
+
+Usage:
+------
+Basic button:
+{% include components/button.html
+   text="Hubungi Kami"
+   variant="primary"
+%}
+
+Outline button:
+{% include components/button.html
+   text="Pelajari Lebih Lanjut"
+   variant="success"
+   outline=true
+%}
+
+Button with icon (left):
+{% include components/button.html
+   text="Download Brosur"
+   variant="primary"
+   icon="bi-download"
+   icon_size="md"
+%}
+
+Button with icon (right):
+{% include components/button.html
+   text="Lihat Detail"
+   variant="secondary"
+   icon="bi-arrow-right"
+   icon_position="right"
+%}
+
+Small button:
+{% include components/button.html
+   text="Edit"
+   variant="warning"
+   size="sm"
+   icon="bi-pencil"
+%}
+
+Large button:
+{% include components/button.html
+   text="Minta Penawaran"
+   variant="success"
+   size="lg"
+%}
+
+Block button (full-width):
+{% include components/button.html
+   text="Submit Form"
+   variant="primary"
+   size="lg"
+   block=true
+%}
+
+Disabled button:
+{% include components/button.html
+   text="Not Available"
+   variant="secondary"
+   disabled=true
+%}
+
+Link button:
+{% include components/button.html
+   text="Visit Website"
+   variant="primary"
+   href="https://example.com"
+   target="_blank"
+   icon="bi-box-arrow-up-right"
+   icon_position="right"
+%}
+
+Submit button:
+{% include components/button.html
+   text="Kirim Pesan"
+   variant="success"
+   type="submit"
+   icon="bi-send"
+%}
+
+Button with modal trigger:
+{% include components/button.html
+   text="Open Modal"
+   variant="info"
+   data_bs_toggle="modal"
+   data_bs_target="#myModal"
+%}
+
+Danger outline button:
+{% include components/button.html
+   text="Delete"
+   variant="danger"
+   outline=true
+   size="sm"
+   icon="bi-trash"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign btn_text = include.text %}
+{% assign btn_variant = include.variant | default: "primary" %}
+{% assign btn_outline = include.outline | default: false %}
+{% assign btn_size = include.size | default: "md" %}
+{% assign btn_block = include.block | default: false %}
+{% assign btn_disabled = include.disabled | default: false %}
+{% assign btn_type = include.type | default: "button" %}
+{% assign btn_href = include.href %}
+{% assign btn_target = include.target %}
+{% assign btn_icon = include.icon %}
+{% assign btn_icon_position = include.icon_position | default: "left" %}
+{% assign btn_icon_size = include.icon_size | default: "md" %}
+{% assign btn_icon_color = include.icon_color %}
+{% assign btn_additional_classes = include.additional_classes %}
+{% assign btn_id = include.id %}
+
+{% comment %} Build button classes {% endcomment %}
+{% capture btn_classes %}btn component-button{% if btn_outline %} btn-outline-{{ btn_variant }}{% else %} btn-{{ btn_variant }}{% endif %}{% if btn_size == "sm" %} btn-sm{% elsif btn_size == "lg" %} btn-lg{% endif %}{% if btn_block %} w-100{% endif %}{% if btn_additional_classes %} {{ btn_additional_classes }}{% endif %}{% endcapture %}
+
+{% comment %} Render as link or button {% endcomment %}
+{% if btn_href %}
+  <a href="{{ btn_href }}"{% if btn_target %} target="{{ btn_target }}"{% endif %}{% if btn_id %} id="{{ btn_id }}"{% endif %} class="{{ btn_classes | strip }}"{% if btn_disabled %} aria-disabled="true" tabindex="-1"{% endif %}{% if include.data_bs_toggle %} data-bs-toggle="{{ include.data_bs_toggle }}"{% endif %}{% if include.data_bs_target %} data-bs-target="{{ include.data_bs_target }}"{% endif %}{% if include.data_bs_dismiss %} data-bs-dismiss="{{ include.data_bs_dismiss }}"{% endif %}>
+    {% if btn_icon and btn_icon_position == "left" %}
+      <i class="component-button__icon component-button__icon--{{ btn_icon_size }} bi {{ btn_icon }}{% if btn_icon_color %} {{ btn_icon_color }}{% endif %}"></i>
+    {% endif %}
+    <span class="component-button__text">{{ btn_text }}</span>
+    {% if btn_icon and btn_icon_position == "right" %}
+      <i class="component-button__icon component-button__icon--{{ btn_icon_size }} bi {{ btn_icon }}{% if btn_icon_color %} {{ btn_icon_color }}{% endif %}"></i>
+    {% endif %}
+  </a>
+{% else %}
+  <button type="{{ btn_type }}"{% if btn_id %} id="{{ btn_id }}"{% endif %} class="{{ btn_classes | strip }}"{% if btn_disabled %} disabled{% endif %}{% if include.data_bs_toggle %} data-bs-toggle="{{ include.data_bs_toggle }}"{% endif %}{% if include.data_bs_target %} data-bs-target="{{ include.data_bs_target }}"{% endif %}{% if include.data_bs_dismiss %} data-bs-dismiss="{{ include.data_bs_dismiss }}"{% endif %}>
+    {% if btn_icon and btn_icon_position == "left" %}
+      <i class="component-button__icon component-button__icon--{{ btn_icon_size }} bi {{ btn_icon }}{% if btn_icon_color %} {{ btn_icon_color }}{% endif %}"></i>
+    {% endif %}
+    <span class="component-button__text">{{ btn_text }}</span>
+    {% if btn_icon and btn_icon_position == "right" %}
+      <i class="component-button__icon component-button__icon--{{ btn_icon_size }} bi {{ btn_icon }}{% if btn_icon_color %} {{ btn_icon_color }}{% endif %}"></i>
+    {% endif %}
+  </button>
+{% endif %}

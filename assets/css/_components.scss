@@ -239,6 +239,43 @@
   font-size: $font-size-lg;
 }
 
+// Component Button (_includes/components/button.html)
+.component-button {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+
+    // Icon size variants
+    &--sm {
+      font-size: $icon-size-sm;
+    }
+
+    &--md {
+      font-size: $icon-size-md;
+    }
+
+    &--lg {
+      font-size: $icon-size-lg;
+    }
+
+    &--xl {
+      font-size: $icon-size-xl;
+    }
+
+    &--2xl {
+      font-size: $icon-size-2xl;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+  }
+}
+
 // ----------------------------------------------------------------------------
 // WhatsApp CTA (_includes/components/cta-whatsapp.html)
 // ----------------------------------------------------------------------------
