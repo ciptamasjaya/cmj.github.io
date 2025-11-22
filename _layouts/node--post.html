@@ -1,0 +1,65 @@
+---
+layout: page--post
+---
+{% comment %}
+============================================================================
+Content Template: Blog Post (node--post.html)
+============================================================================
+
+@file        node--post.html
+@path        _layouts/node--post.html
+@type        Node (content template - variant)
+@variant     post (blog posts)
+@description Content template for blog post articles
+@author      arisciwek
+
+Drupal-style naming: node--post.html (variant of node.html)
+
+This template wraps in page--post.html and provides blog post structure.
+
+============================================================================
+{% endcomment %}
+
+<article class="post-content py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Breadcrumb will be added as reusable block -->
+
+        <!-- Post Header -->
+        <header class="post-header mb-4">
+          <h1 class="post-title display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+
+          <div class="post-meta text-muted mb-3">
+            <span class="me-3">
+              <i class="bi bi-calendar3 me-1"></i>
+              <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%d %B %Y" }}
+              </time>
+            </span>
+            {% if page.author %}
+            <span class="me-3">
+              <i class="bi bi-person me-1"></i>{{ page.author }}
+            </span>
+            {% endif %}
+          </div>
+
+          {% if page.image %}
+          <div class="post-image mb-4">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded shadow">
+          </div>
+          {% endif %}
+        </header>
+
+        <!-- Post Body -->
+        <div class="post-body mb-5">
+          {{ content }}
+        </div>
+
+        <!-- Post Footer - Share buttons will be added as reusable block -->
+
+      </div>
+    </div>
+  </div>
+</article>

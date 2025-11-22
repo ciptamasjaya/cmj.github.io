@@ -1,0 +1,93 @@
+{% comment %}
+============================================================================
+Page Wrapper: Homepage (page--front.html)
+============================================================================
+
+@file        page--front.html
+@path        _layouts/page--front.html
+@type        Page (wrapper - variant)
+@variant     front (homepage)
+@description Homepage wrapper with potential for special layout customization
+@author      arisciwek
+
+Drupal-style naming: page--front.html (variant of page.html)
+
+This is the homepage wrapper, created to allow different site structure
+for the homepage compared to other pages (e.g., hero section, different
+header style, expanded footer, full-width layouts).
+
+Related templates:
+- page.html (base page wrapper)
+
+Used by:
+- /index.html (homepage only)
+
+Current Status:
+Currently identical to page.html, but ready for homepage-specific customization.
+
+Future Customization Options:
+- Add class="homepage" to body tag
+- Transparent/fixed header for hero section
+- Full-width hero section before main content
+- Expanded footer with newsletter signup
+- Different navigation style
+- No sidebar layout
+
+Site Structure (Current):
+- HTML doctype and lang attribute
+- head.html (meta tags, CSS, scripts)
+- header.html (logo, navigation menu)
+- main.main-content (renders {{ content }} - homepage content)
+- footer.html (site footer with business info)
+
+Usage:
+Set in /index.html frontmatter:
+  ---
+  layout: page--front
+  title: Homepage Title
+  ---
+
+Hierarchy:
+page--front.html (this file - homepage wrapper)
+└── {{ content }} renders index.html content directly
+    ├── Hero section
+    ├── Featured services
+    └── Latest blog posts
+
+Note: Homepage does NOT use node template - renders content directly!
+
+============================================================================
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body class="homepage">
+  <!-- Unified Schema: WebSite + Organization + Navigation + Page in single @graph -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Page-specific schemas -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Page-specific scripts -->
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="{{ js_file | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

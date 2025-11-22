@@ -1,0 +1,81 @@
+# Site Settings
+title: "PT. Cipta Mas Jaya - Jasa Riksa Uji K3"
+description: "Jasa Riksa Uji K3 terpercaya untuk Pesawat Angkat, Bejana Tekan, Instalasi Listrik, Proteksi Kebakaran, dan Elevator. Sertifikat resmi dan terpercaya."
+url: "https://ciptamasjaya.github.io"
+baseurl: ""
+
+# Business Info
+business:
+  name: "PT. Cipta Mas Jaya"
+  phone: "+62-21-XXXX-XXXX"
+  whatsapp: "62812XXXXXXXX"
+  location: "Jakarta, Indonesia"
+  coverage: "DKI Jakarta, Jawa Barat, Banten, dan seluruh Indonesia"
+  owner: "PT. Cipta Mas Jaya"
+  email: "info@ciptamasjaya.co.id"
+
+# SEO Settings
+lang: id
+timezone: Asia/Jakarta
+keywords: "riksa uji k3, jasa riksa uji, inspeksi k3, sertifikasi k3, pesawat angkat, bejana tekan, instalasi listrik, proteksi kebakaran, elevator"
+
+# Build Settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-paginate-v2
+
+# Pagination Settings
+pagination:
+  enabled: true
+  per_page: 9
+  permalink: '/blog/page/:num/'
+  title: ':title - Halaman :num'
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+# Collections
+collections:
+  services:
+    output: true
+    permalink: /layanan/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "node--post"
+      author: "Admin"
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "node--service"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - README.md
+  - LICENSE

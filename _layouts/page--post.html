@@ -1,0 +1,43 @@
+{% comment %}
+============================================================================
+Page Wrapper: Blog Post Pages (page--post.html)
+============================================================================
+
+@file        page--post.html
+@path        _layouts/page--post.html
+@type        Page (wrapper - variant)
+@variant     post (blog post pages)
+@description Blog post page wrapper with post-specific features
+@author      arisciwek
+
+Drupal-style naming: page--post.html (variant of page.html)
+
+This is the blog post page wrapper, created to separate post-specific
+includes from the pure entity content (node--post.html).
+
+Related templates:
+- page.html (base page wrapper)
+- node--post.html (post entity content)
+
+Used by:
+- _posts/*.md (all blog posts)
+
+============================================================================
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Post-specific schemas -->
+  <!-- {% include schema/schema--post.html %} -->
+</body>
+</html>

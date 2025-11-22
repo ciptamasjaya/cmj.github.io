@@ -1,0 +1,25 @@
+{% comment %}
+============================================================================
+Schema: Contact Page (schema--contact-page.html)
+============================================================================
+
+@file        schema--contact-page.html
+@path        _includes/schema/schema--contact-page.html
+@type        Schema (contact page specific)
+@description Schema markup for contact page
+@author      arisciwek
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "{{ page.url | absolute_url }}#contactpage",
+  "url": "{{ page.url | absolute_url }}",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "inLanguage": "id"
+}
+</script>

@@ -1,0 +1,46 @@
+---
+layout: page
+---
+{% comment %}
+============================================================================
+Content Template: Static Page (node--page.html)
+============================================================================
+
+@file        node--page.html
+@path        _layouts/node--page.html
+@type        Node (content template - variant)
+@variant     page (static pages)
+@description Content template for static pages (About, Contact, etc.)
+@author      arisciwek
+
+Drupal-style naming: node--page.html (variant of node.html)
+
+This template wraps in page.html and provides static page structure.
+
+Related templates:
+- node.html (base content template - fallback)
+- node--post.html (blog post content)
+- node--service.html (service detail content)
+
+Used by:
+- Static pages (about.html, contact.html, etc.)
+
+============================================================================
+{% endcomment %}
+
+<div class="container py-5">
+  <article class="node node--page">
+    {% if page.title %}
+    <header class="node-header mb-4 text-center">
+      <h1 class="node-title display-4 fw-bold text-primary">{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="lead text-muted">{{ page.description }}</p>
+      {% endif %}
+    </header>
+    {% endif %}
+
+    <div class="node-content">
+      {{ content }}
+    </div>
+  </article>
+</div>

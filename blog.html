@@ -1,0 +1,71 @@
+---
+layout: page
+title: Blog & Artikel
+description: Informasi, tips, dan artikel seputar riksa uji K3, keselamatan kerja, dan peraturan K3 terbaru.
+schema_type: CollectionPage
+pagination:
+  enabled: true
+  permalink: '/page/:num/'
+custom_schema:
+  - schema/schema--blog-catalog.html
+---
+
+<!-- Breadcrumb Navigation -->
+<!-- {% include reusable/block--breadcrumb.html current_title="Blog" %} -->
+
+<div class="container py-5">
+
+  <div class="row mb-5">
+    <div class="col-lg-8 mx-auto text-center">
+      <h1 class="display-4 fw-bold">Halaman Blog</h1>
+      <p class="lead">Artikel & Informasi K3</p>
+    </div>
+  </div>
+
+  <!-- Blog List Section -->
+  <div class="row g-4 mb-5">
+    {% if paginator.posts.size > 0 %}
+      {% for post in paginator.posts %}
+      <div class="col-md-6 col-lg-4">
+        <article class="card blog-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+            </h5>
+            <p class="card-text text-muted">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
+            <p class="text-muted small">
+              <i class="bi bi-calendar3 me-1"></i>{{ post.date | date: "%d %b %Y" }}
+            </p>
+            <a href="{{ post.url | relative_url }}" class="btn btn-sm btn-outline-primary">
+              Baca Selengkapnya <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="col-12">
+        <div class="alert alert-info text-center py-5">
+          <i class="bi bi-info-circle fs-3"></i>
+          <h4 class="mt-3">Belum Ada Artikel</h4>
+          <p class="mb-0">Artikel akan segera hadir. Pantau terus halaman ini untuk update terbaru!</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Pagination will be added as reusable block -->
+
+  <!-- Newsletter/CTA Section -->
+  <div class="row mt-5">
+    <div class="col-lg-8 mx-auto">
+      <div class="card border-0 shadow bg-primary text-white">
+        <div class="card-body p-4 text-center">
+          <h4 class="mb-3"><i class="bi bi-envelope-heart me-2"></i>Ingin Update Terbaru?</h4>
+          <p class="mb-4">Hubungi kami untuk mendapatkan info terbaru seputar K3!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

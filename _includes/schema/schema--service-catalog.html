@@ -1,0 +1,25 @@
+{% comment %}
+============================================================================
+Schema: Service Catalog (schema--service-catalog.html)
+============================================================================
+
+@file        schema--service-catalog.html
+@path        _includes/schema/schema--service-catalog.html
+@type        Schema (service catalog)
+@description Schema markup for service catalog page
+@author      arisciwek
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "{{ page.url | absolute_url }}#servicecatalog",
+  "url": "{{ page.url | absolute_url }}",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "inLanguage": "id"
+}
+</script>

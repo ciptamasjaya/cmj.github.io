@@ -1,0 +1,90 @@
+{% comment %}
+============================================================================
+Page Wrapper: Service Pages (page--service.html)
+============================================================================
+
+@file        page--service.html
+@path        _layouts/page--service.html
+@type        Page (wrapper - variant)
+@variant     service (service detail pages)
+@description Service page wrapper with service-specific includes
+@author      arisciwek
+
+Drupal-style naming: page--service.html (variant of page.html)
+
+This is the service page wrapper, created to separate service-specific
+includes from the pure entity content (node--service.html).
+
+Architecture Principle:
+- Node templates = Pure entity content (no includes)
+- Page wrappers = Container for page-type-specific includes
+
+Related templates:
+- page.html (base page wrapper)
+- node--service.html (service entity content)
+
+Used by:
+- _services/*.md (all service pages)
+
+Site Structure:
+- HTML doctype and lang attribute
+- head.html (meta tags, CSS, scripts)
+- schema--service-page.html (combined service schema)
+- header.html (logo, navigation menu)
+- main.main-content:
+  - {{ content }} renders node--service.html (pure service entity)
+  - block--related-service--by-node.html (related services)
+  - block--service-list.html (full service catalog)
+- footer.html (site footer with business info)
+
+Usage:
+Set in node--service.html frontmatter:
+  ---
+  layout: page--service
+  ---
+
+Hierarchy:
+_services/riksa-uji-crane.md
+└── node--service.html (layout: page--service)
+    └── page--service.html (this file - service wrapper)
+        ├── schema--service-page.html
+        ├── header.html
+        ├── {{ content }} renders node--service.html
+        ├── block--related-service--by-node.html
+        └── footer.html
+
+Architecture Principle:
+- Node = Pure entity (service itu sendiri)
+- Page wrapper = Site structure + related blocks
+- All includes belong in page wrapper, NOT in node template!
+
+============================================================================
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+
+    <!-- Service-specific includes (will be added later as reusable blocks) -->
+    <div class="container">
+      <!-- Related Services Section -->
+      <!-- {% include reusable/block--related-service--by-node.html %} -->
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Collect all schemas at bottom before </body> -->
+
+  <!-- Service Page Schema (WebPage + Service in @graph) -->
+  <!-- {% include schema/schema--service-page.html service=page %} -->
+
+  <!-- Breadcrumb Schema (BreadcrumbList) -->
+  <!-- {% include schema/schema--breadcrumb.html current_title=page.title %} -->
+</body>
+</html>

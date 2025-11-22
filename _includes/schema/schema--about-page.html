@@ -1,0 +1,25 @@
+{% comment %}
+============================================================================
+Schema: About Page (schema--about-page.html)
+============================================================================
+
+@file        schema--about-page.html
+@path        _includes/schema/schema--about-page.html
+@type        Schema (about page specific)
+@description Schema markup for about page
+@author      arisciwek
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "{{ page.url | absolute_url }}#aboutpage",
+  "url": "{{ page.url | absolute_url }}",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "inLanguage": "id"
+}
+</script>

@@ -1,0 +1,131 @@
+---
+layout: page--service
+---
+{% comment %}
+============================================================================
+Content Template: Service Detail (node--service.html)
+============================================================================
+
+@file        node--service.html
+@path        _layouts/node--service.html
+@type        Node (content template - variant)
+@variant     service (service details)
+@description Content template for individual service detail pages
+@author      arisciwek
+
+Drupal-style naming: node--service.html (variant of node.html)
+
+This template wraps in page--service.html and provides service detail structure.
+
+Related templates:
+- node.html (base content template - fallback)
+- node--page.html (static page content)
+- node--post.html (blog post content)
+
+Used by:
+- _services/*.md (all service markdown files)
+- Individual service detail pages
+
+Features:
+- Service image/icon
+- Service specifications
+- Pricing information (if available)
+- Pure entity content (no page-level includes)
+- Related content managed by page--service.html wrapper
+
+Data Expected in Frontmatter:
+  ---
+  layout: node--service
+  title: Service Name
+  description: Service description
+  icon: "bi-shield-check"
+  category: "K3 Inspection"
+  ---
+
+Hierarchy:
+page--service.html (wrapper with header/footer + related blocks)
+└── node--service.html (this file - pure service entity content)
+    └── {{ content }} (service description from _services/*.md)
+
+Note: Related services and service list are handled
+by page--service.html wrapper, NOT in this node template.
+
+============================================================================
+{% endcomment %}
+
+<!-- Service Detail Page -->
+<div class="container py-5">
+  <div class="row">
+    <!-- Service Icon/Image -->
+    <div class="col-lg-4 mb-4">
+      {% if page.image %}
+      <div class="service-image-container">
+        <img src="{{ page.image | relative_url }}"
+             class="img-fluid rounded shadow"
+             alt="{{ page.title }}"
+             loading="eager">
+      </div>
+      {% elsif page.icon %}
+      <div class="text-center p-5 bg-light rounded shadow">
+        <i class="bi {{ page.icon }} text-primary" style="font-size: 8rem;"></i>
+      </div>
+      {% else %}
+      <div class="text-center p-5 bg-light rounded">
+        <i class="bi bi-shield-check" style="font-size: 8rem; color: #ccc;"></i>
+        <p class="text-muted mt-3">Icon layanan</p>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Service Info -->
+    <div class="col-lg-8">
+      <!-- Breadcrumb will be added as reusable block -->
+
+      <h1 class="display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+
+      {% if page.category %}
+      <span class="badge bg-primary mb-3">{{ page.category }}</span>
+      {% endif %}
+
+      {% if page.description %}
+      <p class="lead text-muted">{{ page.description }}</p>
+      {% endif %}
+
+      <!-- Service Specifications (if available) -->
+      {% if page.specifications %}
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+          <h3 class="h5 text-primary mb-3"><i class="bi bi-info-circle me-2"></i>Spesifikasi Layanan</h3>
+          <ul class="list-unstyled">
+            {% for spec in page.specifications %}
+            <li class="mb-2"><strong>{{ spec[0] }}:</strong> {{ spec[1] }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+  <!-- Service Description (Full Width) -->
+  {% if content != '' %}
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h2 class="h4 mb-0"><i class="bi bi-file-text me-2"></i>Detail Layanan</h2>
+        </div>
+        <div class="card-body p-4">
+          <div class="service-description">
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- CTA Section will be added as reusable block -->
+
+</div>

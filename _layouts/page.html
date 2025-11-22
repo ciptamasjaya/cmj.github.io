@@ -1,0 +1,76 @@
+{% comment %}
+============================================================================
+Page Wrapper: Base Layout (page.html)
+============================================================================
+
+@file        page.html
+@path        _layouts/page.html
+@type        Page (wrapper - base)
+@description Base page layout with header, footer, and site structure
+@author      arisciwek
+
+Drupal-style naming: page.html (base) / page--{variant}.html
+
+This is the main page wrapper that provides site-wide structure (header,
+footer, navigation) for ALL pages except those with specific page variants.
+
+Related templates:
+- page--front.html (homepage wrapper - special layout)
+- page--service.html (service detail page wrapper)
+
+Wraps:
+- node.html (base content template)
+- node--page.html (static page content)
+- node--post.html (blog post content)
+- node--service.html (service detail content)
+
+Site Structure:
+- HTML doctype and lang attribute
+- head.html (meta tags, CSS, scripts)
+- header.html (logo, navigation menu)
+- main.main-content (renders {{ content }} - node templates)
+- footer.html (site footer with business info)
+
+Usage:
+Node templates set `layout: page` in their frontmatter to wrap in this layout.
+
+Hierarchy:
+page.html (this file - site wrapper)
+└── {{ content }} renders node--*.html templates
+    └── {{ content }} renders actual content (.html or .md files)
+
+============================================================================
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  <!-- Global Schema: WebSite + Organization + Navigation + Page in @graph -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Page-specific schemas -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Page-specific scripts -->
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="{{ js_file | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

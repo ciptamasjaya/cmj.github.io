@@ -1,0 +1,42 @@
+---
+layout: page
+---
+{% comment %}
+============================================================================
+Content Template: Base (node.html)
+============================================================================
+
+@file        node.html
+@path        _layouts/node.html
+@type        Node (content template - base)
+@description Base content template - fallback for content types
+@author      arisciwek
+
+Drupal-style naming: node.html (base) / node--{variant}.html
+
+This template wraps in page.html and provides basic content structure.
+
+Related templates:
+- node--post.html (blog post content)
+- node--service.html (service detail content)
+- node--page.html (static page content)
+
+Usage:
+Content types set `layout: node--{type}` in frontmatter
+============================================================================
+{% endcomment %}
+
+<article class="node">
+  {% if page.title %}
+  <header class="node-header mb-4">
+    <h1 class="node-title">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="lead text-muted">{{ page.description }}</p>
+    {% endif %}
+  </header>
+  {% endif %}
+
+  <div class="node-content">
+    {{ content }}
+  </div>
+</article>

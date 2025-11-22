@@ -1,0 +1,25 @@
+{% comment %}
+============================================================================
+Schema: Homepage (schema--front.html)
+============================================================================
+
+@file        schema--front.html
+@path        _includes/schema/schema--front.html
+@type        Schema (homepage specific)
+@description Schema markup for homepage
+@author      arisciwek
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#homepage",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | default: site.description }}",
+  "inLanguage": "id"
+}
+</script>
