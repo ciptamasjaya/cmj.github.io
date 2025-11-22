@@ -255,6 +255,8 @@ Usage:
   </div>
 </section>
 
+{% assign wa_intro = site.data.contact_form.messages.whatsapp_intro | replace: '{company_name}', site.business.name %}
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('contactForm');
@@ -277,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const service = document.getElementById('contactService').value;
     const message = document.getElementById('contactMessage').value;
 
-    let whatsappMessage = `{{ site.data.contact_form.messages.whatsapp_intro | replace: '{company_name}', site.business.name }}\n\n`;
+    let whatsappMessage = `{{ wa_intro }}\n\n`;
     whatsappMessage += `Nama: ${name}\n`;
     if (company) whatsappMessage += `Perusahaan: ${company}\n`;
     whatsappMessage += `Email: ${email}\n`;
