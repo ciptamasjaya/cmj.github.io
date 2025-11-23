@@ -1152,6 +1152,46 @@
 }
 
 // ----------------------------------------------------------------------------
+// Icon Text Alignment Utilities
+// ----------------------------------------------------------------------------
+
+// Utility class untuk menyelaraskan icon dengan text secara vertikal
+.icon-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem;
+
+  i, svg {
+    flex-shrink: 0; // Icon tidak mengecil
+    line-height: 1; // Pastikan line-height konsisten
+  }
+}
+
+// Variant dengan gap yang lebih kecil
+.icon-text-sm {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem;
+
+  i, svg {
+    flex-shrink: 0;
+    line-height: 1;
+  }
+}
+
+// Variant dengan gap yang lebih besar
+.icon-text-lg {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.75rem;
+
+  i, svg {
+    flex-shrink: 0;
+    line-height: 1;
+  }
+}
+
+// ----------------------------------------------------------------------------
 // Responsive Utilities
 // ----------------------------------------------------------------------------
 

@@ -40,9 +40,9 @@ Usage:
            | replace: '{company_name}', site.business.name
            | replace: '{founding_year}', site.business.foundingDate | date: "%Y" %}
 
-        <h1 class="h1 fw-bold mb-4">
-          <i class="bi {{ site.data.service_intro.heading.icon }} {{ site.data.service_intro.heading.icon_color }} me-2"></i>
-          {{ site.data.service_intro.heading.title }}
+        <h1 class="h1 fw-bold mb-4 icon-text">
+          <i class="bi {{ site.data.service_intro.heading.icon }} {{ site.data.service_intro.heading.icon_color }}"></i>
+          <span>{{ site.data.service_intro.heading.title }}</span>
         </h1>
 
         <p class="lead mb-4">
@@ -55,8 +55,8 @@ Usage:
 
         <div class="d-flex flex-wrap gap-3 mb-4">
           {% for badge in site.data.service_intro.feature_badges %}
-          <div class="feature-badge">
-            <i class="bi {{ badge.icon }} {{ badge.icon_color }} fs-5 me-2"></i>
+          <div class="feature-badge icon-text">
+            <i class="bi {{ badge.icon }} {{ badge.icon_color }} fs-5"></i>
             <span class="fw-semibold">{{ badge.text }}</span>
           </div>
           {% endfor %}
