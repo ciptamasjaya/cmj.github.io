@@ -39,7 +39,8 @@ business:
     linkedin: "https://linkedin.com/company/ciptamasjaya"
 
   # Additional Info
-  foundingDate: "2000-01-01"  # ganti dengan tanggal berdiri sebenarnya
+  foundingDate: "2019-01-01"
+  foundingYear: 2019
   priceRange: "$$"
 
 # SEO Settings
