@@ -80,30 +80,6 @@ Usage:
                 <h3 class="h4 fw-bold mb-3">{{ service.name }}</h3>
                 <p class="text-muted mb-3">{{ service.description }}</p>
 
-                <!-- Service Features (if available) -->
-                {% if service.items %}
-                <div class="service-items mb-3">
-                  <h4 class="h6 fw-semibold mb-2 text-primary icon-text-sm">
-                    <i class="bi bi-check-circle"></i>
-                    <span>Meliputi:</span>
-                  </h4>
-                  <ul class="list-unstyled mb-0">
-                    {% for item in service.items limit: 5 %}
-                    <li class="mb-1">
-                      <i class="bi bi-chevron-right text-success me-2"></i>
-                      <small>{{ item.name }}</small>
-                    </li>
-                    {% endfor %}
-                    {% if service.items.size > 5 %}
-                    <li class="mb-1">
-                      <i class="bi bi-chevron-right text-muted me-2"></i>
-                      <small class="text-muted">Dan masih banyak lagi...</small>
-                    </li>
-                    {% endif %}
-                  </ul>
-                </div>
-                {% endif %}
-
                 <!-- Service Actions (Compact Buttons) -->
                 <div class="d-flex gap-2 flex-wrap">
                   {% if service.slug %}
