@@ -755,3 +755,92 @@
     color: #6c757d;
   }
 }
+
+/* ============================================================================
+   ABOUT DEFINITIONS BLOCK
+   ============================================================================ */
+.block--about-definitions {
+
+  .definition-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .definition-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.2) !important;
+  }
+
+  .definition-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .definition-card:hover .definition-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.4);
+  }
+
+  .definition-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+  }
+
+  .definition-card:hover .definition-icon-wrapper::before {
+    opacity: 1;
+    left: 100%;
+  }
+
+  .definition-icon {
+    font-size: 2.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .definition-card:hover .definition-icon {
+    transform: scale(1.1);
+  }
+
+  .definition-title {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .definition-title a {
+    transition: color 0.3s ease;
+  }
+
+  .definition-card:hover .definition-title {
+    transform: scale(1.05);
+  }
+
+  .definition-card:hover .definition-title a {
+    color: #0a58ca !important;
+  }
+
+  .definition-description {
+    line-height: 1.7;
+    transition: color 0.3s ease;
+  }
+
+  .definition-card:hover .definition-description {
+    color: #495057 !important;
+  }
+}
