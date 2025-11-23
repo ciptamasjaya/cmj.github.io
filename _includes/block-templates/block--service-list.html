@@ -6,8 +6,9 @@ Block Template: Service List (Table View)
 @file        block--service-list.html
 @path        _includes/block-templates/block--service-list.html
 @description Display services in table/list format with sorting and filtering
-@version     1.0.0
+@version     1.0.1
 @date        2025-11-24
+@updated     2025-11-24 - Added DataTable.js support for interactive table
 
 IMPORTANT - Schema.org:
 -----------------------
@@ -18,12 +19,16 @@ Visual rendering only in table, schema collected at block level using @graph.
 Features:
 ---------
 - Table/list view of services
-- Sortable columns (name, category, rating, date)
+- DataTable.js integration (when used in page--category layout):
+  * Interactive sorting on all columns
+  * Real-time search/filter
+  * Pagination with configurable rows per page
+  * Export to CSV/PDF
+  * Responsive mobile view
 - Service image/icon thumbnail
 - Category/subcategory badges
 - Rating display with stars
 - Last modified date
-- Responsive table design
 - Mobile-friendly card fallback
 - Auto-filters by page category/subcategory
 
@@ -126,9 +131,9 @@ Responsive Behavior:
       </div>
     </div>
 
-    <!-- Desktop/Tablet Table View -->
-    <div class="table-responsive d-none d-md-block">
-      <table class="table table-hover align-middle">
+    <!-- DataTable View (Desktop/Tablet/Mobile) -->
+    <div class="datatable-container">
+      <table id="service-list-table" class="table table-hover align-middle">
         <thead class="table-light">
           <tr>
             {% if show_image %}<th style="width: 80px;">Icon</th>{% endif %}
@@ -241,8 +246,8 @@ Responsive Behavior:
       </table>
     </div>
 
-    <!-- Mobile Card View (Fallback) -->
-    <div class="d-md-none">
+    <!-- Mobile Card View (Hidden - DataTable handles responsive) -->
+    <div class="d-none">
       {% for service in display_services %}
       <div class="card mb-3 shadow-sm">
         <div class="card-body">

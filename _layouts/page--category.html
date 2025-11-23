@@ -95,6 +95,32 @@ Set in category page frontmatter:
 
   {% include footer.html %}
 
+  <!-- DataTable CSS & JS -->
+  <link rel="stylesheet" href="{{ '/assets/css/datatable.css' | relative_url }}">
+  <script src="{{ '/assets/js/datatable.js' | relative_url }}"></script>
+  <script>
+    // Initialize DataTable when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      const serviceTable = document.querySelector('#service-list-table');
+      if (serviceTable) {
+        new DataTable('#service-list-table', {
+          perPage: 10,
+          searchable: true,
+          sortable: true,
+          pagination: true,
+          responsive: true,
+          exportable: true,
+          labels: {
+            placeholder: 'Cari layanan...',
+            perPage: 'Tampilkan {select} data',
+            noRows: 'Tidak ada layanan ditemukan',
+            info: 'Menampilkan {start} sampai {end} dari {rows} layanan'
+          }
+        });
+      }
+    });
+  </script>
+
   <!-- Floating WhatsApp Button -->
   {% include components/cta-whatsapp.html style="floating" %}
 

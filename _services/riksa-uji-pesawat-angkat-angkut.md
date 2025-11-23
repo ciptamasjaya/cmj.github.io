@@ -81,3 +81,8 @@ proses_riksa_uji:
 <section id="proses">
   {% include block-templates/block--h2-para.html data=page.proses_riksa_uji %}
 </section>
+
+<!-- Block: Service List Table with DataTable -->
+<section id="daftar-layanan">
+  {% include block-templates/block--service-list.html %}
+</section>

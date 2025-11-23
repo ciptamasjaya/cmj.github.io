@@ -59,6 +59,7 @@ class DataTable {
       pagination: options.pagination !== false,
       responsive: options.responsive !== false,
       exportable: options.exportable !== false,
+      minRowsForControls: options.minRowsForControls !== undefined ? options.minRowsForControls : 1, // Minimum rows to show search/export
       labels: {
         placeholder: 'Search...',
         perPage: 'Show {select} entries',
@@ -98,8 +99,9 @@ class DataTable {
     this.rows = Array.from(this.table.querySelectorAll('tbody tr'));
     this.filteredRows = [...this.rows];
 
-    // Create controls
-    if (this.options.searchable || this.options.exportable) {
+    // Create controls only if we have minimum rows
+    const hasEnoughRows = this.rows.length >= this.options.minRowsForControls;
+    if (hasEnoughRows && (this.options.searchable || this.options.exportable)) {
       this.createTopControls();
     }
 
