@@ -1,9 +1,9 @@
 {% comment %}
 ============================================================================
-About Misi Details Block
+About Misi Cipta Mas Jaya Block
 ============================================================================
 
-@file        _includes/reusable/block--about-misi-details.html
+@file        _includes/reusable/block--about-misi-ciptamasjaya.html
 @description 4-column mission details: Penjualan, Kepuasan Pelanggan, Bisnis, Marketing
 @version     1.0.0
 @date        2025-11-23
@@ -11,23 +11,32 @@ About Misi Details Block
 
 Usage:
 ------
-{% include reusable/block--about-misi-details.html %}
+{% include reusable/block--about-misi-ciptamasjaya.html %}
 
 ============================================================================
 {% endcomment %}
 
-<section class="block--about-misi-details py-5">
+<section class="block--about-misi-ciptamasjaya py-5 bg-light">
   <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h2 class="h3 fw-bold mb-3">Misi PT. Cipta Mas Jaya</h2>
+        <p class="text-muted">Fokus pada empat bidang utama untuk mencapai visi perusahaan</p>
+      </div>
+    </div>
+
     <div class="row g-4">
 
       <!-- Column 1: Penjualan -->
       <div class="col-md-6 col-lg-3">
-        <div class="text-center">
-          <div class="mb-3">
-            <i class="bi bi-graph-up-arrow text-primary" style="font-size: 3rem;"></i>
+        <div class="misi-detail-card text-center">
+          <div class="misi-detail-icon-wrapper">
+            <i class="bi bi-graph-up-arrow misi-detail-icon text-warning"></i>
           </div>
-          <h3 class="h5 fw-bold mb-3">Penjualan</h3>
-          <p class="text-muted small">
+          <h3 class="h5 misi-detail-title">Penjualan</h3>
+          <p class="misi-detail-description">
             Mencapai pertumbuhan penjualan yang berkelanjutan melalui peningkatan penawaran produk
             dan layanan, diversifikasi pasar, serta membangun hubungan jangka panjang dengan pelanggan
             melalui pendekatan konsultatif dan solusi yang sesuai dengan kebutuhan industri.
@@ -37,12 +46,12 @@ Usage:
 
       <!-- Column 2: Kepuasan Pelanggan -->
       <div class="col-md-6 col-lg-3">
-        <div class="text-center">
-          <div class="mb-3">
-            <i class="bi bi-emoji-smile text-success" style="font-size: 3rem;"></i>
+        <div class="misi-detail-card text-center">
+          <div class="misi-detail-icon-wrapper">
+            <i class="bi bi-emoji-smile misi-detail-icon text-success"></i>
           </div>
-          <h3 class="h5 fw-bold mb-3">Kepuasan Pelanggan</h3>
-          <p class="text-muted small">
+          <h3 class="h5 misi-detail-title">Kepuasan Pelanggan</h3>
+          <p class="misi-detail-description">
             Memberikan layanan yang responsif, transparan, dan profesional kepada setiap pelanggan
             dengan fokus pada pemenuhan kebutuhan spesifik mereka serta memastikan hasil inspeksi
             yang akurat dan dapat dipercaya.
@@ -52,12 +61,12 @@ Usage:
 
       <!-- Column 3: Bisnis -->
       <div class="col-md-6 col-lg-3">
-        <div class="text-center">
-          <div class="mb-3">
-            <i class="bi bi-briefcase text-warning" style="font-size: 3rem;"></i>
+        <div class="misi-detail-card text-center">
+          <div class="misi-detail-icon-wrapper">
+            <i class="bi bi-briefcase misi-detail-icon text-warning"></i>
           </div>
-          <h3 class="h5 fw-bold mb-3">Bisnis</h3>
-          <p class="text-muted small">
+          <h3 class="h5 misi-detail-title">Bisnis</h3>
+          <p class="misi-detail-description">
             Mengembangkan portofolio layanan inspeksi K3 yang komprehensif dan berkelanjutan, serta
             memperkuat posisi perusahaan sebagai pemimpin di industri jasa keselamatan kerja melalui
             efisiensi operasional dan inovasi berkelanjutan.
@@ -67,12 +76,12 @@ Usage:
 
       <!-- Column 4: Marketing -->
       <div class="col-md-6 col-lg-3">
-        <div class="text-center">
-          <div class="mb-3">
-            <i class="bi bi-megaphone text-danger" style="font-size: 3rem;"></i>
+        <div class="misi-detail-card text-center">
+          <div class="misi-detail-icon-wrapper">
+            <i class="bi bi-megaphone misi-detail-icon text-danger"></i>
           </div>
-          <h3 class="h5 fw-bold mb-3">Marketing</h3>
-          <p class="text-muted small">
+          <h3 class="h5 misi-detail-title">Marketing</h3>
+          <p class="misi-detail-description">
             Meningkatkan kesadaran pasar terhadap pentingnya keselamatan dan kesehatan kerja melalui
             strategi pemasaran yang proaktif, kampanye edukasi, serta kolaborasi dengan berbagai
             institusi dan perusahaan untuk memperluas jangkauan layanan.

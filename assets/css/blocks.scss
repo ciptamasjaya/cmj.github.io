@@ -846,9 +846,9 @@
 }
 
 /* ============================================================================
-   ABOUT VISI MISI BLOCK
+   ABOUT VISI CIPTA MAS JAYA BLOCK
    ============================================================================ */
-.block--about-visi-misi {
+.block--about-visi-ciptamasjaya {
 
   /* Main section cards (Visi & Misi intro) */
   .visi-card,
@@ -1088,5 +1088,140 @@
 
   .visi-misi-divider::after {
     right: -20px;
+  }
+}
+
+/* ============================================================================
+   ABOUT MISI CIPTA MAS JAYA BLOCK
+   ============================================================================ */
+.block--about-misi-ciptamasjaya {
+
+  .misi-detail-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 100%;
+    border-bottom: 4px solid transparent;
+  }
+
+  .misi-detail-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Colorful icon wrappers */
+  .misi-detail-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+  }
+
+  /* Individual colors for each card */
+  .misi-detail-card:nth-child(1) {
+    border-bottom-color: #fd7e14;
+  }
+
+  .misi-detail-card:nth-child(1) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(253, 126, 20, 0.1) 0%, rgba(253, 126, 20, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(1):hover {
+    box-shadow: 0 12px 32px rgba(253, 126, 20, 0.2);
+  }
+
+  .misi-detail-card:nth-child(2) {
+    border-bottom-color: #198754;
+  }
+
+  .misi-detail-card:nth-child(2) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.1) 0%, rgba(25, 135, 84, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(2):hover {
+    box-shadow: 0 12px 32px rgba(25, 135, 84, 0.2);
+  }
+
+  .misi-detail-card:nth-child(3) {
+    border-bottom-color: #ffc107;
+  }
+
+  .misi-detail-card:nth-child(3) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(3):hover {
+    box-shadow: 0 12px 32px rgba(255, 193, 7, 0.2);
+  }
+
+  .misi-detail-card:nth-child(4) {
+    border-bottom-color: #dc3545;
+  }
+
+  .misi-detail-card:nth-child(4) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(4):hover {
+    box-shadow: 0 12px 32px rgba(220, 53, 69, 0.2);
+  }
+
+  .misi-detail-card:hover .misi-detail-icon-wrapper {
+    transform: scale(1.15) rotate(-5deg);
+  }
+
+  .misi-detail-icon {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .misi-detail-card:hover .misi-detail-icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+
+  .misi-detail-title {
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .misi-detail-card:hover .misi-detail-title {
+    transform: scale(1.05);
+  }
+
+  .misi-detail-card:nth-child(1):hover .misi-detail-title {
+    color: #fd7e14;
+  }
+
+  .misi-detail-card:nth-child(2):hover .misi-detail-title {
+    color: #198754;
+  }
+
+  .misi-detail-card:nth-child(3):hover .misi-detail-title {
+    color: #ffc107;
+  }
+
+  .misi-detail-card:nth-child(4):hover .misi-detail-title {
+    color: #dc3545;
+  }
+
+  .misi-detail-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+
+  .misi-detail-card:hover .misi-detail-description {
+    color: #495057;
   }
 }
