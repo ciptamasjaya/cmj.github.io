@@ -92,58 +92,15 @@ SEO Benefits:
     <div class="row g-4">
       {% for service in sorted_services limit: limit %}
       <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-0 hover-shadow">
-          <!-- Service Image -->
-          {% if service.image %}
-          <img src="{{ service.image | relative_url }}" class="card-img-top" alt="{{ service.title }}" style="height: 180px; object-fit: contain; background: #f8f9fa; padding: 1rem;">
-          {% else %}
-          <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 180px;">
-            <i class="bi bi-{{ service.icon | default: 'gear' }} text-primary" style="font-size: 4rem;"></i>
-          </div>
-          {% endif %}
-
-          <div class="card-body d-flex flex-column">
-            <!-- NEW Badge -->
-            {% comment %} Check if service is less than 30 days old {% endcomment %}
-            {% assign service_date = service.last_modified_at | default: service.date %}
-            {% assign days_old = 'now' | date: '%s' | minus: service_date | date: '%s' | divided_by: 86400 %}
-            {% if days_old < 30 %}
-            <span class="badge bg-success mb-2 align-self-start">
-              <i class="bi bi-stars"></i> NEW
-            </span>
-            {% endif %}
-
-            <!-- Title -->
-            <h3 class="card-title h5">
-              <a href="{{ service.url | relative_url }}" class="text-decoration-none text-dark stretched-link">
-                {{ service.title }}
-              </a>
-            </h3>
-
-            <!-- Excerpt -->
-            {% if show_excerpt and service.description %}
-            <p class="card-text text-muted small mb-3 flex-grow-1">
-              {{ service.description | truncate: 120 }}
-            </p>
-            {% endif %}
-
-            <!-- Meta Info -->
-            <div class="mt-auto">
-              <div class="d-flex justify-content-between align-items-center text-muted small">
-                <span>
-                  <i class="bi bi-calendar3"></i>
-                  {{ service_date | date: "%d %b %Y" }}
-                </span>
-                {% if service.rating %}
-                <span class="text-warning">
-                  <i class="bi bi-star-fill"></i>
-                  {{ service.rating }}
-                </span>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
+        {% include components/component--service-card.html
+           service=service
+           show_excerpt=show_excerpt
+           show_rating=true
+           show_dates=true
+           show_created_date=false
+           image_height="180px"
+           excerpt_length=120
+        %}
       </div>
       {% endfor %}
     </div>
@@ -159,14 +116,4 @@ SEO Benefits:
     {% endif %}
   </div>
 </section>
-
-<style>
-.hover-shadow {
-  transition: all 0.3s ease;
-}
-.hover-shadow:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
-}
-</style>
 {% endif %}
