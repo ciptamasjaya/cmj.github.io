@@ -24,10 +24,10 @@ Usage:
 {% endcomment %}
 
 <section class="pjk3-terdekat py-5">
-  <div class="container">
+  <div class="container-fluid  px-lg-5">
 
     <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
+      <div class="col-lg-6 mx-auto text-center">
 
         <p class="text-muted text-uppercase mb-2 fw-semibold">
           PT. Cipta Mas Jaya adalah PJK3 terdekat dengan anda sebagai Penyedia Jasa Riksa Uji K3
@@ -46,7 +46,10 @@ Usage:
           Selain itu, kemudahan akses dan harga yang kompetitif menjadikan PT. Cipta Mas Jaya solusi
           terbaik untuk memastikan keselamatan kerja di tempat Anda.
         </p>
-
+      </div>
+      <div class="col-lg-6">
+        <!-- Google Maps -->
+        {% include reusable/block--google-maps.html %}
       </div>
     </div>
 
