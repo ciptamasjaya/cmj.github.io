@@ -1,0 +1,95 @@
+{% comment %}
+============================================================================
+Schema: Service Reviews & Aggregate Rating
+============================================================================
+
+@file        schema--service-reviews.html
+@path        _includes/schema/schema--service-reviews.html
+@type        Schema (service reviews & ratings)
+@description Schema.org markup for service reviews and aggregate ratings
+@author      ciptamasjaya
+@version     1.0.0
+@date        2025-11-24
+
+Generates structured data for service reviews including:
+- AggregateRating (overall rating, review count)
+- Individual Review items (author, rating, review text, date)
+
+Usage:
+------
+Include in page front matter:
+custom_schema:
+  - schema/schema--service-reviews.html
+
+Or include directly in layout:
+{% include schema/schema--service-reviews.html %}
+
+Frontmatter Structure Required:
+--------------------------------
+rating: 4.8
+review_count: 15
+reviews:
+  - author: "John Doe"
+    author_type: "Person"  # Person or Organization
+    rating: 5
+    date: "2025-11-20"
+    review: "Excellent service, very professional..."
+  - author: "Jane Smith"
+    author_type: "Person"
+    rating: 4
+    date: "2025-11-18"
+    review: "Good service but could be faster..."
+
+============================================================================
+{% endcomment %}
+
+{% if page.rating and page.reviews %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | strip_html | escape }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/"
+  },
+  {% if page.rating %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ page.rating }}",
+    "reviewCount": "{{ page.review_count | default: page.reviews.size }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  {% endif %}
+  {% if page.reviews and page.reviews.size > 0 %}
+  "review": [
+    {% for review in page.reviews %}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "{{ review.author_type | default: 'Person' }}",
+        "name": "{{ review.author }}"
+      },
+      "datePublished": "{{ review.date }}",
+      "reviewBody": "{{ review.review | strip_html | escape }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review.rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+  "serviceType": "{{ page.service_type | default: 'Professional Service' }}",
+  "areaServed": {
+    "@type": "Country",
+    "name": "{{ page.area_served | default: 'Indonesia' }}"
+  }
+}
+</script>
+{% endif %}

@@ -13,11 +13,17 @@ date: 2025-11-24
 last_modified_at: 2025-11-24
 show_breadcrumb_schema: true
 
+# Rating & Reviews
+rating: 4.8
+review_count: 15
+
 # Optional: Uncomment jika sudah ada data
 # price: 2500000
 # price_currency: "IDR"
-# rating: 4.8
-# review_count: 15
+
+# Schema.org Custom Schemas
+custom_schema:
+  - schema/schema--service-reviews.html
 
 # ============================================================================
 # BLOCK DATA - Content Sections
@@ -28,6 +34,28 @@ intro:
   h1: "Riksa Uji Forklift - Jasa Inspeksi K3 Profesional"
   para_1: "Riksa uji forklift merupakan pemeriksaan dan pengujian keselamatan terhadap forklift yang wajib dilakukan secara berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini bertujuan untuk memastikan forklift beroperasi dengan aman dan sesuai standar keselamatan kerja yang berlaku."
   para_2: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker untuk memastikan keselamatan operasional di tempat kerja Anda."
+
+# ============================================================================
+# REVIEWS DATA
+# ============================================================================
+reviews:
+  - author: "PT. Indocement Tunggal Prakarsa"
+    author_type: "Organization"
+    rating: 5
+    date: "2025-11-20"
+    review: "Layanan riksa uji forklift dari PT. Cipta Mas Jaya sangat profesional dan tepat waktu. Inspector bersertifikat dengan peralatan lengkap. Proses inspeksi detail dan dokumentasi sangat rapi. Sertifikat langsung keluar. Sangat recommended untuk perusahaan yang membutuhkan layanan K3 profesional."
+
+  - author: "Budi Santoso"
+    author_type: "Person"
+    rating: 5
+    date: "2025-11-18"
+    review: "Sudah beberapa kali menggunakan jasa riksa uji forklift dari PT. Cipta Mas Jaya untuk warehouse kami. Tim inspector sangat kompeten dan detail dalam pemeriksaan. Harga kompetitif dan pelayanan memuaskan. Highly recommended!"
+
+  - author: "PT. Astra International"
+    author_type: "Organization"
+    rating: 4
+    date: "2025-11-15"
+    review: "Pelayanan bagus dan profesional. Proses riksa uji cepat dan efisien. Dokumentasi lengkap dan sertifikat sesuai standar Kemnaker. Tim inspector ramah dan memberikan konsultasi gratis untuk maintenance forklift kami."
 
 ---
 

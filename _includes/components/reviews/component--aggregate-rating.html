@@ -1,0 +1,79 @@
+{% comment %}
+============================================================================
+Component: Aggregate Rating Display
+============================================================================
+
+@file        component--aggregate-rating.html
+@path        _includes/components/reviews/component--aggregate-rating.html
+@description Display aggregate rating with stars, score, and review count
+@version     1.0.0
+@date        2025-11-24
+
+Parameters:
+-----------
+- rating: Average rating value (required, e.g., 4.8)
+- review_count: Total number of reviews (required)
+- show_breakdown: Show rating breakdown (optional, default: false)
+
+Usage:
+------
+{% include components/reviews/component--aggregate-rating.html
+   rating=4.8
+   review_count=15
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign rating = include.rating | default: 0 %}
+{% assign review_count = include.review_count | default: 0 %}
+{% assign show_breakdown = include.show_breakdown | default: false %}
+
+<div class="aggregate-rating bg-light border rounded p-4 mb-4">
+  <div class="row align-items-center">
+    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+      <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+        <div class="rating-score me-3">
+          <div class="display-4 fw-bold text-primary mb-0">{{ rating }}</div>
+          <div class="text-muted small">dari 5.0</div>
+        </div>
+        <div class="rating-stars">
+          <div class="mb-2">
+            {% assign full_stars = rating | floor %}
+            {% assign decimal = rating | minus: full_stars %}
+            {% assign has_half = false %}
+            {% if decimal >= 0.3 and decimal < 0.8 %}
+              {% assign has_half = true %}
+            {% elsif decimal >= 0.8 %}
+              {% assign full_stars = full_stars | plus: 1 %}
+            {% endif %}
+
+            {% for i in (1..5) %}
+              {% if i <= full_stars %}
+                <i class="bi bi-star-fill text-warning fs-4"></i>
+              {% elsif has_half and i == full_stars | plus: 1 %}
+                <i class="bi bi-star-half text-warning fs-4"></i>
+              {% else %}
+                <i class="bi bi-star text-muted fs-4"></i>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="text-muted">
+            <i class="bi bi-people-fill"></i>
+            <strong>{{ review_count }}</strong> ulasan pelanggan
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="rating-summary text-center text-md-end">
+        <div class="badge bg-success fs-6 px-3 py-2 mb-2">
+          <i class="bi bi-patch-check-fill"></i> Rating Tinggi
+        </div>
+        <p class="mb-0 small text-muted">
+          Berdasarkan ulasan dari klien yang telah menggunakan layanan kami
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

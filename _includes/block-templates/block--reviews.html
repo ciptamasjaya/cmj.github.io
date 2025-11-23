@@ -1,0 +1,102 @@
+{% comment %}
+============================================================================
+Block Template: Reviews
+============================================================================
+
+@file        block--reviews.html
+@path        _includes/block-templates/block--reviews.html
+@description Complete reviews block with aggregate rating and review cards
+@version     1.0.0
+@date        2025-11-24
+
+Features:
+---------
+- H2 section heading
+- Aggregate rating display (overall score + review count)
+- Individual review cards (displays first 3 reviews)
+- Responsive layout with Bootstrap grid
+- Schema.org structured data support
+
+Frontmatter Structure Required:
+--------------------------------
+rating: 4.8
+review_count: 15
+reviews:
+  - author: "John Doe"
+    author_type: "Person"
+    rating: 5
+    date: "2025-11-20"
+    review: "Pelayanan sangat profesional..."
+  - author: "PT. Contoh Perusahaan"
+    author_type: "Organization"
+    rating: 4
+    date: "2025-11-18"
+    review: "Layanan bagus, tepat waktu..."
+
+Usage:
+------
+1. Add review data to page frontmatter
+2. Add schema to custom_schema:
+   custom_schema:
+     - schema/schema--service-reviews.html
+3. Include block in page:
+   {% include block-templates/block--reviews.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.rating and page.reviews %}
+<section id="reviews" class="block--reviews my-5 py-5 bg-white">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="display-6 fw-bold mb-3">
+        <i class="bi bi-star-fill text-warning"></i>
+        Ulasan Pelanggan
+      </h2>
+      <p class="lead text-muted">
+        Testimoni dari klien yang telah mempercayai layanan kami
+      </p>
+    </div>
+
+    <!-- Aggregate Rating -->
+    {% include components/reviews/component--aggregate-rating.html
+       rating=page.rating
+       review_count=page.review_count
+    %}
+
+    <!-- Individual Reviews (Show first 3) -->
+    <div class="reviews-list mt-4">
+      <h3 class="h4 mb-4">
+        <i class="bi bi-chat-quote"></i>
+        Ulasan Terbaru
+      </h3>
+      <div class="row row-cols-1 row-cols-lg-3 g-4">
+        {% for review in page.reviews limit:3 %}
+        <div class="col">
+          {% include components/reviews/component--review-card.html
+             author=review.author
+             author_type=review.author_type
+             rating=review.rating
+             date=review.date
+             review=review.review
+             avatar=review.avatar
+          %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if page.reviews.size > 3 %}
+    <div class="text-center mt-4">
+      <p class="text-muted">
+        <i class="bi bi-info-circle"></i>
+        Menampilkan 3 dari {{ page.reviews.size }} ulasan
+      </p>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

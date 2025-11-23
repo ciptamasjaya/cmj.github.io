@@ -1,0 +1,78 @@
+{% comment %}
+============================================================================
+Component: Rating Badge (Minimalist)
+============================================================================
+
+@file        component--rating-badge.html
+@path        _includes/components/reviews/component--rating-badge.html
+@description Minimalist inline rating display with stars and review count
+@version     1.0.0
+@date        2025-11-24
+
+Parameters:
+-----------
+- rating: Average rating value (required, e.g., 4.8)
+- review_count: Total number of reviews (required)
+- size: Badge size - "sm" | "md" | "lg" (default: "md")
+- style: Display style - "inline" | "badge" (default: "inline")
+
+Usage:
+------
+{% include components/reviews/component--rating-badge.html
+   rating=4.8
+   review_count=15
+   size="sm"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign rating = include.rating | default: 0 %}
+{% assign review_count = include.review_count | default: 0 %}
+{% assign size = include.size | default: "md" %}
+{% assign style = include.style | default: "inline" %}
+
+{% comment %} Set size classes {% endcomment %}
+{% if size == "sm" %}
+  {% assign text_size = "small" %}
+  {% assign icon_size = "" %}
+{% elsif size == "lg" %}
+  {% assign text_size = "fs-5" %}
+  {% assign icon_size = "fs-5" %}
+{% else %}
+  {% assign text_size = "" %}
+  {% assign icon_size = "" %}
+{% endif %}
+
+{% if style == "badge" %}
+<div class="rating-badge badge bg-warning text-dark d-inline-flex align-items-center gap-1 {{ text_size }}">
+  <i class="bi bi-star-fill"></i>
+  <span class="fw-bold">{{ rating }}</span>
+  <span class="text-muted">({{ review_count }})</span>
+</div>
+{% else %}
+<div class="rating-badge-inline d-inline-flex align-items-center gap-1 {{ text_size }}">
+  {% comment %} Generate stars {% endcomment %}
+  {% assign full_stars = rating | floor %}
+  {% assign decimal = rating | minus: full_stars %}
+  {% assign has_half = false %}
+  {% if decimal >= 0.3 and decimal < 0.8 %}
+    {% assign has_half = true %}
+  {% elsif decimal >= 0.8 %}
+    {% assign full_stars = full_stars | plus: 1 %}
+  {% endif %}
+
+  {% for i in (1..5) %}
+    {% if i <= full_stars %}
+      <i class="bi bi-star-fill text-warning {{ icon_size }}"></i>
+    {% elsif has_half and i == full_stars | plus: 1 %}
+      <i class="bi bi-star-half text-warning {{ icon_size }}"></i>
+    {% else %}
+      <i class="bi bi-star text-warning {{ icon_size }}"></i>
+    {% endif %}
+  {% endfor %}
+
+  <span class="fw-bold text-dark ms-1">{{ rating }}</span>
+  <span class="text-muted">({{ review_count }} ulasan)</span>
+</div>
+{% endif %}
