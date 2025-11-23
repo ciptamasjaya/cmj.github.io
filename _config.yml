@@ -152,6 +152,7 @@ exclude:
   - RELEASE/
   - TEMPLATES/
   - TODO/
+  - docs/
   - RELEASE_NOTES.md
   - CHANGELOG.md
   - COMPONENTS.md

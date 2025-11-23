@@ -1,0 +1,424 @@
+/**
+ * DataTable.css - Styling for DataTable.js
+ * Version: 1.0.2
+ *
+ * Usage:
+ * <link rel="stylesheet" href="assets/css/datatable.css">
+ */
+
+/* ==================== DataTable Wrapper ==================== */
+.datatable-wrapper {
+  width: 100%;
+  margin: 20px 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ==================== Top Controls ==================== */
+.datatable-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.datatable-perpage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.datatable-search-export {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ==================== Inputs and Selects ==================== */
+.datatable-selector,
+.datatable-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: white;
+}
+
+.datatable-selector:focus,
+.datatable-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.datatable-input {
+  min-width: 200px;
+}
+
+.datatable-selector {
+  cursor: pointer;
+}
+
+/* ==================== Export Buttons ==================== */
+.datatable-export {
+  display: flex;
+  gap: 8px;
+}
+
+.datatable-export-btn {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.datatable-export-btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.datatable-export-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== Table Styles ==================== */
+.datatable-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.datatable-wrapper thead th {
+  background: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+}
+
+.datatable-sortable {
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.datatable-sortable:hover {
+  background: #e9ecef;
+}
+
+.datatable-sort-indicator {
+  font-size: 12px;
+  color: #999;
+  margin-left: 4px;
+}
+
+.datatable-wrapper tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  color: #555;
+}
+
+.datatable-wrapper tbody tr {
+  transition: background 0.2s;
+}
+
+.datatable-wrapper tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.datatable-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.datatable-empty {
+  text-align: center;
+  padding: 40px !important;
+  color: #999;
+  font-style: italic;
+}
+
+/* ==================== Bottom Controls ==================== */
+.datatable-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.datatable-info {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ==================== Pagination ==================== */
+.datatable-pagination {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.datatable-page-btn {
+  padding: 6px 12px;
+  border: 1px solid #dee2e6;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  min-width: 36px;
+  text-align: center;
+}
+
+.datatable-page-btn:hover:not(:disabled):not(.active) {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.datatable-page-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+  font-weight: 600;
+}
+
+.datatable-page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.datatable-ellipsis {
+  padding: 6px 8px;
+  color: #999;
+  user-select: none;
+}
+
+/* ==================== Responsive Table ==================== */
+@media screen and (max-width: 768px) {
+  .datatable-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .datatable-perpage {
+    justify-content: center;
+  }
+
+  .datatable-search-export {
+    flex-direction: column;
+  }
+
+  .datatable-export {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .datatable-export-btn {
+    flex: 1;
+  }
+
+  .datatable-input {
+    width: 100%;
+  }
+
+  .datatable-responsive {
+    box-shadow: none;
+  }
+
+  .datatable-responsive thead {
+    display: none;
+  }
+
+  .datatable-responsive tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .datatable-responsive tbody tr:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .datatable-responsive tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: right;
+  }
+
+  .datatable-responsive tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .datatable-responsive tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    margin-right: 10px;
+    text-align: left;
+    color: #333;
+    flex: 1;
+  }
+
+  .datatable-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .datatable-info {
+    text-align: center;
+  }
+
+  .datatable-pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================== Dark Mode Support (Optional) ==================== */
+@media (prefers-color-scheme: dark) {
+  .datatable-wrapper table {
+    background: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  .datatable-wrapper thead th {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    border-bottom-color: #404040;
+  }
+
+  .datatable-sortable:hover {
+    background: #3a3a3a;
+  }
+
+  .datatable-wrapper tbody td {
+    border-bottom-color: #404040;
+    color: #d0d0d0;
+  }
+
+  .datatable-wrapper tbody tr:hover {
+    background: #2d2d2d;
+  }
+
+  .datatable-selector,
+  .datatable-input {
+    background: #2d2d2d;
+    border-color: #404040;
+    color: #e0e0e0;
+  }
+
+  .datatable-page-btn {
+    background: #2d2d2d;
+    border-color: #404040;
+    color: #e0e0e0;
+  }
+
+  .datatable-page-btn:hover:not(:disabled):not(.active) {
+    background: #3a3a3a;
+    border-color: #505050;
+  }
+
+  .datatable-page-btn:disabled {
+    background: #252525;
+  }
+
+  .datatable-info {
+    color: #999;
+  }
+
+  .datatable-perpage {
+    color: #d0d0d0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .datatable-responsive tbody tr {
+      background: #1e1e1e;
+      border-color: #404040;
+    }
+
+    .datatable-responsive tbody td {
+      border-bottom-color: #2d2d2d;
+    }
+  }
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+  .datatable-top,
+  .datatable-bottom {
+    display: none !important;
+  }
+
+  .datatable-wrapper table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .datatable-wrapper thead th {
+    background: #f0f0f0 !important;
+    color: #000 !important;
+  }
+
+  .datatable-wrapper tbody tr:hover {
+    background: transparent !important;
+  }
+}
+
+/* ==================== Utility Classes ==================== */
+.datatable-wrapper .text-center {
+  text-align: center;
+}
+
+.datatable-wrapper .text-right {
+  text-align: right;
+}
+
+.datatable-wrapper .text-left {
+  text-align: left;
+}
+
+.datatable-wrapper .no-wrap {
+  white-space: nowrap;
+}
+
+/* ==================== Loading State (Optional) ==================== */
+.datatable-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.datatable-loading::after {
+  content: 'Loading...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  color: #007bff;
+}

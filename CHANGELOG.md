@@ -2,7 +2,7 @@
 
 ## v1.0.2 - Content Migration & SEO Enhancement (2025-11-23)
 
-Major content migration from WordPress, comprehensive SEO improvements with proper heading hierarchy, and enhanced styling across all pages.
+Major content migration from WordPress, comprehensive SEO improvements with proper heading hierarchy, enhanced styling across all pages, and custom DataTable.js library.
 
 ### 🎯 Major Features
 
@@ -37,6 +37,26 @@ Exclude development files from production build:
 - Docs: CHANGELOG.md, COMPONENTS.md, SCSS-GUIDE.md, STRUKTUR-PROJECT.md
 - Scripts: rebuild.sh
 - Result: Build reduced from 100 to 88 files (9.5M)
+
+#### 📊 DataTable.js Library (2025-11-24)
+Custom vanilla JavaScript DataTable library with full features:
+- **Sorting**: Ascending/descending sort on all columns (smart numeric/text detection)
+- **Pagination**: Configurable rows per page with navigation controls
+- **Search/Filter**: Real-time global search across all table data
+- **Responsive Design**: Mobile-friendly layout with breakpoint at 768px
+- **Export Functions**:
+  - CSV export with proper encoding
+  - PDF export via print dialog
+- **Customization**:
+  - Multi-language support via labels configuration
+  - Optional features (enable/disable individually)
+  - Custom CSS class support
+- **Pure Vanilla JS**: Zero dependencies, lightweight (~15KB)
+- **Files Added**:
+  - `assets/js/datatable.js` - Main library
+  - `assets/css/datatable.css` - Styling with dark mode support
+  - `docs/datatable.md` - Complete documentation
+  - `docs/datatable-demo.html` - Interactive demo with 3 examples
 
 ### 📝 Detailed Changes
 
@@ -96,6 +116,8 @@ b95ee0e - Fix Liquid syntax error in block--quick-contact-form.html
 - **Sitemap with lastmod** for better SEO
 - **12 files excluded** from production build
 - **Git LFS integration** for optimized image management
+- **DataTable.js library** added (~15KB vanilla JS, zero dependencies)
+- **4 new files** for DataTable system (JS, CSS, docs, demo)
 
 ### 🔧 Technical Improvements
 - jekyll-last-modified-at plugin for automatic sitemap timestamps

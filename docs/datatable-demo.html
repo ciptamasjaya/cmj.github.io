@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTable.js Demo - Version 1.0.2</title>
+
+    <!-- DataTable CSS -->
+    <link rel="stylesheet" href="../assets/css/datatable.css">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+
+        .code-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .code-box code {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+
+        .demo-section {
+            margin-bottom: 50px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #28a745;
+            color: white;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DataTable.js Demo <span class="badge">v1.0.2</span></h1>
+
+        <div class="info-box">
+            <h3>🎉 Fitur DataTable.js</h3>
+            <ul>
+                <li>✅ <strong>Sorting</strong> - Klik header kolom untuk sort</li>
+                <li>✅ <strong>Pagination</strong> - Navigasi halaman dengan mudah</li>
+                <li>✅ <strong>Search/Filter</strong> - Cari data secara real-time</li>
+                <li>✅ <strong>Responsive</strong> - Mobile-friendly (resize browser untuk test)</li>
+                <li>✅ <strong>Export</strong> - Download data ke CSV atau PDF</li>
+                <li>✅ <strong>Vanilla JS</strong> - Tanpa jQuery atau dependencies</li>
+            </ul>
+        </div>
+
+        <!-- Demo 1: Full Features -->
+        <div class="demo-section">
+            <h2>Demo 1: Full Features DataTable</h2>
+            <p>DataTable dengan semua fitur aktif (default configuration)</p>
+
+            <div class="code-box">
+                <code>const table = new DataTable('#demoTable1');</code>
+            </div>
+
+            <table id="demoTable1">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Layanan</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Status</th>
+                        <th>Tanggal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Instalasi AC</td>
+                        <td>HVAC</td>
+                        <td>Rp 500.000</td>
+                        <td>Aktif</td>
+                        <td>2025-01-15</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Service AC Rutin</td>
+                        <td>HVAC</td>
+                        <td>Rp 150.000</td>
+                        <td>Aktif</td>
+                        <td>2025-02-20</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Perbaikan Elektrikal</td>
+                        <td>Elektrikal</td>
+                        <td>Rp 350.000</td>
+                        <td>Aktif</td>
+                        <td>2025-03-10</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Instalasi Panel Listrik</td>
+                        <td>Elektrikal</td>
+                        <td>Rp 1.200.000</td>
+                        <td>Aktif</td>
+                        <td>2025-01-25</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Maintenance Plumbing</td>
+                        <td>Plumbing</td>
+                        <td>Rp 200.000</td>
+                        <td>Aktif</td>
+                        <td>2025-02-15</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Perbaikan Kebocoran</td>
+                        <td>Plumbing</td>
+                        <td>Rp 300.000</td>
+                        <td>Aktif</td>
+                        <td>2025-03-05</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Instalasi Chiller</td>
+                        <td>HVAC</td>
+                        <td>Rp 3.500.000</td>
+                        <td>Aktif</td>
+                        <td>2025-01-10</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Fire Alarm System</td>
+                        <td>Keamanan</td>
+                        <td>Rp 2.000.000</td>
+                        <td>Aktif</td>
+                        <td>2025-02-28</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>CCTV Installation</td>
+                        <td>Keamanan</td>
+                        <td>Rp 1.500.000</td>
+                        <td>Aktif</td>
+                        <td>2025-03-12</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Building Automation</td>
+                        <td>Automation</td>
+                        <td>Rp 5.000.000</td>
+                        <td>Aktif</td>
+                        <td>2025-01-20</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Energy Monitoring System</td>
+                        <td>Automation</td>
+                        <td>Rp 4.000.000</td>
+                        <td>Aktif</td>
+                        <td>2025-02-10</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Ventilasi Industri</td>
+                        <td>HVAC</td>
+                        <td>Rp 800.000</td>
+                        <td>Aktif</td>
+                        <td>2025-03-18</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Perbaikan Genset</td>
+                        <td>Elektrikal</td>
+                        <td>Rp 600.000</td>
+                        <td>Aktif</td>
+                        <td>2025-01-30</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Water Treatment</td>
+                        <td>Plumbing</td>
+                        <td>Rp 1.000.000</td>
+                        <td>Aktif</td>
+                        <td>2025-02-22</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Access Control System</td>
+                        <td>Keamanan</td>
+                        <td>Rp 2.500.000</td>
+                        <td>Aktif</td>
+                        <td>2025-03-08</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Demo 2: Custom Configuration -->
+        <div class="demo-section">
+            <h2>Demo 2: Custom Configuration</h2>
+            <p>DataTable dengan custom labels (Bahasa Indonesia) dan rows per page = 5</p>
+
+            <div class="code-box">
+                <code>
+new DataTable('#demoTable2', {<br>
+&nbsp;&nbsp;perPage: 5,<br>
+&nbsp;&nbsp;labels: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;placeholder: 'Cari data...',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;perPage: 'Tampilkan {select} data',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;noRows: 'Tidak ada data',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;info: 'Menampilkan {start} sampai {end} dari {rows} data'<br>
+&nbsp;&nbsp;}<br>
+});
+                </code>
+            </div>
+
+            <table id="demoTable2">
+                <thead>
+                    <tr>
+                        <th>Kode</th>
+                        <th>Nama Produk</th>
+                        <th>Stok</th>
+                        <th>Harga Satuan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AC-001</td>
+                        <td>AC Split 1 PK</td>
+                        <td>25</td>
+                        <td>Rp 3.500.000</td>
+                    </tr>
+                    <tr>
+                        <td>AC-002</td>
+                        <td>AC Split 2 PK</td>
+                        <td>15</td>
+                        <td>Rp 5.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>EL-001</td>
+                        <td>Panel MCB 20A</td>
+                        <td>50</td>
+                        <td>Rp 250.000</td>
+                    </tr>
+                    <tr>
+                        <td>EL-002</td>
+                        <td>Kabel NYA 2.5mm</td>
+                        <td>100</td>
+                        <td>Rp 50.000</td>
+                    </tr>
+                    <tr>
+                        <td>PL-001</td>
+                        <td>Pipa PVC 3/4"</td>
+                        <td>200</td>
+                        <td>Rp 25.000</td>
+                    </tr>
+                    <tr>
+                        <td>PL-002</td>
+                        <td>Water Pump 125W</td>
+                        <td>30</td>
+                        <td>Rp 450.000</td>
+                    </tr>
+                    <tr>
+                        <td>SC-001</td>
+                        <td>CCTV Indoor 2MP</td>
+                        <td>40</td>
+                        <td>Rp 800.000</td>
+                    </tr>
+                    <tr>
+                        <td>SC-002</td>
+                        <td>DVR 8 Channel</td>
+                        <td>20</td>
+                        <td>Rp 2.500.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Demo 3: Minimal Features -->
+        <div class="demo-section">
+            <h2>Demo 3: Minimal Features</h2>
+            <p>Hanya pagination, tanpa search dan export</p>
+
+            <div class="code-box">
+                <code>
+new DataTable('#demoTable3', {<br>
+&nbsp;&nbsp;searchable: false,<br>
+&nbsp;&nbsp;exportable: false,<br>
+&nbsp;&nbsp;perPage: 5<br>
+});
+                </code>
+            </div>
+
+            <table id="demoTable3">
+                <thead>
+                    <tr>
+                        <th>Teknisi</th>
+                        <th>Spesialisasi</th>
+                        <th>Rating</th>
+                        <th>Total Project</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ahmad Wijaya</td>
+                        <td>HVAC Specialist</td>
+                        <td>4.8</td>
+                        <td>156</td>
+                    </tr>
+                    <tr>
+                        <td>Budi Santoso</td>
+                        <td>Electrical Engineer</td>
+                        <td>4.9</td>
+                        <td>203</td>
+                    </tr>
+                    <tr>
+                        <td>Chandra Pratama</td>
+                        <td>Plumbing Expert</td>
+                        <td>4.7</td>
+                        <td>142</td>
+                    </tr>
+                    <tr>
+                        <td>Dewi Lestari</td>
+                        <td>Automation Engineer</td>
+                        <td>4.9</td>
+                        <td>98</td>
+                    </tr>
+                    <tr>
+                        <td>Eko Prasetyo</td>
+                        <td>Security Systems</td>
+                        <td>4.6</td>
+                        <td>87</td>
+                    </tr>
+                    <tr>
+                        <td>Fitri Handayani</td>
+                        <td>Fire Safety Expert</td>
+                        <td>4.8</td>
+                        <td>112</td>
+                    </tr>
+                    <tr>
+                        <td>Gunawan Setiawan</td>
+                        <td>General Maintenance</td>
+                        <td>4.5</td>
+                        <td>234</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <h3>📖 Dokumentasi Lengkap</h3>
+            <p>Lihat <a href="datatable.md">datatable.md</a> untuk dokumentasi lengkap, API reference, dan advanced usage.</p>
+        </div>
+    </div>
+
+    <!-- DataTable JS -->
+    <script src="../assets/js/datatable.js"></script>
+
+    <script>
+        // Demo 1: Full features (default)
+        const table1 = new DataTable('#demoTable1');
+
+        // Demo 2: Custom configuration
+        const table2 = new DataTable('#demoTable2', {
+            perPage: 5,
+            labels: {
+                placeholder: 'Cari data...',
+                perPage: 'Tampilkan {select} data',
+                noRows: 'Tidak ada data',
+                info: 'Menampilkan {start} sampai {end} dari {rows} data'
+            }
+        });
+
+        // Demo 3: Minimal features
+        const table3 = new DataTable('#demoTable3', {
+            searchable: false,
+            exportable: false,
+            perPage: 5
+        });
+
+        console.log('DataTable.js v1.0.2 loaded successfully!');
+        console.log('Table instances:', { table1, table2, table3 });
+    </script>
+</body>
+</html>
