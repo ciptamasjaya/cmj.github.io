@@ -1,0 +1,55 @@
+{% comment %}
+============================================================================
+About Hero Block
+============================================================================
+
+@file        _includes/reusable/block--about-hero.html
+@description Hero section with image and company introduction
+@version     1.0.0
+@date        2025-11-23
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- 2-column layout: image left, text right
+- Company introduction
+- Responsive design
+
+Usage:
+------
+{% include reusable/block--about-hero.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--about-hero py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left Column - Image -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="/wp-content/uploads/2024/09/jasa-inspeksi-k3-pjk3-riksa-uji-pt-cipta-mas-jaya-12.jpeg"
+             alt="Jasa Inspeksi K3 PJK3 Riksa Uji PT. Cipta Mas Jaya"
+             class="img-fluid rounded shadow-lg"
+             loading="eager">
+      </div>
+
+      <!-- Right Column - Text -->
+      <div class="col-lg-6">
+        <h1 class="h2 fw-bold mb-4">PT. Cipta Mas Jaya</h1>
+        <p class="mb-3">
+          PT. Cipta Mas Jaya adalah PJK3 Riksa Uji yang masuk <strong>daftar perusahaan pjk3 kementerian</strong>
+          yakni perusahaan yang menyediakan jasa inspeksi Keselamatan dan Kesehatan Kerja (K3), termasuk berbagai
+          jenis pemeriksaan seperti inspeksi pesawat angkat dan angkut, pesawat uap dan bejana tekan, proteksi kebakaran,
+          instalasi listrik, penyalur petir, serta elevator dan eskalator.
+        </p>
+        <p class="mb-0">
+          PJK3 Riksa Uji PT. Cipta Mas Jaya bertujuan untuk memastikan bahwa fasilitas dan peralatan di tempat kerja
+          memenuhi standar keselamatan yang berlaku guna mengurangi risiko kecelakaan dan meningkatkan kepatuhan
+          terhadap peraturan keselamatan kerja.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
