@@ -844,3 +844,249 @@
     color: #495057 !important;
   }
 }
+
+/* ============================================================================
+   ABOUT VISI MISI BLOCK
+   ============================================================================ */
+.block--about-visi-misi {
+
+  /* Main section cards (Visi & Misi intro) */
+  .visi-card,
+  .misi-intro-card {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visi-card::before,
+  .misi-intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd 0%, #0a58ca 100%);
+    transition: height 0.3s ease;
+  }
+
+  .visi-card:hover,
+  .misi-intro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.15);
+  }
+
+  .visi-card:hover::before,
+  .misi-intro-card:hover::before {
+    height: 6px;
+  }
+
+  /* Icon wrapper for Visi */
+  .visi-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visi-card:hover .visi-icon-wrapper {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.4);
+  }
+
+  .visi-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: left 0.6s ease;
+  }
+
+  .visi-card:hover .visi-icon-wrapper::before {
+    left: 150%;
+  }
+
+  .visi-icon {
+    font-size: 3.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .visi-card:hover .visi-icon {
+    animation: none;
+    transform: scale(1.15);
+  }
+
+  /* Section title */
+  .visi-title,
+  .misi-title {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .visi-card:hover .visi-title,
+  .misi-intro-card:hover .misi-title {
+    transform: scale(1.03);
+  }
+
+  /* Visi & Misi content text */
+  .visi-content,
+  .misi-intro-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    transition: color 0.3s ease;
+  }
+
+  .visi-card:hover .visi-content,
+  .misi-intro-card:hover .misi-intro-content {
+    color: #212529;
+  }
+
+  /* Misi breakdown cards */
+  .misi-item-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 100%;
+    border-left: 4px solid transparent;
+  }
+
+  .misi-item-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.2);
+    border-left-color: #0d6efd;
+  }
+
+  /* Icon for each misi item */
+  .misi-item-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Different gradient for each card */
+  .misi-item-card:nth-child(1) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  }
+
+  .misi-item-card:nth-child(2) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #6610f2 0%, #520dc2 100%);
+  }
+
+  .misi-item-card:nth-child(3) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #d63384 0%, #a02560 100%);
+  }
+
+  .misi-item-card:nth-child(4) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #fd7e14 0%, #ca6510 100%);
+  }
+
+  .misi-item-card:hover .misi-item-icon-wrapper {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.3);
+  }
+
+  .misi-item-icon {
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .misi-item-card:hover .misi-item-icon {
+    transform: scale(1.2);
+  }
+
+  /* Misi item title */
+  .misi-item-title {
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+  }
+
+  .misi-item-card:hover .misi-item-title {
+    color: #0d6efd;
+  }
+
+  /* Misi item description */
+  .misi-item-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+
+  .misi-item-card:hover .misi-item-description {
+    color: #495057;
+  }
+
+  /* Decorative divider */
+  .visi-misi-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd 0%, #0a58ca 100%);
+    margin: 3rem auto;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .visi-misi-divider::before,
+  .visi-misi-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: #0d6efd;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  .visi-misi-divider::before {
+    left: -20px;
+  }
+
+  .visi-misi-divider::after {
+    right: -20px;
+  }
+}
