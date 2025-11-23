@@ -12,9 +12,9 @@ Service List Block
 
 Features:
 ---------
-- 2-column responsive layout (col-lg-6 each):
-  * Left: Detailed service cards with images
-  * Right: Interactive DataTable with search/sort/pagination
+- Two-section layout:
+  * Top: Detailed service cards (col-lg-6) - half width
+  * Bottom: Interactive DataTable (col-12) - full width
 - Full list of all services
 - Auto-load from _data/services.yml
 - Detailed service cards
@@ -49,22 +49,24 @@ Usage:
     </div>
 
     <!-- Services List -->
+    <!-- Card View Section (2 Columns) -->
     <div class="row mb-4">
-      <!-- Card View (Left Column) -->
-      <div class="col-lg-6">
-        {% for service in site.data.services.categories %}
-        <div class="mb-4">
-          <div class="card service-list-card service-{{ service.slug }} border-0 shadow-sm">
+      {% for service in site.data.services.categories %}
+      {% assign service_status = service.status | default: 'active' %}
+      {% if service_status == 'active' %}
+      <div class="col-lg-6 d-flex">
+        <div class="mb-4 w-100">
+          <div class="card service-list-card service-{{ service.slug }} border-0 shadow-sm h-100">
           <div class="card-body p-4 p-lg-5">
             <div class="row align-items-center">
 
               <!-- Service Image -->
-              <div class="col-lg-3 mb-3 mb-lg-0">
+              <div class="col-lg-2 mb-3 mb-lg-0">
                 {% if service.image %}
                 <img src="{{ service.image | relative_url }}"
                      alt="{{ service.name }}"
                      class="img-fluid rounded shadow-sm"
-                     style="width: 100%; height: 200px; object-fit: cover;"
+                     style="width: 100%; height: 120px; object-fit: cover;"
                      loading="lazy">
                 {% else %}
                 <div class="service-icon-large text-center">
@@ -74,13 +76,13 @@ Usage:
               </div>
 
               <!-- Service Content -->
-              <div class="col-lg-6 mb-3 mb-lg-0">
+              <div class="col-lg-10 mb-3 mb-lg-0">
                 <h3 class="h4 fw-bold mb-3">{{ service.name }}</h3>
                 <p class="text-muted mb-3">{{ service.description }}</p>
 
                 <!-- Service Features (if available) -->
                 {% if service.items %}
-                <div class="service-items">
+                <div class="service-items mb-3">
                   <h4 class="h6 fw-semibold mb-2 text-primary icon-text-sm">
                     <i class="bi bi-check-circle"></i>
                     <span>Meliputi:</span>
@@ -101,23 +103,23 @@ Usage:
                   </ul>
                 </div>
                 {% endif %}
-              </div>
 
-              <!-- Service Action -->
-              <div class="col-lg-3 text-center text-lg-end d-flex flex-column gap-2">
-                {% if service.slug %}
-                <a href="{{ '/layanan/' | append: service.slug | relative_url }}"
-                   class="btn btn-primary btn-lg mb-2 w-100 w-lg-auto">
-                  <i class="bi bi-arrow-right me-2"></i>
-                  Detail Layanan
-                </a>
-                {% endif %}
+                <!-- Service Actions (Compact Buttons) -->
+                <div class="d-flex gap-2 flex-wrap">
+                  {% if service.slug %}
+                  <a href="{{ '/layanan/' | append: service.slug | relative_url }}"
+                     class="btn btn-primary btn-sm">
+                    <i class="bi bi-arrow-right me-1"></i>
+                    Detail
+                  </a>
+                  {% endif %}
 
-                <a href="{{ '/contact' | relative_url }}"
-                   class="btn btn-outline-primary w-100 w-lg-auto">
-                  <i class="bi bi-telephone me-2"></i>
-                  Konsultasi
-                </a>
+                  <a href="{{ '/contact' | relative_url }}"
+                     class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-telephone me-1"></i>
+                    Konsultasi
+                  </a>
+                </div>
               </div>
 
             </div>
@@ -136,11 +138,14 @@ Usage:
         </div>
 
         </div>
-        {% endfor %}
       </div>
+      {% endif %}
+      {% endfor %}
+    </div>
 
-      <!-- Table View (Right Column) -->
-      <div class="col-lg-6">
+    <!-- Table View Section (Full Width) -->
+    <div class="row mb-4">
+      <div class="col-12">
         {% include block-templates/block--service-list.html %}
       </div>
     </div>

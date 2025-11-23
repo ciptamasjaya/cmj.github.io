@@ -50,6 +50,8 @@ Usage:
     <div class="row g-4">
 
       {% for service in site.data.services.categories %}
+      {% assign service_status = service.status | default: 'active' %}
+      {% if service_status == 'active' %}
       <div class="col-md-6 col-lg-4">
         <div class="card service-card border-0 shadow-sm h-100">
           <div class="card-body p-4 text-center">
@@ -92,6 +94,7 @@ Usage:
 
         </div>
       </div>
+      {% endif %}
       {% endfor %}
 
     </div>

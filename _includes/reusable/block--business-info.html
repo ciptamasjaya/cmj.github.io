@@ -175,7 +175,7 @@ Usage:
               </div>
 
               <!-- Services -->
-              {% if site.business.services and site.business.services.size > 0 %}
+              {% if site.data.services.categories and site.data.services.categories.size > 0 %}
               <div class="col-md-6">
                 <div class="info-item">
                   <div class="info-icon">
@@ -183,11 +183,14 @@ Usage:
                   </div>
                   <div class="info-content">
                     <h4 class="h6 fw-semibold text-muted mb-2">{{ site.data.business_info.fields.services.label }}</h4>
-                    {% for service in site.business.services %}
+                    {% for service in site.data.services.categories %}
+                    {% assign service_status = service.status | default: 'active' %}
+                    {% if service_status == 'active' %}
                     <p class="mb-1 small">
                       <i class="bi {{ service.icon | default: site.data.business_info.fields.services.default_service_icon }} text-success me-1"></i>
                       {{ service.name }}
                     </p>
+                    {% endif %}
                     {% endfor %}
                   </div>
                 </div>

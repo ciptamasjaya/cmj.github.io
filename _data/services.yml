@@ -1,5 +1,10 @@
 # Services Configuration for PT. Cipta Mas Jaya
 # This file defines all available services and their details
+#
+# Status field options:
+# - active: Service is displayed everywhere (default)
+# - draft: Service exists but not displayed in lists
+# - hidden: Service completely hidden (can be used for future services)
 
 # Main Service Categories
 categories:
@@ -11,7 +16,9 @@ categories:
     description: "Inspeksi dan riksa uji pesawat uap dan bejana tekan sesuai Permenaker No. 3 Tahun 2016"
     image: "/wp-content/uploads/2024/09/tenaga-ahli-pesawat-uap-dan-bejana-tekan-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-skp-sedang-inspeksi-k3-riksa-uji-boiler-21.jpg"
     featured: true
+    status: active
     order: 1
+    status: active
 
   - id: "pesawat-angkat"
     name: "Riksa Uji Pesawat Angkat Angkut"
@@ -21,6 +28,7 @@ categories:
     description: "Inspeksi dan riksa uji pesawat angkat dan angkut sesuai Permenaker No. 8 Tahun 2020"
     image: "/wp-content/uploads/2024/09/tenaga-ahli-pesawat-angkat-dan-angkut-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-pjk3-skp-sedang-riksa-uji-excavator-2.jpg"
     featured: true
+    status: active
     order: 2
     items:
       - name: "Riksa Uji Forklift"
@@ -45,6 +53,7 @@ categories:
     image: "/wp-content/uploads/2024/09/tenaga-ahli-pesawat-tenaga-dan-produksi-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-sedang-riksa-uji-chiler-0011.jpg"
     featured: true
     order: 3
+    status: active
 
   - id: "elevator-eskalator"
     name: "Riksa Uji Elevator dan Eskalator"
@@ -55,6 +64,7 @@ categories:
     image: "/wp-content/uploads/2024/09/tenaga-ahli-elevator-eskalator-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-skp-sedang-inspeksi-k3-riksa-uji-elevator-lift-047.jpg"
     featured: true
     order: 4
+    status: active
 
   - id: "instalasi-listrik-petir"
     name: "Riksa Uji Instalasi Listrik dan Penyalur Petir"
@@ -65,6 +75,7 @@ categories:
     image: "/wp-content/uploads/2024/10/riksa-uji-instalasi-listrik-pt-cipta-mas-jaya-013.jpeg"
     featured: true
     order: 5
+    status: active
 
   - id: "proteksi-kebakaran"
     name: "Riksa Uji Proteksi Sarana Kebakaran"
@@ -75,6 +86,7 @@ categories:
     image: "/wp-content/uploads/2024/09/tenaga-ahli-proteksi-kebakaran-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-skp-sedang-riksa-uji-hydrant-08.jpg"
     featured: true
     order: 6
+    status: active
 
   - id: "lifeline"
     name: "Riksa Uji Lifeline"
@@ -85,6 +97,7 @@ categories:
     image: "/wp-content/uploads/default/lifeline-service.svg"
     featured: true
     order: 7
+    status: draft
 
   - id: "lingkungan-kerja"
     name: "Riksa Uji Lingkungan Kerja"
@@ -95,6 +108,7 @@ categories:
     image: "/wp-content/uploads/default/environment-service.svg"
     featured: true
     order: 8
+    status: draft
 
   - id: "pengesahan-gambar"
     name: "Pengesahan Gambar Kemnaker RI"
@@ -105,6 +119,7 @@ categories:
     image: "/wp-content/uploads/default/document-service.svg"
     featured: true
     order: 9
+    status: draft
 
 # Detailed Services
 services:
