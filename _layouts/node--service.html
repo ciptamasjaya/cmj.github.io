@@ -59,22 +59,30 @@ by page--service.html wrapper, NOT in this node template.
     <!-- Service Icon/Image -->
     <div class="col-lg-4 mb-4">
       {% if page.image %}
+        {% assign service_image = page.image %}
+      {% elsif page.category %}
+        {% case page.category %}
+          {% when "Pesawat Angkat Angkut" %}
+            {% assign service_image = "/assets/images/services/default-pesawat-angkat-angkut.svg" %}
+          {% when "Bejana Tekan" %}
+            {% assign service_image = "/assets/images/services/default-bejana-tekan.svg" %}
+          {% when "Instalasi Listrik" %}
+            {% assign service_image = "/assets/images/services/default-instalasi.svg" %}
+          {% when "Instalasi Petir" %}
+            {% assign service_image = "/assets/images/services/default-instalasi.svg" %}
+          {% else %}
+            {% assign service_image = "/assets/images/services/default-service.svg" %}
+        {% endcase %}
+      {% else %}
+        {% assign service_image = "/assets/images/services/default-service.svg" %}
+      {% endif %}
+
       <div class="service-image-container">
-        <img src="{{ page.image | relative_url }}"
+        <img src="{{ service_image | relative_url }}"
              class="img-fluid rounded shadow"
              alt="{{ page.title }}"
              loading="eager">
       </div>
-      {% elsif page.icon %}
-      <div class="text-center p-5 bg-light rounded shadow">
-        <i class="bi {{ page.icon }} text-primary" style="font-size: 8rem;"></i>
-      </div>
-      {% else %}
-      <div class="text-center p-5 bg-light rounded">
-        <i class="bi bi-shield-check" style="font-size: 8rem; color: #ccc;"></i>
-        <p class="text-muted mt-3">Icon layanan</p>
-      </div>
-      {% endif %}
     </div>
 
     <!-- Service Info -->

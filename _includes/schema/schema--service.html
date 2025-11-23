@@ -1,0 +1,120 @@
+{% comment %}
+============================================================================
+Schema: Single Service Page (schema--service-page.html)
+============================================================================
+
+@file        schema--service-page.html
+@path        _includes/schema/schema--service-page.html
+@type        Schema (single service detail page)
+@description Schema.org markup for individual service detail pages
+@author      arisciwek
+@version     1.0.0
+@created     2025-11-24
+
+Features:
+- WebPage schema for service detail page
+- Service schema with full details
+- Provider (Organization) reference
+- Area served, service type, category
+- Optional: Offers (pricing), Rating/Review, FAQ
+
+Expected Frontmatter:
+---
+layout: node--service
+title: "Riksa Uji Forklift"
+description: "Inspeksi dan sertifikasi K3 forklift sesuai Permenaker"
+category: "Pesawat Angkat Angkut"
+service_type: "Safety Inspection"
+icon: "bi-box-arrow-up"
+image: "/assets/images/riksa-uji-pesawat-angkat-angkut/forklift/forklift-hero.jpg"
+
+# Optional fields
+price: 2500000
+price_currency: "IDR"
+rating: 4.8
+review_count: 15
+area_served: "Indonesia"
+---
+
+Usage:
+{% include schema/schema--service-page.html %}
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "{{ page.url | absolute_url }}#webpage",
+      "url": "{{ page.url | absolute_url }}",
+      "name": "{{ page.title | escape }}",
+      "description": "{{ page.description | escape }}",
+      "inLanguage": "id",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#website"
+      },
+      "about": {
+        "@id": "{{ page.url | absolute_url }}#service"
+      },
+      "datePublished": "{{ page.date | default: site.time | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | default: site.time | date_to_xmlschema }}"{% if page.image %},
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "{{ page.image | absolute_url }}",
+        "caption": "{{ page.title | escape }}"
+      }{% endif %}
+    },
+    {
+      "@type": "Service",
+      "@id": "{{ page.url | absolute_url }}#service",
+      "name": "{{ page.title | escape }}",
+      "description": "{{ page.description | escape }}",
+      "serviceType": "{{ page.service_type | default: 'Safety Inspection' }}",
+      "provider": {
+        "@type": "Organization",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+        "name": "{{ site.business.name }}",
+        "url": "{{ site.url }}{{ site.baseurl }}/",
+        "telephone": "{{ site.business.phone }}",
+        "email": "{{ site.business.email }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ site.business.address.street }}",
+          "addressLocality": "{{ site.business.address.city }}",
+          "addressRegion": "{{ site.business.address.province }}",
+          "postalCode": "{{ site.business.address.postalCode }}",
+          "addressCountry": "{{ site.business.address.country }}"
+        }
+      },
+      "areaServed": {
+        "@type": "{% if page.area_served == 'Indonesia' %}Country{% else %}Place{% endif %}",
+        "name": "{{ page.area_served | default: site.business.coverage }}"
+      }{% if page.category %},
+      "category": "{{ page.category }}"{% endif %}{% if page.image %},
+      "image": "{{ page.image | absolute_url }}"{% endif %}{% if page.price %},
+      "offers": {
+        "@type": "Offer",
+        "price": "{{ page.price }}",
+        "priceCurrency": "{{ page.price_currency | default: 'IDR' }}",
+        "availability": "https://schema.org/InStock",
+        "url": "{{ page.url | absolute_url }}",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ site.business.name }}"
+        }
+      }{% endif %}{% if page.rating and page.review_count %},
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ page.rating }}",
+        "reviewCount": "{{ page.review_count }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      }{% endif %}
+    }
+  ]
+}
+</script>

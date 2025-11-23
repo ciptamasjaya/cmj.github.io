@@ -69,8 +69,9 @@ build_site() {
 
     print_info "Building Jekyll site..."
     print_info "Config: $config_file"
+    print_info "Environment: production (HTML compression enabled)"
 
-    if bundle exec jekyll build --config "$config_file" --future; then
+    if JEKYLL_ENV=production bundle exec jekyll build --config "$config_file" --future; then
         print_success "Build completed successfully!"
 
         # Show build info

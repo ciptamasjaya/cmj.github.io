@@ -101,6 +101,19 @@ pagination:
     before: 2
     after: 2
 
+# HTML Compression
+# Uses jekyll-compress-html v3.0.1
+# https://github.com/penibelst/jekyll-compress-html
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+  ignore:
+    envs: [development]
+
 # Collections
 collections:
   services:

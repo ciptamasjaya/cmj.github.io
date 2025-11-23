@@ -1,0 +1,37 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#f8f9fa"/>
+
+  <!-- Crane/Forklift Icon -->
+  <g transform="translate(600, 280)">
+    <!-- Crane tower -->
+    <rect x="-20" y="-100" width="40" height="250" fill="#0d6efd" opacity="0.2"/>
+    <rect x="-15" y="-100" width="30" height="250" fill="#0d6efd"/>
+
+    <!-- Crane arm -->
+    <rect x="-120" y="-110" width="240" height="20" fill="#0d6efd"/>
+
+    <!-- Hook and cable -->
+    <line x1="80" y1="-90" x2="80" y2="0" stroke="#0d6efd" stroke-width="6"/>
+    <circle cx="80" cy="10" r="15" fill="#0d6efd"/>
+
+    <!-- Load box -->
+    <rect x="50" y="30" width="60" height="60" fill="#0d6efd" opacity="0.3" stroke="#0d6efd" stroke-width="4"/>
+
+    <!-- Warning stripes on tower -->
+    <rect x="-15" y="20" width="30" height="15" fill="#ffc107"/>
+    <rect x="-15" y="50" width="30" height="15" fill="#ffc107"/>
+
+    <!-- Base -->
+    <rect x="-60" y="150" width="120" height="20" fill="#6c757d"/>
+  </g>
+
+  <!-- Circle background decoration -->
+  <circle cx="600" cy="280" r="200" fill="#0d6efd" opacity="0.05"/>
+
+  <!-- Text -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="32" font-weight="600"
+        fill="#6c757d" text-anchor="middle">Riksa Uji Pesawat Angkat & Angkut</text>
+  <text x="600" y="560" font-family="Arial, sans-serif" font-size="24"
+        fill="#adb5bd" text-anchor="middle">PT. Cipta Mas Jaya</text>
+</svg>
