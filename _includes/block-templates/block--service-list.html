@@ -1,0 +1,342 @@
+{% comment %}
+============================================================================
+Block Template: Service List (Table View)
+============================================================================
+
+@file        block--service-list.html
+@path        _includes/block-templates/block--service-list.html
+@description Display services in table/list format with sorting and filtering
+@version     1.0.0
+@date        2025-11-24
+
+IMPORTANT - Schema.org:
+-----------------------
+This block also renders Schema.org markup for displayed services.
+The schema is output at the END of the block for better page structure.
+Visual rendering only in table, schema collected at block level using @graph.
+
+Features:
+---------
+- Table/list view of services
+- Sortable columns (name, category, rating, date)
+- Service image/icon thumbnail
+- Category/subcategory badges
+- Rating display with stars
+- Last modified date
+- Responsive table design
+- Mobile-friendly card fallback
+- Auto-filters by page category/subcategory
+
+Parameters:
+-----------
+- services: Array of services to display (default: all services)
+- category: Filter by specific category (default: page.category)
+- subcategory: Filter by specific subcategory (default: page.sub_category)
+- show_image: Show service image/icon (default: true)
+- show_rating: Show rating column (default: true)
+- show_date: Show last modified date (default: true)
+- show_category: Show category badges (default: true)
+- limit: Limit number of services (default: no limit)
+
+Usage:
+------
+Simple usage (auto-filter by page category):
+{% include block-templates/block--service-list.html %}
+
+Custom filtering:
+{% include block-templates/block--service-list.html
+   category="Riksa Uji Pesawat Angkat Angkut"
+   limit=10
+%}
+
+Pass custom service array:
+{% assign my_services = site.services | where: "featured", true %}
+{% include block-templates/block--service-list.html services=my_services %}
+
+Table Columns:
+--------------
+1. Image/Icon (thumbnail)
+2. Service Name & Description
+3. Category/Subcategory badges
+4. Rating (stars + count)
+5. Last Updated
+6. Action (link to detail)
+
+Responsive Behavior:
+--------------------
+- Desktop: Full table layout
+- Tablet: Compact table
+- Mobile: Card-based list (automatic fallback)
+
+============================================================================
+{% endcomment %}
+
+{% assign show_image = include.show_image | default: true %}
+{% assign show_rating = include.show_rating | default: true %}
+{% assign show_date = include.show_date | default: true %}
+{% assign show_category = include.show_category | default: true %}
+{% assign limit = include.limit %}
+{% assign filter_category = include.category | default: page.category %}
+{% assign filter_subcategory = include.subcategory | default: page.sub_category %}
+
+{% comment %} Get services array {% endcomment %}
+{% if include.services %}
+  {% assign all_services = include.services %}
+{% else %}
+  {% assign all_services = site.services | where_exp: "service", "service.layout == 'node--service'" %}
+{% endif %}
+
+{% comment %} Filter by category {% endcomment %}
+{% if filter_category %}
+  {% assign filtered_services = all_services | where: "category", filter_category %}
+{% else %}
+  {% assign filtered_services = all_services %}
+{% endif %}
+
+{% comment %} Further filter by subcategory if specified {% endcomment %}
+{% if filter_subcategory %}
+  {% assign filtered_services = filtered_services | where: "sub_category", filter_subcategory %}
+{% endif %}
+
+{% comment %} Sort by last_modified_at or date (newest first) {% endcomment %}
+{% assign sorted_services = filtered_services | sort: "last_modified_at" | reverse %}
+
+{% comment %} Apply limit if specified {% endcomment %}
+{% if limit %}
+  {% assign display_services = sorted_services | slice: 0, limit %}
+{% else %}
+  {% assign display_services = sorted_services %}
+{% endif %}
+
+{% if display_services.size > 0 %}
+<section class="block--service-list my-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="h3 mb-2">
+          <i class="bi bi-list-ul text-primary"></i>
+          Daftar Layanan
+        </h2>
+        <p class="text-muted mb-0 small">
+          Menampilkan {{ display_services.size }} layanan
+          {% if filter_subcategory %}dari {{ filter_subcategory }}{% elsif filter_category %}dari {{ filter_category }}{% endif %}
+        </p>
+      </div>
+    </div>
+
+    <!-- Desktop/Tablet Table View -->
+    <div class="table-responsive d-none d-md-block">
+      <table class="table table-hover align-middle">
+        <thead class="table-light">
+          <tr>
+            {% if show_image %}<th style="width: 80px;">Icon</th>{% endif %}
+            <th>Layanan</th>
+            {% if show_category %}<th style="width: 200px;">Kategori</th>{% endif %}
+            {% if show_rating %}<th style="width: 140px;">Rating</th>{% endif %}
+            {% if show_date %}<th style="width: 130px;">Update</th>{% endif %}
+            <th style="width: 100px;" class="text-center">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for service in display_services %}
+          <tr>
+            <!-- Image/Icon Column -->
+            {% if show_image %}
+            <td>
+              {% if service.image %}
+                <img src="{{ service.image | relative_url }}"
+                     alt="{{ service.title }}"
+                     class="img-thumbnail"
+                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+              {% elsif service.icon %}
+                <div class="d-flex align-items-center justify-content-center bg-light rounded"
+                     style="width: 60px; height: 60px;">
+                  <i class="bi bi-{{ service.icon }} text-primary" style="font-size: 2rem;"></i>
+                </div>
+              {% else %}
+                <div class="d-flex align-items-center justify-content-center bg-gradient-primary rounded"
+                     style="width: 60px; height: 60px;">
+                  <i class="bi bi-gear text-white" style="font-size: 2rem; opacity: 0.5;"></i>
+                </div>
+              {% endif %}
+            </td>
+            {% endif %}
+
+            <!-- Service Name & Description -->
+            <td>
+              <div>
+                <a href="{{ service.url | relative_url }}" class="text-decoration-none fw-semibold text-dark">
+                  {{ service.title }}
+                </a>
+                {% if service.description %}
+                <p class="text-muted small mb-0 mt-1">
+                  {{ service.description | strip_html | truncate: 100 }}
+                </p>
+                {% endif %}
+              </div>
+            </td>
+
+            <!-- Category/Subcategory Badges -->
+            {% if show_category %}
+            <td>
+              {% if service.category %}
+                <span class="badge bg-secondary small d-block mb-1">{{ service.category }}</span>
+              {% endif %}
+              {% if service.sub_category %}
+                <span class="badge bg-primary small d-block">{{ service.sub_category }}</span>
+              {% endif %}
+            </td>
+            {% endif %}
+
+            <!-- Rating Column -->
+            {% if show_rating %}
+            <td>
+              {% if service.rating %}
+                <div class="d-flex align-items-center gap-1">
+                  <div class="text-warning small">
+                    {% assign full_stars = service.rating | floor %}
+                    {% assign decimal = service.rating | minus: full_stars %}
+                    {% for i in (1..5) %}
+                      {% if i <= full_stars %}
+                        <i class="bi bi-star-fill"></i>
+                      {% elsif decimal >= 0.5 and i == full_stars | plus: 1 %}
+                        <i class="bi bi-star-half"></i>
+                      {% else %}
+                        <i class="bi bi-star"></i>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  <span class="small fw-bold">{{ service.rating }}</span>
+                </div>
+                {% if service.review_count %}
+                  <span class="text-muted small">({{ service.review_count }})</span>
+                {% endif %}
+              {% else %}
+                <span class="text-muted small">-</span>
+              {% endif %}
+            </td>
+            {% endif %}
+
+            <!-- Last Modified Date -->
+            {% if show_date %}
+            <td>
+              <small class="text-muted">
+                {{ service.last_modified_at | default: service.date | date: "%d %b %Y" }}
+              </small>
+            </td>
+            {% endif %}
+
+            <!-- Action Column -->
+            <td class="text-center">
+              <a href="{{ service.url | relative_url }}"
+                 class="btn btn-sm btn-outline-primary">
+                Detail
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile Card View (Fallback) -->
+    <div class="d-md-none">
+      {% for service in display_services %}
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex gap-3">
+            <!-- Service Image/Icon -->
+            {% if show_image %}
+            <div class="flex-shrink-0">
+              {% if service.image %}
+                <img src="{{ service.image | relative_url }}"
+                     alt="{{ service.title }}"
+                     class="img-thumbnail"
+                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+              {% elsif service.icon %}
+                <div class="d-flex align-items-center justify-content-center bg-light rounded"
+                     style="width: 60px; height: 60px;">
+                  <i class="bi bi-{{ service.icon }} text-primary" style="font-size: 2rem;"></i>
+                </div>
+              {% endif %}
+            </div>
+            {% endif %}
+
+            <!-- Service Info -->
+            <div class="flex-grow-1">
+              <h3 class="h6 mb-2">
+                <a href="{{ service.url | relative_url }}" class="text-decoration-none text-dark">
+                  {{ service.title }}
+                </a>
+              </h3>
+
+              <!-- Badges -->
+              {% if show_category %}
+              <div class="mb-2">
+                {% if service.sub_category %}
+                  <span class="badge bg-primary small me-1">{{ service.sub_category }}</span>
+                {% elsif service.category %}
+                  <span class="badge bg-secondary small me-1">{{ service.category }}</span>
+                {% endif %}
+              </div>
+              {% endif %}
+
+              <!-- Rating -->
+              {% if show_rating and service.rating %}
+              <div class="mb-2">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="text-warning small">
+                    {% assign full_stars = service.rating | floor %}
+                    {% for i in (1..5) %}
+                      {% if i <= full_stars %}
+                        <i class="bi bi-star-fill"></i>
+                      {% else %}
+                        <i class="bi bi-star"></i>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  <span class="small">{{ service.rating }}</span>
+                  {% if service.review_count %}
+                    <span class="text-muted small">({{ service.review_count }})</span>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+
+              <!-- Date -->
+              {% if show_date %}
+              <p class="text-muted small mb-2">
+                <i class="bi bi-clock-history"></i>
+                {{ service.last_modified_at | default: service.date | date: "%d %b %Y" }}
+              </p>
+              {% endif %}
+
+              <!-- Action Button -->
+              <a href="{{ service.url | relative_url }}" class="btn btn-sm btn-outline-primary">
+                Lihat Detail
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% comment %} Schema.org markup for services displayed in this block {% endcomment %}
+{% include schema/schema--service-list.html services=display_services %}
+
+{% endif %}
+
+<style>
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+</style>
