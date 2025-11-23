@@ -1,0 +1,203 @@
+{% comment %}
+============================================================================
+Block Template: Articles Related to Service Category
+============================================================================
+
+@file        block--articles-related-service.html
+@path        _includes/block-templates/block--articles-related-service.html
+@description Display blog articles related to current service category
+@version     1.0.0
+@date        2025-11-24
+
+Features:
+---------
+- Shows related blog posts from _posts collection
+- Filters by tags or categories matching service category
+- Shows latest 3 articles
+- Card layout with featured image, title, excerpt, date
+- Author info if available
+- Reading time estimation
+- Responsive grid layout
+
+Parameters:
+-----------
+- limit: Number of articles to show (default: 3)
+- category: Filter by specific category (default: page.category)
+- show_excerpt: Show article excerpt (default: true)
+
+Usage in Category Page:
+-----------------------
+{% include block-templates/block--articles-related-service.html %}
+
+Usage with custom settings:
+---------------------------
+{% include block-templates/block--articles-related-service.html
+   limit=4
+   category="Riksa Uji K3"
+%}
+
+SEO Benefits:
+-------------
+- Internal linking between services and blog content
+- Improves user engagement and time on site
+- Shows expertise and authority in category
+- Fresh content when new articles published
+
+Note:
+-----
+Articles should have tags or categories matching service categories
+Example post frontmatter:
+---
+layout: post
+title: "Panduan Riksa Uji Forklift 2025"
+tags: ["Riksa Uji Forklift", "K3", "Forklift"]
+category: "Riksa Uji Pesawat Angkat Angkut"
+---
+
+============================================================================
+{% endcomment %}
+
+{% assign limit = include.limit | default: 3 %}
+{% assign filter_category = include.category | default: page.category %}
+{% assign filter_subcategory = include.subcategory | default: page.sub_category %}
+{% assign show_excerpt = include.show_excerpt | default: true %}
+
+{% comment %} Get all posts {% endcomment %}
+{% assign all_posts = site.posts %}
+
+{% comment %} Filter posts by category or tags {% endcomment %}
+{% assign related_posts = "" | split: "" %}
+
+{% for post in all_posts %}
+  {% assign is_related = false %}
+
+  {% comment %} Check if post category matches {% endcomment %}
+  {% if post.category == filter_category or post.categories contains filter_category %}
+    {% assign is_related = true %}
+  {% endif %}
+
+  {% comment %} Check if post tags contain category or subcategory {% endcomment %}
+  {% if filter_category and post.tags contains filter_category %}
+    {% assign is_related = true %}
+  {% endif %}
+
+  {% if filter_subcategory and post.tags contains filter_subcategory %}
+    {% assign is_related = true %}
+  {% endif %}
+
+  {% if is_related %}
+    {% assign related_posts = related_posts | push: post %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Sort by date (newest first) {% endcomment %}
+{% assign sorted_posts = related_posts | sort: "date" | reverse %}
+
+{% if sorted_posts.size > 0 %}
+<section class="block--articles-related-service my-5 py-4">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="mb-4 pb-3 border-bottom">
+      <h2 class="h3 mb-2">
+        <i class="bi bi-journal-text text-primary"></i>
+        Artikel Terkait
+      </h2>
+      <p class="text-muted mb-0">
+        Panduan dan informasi seputar {{ filter_subcategory | default: filter_category }}
+      </p>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="row g-4">
+      {% for post in sorted_posts limit: limit %}
+      <div class="col-md-4">
+        <article class="card h-100 border-0 shadow-sm hover-lift">
+          <!-- Featured Image -->
+          {% if post.image or post.featured_image %}
+          <img src="{{ post.image | default: post.featured_image | relative_url }}"
+               class="card-img-top" alt="{{ post.title }}"
+               style="height: 200px; object-fit: cover;">
+          {% else %}
+          <div class="card-img-top bg-gradient-primary d-flex align-items-center justify-content-center text-white" style="height: 200px;">
+            <i class="bi bi-file-text" style="font-size: 4rem; opacity: 0.3;"></i>
+          </div>
+          {% endif %}
+
+          <div class="card-body d-flex flex-column">
+            <!-- Category Badge -->
+            {% if post.category %}
+            <span class="badge bg-primary mb-2 align-self-start small">
+              {{ post.category }}
+            </span>
+            {% endif %}
+
+            <!-- Title -->
+            <h3 class="card-title h5 mb-3">
+              <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark stretched-link">
+                {{ post.title }}
+              </a>
+            </h3>
+
+            <!-- Excerpt -->
+            {% if show_excerpt and post.excerpt %}
+            <p class="card-text text-muted small mb-3 flex-grow-1">
+              {{ post.excerpt | strip_html | truncate: 120 }}
+            </p>
+            {% endif %}
+
+            <!-- Meta Info -->
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between align-items-center text-muted small">
+                <span>
+                  <i class="bi bi-calendar3"></i>
+                  {{ post.date | date: "%d %b %Y" }}
+                </span>
+                {% if post.author %}
+                <span>
+                  <i class="bi bi-person"></i>
+                  {{ post.author }}
+                </span>
+                {% endif %}
+              </div>
+
+              {% comment %} Reading time estimate (150 words per minute) {% endcomment %}
+              {% assign words = post.content | number_of_words %}
+              {% assign reading_time = words | divided_by: 150 %}
+              {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+
+              <div class="text-muted small mt-2">
+                <i class="bi bi-clock"></i>
+                {{ reading_time }} menit baca
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- View All Articles Link -->
+    {% if sorted_posts.size > limit %}
+    <div class="text-center mt-4">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-primary">
+        Lihat Semua Artikel
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.hover-lift {
+  transition: all 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+}
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+}
+</style>
+{% endif %}

@@ -31,7 +31,7 @@
 
   <!-- Text -->
   <text x="600" y="520" font-family="Arial, sans-serif" font-size="32" font-weight="600"
-        fill="#6c757d" text-anchor="middle">Riksa Uji Pesawat Angkat & Angkut</text>
+        fill="#6c757d" text-anchor="middle">Riksa Uji Pesawat Angkat &amp; Angkut</text>
   <text x="600" y="560" font-family="Arial, sans-serif" font-size="24"
         fill="#adb5bd" text-anchor="middle">PT. Cipta Mas Jaya</text>
 </svg>

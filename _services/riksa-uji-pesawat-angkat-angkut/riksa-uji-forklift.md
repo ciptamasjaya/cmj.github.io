@@ -1,5 +1,5 @@
 ---
-layout: page--service
+layout: page--subcategory
 title: "Riksa Uji Forklift"
 description: "Jasa riksa uji dan inspeksi K3 forklift profesional untuk berbagai jenis forklift. Melayani seluruh Indonesia dengan sertifikat resmi Kementerian Ketenagakerjaan RI."
 permalink: /layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift/
@@ -67,11 +67,6 @@ proses:
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
 <!-- ========================================================================== -->
-
-<!-- Block: Intro Section (H1 + 2 Paragraphs) -->
-<section id="intro">
-  {% include block-templates/block--h1-2para.html data=page.intro %}
-</section>
 
 <!-- Block: Jenis Forklift (H2 + Cards Grid) -->
 <section id="jenis-forklift">

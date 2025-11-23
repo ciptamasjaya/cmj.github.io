@@ -1,5 +1,5 @@
 ---
-layout: page--service
+layout: page--category
 title: "Riksa Uji Pesawat Angkat Angkut"
 description: "Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional meliputi forklift, crane, hoist, dan conveyor sesuai standar Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan sertifikat resmi."
 permalink: /layanan/riksa-uji-pesawat-angkat-angkut/
@@ -66,11 +66,6 @@ proses_riksa_uji:
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
 <!-- ========================================================================== -->
-
-<!-- Block: Intro Section (H1 + 2 Paragraphs) -->
-<section id="intro">
-  {% include block-templates/block--h1-2para.html data=page.intro %}
-</section>
 
 <!-- Block: Jenis Layanan (H2 + Sub-Categories Grid) -->
 <section id="jenis-layanan">

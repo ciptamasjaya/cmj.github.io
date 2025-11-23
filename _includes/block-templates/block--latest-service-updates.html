@@ -1,0 +1,172 @@
+{% comment %}
+============================================================================
+Block Template: Latest Service Updates
+============================================================================
+
+@file        block--latest-service-updates.html
+@path        _includes/block-templates/block--latest-service-updates.html
+@description Display latest service updates from the same category/subcategory
+@version     1.0.0
+@date        2025-11-24
+
+Features:
+---------
+- Shows latest 3-5 services from current category/subcategory
+- Sorted by last_modified_at or date (newest first)
+- Card layout with image, title, excerpt, date
+- Auto-filters by page category/subcategory
+- "NEW" badge for services less than 30 days old
+- Responsive grid layout
+
+Parameters:
+-----------
+- limit: Number of services to show (default: 3)
+- show_excerpt: Show service description (default: true)
+- category: Filter by specific category (default: page.category)
+- subcategory: Filter by specific subcategory (default: page.sub_category)
+
+Usage in Category Page:
+-----------------------
+{% include block-templates/block--latest-service-updates.html %}
+
+Usage with custom limit:
+------------------------
+{% include block-templates/block--latest-service-updates.html limit=5 %}
+
+SEO Benefits:
+-------------
+- Category page content changes when new service added
+- Fresh content signals to Google
+- Better user experience with latest updates
+- Automatic - no manual maintenance needed
+
+============================================================================
+{% endcomment %}
+
+{% assign limit = include.limit | default: 3 %}
+{% assign show_excerpt = include.show_excerpt | default: true %}
+{% assign filter_category = include.category | default: page.category %}
+{% assign filter_subcategory = include.subcategory | default: page.sub_category %}
+
+{% comment %} Get all services from collection {% endcomment %}
+{% assign all_services = site.services | where_exp: "service", "service.layout == 'node--service'" %}
+
+{% comment %} Filter by category {% endcomment %}
+{% if filter_category %}
+  {% assign filtered_services = all_services | where: "category", filter_category %}
+{% else %}
+  {% assign filtered_services = all_services %}
+{% endif %}
+
+{% comment %} Further filter by subcategory if specified {% endcomment %}
+{% if filter_subcategory %}
+  {% assign filtered_services = filtered_services | where: "sub_category", filter_subcategory %}
+{% endif %}
+
+{% comment %} Sort by last_modified_at or date (newest first) {% endcomment %}
+{% assign sorted_services = filtered_services | sort: "last_modified_at" | reverse %}
+
+{% comment %} If no last_modified_at, sort by date {% endcomment %}
+{% if sorted_services.size == 0 %}
+  {% assign sorted_services = filtered_services | sort: "date" | reverse %}
+{% endif %}
+
+{% if sorted_services.size > 0 %}
+<section class="block--latest-service-updates my-5 py-4 bg-light rounded">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h2 class="h3 mb-2">
+          <i class="bi bi-clock-history text-primary"></i>
+          Layanan Terbaru
+        </h2>
+        <p class="text-muted mb-0 small">
+          Update terkini dari
+          {% if filter_subcategory %}{{ filter_subcategory }}{% elsif filter_category %}{{ filter_category }}{% else %}semua layanan{% endif %}
+        </p>
+      </div>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="row g-4">
+      {% for service in sorted_services limit: limit %}
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 hover-shadow">
+          <!-- Service Image -->
+          {% if service.image %}
+          <img src="{{ service.image | relative_url }}" class="card-img-top" alt="{{ service.title }}" style="height: 180px; object-fit: contain; background: #f8f9fa; padding: 1rem;">
+          {% else %}
+          <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 180px;">
+            <i class="bi bi-{{ service.icon | default: 'gear' }} text-primary" style="font-size: 4rem;"></i>
+          </div>
+          {% endif %}
+
+          <div class="card-body d-flex flex-column">
+            <!-- NEW Badge -->
+            {% comment %} Check if service is less than 30 days old {% endcomment %}
+            {% assign service_date = service.last_modified_at | default: service.date %}
+            {% assign days_old = 'now' | date: '%s' | minus: service_date | date: '%s' | divided_by: 86400 %}
+            {% if days_old < 30 %}
+            <span class="badge bg-success mb-2 align-self-start">
+              <i class="bi bi-stars"></i> NEW
+            </span>
+            {% endif %}
+
+            <!-- Title -->
+            <h3 class="card-title h5">
+              <a href="{{ service.url | relative_url }}" class="text-decoration-none text-dark stretched-link">
+                {{ service.title }}
+              </a>
+            </h3>
+
+            <!-- Excerpt -->
+            {% if show_excerpt and service.description %}
+            <p class="card-text text-muted small mb-3 flex-grow-1">
+              {{ service.description | truncate: 120 }}
+            </p>
+            {% endif %}
+
+            <!-- Meta Info -->
+            <div class="mt-auto">
+              <div class="d-flex justify-content-between align-items-center text-muted small">
+                <span>
+                  <i class="bi bi-calendar3"></i>
+                  {{ service_date | date: "%d %b %Y" }}
+                </span>
+                {% if service.rating %}
+                <span class="text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  {{ service.rating }}
+                </span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- View All Link -->
+    {% if sorted_services.size > limit %}
+    <div class="text-center mt-4">
+      <a href="{{ '/layanan/' | relative_url }}" class="btn btn-outline-primary">
+        Lihat Semua Layanan
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.hover-shadow {
+  transition: all 0.3s ease;
+}
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+}
+</style>
+{% endif %}

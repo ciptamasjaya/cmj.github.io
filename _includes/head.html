@@ -9,12 +9,21 @@
   <meta name="author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.business.name }}{% endif %}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
+  {% comment %} OG Image Logic: page.image > default service image {% endcomment %}
+  {% assign og_image = '/assets/images/services/1.svg' %}
+  {% if page.image and page.image != '' %}
+    {% assign og_image = page.image %}
+  {% endif %}
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="{% if page.layout == 'node--post' %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/services/1.svg' | absolute_url }}{% endif %}">
+  <meta property="og:image" content="{{ og_image | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ page.title | default: site.title }}">
   <meta property="og:locale" content="id_ID">
 
   <!-- Twitter -->
@@ -22,7 +31,8 @@
   <meta name="twitter:url" content="{{ page.url | absolute_url }}">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/services/1.svg' | absolute_url }}{% endif %}">
+  <meta name="twitter:image" content="{{ og_image | absolute_url }}">
+  <meta name="twitter:image:alt" content="{{ page.title | default: site.title }}">
 
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>

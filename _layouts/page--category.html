@@ -1,0 +1,118 @@
+---
+layout: compress
+---
+{% comment %}
+============================================================================
+Page Wrapper: Category Pages (page--category.html)
+============================================================================
+
+@file        page--category.html
+@path        _layouts/page--category.html
+@type        Page (wrapper - variant)
+@variant     category (service category listing)
+@description Category page wrapper for service category listing pages
+@author      arisciwek
+@date        2025-11-24
+
+Drupal-style naming: page--category.html (variant of page.html)
+
+This wrapper is specifically for category listing pages that display
+multiple subcategories or services within a main category.
+
+Used by:
+- _services/riksa-uji-pesawat-angkat-angkut.md (category page)
+- Other category listing pages
+
+Frontmatter Required:
+- is_category_page: true
+- category: "Category Name"
+
+Site Structure:
+- HTML doctype and lang attribute
+- head.html (meta tags, CSS, scripts)
+- header.html (logo, navigation menu)
+- main.main-content:
+  - {{ content }} renders category page content
+- footer.html (site footer with business info)
+
+Usage:
+Set in category page frontmatter:
+  ---
+  layout: page--category
+  is_category_page: true
+  category: "Riksa Uji Pesawat Angkat Angkut"
+  ---
+
+============================================================================
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <main class="main-content">
+    <!-- Breadcrumb Navigation -->
+    {% include reusable/block--breadcrumb.html %}
+
+    <!-- Category Page Content -->
+    <div class="container py-5">
+      <div class="row mb-5">
+        <!-- Category Carousel -->
+        <div class="col-lg-4 mb-4">
+          {% include reusable/block--service-carousel.html max_height="300px" %}
+
+          <div class="text-center mt-3">
+            {% if page.category %}
+            <span class="badge bg-primary fs-6 px-3 py-2">{{ page.category }}</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Category Info -->
+        <div class="col-lg-8">
+          <h1 class="display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+          {% if page.intro.para_1 %}
+          <p class="lead mb-3">{{ page.intro.para_1 }}</p>
+          {% endif %}
+          {% if page.intro.para_2 %}
+          <p class="mb-4">{{ page.intro.para_2 }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Category Content Blocks -->
+      {{ content }}
+
+      <!-- Latest Service Updates -->
+      {% include block-templates/block--latest-service-updates.html limit=4 %}
+
+      <!-- Related Articles -->
+      {% include block-templates/block--articles-related-service.html limit=3 %}
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" %}
+
+  <!-- Global Schema: WebSite + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Breadcrumb Schema (BreadcrumbList) -->
+  {% if page.show_breadcrumb_schema %}
+    {% include schema/schema--breadcrumb.html %}
+  {% endif %}
+
+  <!-- Page-specific schemas -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,130 @@
+---
+layout: compress
+---
+{% comment %}
+============================================================================
+Page Wrapper: Subcategory Pages (page--subcategory.html)
+============================================================================
+
+@file        page--subcategory.html
+@path        _layouts/page--subcategory.html
+@type        Page (wrapper - variant)
+@variant     subcategory (service subcategory listing)
+@description Subcategory page wrapper for service subcategory listing pages
+@author      arisciwek
+@date        2025-11-24
+
+Drupal-style naming: page--subcategory.html (variant of page.html)
+
+This wrapper is specifically for subcategory listing pages that display
+multiple service types within a subcategory.
+
+Example:
+- Category: Riksa Uji Pesawat Angkat Angkut
+  - Subcategory: Riksa Uji Forklift (this page type)
+    - Service: Riksa Uji Forklift Counterbalance
+    - Service: Riksa Uji Reach Truck
+    - Service: Riksa Uji Stacker
+
+Used by:
+- _services/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift.md
+- Other subcategory listing pages
+
+Frontmatter Required:
+- is_subcategory_page: true
+- category: "Parent Category Name"
+- sub_category: "Subcategory Name"
+
+Site Structure:
+- HTML doctype and lang attribute
+- head.html (meta tags, CSS, scripts)
+- header.html (logo, navigation menu)
+- main.main-content:
+  - {{ content }} renders subcategory page content
+- footer.html (site footer with business info)
+
+Usage:
+Set in subcategory page frontmatter:
+  ---
+  layout: page--subcategory
+  is_subcategory_page: true
+  category: "Riksa Uji Pesawat Angkat Angkut"
+  sub_category: "Riksa Uji Forklift"
+  ---
+
+============================================================================
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <main class="main-content">
+    <!-- Breadcrumb Navigation -->
+    {% include reusable/block--breadcrumb.html %}
+
+    <!-- Subcategory Page Content -->
+    <div class="container py-5">
+      <div class="row mb-5">
+        <!-- Subcategory Carousel -->
+        <div class="col-lg-4 mb-4">
+          {% include reusable/block--service-carousel.html max_height="300px" %}
+
+          <div class="text-center mt-3">
+            {% if page.category %}
+            <span class="badge bg-secondary mb-2 d-block">{{ page.category }}</span>
+            {% endif %}
+            {% if page.sub_category %}
+            <span class="badge bg-primary fs-6 px-3 py-2">{{ page.sub_category }}</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Subcategory Info -->
+        <div class="col-lg-8">
+          <h1 class="display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+          {% if page.intro.para_1 %}
+          <p class="lead mb-3">{{ page.intro.para_1 }}</p>
+          {% endif %}
+          {% if page.intro.para_2 %}
+          <p class="mb-4">{{ page.intro.para_2 }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Subcategory Content Blocks -->
+      {{ content }}
+
+      <!-- Latest Service Updates -->
+      {% include block-templates/block--latest-service-updates.html limit=3 %}
+
+      <!-- Related Articles -->
+      {% include block-templates/block--articles-related-service.html limit=3 %}
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" %}
+
+  <!-- Global Schema: WebSite + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Breadcrumb Schema (BreadcrumbList) -->
+  {% if page.show_breadcrumb_schema %}
+    {% include schema/schema--breadcrumb.html %}
+  {% endif %}
+
+  <!-- Page-specific schemas -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

@@ -136,14 +136,23 @@ Carousel with fade effect:
         {% assign img_caption = nil %}
       {% endif %}
 
-      <picture>
-        <source srcset="{{ img_src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | relative_url }}" type="image/webp">
+      {% comment %} Check if image is SVG (no webp conversion needed) {% endcomment %}
+      {% if img_src contains '.svg' %}
         <img src="{{ img_src | relative_url }}"
              class="d-block w-100 rounded"
              alt="{{ img_title }} - Foto {{ forloop.index }}"
              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-             style="max-height: {{ max_height }}; object-fit: cover;">
-      </picture>
+             style="height: {{ max_height }}; width: 100%; object-fit: contain; background-color: #f8f9fa;">
+      {% else %}
+        <picture>
+          <source srcset="{{ img_src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | relative_url }}" type="image/webp">
+          <img src="{{ img_src | relative_url }}"
+               class="d-block w-100 rounded"
+               alt="{{ img_title }} - Foto {{ forloop.index }}"
+               loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+               style="max-height: {{ max_height }}; object-fit: cover;">
+        </picture>
+      {% endif %}
 
       {% if img_caption or img_title %}
       <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded px-3 py-2">
