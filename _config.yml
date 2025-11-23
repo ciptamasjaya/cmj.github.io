@@ -87,6 +87,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-paginate-v2
+  - jekyll-last-modified-at
 
 # Pagination Settings
 pagination:
@@ -135,3 +136,12 @@ exclude:
   - .jekyll-cache
   - README.md
   - LICENSE
+  - RELEASE/
+  - TEMPLATES/
+  - TODO/
+  - RELEASE_NOTES.md
+  - CHANGELOG.md
+  - COMPONENTS.md
+  - SCSS-GUIDE.md
+  - STRUKTUR-PROJECT.md
+  - rebuild.sh
