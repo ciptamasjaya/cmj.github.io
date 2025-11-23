@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#28a745;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e7e34;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Icon - Document/Certificate -->
+  <rect x="280" y="140" width="240" height="300" rx="10" fill="url(#grad2)" opacity="0.1"/>
+  <rect x="290" y="150" width="220" height="280" rx="8" fill="url(#grad2)" stroke="#155724" stroke-width="3"/>
+
+  <!-- Document lines -->
+  <line x1="320" y1="200" x2="480" y2="200" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <line x1="320" y1="240" x2="480" y2="240" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  <line x1="320" y1="280" x2="450" y2="280" stroke="white" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Stamp/Seal -->
+  <circle cx="430" cy="370" r="35" fill="none" stroke="white" stroke-width="4"/>
+  <text x="430" y="378" font-family="Arial, sans-serif" font-size="18" font-weight="bold"
+        fill="white" text-anchor="middle">K3</text>
+
+  <!-- Text -->
+  <text x="400" y="480" font-family="Arial, sans-serif" font-size="32" font-weight="bold"
+        fill="#333" text-anchor="middle">Inspeksi Profesional</text>
+  <text x="400" y="520" font-family="Arial, sans-serif" font-size="20"
+        fill="#666" text-anchor="middle">Sertifikat Resmi</text>
+</svg>

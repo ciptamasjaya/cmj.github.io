@@ -1,0 +1,38 @@
+{% comment %}
+============================================================================
+Block: H1 + 2 Paragraphs (block--h1-2para.html)
+============================================================================
+@file    block--h1-2para.html
+@version 1.0.0
+@date    2025-11-24
+
+Heading Structure:
+- 1x H1: Main title
+- 2x Para: Intro paragraphs (para_1 for SEO definition, para_2 for detail)
+
+Usage:
+------
+Frontmatter (in .md file):
+---
+intro_section:
+  h1: "Riksa Uji Forklift - Jasa Inspeksi K3 Profesional"
+  para_1: "Apa yang dimaksud dengan riksa uji forklift? Riksa uji forklift..."
+  para_2: "PT. Cipta Mas Jaya sebagai PJK3..."
+---
+
+Include in content:
+<section id="intro">
+  {% include block-templates/block--h1-2para.html data=page.intro_section %}
+</section>
+
+============================================================================
+{% endcomment %}
+
+{% assign d = include.data %}
+{% if d %}
+<div class="intro-section mb-5">
+  {% if d.h1 %}<h1 class="h1 display-5 fw-bold text-primary mb-4">{{ d.h1 }}</h1>{% endif %}
+  {% if d.para_1 %}<p class="para_1 lead mb-4">{{ d.para_1 }}</p>{% endif %}
+  {% if d.para_2 %}<p class="para_2 mb-4">{{ d.para_2 }}</p>{% endif %}
+</div>
+{% endif %}

@@ -2,11 +2,13 @@
 layout: node--service
 title: "Riksa Uji Forklift"
 description: "Jasa riksa uji dan inspeksi K3 forklift profesional dengan sertifikat resmi Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan inspector bersertifikat dan peralatan terkalibrasi."
-category: "Pesawat Angkat Angkut"
+permalink: /layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift/riksa-uji-forklift/
+category: "Riksa Uji Pesawat Angkat Angkut"
+sub_category: "Riksa Uji Forklift"
 service_type: "Safety Inspection"
 icon: "bi-box-arrow-up"
-image: "/assets/images/services/default-pesawat-angkat-angkut.svg"
 area_served: "Indonesia"
+content_structure: "1xh1, 2xpara, h2(para+3xh3@2xh4), h2(para+h3@h4), h2(para), h2(para)"
 date: 2025-11-24
 last_modified_at: 2025-11-24
 show_breadcrumb_schema: true
@@ -16,8 +18,33 @@ show_breadcrumb_schema: true
 # price_currency: "IDR"
 # rating: 4.8
 # review_count: 15
+
+# ============================================================================
+# BLOCK DATA - Content Sections
+# ============================================================================
+
+# Block 1: Intro Section (H1 + 2 Paragraphs)
+intro:
+  h1: "Riksa Uji Forklift - Jasa Inspeksi K3 Profesional"
+  para_1: "Riksa uji forklift merupakan pemeriksaan dan pengujian keselamatan terhadap forklift yang wajib dilakukan secara berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini bertujuan untuk memastikan forklift beroperasi dengan aman dan sesuai standar keselamatan kerja yang berlaku."
+  para_2: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker untuk memastikan keselamatan operasional di tempat kerja Anda."
+
 ---
 
+<!-- ========================================================================== -->
+<!-- CONTENT AREA - Block-Based -->
+<!-- ========================================================================== -->
+
+<!-- Block: Intro Section (H1 + 2 Paragraphs) -->
+<section id="intro">
+  {% include block-templates/block--h1-2para.html data=page.intro %}
+</section>
+
+<!-- ========================================================================== -->
+<!-- TEMPORARY: Markdown content below will be removed after block conversion -->
+<!-- ========================================================================== -->
+
+<!--
 # Riksa Uji Forklift - Jasa Inspeksi K3 Profesional
 
 Riksa uji forklift merupakan pemeriksaan dan pengujian keselamatan terhadap forklift yang wajib dilakukan secara berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini bertujuan untuk memastikan forklift beroperasi dengan aman dan sesuai standar keselamatan kerja yang berlaku.
@@ -71,3 +98,5 @@ Melakukan riksa uji forklift secara berkala memberikan berbagai manfaat jangka p
 ## Proses Riksa Uji di PT. Cipta Mas Jaya
 
 Proses riksa uji kami dirancang untuk memberikan layanan yang efisien tanpa mengganggu operasional perusahaan Anda. Kami dapat melakukan inspeksi on-site di lokasi Anda dengan membawa peralatan testing portable yang lengkap. Tim inspector kami yang berpengalaman akan melakukan pemeriksaan sistematis sesuai checklist standar Kemnaker RI dan memberikan hasil yang akurat dan dapat dipercaya.
+
+-->

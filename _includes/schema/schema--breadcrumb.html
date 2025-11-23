@@ -24,9 +24,7 @@ Or include directly in page:
 ============================================================================
 {% endcomment %}
 
-{% comment %} Build breadcrumb items based on URL path {% endcomment %}
-{% assign url_parts = page.url | split: '/' %}
-{% assign breadcrumb_path = '' %}
+{% comment %} Build breadcrumb items based on category/sub_category {% endcomment %}
 {% assign position = 1 %}
 
 <script type="application/ld+json">
@@ -40,10 +38,51 @@ Or include directly in page:
       "name": "Beranda",
       "item": "{{ site.url }}{{ site.baseurl }}/"
     }
-    {% if page.url != '/' and page.url != '/index.html' %}
+    {% comment %} Add "Layanan" if page is service-related {% endcomment %}
+    {% if page.layout == 'node--service' or page.layout == 'page--service' or page.category %}
     ,{
       "@type": "ListItem",
       "position": 2,
+      "name": "Layanan",
+      "item": "{{ site.url }}{{ site.baseurl }}/layanan/"
+    }
+    {% assign position = 3 %}
+    {% else %}
+    {% assign position = 2 %}
+    {% endif %}
+
+    {% comment %} Add Category if exists {% endcomment %}
+    {% if page.category and page.category != '' %}
+      {% comment %} Generate category URL from category name {% endcomment %}
+      {% assign category_slug = page.category | downcase | replace: ' ', '-' | replace: 'å', 'a' | replace: 'ä', 'a' | replace: 'ö', 'o' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ page.category }}",
+      "item": "{{ site.url }}{{ site.baseurl }}/layanan/{{ category_slug }}/"
+    }
+    {% assign position = position | plus: 1 %}
+    {% endif %}
+
+    {% comment %} Add Sub Category if exists {% endcomment %}
+    {% if page.sub_category and page.sub_category != '' %}
+      {% comment %} Generate subcategory URL {% endcomment %}
+      {% assign category_slug = page.category | downcase | replace: ' ', '-' | replace: 'å', 'a' | replace: 'ä', 'a' | replace: 'ö', 'o' %}
+      {% assign subcategory_slug = page.sub_category | downcase | replace: ' ', '-' | replace: 'å', 'a' | replace: 'ä', 'a' | replace: 'ö', 'o' %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ page.sub_category }}",
+      "item": "{{ site.url }}{{ site.baseurl }}/layanan/{{ category_slug }}/{{ subcategory_slug }}/"
+    }
+    {% assign position = position | plus: 1 %}
+    {% endif %}
+
+    {% comment %} Add Current Page (if not homepage and not subcategory page) {% endcomment %}
+    {% if page.url != '/' and page.url != '/index.html' and page.is_subcategory_page != true %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
       "name": "{{ page.title }}",
       "item": "{{ page.url | absolute_url }}"
     }

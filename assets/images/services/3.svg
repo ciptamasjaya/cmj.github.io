@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffc107;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0a800;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Icon - Gear/Settings -->
+  <circle cx="400" cy="250" r="120" fill="url(#grad3)" opacity="0.1"/>
+  <circle cx="400" cy="250" r="80" fill="url(#grad3)"/>
+  <circle cx="400" cy="250" r="40" fill="#f8f9fa"/>
+
+  <!-- Gear teeth -->
+  <g fill="url(#grad3)">
+    <rect x="390" y="150" width="20" height="30" rx="3"/>
+    <rect x="390" y="320" width="20" height="30" rx="3"/>
+    <rect x="480" y="240" width="30" height="20" rx="3"/>
+    <rect x="290" y="240" width="30" height="20" rx="3"/>
+  </g>
+
+  <!-- Text -->
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="32" font-weight="bold"
+        fill="#333" text-anchor="middle">Peralatan Terkalibrasi</text>
+  <text x="400" y="490" font-family="Arial, sans-serif" font-size="20"
+        fill="#666" text-anchor="middle">Standar Kemnaker RI</text>
+</svg>

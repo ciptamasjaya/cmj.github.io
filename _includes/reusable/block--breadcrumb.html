@@ -50,36 +50,96 @@ Example dengan custom parameters:
 ============================================================================
 {% endcomment %}
 
-{% if page.breadcrumbs %}
+{% comment %} Auto-generate breadcrumb from category/sub_category or use manual breadcrumbs {% endcomment %}
 {% assign separator = include.separator | default: "bi-chevron-right" %}
 {% assign background = include.background | default: "bg-light" %}
 {% assign padding = include.padding | default: "py-3" %}
 {% assign margin = include.margin | default: "mb-4" %}
 
+{% comment %} Build breadcrumb items array {% endcomment %}
+{% assign breadcrumb_items = "" | split: "" %}
+
+{% comment %} Always add Home {% endcomment %}
+{% assign home_item = '{"title":"Beranda","url":"/"}' %}
+{% assign breadcrumb_items = breadcrumb_items | push: home_item %}
+
+{% comment %} Add Layanan for service pages {% endcomment %}
+{% if page.layout == 'node--service' or page.layout == 'page--service' or page.category %}
+  {% assign layanan_item = '{"title":"Layanan","url":"/layanan/"}' %}
+  {% assign breadcrumb_items = breadcrumb_items | push: layanan_item %}
+{% endif %}
+
+{% comment %} Add Category if exists {% endcomment %}
+{% if page.category and page.category != '' %}
+  {% assign category_slug = page.category | downcase | replace: ' ', '-' %}
+  {% assign category_url = '/layanan/' | append: category_slug | append: '/' %}
+  {% assign category_item = '{"title":"' | append: page.category | append: '","url":"' | append: category_url | append: '"}' %}
+  {% assign breadcrumb_items = breadcrumb_items | push: category_item %}
+{% endif %}
+
+{% comment %} Add Sub Category if exists {% endcomment %}
+{% if page.sub_category and page.sub_category != '' %}
+  {% assign category_slug = page.category | downcase | replace: ' ', '-' %}
+  {% assign subcategory_slug = page.sub_category | downcase | replace: ' ', '-' %}
+  {% assign subcategory_url = '/layanan/' | append: category_slug | append: '/' | append: subcategory_slug | append: '/' %}
+  {% assign subcategory_item = '{"title":"' | append: page.sub_category | append: '","url":"' | append: subcategory_url | append: '"}' %}
+  {% assign breadcrumb_items = breadcrumb_items | push: subcategory_item %}
+{% endif %}
+
+{% comment %} Add current page title {% endcomment %}
+{% if page.url != '/' and page.url != '/index.html' and page.is_subcategory_page != true %}
+  {% assign current_item = '{"title":"' | append: page.title | append: '","active":true}' %}
+  {% assign breadcrumb_items = breadcrumb_items | push: current_item %}
+{% endif %}
+
 <div class="block--breadcrumb {{ background }} {{ padding }} {{ margin }}">
   <div class="container">
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
-        {% for item in page.breadcrumbs %}
-        <li class="breadcrumb-item{% if item.active %} active{% endif %}"
-            {% if item.active %}aria-current="page"{% endif %}
-            itemprop="itemListElement"
-            itemscope
-            itemtype="https://schema.org/ListItem">
-
-          {% if item.active %}
-            <span itemprop="name">{{ item.title }}</span>
-          {% else %}
-            <a href="{{ item.url | relative_url }}" itemprop="item">
-              <span itemprop="name">{{ item.title }}</span>
-            </a>
-          {% endif %}
-
-          <meta itemprop="position" content="{{ forloop.index }}" />
+      <ol class="breadcrumb mb-0">
+        {% comment %} Home {% endcomment %}
+        <li class="breadcrumb-item">
+          <a href="{{ site.baseurl }}/" class="text-decoration-none">
+            <i class="bi bi-house-door"></i> Beranda
+          </a>
         </li>
-        {% endfor %}
+
+        {% comment %} Layanan {% endcomment %}
+        {% if page.layout == 'node--service' or page.layout == 'page--service' or page.category %}
+        <li class="breadcrumb-item">
+          <a href="{{ site.baseurl }}/layanan/" class="text-decoration-none">Layanan</a>
+        </li>
+        {% endif %}
+
+        {% comment %} Category {% endcomment %}
+        {% if page.category and page.category != '' %}
+          {% assign category_slug = page.category | downcase | replace: ' ', '-' %}
+          {% if page.is_category_page %}
+          <li class="breadcrumb-item active" aria-current="page">{{ page.category }}</li>
+          {% else %}
+          <li class="breadcrumb-item">
+            <a href="{{ site.baseurl }}/layanan/{{ category_slug }}/" class="text-decoration-none">{{ page.category }}</a>
+          </li>
+          {% endif %}
+        {% endif %}
+
+        {% comment %} Sub Category {% endcomment %}
+        {% if page.sub_category and page.sub_category != '' %}
+          {% assign category_slug = page.category | downcase | replace: ' ', '-' %}
+          {% assign subcategory_slug = page.sub_category | downcase | replace: ' ', '-' %}
+          {% if page.is_subcategory_page %}
+          <li class="breadcrumb-item active" aria-current="page">{{ page.sub_category }}</li>
+          {% else %}
+          <li class="breadcrumb-item">
+            <a href="{{ site.baseurl }}/layanan/{{ category_slug }}/{{ subcategory_slug }}/" class="text-decoration-none">{{ page.sub_category }}</a>
+          </li>
+          {% endif %}
+        {% endif %}
+
+        {% comment %} Current Page {% endcomment %}
+        {% if page.url != '/' and page.url != '/index.html' and page.is_category_page != true and page.is_subcategory_page != true %}
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+        {% endif %}
       </ol>
     </nav>
   </div>
 </div>
-{% endif %}

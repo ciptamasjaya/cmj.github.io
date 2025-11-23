@@ -1,0 +1,80 @@
+{% comment %}
+============================================================================
+Block: H2 + Sub-Categories Grid (block--h2-subcategories.html)
+============================================================================
+@file    block--h2-subcategories.html
+@version 1.0.0
+@date    2025-11-24
+
+Heading Structure:
+- 1x H2: Section title
+- 1x Para: Intro paragraph
+- Nx Cards: Sub-category cards (via loop)
+  - H3: Sub-category title
+  - Para: Description
+  - Link: URL to sub-category page
+
+Usage:
+------
+Frontmatter:
+---
+jenis_layanan:
+  h2: "Jenis Layanan Riksa Uji Pesawat Angkat Angkut"
+  para: "Kami menyediakan layanan riksa uji untuk berbagai jenis..."
+  sub_categories:
+    - title: "Riksa Uji Forklift"
+      description: "Inspeksi dan pengujian forklift..."
+      url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift/"
+      icon: "bi-box-arrow-up"
+    - title: "Riksa Uji Crane"
+      description: "Pemeriksaan crane overhead..."
+      url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-crane/"
+      icon: "bi-arrow-up-square"
+---
+
+Include:
+<section id="jenis-layanan">
+  {% include block-templates/block--h2-subcategories.html data=page.jenis_layanan %}
+</section>
+
+============================================================================
+{% endcomment %}
+
+{% assign d = include.data %}
+{% if d %}
+<div class="section-subcategories mb-5">
+
+  {%- comment -%} H2 Title + Intro Para {%- endcomment -%}
+  {% if d.h2 %}<h2 class="h2 h3 fw-bold text-dark mb-3">{{ d.h2 }}</h2>{% endif %}
+  {% if d.para %}<p class="para mb-4">{{ d.para }}</p>{% endif %}
+
+  {%- comment -%} Sub-categories Grid {%- endcomment -%}
+  {% if d.sub_categories %}
+  <div class="row g-4">
+    {% for item in d.sub_categories %}
+    <div class="col-md-6 col-lg-3">
+      <div class="card subcategory-card border-0 shadow-sm h-100 hover-lift">
+        <div class="card-body text-center p-4">
+          {% if item.icon %}
+          <div class="icon-circle bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+            <i class="bi {{ item.icon }} text-primary" style="font-size: 1.75rem;"></i>
+          </div>
+          {% endif %}
+
+          <h3 class="h3 h5 fw-semibold mb-2">{{ item.title }}</h3>
+          <p class="para small text-muted mb-3">{{ item.description }}</p>
+
+          {% if item.url %}
+          <a href="{{ item.url | relative_url }}" class="btn btn-sm btn-outline-primary">
+            Selengkapnya <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</div>
+{% endif %}

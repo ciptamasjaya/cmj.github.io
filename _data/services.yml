@@ -15,13 +15,26 @@ categories:
 
   - id: "pesawat-angkat"
     name: "Riksa Uji Pesawat Angkat Angkut"
-    slug: "pesawat-angkat"
+    slug: "riksa-uji-pesawat-angkat-angkut"
     icon: "bi-box-arrow-up"
     color: "info"
     description: "Inspeksi dan riksa uji pesawat angkat dan angkut sesuai Permenaker No. 8 Tahun 2020"
     image: "/wp-content/uploads/2024/09/tenaga-ahli-pesawat-angkat-dan-angkut-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-pjk3-skp-sedang-riksa-uji-excavator-2.jpg"
     featured: true
     order: 2
+    items:
+      - name: "Riksa Uji Forklift"
+        slug: "riksa-uji-forklift"
+        url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift/"
+      - name: "Riksa Uji Crane"
+        slug: "riksa-uji-crane"
+        url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-crane/"
+      - name: "Riksa Uji Hoist"
+        slug: "riksa-uji-hoist"
+        url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-hoist/"
+      - name: "Riksa Uji Lift Barang"
+        slug: "riksa-uji-lift-barang"
+        url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-lift-barang/"
 
   - id: "pesawat-tenaga"
     name: "Riksa Uji Pesawat Tenaga Dan Produksi"

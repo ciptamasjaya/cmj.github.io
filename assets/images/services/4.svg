@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+
+  <!-- Gradient -->
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc3545;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bd2130;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Icon - Inspector with clipboard -->
+  <circle cx="400" cy="250" r="120" fill="url(#grad4)" opacity="0.1"/>
+
+  <!-- Person silhouette -->
+  <circle cx="400" cy="200" r="40" fill="url(#grad4)"/>
+  <ellipse cx="400" cy="300" rx="60" ry="80" fill="url(#grad4)"/>
+
+  <!-- Clipboard -->
+  <rect x="340" y="260" width="50" height="70" rx="5" fill="white" stroke="#bd2130" stroke-width="3"/>
+  <line x1="350" y1="280" x2="380" y2="280" stroke="#dc3545" stroke-width="3"/>
+  <line x1="350" y1="300" x2="380" y2="300" stroke="#dc3545" stroke-width="3"/>
+  <line x1="350" y1="320" x2="370" y2="320" stroke="#dc3545" stroke-width="3"/>
+
+  <!-- Text -->
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="32" font-weight="bold"
+        fill="#333" text-anchor="middle">Inspector Bersertifikat</text>
+  <text x="400" y="490" font-family="Arial, sans-serif" font-size="20"
+        fill="#666" text-anchor="middle">Tim Ahli K3</text>
+</svg>

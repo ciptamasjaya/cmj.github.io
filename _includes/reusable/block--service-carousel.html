@@ -1,0 +1,76 @@
+{% comment %}
+============================================================================
+Block: Service Image Carousel
+============================================================================
+
+@file        _includes/reusable/block--service-carousel.html
+@description Bootstrap 5 carousel untuk service page dengan default images
+@version     1.0.0
+@date        2025-11-24
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Automatic carousel with 4 default SVG images
+- Uses custom image from page.image if available
+- Bootstrap 5 carousel with auto-play
+- Responsive design
+- Lazy loading for better performance
+
+Usage:
+------
+Include di node--service.html atau page--service.html:
+{% include reusable/block--service-carousel.html %}
+
+Optional parameters:
+- max_height: Max height for images (default: "400px")
+- autoplay: true/false (default: true)
+- interval: Auto-play interval in ms (default: 5000)
+
+Example dengan custom parameters:
+{% include reusable/block--service-carousel.html
+   max_height="500px"
+   autoplay=false
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign max_height = include.max_height | default: "400px" %}
+{% assign autoplay = include.autoplay | default: true %}
+{% assign interval = include.interval | default: 5000 %}
+
+{% comment %} Build images array {% endcomment %}
+{% assign carousel_images = "" | split: "" %}
+
+{% comment %} If page has custom image, use it as first slide {% endcomment %}
+{% if page.image and page.image != '' %}
+  {% assign carousel_images = carousel_images | push: page.image %}
+{% endif %}
+
+{% comment %} Add all 4 default images {% endcomment %}
+{% assign carousel_images = carousel_images | push: "/assets/images/services/1.svg" %}
+{% assign carousel_images = carousel_images | push: "/assets/images/services/2.svg" %}
+{% assign carousel_images = carousel_images | push: "/assets/images/services/3.svg" %}
+{% assign carousel_images = carousel_images | push: "/assets/images/services/4.svg" %}
+
+{% comment %} Remove duplicates if page.image is one of the defaults {% endcomment %}
+{% assign unique_images = "" | split: "" %}
+{% for img in carousel_images %}
+  {% unless unique_images contains img %}
+    {% assign unique_images = unique_images | push: img %}
+  {% endunless %}
+{% endfor %}
+
+<!-- Service Image Carousel -->
+<div class="service-carousel-wrapper mb-4">
+  {% include components/carousel.html
+     carousel_id="serviceCarousel"
+     images=unique_images
+     title=page.title
+     max_height=max_height
+     autoplay=autoplay
+     interval=interval
+     fade=true
+  %}
+</div>

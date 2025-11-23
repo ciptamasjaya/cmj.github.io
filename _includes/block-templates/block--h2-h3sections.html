@@ -1,0 +1,81 @@
+{% comment %}
+============================================================================
+Block: H2 + H3 Sections with H4 Subsections (block--h2-h3sections.html)
+============================================================================
+@file    block--h2-h3sections.html
+@version 1.0.0
+@date    2025-11-24
+
+Heading Structure:
+- 1x H2: Main section title
+- 1x Para: Intro paragraph after H2
+- Nx H3: Subsections (via loop)
+  - 1x Para: Content after each H3
+  - Nx H4: Sub-subsections (via loop, optional)
+    - 1x Para: Content after each H4
+
+Usage:
+------
+Frontmatter:
+---
+mengapa_penting:
+  h2: "Mengapa Riksa Uji Forklift Penting?"
+  para: "Riksa uji forklift bukan sekadar kewajiban regulasi..."
+
+  sections:
+    - h3: "Komponen yang Diperiksa dalam Riksa Uji"
+      para: "Pemeriksaan riksa uji forklift mencakup inspeksi menyeluruh..."
+      subsections:
+        - h4: "Sistem Hidrolik dan Lifting Mechanism"
+          para: "Sistem hidrolik merupakan jantung dari forklift..."
+        - h4: "Sistem Pengereman dan Kontrol"
+          para: "Sistem rem pada forklift harus mampu menghentikan unit..."
+
+    - h3: "Prosedur Pengujian Beban"
+      para: "Pengujian beban merupakan bagian krusial..."
+      subsections:
+        - h4: "Pengujian Stabilitas dan Balance"
+          para: "Stabilitas forklift diuji dalam berbagai kondisi..."
+---
+
+Include:
+<section id="mengapa-penting">
+  {% include block-templates/block--h2-h3sections.html data=page.mengapa_penting %}
+</section>
+
+============================================================================
+{% endcomment %}
+
+{% assign d = include.data %}
+{% if d %}
+<div class="section-h2-h3 mb-5">
+
+  {%- comment -%} H2 Title + Intro Para {%- endcomment -%}
+  {% if d.h2 %}<h2 class="h2 h3 fw-bold text-dark mb-3">{{ d.h2 }}</h2>{% endif %}
+  {% if d.para %}<p class="para mb-4">{{ d.para }}</p>{% endif %}
+
+  {%- comment -%} Loop through H3 sections {%- endcomment -%}
+  {% if d.sections %}
+    {% for section in d.sections %}
+      <div class="h3-section section-item mb-4">
+
+        {%- comment -%} H3 Title + Para {%- endcomment -%}
+        {% if section.h3 %}<h3 class="h3 h5 fw-semibold text-dark mb-2">{{ section.h3 }}</h3>{% endif %}
+        {% if section.para %}<p class="para mb-3">{{ section.para }}</p>{% endif %}
+
+        {%- comment -%} Loop through H4 subsections (if any) {%- endcomment -%}
+        {% if section.subsections %}
+          {% for subsection in section.subsections %}
+            <div class="h4-subsection subsection-item mb-3 ms-3">
+              {% if subsection.h4 %}<h4 class="h4 h6 fw-semibold text-secondary mb-2">{{ subsection.h4 }}</h4>{% endif %}
+              {% if subsection.para %}<p class="para mb-2">{{ subsection.para }}</p>{% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  {% endif %}
+
+</div>
+{% endif %}

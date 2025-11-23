@@ -1,0 +1,36 @@
+{% comment %}
+============================================================================
+Block: H2 + Paragraph (block--h2-para.html)
+============================================================================
+@file    block--h2-para.html
+@version 1.0.0
+@date    2025-11-24
+
+Heading Structure:
+- 1x H2: Section title
+- 1x Para: Content paragraph
+
+Usage:
+------
+Frontmatter:
+---
+section_name:
+  h2: "Manfaat Riksa Uji Berkala"
+  para: "Melakukan riksa uji forklift secara berkala memberikan berbagai manfaat..."
+---
+
+Include:
+<section id="section-name">
+  {% include block-templates/block--h2-para.html data=page.section_name %}
+</section>
+
+============================================================================
+{% endcomment %}
+
+{% assign d = include.data %}
+{% if d %}
+<div class="section-h2-para mb-5">
+  {% if d.h2 %}<h2 class="h2 h3 fw-bold text-dark mb-3">{{ d.h2 }}</h2>{% endif %}
+  {% if d.para %}<p class="para mb-4">{{ d.para }}</p>{% endif %}
+</div>
+{% endif %}
