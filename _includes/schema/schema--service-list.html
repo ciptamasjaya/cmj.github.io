@@ -1,0 +1,113 @@
+{% comment %}
+============================================================================
+Schema: Service List with @graph
+============================================================================
+
+@file        schema--service-list.html
+@path        _includes/schema/schema--service-list.html
+@type        Schema (multiple services in @graph)
+@description Generate Schema.org markup for multiple services in a list
+@author      ciptamasjaya
+@version     1.0.0
+@date        2025-11-24
+
+Generates structured data for multiple services using @graph array.
+Each service gets its own Service schema entry.
+
+Usage:
+------
+Pass array of services to render their schemas:
+
+{% include schema/schema--service-list.html services=sorted_services %}
+
+Or with limit:
+{% assign limited_services = sorted_services | slice: 0, 3 %}
+{% include schema/schema--service-list.html services=limited_services %}
+
+Schema Structure:
+-----------------
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Service 1",
+      "provider": {...},
+      "offers": {...},
+      "aggregateRating": {...}
+    },
+    {
+      "@type": "Service",
+      "name": "Service 2",
+      ...
+    }
+  ]
+}
+
+Benefits:
+---------
+- Multiple services in single JSON-LD block
+- Better than multiple separate <script> tags
+- Recommended by Google for list pages
+- Shows relationship between services
+
+============================================================================
+{% endcomment %}
+
+{% assign services = include.services %}
+
+{% if services and services.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% for service in services %}
+    {
+      "@type": "Service",
+      "name": "{{ service.title | escape }}",
+      "description": "{{ service.description | strip_html | escape | truncate: 200 }}",
+      "url": "{{ service.url | absolute_url }}",
+      "provider": {
+        "@type": "Organization",
+        "name": "{{ site.title | escape }}",
+        "url": "{{ site.url }}{{ site.baseurl }}/"
+      },
+      {% if service.service_type %}
+      "serviceType": "{{ service.service_type }}",
+      {% endif %}
+      {% if service.category %}
+      "category": "{{ service.category }}",
+      {% endif %}
+      {% if service.area_served %}
+      "areaServed": {
+        "@type": "{% if service.area_served == 'Indonesia' %}Country{% else %}Place{% endif %}",
+        "name": "{{ service.area_served }}"
+      },
+      {% endif %}
+      {% if service.image %}
+      "image": "{{ service.image | absolute_url }}",
+      {% endif %}
+      {% if service.rating and service.review_count %}
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ service.rating }}",
+        "reviewCount": "{{ service.review_count }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      {% endif %}
+      {% if service.price and service.price_currency %}
+      "offers": {
+        "@type": "Offer",
+        "price": "{{ service.price }}",
+        "priceCurrency": "{{ service.price_currency }}",
+        "availability": "https://schema.org/InStock"
+      },
+      {% endif %}
+      "dateModified": "{{ service.last_modified_at | default: service.date | date_to_xmlschema }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

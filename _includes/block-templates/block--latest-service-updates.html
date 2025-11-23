@@ -6,8 +6,14 @@ Block Template: Latest Service Updates
 @file        block--latest-service-updates.html
 @path        _includes/block-templates/block--latest-service-updates.html
 @description Display latest service updates from the same category/subcategory
-@version     1.0.0
+@version     1.0.1
 @date        2025-11-24
+
+IMPORTANT - Schema.org:
+-----------------------
+This block also renders Schema.org markup for displayed services.
+The schema is output at the END of the block for better page structure.
+Each service card component renders visual only, schema is separate.
 
 Features:
 ---------
@@ -116,4 +122,9 @@ SEO Benefits:
     {% endif %}
   </div>
 </section>
+
+{% comment %} Schema.org markup for services displayed in this block {% endcomment %}
+{% assign displayed_services = sorted_services | slice: 0, limit %}
+{% include schema/schema--service-list.html services=displayed_services %}
+
 {% endif %}
