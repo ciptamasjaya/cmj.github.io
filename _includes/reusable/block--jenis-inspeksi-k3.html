@@ -1,0 +1,121 @@
+{% comment %}
+============================================================================
+Jenis Inspeksi K3 Block
+============================================================================
+
+@file        _includes/reusable/block--jenis-inspeksi-k3.html
+@description Types of K3 inspection: Planned vs Unplanned comparison
+@version     1.0.1
+@date        2025-11-23
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- SEO-optimized content from WordPress
+- Comparison card layout
+- Responsive design
+
+Usage:
+------
+{% include reusable/block--jenis-inspeksi-k3.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--jenis-inspeksi-k3 py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-10 mx-auto">
+        <h2 class="h2 fw-bold mb-3">Jenis Inspeksi K3</h2>
+
+        <p class="mb-3">
+          Inspeksi K3 adalah proses pemeriksaan yang dilakukan untuk memastikan bahwa lingkungan kerja,
+          peralatan, dan prosedur operasional mematuhi standar keselamatan dan kesehatan kerja (K3) yang berlaku.
+        </p>
+
+        <p class="mb-3">
+          Jenis inspeksi K3 mencakup beberapa kategori utama, seperti inspeksi terencana yang dilakukan secara
+          berkala untuk memastikan semua peralatan dan fasilitas kerja memenuhi standar keselamatan yang berlaku.
+          Inspeksi tidak terencana dilakukan mendadak tanpa pemberitahuan untuk mengevaluasi kepatuhan di kondisi
+          nyata. Inspeksi khusus dilakukan ketika ada kejadian tertentu, seperti kecelakaan kerja, yang memerlukan
+          penyelidikan lebih lanjut.
+        </p>
+
+        <p class="mb-4">
+          Inspeksi Terencana dan Tidak Terencana adalah dua pendekatan penting dalam memastikan keselamatan dan
+          kepatuhan operasional. Kedua jenis inspeksi ini saling melengkapi, dengan inspeksi terencana memberikan
+          dasar pemantauan yang konsisten, sementara inspeksi tidak terencana bertindak sebagai pengendalian
+          tambahan untuk menangani masalah mendesak.
+        </p>
+      </div>
+    </div>
+
+    <!-- Comparison Cards -->
+    <div class="row g-4 mb-5">
+
+      <!-- Inspeksi Terencana -->
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="text-center mb-3">
+              <i class="bi bi-calendar-check display-4 text-primary"></i>
+            </div>
+            <h3 class="h4 fw-bold text-center mb-3">
+              Inspeksi<br>Terencana
+            </h3>
+            <p class="text-muted">
+              Inspeksi terencana adalah inspeksi yang dilakukan secara rutin sesuai jadwal yang telah ditetapkan
+              untuk mengidentifikasi potensi bahaya dan memastikan semua peralatan serta prosedur kerja memenuhi
+              standar keselamatan dan Kesehatan kerja.
+            </p>
+          </div>
+          <div class="card-footer bg-primary bg-opacity-10 border-0 text-center py-3">
+            <small class="text-primary fw-semibold">
+              <i class="bi bi-check-circle me-1"></i>
+              Dilakukan Secara Berkala
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inspeksi Tidak Terencana -->
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4">
+            <div class="text-center mb-3">
+              <i class="bi bi-alarm display-4 text-warning"></i>
+            </div>
+            <h3 class="h4 fw-bold text-center mb-3">
+              Inspeksi<br>Tidak Terencana
+            </h3>
+            <p class="text-muted">
+              Inspeksi tidak terencana adalah inspeksi dilakukan tanpa pemberitahuan sebelumnya, sering kali
+              dipicu oleh insiden atau keluhan, dengan tujuan mengevaluasi situasi darurat dan mendeteksi risiko
+              yang mungkin terlewat dalam inspeksi terencana.
+            </p>
+          </div>
+          <div class="card-footer bg-warning bg-opacity-10 border-0 text-center py-3">
+            <small class="text-warning fw-semibold">
+              <i class="bi bi-exclamation-triangle me-1"></i>
+              Tanpa Pemberitahuan
+            </small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Button -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-primary btn-lg">
+          <i class="bi bi-chat-dots me-2"></i>
+          Konsultasi Sekarang
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

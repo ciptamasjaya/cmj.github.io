@@ -40,10 +40,10 @@ Usage:
            | replace: '{company_name}', site.business.name
            | replace: '{founding_year}', site.business.foundingDate | date: "%Y" %}
 
-        <div class="service-intro-heading mb-4">
-          <i class="bi {{ site.data.service_intro.heading.icon }} {{ site.data.service_intro.heading.icon_color }}"></i>
-          <h2 class="h1 fw-bold mb-0">{{ site.data.service_intro.heading.title }}</h2>
-        </div>
+        <h1 class="h1 fw-bold mb-4">
+          <i class="bi {{ site.data.service_intro.heading.icon }} {{ site.data.service_intro.heading.icon_color }} me-2"></i>
+          {{ site.data.service_intro.heading.title }}
+        </h1>
 
         <p class="lead mb-4">
           {{ lead_text }}

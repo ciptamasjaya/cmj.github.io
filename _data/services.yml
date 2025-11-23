@@ -9,7 +9,7 @@ categories:
     icon: "bi-droplet"
     color: "primary"
     description: "Inspeksi dan riksa uji pesawat uap dan bejana tekan sesuai Permenaker No. 3 Tahun 2016"
-    image: "/assets/img/services/boiler-service.jpg"
+    image: "/wp-content/uploads/2024/09/tenaga-ahli-pesawat-uap-dan-bejana-tekan-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-skp-sedang-inspeksi-k3-riksa-uji-boiler-21.jpg"
     featured: true
     order: 1
 
@@ -19,7 +19,7 @@ categories:
     icon: "bi-box-arrow-up"
     color: "info"
     description: "Inspeksi dan riksa uji pesawat angkat dan angkut sesuai Permenaker No. 8 Tahun 2020"
-    image: "/assets/img/services/crane-service.jpg"
+    image: "/wp-content/uploads/2024/09/tenaga-ahli-pesawat-angkat-dan-angkut-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-pjk3-skp-sedang-riksa-uji-excavator-2.jpg"
     featured: true
     order: 2
 
@@ -29,7 +29,7 @@ categories:
     icon: "bi-gear-wide-connected"
     color: "success"
     description: "Inspeksi dan riksa uji pesawat tenaga dan produksi"
-    image: "/assets/img/services/machinery-service.jpg"
+    image: "/wp-content/uploads/2024/09/tenaga-ahli-pesawat-tenaga-dan-produksi-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-sedang-riksa-uji-chiler-0011.jpg"
     featured: true
     order: 3
 
@@ -39,7 +39,7 @@ categories:
     icon: "bi-arrow-up-square"
     color: "warning"
     description: "Inspeksi dan riksa uji elevator, eskalator, dan lift barang"
-    image: "/assets/img/services/elevator-service.jpg"
+    image: "/wp-content/uploads/2024/09/tenaga-ahli-elevator-eskalator-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-skp-sedang-inspeksi-k3-riksa-uji-elevator-lift-047.jpg"
     featured: true
     order: 4
 
@@ -49,7 +49,7 @@ categories:
     icon: "bi-lightning-charge"
     color: "danger"
     description: "Inspeksi dan pengujian instalasi listrik dan sistem penyalur petir"
-    image: "/assets/img/services/electrical-service.jpg"
+    image: "/wp-content/uploads/2024/10/riksa-uji-instalasi-listrik-pt-cipta-mas-jaya-013.jpeg"
     featured: true
     order: 5
 
@@ -59,7 +59,7 @@ categories:
     icon: "bi-fire"
     color: "danger"
     description: "Inspeksi dan pengujian sistem proteksi sarana kebakaran"
-    image: "/assets/img/services/fire-service.jpg"
+    image: "/wp-content/uploads/2024/09/tenaga-ahli-proteksi-kebakaran-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-skp-sedang-riksa-uji-hydrant-08.jpg"
     featured: true
     order: 6
 
@@ -69,7 +69,7 @@ categories:
     icon: "bi-shield-check"
     color: "secondary"
     description: "Inspeksi dan pengujian sistem lifeline untuk keselamatan kerja di ketinggian"
-    image: "/assets/img/services/lifeline-service.jpg"
+    image: "/wp-content/uploads/default/lifeline-service.svg"
     featured: true
     order: 7
 
@@ -79,7 +79,7 @@ categories:
     icon: "bi-heart-pulse"
     color: "info"
     description: "Pengukuran dan monitoring kualitas lingkungan kerja (kebisingan, pencahayaan, suhu, dll)"
-    image: "/assets/img/services/environment-service.jpg"
+    image: "/wp-content/uploads/default/environment-service.svg"
     featured: true
     order: 8
 
@@ -89,7 +89,7 @@ categories:
     icon: "bi-file-earmark-check"
     color: "primary"
     description: "Layanan pengesahan gambar teknis peralatan K3 oleh Kementerian Ketenagakerjaan RI"
-    image: "/assets/img/services/document-service.jpg"
+    image: "/wp-content/uploads/default/document-service.svg"
     featured: true
     order: 9
 

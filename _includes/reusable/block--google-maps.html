@@ -1,0 +1,38 @@
+{% comment %}
+============================================================================
+Google Maps Block
+============================================================================
+
+@file        _includes/reusable/block--google-maps.html
+@description Google Maps embed showing PT. Cipta Mas Jaya location
+@version     1.0.0
+@date        2025-11-23
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Responsive Google Maps embed
+- Lazy loading for performance
+- Accessible with proper title
+- Full-width layout with 21:9 ratio
+
+Usage:
+------
+{% include reusable/block--google-maps.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--google-maps py-5 bg-light">
+  <div class="container-fluid px-0">
+    <div class="ratio ratio-21x9">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.118673836575!2d106.13840169999999!3d-6.1147223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4221c56d0b3687%3A0xb2eea581074f696a!2sPT.%20CIPTA%20MAS%20JAYA%20-%20PJK3%20Riksa%20Uji!5e0!3m2!1sid!2sid!4v1725689444193!5m2!1sid!2sid"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Lokasi PT. Cipta Mas Jaya - PJK3 Riksa Uji">
+      </iframe>
+    </div>
+  </div>
+</section>

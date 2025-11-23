@@ -48,19 +48,27 @@ Usage:
     <div class="row mb-4">
       <div class="col-12">
 
-        <div class="card service-list-card border-0 shadow-sm">
+        <div class="card service-list-card service-{{ service.slug }} border-0 shadow-sm">
           <div class="card-body p-4 p-lg-5">
             <div class="row align-items-center">
 
-              <!-- Service Icon -->
-              <div class="col-lg-2 mb-3 mb-lg-0 text-center text-lg-start">
-                <div class="service-icon-large">
+              <!-- Service Image -->
+              <div class="col-lg-3 mb-3 mb-lg-0">
+                {% if service.image %}
+                <img src="{{ service.image | relative_url }}"
+                     alt="{{ service.name }}"
+                     class="img-fluid rounded shadow-sm"
+                     style="width: 100%; height: 200px; object-fit: cover;"
+                     loading="lazy">
+                {% else %}
+                <div class="service-icon-large text-center">
                   <i class="bi {{ service.icon }} text-primary"></i>
                 </div>
+                {% endif %}
               </div>
 
               <!-- Service Content -->
-              <div class="col-lg-7 mb-3 mb-lg-0">
+              <div class="col-lg-6 mb-3 mb-lg-0">
                 <h3 class="h4 fw-bold mb-3">{{ service.name }}</h3>
                 <p class="text-muted mb-3">{{ service.description }}</p>
 
@@ -90,7 +98,7 @@ Usage:
               </div>
 
               <!-- Service Action -->
-              <div class="col-lg-3 text-center text-lg-end">
+              <div class="col-lg-3 text-center text-lg-end d-flex flex-column gap-2">
                 {% if service.slug %}
                 <a href="{{ '/layanan/' | append: service.slug | relative_url }}"
                    class="btn btn-primary btn-lg mb-2 w-100 w-lg-auto">
