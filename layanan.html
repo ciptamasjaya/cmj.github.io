@@ -67,8 +67,13 @@ service_coverage:
 <!-- Jasa Riksa Uji K3 Intro Section (SEO Content from WordPress) -->
 {% include reusable/block--jasa-riksa-uji-intro.html %}
 
-<!-- Service List Component -->
+<!-- Service List Component (2 Column: Cards + Table) -->
 {% include reusable/block--service-list.html %}
+
+<!-- DataTable CSS & JS -->
+<link rel="stylesheet" href="{{ '/assets/css/datatable.css' | relative_url }}">
+<script src="{{ '/assets/js/datatable.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/pages/initDataTable.js' | relative_url }}"></script>
 
 <!-- Features Section -->
 {% include reusable/block--service-features.html %}

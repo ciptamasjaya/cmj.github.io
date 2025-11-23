@@ -4,17 +4,22 @@ Service List Block
 ============================================================================
 
 @file        _includes/reusable/block--service-list.html
-@description Comprehensive list of all services
-@version     1.0.0
+@description Comprehensive list of all services with 2-column layout (cards + table)
+@version     1.1.0
 @date        2025-11-22
+@updated     2025-11-24 - Added 2-column layout with DataTable integration
 @author      arisciwek (PT. Cipta Mas Jaya)
 
 Features:
 ---------
+- 2-column responsive layout (col-lg-6 each):
+  * Left: Detailed service cards with images
+  * Right: Interactive DataTable with search/sort/pagination
 - Full list of all services
 - Auto-load from _data/services.yml
 - Detailed service cards
 - Link to individual service pages
+- DataTable integration for quick search and filtering
 
 Data Source:
 ------------
@@ -44,11 +49,12 @@ Usage:
     </div>
 
     <!-- Services List -->
-    {% for service in site.data.services.categories %}
     <div class="row mb-4">
-      <div class="col-12">
-
-        <div class="card service-list-card service-{{ service.slug }} border-0 shadow-sm">
+      <!-- Card View (Left Column) -->
+      <div class="col-lg-6">
+        {% for service in site.data.services.categories %}
+        <div class="mb-4">
+          <div class="card service-list-card service-{{ service.slug }} border-0 shadow-sm">
           <div class="card-body p-4 p-lg-5">
             <div class="row align-items-center">
 
@@ -129,9 +135,15 @@ Usage:
 
         </div>
 
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Table View (Right Column) -->
+      <div class="col-lg-6">
+        {% include block-templates/block--service-list.html %}
       </div>
     </div>
-    {% endfor %}
 
     <!-- Info Box -->
     <div class="row mt-5">
