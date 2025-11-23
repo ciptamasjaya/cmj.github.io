@@ -37,21 +37,31 @@ Website ini dibangun untuk memberikan informasi lengkap tentang layanan inspeksi
 
 ## 🚀 Teknologi
 
-- **HTML5** - Struktur halaman
-- **CSS3/SCSS** - Styling dengan arsitektur modular
+- **Jekyll 4.4.1** - Static site generator dengan data-driven architecture
+- **HTML5** - Struktur halaman dengan semantic markup
+- **CSS3/SCSS** - Styling dengan arsitektur modular dan BEM naming
 - **Bootstrap 5.3** - Framework CSS responsif
 - **JavaScript** - Interaktivitas
-- **Jekyll** - Static site generator (optional)
+- **Git LFS** - Large file storage untuk optimasi images
+- **jekyll-last-modified-at** - Automatic sitemap timestamps
 - **PWA Ready** - Progressive Web App support
 
 ## 📁 Struktur Proyek
 
 ```
 public_html/
-├── _data/                      # Data configuration files
+├── _data/                      # Data configuration files (YAML)
 │   ├── navigation.yml         # Menu navigasi
 │   ├── services.yml          # Konfigurasi layanan
-│   └── social.yml            # Kontak & social media
+│   ├── social.yml            # Kontak & social media
+│   ├── commitments.yml       # Komitmen perusahaan
+│   ├── faq_contact.yml       # FAQ kontak
+│   ├── service_intro.yml     # Service introduction
+│   ├── business_info.yml     # Informasi bisnis
+│   ├── company_profile.yml   # Profil perusahaan
+│   ├── contact_form.yml      # Konfigurasi form kontak
+│   ├── contact_cards.yml     # Kartu kontak
+│   └── cta_contact.yml       # Call-to-action kontak
 ├── _layouts/                  # Jekyll layouts
 │   ├── default.html
 │   ├── page.html
@@ -189,9 +199,18 @@ $secondary-color: #ff6600;
 
 ### Mengubah Konten
 
+Semua konten menggunakan data-driven architecture dengan YAML files:
+
 - **Menu Navigasi**: Edit `_data/navigation.yml`
 - **Layanan**: Edit `_data/services.yml`
-- **Kontak**: Edit `_data/social.yml`
+- **Kontak & Social Media**: Edit `_data/social.yml`
+- **Profil Perusahaan**: Edit `_data/company_profile.yml`
+- **Komitmen**: Edit `_data/commitments.yml`
+- **FAQ**: Edit `_data/faq_contact.yml`
+- **CTA Contact**: Edit `_data/cta_contact.yml`
+- **Business Info**: Edit `_data/business_info.yml`
+
+Semua data files mendukung template variables seperti `{company_name}`, `{phone}`, `{email}`, dll.
 
 ### Menambah Halaman Baru
 
@@ -218,7 +237,7 @@ $secondary-color: #ff6600;
 
 ## 📄 License
 
-Copyright © 2024 PT. Cipta Mas Jaya. All rights reserved.
+Copyright © 2025 PT. Cipta Mas Jaya. All rights reserved.
 
 ## 🤝 Contributing
 
@@ -232,9 +251,36 @@ Untuk development dan maintenance internal:
 
 ## 📝 Changelog
 
-### Version 1.0.0 (2024-11-22)
+> Untuk changelog lengkap, lihat [CHANGELOG.md](CHANGELOG.md) dan [RELEASE_NOTES.md](RELEASE_NOTES.md)
 
-- ✅ Initial release
+### Version 1.0.2 (2025-11-23) - Content Migration & SEO Enhancement
+
+- ✅ Complete content migration from WordPress (homepage, about, layanan)
+- ✅ 20+ modular blocks implemented
+- ✅ Comprehensive heading hierarchy fixes (SEO & accessibility)
+- ✅ TAMASYA company values with custom icons
+- ✅ Enhanced Visi-Misi sections with card layout
+- ✅ Sitemap with automatic lastmod timestamps
+- ✅ Build optimization (reduced to 88 files)
+- ✅ Git LFS integration for images
+- ✅ Icon-text utility classes
+
+**30 commits** | **3 major pages migrated**
+
+### Version 1.0.1 (2025-11-23) - Data-Driven Architecture
+
+- ✅ 8 blocks refactored to data-driven architecture
+- ✅ Content separated to YAML data files
+- ✅ Template variables support ({company_name}, {phone}, etc.)
+- ✅ CSS class customization support
+- ✅ ~1500 lines moved from hardcoded to YAML
+- ✅ i18n ready structure
+
+**15 commits** | **8 YAML data files created**
+
+### Version 1.0.0 (2025-11-22) - Initial Release
+
+- ✅ Initial release with Jekyll 4.4.1
 - ✅ Homepage dengan hero section
 - ✅ Halaman layanan lengkap
 - ✅ Halaman kontak dengan form
@@ -242,14 +288,26 @@ Untuk development dan maintenance internal:
 - ✅ 404 error page
 - ✅ PWA support dengan icons
 - ✅ Security headers
-- ✅ SEO optimization
+- ✅ SEO optimization with Schema.org markup
 - ✅ Mobile responsive design
+- ✅ Modular SCSS architecture dengan BEM naming
+
+**14 commits**
 
 ## 🔮 Roadmap
 
+### Completed ✅
+- [x] Content migration from WordPress
+- [x] Data-driven architecture dengan YAML
+- [x] SEO optimization (heading hierarchy, sitemap)
+- [x] Git LFS integration
+
+### In Progress 🚧
 - [ ] Blog system dengan CMS
 - [ ] Client testimonials section
 - [ ] Portfolio/case studies
+
+### Planned 📋
 - [ ] Multi-language support (EN/ID)
 - [ ] Online quotation form
 - [ ] Client dashboard
