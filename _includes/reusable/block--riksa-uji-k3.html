@@ -1,0 +1,237 @@
+{% comment %}
+============================================================================
+Block: Riksa Uji K3 Services Grid
+============================================================================
+
+@file        _includes/reusable/block--riksa-uji-k3.html
+@description WordPress legacy - 6 main service categories (H2 → H3)
+@version     1.0.0
+@date        2025-11-23
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- 6 service cards in 3x2 grid
+- Real WordPress images (not icons)
+- WordPress H2 titles demoted to H3
+- Kicker text: "PJK3 Riksa Uji"
+- Responsive layout
+
+SEO Notes:
+----------
+- Preserves all WordPress service descriptions
+- H6 kicker + H3 title hierarchy
+- Keywords maintained from WordPress
+- Alt text from WordPress content
+
+Usage:
+------
+{% include reusable/block--riksa-uji-k3.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--riksa-uji-k3 py-5 bg-light" id="riksa-uji-k3">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h1 fw-bold mb-3">
+          <i class="bi bi-clipboard-check text-primary me-2"></i>
+          Layanan Riksa Uji K3
+        </h2>
+        <p class="lead text-muted">
+          PT. Cipta Mas Jaya menyediakan layanan Riksa Uji yang komprehensif untuk berbagai
+          kategori peralatan industri sesuai standar Kementerian Ketenagakerjaan RI
+        </p>
+      </div>
+    </div>
+
+    <!-- Services Grid (3x2) -->
+    <div class="row g-4">
+
+      <!-- Service 1: Pesawat Angkat dan Angkut -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/wp-content/uploads/2024/09/reach-truck-papa-pjk3-riksa-uji-pt.cipta-mas-jaya-006.jpg"
+            alt="PJK3 Riksa Uji PT. Cipta Mas Jaya menyediakan layanan Riksa Uji Alat Angkat dan Angkut yang meliputi inspeksi keselamatan terhadap berbagai peralatan seperti crane, forklift, hoist, gondola, reach truck dan lain lain."
+            class="card-img-top"
+            loading="lazy"
+            style="height: 250px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h6 class="text-primary text-uppercase small fw-semibold mb-2">
+              PJK3 Riksa Uji
+            </h6>
+            <h3 class="h5 fw-bold mb-3">
+              Riksa Uji Pesawat Angkat dan Angkut
+            </h3>
+            <p class="text-muted mb-3">
+              Layanan Riksa Uji yang meliputi inspeksi keselamatan menyeluruh terhadap berbagai
+              peralatan seperti crane, forklift, hoist, gondola, reach truck dan lain lain untuk
+              memastikan semua peralatan memenuhi standar keselamatan kerja.
+            </p>
+            <a href="{{ '/layanan/pesawat-angkat/' | relative_url }}"
+               class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-arrow-right me-1"></i>
+              Selengkapnya
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Pesawat Uap dan Bejana Tekan -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/wp-content/uploads/2024/08/riksa-uji-k3-storage-tank-pt-cipta-mas-jaya-001.png"
+            alt="PJK3 Riksa Uji PT. Cipta Mas Jaya menyediakan layanan Riksa Uji Pesawat Uap, Bejana Tekan dan Tangki Timbun"
+            class="card-img-top"
+            loading="lazy"
+            style="height: 250px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h6 class="text-primary text-uppercase small fw-semibold mb-2">
+              PJK3 Riksa Uji
+            </h6>
+            <h3 class="h5 fw-bold mb-3">
+              Riksa Uji Pesawat Uap dan Bejana Tekan
+            </h3>
+            <p class="text-muted mb-3">
+              Pemeriksaan menyeluruh terhadap boiler, tangki, dan berbagai jenis bejana tekan
+              untuk mendeteksi potensi bahaya seperti korosi, kebocoran, atau cacat struktural
+              menggunakan metode inspeksi non-destruktif.
+            </p>
+            <a href="{{ '/layanan/pesawat-uap/' | relative_url }}"
+               class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-arrow-right me-1"></i>
+              Selengkapnya
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Pesawat Tenaga dan Produksi -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/wp-content/uploads/2024/09/depalizer-ptp-pjk3-riksa-uji-pt.cipta-mas-jaya-0019.jpg"
+            alt="PJK3 Riksa Uji PT. Cipta Mas Jaya menyediakan layanan Riksa Uji Pesawat Tenaga dan Produksi jenis Depalizer"
+            class="card-img-top"
+            loading="lazy"
+            style="height: 250px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h6 class="text-primary text-uppercase small fw-semibold mb-2">
+              PJK3 Riksa Uji
+            </h6>
+            <h3 class="h5 fw-bold mb-3">
+              Riksa Uji Pesawat Tenaga dan Produksi
+            </h3>
+            <p class="text-muted mb-3">
+              Inspeksi terhadap mesin-mesin produksi, generator set, kompresor, dan peralatan
+              industri lainnya untuk memastikan keandalan operasional dan keselamatannya melalui
+              pengujian mekanis dan analisis teknis.
+            </p>
+            <a href="{{ '/layanan/pesawat-tenaga/' | relative_url }}"
+               class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-arrow-right me-1"></i>
+              Selengkapnya
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4: Instalasi Listrik dan Penyalur Petir -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/wp-content/uploads/2024/09/riksa-uji-k3-instalasi-listrik-pt-cipta-mas-jaya-001.jpg"
+            alt="Riksa Uji Instalasi Listrik"
+            class="card-img-top"
+            loading="lazy"
+            style="height: 250px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h6 class="text-primary text-uppercase small fw-semibold mb-2">
+              Jasa Inspeksi K3
+            </h6>
+            <h3 class="h5 fw-bold mb-3">
+              Riksa Uji Instalasi Listrik dan Penyalur Petir
+            </h3>
+            <p class="text-muted mb-3">
+              Pemeriksaan terhadap instalasi kelistrikan serta sistem penyalur petir di gedung
+              atau fasilitas untuk memastikan grounding, lightning rod, dan peralatan proteksi
+              berfungsi dengan baik mencegah risiko kebakaran.
+            </p>
+            <a href="{{ '/layanan/instalasi-listrik/' | relative_url }}"
+               class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-arrow-right me-1"></i>
+              Selengkapnya
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5: Sarana Proteksi Kebakaran -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/wp-content/uploads/2024/09/hydrant-2-ipk-pjk3-riksa-uji-pt.cipta-mas-jaya-0015.jpg"
+            alt="Jasa Inspeksi K3 PJK3 Riksa Uji PT. Cipta Mas Jaya Instalasi Pemadam Kebakaran Hydrant"
+            class="card-img-top"
+            loading="lazy"
+            style="height: 250px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h6 class="text-primary text-uppercase small fw-semibold mb-2">
+              Jasa Inspeksi K3
+            </h6>
+            <h3 class="h5 fw-bold mb-3">
+              Riksa Uji Sarana Proteksi Kebakaran
+            </h3>
+            <p class="text-muted mb-3">
+              Inspeksi terhadap sistem proteksi kebakaran seperti fire alarm, pemeriksaan dan
+              pengujian hydrant, sprinkler, dan alat pemadam api ringan untuk memastikan semua
+              instalasi berfungsi dengan baik dalam kondisi darurat.
+            </p>
+            <a href="{{ '/layanan/proteksi-kebakaran/' | relative_url }}"
+               class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-arrow-right me-1"></i>
+              Selengkapnya
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6: Elevator dan Eskalator -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <img
+            src="/wp-content/uploads/2024/09/tenaga-ahli-elevator-eskalator-pjk3-pt.cipta-mas-jaya-dengan-sertifikat-k3-skp-sedang-inspeksi-k3-riksa-uji-elevator-lift-004-1.jpg"
+            alt="Tenaga Ahli Elevator Eskalator PJK3 PT.Cipta Mas Jaya Dengan Sertifikat K3 (SKP) Sedang Inspeksi K3 / Riksa Uji Elevator Lift"
+            class="card-img-top"
+            loading="lazy"
+            style="height: 250px; object-fit: cover;">
+          <div class="card-body p-4">
+            <h6 class="text-primary text-uppercase small fw-semibold mb-2">
+              Jasa Inspeksi K3
+            </h6>
+            <h3 class="h5 fw-bold mb-3">
+              Riksa Uji Elevator dan Eskalator
+            </h3>
+            <p class="text-muted mb-3">
+              Pemeriksaan dan pengujian keselamatan terhadap elevator (lift) dan eskalator di
+              gedung komersial, perkantoran, dan fasilitas umum untuk memastikan sistem rem,
+              pengaman, dan mekanisme penggerak berfungsi dengan baik.
+            </p>
+            <a href="{{ '/layanan/elevator/' | relative_url }}"
+               class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-arrow-right me-1"></i>
+              Selengkapnya
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

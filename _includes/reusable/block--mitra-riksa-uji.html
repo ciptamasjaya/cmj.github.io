@@ -1,0 +1,126 @@
+{% comment %}
+============================================================================
+Block: Mitra PJK3 Riksa Uji
+============================================================================
+
+@file        _includes/reusable/block--mitra-riksa-uji.html
+@description WordPress legacy content - Company introduction (H1 → H2)
+@version     1.0.0
+@date        2025-11-23
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Features:
+---------
+- Preserves WordPress H1 content as H2 (SEO-safe demotion)
+- 4 intro paragraphs about PJK3
+- Hero image from WordPress
+- Responsive layout
+
+SEO Notes:
+----------
+- WordPress original H1: "Mitra PJK3 Riksa Uji Anda..."
+- Demoted to H2 to maintain single H1 per page
+- All keywords and content preserved
+- Image with descriptive alt text
+
+Usage:
+------
+{% include reusable/block--mitra-riksa-uji.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--mitra-riksa-uji py-5 bg-white" id="mitra-pjk3">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+
+        <!-- WordPress H1 → H2 (SEO-safe demotion) -->
+        <h2 class="display-5 fw-bold mb-4 text-center">
+          Mitra PJK3 Riksa Uji Anda Menuju Kesehatan dan Keselamatan Kerja Terbaik
+        </h2>
+
+        <!-- Intro Paragraphs (WordPress content) -->
+        <div class="lead mb-5">
+
+          <p class="mb-4">
+            PT. Cipta Mas Jaya adalah PJK3 Riksa Uji yang telah mendapatkan izin resmi dari
+            Kementerian Ketenagakerjaan RI untuk melakukan pemeriksaan, pengujian, dan sertifikasi
+            di bidang keselamatan dan kesehatan kerja (K3). Sebagai perusahaan yang bergerak di
+            bidang jasa K3, PT. Cipta Mas Jaya berfokus pada layanan Riksa Uji untuk berbagai
+            jenis peralatan kerja, seperti pesawat angkat, pesawat angkut, instalasi listrik,
+            proteksi kebakaran, dan lainnya, guna memastikan peralatan tersebut memenuhi standar
+            keselamatan yang berlaku dan layak digunakan di tempat kerja.
+          </p>
+
+        </div>
+
+        <!-- Hero Image (WordPress) -->
+        <figure class="mb-5">
+          <img
+            src="/wp-content/uploads/2024/09/pallet-mover-papa-pjk3-riksa-uji-pt.cipta-mas-jaya-007-1.jpg"
+            alt="PT. Cipta Mas Jaya adalah PJK3 Riksa Uji yang memiliki izin resmi dari Kementerian Ketenagakerjaan untuk melakukan pemeriksaan, pengujian, dan sertifikasi K3. Perusahaan ini berfokus pada Riksa Uji berbagai peralatan kerja seperti pesawat angkat, angkut, instalasi listrik, dan proteksi kebakaran, memastikan peralatan memenuhi standar keselamatan dan layak digunakan."
+            class="img-fluid rounded shadow-lg"
+            loading="lazy">
+          <figcaption class="text-muted small mt-2 text-center">
+            Tim PJK3 Riksa Uji PT. Cipta Mas Jaya melakukan inspeksi K3 pesawat angkat dan angkut
+          </figcaption>
+        </figure>
+
+        <!-- Additional Info Paragraphs -->
+        <div class="row g-4 mb-4">
+
+          <div class="col-md-6">
+            <div class="card border-0 bg-light h-100">
+              <div class="card-body p-4">
+                <h3 class="h6 text-primary fw-bold mb-3">
+                  <i class="bi bi-info-circle me-2"></i>
+                  Apa itu PJK3?
+                </h3>
+                <p class="mb-0">
+                  Kepanjangan PJK3 adalah <strong>Perusahaan Jasa Keselamatan dan Kesehatan Kerja</strong>
+                  yang melakukan inspeksi K3 di tempat kerja.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card border-0 bg-light h-100">
+              <div class="card-body p-4">
+                <h3 class="h6 text-primary fw-bold mb-3">
+                  <i class="bi bi-book me-2"></i>
+                  Dasar Hukum
+                </h3>
+                <p class="mb-0">
+                  Menurut <strong>Peraturan Menteri Tenaga Kerja RI No. 4 Tahun 1995</strong>,
+                  PJK3 adalah perusahaan yang usahanya di bidang jasa K3 untuk membantu pelaksanaan
+                  pemenuhan syarat-syarat K3 sesuai peraturan perundang-undangan yang berlaku.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Closing Statement -->
+        <div class="alert alert-primary border-0 shadow-sm" role="alert">
+          <div class="d-flex align-items-start">
+            <i class="bi bi-shield-check fs-3 me-3 text-primary"></i>
+            <div>
+              <h3 class="h6 fw-bold mb-2">Komitmen Keselamatan Kerja</h3>
+              <p class="mb-0">
+                PJK3 Riksa Uji memastikan lingkungan kerja yang aman melalui inspeksi terencana
+                dan inspeksi tidak terencana, pemeriksaan dan pengujian, serta sertifikasi
+                keselamatan sesuai standar K3.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
