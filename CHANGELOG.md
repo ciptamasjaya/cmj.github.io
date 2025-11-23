@@ -79,6 +79,15 @@ a4c639b - Add icon-text alignment utility classes and apply to service intro
 b95ee0e - Fix Liquid syntax error in block--quick-contact-form.html
 ```
 
+#### Documentation (1 commit)
+```
+[pending] - Update project documentation for v1.0.2 release
+  - Add comprehensive CHANGELOG.md with version history (v1.0.0 to v1.0.2)
+  - Add user-friendly RELEASE_NOTES.md with feature highlights and upgrade notes
+  - Update README.md: Add v1.0.1/v1.0.2 changelog, technology stack updates,
+    YAML data files documentation, roadmap organization, copyright year fix (2024→2025)
+```
+
 ### 📊 Impact
 - **30 commits** in one day
 - **3 major pages** fully migrated from WordPress
