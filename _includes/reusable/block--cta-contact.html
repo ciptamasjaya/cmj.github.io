@@ -80,7 +80,7 @@ Usage:
     {% if data.additional_info.show %}
     <div class="row mt-5">
       <div class="col-12">
-        <div class="{{ data.additional_info.border_class }} pt-4 mt-2">
+        <div class="border-top border-light pt-4 mt-2">
           <div class="row text-center text-md-start">
             {% for item in data.additional_info.items %}
             <!-- {{ item.label }} -->
@@ -88,7 +88,7 @@ Usage:
               <div class="d-flex align-items-center justify-content-center justify-content-md-start">
                 <i class="bi {{ item.icon }} me-2 fs-5"></i>
                 <div>
-                  <small class="d-block opacity-75">{{ item.label }}</small>
+                  <small class="d-block">{{ item.label }}</small>
                   {% if item.values %}
                     {% for value in item.values %}
                       <strong>{{ value }}</strong>{% unless forloop.last %}<br>{% endunless %}

@@ -134,15 +134,126 @@
    ============================================================================ */
 .block--cta-contact {
   background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+  position: relative;
+  color: white;
 }
 
+/* Optional overlay for better text contrast */
+.block--cta-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.block--cta-contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading styles */
+.block--cta-contact h2 {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.block--cta-contact h2 i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Description/Lead text */
+.block--cta-contact .lead,
+.block--cta-contact p {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+  opacity: 1 !important;
+}
+
+/* Button styles */
 .block--cta-contact .btn {
   transition: all 0.3s ease;
+  font-weight: 600;
+  text-shadow: none;
+  border: 2px solid transparent;
 }
 
 .block--cta-contact .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Additional info section */
+.block--cta-contact .mt-5 {
+  position: relative;
+  z-index: 2;
+}
+
+.block--cta-contact .border-top {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  padding-top: 2rem !important;
+  margin-top: 1rem !important;
+}
+
+/* Add semi-transparent background for better readability */
+.block--cta-contact .text-center.text-md-start {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+.block--cta-contact small {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 8px rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.25rem;
+  opacity: 1 !important;
+}
+
+.block--cta-contact strong {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  font-size: 1.05rem;
+  opacity: 1 !important;
+}
+
+.block--cta-contact i {
+  color: #ffffff !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  opacity: 1 !important;
+}
+
+/* Force white color for all text in additional info */
+.block--cta-contact .text-center.text-md-start * {
+  color: #ffffff !important;
+}
+
+/* Specific overrides for common Bootstrap classes */
+.block--cta-contact .opacity-75 {
+  opacity: 1 !important;
+}
+
+/* Individual info items */
+.block--cta-contact .d-flex.align-items-center {
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.block--cta-contact .d-flex.align-items-center:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* ============================================================================
@@ -1223,5 +1334,20 @@
 
   .misi-detail-card:hover .misi-detail-description {
     color: #495057;
+  }
+}
+
+/* ============================================================================
+   PENGESAHAN GAMBAR BLOCK
+   ============================================================================ */
+.block--pengesahan-gambar {
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   }
 }
