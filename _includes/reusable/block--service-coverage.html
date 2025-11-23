@@ -110,11 +110,11 @@ Kemudian include dengan:
       {% if heading %}
       <div class="row mb-5 {{ css_class.header }}">
         <div class="col-lg-8 mx-auto text-center">
-          <h2 class="h2 fw-bold mb-3">
+          <h2 class="h2 fw-bold mb-3 icon-text">
             {% if heading.icon %}
-              <i class="bi {{ heading.icon }} {{ heading.icon_class | default: 'text-danger' }} me-2"></i>
+              <i class="bi {{ heading.icon }} {{ heading.icon_class | default: 'text-danger' }}"></i>
             {% endif %}
-            {{ heading.title }}
+            <span>{{ heading.title }}</span>
           </h2>
           {% if lead_text %}
           <p class="lead text-muted">
@@ -134,9 +134,9 @@ Kemudian include dengan:
           <div class="card border-0 shadow-sm {{ css_class.coverage_card }}">
             <div class="card-body p-4">
 
-              <h3 class="h5 fw-bold mb-4">
-                <i class="bi bi-map text-primary me-2"></i>
-                {{ coverage_list_title }}
+              <h3 class="h5 fw-bold mb-4 icon-text">
+                <i class="bi bi-map text-primary"></i>
+                <span>{{ coverage_list_title }}</span>
               </h3>
 
               <!-- Coverage Areas -->
@@ -167,9 +167,9 @@ Kemudian include dengan:
           <div class="card border-0 shadow-sm bg-primary text-white {{ css_class.info_card }}">
             <div class="card-body p-5">
 
-              <h3 class="h4 fw-bold mb-4">
-                <i class="bi bi-info-circle me-2"></i>
-                {{ info_card_title }}
+              <h3 class="h4 fw-bold mb-4 icon-text">
+                <i class="bi bi-info-circle"></i>
+                <span>{{ info_card_title }}</span>
               </h3>
 
               {% for item in info_items %}

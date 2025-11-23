@@ -75,9 +75,9 @@ Usage:
                 <!-- Service Features (if available) -->
                 {% if service.items %}
                 <div class="service-items">
-                  <h4 class="h6 fw-semibold mb-2 text-primary">
-                    <i class="bi bi-check-circle me-1"></i>
-                    Meliputi:
+                  <h4 class="h6 fw-semibold mb-2 text-primary icon-text-sm">
+                    <i class="bi bi-check-circle"></i>
+                    <span>Meliputi:</span>
                   </h4>
                   <ul class="list-unstyled mb-0">
                     {% for item in service.items limit: 5 %}
@@ -120,9 +120,9 @@ Usage:
           <!-- Service Badge -->
           {% if service.featured %}
           <div class="card-footer bg-success border-0 py-2 text-center">
-            <small class="text-white fw-semibold">
-              <i class="bi bi-star-fill me-1"></i>
-              Layanan Populer
+            <small class="text-white fw-semibold icon-text-sm">
+              <i class="bi bi-star-fill"></i>
+              <span>Layanan Populer</span>
             </small>
           </div>
           {% endif %}
@@ -138,9 +138,9 @@ Usage:
       <div class="col-12">
         <div class="card border-0 shadow-sm bg-light">
           <div class="card-body p-4 text-center">
-            <h3 class="h5 fw-bold mb-3">
-              <i class="bi bi-info-circle text-primary me-2"></i>
-              Tidak Menemukan Layanan yang Anda Cari?
+            <h3 class="h5 fw-bold mb-3 icon-text">
+              <i class="bi bi-info-circle text-primary"></i>
+              <span>Tidak Menemukan Layanan yang Anda Cari?</span>
             </h3>
             <p class="mb-3">
               Kami juga melayani berbagai jenis riksa uji K3 lainnya. Hubungi kami untuk
