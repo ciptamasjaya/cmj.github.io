@@ -75,6 +75,12 @@ Jekyll::Hooks.register :site, :post_read do |site|
 
   # Update service-related pages with latest dates
   site.pages.each do |page|
+    # Update homepage (index.html) - has latest service updates block
+    if page.name == 'index.html' && latest_service_date
+      page.data['last_modified_at'] = latest_service_date
+      Jekyll.logger.info "Homepage:", "index.html → #{latest_service_date}"
+    end
+
     # Update service index page (layanan.html)
     if page.name == 'layanan.html' && latest_service_date
       page.data['last_modified_at'] = latest_service_date
