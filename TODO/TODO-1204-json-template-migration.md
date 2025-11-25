@@ -1,20 +1,39 @@
 # TODO-1204: Template Migration for JSON Data Structure
 
 **Created**: 2025-11-25
-**Priority**: High
+**Updated**: 2025-11-26
+**Priority**: ~~High~~ SUPERSEDED
+**Status**: SUPERSEDED BY TODO-1203
 **Context**: Update Jekyll templates to read from centralized JSON files instead of YAML frontmatter
 **Goal**: All layouts and includes read from JSON data structure
 **Depends On**: TODO-1203 (JSON Node Architecture)
 
 ---
 
+## SUPERSEDED NOTICE
+
+> **This TODO has been superseded by TODO-1203.**
+>
+> The original goal was to migrate entirely to JSON data structure. However, a **hybrid approach** was implemented instead:
+>
+> - **YAML frontmatter**: Static content (service descriptions, intro, process, etc.)
+> - **JSON data files**: Dynamic content (reviews, ratings, comments)
+>
+> This hybrid approach is better because:
+> 1. No need to migrate existing content
+> 2. YAML is easier for content editors
+> 3. JSON is perfect for dynamic/calculated data
+> 4. Existing layouts work with minimal changes
+
+---
+
 ## Status Summary
 
 - **Total Templates**: 12
-- **Completed**: 0 ❌ (0%)
-- **In Progress**: 0 ⚠️ (0%)
-- **Not Started**: 12 ❌ (100%)
-- **Progress**: 0%
+- **Completed via TODO-1203**: 6 ✅
+- **Not Needed (architecture change)**: 3 ❌
+- **Optional (future)**: 3 ⏳
+- **Progress**: SUPERSEDED
 
 ---
 
