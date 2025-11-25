@@ -1351,3 +1351,58 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   }
 }
+
+/* ============================================================================
+   SERVICE DETAIL LAYANAN SECTION (node--service.html)
+   ============================================================================ */
+.card-header.bg-primary {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%) !important;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 1.5rem;
+}
+
+/* Add subtle animated shine effect */
+.card-header.bg-primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -50%;
+  }
+  50% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Ensure text and icon are above the shine effect */
+.card-header.bg-primary h2,
+.card-header.bg-primary i {
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Add subtle glow on hover */
+.card-header.bg-primary:hover {
+  box-shadow: 0 4px 20px rgba(13, 110, 253, 0.4);
+  transition: box-shadow 0.3s ease;
+}
