@@ -1,0 +1,126 @@
+{% comment %}
+============================================================================
+Block: Featured Testimonials
+============================================================================
+
+@file        block--testimonials-featured.html
+@path        _includes/block-templates/block--testimonials-featured.html
+@description Display featured reviews/testimonials from JSON data
+@version     1.0.0
+@date        2025-11-25
+
+Parameters:
+-----------
+- limit: Number of testimonials to show (default: 3)
+- random: Randomize selection (default: false)
+- bg_class: Background class (default: "bg-light")
+
+Usage:
+------
+{% include block-templates/block--testimonials-featured.html limit=3 %}
+
+============================================================================
+{% endcomment %}
+
+{% assign limit = include.limit | default: 3 %}
+{% assign random = include.random | default: false %}
+{% assign bg_class = include.bg_class | default: "bg-light" %}
+
+{% comment %} Get featured reviews {% endcomment %}
+{% assign featured_reviews = site.data.review--service.reviews | where: "featured", true %}
+
+{% comment %} If not enough featured, get top-rated reviews {% endcomment %}
+{% if featured_reviews.size < limit %}
+  {% assign all_reviews = site.data.review--service.reviews | sort: "rating" | reverse %}
+  {% assign featured_reviews = all_reviews | slice: 0, limit %}
+{% endif %}
+
+{% comment %} Limit the results {% endcomment %}
+{% assign display_reviews = featured_reviews | slice: 0, limit %}
+
+{% if display_reviews.size > 0 %}
+<section class="block--featured-testimonials py-5 {{ bg_class }}">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-6 fw-bold mb-3">
+        <i class="bi bi-chat-quote text-primary me-2"></i>
+        Apa Kata Klien Kami?
+      </h2>
+      <p class="text-muted">Testimoni dari klien yang telah menggunakan layanan kami</p>
+    </div>
+
+    <div class="row g-4">
+      {% for review in display_reviews %}
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              {% comment %} Stars {% endcomment %}
+              <div class="mb-3 text-warning">
+                {% for i in (1..5) %}
+                  {% if i <= review.rating %}
+                    <i class="bi bi-star-fill"></i>
+                  {% else %}
+                    <i class="bi bi-star"></i>
+                  {% endif %}
+                {% endfor %}
+              </div>
+
+              {% comment %} Quote {% endcomment %}
+              <blockquote class="flex-grow-1 mb-3">
+                <p class="mb-0">"{{ review.content | truncate: 150 }}"</p>
+              </blockquote>
+
+              {% comment %} Author {% endcomment %}
+              <div class="d-flex align-items-center mt-auto pt-3 border-top">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                  <span class="fw-bold">{{ review.author | slice: 0, 1 | upcase }}</span>
+                </div>
+                <div>
+                  <strong class="d-block">{{ review.author }}</strong>
+                  {% if review.company %}
+                    <small class="text-muted">{{ review.company }}</small>
+                  {% endif %}
+                </div>
+                {% if review.verified %}
+                  <span class="badge bg-success-subtle text-success ms-auto">
+                    <i class="bi bi-patch-check-fill"></i>
+                  </span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% comment %} Overall stats {% endcomment %}
+    {% assign total_reviews = site.data.review--service.reviews.size %}
+    {% assign ratings = site.data.rating--service.ratings %}
+    {% assign total_avg = 0 %}
+    {% assign rating_count = 0 %}
+    {% for r in ratings %}
+      {% assign total_avg = total_avg | plus: r.average %}
+      {% assign rating_count = rating_count | plus: 1 %}
+    {% endfor %}
+    {% if rating_count > 0 %}
+      {% assign overall_avg = total_avg | divided_by: rating_count | round: 1 %}
+    {% else %}
+      {% assign overall_avg = 0 %}
+    {% endif %}
+
+    <div class="text-center mt-5">
+      <div class="d-inline-flex align-items-center bg-white rounded-pill shadow-sm px-4 py-2">
+        <div class="text-warning me-2">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-half"></i>
+        </div>
+        <span class="fw-bold me-2">{{ overall_avg }}</span>
+        <span class="text-muted">dari {{ total_reviews }} ulasan</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,122 @@
+{% comment %}
+============================================================================
+Component: Comment Thread
+============================================================================
+
+@file        comment-thread.html
+@path        _includes/components/comment-thread.html
+@description Display threaded comments (Q&A style) from JSON data
+@version     1.0.0
+@date        2025-11-25
+
+Parameters:
+-----------
+- comments: Array of comments from comment--service.json (required)
+- limit: Maximum root comments to show (optional, default: all)
+- show_date: Show comment date (default: true)
+
+Usage:
+------
+{% assign comments = site.data.comment--service.comments | where: "slug", page_slug %}
+{% include components/comment-thread.html comments=comments %}
+
+============================================================================
+{% endcomment %}
+
+{% assign all_comments = include.comments %}
+{% assign limit = include.limit %}
+{% assign show_date = include.show_date | default: true %}
+
+{% comment %} Get root comments (no parent) {% endcomment %}
+{% assign root_comments = all_comments | where: "parent_comment_id", nil %}
+
+{% comment %} Sort by date (newest first) {% endcomment %}
+{% assign sorted_roots = root_comments | sort: "created_at" | reverse %}
+
+{% comment %} Apply limit {% endcomment %}
+{% if limit %}
+  {% assign display_roots = sorted_roots | slice: 0, limit %}
+{% else %}
+  {% assign display_roots = sorted_roots %}
+{% endif %}
+
+{% if display_roots.size > 0 %}
+<div class="comment-thread">
+  {% for comment in display_roots %}
+    <div class="comment-item card mb-3 border-start border-primary border-3">
+      <div class="card-body">
+        {% comment %} Comment header {% endcomment %}
+        <div class="comment-header d-flex align-items-center mb-2">
+          <div class="comment-avatar rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center me-2" style="width: 36px; height: 36px;">
+            <span class="small fw-bold">{{ comment.author | slice: 0, 1 | upcase }}</span>
+          </div>
+          <div class="flex-grow-1">
+            <strong class="comment-author">{{ comment.author }}</strong>
+            {% if show_date %}
+              <small class="text-muted ms-2">
+                <i class="bi bi-clock me-1"></i>{{ comment.created_at | date: "%d %b %Y" }}
+              </small>
+            {% endif %}
+          </div>
+        </div>
+
+        {% comment %} Comment content {% endcomment %}
+        <div class="comment-content">
+          <p class="mb-0">{{ comment.content }}</p>
+        </div>
+
+        {% comment %} Replies (nested comments) {% endcomment %}
+        {% assign replies = all_comments | where: "parent_comment_id", comment.id %}
+        {% if replies.size > 0 %}
+          {% assign sorted_replies = replies | sort: "created_at" %}
+          <div class="comment-replies mt-3 ps-4 border-start">
+            {% for reply in sorted_replies %}
+              <div class="comment-reply mb-3">
+                <div class="comment-header d-flex align-items-center mb-2">
+                  {% if reply.author == "Admin CMJ" %}
+                    <div class="comment-avatar rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                      <i class="bi bi-shield-check small"></i>
+                    </div>
+                  {% else %}
+                    <div class="comment-avatar rounded-circle bg-light text-secondary d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                      <span class="small fw-bold">{{ reply.author | slice: 0, 1 | upcase }}</span>
+                    </div>
+                  {% endif %}
+                  <div class="flex-grow-1">
+                    <strong class="comment-author small">{{ reply.author }}</strong>
+                    {% if reply.author == "Admin CMJ" %}
+                      <span class="badge bg-primary-subtle text-primary ms-1 small">Admin</span>
+                    {% endif %}
+                    {% if show_date %}
+                      <small class="text-muted ms-2">
+                        {{ reply.created_at | date: "%d %b %Y" }}
+                      </small>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="comment-content small">
+                  <p class="mb-0">{{ reply.content }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+
+  {% comment %} Show more indicator {% endcomment %}
+  {% if limit and root_comments.size > limit %}
+    {% assign remaining = root_comments.size | minus: limit %}
+    <div class="comment-thread__more text-center text-muted py-3">
+      <small>+ {{ remaining }} pertanyaan lainnya</small>
+    </div>
+  {% endif %}
+</div>
+{% else %}
+<div class="comment-thread comment-thread--empty text-center text-muted py-5">
+  <i class="bi bi-chat-square-text fs-1 d-block mb-3"></i>
+  <p class="mb-2">Belum ada pertanyaan</p>
+  <small>Hubungi kami via WhatsApp untuk bertanya</small>
+</div>
+{% endif %}
