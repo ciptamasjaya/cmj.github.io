@@ -63,13 +63,11 @@ by page--service.html wrapper, NOT in this node template.
     <div class="col-lg-4 mb-4">
       {% include reusable/block--service-carousel.html max_height="400px" %}
 
-      {% if page.rating and page.review_count %}
+      {% assign carousel_slug = page.url | split: "/" | compact | last %}
+      {% assign carousel_rating = site.data.rating--service.ratings | where: "slug", carousel_slug | first %}
+      {% if carousel_rating and carousel_rating.total_reviews > 0 %}
       <div class="mt-3 text-center">
-        {% include components/reviews/component--rating-badge.html
-           rating=page.rating
-           review_count=page.review_count
-           size="md"
-        %}
+        {% include components/rating-stars.html rating=carousel_rating size="md" %}
       </div>
       {% endif %}
     </div>
@@ -83,13 +81,9 @@ by page--service.html wrapper, NOT in this node template.
         <span class="badge bg-primary">{{ page.category }}</span>
         {% endif %}
 
-        {% if page.rating and page.review_count %}
+        {% if carousel_rating and carousel_rating.total_reviews > 0 %}
         <span class="text-muted">•</span>
-        {% include components/reviews/component--rating-badge.html
-           rating=page.rating
-           review_count=page.review_count
-           size="sm"
-        %}
+        {% include components/rating-stars.html rating=carousel_rating size="sm" %}
         {% endif %}
       </div>
 
@@ -134,9 +128,43 @@ by page--service.html wrapper, NOT in this node template.
 
 </div>
 
-<!-- Reviews Section (Outside container for full-width background) -->
-{% if page.rating and page.reviews %}
-  {% include block-templates/block--reviews.html %}
+<!-- Reviews Section (from JSON data) -->
+{% assign page_slug = page.url | split: "/" | compact | last %}
+{% assign reviews = site.data.review--service.reviews | where: "slug", page_slug %}
+{% assign rating = site.data.rating--service.ratings | where: "slug", page_slug | first %}
+
+{% if rating and rating.total_reviews > 0 %}
+<section id="reviews" class="bg-light py-5 mt-5">
+  <div class="container">
+    <h2 class="mb-4">
+      <i class="bi bi-star-fill text-warning me-2"></i>
+      Rating & Ulasan
+    </h2>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        {% include components/rating-summary.html rating=rating %}
+      </div>
+      <div class="col-lg-8">
+        {% include components/review-list.html reviews=reviews limit=5 %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Q&A Section -->
+{% assign comments = site.data.comment--service.comments | where: "slug", page_slug %}
+{% if comments.size > 0 %}
+<section id="qna" class="py-5">
+  <div class="container">
+    <h2 class="mb-4">
+      <i class="bi bi-chat-dots text-primary me-2"></i>
+      Tanya Jawab
+    </h2>
+    {% include components/comment-thread.html comments=comments limit=5 %}
+  </div>
+</section>
 {% endif %}
 
 <!-- CTA Section will be added as reusable block -->

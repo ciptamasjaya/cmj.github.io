@@ -124,35 +124,38 @@ Date Display Logic:
         </a>
       </h3>
 
-      <!-- Rating & Reviews -->
-      {% if show_rating and service.rating %}
-      <div class="mb-3">
-        <div class="d-flex align-items-center gap-2">
-          <!-- Star Rating -->
-          <div class="text-warning">
-            {% assign full_stars = service.rating | floor %}
-            {% assign decimal = service.rating | minus: full_stars %}
+      <!-- Rating & Reviews (from JSON data or frontmatter) -->
+      {% assign card_slug = service.url | split: "/" | compact | last %}
+      {% assign json_rating = site.data.rating--service.ratings | where: "slug", card_slug | first %}
 
-            {% for i in (1..5) %}
-              {% if i <= full_stars %}
-                <i class="bi bi-star-fill"></i>
-              {% elsif decimal >= 0.5 and i == full_stars | plus: 1 %}
-                <i class="bi bi-star-half"></i>
-              {% else %}
-                <i class="bi bi-star"></i>
-              {% endif %}
-            {% endfor %}
-          </div>
-
-          <!-- Rating Value -->
-          <span class="fw-bold">{{ service.rating }}</span>
-
-          <!-- Review Count -->
-          {% if service.review_count %}
-            <span class="text-muted small">({{ service.review_count }} ulasan)</span>
-          {% endif %}
+      {% if show_rating %}
+        {% if json_rating and json_rating.total_reviews > 0 %}
+        <div class="mb-3">
+          {% include components/rating-stars.html rating=json_rating size="sm" %}
         </div>
-      </div>
+        {% elsif service.rating %}
+        <div class="mb-3">
+          <div class="d-flex align-items-center gap-2">
+            <div class="text-warning">
+              {% assign full_stars = service.rating | floor %}
+              {% assign decimal = service.rating | minus: full_stars %}
+              {% for i in (1..5) %}
+                {% if i <= full_stars %}
+                  <i class="bi bi-star-fill"></i>
+                {% elsif decimal >= 0.5 and i == full_stars | plus: 1 %}
+                  <i class="bi bi-star-half"></i>
+                {% else %}
+                  <i class="bi bi-star"></i>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <span class="fw-bold">{{ service.rating }}</span>
+            {% if service.review_count %}
+              <span class="text-muted small">({{ service.review_count }} ulasan)</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
       {% endif %}
 
       <!-- Excerpt -->

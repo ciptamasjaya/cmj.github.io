@@ -155,6 +155,9 @@ Set in subcategory page frontmatter:
     {% include schema/schema--breadcrumb.html %}
   {% endif %}
 
+  <!-- Reviews Schema (from JSON data) -->
+  {% include schema/schema--reviews-json.html %}
+
   <!-- Page-specific schemas -->
   {% if page.custom_schema %}
     {% for schema_file in page.custom_schema %}

@@ -1,0 +1,91 @@
+{% comment %}
+============================================================================
+Schema: Reviews from JSON Data
+============================================================================
+
+@file        schema--reviews-json.html
+@path        _includes/schema/schema--reviews-json.html
+@type        Schema (reviews from JSON)
+@description Schema.org markup for reviews using JSON data files
+@version     1.0.0
+@date        2025-11-25
+
+Generates structured data for service reviews from:
+- _data/review--service.json (individual reviews)
+- _data/rating--service.json (aggregate ratings)
+
+Usage:
+------
+Include in layout or page:
+{% include schema/schema--reviews-json.html %}
+
+Parameters:
+-----------
+- slug: Service slug (optional, defaults to page URL slug)
+- limit: Max reviews to include (optional, default: 5)
+
+============================================================================
+{% endcomment %}
+
+{% assign slug = include.slug %}
+{% unless slug %}
+  {% assign slug = page.url | split: "/" | compact | last %}
+{% endunless %}
+
+{% assign limit = include.limit | default: 5 %}
+
+{% assign reviews = site.data.review--service.reviews | where: "slug", slug %}
+{% assign rating = site.data.rating--service.ratings | where: "slug", slug | first %}
+
+{% if rating and rating.total_reviews > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | strip_html | escape }}",
+  "url": "{{ page.url | absolute_url }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.title | escape }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ rating.average }}",
+    "reviewCount": "{{ rating.total_reviews }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  }{% if reviews.size > 0 %},
+  "review": [
+    {% assign limited_reviews = reviews | slice: 0, limit %}
+    {% for review in limited_reviews %}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review.author | escape }}"
+      },
+      "datePublished": "{{ review.created_at | date: '%Y-%m-%d' }}",
+      "reviewBody": "{{ review.content | strip_html | escape }}",
+      {% if review.title %}
+      "name": "{{ review.title | escape }}",
+      {% endif %}
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review.rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]{% endif %},
+  "serviceType": "{{ page.service_type | default: 'Safety Inspection' }}",
+  "category": "{{ page.category | default: 'K3 Inspection' }}",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  }
+}
+</script>
+{% endif %}
