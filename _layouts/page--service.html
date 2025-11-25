@@ -92,7 +92,10 @@ Architecture Principle:
     {% include schema/schema--page.html %}
   {% endunless %}
 
-  <!-- Service Schema (WebPage + Service + Reviews in @graph) -->
+  <!-- LocalBusiness Schema (ProfessionalService) -->
+  {% include schema/schema--local-business.html %}
+
+  <!-- Product Schema (Service as Product + Reviews) -->
   {% include schema/schema--service.html %}
 
   <!-- Breadcrumb Schema (BreadcrumbList) -->

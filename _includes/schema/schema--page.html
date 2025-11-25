@@ -1,16 +1,18 @@
 {% comment %}
 ============================================================================
-Unified Schema: WebSite + Organization + Navigation + Page
+Unified Schema: WebSite + Navigation + Page
 ============================================================================
 
 @file        schema--page.html
 @path        _includes/schema/schema--page.html
 @type        Schema (unified component)
-@description All schemas in single @graph for better Google recognition
+@description WebSite, Navigation, and Page schemas in single @graph
 @author      arisciwek
+@updated     2025-11-26
 
-This combines WebSite, Organization, SiteNavigationElement, and Page
-schemas into a single @graph for optimal Google Rich Results detection.
+This combines WebSite, SiteNavigationElement, and Page schemas.
+Organization is handled separately by schema--local-business.html
+to avoid duplication (LocalBusiness extends Organization).
 
 Parameters:
 -----------
@@ -42,24 +44,7 @@ schema_type: AboutPage
       "description": "{{ site.description }}",
       "inLanguage": "{{ site.lang | default: 'id' }}",
       "publisher": {
-        "@type": "Organization",
-        "name": "{{ site.business.name }}",
-        "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
-      "name": "{{ site.business.name }}",
-      "url": "{{ site.url }}{{ site.baseurl }}/",
-      "logo": "{{ '/assets/images/logo.svg' | absolute_url }}",
-      "image": "{{ '/assets/images/logo.svg' | absolute_url }}",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "{{ site.business.phone }}",
-        "contactType": "Customer Service",
-        "areaServed": "ID",
-        "availableLanguage": "Indonesian"
+        "@id": "{{ site.url }}{{ site.baseurl }}/#localbusiness"
       }
     },
     {
