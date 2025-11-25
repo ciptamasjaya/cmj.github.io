@@ -1,0 +1,8 @@
+{
+  "_meta": {
+    "last_review_id": 0,
+    "last_updated": "2025-11-25T10:30:00Z",
+    "description": "Reviews for blog posts - add reviews when blog posts are created"
+  },
+  "reviews": []
+}
