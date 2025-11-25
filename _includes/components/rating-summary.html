@@ -1,0 +1,110 @@
+{% comment %}
+============================================================================
+Component: Rating Summary
+============================================================================
+
+@file        rating-summary.html
+@path        _includes/components/rating-summary.html
+@description Display rating summary with score, stars, and distribution bars
+@version     1.0.0
+@date        2025-11-25
+
+Parameters:
+-----------
+- rating: Rating object from rating--service.json (required)
+- show_bars: Show distribution bars (default: true)
+- compact: Use compact layout (default: false)
+
+Usage:
+------
+{% assign rating = site.data.rating--service.ratings | where: "slug", page_slug | first %}
+{% include components/rating-summary.html rating=rating %}
+
+============================================================================
+{% endcomment %}
+
+{% assign rating_data = include.rating %}
+{% assign show_bars = include.show_bars | default: true %}
+{% assign compact = include.compact | default: false %}
+
+{% if rating_data %}
+  {% assign avg = rating_data.average | default: 0 %}
+  {% assign count = rating_data.total_reviews | default: 0 %}
+  {% assign dist = rating_data.distribution %}
+
+  {% comment %} Calculate stars {% endcomment %}
+  {% assign full_stars = avg | floor %}
+  {% assign decimal = avg | minus: full_stars %}
+  {% assign has_half = false %}
+  {% if decimal >= 0.3 and decimal < 0.8 %}
+    {% assign has_half = true %}
+  {% elsif decimal >= 0.8 %}
+    {% assign full_stars = full_stars | plus: 1 %}
+  {% endif %}
+
+  <div class="rating-summary {% if compact %}rating-summary--compact{% endif %}">
+    {% comment %} Score and stars {% endcomment %}
+    <div class="rating-summary__header text-center mb-3">
+      <div class="rating-summary__score display-4 fw-bold text-primary mb-1">{{ avg }}</div>
+      <div class="rating-summary__stars mb-2">
+        {% for i in (1..5) %}
+          {% if i <= full_stars %}
+            <i class="bi bi-star-fill text-warning fs-5"></i>
+          {% elsif has_half and i == full_stars | plus: 1 %}
+            <i class="bi bi-star-half text-warning fs-5"></i>
+          {% else %}
+            <i class="bi bi-star text-warning fs-5"></i>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="rating-summary__count text-muted">
+        <i class="bi bi-people-fill me-1"></i>{{ count }} ulasan
+      </div>
+    </div>
+
+    {% if show_bars and dist %}
+    {% comment %} Distribution bars {% endcomment %}
+    <div class="rating-summary__distribution">
+      {% for star in (1..5) reversed %}
+        {% assign star_str = star | append: "" %}
+        {% assign star_count = dist[star_str] | default: 0 %}
+        {% if count > 0 %}
+          {% assign percentage = star_count | times: 100.0 | divided_by: count | round %}
+        {% else %}
+          {% assign percentage = 0 %}
+        {% endif %}
+
+        <div class="rating-bar d-flex align-items-center mb-1">
+          <span class="rating-bar__label me-2" style="width: 20px;">{{ star }}<i class="bi bi-star-fill text-warning ms-1 small"></i></span>
+          <div class="rating-bar__track flex-grow-1 bg-light rounded" style="height: 8px;">
+            <div class="rating-bar__fill bg-warning rounded" style="width: {{ percentage }}%; height: 100%;"></div>
+          </div>
+          <span class="rating-bar__count text-muted ms-2 small" style="width: 30px;">{{ star_count }}</span>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% comment %} Trust badge {% endcomment %}
+    <div class="rating-summary__badge text-center mt-3">
+      {% if avg >= 4.5 %}
+        <span class="badge bg-success">
+          <i class="bi bi-patch-check-fill me-1"></i>Rating Sangat Baik
+        </span>
+      {% elsif avg >= 4.0 %}
+        <span class="badge bg-primary">
+          <i class="bi bi-hand-thumbs-up-fill me-1"></i>Rating Baik
+        </span>
+      {% elsif avg >= 3.0 %}
+        <span class="badge bg-info">
+          <i class="bi bi-emoji-smile me-1"></i>Rating Cukup
+        </span>
+      {% endif %}
+    </div>
+  </div>
+{% else %}
+  <div class="rating-summary rating-summary--empty text-center text-muted py-4">
+    <i class="bi bi-star fs-1 d-block mb-2"></i>
+    <p class="mb-0">Belum ada ulasan</p>
+  </div>
+{% endif %}

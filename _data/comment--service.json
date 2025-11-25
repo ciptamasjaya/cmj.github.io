@@ -1,0 +1,104 @@
+{
+  "_meta": {
+    "last_comment_id": 12,
+    "last_updated": "2025-11-25T10:30:00Z"
+  },
+  "comments": [
+    {
+      "id": 1,
+      "slug": "riksa-uji-forklift",
+      "parent_comment_id": null,
+      "author": "Hendra Kusuma",
+      "content": "Pertanyaan: Berapa lama proses riksa uji forklift biasanya?",
+      "created_at": "2025-11-23T14:30:00Z"
+    },
+    {
+      "id": 2,
+      "slug": "riksa-uji-forklift",
+      "parent_comment_id": 1,
+      "author": "Admin CMJ",
+      "content": "Terima kasih atas pertanyaannya. Proses riksa uji forklift biasanya memakan waktu 1-2 jam per unit, tergantung kondisi unit dan kelengkapan dokumen. Untuk penerbitan sertifikat, maksimal 7 hari kerja setelah inspeksi.",
+      "created_at": "2025-11-23T15:00:00Z"
+    },
+    {
+      "id": 3,
+      "slug": "riksa-uji-forklift",
+      "parent_comment_id": null,
+      "author": "Ratna Dewi",
+      "content": "Apakah bisa riksa uji dilakukan di luar jam kerja? Forklift kami beroperasi 24 jam.",
+      "created_at": "2025-11-22T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "slug": "riksa-uji-forklift",
+      "parent_comment_id": 3,
+      "author": "Admin CMJ",
+      "content": "Bisa Bu Ratna. Kami menyediakan layanan inspeksi di luar jam kerja (malam/weekend) dengan perjanjian terlebih dahulu. Silakan hubungi tim kami untuk penjadwalan khusus.",
+      "created_at": "2025-11-22T10:30:00Z"
+    },
+    {
+      "id": 5,
+      "slug": "riksa-uji-crane",
+      "parent_comment_id": null,
+      "author": "Bambang Wicaksono",
+      "content": "Untuk inspeksi overhead crane kapasitas 10 ton, dokumen apa saja yang perlu disiapkan?",
+      "created_at": "2025-11-20T09:15:00Z"
+    },
+    {
+      "id": 6,
+      "slug": "riksa-uji-crane",
+      "parent_comment_id": 5,
+      "author": "Admin CMJ",
+      "content": "Untuk overhead crane 10 ton, dokumen yang perlu disiapkan: 1) Gambar teknis crane, 2) Sertifikat sebelumnya (jika perpanjangan), 3) Buku operasional/log book, 4) Data spesifikasi (nameplate). Tim kami akan membantu pengecekan kelengkapan sebelum inspeksi.",
+      "created_at": "2025-11-20T09:45:00Z"
+    },
+    {
+      "id": 7,
+      "slug": "riksa-uji-boiler",
+      "parent_comment_id": null,
+      "author": "Surya Permana",
+      "content": "Boiler kami baru dioperasikan 6 bulan. Apakah sudah harus riksa uji?",
+      "created_at": "2025-11-18T11:00:00Z"
+    },
+    {
+      "id": 8,
+      "slug": "riksa-uji-boiler",
+      "parent_comment_id": 7,
+      "author": "Admin CMJ",
+      "content": "Untuk boiler baru, riksa uji pertama dilakukan sebelum dioperasikan (commissioning). Setelah itu, riksa uji berkala dilakukan setiap 1 tahun. Jika boiler Anda sudah beroperasi 6 bulan tanpa sertifikat awal, segera lakukan riksa uji untuk memenuhi persyaratan Permenaker No. 3 Tahun 2016.",
+      "created_at": "2025-11-18T11:30:00Z"
+    },
+    {
+      "id": 9,
+      "slug": "riksa-uji-elevator",
+      "parent_comment_id": null,
+      "author": "Linda Hartono",
+      "content": "Kami punya 3 unit lift penumpang dan 1 lift barang. Apakah bisa diinspeksi dalam satu hari?",
+      "created_at": "2025-11-15T08:30:00Z"
+    },
+    {
+      "id": 10,
+      "slug": "riksa-uji-elevator",
+      "parent_comment_id": 9,
+      "author": "Admin CMJ",
+      "content": "Bisa Bu Linda. Untuk 4 unit lift, estimasi waktu inspeksi sekitar 4-5 jam. Kami akan koordinasikan dengan tim maintenance gedung agar inspeksi berjalan lancar tanpa mengganggu operasional lift terlalu lama.",
+      "created_at": "2025-11-15T09:00:00Z"
+    },
+    {
+      "id": 11,
+      "slug": "riksa-uji-instalasi-listrik",
+      "parent_comment_id": null,
+      "author": "Irwan Setiawan",
+      "content": "Apakah pengujian instalasi listrik harus memadamkan seluruh daya? Pabrik kami tidak bisa shutdown total.",
+      "created_at": "2025-11-12T14:00:00Z"
+    },
+    {
+      "id": 12,
+      "slug": "riksa-uji-instalasi-listrik",
+      "parent_comment_id": 11,
+      "author": "Admin CMJ",
+      "content": "Tidak harus shutdown total Pak Irwan. Pengujian bisa dilakukan per section/panel secara bergantian. Tim kami akan koordinasi dengan tim electrical pabrik untuk mengatur jadwal pengujian yang tidak mengganggu produksi. Beberapa pengujian seperti thermal imaging bahkan bisa dilakukan saat sistem beroperasi normal.",
+      "created_at": "2025-11-12T14:30:00Z"
+    }
+  ]
+}
