@@ -70,7 +70,9 @@ Benefits:
       "provider": {
         "@type": "Organization",
         "name": "{{ site.title | escape }}",
-        "url": "{{ site.url }}{{ site.baseurl }}/"
+        "url": "{{ site.url }}{{ site.baseurl }}/",
+        "logo": "{{ '/assets/images/logo.svg' | absolute_url }}",
+        "image": "{{ '/assets/images/logo.svg' | absolute_url }}"
       },
       {% if service.service_type %}
       "serviceType": "{{ service.service_type }}",
@@ -78,24 +80,15 @@ Benefits:
       {% if service.category %}
       "category": "{{ service.category }}",
       {% endif %}
-      {% if service.area_served %}
-      "areaServed": {
-        "@type": "{% if service.area_served == 'Indonesia' %}Country{% else %}Place{% endif %}",
-        "name": "{{ service.area_served }}"
-      },
-      {% endif %}
+      "areaServed": "ID",
       {% if service.image %}
       "image": "{{ service.image | absolute_url }}",
       {% endif %}
-      {% if service.rating and service.review_count %}
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "{{ service.rating }}",
-        "reviewCount": "{{ service.review_count }}",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      {% endif %}
+      {% comment %}
+        AggregateRating removed from list schema.
+        Google requires review array with aggregateRating for Service type.
+        Reviews are shown in detail page schema (schema--service-reviews.html).
+      {% endcomment %}
       {% if service.price and service.price_currency %}
       "offers": {
         "@type": "Offer",

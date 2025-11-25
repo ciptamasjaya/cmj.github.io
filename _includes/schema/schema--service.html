@@ -1,22 +1,30 @@
 {% comment %}
 ============================================================================
-Schema: Single Service Page (schema--service-page.html)
+Schema: Single Service Page (schema--service.html)
 ============================================================================
 
-@file        schema--service-page.html
-@path        _includes/schema/schema--service-page.html
+@file        schema--service.html
+@path        _includes/schema/schema--service.html
 @type        Schema (single service detail page)
 @description Schema.org markup for individual service detail pages
 @author      arisciwek
-@version     1.0.0
+@version     2.0.0
 @created     2025-11-24
+@updated     2025-11-26
 
 Features:
 - WebPage schema for service detail page
-- Service schema with full details
-- Provider (Organization) reference
-- Area served, service type, category
-- Optional: Offers (pricing), Rating/Review, FAQ
+- Product schema (for Google Review Snippets support)
+- Brand (Organization) reference
+- Category for service type
+- Offers (pricing), AggregateRating, Review
+
+Note: Using @type Product instead of Service because Google only supports
+review snippets for Product, not Service. This is a common workaround
+for service businesses to get star ratings in search results.
+
+Supported types for Google Review Snippets:
+Book, Course, Event, LocalBusiness, Movie, Product, Recipe, SoftwareApp
 
 Expected Frontmatter:
 ---
@@ -37,7 +45,7 @@ area_served: "Indonesia"
 ---
 
 Usage:
-{% include schema/schema--service-page.html %}
+{% include schema/schema--service.html %}
 
 ============================================================================
 {% endcomment %}
@@ -58,7 +66,7 @@ Usage:
         "@id": "{{ site.url }}{{ site.baseurl }}/#website"
       },
       "about": {
-        "@id": "{{ page.url | absolute_url }}#service"
+        "@id": "{{ page.url | absolute_url }}#product"
       },
       "datePublished": "{{ page.date | default: site.time | date_to_xmlschema }}",
       "dateModified": "{{ page.last_modified_at | default: page.date | default: site.time | date_to_xmlschema }}"{% if page.image %},
@@ -69,51 +77,63 @@ Usage:
       }{% endif %}
     },
     {
-      "@type": "Service",
-      "@id": "{{ page.url | absolute_url }}#service",
+      "@type": "Product",
+      "@id": "{{ page.url | absolute_url }}#product",
       "name": "{{ page.title | escape }}",
       "description": "{{ page.description | escape }}",
-      "serviceType": "{{ page.service_type | default: 'Safety Inspection' }}",
-      "provider": {
-        "@type": "Organization",
-        "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
-        "name": "{{ site.business.name }}",
-        "url": "{{ site.url }}{{ site.baseurl }}/",
-        "telephone": "{{ site.business.phone }}",
-        "email": "{{ site.business.email }}",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "{{ site.business.address.street }}",
-          "addressLocality": "{{ site.business.address.city }}",
-          "addressRegion": "{{ site.business.address.province }}",
-          "postalCode": "{{ site.business.address.postalCode }}",
-          "addressCountry": "{{ site.business.address.country }}"
-        }
+      "category": "{{ page.category | default: 'Jasa K3' }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ site.business.name }}"
       },
-      "areaServed": {
-        "@type": "{% if page.area_served == 'Indonesia' %}Country{% else %}Place{% endif %}",
-        "name": "{{ page.area_served | default: site.business.coverage }}"
-      }{% if page.category %},
-      "category": "{{ page.category }}"{% endif %}{% if page.image %},
-      "image": "{{ page.image | absolute_url }}"{% endif %}{% if page.price %},
+      "image": "{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}",
+      "url": "{{ page.url | absolute_url }}",
       "offers": {
         "@type": "Offer",
-        "price": "{{ page.price }}",
+        "price": "{{ page.price | default: '0' }}",
         "priceCurrency": "{{ page.price_currency | default: 'IDR' }}",
         "availability": "https://schema.org/InStock",
+        "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
         "url": "{{ page.url | absolute_url }}",
         "seller": {
           "@type": "Organization",
-          "name": "{{ site.business.name }}"
+          "name": "{{ site.business.name }}",
+          "url": "{{ site.url }}{{ site.baseurl }}/"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "IDR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "ID"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 7,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "ID",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
         }
-      }{% endif %}{% if page.rating and page.review_count %},
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "{{ page.rating }}",
-        "reviewCount": "{{ page.review_count }}",
-        "bestRating": "5",
-        "worstRating": "1"
-      }{% endif %}
+      }{% capture reviews_output %}{% include schema/schema--service-reviews.html %}{% endcapture %}{% assign reviews_trimmed = reviews_output | strip %}{% if reviews_trimmed != "" %},
+      {{ reviews_trimmed }}{% endif %}
     }
   ]
 }

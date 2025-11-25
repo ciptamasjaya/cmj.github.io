@@ -52,6 +52,8 @@ schema_type: AboutPage
       "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
       "name": "{{ site.business.name }}",
       "url": "{{ site.url }}{{ site.baseurl }}/",
+      "logo": "{{ '/assets/images/logo.svg' | absolute_url }}",
+      "image": "{{ '/assets/images/logo.svg' | absolute_url }}",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "{{ site.business.phone }}",

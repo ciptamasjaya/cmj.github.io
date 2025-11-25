@@ -1,95 +1,92 @@
 {% comment %}
 ============================================================================
-Schema: Service Reviews & Aggregate Rating
+Schema: Service Reviews & Aggregate Rating from JSON Data
 ============================================================================
 
 @file        schema--service-reviews.html
 @path        _includes/schema/schema--service-reviews.html
-@type        Schema (service reviews & ratings)
-@description Schema.org markup for service reviews and aggregate ratings
-@author      ciptamasjaya
-@version     1.0.0
-@date        2025-11-24
+@type        Schema component
+@description Schema.org Review + AggregateRating for service reviews
+@version     3.1.0
+@date        2025-11-26
 
-Generates structured data for service reviews including:
-- AggregateRating (overall rating, review count)
-- Individual Review items (author, rating, review text, date)
+This component generates aggregateRating and review properties for Service schema.
+Designed to be included within Service schema for Google Rich Results.
 
-Usage:
-------
-Include in page front matter:
-custom_schema:
-  - schema/schema--service-reviews.html
+Data Sources:
+-------------
+- _data/review--service.json (individual reviews)
+- _data/rating--service.json (aggregate ratings)
 
-Or include directly in layout:
+Parameters:
+-----------
+- slug: Service slug (optional, defaults to page URL slug)
+- limit: Max reviews to include (optional, default: 5)
+- output_format: (optional) "combined" or "standalone" (default: "combined")
+
+Output Formats:
+--------------
+- "combined": Returns aggregateRating + review properties for embedding in Service schema
+- "standalone": Returns complete script tag for testing/debug
+
+Usage in Service Schema:
+------------------------
+In schema--service.html, add before closing Service object:
 {% include schema/schema--service-reviews.html %}
 
-Frontmatter Structure Required:
---------------------------------
-rating: 4.8
-review_count: 15
-reviews:
-  - author: "John Doe"
-    author_type: "Person"  # Person or Organization
-    rating: 5
-    date: "2025-11-20"
-    review: "Excellent service, very professional..."
-  - author: "Jane Smith"
-    author_type: "Person"
-    rating: 4
-    date: "2025-11-18"
-    review: "Good service but could be faster..."
+Output (combined):
+"aggregateRating": {...},
+"review": [...]
+
+Standalone Usage (testing):
+---------------------------
+{% include schema/schema--service-reviews.html output_format="standalone" %}
 
 ============================================================================
 {% endcomment %}
 
-{% if page.rating and page.reviews %}
-<script type="application/ld+json">
+{% assign slug = include.slug %}
+{% unless slug %}
+  {% assign slug = page.url | split: "/" | compact | last %}
+{% endunless %}
+
+{% assign limit = include.limit | default: 5 %}
+{% assign output_format = include.output_format | default: "combined" %}
+
+{% assign reviews = site.data.review--service.reviews | where: "slug", slug %}
+{% assign rating = site.data.rating--service.ratings | where: "slug", slug | first %}
+
+{% if rating and rating.total_reviews > 0 %}
+{% if output_format == "standalone" %}<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "{{ page.title }}",
-  "description": "{{ page.description | strip_html | escape }}",
-  "provider": {
-    "@type": "Organization",
-    "name": "{{ site.title }}",
-    "url": "{{ site.url }}{{ site.baseurl }}/"
-  },
-  {% if page.rating %}
-  "aggregateRating": {
+  "name": "{{ page.title | escape }}",
+{% endif %}"aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "{{ page.rating }}",
-    "reviewCount": "{{ page.review_count | default: page.reviews.size }}",
+    "ratingValue": "{{ rating.average }}",
+    "reviewCount": "{{ rating.total_reviews }}",
     "bestRating": "5",
     "worstRating": "1"
-  },
-  {% endif %}
-  {% if page.reviews and page.reviews.size > 0 %}
-  "review": [
-    {% for review in page.reviews %}
+  }{% if reviews.size > 0 %},
+  "review": [{% assign limited_reviews = reviews | slice: 0, limit %}{% for review in limited_reviews %}{% if forloop.index > 1 %},{% endif %}
     {
       "@type": "Review",
       "author": {
-        "@type": "{{ review.author_type | default: 'Person' }}",
-        "name": "{{ review.author }}"
+        "@type": "Person",
+        "name": "{{ review.author | escape }}"
       },
-      "datePublished": "{{ review.date }}",
-      "reviewBody": "{{ review.review | strip_html | escape }}",
+      "datePublished": "{{ review.created_at | date: '%Y-%m-%d' }}",
+      "reviewBody": "{{ review.content | strip_html | escape }}"{% if review.title %},
+      "name": "{{ review.title | escape }}"{% endif %},
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": "{{ review.rating }}",
         "bestRating": "5",
         "worstRating": "1"
       }
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ],
-  {% endif %}
-  "serviceType": "{{ page.service_type | default: 'Professional Service' }}",
-  "areaServed": {
-    "@type": "Country",
-    "name": "{{ page.area_served | default: 'Indonesia' }}"
-  }
+    }{% endfor %}
+  ]{% endif %}{% if output_format == "standalone" %}
 }
-</script>
+</script>{% endif %}
 {% endif %}

@@ -53,7 +53,7 @@ custom_schema:
     "addressLocality": "{{ site.business.address.city }}",
     "addressRegion": "{{ site.business.address.province }}",
     "postalCode": "{{ site.business.address.postalCode }}",
-    "addressCountry": "{{ site.business.address.country }}"
+    "addressCountry": "ID"
   },
   "geo": {
     "@type": "GeoCoordinates",
@@ -77,21 +77,18 @@ custom_schema:
   ],
   "areaServed": [
     {
-      "@type": "State",
+      "@type": "AdministrativeArea",
       "name": "DKI Jakarta"
     },
     {
-      "@type": "State",
+      "@type": "AdministrativeArea",
       "name": "Jawa Barat"
     },
     {
-      "@type": "State",
+      "@type": "AdministrativeArea",
       "name": "Banten"
     },
-    {
-      "@type": "Country",
-      "name": "Indonesia"
-    }
+    "ID"
   ],
   "serviceArea": {
     "@type": "GeoCircle",

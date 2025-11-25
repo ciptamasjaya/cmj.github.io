@@ -92,11 +92,8 @@ Architecture Principle:
     {% include schema/schema--page.html %}
   {% endunless %}
 
-  <!-- Service Schema (WebPage + Service in @graph) -->
+  <!-- Service Schema (WebPage + Service + Reviews in @graph) -->
   {% include schema/schema--service.html %}
-
-  <!-- Reviews Schema (from JSON data) -->
-  {% include schema/schema--reviews-json.html %}
 
   <!-- Breadcrumb Schema (BreadcrumbList) -->
   {% if page.show_breadcrumb_schema %}

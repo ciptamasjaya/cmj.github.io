@@ -155,8 +155,11 @@ Set in subcategory page frontmatter:
     {% include schema/schema--breadcrumb.html %}
   {% endif %}
 
-  <!-- Reviews Schema (from JSON data) -->
-  {% include schema/schema--reviews-json.html %}
+  {% comment %}
+  Reviews Schema removed from subcategory pages.
+  Reviews schema is only for detail service pages (node--service.html).
+  Subcategory pages are listing pages, not detail pages.
+  {% endcomment %}
 
   <!-- Page-specific schemas -->
   {% if page.custom_schema %}
