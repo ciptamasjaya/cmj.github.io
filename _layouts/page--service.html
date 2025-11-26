@@ -123,6 +123,11 @@ Architecture Principle:
     {% include schema/services/schema--offer-riksa-uji.html %}
   {% endif %}
 
+  <!-- Schedule Schema (Event) -->
+  {% if page.schedule_riksa_uji %}
+    {% include schema/services/schema--schedule-riksa-uji.html %}
+  {% endif %}
+
   <!-- FAQ Schema (Riksa Uji) -->
   {% if page.faq_riksa_uji and page.faq_riksa_uji.faqs.size > 0 %}
     {% include schema/services/schema--faq-riksa-uji.html %}

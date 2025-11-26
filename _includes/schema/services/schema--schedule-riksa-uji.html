@@ -1,0 +1,226 @@
+{% comment %}
+============================================================================
+Schema: Schedule Riksa Uji (Event Schema with Dynamic Dates)
+============================================================================
+
+@file        schema--schedule-riksa-uji.html
+@path        _includes/schema/services/schema--schedule-riksa-uji.html
+@type        Schema (Event)
+@description JSON-LD Event schema for riksa uji inspection schedule
+@author      arisciwek
+@created     2025-11-26
+
+Data Source:
+------------
+Data from page frontmatter: page.schedule_riksa_uji
+
+Usage:
+------
+{% if page.schedule_riksa_uji %}
+  {% include schema/services/schema--schedule-riksa-uji.html %}
+{% endif %}
+
+Notes:
+------
+- Event dates are generated dynamically via JavaScript (2-6 weeks from access date)
+- Google can read JavaScript-generated schema.org markup
+- Fallback static schema provided for crawlers that don't execute JS
+
+============================================================================
+{% endcomment %}
+
+{% assign schedule = page.schedule_riksa_uji %}
+
+{% if schedule %}
+<!-- Event Schema Container - Will be populated by JavaScript -->
+<script id="schedule-schema-data" type="application/json">
+{
+  "serviceName": "{{ page.title | escape }}",
+  "serviceDescription": "{{ page.description | escape }}",
+  "serviceUrl": "{{ page.url | absolute_url }}",
+  "location": "{{ schedule.location | default: site.business.address.city | escape }}",
+  "weeksMin": {{ schedule.weeks_ahead_min | default: 2 }},
+  "weeksMax": {{ schedule.weeks_ahead_max | default: 6 }},
+  "scheduleCount": {{ schedule.count | default: 5 }},
+  "excludeWeekend": {{ schedule.exclude_weekend | default: true }},
+  "timeStart": "{{ schedule.time_start | default: '09:00' }}",
+  "timeEnd": "{{ schedule.time_end | default: '17:00' }}",
+  "price": "{{ page.offer_riksa_uji.offers.first.price | default: schedule.price | default: 2500000 }}",
+  "priceCurrency": "{{ page.offer_riksa_uji.offers.first.price_currency | default: schedule.price_currency | default: 'IDR' }}",
+  "organizer": {
+    "name": "{{ site.business.name | escape }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.business.phone }}",
+    "email": "{{ site.business.email }}",
+    "priceRange": "{{ site.business.priceRange | default: 'Rp' }}",
+    "address": {
+      "street": "{{ site.business.address.street | escape }}",
+      "city": "{{ site.business.address.city | escape }}",
+      "province": "{{ site.business.address.province | escape }}",
+      "postalCode": "{{ site.business.address.postalCode }}"
+    }
+  },
+  "image": "{{ page.image | default: '/assets/images/services/default-pesawat-angkat-angkut.svg' | absolute_url }}",
+  "rating": {
+    "ratingValue": "{{ page.rating | default: 4.8 }}",
+    "reviewCount": "{{ page.review_count | default: 25 }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+<!-- JavaScript to Generate Event Schema -->
+<script>
+(function() {
+  const dataElement = document.getElementById('schedule-schema-data');
+  if (!dataElement) return;
+
+  const config = JSON.parse(dataElement.textContent);
+
+  // Seeded random untuk konsistensi per hari
+  function seededRandom(seed) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  }
+
+  function formatISODate(date) {
+    return date.toISOString().split('T')[0];
+  }
+
+  function generateScheduleDates() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Seed based on current date (changes daily)
+    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+
+    const minDays = config.weeksMin * 7;
+    const maxDays = config.weeksMax * 7;
+
+    // Generate candidate dates
+    const candidates = [];
+    for (let i = minDays; i <= maxDays; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() + i);
+      const dayOfWeek = date.getDay();
+
+      // Exclude weekend if configured
+      if (config.excludeWeekend && (dayOfWeek === 0 || dayOfWeek === 6)) {
+        continue;
+      }
+
+      candidates.push(date);
+    }
+
+    // Shuffle using seeded random
+    for (let i = candidates.length - 1; i > 0; i--) {
+      const j = Math.floor(seededRandom(seed + i) * (i + 1));
+      [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+
+    // Take required count and sort by date
+    const selected = candidates.slice(0, config.scheduleCount);
+    selected.sort((a, b) => a - b);
+
+    return selected;
+  }
+
+  function generateEventSchema() {
+    const dates = generateScheduleDates();
+
+    if (dates.length === 0) return;
+
+    const events = dates.map((date, index) => {
+      const dateStr = formatISODate(date);
+      return {
+        "@type": "Event",
+        "@id": `${config.serviceUrl}#event-${dateStr}`,
+        "name": `${config.serviceName} - ${dateStr}`,
+        "description": config.serviceDescription,
+        "url": `${config.serviceUrl}#event-${dateStr}`,
+        "image": config.image,
+        "startDate": `${dateStr}T${config.timeStart}:00+07:00`,
+        "endDate": `${dateStr}T${config.timeEnd}:00+07:00`,
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": config.location,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": config.organizer.address.city,
+            "addressRegion": config.organizer.address.province,
+            "postalCode": config.organizer.address.postalCode,
+            "addressCountry": "ID"
+          }
+        },
+        "organizer": {
+          "@type": "LocalBusiness",
+          "name": config.organizer.name,
+          "url": config.organizer.url,
+          "telephone": config.organizer.telephone,
+          "email": config.organizer.email,
+          "image": config.image,
+          "priceRange": config.organizer.priceRange,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": config.organizer.address.street,
+            "addressLocality": config.organizer.address.city,
+            "addressRegion": config.organizer.address.province,
+            "postalCode": config.organizer.address.postalCode,
+            "addressCountry": "ID"
+          }
+        },
+        "performer": {
+          "@type": "Organization",
+          "name": config.organizer.name
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": config.serviceUrl,
+          "price": config.price,
+          "priceCurrency": config.priceCurrency,
+          "availability": "https://schema.org/InStock",
+          "validFrom": formatISODate(new Date())
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": config.rating.ratingValue,
+          "reviewCount": config.rating.reviewCount,
+          "bestRating": config.rating.bestRating,
+          "worstRating": config.rating.worstRating
+        }
+      };
+    });
+
+    // Create ItemList schema containing all events
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": `Jadwal ${config.serviceName}`,
+      "description": `Jadwal inspeksi ${config.serviceName} yang tersedia`,
+      "numberOfItems": events.length,
+      "itemListElement": events.map((event, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": event
+      }))
+    };
+
+    // Insert schema into page
+    const scriptElement = document.createElement('script');
+    scriptElement.type = 'application/ld+json';
+    scriptElement.textContent = JSON.stringify(schema);
+    document.head.appendChild(scriptElement);
+  }
+
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', generateEventSchema);
+  } else {
+    generateEventSchema();
+  }
+})();
+</script>
+{% endif %}

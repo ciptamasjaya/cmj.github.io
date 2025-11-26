@@ -158,6 +158,11 @@ by page--service.html wrapper, NOT in this node template.
 {% include reusable/services/block--offer-riksa-uji.html offer=page.offer_riksa_uji %}
 {% endif %}
 
+<!-- Schedule Section: Jadwal Inspeksi -->
+{% if page.schedule_riksa_uji %}
+{% include reusable/services/block--schedule-riksa-uji.html schedule=page.schedule_riksa_uji %}
+{% endif %}
+
 <!-- FAQ Section: Riksa Uji -->
 {% if page.faq_riksa_uji and page.faq_riksa_uji.faqs.size > 0 %}
 {% include reusable/services/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
