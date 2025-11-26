@@ -98,6 +98,11 @@ Architecture Principle:
   <!-- Product Schema (Service as Product + Reviews) -->
   {% include schema/services/schema--service.html %}
 
+  <!-- Article Schema (Intro Content with h2/h3/h4) -->
+  {% if page.intro %}
+    {% include schema/services/schema--article-intro.html %}
+  {% endif %}
+
   <!-- Video Schema (Riksa Uji) -->
   {% if page.video_riksa_uji and page.video_riksa_uji.src %}
     {% include schema/services/schema--video-riksa-uji.html %}

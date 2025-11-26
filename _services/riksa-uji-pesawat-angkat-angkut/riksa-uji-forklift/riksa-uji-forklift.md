@@ -27,11 +27,22 @@ custom_schema:
 # BLOCK DATA - Content Sections
 # ============================================================================
 
-# Block 1: Intro Section (2 Paragraphs)
+# Block 1: Intro Section (h2 + para + subsections)
 intro:
-  name: "Pendahuluan"
-  para_1: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker untuk memastikan keselamatan operasional di tempat kerja Anda."
-  para_2: "Dengan pengalaman bertahun-tahun dalam bidang inspeksi K3, kami memahami pentingnya keselamatan forklift dalam operasional industri Anda. Setiap inspeksi dilakukan sesuai standar Permenaker dan menghasilkan sertifikat yang diakui secara nasional, sehingga perusahaan Anda terhindar dari sanksi dan kecelakaan kerja."
+  name: "Layanan Riksa Uji Forklift Profesional"
+  para: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi."
+  subsections:
+    - h3: "Dasar Hukum dan Standar Keselamatan"
+      para: "Setiap inspeksi riksa uji forklift yang kami lakukan mengacu pada regulasi dan standar keselamatan kerja yang berlaku di Indonesia, memastikan kepatuhan penuh terhadap peraturan pemerintah."
+      subsections:
+        - h4: "Permenaker No. 8 Tahun 2020"
+          para: "Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Angkut mewajibkan setiap forklift menjalani riksa uji berkala untuk memastikan kelayakan operasional."
+        - h4: "SNI dan Standar Internasional"
+          para: "Selain mengacu pada peraturan nasional, kami juga menerapkan standar SNI dan referensi internasional seperti OSHA dan ANSI untuk memastikan kualitas inspeksi terbaik."
+    - h3: "Tim Inspector Bersertifikat"
+      para: "Inspector kami memiliki sertifikasi resmi dari Kementerian Ketenagakerjaan RI dan pengalaman bertahun-tahun dalam bidang inspeksi K3. Setiap inspeksi dilakukan dengan profesionalisme tinggi dan menghasilkan sertifikat yang diakui secara nasional."
+    - h3: "Cakupan Layanan Nasional"
+      para: "Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker di seluruh Indonesia. Dengan jaringan inspector yang luas, kami siap melakukan inspeksi on-site di lokasi Anda."
 
 # ============================================================================
 # ITEMLIST DATA - Jenis Forklift yang Dilayani

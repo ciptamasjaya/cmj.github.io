@@ -87,11 +87,37 @@ Usage:
         </div>
         <div class="card-body p-4">
           <div class="service-intro">
-            {% if page.intro.para_1 %}
-            <p>{{ page.intro.para_1 }}</p>
+            <!-- Main paragraph (h2 level) -->
+            {% if page.intro.para %}
+            <p class="lead">{{ page.intro.para }}</p>
             {% endif %}
-            {% if page.intro.para_2 %}
-            <p>{{ page.intro.para_2 }}</p>
+
+            <!-- Subsections (h3 level) -->
+            {% if page.intro.subsections %}
+            {% for subsection in page.intro.subsections %}
+            <div class="subsection mt-4">
+              {% if subsection.h3 %}
+              <h3 class="h5 text-primary">{{ subsection.h3 }}</h3>
+              {% endif %}
+              {% if subsection.para %}
+              <p>{{ subsection.para }}</p>
+              {% endif %}
+
+              <!-- Nested subsections (h4 level) -->
+              {% if subsection.subsections %}
+              {% for subsubsection in subsection.subsections %}
+              <div class="subsubsection ms-3 mt-3">
+                {% if subsubsection.h4 %}
+                <h4 class="h6 text-secondary">{{ subsubsection.h4 }}</h4>
+                {% endif %}
+                {% if subsubsection.para %}
+                <p class="text-muted small">{{ subsubsection.para }}</p>
+                {% endif %}
+              </div>
+              {% endfor %}
+              {% endif %}
+            </div>
+            {% endfor %}
             {% endif %}
           </div>
         </div>
