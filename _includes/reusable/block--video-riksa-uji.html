@@ -1,0 +1,95 @@
+{% comment %}
+============================================================================
+Block: Video Riksa Uji
+============================================================================
+
+@file        block--video-riksa-uji.html
+@path        _includes/reusable/block--video-riksa-uji.html
+@type        Block (reusable)
+@description Displays video player for riksa uji service pages
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- video: Video object from frontmatter with:
+  - name: Video title
+  - description: Video description
+  - thumbnail: Poster/thumbnail image path
+  - mp4: MP4 video source path
+  - webm: WebM video source path (optional, for better browser support)
+  - duration: ISO 8601 duration (e.g., "PT1M33S")
+
+Usage:
+------
+{% include reusable/block--video-riksa-uji.html video=page.video_riksa_uji %}
+
+============================================================================
+{% endcomment %}
+
+{% assign video = include.video %}
+
+{% if video and video.src %}
+<section id="video-{{ video.name | slugify }}" class="video-riksa-uji-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-4">
+          <h2 class="mb-3">
+            <i class="bi bi-play-circle text-primary me-2"></i>
+            {{ video.name }}
+          </h2>
+          {% if video.description %}
+          <p class="lead text-muted">{{ video.description }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Video Player -->
+        <div class="video-wrapper card border-0 shadow-lg overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <video
+              id="videoPlayer"
+              class="video-player"
+              controls
+              preload="metadata"
+              {% if video.thumbnail %}poster="{{ video.thumbnail | relative_url }}"{% endif %}
+              playsinline>
+              <source src="{{ video.src | relative_url }}" type="video/webm">
+              Browser Anda tidak mendukung tag video HTML5.
+            </video>
+          </div>
+        </div>
+
+        <!-- Video Info -->
+        <div class="video-info mt-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div class="video-meta text-muted small">
+            {% if video.duration %}
+            {% assign duration = video.duration | remove: "PT" | remove: "S" %}
+            {% assign minutes = duration | split: "M" | first %}
+            {% assign seconds = duration | split: "M" | last %}
+            <span class="me-3">
+              <i class="bi bi-clock me-1"></i>
+              Durasi: {{ minutes }}:{{ seconds | prepend: "00" | slice: -2, 2 }}
+            </span>
+            {% endif %}
+            {% if video.upload_date %}
+            <span>
+              <i class="bi bi-calendar me-1"></i>
+              {{ video.upload_date | date: "%d %B %Y" }}
+            </span>
+            {% endif %}
+          </div>
+          <div class="video-actions">
+            <button class="btn btn-sm btn-outline-primary" onclick="document.getElementById('videoPlayer').requestFullscreen()">
+              <i class="bi bi-fullscreen me-1"></i>Fullscreen
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

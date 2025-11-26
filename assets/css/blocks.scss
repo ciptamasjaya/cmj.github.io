@@ -1493,3 +1493,41 @@
     line-height: 1.7;
   }
 }
+
+/* ============================================================================
+   VIDEO RIKSA UJI BLOCK
+   ============================================================================ */
+.video-riksa-uji-section {
+
+  .video-wrapper {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .video-wrapper:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .video-player {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-player:focus {
+    outline: none;
+  }
+
+  .video-info {
+    padding: 0.5rem 0;
+  }
+
+  .video-actions .btn {
+    transition: all 0.3s ease;
+  }
+
+  .video-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+  }
+}

@@ -75,6 +75,17 @@ cara_pemesanan:
       text: "Setelah forklift lulus inspeksi, sertifikat kelayakan operasional diterbitkan dalam 7 hari kerja dan dikirim ke alamat Anda."
 
 # ============================================================================
+# VIDEO DATA - Service Video
+# ============================================================================
+video_riksa_uji:
+  name: "Proses Riksa Uji Forklift - PT. Cipta Mas Jaya"
+  description: "Video dokumentasi proses riksa uji dan inspeksi K3 forklift oleh tim inspector bersertifikat PT. Cipta Mas Jaya. Meliputi pemeriksaan sistem hidrolik, rem, load test, dan penerbitan sertifikat resmi Kemnaker RI."
+  thumbnail: "/assets/images/services/default-pesawat-angkat-angkut.svg"
+  src: "/assets/videos/service-page/riksa-uji-forklift.webm"
+  duration: "PT1M33S"
+  upload_date: "2025-11-26"
+
+# ============================================================================
 # FAQ DATA - Frequently Asked Questions
 # ============================================================================
 faq_riksa_uji:

@@ -1,0 +1,55 @@
+{% comment %}
+============================================================================
+Schema: Video Riksa Uji (schema--video-riksa-uji.html)
+============================================================================
+
+@file        schema--video-riksa-uji.html
+@path        _includes/schema/schema--video-riksa-uji.html
+@type        Schema (VideoObject)
+@description JSON-LD VideoObject schema for riksa uji service pages
+@author      arisciwek
+@created     2025-11-26
+
+Data Source:
+------------
+Data from page frontmatter: page.video_riksa_uji
+
+Usage:
+------
+{% if page.video_riksa_uji and page.video_riksa_uji.mp4 %}
+  {% include schema/schema--video-riksa-uji.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign video = page.video_riksa_uji %}
+
+{% if video and video.src %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "{{ page.url | absolute_url }}#video",
+  "name": "{{ video.name | escape }}",
+  "description": "{{ video.description | escape }}",
+  "thumbnailUrl": "{{ video.thumbnail | absolute_url }}",
+  "contentUrl": "{{ video.src | absolute_url }}",
+  "embedUrl": "{{ page.url | absolute_url }}#video-{{ video.name | slugify }}",
+  "uploadDate": "{{ video.upload_date }}",
+  "duration": "{{ video.duration }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.business.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.business.logo | absolute_url }}"
+    }
+  },
+  "potentialAction": {
+    "@type": "WatchAction",
+    "target": "{{ page.url | absolute_url }}#video-{{ video.name | slugify }}"
+  }
+}
+</script>
+{% endif %}

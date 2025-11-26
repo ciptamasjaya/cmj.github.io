@@ -128,6 +128,11 @@ by page--service.html wrapper, NOT in this node template.
 
 </div>
 
+<!-- Video Section: Riksa Uji -->
+{% if page.video_riksa_uji and page.video_riksa_uji.src %}
+{% include reusable/block--video-riksa-uji.html video=page.video_riksa_uji %}
+{% endif %}
+
 <!-- HowTo Section: Proses Inspeksi -->
 {% if page.proses_inspeksi and page.proses_inspeksi.steps.size > 0 %}
 {% include reusable/block--howto-proses-inspeksi.html howto=page.proses_inspeksi %}
