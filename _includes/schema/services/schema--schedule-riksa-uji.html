@@ -156,21 +156,7 @@ Notes:
           }
         },
         "organizer": {
-          "@type": "LocalBusiness",
-          "name": config.organizer.name,
-          "url": config.organizer.url,
-          "telephone": config.organizer.telephone,
-          "email": config.organizer.email,
-          "image": config.image,
-          "priceRange": config.organizer.priceRange,
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": config.organizer.address.street,
-            "addressLocality": config.organizer.address.city,
-            "addressRegion": config.organizer.address.province,
-            "postalCode": config.organizer.address.postalCode,
-            "addressCountry": "ID"
-          }
+          "@id": "{{ site.url }}{{ site.baseurl }}/#localbusiness"
         },
         "performer": {
           "@type": "Organization",
