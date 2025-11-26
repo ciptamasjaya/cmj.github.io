@@ -37,6 +37,27 @@ intro:
   para_2: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker untuk memastikan keselamatan operasional di tempat kerja Anda."
 
 # ============================================================================
+# HOWTO DATA - Proses Riksa Uji
+# ============================================================================
+proses_inspeksi:
+  name: "Proses Riksa Uji Forklift"
+  description: "Tahapan inspeksi dan pengujian K3 forklift oleh inspector bersertifikat"
+  totalTime: "PT2H"
+  steps:
+    - name: "Pemeriksaan Dokumen"
+      text: "Inspector memeriksa kelengkapan dokumen forklift seperti sertifikat sebelumnya, maintenance record, dan spesifikasi unit."
+    - name: "Inspeksi Visual"
+      text: "Pemeriksaan kondisi fisik forklift meliputi body, fork, mast, ban, lampu, dan komponen keselamatan lainnya."
+    - name: "Pengujian Sistem Hidrolik"
+      text: "Pengujian fungsi lifting, tilting, dan side shift. Pengecekan kebocoran oli dan tekanan hidrolik."
+    - name: "Pengujian Sistem Rem"
+      text: "Testing brake system termasuk service brake, parking brake, dan emergency brake untuk memastikan daya henti optimal."
+    - name: "Load Test"
+      text: "Pengujian kapasitas angkat dengan beban standar dan beban maksimum sesuai spesifikasi pabrikan."
+    - name: "Dokumentasi & Laporan"
+      text: "Pencatatan hasil inspeksi, foto dokumentasi, dan pembuatan laporan untuk penerbitan sertifikat."
+
+# ============================================================================
 # HOWTO DATA - Cara Pemesanan
 # ============================================================================
 cara_pemesanan:

@@ -1,0 +1,76 @@
+{% comment %}
+============================================================================
+Block: HowTo - Proses Inspeksi
+============================================================================
+
+@file        block--howto-proses-inspeksi.html
+@path        _includes/reusable/block--howto-proses-inspeksi.html
+@type        Block (reusable)
+@description Displays HowTo steps for inspection process
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- howto: HowTo object from frontmatter with:
+  - name: HowTo title
+  - description: Brief description
+  - totalTime: Estimated total time (e.g., "PT2H" for 2 hours)
+  - steps: Array of step objects with name, text, optional image
+
+Usage:
+------
+{% include reusable/block--howto-proses-inspeksi.html howto=page.proses_inspeksi %}
+
+============================================================================
+{% endcomment %}
+
+{% assign howto = include.howto %}
+
+{% if howto and howto.steps.size > 0 %}
+<section id="howto-{{ howto.name | slugify }}" class="howto-section bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="mb-3">
+          <i class="bi bi-clipboard-check text-primary me-2"></i>
+          {{ howto.name }}
+        </h2>
+        {% if howto.description %}
+        <p class="lead text-muted mb-4">{{ howto.description }}</p>
+        {% endif %}
+
+        {% if howto.totalTime %}
+        <div class="mb-4">
+          <span class="badge bg-info">
+            <i class="bi bi-clock me-1"></i>
+            Estimasi waktu:
+            {% assign time = howto.totalTime | remove: "PT" | remove: "H" %}
+            {{ time }} jam per unit
+          </span>
+        </div>
+        {% endif %}
+
+        <div class="row">
+          {% for step in howto.steps %}
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="howto-step card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="howto-step__number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 36px; height: 36px;">
+                    <span class="fw-bold small">{{ forloop.index }}</span>
+                  </div>
+                  <h3 class="howto-step__name fw-bold mb-0 h5">{{ step.name }}</h3>
+                </div>
+                <p class="howto-step__text text-muted small mb-0">{{ step.text }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

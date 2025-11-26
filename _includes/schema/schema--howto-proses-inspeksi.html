@@ -1,0 +1,48 @@
+{% comment %}
+============================================================================
+Schema: HowTo - Proses Inspeksi
+============================================================================
+
+@file        schema--howto-proses-inspeksi.html
+@path        _includes/schema/schema--howto-proses-inspeksi.html
+@type        Schema component
+@description Schema.org HowTo markup for inspection process
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- howto: (optional) HowTo object. If not provided, uses page.proses_inspeksi
+
+Usage:
+------
+{% include schema/schema--howto-proses-inspeksi.html %}
+{% include schema/schema--howto-proses-inspeksi.html howto=page.proses_inspeksi %}
+
+============================================================================
+{% endcomment %}
+
+{% assign howto = include.howto | default: page.proses_inspeksi %}
+
+{% if howto and howto.steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ howto.name | escape }}",
+  "description": "{{ howto.description | escape }}"{% if howto.totalTime %},
+  "totalTime": "{{ howto.totalTime }}"{% endif %}{% if page.image %},
+  "image": "{{ page.image | absolute_url }}"{% endif %},
+  "step": [{% for step in howto.steps %}{% if forloop.index > 1 %},{% endif %}
+    {
+      "@type": "HowToStep",
+      "position": {{ forloop.index }},
+      "name": "{{ step.name | escape }}",
+      "text": "{{ step.text | escape }}"{% if step.image %},
+      "image": "{{ step.image | absolute_url }}"{% endif %}{% if step.url %},
+      "url": "{{ step.url | absolute_url }}"{% endif %}
+    }{% endfor %}
+  ]
+}
+</script>
+{% endif %}

@@ -98,6 +98,11 @@ Architecture Principle:
   <!-- Product Schema (Service as Product + Reviews) -->
   {% include schema/schema--service.html %}
 
+  <!-- HowTo Schema (Proses Inspeksi) -->
+  {% if page.proses_inspeksi and page.proses_inspeksi.steps.size > 0 %}
+    {% include schema/schema--howto-proses-inspeksi.html %}
+  {% endif %}
+
   <!-- HowTo Schema (Cara Pemesanan) -->
   {% if page.cara_pemesanan and page.cara_pemesanan.steps.size > 0 %}
     {% include schema/schema--howto-cara-pemesanan.html %}

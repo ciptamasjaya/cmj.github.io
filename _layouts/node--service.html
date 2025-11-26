@@ -128,6 +128,11 @@ by page--service.html wrapper, NOT in this node template.
 
 </div>
 
+<!-- HowTo Section: Proses Inspeksi -->
+{% if page.proses_inspeksi and page.proses_inspeksi.steps.size > 0 %}
+{% include reusable/block--howto-proses-inspeksi.html howto=page.proses_inspeksi %}
+{% endif %}
+
 <!-- HowTo Section: Cara Pemesanan -->
 {% if page.cara_pemesanan and page.cara_pemesanan.steps.size > 0 %}
 {% include reusable/block--howto-cara-pemesanan.html howto=page.cara_pemesanan %}
