@@ -49,7 +49,7 @@ Usage:
     <!-- FAQ Accordion -->
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <div class="accordion" id="faqAccordion" itemscope itemtype="https://schema.org/FAQPage">
+        <div class="accordion" id="faqAccordion">
           {% for faq in site.data.faq_contact.faqs %}
           {% assign answer_text = faq.answer
              | replace: '{phone}', site.business.phone
@@ -57,15 +57,15 @@ Usage:
              | replace: '{email}', site.business.email
              | replace: '{company_name}', site.business.name %}
 
-          <div class="accordion-item border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %}" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <div class="accordion-item border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %}">
             <h3 class="accordion-header">
               <button class="accordion-button{% unless faq.default_open %} collapsed{% endunless %} fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#{{ faq.id }}"{% if faq.default_open %} aria-expanded="true"{% endif %}>
                 <i class="bi {{ faq.icon }} {{ faq.icon_color }} me-2"></i>
-                <span itemprop="name">{{ faq.question }}</span>
+                <span>{{ faq.question }}</span>
               </button>
             </h3>
-            <div id="{{ faq.id }}" class="accordion-collapse collapse{% if faq.default_open %} show{% endif %}" data-bs-parent="#faqAccordion" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-              <div class="accordion-body" itemprop="text">
+            <div id="{{ faq.id }}" class="accordion-collapse collapse{% if faq.default_open %} show{% endif %}" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
                 {{ answer_text }}
               </div>
             </div>
