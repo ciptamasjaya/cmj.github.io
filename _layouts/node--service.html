@@ -56,6 +56,11 @@ by page--service.html wrapper, NOT in this node template.
 <!-- Breadcrumb Navigation -->
 {% include reusable/block--breadcrumb.html %}
 
+<!-- Intro Section: H1 + 2 Paragraphs -->
+{% if page.intro %}
+{% include block-templates/block--h1-2para.html data=page.intro %}
+{% endif %}
+
 <!-- Service Detail Page -->
 <div class="container py-5">
   <div class="row">

@@ -232,12 +232,3 @@ faq_riksa_uji:
       answer: "Sertifikat riksa uji forklift berlaku selama 1 (satu) tahun sejak tanggal penerbitan. Setelah masa berlaku habis, forklift wajib dilakukan riksa uji ulang untuk memperbarui sertifikat dan memastikan kelayakan operasional."
 
 ---
-
-<!-- ========================================================================== -->
-<!-- CONTENT AREA - Block-Based -->
-<!-- ========================================================================== -->
-
-<!-- Block: Intro Section (H1 + 2 Paragraphs) -->
-<section id="intro">
-  {% include block-templates/block--h1-2para.html data=page.intro %}
-</section>
