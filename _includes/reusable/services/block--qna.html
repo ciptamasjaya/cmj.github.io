@@ -1,0 +1,38 @@
+{% comment %}
+============================================================================
+Block: Q&A (Tanya Jawab)
+============================================================================
+
+@file        block--qna.html
+@path        _includes/reusable/services/block--qna.html
+@type        Block (reusable)
+@description Displays Q&A / comment thread section for service
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- comments: Comments array from site.data.comment--service
+
+Usage:
+------
+{% assign page_slug = page.url | split: "/" | compact | last %}
+{% assign comments = site.data.comment--service.comments | where: "slug", page_slug %}
+{% include reusable/services/block--qna.html comments=comments %}
+
+============================================================================
+{% endcomment %}
+
+{% assign comments = include.comments %}
+
+{% if comments.size > 0 %}
+<section id="qna" class="py-5">
+  <div class="container">
+    <h2 class="mb-4">
+      <i class="bi bi-chat-dots text-primary me-2"></i>
+      Tanya Jawab
+    </h2>
+    {% include components/comment-thread.html comments=comments limit=5 %}
+  </div>
+</section>
+{% endif %}

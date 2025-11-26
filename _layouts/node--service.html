@@ -56,82 +56,8 @@ by page--service.html wrapper, NOT in this node template.
 <!-- Breadcrumb Navigation -->
 {% include reusable/block--breadcrumb.html %}
 
-<!-- Intro Section: H1 + 2 Paragraphs -->
-{% if page.intro %}
-{% include block-templates/block--h1-2para.html data=page.intro %}
-{% endif %}
-
-<!-- Service Detail Page -->
-<div class="container py-5">
-  <div class="row">
-    <!-- Service Carousel -->
-    <div class="col-lg-4 mb-4">
-      {% include reusable/services/block--service-carousel.html max_height="400px" %}
-
-      {% assign carousel_slug = page.url | split: "/" | compact | last %}
-      {% assign carousel_rating = site.data.rating--service.ratings | where: "slug", carousel_slug | first %}
-      {% if carousel_rating and carousel_rating.total_reviews > 0 %}
-      <div class="mt-3 text-center">
-        {% include components/rating-stars.html rating=carousel_rating size="md" %}
-      </div>
-      {% endif %}
-    </div>
-
-    <!-- Service Info -->
-    <div class="col-lg-8">
-      <h1 class="display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
-
-      <div class="mb-3 d-flex align-items-center gap-2 flex-wrap">
-        {% if page.category %}
-        <span class="badge bg-primary">{{ page.category }}</span>
-        {% endif %}
-
-        {% if carousel_rating and carousel_rating.total_reviews > 0 %}
-        <span class="text-muted">•</span>
-        {% include components/rating-stars.html rating=carousel_rating size="sm" %}
-        {% endif %}
-      </div>
-
-      {% if page.description %}
-      <p class="lead text-muted">{{ page.description }}</p>
-      {% endif %}
-
-      <!-- Service Specifications (if available) -->
-      {% if page.specifications %}
-      <div class="card border-0 shadow-sm mb-4">
-        <div class="card-body">
-          <h3 class="h5 text-primary mb-3"><i class="bi bi-info-circle me-2"></i>Spesifikasi Layanan</h3>
-          <ul class="list-unstyled">
-            {% for spec in page.specifications %}
-            <li class="mb-2"><strong>{{ spec[0] }}:</strong> {{ spec[1] }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      {% endif %}
-
-    </div>
-  </div>
-
-  <!-- Service Description (Full Width) -->
-  {% if content != '' %}
-  <div class="row mt-5">
-    <div class="col-12">
-      <div class="card border-0 shadow-sm">
-        <div class="card-header bg-primary text-white">
-          <h2 class="h4 mb-0"><i class="bi bi-file-text me-2"></i>Detail Layanan</h2>
-        </div>
-        <div class="card-body p-4">
-          <div class="service-description">
-            {{ content }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-
-</div>
+<!-- Service Detail Block -->
+{% include reusable/services/block--service-detail.html %}
 
 <!-- Video Section: Riksa Uji -->
 {% if page.video_riksa_uji and page.video_riksa_uji.src %}
@@ -173,44 +99,15 @@ by page--service.html wrapper, NOT in this node template.
 {% include reusable/services/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
 {% endif %}
 
-<!-- Reviews Section (from JSON data) -->
+<!-- Reviews Section -->
 {% assign page_slug = page.url | split: "/" | compact | last %}
 {% assign reviews = site.data.review--service.reviews | where: "slug", page_slug %}
 {% assign rating = site.data.rating--service.ratings | where: "slug", page_slug | first %}
-
-{% if rating and rating.total_reviews > 0 %}
-<section id="reviews" class="bg-light py-5 mt-5">
-  <div class="container">
-    <h2 class="mb-4">
-      <i class="bi bi-star-fill text-warning me-2"></i>
-      Rating & Ulasan
-    </h2>
-
-    <div class="row">
-      <div class="col-lg-4 mb-4">
-        {% include components/rating-summary.html rating=rating %}
-      </div>
-      <div class="col-lg-8">
-        {% include components/review-list.html reviews=reviews limit=5 %}
-      </div>
-    </div>
-  </div>
-</section>
-{% endif %}
+{% include reusable/services/block--reviews.html rating=rating reviews=reviews %}
 
 <!-- Q&A Section -->
 {% assign comments = site.data.comment--service.comments | where: "slug", page_slug %}
-{% if comments.size > 0 %}
-<section id="qna" class="py-5">
-  <div class="container">
-    <h2 class="mb-4">
-      <i class="bi bi-chat-dots text-primary me-2"></i>
-      Tanya Jawab
-    </h2>
-    {% include components/comment-thread.html comments=comments limit=5 %}
-  </div>
-</section>
-{% endif %}
+{% include reusable/services/block--qna.html comments=comments %}
 
 <!-- CTA Section will be added as reusable block -->
 <div class="container">

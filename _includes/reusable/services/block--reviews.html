@@ -1,0 +1,50 @@
+{% comment %}
+============================================================================
+Block: Reviews
+============================================================================
+
+@file        block--reviews.html
+@path        _includes/reusable/services/block--reviews.html
+@type        Block (reusable)
+@description Displays rating summary and review list for service
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- slug: Page slug for fetching reviews data
+- rating: Rating object from site.data.rating--service
+- reviews: Reviews array from site.data.review--service
+
+Usage:
+------
+{% assign page_slug = page.url | split: "/" | compact | last %}
+{% assign reviews = site.data.review--service.reviews | where: "slug", page_slug %}
+{% assign rating = site.data.rating--service.ratings | where: "slug", page_slug | first %}
+{% include reusable/services/block--reviews.html rating=rating reviews=reviews %}
+
+============================================================================
+{% endcomment %}
+
+{% assign rating = include.rating %}
+{% assign reviews = include.reviews %}
+
+{% if rating and rating.total_reviews > 0 %}
+<section id="reviews" class="bg-light py-5 mt-5">
+  <div class="container">
+    <h2 class="mb-4">
+      <i class="bi bi-star-fill text-warning me-2"></i>
+      Rating & Ulasan
+    </h2>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        {% include components/rating-summary.html rating=rating %}
+      </div>
+      <div class="col-lg-8">
+        {% include components/review-list.html reviews=reviews limit=5 %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

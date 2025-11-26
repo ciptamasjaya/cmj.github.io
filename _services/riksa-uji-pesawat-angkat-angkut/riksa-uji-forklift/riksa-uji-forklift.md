@@ -2,6 +2,7 @@
 layout: node--service
 title: "Riksa Uji Forklift"
 description: "Jasa riksa uji dan inspeksi K3 forklift profesional dengan sertifikat resmi Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan inspector bersertifikat dan peralatan terkalibrasi."
+para_1: "Riksa uji forklift merupakan pemeriksaan dan pengujian keselamatan terhadap forklift yang wajib dilakukan secara berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini bertujuan untuk memastikan forklift beroperasi dengan aman dan sesuai standar keselamatan kerja yang berlaku."
 permalink: /layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift/riksa-uji-forklift/
 category: "Riksa Uji Pesawat Angkat Angkut"
 sub_category: "Riksa Uji Forklift"
@@ -26,11 +27,11 @@ custom_schema:
 # BLOCK DATA - Content Sections
 # ============================================================================
 
-# Block 1: Intro Section (H1 + 2 Paragraphs)
+# Block 1: Intro Section (2 Paragraphs)
 intro:
-  h1: "Riksa Uji Forklift - Jasa Inspeksi K3 Profesional"
-  para_1: "Riksa uji forklift merupakan pemeriksaan dan pengujian keselamatan terhadap forklift yang wajib dilakukan secara berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini bertujuan untuk memastikan forklift beroperasi dengan aman dan sesuai standar keselamatan kerja yang berlaku."
-  para_2: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker untuk memastikan keselamatan operasional di tempat kerja Anda."
+  name: "Pendahuluan"
+  para_1: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker untuk memastikan keselamatan operasional di tempat kerja Anda."
+  para_2: "Dengan pengalaman bertahun-tahun dalam bidang inspeksi K3, kami memahami pentingnya keselamatan forklift dalam operasional industri Anda. Setiap inspeksi dilakukan sesuai standar Permenaker dan menghasilkan sertifikat yang diakui secara nasional, sehingga perusahaan Anda terhindar dari sanksi dan kecelakaan kerja."
 
 # ============================================================================
 # ITEMLIST DATA - Jenis Forklift yang Dilayani
