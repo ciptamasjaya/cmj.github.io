@@ -9,6 +9,10 @@ sub_category: "Riksa Uji Forklift"
 service_type: "Safety Inspection"
 icon: "bi-box-arrow-up"
 image: "/assets/images/services/default-pesawat-angkat-angkut.svg"
+images:
+  - "/assets/images/services/1.svg"
+  - "/assets/images/services/2.svg"
+  - "/assets/images/services/3.svg"
 area_served: "Indonesia"
 content_structure: "1xh1, 2xpara, h2(para+3xh3@2xh4), h2(para+h3@h4), h2(para), h2(para)"
 date: 2025-11-24

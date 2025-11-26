@@ -103,6 +103,11 @@ Architecture Principle:
     {% include schema/services/schema--article-intro.html %}
   {% endif %}
 
+  <!-- ImageGallery Schema (Service Images) -->
+  {% if page.image or page.images %}
+    {% include schema/services/schema--images.html %}
+  {% endif %}
+
   <!-- Video Schema (Riksa Uji) -->
   {% if page.video_riksa_uji and page.video_riksa_uji.src %}
     {% include schema/services/schema--video-riksa-uji.html %}

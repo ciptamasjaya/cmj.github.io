@@ -1,0 +1,120 @@
+{% comment %}
+============================================================================
+Schema: ImageObject Gallery (schema--images.html)
+============================================================================
+
+@file        schema--images.html
+@path        _includes/schema/services/schema--images.html
+@type        Schema (ImageObject for service gallery)
+@description Schema.org ImageObject markup for service images
+@author      arisciwek
+@created     2025-11-26
+
+Features:
+- Primary image as representativeOfPage
+- Additional images from images array
+- ImageGallery container for all images
+- Proper attribution to organization
+
+Expected Frontmatter:
+---
+title: "Riksa Uji Forklift"
+description: "Jasa riksa uji forklift..."
+image: "/assets/images/services/default-pesawat-angkat-angkut.svg"
+images:
+  - "/assets/images/services/1.svg"
+  - "/assets/images/services/2.svg"
+  - "/assets/images/services/3.svg"
+---
+
+Usage:
+{% if page.image or page.images %}
+  {% include schema/services/schema--images.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.image or page.images %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "{{ page.url | absolute_url }}#imagegallery",
+  "name": "Galeri {{ page.title | escape }}",
+  "description": "Dokumentasi visual layanan {{ page.title | escape }} oleh {{ site.business.name }}",
+  "url": "{{ page.url | absolute_url }}",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {% if page.images %}{{ page.images.size | plus: 1 }}{% else %}1{% endif %},
+    "itemListElement": [
+      {% if page.image %}
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "ImageObject",
+          "@id": "{{ page.url | absolute_url }}#primaryimage",
+          "url": "{{ page.image | absolute_url }}",
+          "contentUrl": "{{ page.image | absolute_url }}",
+          "name": "{{ page.title | escape }} - Gambar Utama",
+          "description": "{{ page.description | escape }}",
+          "caption": "{{ page.title | escape }} - {{ site.business.name }}",
+          "representativeOfPage": true,
+          "encodingFormat": "{% if page.image contains '.svg' %}image/svg+xml{% elsif page.image contains '.png' %}image/png{% elsif page.image contains '.webp' %}image/webp{% else %}image/jpeg{% endif %}",
+          "creator": {
+            "@type": "Organization",
+            "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+            "name": "{{ site.business.name }}"
+          },
+          "copyrightHolder": {
+            "@type": "Organization",
+            "name": "{{ site.business.name }}"
+          },
+          "copyrightNotice": "© {{ 'now' | date: '%Y' }} {{ site.business.name }}. All rights reserved.",
+          "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+          "acquireLicensePage": "{{ site.url }}{{ site.baseurl }}/kontak/",
+          "creditText": "{{ site.business.name }}"
+        }
+      }{% if page.images %},{% endif %}
+      {% endif %}
+      {% if page.images %}
+      {% for img in page.images %}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index | plus: 1 }},
+        "item": {
+          "@type": "ImageObject",
+          "@id": "{{ page.url | absolute_url }}#image{{ forloop.index }}",
+          "url": "{{ img | absolute_url }}",
+          "contentUrl": "{{ img | absolute_url }}",
+          "name": "{{ page.title | escape }} - Gambar {{ forloop.index | plus: 1 }}",
+          "description": "Dokumentasi layanan {{ page.title | escape }}",
+          "caption": "{{ page.title | escape }} - {{ site.business.name }}",
+          "encodingFormat": "{% if img contains '.svg' %}image/svg+xml{% elsif img contains '.png' %}image/png{% elsif img contains '.webp' %}image/webp{% else %}image/jpeg{% endif %}",
+          "creator": {
+            "@type": "Organization",
+            "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+            "name": "{{ site.business.name }}"
+          },
+          "copyrightHolder": {
+            "@type": "Organization",
+            "name": "{{ site.business.name }}"
+          },
+          "copyrightNotice": "© {{ 'now' | date: '%Y' }} {{ site.business.name }}. All rights reserved.",
+          "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+          "acquireLicensePage": "{{ site.url }}{{ site.baseurl }}/kontak/",
+          "creditText": "{{ site.business.name }}"
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      {% endif %}
+    ]
+  },
+  "isPartOf": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}#webpage"
+  }
+}
+</script>
+{% endif %}
