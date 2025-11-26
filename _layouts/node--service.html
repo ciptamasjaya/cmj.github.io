@@ -61,7 +61,7 @@ by page--service.html wrapper, NOT in this node template.
   <div class="row">
     <!-- Service Carousel -->
     <div class="col-lg-4 mb-4">
-      {% include reusable/block--service-carousel.html max_height="400px" %}
+      {% include reusable/services/block--service-carousel.html max_height="400px" %}
 
       {% assign carousel_slug = page.url | split: "/" | compact | last %}
       {% assign carousel_rating = site.data.rating--service.ratings | where: "slug", carousel_slug | first %}
@@ -130,37 +130,37 @@ by page--service.html wrapper, NOT in this node template.
 
 <!-- Video Section: Riksa Uji -->
 {% if page.video_riksa_uji and page.video_riksa_uji.src %}
-{% include reusable/block--video-riksa-uji.html video=page.video_riksa_uji %}
+{% include reusable/services/block--video-riksa-uji.html video=page.video_riksa_uji %}
 {% endif %}
 
 <!-- ItemList Section: Jenis Forklift -->
 {% if page.jenis_forklift and page.jenis_forklift.items.size > 0 %}
-{% include reusable/block--itemlist-riksa-uji.html list=page.jenis_forklift %}
+{% include reusable/services/block--itemlist-riksa-uji.html list=page.jenis_forklift %}
 {% endif %}
 
 <!-- ItemList Section: Komponen Inspeksi -->
 {% if page.komponen_inspeksi and page.komponen_inspeksi.items.size > 0 %}
-{% include reusable/block--itemlist-riksa-uji.html list=page.komponen_inspeksi %}
+{% include reusable/services/block--itemlist-riksa-uji.html list=page.komponen_inspeksi %}
 {% endif %}
 
 <!-- HowTo Section: Proses Inspeksi -->
 {% if page.proses_inspeksi and page.proses_inspeksi.steps.size > 0 %}
-{% include reusable/block--howto-proses-inspeksi.html howto=page.proses_inspeksi %}
+{% include reusable/services/block--howto-proses-inspeksi.html howto=page.proses_inspeksi %}
 {% endif %}
 
 <!-- HowTo Section: Cara Pemesanan -->
 {% if page.cara_pemesanan and page.cara_pemesanan.steps.size > 0 %}
-{% include reusable/block--howto-cara-pemesanan.html howto=page.cara_pemesanan %}
+{% include reusable/services/block--howto-cara-pemesanan.html howto=page.cara_pemesanan %}
 {% endif %}
 
 <!-- Offer Section: Pricing -->
 {% if page.offer_riksa_uji and page.offer_riksa_uji.offers.size > 0 %}
-{% include reusable/block--offer-riksa-uji.html offer=page.offer_riksa_uji %}
+{% include reusable/services/block--offer-riksa-uji.html offer=page.offer_riksa_uji %}
 {% endif %}
 
 <!-- FAQ Section: Riksa Uji -->
 {% if page.faq_riksa_uji and page.faq_riksa_uji.faqs.size > 0 %}
-{% include reusable/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
+{% include reusable/services/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
 {% endif %}
 
 <!-- Reviews Section (from JSON data) -->

@@ -96,36 +96,36 @@ Architecture Principle:
   {% include schema/schema--local-business.html %}
 
   <!-- Product Schema (Service as Product + Reviews) -->
-  {% include schema/schema--service.html %}
+  {% include schema/services/schema--service.html %}
 
   <!-- Video Schema (Riksa Uji) -->
   {% if page.video_riksa_uji and page.video_riksa_uji.src %}
-    {% include schema/schema--video-riksa-uji.html %}
+    {% include schema/services/schema--video-riksa-uji.html %}
   {% endif %}
 
   <!-- ItemList Schema (Jenis Forklift & Komponen) -->
   {% if page.jenis_forklift or page.komponen_inspeksi %}
-    {% include schema/schema--itemlist-riksa-uji.html %}
+    {% include schema/services/schema--itemlist-riksa-uji.html %}
   {% endif %}
 
   <!-- HowTo Schema (Proses Inspeksi) -->
   {% if page.proses_inspeksi and page.proses_inspeksi.steps.size > 0 %}
-    {% include schema/schema--howto-proses-inspeksi.html %}
+    {% include schema/services/schema--howto-proses-inspeksi.html %}
   {% endif %}
 
   <!-- HowTo Schema (Cara Pemesanan) -->
   {% if page.cara_pemesanan and page.cara_pemesanan.steps.size > 0 %}
-    {% include schema/schema--howto-cara-pemesanan.html %}
+    {% include schema/services/schema--howto-cara-pemesanan.html %}
   {% endif %}
 
   <!-- Offer Schema (Pricing) -->
   {% if page.offer_riksa_uji and page.offer_riksa_uji.offers.size > 0 %}
-    {% include schema/schema--offer-riksa-uji.html %}
+    {% include schema/services/schema--offer-riksa-uji.html %}
   {% endif %}
 
   <!-- FAQ Schema (Riksa Uji) -->
   {% if page.faq_riksa_uji and page.faq_riksa_uji.faqs.size > 0 %}
-    {% include schema/schema--faq-riksa-uji.html %}
+    {% include schema/services/schema--faq-riksa-uji.html %}
   {% endif %}
 
   <!-- Breadcrumb Schema (BreadcrumbList) -->
