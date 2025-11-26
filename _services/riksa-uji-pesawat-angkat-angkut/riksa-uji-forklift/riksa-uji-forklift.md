@@ -129,7 +129,7 @@ cara_pemesanan:
 # ============================================================================
 video_riksa_uji:
   name: "Proses Riksa Uji Forklift - PT. Cipta Mas Jaya"
-  description: "Video dokumentasi proses riksa uji dan inspeksi K3 forklift oleh tim inspector bersertifikat PT. Cipta Mas Jaya. Meliputi pemeriksaan sistem hidrolik, rem, load test, dan penerbitan sertifikat resmi Kemnaker RI."
+  description: "Video dokumentasi proses riksa uji dan inspeksi K3 forklift oleh tim inspector bersertifikat PT. Cipta Mas Jaya. Meliputi pemeriksaan sistem hidrolik, rem, load test, dan penerbitan sertifikat resmi Disnaker setempat."
   thumbnail: "/assets/images/services/default-pesawat-angkat-angkut.svg"
   src: "/assets/videos/service-page/riksa-uji-forklift.webm"
   duration: "PT1M33S"
@@ -140,7 +140,7 @@ video_riksa_uji:
 # ============================================================================
 offer_riksa_uji:
   name: "Paket Riksa Uji Forklift"
-  description: "Layanan riksa uji dan inspeksi K3 forklift dengan sertifikat resmi Kemnaker RI"
+  description: "Layanan riksa uji dan inspeksi K3 forklift dengan sertifikat resmi Disnaker setempat"
   note: "Harga belum termasuk biaya transportasi untuk lokasi di luar area Serang. Hubungi kami untuk penawaran khusus."
   offers:
     - name: "Riksa Uji Forklift Standar"
@@ -153,7 +153,7 @@ offer_riksa_uji:
         - "Pengujian sistem hidrolik"
         - "Pengujian sistem rem"
         - "Load test sesuai kapasitas"
-        - "Sertifikat resmi Kemnaker RI"
+        - "Sertifikat resmi Disnaker setempat"
         - "Laporan inspeksi detail"
       availability: "InStock"
       valid_from: "2025-01-01"
@@ -169,9 +169,8 @@ offer_riksa_uji:
         - "Pengujian sistem hidrolik"
         - "Pengujian sistem rem"
         - "Load test beban berat"
-        - "Sertifikat resmi Kemnaker RI"
+        - "Sertifikat resmi Disnaker setempat"
         - "Laporan inspeksi detail"
-        - "Konsultasi maintenance"
       availability: "InStock"
       valid_from: "2025-01-01"
       valid_through: "2025-12-31"
