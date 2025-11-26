@@ -1,0 +1,289 @@
+{% comment %}
+============================================================================
+Block: Certifications (Sertifikasi PJK3)
+============================================================================
+
+@file        block--certifications.html
+@path        _includes/reusable/block--certifications.html
+@type        Block (reusable)
+@description Displays PJK3 company and expert certifications
+@author      arisciwek
+@created     2025-11-26
+
+Features:
+- H2 heading with icon
+- Card-based layout for each certification category
+- Shows company certificate and expert certificates
+- Status badge (active/expired)
+- Responsive grid layout
+- Supports full mode (all categories) and single mode (by category)
+
+Data Source:
+- site.data.certifications
+
+Usage:
+------
+Full mode (About page - show all categories):
+{% include reusable/block--certifications.html %}
+{% include reusable/block--certifications.html mode="full" %}
+
+Single mode (Service page - show by category):
+{% include reusable/block--certifications.html mode="single" category="pesawat-angkat" %}
+
+Parameters:
+- mode: "full" (default) or "single"
+- category: category_id to filter (required for single mode)
+- show_experts: true/false (default: true)
+- limit: number of categories to show in full mode (default: all)
+
+============================================================================
+{% endcomment %}
+
+{% assign mode = include.mode | default: "full" %}
+{% assign show_experts = include.show_experts | default: true %}
+{% assign cert_limit = include.limit | default: 100 %}
+{% assign filter_category = include.category %}
+
+{% comment %} Get certifications based on mode {% endcomment %}
+{% if mode == "single" and filter_category %}
+  {% assign filtered_certs = site.data.certifications.certifications | where: "category_id", filter_category %}
+{% else %}
+  {% assign filtered_certs = site.data.certifications.certifications %}
+{% endif %}
+
+{% if filtered_certs.size > 0 %}
+
+{% comment %} ==================== SINGLE MODE (Service Page) ==================== {% endcomment %}
+{% if mode == "single" %}
+{% assign cert = filtered_certs | first %}
+{% assign today = 'now' | date: '%Y-%m-%d' %}
+{% assign is_company_active = true %}
+{% assign is_expert_active = true %}
+{% if cert.company.expires < today %}{% assign is_company_active = false %}{% endif %}
+{% if cert.expert.expires < today %}{% assign is_expert_active = false %}{% endif %}
+
+<section id="sertifikasi" class="py-4">
+  <div class="container">
+    <div class="card border-0 shadow-sm">
+      <!-- Card Header -->
+      <div class="card-header bg-primary text-white">
+        <div class="d-flex align-items-center justify-content-between">
+          <h3 class="h5 mb-0 fw-bold">
+            <i class="bi bi-award-fill me-2"></i>Sertifikasi PJK3 {{ cert.category_name }}
+          </h3>
+          {% if is_company_active %}
+          <span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Aktif</span>
+          {% else %}
+          <span class="badge bg-danger"><i class="bi bi-x-circle me-1"></i>Expired</span>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div class="row">
+          <!-- Company Certificate -->
+          <div class="col-md-6 mb-3 mb-md-0">
+            <h4 class="h6 text-primary mb-3">
+              <i class="bi bi-building me-1"></i>Sertifikat Perusahaan
+            </h4>
+            <ul class="list-unstyled small mb-0">
+              <li class="mb-2">
+                <strong>Nomor:</strong><br>
+                <span class="text-muted">{{ cert.company.number }}</span>
+              </li>
+              <li class="mb-2">
+                <strong>Penerbit:</strong><br>
+                <span class="text-muted">{{ cert.company.issued_by }}</span>
+              </li>
+              <li class="mb-2">
+                <strong>Masa Berlaku:</strong><br>
+                <span class="text-muted">{{ cert.company.valid_from | date: "%d %B %Y" }} - {{ cert.company.expires | date: "%d %B %Y" }}</span>
+              </li>
+              <li class="mb-0">
+                <strong>Ruang Lingkup:</strong><br>
+                <span class="text-muted">{{ cert.company.scope }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Expert Certificates -->
+          {% if show_experts %}
+          <div class="col-md-6">
+            <h4 class="h6 text-primary mb-3">
+              <i class="bi bi-person-badge me-1"></i>Tenaga Ahli Bersertifikat
+              {% if is_expert_active %}
+              <span class="badge bg-success-subtle text-success ms-1">Aktif</span>
+              {% else %}
+              <span class="badge bg-danger-subtle text-danger ms-1">Expired</span>
+              {% endif %}
+            </h4>
+            <div class="row g-2">
+              {% for holder in cert.expert.holders %}
+              <div class="col-12">
+                <div class="bg-light rounded p-2">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-person-check-fill text-success me-2 mt-1"></i>
+                    <div>
+                      <strong class="small">{{ holder.name }}</strong>
+                      <span class="d-block text-muted" style="font-size: 0.75em;">{{ holder.number }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <p class="small text-muted mt-2 mb-0">
+              <i class="bi bi-info-circle me-1"></i>
+              Kompetensi: {{ cert.expert.competency }}
+            </p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Card Footer -->
+      <div class="card-footer bg-light border-0">
+        <div class="d-flex align-items-center justify-content-between">
+          <small class="text-muted">
+            <i class="bi bi-book me-1"></i>{{ cert.regulation }}
+          </small>
+          <a href="{{ site.baseurl }}/about/#sertifikasi" class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-award me-1"></i>Lihat Semua Sertifikat
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} ==================== FULL MODE (About Page) ==================== {% endcomment %}
+{% else %}
+
+<section id="sertifikasi" class="py-5 bg-light">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body text-white text-center py-4 px-3 bg-primary">
+          <i class="bi bi-award-fill mb-2 fs-1"></i>
+          <h2 class="h2 mb-0 fw-bold text-white">Sertifikasi PJK3 Resmi</h2>
+          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+            <i class="bi bi-shield-check me-1"></i>
+            Terdaftar dan Diakui Kementerian Ketenagakerjaan RI
+            <i class="bi bi-shield-check ms-1"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="mb-4">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 text-primary fw-bold">
+            <i class="bi bi-patch-check-fill text-primary me-2"></i>
+            Sertifikat Perusahaan & Tenaga Ahli
+          </h3>
+          <p class="small text-muted mb-0 mt-1">PT. Cipta Mas Jaya memiliki sertifikat PJK3 untuk {{ site.data.certifications.certifications.size }} bidang layanan K3</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certification Cards -->
+    <div class="row g-4">
+      {% for cert in filtered_certs limit: cert_limit %}
+      {% assign today = 'now' | date: '%Y-%m-%d' %}
+      {% assign is_company_active = true %}
+      {% assign is_expert_active = true %}
+      {% if cert.company.expires < today %}{% assign is_company_active = false %}{% endif %}
+      {% if cert.expert.expires < today %}{% assign is_expert_active = false %}{% endif %}
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <!-- Card Header -->
+          <div class="card-header bg-primary text-white">
+            <div class="d-flex align-items-center justify-content-between">
+              <h4 class="h6 mb-0 fw-bold">
+                <i class="bi bi-folder-fill me-2"></i>{{ cert.category_name }}
+              </h4>
+              {% if is_company_active %}
+              <span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Aktif</span>
+              {% else %}
+              <span class="badge bg-danger"><i class="bi bi-x-circle me-1"></i>Expired</span>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="card-body">
+            <!-- Company Certificate -->
+            <div class="mb-3 pb-3 border-bottom">
+              <h5 class="h6 text-primary mb-2">
+                <i class="bi bi-building me-1"></i>Sertifikat Perusahaan
+              </h5>
+              <ul class="list-unstyled small mb-0">
+                <li class="mb-1">
+                  <strong>No:</strong> {{ cert.company.number }}
+                </li>
+                <li class="mb-1">
+                  <strong>Penerbit:</strong> {{ cert.company.issued_by }}
+                </li>
+                <li class="mb-1">
+                  <strong>Berlaku:</strong> {{ cert.company.valid_from | date: "%d/%m/%Y" }} - {{ cert.company.expires | date: "%d/%m/%Y" }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- Expert Certificates -->
+            {% if show_experts %}
+            <div>
+              <h5 class="h6 text-primary mb-2">
+                <i class="bi bi-person-badge me-1"></i>Tenaga Ahli Bersertifikat
+                {% if is_expert_active %}
+                <span class="badge bg-success-subtle text-success ms-1">Aktif</span>
+                {% else %}
+                <span class="badge bg-danger-subtle text-danger ms-1">Expired</span>
+                {% endif %}
+              </h5>
+              <ul class="list-unstyled small mb-0">
+                {% for holder in cert.expert.holders %}
+                <li class="mb-1">
+                  <i class="bi bi-person-check-fill text-success me-1"></i>
+                  {{ holder.name }}
+                  <span class="text-muted d-block ms-3" style="font-size: 0.8em;">{{ holder.number }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+          </div>
+
+          <!-- Card Footer -->
+          <div class="card-footer bg-light border-0">
+            <small class="text-muted">
+              <i class="bi bi-book me-1"></i>{{ cert.regulation }}
+            </small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Summary -->
+    <div class="mt-4">
+      <div class="card border-0 shadow-sm bg-primary text-white">
+        <div class="card-body py-3">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-info-circle-fill fs-3 me-3"></i>
+            <div>
+              <p class="mb-1 fw-bold">Mengapa Memilih PJK3 Bersertifikat?</p>
+              <p class="mb-0 small">Sertifikat riksa uji yang diterbitkan oleh PJK3 bersertifikat diakui secara resmi oleh Kemnaker RI dan memenuhi persyaratan kepatuhan K3 perusahaan Anda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endif %}
+{% endif %}

@@ -1,0 +1,87 @@
+{% comment %}
+============================================================================
+Schema: Certifications (schema--certifications.html)
+============================================================================
+
+@file        schema--certifications.html
+@path        _includes/schema/schema--certifications.html
+@type        Schema (Certification + EducationalOccupationalCredential)
+@description Schema markup for PJK3 company and expert certifications
+@author      arisciwek
+@created     2025-11-26
+
+Data Source:
+------------
+Data from _data/certifications.yml
+
+Schema Types:
+-------------
+- Certification: For company PJK3 certificates (issued by Kemnaker)
+- EducationalOccupationalCredential: For expert SKP certificates
+
+Usage:
+------
+{% include schema/schema--certifications.html %}
+
+Reference:
+----------
+https://schema.org/Certification
+https://schema.org/EducationalOccupationalCredential
+
+============================================================================
+{% endcomment %}
+
+{% if site.data.certifications.certifications.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {%- for cert in site.data.certifications.certifications -%}
+    {
+      "@type": "Certification",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#certification-{{ cert.category_id }}",
+      "name": "{{ cert.company.name | escape }}",
+      "description": "{{ cert.company.scope | escape }}",
+      "certificationIdentification": "{{ cert.company.number }}",
+      "certificationStatus": "https://schema.org/CertificationActive",
+      "about": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/#localbusiness"
+      },
+      "issuedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "{{ cert.company.issued_by }}",
+        "url": "https://kemnaker.go.id"
+      },
+      "validFrom": "{{ cert.company.valid_from }}",
+      "expires": "{{ cert.company.expires }}",
+      "validIn": {
+        "@type": "Country",
+        "name": "Indonesia"
+      }{% if cert.company.logo %},
+      "logo": "{{ cert.company.logo | absolute_url }}"{% endif %}
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#credential-{{ cert.category_id }}",
+      "name": "{{ cert.expert.name | escape }}",
+      "description": "Sertifikat kompetensi {{ cert.expert.competency | escape }}",
+      "credentialCategory": "Professional Certification",
+      "competencyRequired": "{{ cert.expert.competency | escape }}",
+      "recognizedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "{{ cert.expert.issued_by }}",
+        "url": "https://kemnaker.go.id"
+      },
+      "validFor": "P3Y",
+      "validIn": {
+        "@type": "Country",
+        "name": "Indonesia"
+      },
+      "dateCreated": "{{ cert.expert.valid_from }}",
+      "expires": "{{ cert.expert.expires }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}

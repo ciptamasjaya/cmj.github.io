@@ -99,6 +99,11 @@ by page--service.html wrapper, NOT in this node template.
 {% include reusable/services/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
 {% endif %}
 
+<!-- Certifications Section: PJK3 (Single mode - by category) -->
+{% if site.data.certifications.certifications.size > 0 and page.certification_category %}
+{% include reusable/block--certifications.html mode="single" category=page.certification_category %}
+{% endif %}
+
 <!-- Service Area Section -->
 {% if site.data.area_pelayanan.provinsi %}
 {% include reusable/services/block--service-area.html %}

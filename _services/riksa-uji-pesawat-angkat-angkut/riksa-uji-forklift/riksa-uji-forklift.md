@@ -6,6 +6,7 @@ para_1: "Riksa uji forklift merupakan pemeriksaan dan pengujian keselamatan terh
 permalink: /layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift/riksa-uji-forklift/
 category: "Riksa Uji Pesawat Angkat Angkut"
 sub_category: "Riksa Uji Forklift"
+certification_category: "pesawat-angkat"
 service_type: "Safety Inspection"
 icon: "bi-box-arrow-up"
 image: "/assets/images/services/default-pesawat-angkat-angkut.svg"
