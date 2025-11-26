@@ -29,8 +29,8 @@ custom_schema:
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "{{ site.url }}{{ site.baseurl }}/#localbusiness",
+  "@type": ["ProfessionalService", "Organization"],
+  "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
   "name": "{{ site.business.name }}",
   "description": "{{ site.description }}",
   "url": "{{ site.url }}{{ site.baseurl }}/",
