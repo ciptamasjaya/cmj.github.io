@@ -1607,3 +1607,58 @@
     box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
   }
 }
+
+/* ============================================================================
+   ITEMLIST RIKSA UJI BLOCK
+   ============================================================================ */
+.itemlist-riksa-uji-section {
+
+  .itemlist-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .itemlist-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(13, 110, 253, 0.15) !important;
+  }
+
+  .itemlist-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .itemlist-icon i {
+    font-size: 1.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .itemlist-card:hover .itemlist-icon {
+    transform: scale(1.1) rotate(-5deg);
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+  }
+
+  .itemlist-card:hover .itemlist-icon i {
+    color: white !important;
+  }
+
+  .itemlist-name {
+    transition: color 0.3s ease;
+  }
+
+  .itemlist-card:hover .itemlist-name {
+    color: #0d6efd;
+  }
+
+  .itemlist-desc {
+    line-height: 1.6;
+  }
+}

@@ -133,6 +133,16 @@ by page--service.html wrapper, NOT in this node template.
 {% include reusable/block--video-riksa-uji.html video=page.video_riksa_uji %}
 {% endif %}
 
+<!-- ItemList Section: Jenis Forklift -->
+{% if page.jenis_forklift and page.jenis_forklift.items.size > 0 %}
+{% include reusable/block--itemlist-riksa-uji.html list=page.jenis_forklift %}
+{% endif %}
+
+<!-- ItemList Section: Komponen Inspeksi -->
+{% if page.komponen_inspeksi and page.komponen_inspeksi.items.size > 0 %}
+{% include reusable/block--itemlist-riksa-uji.html list=page.komponen_inspeksi %}
+{% endif %}
+
 <!-- HowTo Section: Proses Inspeksi -->
 {% if page.proses_inspeksi and page.proses_inspeksi.steps.size > 0 %}
 {% include reusable/block--howto-proses-inspeksi.html howto=page.proses_inspeksi %}

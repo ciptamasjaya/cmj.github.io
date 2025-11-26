@@ -33,6 +33,59 @@ intro:
   para_2: "PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan layanan riksa uji forklift yang komprehensif dengan tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck, dan stacker untuk memastikan keselamatan operasional di tempat kerja Anda."
 
 # ============================================================================
+# ITEMLIST DATA - Jenis Forklift yang Dilayani
+# ============================================================================
+jenis_forklift:
+  name: "Jenis Forklift yang Kami Layani"
+  description: "Kami melayani riksa uji untuk berbagai jenis forklift"
+  items:
+    - name: "Counterbalance Forklift"
+      description: "Forklift standar dengan beban pemberat di belakang untuk keseimbangan"
+      icon: "bi-box-arrow-up"
+    - name: "Reach Truck"
+      description: "Forklift untuk gang sempit dengan kemampuan menjangkau rak tinggi"
+      icon: "bi-arrows-expand"
+    - name: "Electric Stacker"
+      description: "Stacker elektrik untuk penyimpanan dan pengambilan barang di ketinggian"
+      icon: "bi-lightning"
+    - name: "Diesel Forklift"
+      description: "Forklift bertenaga diesel untuk operasi outdoor dan beban berat"
+      icon: "bi-fuel-pump"
+    - name: "LPG Forklift"
+      description: "Forklift berbahan bakar LPG untuk area indoor dan outdoor"
+      icon: "bi-droplet"
+    - name: "Side Loader"
+      description: "Forklift dengan garpu samping untuk material panjang"
+      icon: "bi-arrows"
+  footer: "Untuk jenis forklift lainnya yang tidak tercantum di atas, silakan hubungi customer service kami melalui telepon atau WhatsApp untuk konsultasi lebih lanjut."
+
+# ============================================================================
+# ITEMLIST DATA - Komponen yang Diperiksa
+# ============================================================================
+komponen_inspeksi:
+  name: "Komponen yang Diperiksa"
+  description: "Pemeriksaan menyeluruh pada seluruh komponen keselamatan forklift"
+  items:
+    - name: "Sistem Hidrolik"
+      description: "Silinder, selang, katup kontrol, dan oli hidrolik"
+      icon: "bi-droplet-half"
+    - name: "Sistem Pengereman"
+      description: "Service brake, parking brake, dan emergency brake"
+      icon: "bi-sign-stop"
+    - name: "Mast dan Fork"
+      description: "Struktur mast, rantai angkat, dan kondisi garpu"
+      icon: "bi-arrows-vertical"
+    - name: "Sistem Kemudi"
+      description: "Steering wheel, power steering, dan responsivitas"
+      icon: "bi-arrows-move"
+    - name: "Komponen Keselamatan"
+      description: "Lampu, klakson, seat belt, dan overhead guard"
+      icon: "bi-shield-check"
+    - name: "Sistem Elektrikal"
+      description: "Baterai, kabel, dan panel kontrol"
+      icon: "bi-plug"
+
+# ============================================================================
 # HOWTO DATA - Proses Riksa Uji
 # ============================================================================
 proses_inspeksi:
@@ -87,6 +140,7 @@ video_riksa_uji:
 offer_riksa_uji:
   name: "Paket Riksa Uji Forklift"
   description: "Layanan riksa uji dan inspeksi K3 forklift dengan sertifikat resmi Kemnaker RI"
+  note: "Harga belum termasuk biaya transportasi untuk lokasi di luar area Serang. Hubungi kami untuk penawaran khusus."
   offers:
     - name: "Riksa Uji Forklift Standar"
       description: "Inspeksi lengkap untuk 1 unit forklift kapasitas hingga 5 ton"

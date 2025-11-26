@@ -1,0 +1,82 @@
+{% comment %}
+============================================================================
+Block: ItemList Riksa Uji
+============================================================================
+
+@file        block--itemlist-riksa-uji.html
+@path        _includes/reusable/block--itemlist-riksa-uji.html
+@type        Block (reusable)
+@description Displays item list grid for riksa uji service pages
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- list: ItemList object from frontmatter with:
+  - name: Section title
+  - description: Section description
+  - items: Array of item objects with name, description, icon
+
+Usage:
+------
+{% include reusable/block--itemlist-riksa-uji.html list=page.jenis_forklift %}
+{% include reusable/block--itemlist-riksa-uji.html list=page.komponen_inspeksi %}
+
+============================================================================
+{% endcomment %}
+
+{% assign list = include.list %}
+
+{% if list and list.items.size > 0 %}
+<section id="list-{{ list.name | slugify }}" class="itemlist-riksa-uji-section py-5 bg-light">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="mb-3">
+        <i class="bi bi-list-check text-primary me-2"></i>
+        {{ list.name }}
+      </h2>
+      {% if list.description %}
+      <p class="lead text-muted">{{ list.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Item Grid -->
+    <div class="row">
+      {% for item in list.items %}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="itemlist-card card h-100 border-0 shadow-sm">
+          <div class="card-body text-center p-4">
+            <div class="itemlist-icon mb-3">
+              <i class="bi {{ item.icon }} text-primary"></i>
+            </div>
+            <h3 class="itemlist-name h5 fw-bold mb-2">{{ item.name }}</h3>
+            <p class="itemlist-desc text-muted small mb-0">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Footer Note -->
+    {% if list.footer %}
+    <div class="text-center mt-4">
+      <p class="text-muted mb-3">{{ list.footer }}</p>
+      <div class="d-flex gap-2 justify-content-center flex-wrap">
+        <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20ingin%20konsultasi%20tentang%20{{ page.title | url_encode }}"
+           class="btn btn-success"
+           target="_blank"
+           rel="noopener noreferrer">
+          <i class="bi bi-whatsapp me-2"></i>WhatsApp
+        </a>
+        <a href="tel:{{ site.business.phone }}" class="btn btn-outline-primary">
+          <i class="bi bi-telephone me-2"></i>Telepon
+        </a>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

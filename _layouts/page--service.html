@@ -103,6 +103,11 @@ Architecture Principle:
     {% include schema/schema--video-riksa-uji.html %}
   {% endif %}
 
+  <!-- ItemList Schema (Jenis Forklift & Komponen) -->
+  {% if page.jenis_forklift or page.komponen_inspeksi %}
+    {% include schema/schema--itemlist-riksa-uji.html %}
+  {% endif %}
+
   <!-- HowTo Schema (Proses Inspeksi) -->
   {% if page.proses_inspeksi and page.proses_inspeksi.steps.size > 0 %}
     {% include schema/schema--howto-proses-inspeksi.html %}

@@ -1,0 +1,68 @@
+{% comment %}
+============================================================================
+Schema: ItemList Riksa Uji (schema--itemlist-riksa-uji.html)
+============================================================================
+
+@file        schema--itemlist-riksa-uji.html
+@path        _includes/schema/schema--itemlist-riksa-uji.html
+@type        Schema (ItemList)
+@description JSON-LD ItemList schema for riksa uji service pages
+@author      arisciwek
+@created     2025-11-26
+
+Data Source:
+------------
+Data from page frontmatter: page.jenis_forklift, page.komponen_inspeksi
+
+Usage:
+------
+{% include schema/schema--itemlist-riksa-uji.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.jenis_forklift and page.jenis_forklift.items.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#jenis-forklift",
+  "name": "{{ page.jenis_forklift.name | escape }}",
+  "description": "{{ page.jenis_forklift.description | escape }}",
+  "numberOfItems": {{ page.jenis_forklift.items.size }},
+  "itemListElement": [
+    {% for item in page.jenis_forklift.items %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ item.name | escape }}",
+      "description": "{{ item.description | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.komponen_inspeksi and page.komponen_inspeksi.items.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#komponen-inspeksi",
+  "name": "{{ page.komponen_inspeksi.name | escape }}",
+  "description": "{{ page.komponen_inspeksi.description | escape }}",
+  "numberOfItems": {{ page.komponen_inspeksi.items.size }},
+  "itemListElement": [
+    {% for item in page.komponen_inspeksi.items %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ item.name | escape }}",
+      "description": "{{ item.description | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
