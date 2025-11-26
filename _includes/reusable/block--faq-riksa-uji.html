@@ -1,0 +1,99 @@
+{% comment %}
+============================================================================
+Block: FAQ Riksa Uji
+============================================================================
+
+@file        block--faq-riksa-uji.html
+@path        _includes/reusable/block--faq-riksa-uji.html
+@type        Block (reusable)
+@description Displays FAQ accordion for riksa uji service pages
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- faq: FAQ object from frontmatter with:
+  - name: FAQ section title
+  - description: Brief description
+  - faqs: Array of FAQ objects with question and answer
+
+Usage:
+------
+{% include reusable/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
+
+============================================================================
+{% endcomment %}
+
+{% assign faq = include.faq %}
+
+{% if faq and faq.faqs.size > 0 %}
+<section id="faq-{{ faq.name | slugify }}" class="faq-riksa-uji-section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+          <h2 class="mb-3">
+            <i class="bi bi-question-circle text-primary me-2"></i>
+            {{ faq.name }}
+          </h2>
+          {% if faq.description %}
+          <p class="lead text-muted">{{ faq.description }}</p>
+          {% endif %}
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="accordion" id="faqRiksaUjiAccordion">
+          {% for item in faq.faqs %}
+          <div class="accordion-item border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %} faq-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button{% unless forloop.first %} collapsed{% endunless %} fw-semibold"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-{{ forloop.index }}"
+                      {% if forloop.first %}aria-expanded="true"{% endif %}>
+                <i class="bi bi-patch-question text-primary me-2"></i>
+                {{ item.question }}
+              </button>
+            </h3>
+            <div id="faq-{{ forloop.index }}"
+                 class="accordion-collapse collapse{% if forloop.first %} show{% endif %}"
+                 data-bs-parent="#faqRiksaUjiAccordion">
+              <div class="accordion-body text-muted">
+                {{ item.answer }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- CTA Section -->
+        <div class="card border-0 shadow-sm mt-5 bg-primary text-white">
+          <div class="card-body p-4 text-center">
+            <h3 class="h5 fw-bold mb-3">
+              <i class="bi bi-chat-dots me-2"></i>
+              Masih Punya Pertanyaan?
+            </h3>
+            <p class="mb-3 opacity-75">
+              Tim kami siap membantu menjawab pertanyaan Anda seputar layanan riksa uji
+            </p>
+            <div class="d-flex gap-2 justify-content-center flex-wrap">
+              <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20ingin%20bertanya%20tentang%20{{ page.title | url_encode }}"
+                 class="btn btn-light"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp
+              </a>
+              <a href="tel:{{ site.business.phone }}" class="btn btn-outline-light">
+                <i class="bi bi-telephone me-2"></i>Telepon
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

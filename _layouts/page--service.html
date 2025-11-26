@@ -108,6 +108,11 @@ Architecture Principle:
     {% include schema/schema--howto-cara-pemesanan.html %}
   {% endif %}
 
+  <!-- FAQ Schema (Riksa Uji) -->
+  {% if page.faq_riksa_uji and page.faq_riksa_uji.faqs.size > 0 %}
+    {% include schema/schema--faq-riksa-uji.html %}
+  {% endif %}
+
   <!-- Breadcrumb Schema (BreadcrumbList) -->
   {% if page.show_breadcrumb_schema %}
     {% include schema/schema--breadcrumb.html current_title=page.title %}

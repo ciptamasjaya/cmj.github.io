@@ -75,6 +75,31 @@ cara_pemesanan:
       text: "Setelah forklift lulus inspeksi, sertifikat kelayakan operasional diterbitkan dalam 7 hari kerja dan dikirim ke alamat Anda."
 
 # ============================================================================
+# FAQ DATA - Frequently Asked Questions
+# ============================================================================
+faq_riksa_uji:
+  name: "FAQ Riksa Uji Forklift"
+  description: "Pertanyaan yang sering diajukan seputar layanan riksa uji forklift"
+  faqs:
+    - question: "Apa itu riksa uji forklift?"
+      answer: "Riksa uji forklift adalah pemeriksaan dan pengujian keselamatan terhadap forklift yang dilakukan oleh PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan Kerja) yang ditunjuk oleh Kementerian Ketenagakerjaan RI. Tujuannya untuk memastikan forklift layak dan aman dioperasikan sesuai standar K3."
+
+    - question: "Berapa lama proses riksa uji forklift?"
+      answer: "Proses inspeksi on-site biasanya memerlukan waktu 1-2 jam per unit forklift, tergantung kondisi dan kelengkapan dokumen. Penerbitan sertifikat membutuhkan waktu 3-7 hari kerja setelah inspeksi selesai dan forklift dinyatakan lulus uji."
+
+    - question: "Apa saja yang diperiksa dalam riksa uji forklift?"
+      answer: "Pemeriksaan meliputi: sistem hidrolik dan lifting mechanism, sistem pengereman (service, parking, emergency brake), sistem kemudi dan kontrol, struktur mast dan fork, komponen keselamatan (lampu, klakson, safety belt), serta pengujian beban (load test) sesuai kapasitas."
+
+    - question: "Berapa biaya riksa uji forklift?"
+      answer: "Biaya riksa uji forklift bervariasi tergantung jenis forklift, kapasitas, dan lokasi inspeksi. Silakan hubungi kami untuk mendapatkan penawaran harga yang sesuai dengan kebutuhan Anda. Kami memberikan harga kompetitif dengan layanan profesional."
+
+    - question: "Apakah sertifikat riksa uji berlaku nasional?"
+      answer: "Ya, sertifikat riksa uji forklift yang kami terbitkan berlaku secara nasional di seluruh Indonesia dan diakui oleh Kementerian Ketenagakerjaan RI. Sertifikat ini wajib dimiliki sebagai bukti bahwa forklift telah memenuhi standar keselamatan kerja."
+
+    - question: "Berapa lama masa berlaku sertifikat riksa uji?"
+      answer: "Sertifikat riksa uji forklift berlaku selama 1 (satu) tahun sejak tanggal penerbitan. Setelah masa berlaku habis, forklift wajib dilakukan riksa uji ulang untuk memperbarui sertifikat dan memastikan kelayakan operasional."
+
+# ============================================================================
 # REVIEWS DATA
 # ============================================================================
 reviews:

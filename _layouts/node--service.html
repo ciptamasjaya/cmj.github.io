@@ -138,6 +138,11 @@ by page--service.html wrapper, NOT in this node template.
 {% include reusable/block--howto-cara-pemesanan.html howto=page.cara_pemesanan %}
 {% endif %}
 
+<!-- FAQ Section: Riksa Uji -->
+{% if page.faq_riksa_uji and page.faq_riksa_uji.faqs.size > 0 %}
+{% include reusable/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
+{% endif %}
+
 <!-- Reviews Section (from JSON data) -->
 {% assign page_slug = page.url | split: "/" | compact | last %}
 {% assign reviews = site.data.review--service.reviews | where: "slug", page_slug %}

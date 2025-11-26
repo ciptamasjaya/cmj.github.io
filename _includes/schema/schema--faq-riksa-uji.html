@@ -1,0 +1,50 @@
+{% comment %}
+============================================================================
+Schema: FAQ Riksa Uji (schema--faq-riksa-uji.html)
+============================================================================
+
+@file        schema--faq-riksa-uji.html
+@path        _includes/schema/schema--faq-riksa-uji.html
+@type        Schema (FAQ)
+@description JSON-LD FAQPage schema for riksa uji service pages
+@author      arisciwek
+@created     2025-11-26
+
+Data Source:
+------------
+Data from page frontmatter: page.faq_riksa_uji
+
+Usage:
+------
+{% if page.faq_riksa_uji and page.faq_riksa_uji.faqs.size > 0 %}
+  {% include schema/schema--faq-riksa-uji.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign faq = page.faq_riksa_uji %}
+
+{% if faq and faq.faqs.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ page.url | absolute_url }}#faq-riksa-uji",
+  "name": "{{ faq.name | escape }}",
+  "description": "{{ faq.description | escape }}",
+  "mainEntity": [
+    {% for item in faq.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
