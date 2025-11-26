@@ -1,0 +1,80 @@
+{% comment %}
+============================================================================
+Schema: Offer Riksa Uji (schema--offer-riksa-uji.html)
+============================================================================
+
+@file        schema--offer-riksa-uji.html
+@path        _includes/schema/schema--offer-riksa-uji.html
+@type        Schema (Offer)
+@description JSON-LD Offer schema for riksa uji service pricing
+@author      arisciwek
+@created     2025-11-26
+
+Data Source:
+------------
+Data from page frontmatter: page.offer_riksa_uji
+
+Usage:
+------
+{% if page.offer_riksa_uji and page.offer_riksa_uji.offers.size > 0 %}
+  {% include schema/schema--offer-riksa-uji.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign offer = page.offer_riksa_uji %}
+
+{% if offer and offer.offers.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "{{ page.url | absolute_url }}#service-offers",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "{{ site.business.name }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.business.phone }}",
+    "priceRange": "{{ site.business.priceRange }}",
+    "image": "{{ '/assets/images/logo.svg' | absolute_url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.business.address.street }}",
+      "addressLocality": "{{ site.business.address.city }}",
+      "addressRegion": "{{ site.business.address.province }}",
+      "postalCode": "{{ site.business.address.postalCode }}",
+      "addressCountry": "ID"
+    }
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "{{ offer.name | escape }}",
+    "itemListElement": [
+      {% for item in offer.offers %}
+      {
+        "@type": "Offer",
+        "name": "{{ item.name | escape }}",
+        "description": "{{ item.description | escape }}",
+        "price": "{{ item.price }}",
+        "priceCurrency": "{{ item.price_currency }}",
+        "availability": "https://schema.org/{{ item.availability }}",
+        "validFrom": "{{ item.valid_from }}",
+        "priceValidUntil": "{{ item.valid_through }}",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ site.business.name }}"
+        }
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+}
+</script>
+{% endif %}

@@ -1531,3 +1531,79 @@
     box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
   }
 }
+
+/* ============================================================================
+   OFFER RIKSA UJI BLOCK
+   ============================================================================ */
+.offer-riksa-uji-section {
+
+  .offer-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+  }
+
+  .offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .offer-card--featured {
+    border: 2px solid #0d6efd;
+    transform: scale(1.02);
+  }
+
+  .offer-card--featured:hover {
+    transform: scale(1.02) translateY(-10px);
+  }
+
+  .offer-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .offer-price {
+    padding: 1rem 0;
+  }
+
+  .offer-price__currency {
+    font-size: 1.25rem;
+    vertical-align: super;
+  }
+
+  .offer-price__amount {
+    line-height: 1;
+  }
+
+  .offer-price__suffix {
+    font-size: 1.25rem;
+  }
+
+  .offer-price__label {
+    margin-top: 0.25rem;
+  }
+
+  .offer-features li {
+    font-size: 0.9rem;
+    padding: 0.25rem 0;
+  }
+
+  .offer-features li i {
+    font-size: 0.85rem;
+  }
+
+  .card-footer .btn {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .card-footer .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+  }
+}

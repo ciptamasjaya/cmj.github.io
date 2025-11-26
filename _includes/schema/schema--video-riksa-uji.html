@@ -36,7 +36,7 @@ Usage:
   "thumbnailUrl": "{{ video.thumbnail | absolute_url }}",
   "contentUrl": "{{ video.src | absolute_url }}",
   "embedUrl": "{{ page.url | absolute_url }}#video-{{ video.name | slugify }}",
-  "uploadDate": "{{ video.upload_date }}",
+  "uploadDate": "{{ video.upload_date }}T00:00:00+07:00",
   "duration": "{{ video.duration }}",
   "publisher": {
     "@type": "Organization",

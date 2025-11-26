@@ -1,0 +1,108 @@
+{% comment %}
+============================================================================
+Block: Offer Riksa Uji
+============================================================================
+
+@file        block--offer-riksa-uji.html
+@path        _includes/reusable/block--offer-riksa-uji.html
+@type        Block (reusable)
+@description Displays pricing cards for riksa uji service pages
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- offer: Offer object from frontmatter with:
+  - name: Section title
+  - description: Section description
+  - offers: Array of offer objects with name, price, features, etc.
+
+Usage:
+------
+{% include reusable/block--offer-riksa-uji.html offer=page.offer_riksa_uji %}
+
+============================================================================
+{% endcomment %}
+
+{% assign offer = include.offer %}
+
+{% if offer and offer.offers.size > 0 %}
+<section id="pricing-{{ offer.name | slugify }}" class="offer-riksa-uji-section py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <h2 class="mb-3">
+        <i class="bi bi-tag text-primary me-2"></i>
+        {{ offer.name }}
+      </h2>
+      {% if offer.description %}
+      <p class="lead text-muted">{{ offer.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="row justify-content-center">
+      {% for item in offer.offers %}
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="offer-card card h-100 border-0 shadow-sm{% if item.is_featured %} offer-card--featured{% endif %}">
+          {% if item.is_featured %}
+          <div class="offer-badge">
+            <span class="badge bg-warning text-dark">
+              <i class="bi bi-star-fill me-1"></i>Best Value
+            </span>
+          </div>
+          {% endif %}
+
+          <div class="card-header bg-transparent border-0 pt-4 pb-0 text-center">
+            <h3 class="h5 fw-bold mb-2">{{ item.name }}</h3>
+            <p class="text-muted small mb-0">{{ item.description }}</p>
+          </div>
+
+          <div class="card-body text-center">
+            <!-- Price -->
+            <div class="offer-price my-4">
+              <span class="offer-price__currency text-muted">Rp</span>
+              <span class="offer-price__amount display-5 fw-bold text-primary">
+                {{ item.price | divided_by: 1000000.0 | round: 1 }}
+              </span>
+              <span class="offer-price__suffix text-muted">juta</span>
+              <div class="offer-price__label small text-muted">{{ item.price_label }}</div>
+            </div>
+
+            <!-- Features -->
+            <ul class="offer-features list-unstyled text-start mb-4">
+              {% for feature in item.features %}
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                {{ feature }}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="card-footer bg-transparent border-0 pb-4 px-4">
+            <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20tertarik%20dengan%20{{ item.name | url_encode }}%20untuk%20{{ page.title | url_encode }}"
+               class="btn {% if item.is_featured %}btn-primary{% else %}btn-outline-primary{% endif %} w-100"
+               target="_blank"
+               rel="noopener noreferrer">
+              <i class="bi bi-whatsapp me-2"></i>Pesan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Note -->
+    <div class="text-center mt-4">
+      <p class="text-muted small mb-0">
+        <i class="bi bi-info-circle me-1"></i>
+        Harga belum termasuk biaya transportasi untuk lokasi di luar area Serang.
+        Hubungi kami untuk penawaran khusus.
+      </p>
+    </div>
+
+  </div>
+</section>
+{% endif %}

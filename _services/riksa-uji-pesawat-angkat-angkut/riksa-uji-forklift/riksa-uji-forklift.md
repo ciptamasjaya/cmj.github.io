@@ -18,10 +18,6 @@ show_breadcrumb_schema: true
 rating: 4.8
 review_count: 15
 
-# Optional: Uncomment jika sudah ada data
-# price: 2500000
-# price_currency: "IDR"
-
 # Schema.org Custom Schemas
 custom_schema:
   - schema/schema--service-reviews.html
@@ -84,6 +80,62 @@ video_riksa_uji:
   src: "/assets/videos/service-page/riksa-uji-forklift.webm"
   duration: "PT1M33S"
   upload_date: "2025-11-26"
+
+# ============================================================================
+# OFFER DATA - Service Pricing
+# ============================================================================
+offer_riksa_uji:
+  name: "Paket Riksa Uji Forklift"
+  description: "Layanan riksa uji dan inspeksi K3 forklift dengan sertifikat resmi Kemnaker RI"
+  offers:
+    - name: "Riksa Uji Forklift Standar"
+      description: "Inspeksi lengkap untuk 1 unit forklift kapasitas hingga 5 ton"
+      price: 2500000
+      price_currency: "IDR"
+      price_label: "per unit"
+      features:
+        - "Inspeksi visual lengkap"
+        - "Pengujian sistem hidrolik"
+        - "Pengujian sistem rem"
+        - "Load test sesuai kapasitas"
+        - "Sertifikat resmi Kemnaker RI"
+        - "Laporan inspeksi detail"
+      availability: "InStock"
+      valid_from: "2025-01-01"
+      valid_through: "2025-12-31"
+
+    - name: "Riksa Uji Forklift Heavy Duty"
+      description: "Inspeksi lengkap untuk 1 unit forklift kapasitas di atas 5 ton"
+      price: 3500000
+      price_currency: "IDR"
+      price_label: "per unit"
+      features:
+        - "Inspeksi visual lengkap"
+        - "Pengujian sistem hidrolik"
+        - "Pengujian sistem rem"
+        - "Load test beban berat"
+        - "Sertifikat resmi Kemnaker RI"
+        - "Laporan inspeksi detail"
+        - "Konsultasi maintenance"
+      availability: "InStock"
+      valid_from: "2025-01-01"
+      valid_through: "2025-12-31"
+
+    - name: "Paket Riksa Uji Fleet"
+      description: "Inspeksi untuk 5+ unit forklift dengan harga spesial"
+      price: 2000000
+      price_currency: "IDR"
+      price_label: "per unit (min. 5 unit)"
+      features:
+        - "Semua fitur paket standar"
+        - "Diskon volume 20%"
+        - "Penjadwalan fleksibel"
+        - "Dedicated inspector"
+        - "Priority support"
+      availability: "InStock"
+      valid_from: "2025-01-01"
+      valid_through: "2025-12-31"
+      is_featured: true
 
 # ============================================================================
 # FAQ DATA - Frequently Asked Questions
