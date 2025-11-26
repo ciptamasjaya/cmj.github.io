@@ -98,6 +98,11 @@ Architecture Principle:
   <!-- Product Schema (Service as Product + Reviews) -->
   {% include schema/schema--service.html %}
 
+  <!-- HowTo Schema (Cara Pemesanan) -->
+  {% if page.cara_pemesanan and page.cara_pemesanan.steps.size > 0 %}
+    {% include schema/schema--howto-cara-pemesanan.html %}
+  {% endif %}
+
   <!-- Breadcrumb Schema (BreadcrumbList) -->
   {% if page.show_breadcrumb_schema %}
     {% include schema/schema--breadcrumb.html current_title=page.title %}

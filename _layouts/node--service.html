@@ -128,6 +128,11 @@ by page--service.html wrapper, NOT in this node template.
 
 </div>
 
+<!-- HowTo Section: Cara Pemesanan -->
+{% if page.cara_pemesanan and page.cara_pemesanan.steps.size > 0 %}
+{% include reusable/block--howto-cara-pemesanan.html howto=page.cara_pemesanan %}
+{% endif %}
+
 <!-- Reviews Section (from JSON data) -->
 {% assign page_slug = page.url | split: "/" | compact | last %}
 {% assign reviews = site.data.review--service.reviews | where: "slug", page_slug %}

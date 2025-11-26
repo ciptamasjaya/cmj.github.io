@@ -1,0 +1,59 @@
+{% comment %}
+============================================================================
+Schema: HowTo - Cara Pemesanan
+============================================================================
+
+@file        schema--howto-cara-pemesanan.html
+@path        _includes/schema/schema--howto-cara-pemesanan.html
+@type        Schema component
+@description Schema.org HowTo markup for service ordering process
+@author      arisciwek
+@created     2025-11-26
+
+Parameters:
+-----------
+- howto: (optional) HowTo object. If not provided, uses page.cara_pemesanan
+
+Usage:
+------
+{% include schema/schema--howto-cara-pemesanan.html %}
+{% include schema/schema--howto-cara-pemesanan.html howto=page.proses_inspeksi %}
+
+Frontmatter Example:
+-------------------
+cara_pemesanan:
+  name: "Cara Pemesanan Riksa Uji Forklift"
+  description: "Langkah-langkah memesan jasa riksa uji forklift"
+  totalTime: "P7D"
+  steps:
+    - name: "Hubungi Kami"
+      text: "Hubungi tim kami via WhatsApp atau telepon"
+      image: "/assets/images/howto/step-1.svg"
+
+============================================================================
+{% endcomment %}
+
+{% assign howto = include.howto | default: page.cara_pemesanan %}
+
+{% if howto and howto.steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ howto.name | escape }}",
+  "description": "{{ howto.description | escape }}"{% if howto.totalTime %},
+  "totalTime": "{{ howto.totalTime }}"{% endif %}{% if page.image %},
+  "image": "{{ page.image | absolute_url }}"{% endif %},
+  "step": [{% for step in howto.steps %}{% if forloop.index > 1 %},{% endif %}
+    {
+      "@type": "HowToStep",
+      "position": {{ forloop.index }},
+      "name": "{{ step.name | escape }}",
+      "text": "{{ step.text | escape }}"{% if step.image %},
+      "image": "{{ step.image | absolute_url }}"{% endif %}{% if step.url %},
+      "url": "{{ step.url | absolute_url }}"{% endif %}
+    }{% endfor %}
+  ]
+}
+</script>
+{% endif %}
