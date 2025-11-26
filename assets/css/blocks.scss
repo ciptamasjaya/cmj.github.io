@@ -1609,25 +1609,25 @@
 }
 
 /* ============================================================================
-   ITEMLIST RIKSA UJI BLOCK
+   ITEMLIST JENIS FORKLIFT BLOCK - Icon Besar Tengah
    ============================================================================ */
-.itemlist-riksa-uji-section {
+.itemlist-jenis-forklift-section {
 
-  .itemlist-card {
+  .jenis-forklift-card {
     border-radius: 12px;
     transition: all 0.3s ease;
   }
 
-  .itemlist-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(13, 110, 253, 0.15) !important;
+  .jenis-forklift-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(13, 110, 253, 0.2) !important;
   }
 
-  .itemlist-icon {
-    width: 60px;
-    height: 60px;
+  .jenis-forklift-icon {
+    width: 80px;
+    height: 80px;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: 50%;
     background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
     display: flex;
     align-items: center;
@@ -1635,30 +1635,88 @@
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  .itemlist-icon i {
-    font-size: 1.75rem;
+  .jenis-forklift-icon i {
+    font-size: 2rem;
     transition: all 0.3s ease;
   }
 
-  .itemlist-card:hover .itemlist-icon {
-    transform: scale(1.1) rotate(-5deg);
+  .jenis-forklift-card:hover .jenis-forklift-icon {
+    transform: scale(1.15) rotate(-5deg);
     background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
-    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+    box-shadow: 0 10px 24px rgba(13, 110, 253, 0.4);
   }
 
-  .itemlist-card:hover .itemlist-icon i {
+  .jenis-forklift-card:hover .jenis-forklift-icon i {
     color: white !important;
+    transform: scale(1.1);
   }
 
-  .itemlist-name {
+  .jenis-forklift-name {
     transition: color 0.3s ease;
   }
 
-  .itemlist-card:hover .itemlist-name {
+  .jenis-forklift-card:hover .jenis-forklift-name {
     color: #0d6efd;
   }
 
-  .itemlist-desc {
+  .jenis-forklift-desc {
     line-height: 1.6;
+  }
+}
+
+/* ============================================================================
+   ITEMLIST KOMPONEN INSPEKSI BLOCK - Icon Kiri Horizontal + Border Accent
+   ============================================================================ */
+.itemlist-komponen-inspeksi-section {
+
+  .komponen-inspeksi-card {
+    border-radius: 12px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .komponen-inspeksi-card:hover {
+    transform: translateX(8px);
+    border-left-color: #0d6efd;
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.15) !important;
+  }
+
+  .komponen-inspeksi-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    flex-shrink: 0;
+  }
+
+  .komponen-inspeksi-icon i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .komponen-inspeksi-card:hover .komponen-inspeksi-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    box-shadow: 0 6px 16px rgba(13, 110, 253, 0.3);
+  }
+
+  .komponen-inspeksi-card:hover .komponen-inspeksi-icon i {
+    color: white !important;
+  }
+
+  .komponen-inspeksi-name {
+    transition: color 0.3s ease;
+  }
+
+  .komponen-inspeksi-card:hover .komponen-inspeksi-name {
+    color: #0d6efd;
+  }
+
+  .komponen-inspeksi-desc {
+    line-height: 1.5;
   }
 }
