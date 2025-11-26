@@ -76,19 +76,17 @@ custom_schema:
     }
   ],
   "areaServed": [
-    {
-      "@type": "AdministrativeArea",
-      "name": "DKI Jakarta"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Jawa Barat"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Banten"
-    },
-    "ID"
+    {"@type": "Country", "name": "Indonesia"}{% if site.data.area_pelayanan.provinsi %},
+    {%- for provinsi in site.data.area_pelayanan.provinsi -%}
+    {%- if provinsi.nama == "DKI Jakarta" or provinsi.nama == "Jawa Barat" or provinsi.nama == "Banten" or provinsi.nama == "Jawa Tengah" or provinsi.nama == "DI Yogyakarta" or provinsi.nama == "Jawa Timur" or provinsi.nama == "Bali" -%}
+    {%- for kota in provinsi.kota -%}
+    {"@type": "City", "name": "{{ kota }}", "containedInPlace": {"@type": "AdministrativeArea", "name": "{{ provinsi.nama }}"}},
+    {%- endfor -%}
+    {%- else -%}
+    {"@type": "City", "name": "{{ provinsi.ibukota }}", "containedInPlace": {"@type": "AdministrativeArea", "name": "{{ provinsi.nama }}"}},
+    {%- endif -%}
+    {%- endfor -%}
+    {"@type": "AdministrativeArea", "name": "Seluruh Indonesia"}{% endif %}
   ],
   "serviceArea": {
     "@type": "GeoCircle",

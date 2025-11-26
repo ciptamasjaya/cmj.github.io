@@ -1,0 +1,135 @@
+{% comment %}
+============================================================================
+Block: Service Area (Area Pelayanan)
+============================================================================
+
+@file        block--service-area.html
+@path        _includes/reusable/services/block--service-area.html
+@type        Block (reusable)
+@description Displays service area coverage by province and city
+@author      arisciwek
+@created     2025-11-26
+
+Features:
+- H2 heading with gradient primary
+- Card-based layout for each province
+- Shows 5 cities per province
+- Color-coded cards by region
+- Responsive grid layout
+
+Data Source:
+- site.data.area_pelayanan
+
+Usage:
+{% include reusable/services/block--service-area.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if site.data.area_pelayanan.provinsi %}
+<section id="area-pelayanan" class="py-5 bg-light">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body text-white text-center py-4 px-3 bg-primary">
+          <i class="bi {{ site.data.area_pelayanan.header.icon | default: 'bi-geo-alt-fill' }} mb-2 fs-1"></i>
+          <h2 class="h2 mb-0 fw-bold text-white">{{ site.data.area_pelayanan.header.judul | default: 'Area Pelayanan' }}</h2>
+          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+            <i class="bi bi-truck me-1"></i>
+            {{ site.data.area_pelayanan.header.tagline | default: 'Melayani seluruh Indonesia' }}
+            <i class="bi bi-truck ms-1"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="mb-4">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 text-primary fw-bold">
+            <i class="bi {{ site.data.area_pelayanan.intro.icon | default: 'bi-pin-map' }} text-primary me-2"></i>
+            {{ site.data.area_pelayanan.intro.judul | default: 'Jangkauan Pelayanan' }}
+          </h3>
+          <p class="small text-muted mb-0 mt-1">{{ site.data.area_pelayanan.intro.deskripsi | default: 'Kami melayani inspeksi K3 di berbagai kota besar' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Province Cards (Jawa & Bali only) -->
+    <div class="mb-4">
+      <h4 class="h5 text-primary mb-3">
+        <i class="bi bi-map me-2"></i>Kota-kota Lainnya yang Kami Layani
+      </h4>
+      <div class="row g-3">
+        {% for provinsi in site.data.area_pelayanan.provinsi %}
+        {% if provinsi.nama == "DKI Jakarta" or provinsi.nama == "Jawa Barat" or provinsi.nama == "Banten" or provinsi.nama == "Jawa Tengah" or provinsi.nama == "DI Yogyakarta" or provinsi.nama == "Jawa Timur" or provinsi.nama == "Bali" %}
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-{{ provinsi.color | default: 'primary' }} {% if provinsi.color == 'warning' %}text-dark{% else %}text-white{% endif %}">
+              <h5 class="h6 mb-0">
+                <i class="bi {{ provinsi.icon | default: 'bi-pin-map-fill' }} me-2"></i>{{ provinsi.nama }}
+              </h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled small mb-0">
+                {% assign kota_limit = provinsi.kota | slice: 0, 5 %}
+                {% for kota in kota_limit %}
+                <li class="mb-1">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>{{ kota }}
+                </li>
+                {% endfor %}
+                {% if provinsi.kota.size > 5 %}
+                <li class="mb-0 text-muted">
+                  <i class="bi bi-three-dots me-2"></i>dan {{ provinsi.kota.size | minus: 5 }} kota/kabupaten lainnya
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Ibukota Provinsi Summary -->
+    <div class="mb-4">
+      <div class="card card-kota-lainnya border-0 shadow-sm">
+        <div class="card-body">
+          <h4 class="h5 text-primary mb-3">
+            <i class="bi bi-building me-2"></i>Kota kota lainnya yang Kami Layani
+          </h4>
+          <div class="d-flex flex-wrap gap-2">
+            {% for provinsi in site.data.area_pelayanan.provinsi %}
+            <span class="badge bg-{{ provinsi.color | default: 'primary' }} {% if provinsi.color == 'warning' %}text-dark{% endif %} px-3 py-2">
+              <i class="bi bi-geo-alt me-1"></i>{{ provinsi.ibukota }} dan sekitarnya
+            </span>
+            {% endfor %}
+          </div>
+          <p class="small text-muted mt-3 mb-0">
+            <i class="bi bi-info-circle me-1"></i>
+            Melayani {{ site.data.area_pelayanan.provinsi.size }} provinsi dengan {{ site.data.area_pelayanan.provinsi | map: "kota" | flatten | size }} kota/kabupaten di seluruh Indonesia
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    {% if site.data.area_pelayanan.cta %}
+    <div class="card border-0 shadow-sm bg-primary text-white">
+      <div class="card-body py-3">
+        <div class="d-flex align-items-center">
+          <i class="bi {{ site.data.area_pelayanan.cta.icon | default: 'bi-info-circle-fill' }} fs-3 me-3"></i>
+          <div>
+            <p class="mb-1 fw-bold">{{ site.data.area_pelayanan.cta.judul }}</p>
+            <p class="mb-0 small">{{ site.data.area_pelayanan.cta.deskripsi }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

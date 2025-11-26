@@ -1,0 +1,51 @@
+{% comment %}
+============================================================================
+Schema: ServiceArea (schema--service-area.html)
+============================================================================
+
+@file        schema--service-area.html
+@path        _includes/schema/services/schema--service-area.html
+@type        Schema (Place with areaServed)
+@description Schema.org Place/AdministrativeArea for geographic coverage
+@author      arisciwek
+@created     2025-11-26
+
+Features:
+- ItemList of AdministrativeArea for each province
+- City places within each province (limited to 5 per province)
+- Standalone geographic coverage schema
+
+Data Source:
+- site.data.area_pelayanan.provinsi
+
+Usage:
+{% include schema/services/schema--service-area.html %}
+
+============================================================================
+{% endcomment %}
+{%- if site.data.area_pelayanan.provinsi -%}
+{%- assign total_items = 0 -%}
+{%- for provinsi in site.data.area_pelayanan.provinsi -%}
+  {%- if provinsi.nama == "DKI Jakarta" or provinsi.nama == "Jawa Barat" or provinsi.nama == "Banten" or provinsi.nama == "Jawa Tengah" or provinsi.nama == "DI Yogyakarta" or provinsi.nama == "Jawa Timur" or provinsi.nama == "Bali" -%}
+    {%- assign total_items = total_items | plus: provinsi.kota.size -%}
+  {%- else -%}
+    {%- assign total_items = total_items | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","@id":"{{ page.url | absolute_url }}#service-area","name":"Area Pelayanan {{ page.title | escape }}","description":"Daftar wilayah yang dilayani untuk {{ page.title | escape }} oleh {{ site.business.name }}","numberOfItems":{{ total_items }},"itemListElement":[
+{%- assign position = 0 -%}
+{%- for provinsi in site.data.area_pelayanan.provinsi -%}
+{%- if provinsi.nama == "DKI Jakarta" or provinsi.nama == "Jawa Barat" or provinsi.nama == "Banten" or provinsi.nama == "Jawa Tengah" or provinsi.nama == "DI Yogyakarta" or provinsi.nama == "Jawa Timur" or provinsi.nama == "Bali" -%}
+{%- for kota in provinsi.kota -%}
+{%- assign position = position | plus: 1 -%}
+{"@type":"ListItem","position":{{ position }},"item":{"@type":"City","name":"{{ kota }}","address":{"@type":"PostalAddress","addressLocality":"{{ kota }}","addressRegion":"{{ provinsi.nama }}","addressCountry":"ID"}}}{% unless forloop.last and forloop.parentloop.last %},{% endunless %}
+{%- endfor -%}
+{%- else -%}
+{%- assign position = position | plus: 1 -%}
+{"@type":"ListItem","position":{{ position }},"item":{"@type":"City","name":"{{ provinsi.ibukota }}","address":{"@type":"PostalAddress","addressLocality":"{{ provinsi.ibukota }}","addressRegion":"{{ provinsi.nama }}","addressCountry":"ID"}}},
+{%- endif -%}
+{%- endfor -%}
+{"@type":"ListItem","position":{{ position | plus: 1 }},"item":{"@type":"Country","name":"Indonesia","sameAs":"https://en.wikipedia.org/wiki/Indonesia"}}],"mainEntityOfPage":{"@type":"WebPage","@id":"{{ page.url | absolute_url }}#webpage"}}
+</script>
+{%- endif -%}

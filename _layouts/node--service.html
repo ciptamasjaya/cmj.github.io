@@ -99,6 +99,11 @@ by page--service.html wrapper, NOT in this node template.
 {% include reusable/services/block--faq-riksa-uji.html faq=page.faq_riksa_uji %}
 {% endif %}
 
+<!-- Service Area Section -->
+{% if site.data.area_pelayanan.provinsi %}
+{% include reusable/services/block--service-area.html %}
+{% endif %}
+
 <!-- Reviews Section -->
 {% assign page_slug = page.url | split: "/" | compact | last %}
 {% assign reviews = site.data.review--service.reviews | where: "slug", page_slug %}
