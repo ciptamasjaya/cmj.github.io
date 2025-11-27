@@ -1,0 +1,39 @@
+{% comment %}
+============================================================================
+Block: Comments
+============================================================================
+
+@file        block--comments.html
+@path        _includes/reusable/post/block--comments.html
+@type        Block (reusable)
+@description Displays comments section from JSON data
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+- Comment thread with nested replies
+
+Usage:
+------
+{% include reusable/post/block--comments.html %}
+
+Data source:
+------------
+- site.data.comment--post.comments
+
+============================================================================
+{% endcomment %}
+
+{% assign post_slug = page.url | split: "/" | compact | last %}
+{% assign comments = site.data.comment--post.comments | where: "slug", post_slug %}
+
+{% if comments.size > 0 %}
+<div id="comments" class="block--comments mt-5 pt-4 border-top">
+  <h2 class="mb-4">
+    <i class="bi bi-chat-dots text-primary me-2"></i>
+    Komentar
+  </h2>
+  {% include components/comment-thread.html comments=comments limit=10 %}
+</div>
+{% endif %}

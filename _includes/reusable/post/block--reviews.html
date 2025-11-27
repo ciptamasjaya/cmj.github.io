@@ -1,0 +1,49 @@
+{% comment %}
+============================================================================
+Block: Reviews
+============================================================================
+
+@file        block--reviews.html
+@path        _includes/reusable/post/block--reviews.html
+@type        Block (reusable)
+@description Displays rating and reviews section from JSON data
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+- Rating summary (left column)
+- Review list (right column)
+
+Usage:
+------
+{% include reusable/post/block--reviews.html %}
+
+Data source:
+------------
+- site.data.review--post.reviews
+- site.data.rating--post.ratings
+
+============================================================================
+{% endcomment %}
+
+{% assign post_slug = page.url | split: "/" | compact | last %}
+{% assign reviews = site.data.review--post.reviews | where: "slug", post_slug %}
+{% assign rating = site.data.rating--post.ratings | where: "slug", post_slug | first %}
+
+{% if rating and rating.total_reviews > 0 %}
+<div id="reviews" class="block--reviews mt-5 pt-4 border-top">
+  <h2 class="mb-4">
+    <i class="bi bi-star-fill text-warning me-2"></i>
+    Rating & Ulasan Artikel
+  </h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      {% include components/rating-summary.html rating=rating compact=true %}
+    </div>
+    <div class="col-md-8">
+      {% include components/review-list.html reviews=reviews limit=5 %}
+    </div>
+  </div>
+</div>
+{% endif %}

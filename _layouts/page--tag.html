@@ -1,0 +1,190 @@
+---
+layout: compress
+---
+{% comment %}
+============================================================================
+Page Wrapper: Tag Pages (page--tag.html)
+============================================================================
+
+@file        page--tag.html
+@path        _layouts/page--tag.html
+@type        Page (wrapper - variant)
+@variant     tag (tag listing pages)
+@description Tag page wrapper for content listing by tag
+@author      arisciwek
+@created     2025-11-27
+
+Drupal-style naming: page--tag.html (variant of page.html)
+
+This wrapper is specifically for tag listing pages that display
+posts/services tagged with a specific tag.
+
+Used by:
+- Tag archive pages
+- Custom tag landing pages
+
+Frontmatter Required:
+- tag: "Tag Name"
+
+Site Structure:
+- HTML doctype and lang attribute
+- head.html (meta tags, CSS, scripts)
+- header.html (logo, navigation menu)
+- main.main-content:
+  - Breadcrumb navigation
+  - Tag header with title and description
+  - {{ content }} renders tag page content
+  - Posts/services with this tag
+- footer.html (site footer with business info)
+
+Usage:
+Set in tag page frontmatter:
+  ---
+  layout: page--tag
+  tag: "Forklift"
+  title: "Tag: Forklift"
+  ---
+
+============================================================================
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <main class="main-content">
+    <!-- Breadcrumb Navigation -->
+    {% include reusable/block--breadcrumb.html %}
+
+    <!-- Tag Page Content -->
+    <div class="container py-5">
+
+      <!-- Tag Header -->
+      <header class="tag-header mb-5">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <span class="badge bg-primary fs-6 px-3 py-2 mb-3">
+              <i class="bi bi-tag me-1"></i>Tag
+            </span>
+            <h1 class="display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="lead text-muted">{{ page.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      </header>
+
+      <!-- Tag Content -->
+      {{ content }}
+
+      <!-- Posts with this tag -->
+      {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains page.tag" %}
+      {% if tagged_posts.size > 0 %}
+      <section class="tagged-posts mb-5">
+        <h2 class="h4 mb-4">
+          <i class="bi bi-file-earmark-text text-primary me-2"></i>
+          Artikel dengan tag "{{ page.tag }}"
+        </h2>
+        <div class="row">
+          {% for post in tagged_posts limit:12 %}
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              {% if post.image %}
+              <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" style="height: 160px; object-fit: cover;">
+              {% endif %}
+              <div class="card-body">
+                <h3 class="card-title h6">
+                  <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark">
+                    {{ post.title }}
+                  </a>
+                </h3>
+                <p class="card-text small text-muted">
+                  {{ post.description | default: post.excerpt | strip_html | truncate: 100 }}
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <small class="text-muted">
+                  <i class="bi bi-calendar3 me-1"></i>
+                  {{ post.date | date: "%d %b %Y" }}
+                </small>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- Services with this tag -->
+      {% assign tagged_services = site.services | where_exp: "service", "service.tags contains page.tag" %}
+      {% if tagged_services.size > 0 %}
+      <section class="tagged-services mb-5">
+        <h2 class="h4 mb-4">
+          <i class="bi bi-gear text-primary me-2"></i>
+          Layanan dengan tag "{{ page.tag }}"
+        </h2>
+        <div class="row">
+          {% for service in tagged_services limit:12 %}
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              {% if service.image %}
+              <img src="{{ service.image | relative_url }}" class="card-img-top" alt="{{ service.title }}" style="height: 160px; object-fit: cover;">
+              {% endif %}
+              <div class="card-body">
+                <h3 class="card-title h6">
+                  <a href="{{ service.url | relative_url }}" class="text-decoration-none text-dark">
+                    {{ service.title }}
+                  </a>
+                </h3>
+                <p class="card-text small text-muted">
+                  {{ service.description | strip_html | truncate: 100 }}
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                {% if service.category %}
+                <span class="badge bg-secondary small">{{ service.category }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      <!-- No content message -->
+      {% if tagged_posts.size == 0 and tagged_services.size == 0 %}
+      <div class="text-center py-5">
+        <i class="bi bi-inbox text-muted" style="font-size: 4rem;"></i>
+        <p class="text-muted mt-3">Belum ada konten dengan tag "{{ page.tag }}"</p>
+      </div>
+      {% endif %}
+
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" %}
+
+  <!-- Global Schema: WebSite + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Breadcrumb Schema (BreadcrumbList) -->
+  {% if page.show_breadcrumb_schema %}
+    {% include schema/schema--breadcrumb.html %}
+  {% endif %}
+
+  <!-- Page-specific schemas -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

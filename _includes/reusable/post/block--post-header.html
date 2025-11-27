@@ -1,0 +1,48 @@
+{% comment %}
+============================================================================
+Block: Post Header
+============================================================================
+
+@file        block--post-header.html
+@path        _includes/reusable/post/block--post-header.html
+@type        Block (reusable)
+@description Displays post header with title, meta info, and featured image
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+- H1 title
+- Meta: date, author
+- Featured image (optional)
+
+Usage:
+------
+{% include reusable/post/block--post-header.html %}
+
+============================================================================
+{% endcomment %}
+
+<header class="post-header mb-4">
+  <h1 class="post-title display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+
+  <div class="post-meta text-muted mb-3">
+    <span class="me-3">
+      <i class="bi bi-calendar3 me-1"></i>
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%d %B %Y" }}
+      </time>
+    </span>
+    {% if page.author %}
+    <span class="me-3">
+      <i class="bi bi-person me-1"></i>{{ page.author }}
+    </span>
+    {% endif %}
+  </div>
+
+  {% if page.image %}
+  <div class="post-image mb-4">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded shadow">
+  </div>
+  {% endif %}
+</header>

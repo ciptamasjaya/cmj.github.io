@@ -31,9 +31,13 @@ content_intro:
 {% assign paragraphs = include.paragraphs %}
 
 {% if paragraphs and paragraphs.size > 0 %}
-<div class="content-intro">
+<section id="content-intro" class="content-intro">
   {% for paragraph in paragraphs %}
-  <p class="content-intro__paragraph">{{ paragraph | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  <div class="card content-intro__card mb-3">
+    <div class="card-body">
+      <p class="card-text mb-0">{{ paragraph }}</p>
+    </div>
+  </div>
   {% endfor %}
-</div>
+</section>
 {% endif %}

@@ -4,6 +4,11 @@ title: Jasa Riksa Uji K3
 description: Daftar lengkap layanan riksa uji K3 yang kami sediakan. Sertifikat resmi dan terpercaya untuk berbagai jenis peralatan.
 keywords: riksa uji k3, jasa inspeksi k3, sertifikasi k3
 schema_type: CollectionPage
+extra_css:
+  - /assets/css/datatable.css
+custom_js:
+  - /assets/js/datatable.js
+  - /assets/js/pages/initDataTable.js
 custom_schema:
   - schema/schema--global.html
   - schema/schema--breadcrumb.html
@@ -69,11 +74,6 @@ service_coverage:
 
 <!-- Service List Component (2 Column: Cards + Table) -->
 {% include reusable/block--service-list.html %}
-
-<!-- DataTable CSS & JS -->
-<link rel="stylesheet" href="{{ '/assets/css/datatable.css' | relative_url }}">
-<script src="{{ '/assets/js/datatable.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/pages/initDataTable.js' | relative_url }}"></script>
 
 <!-- Features Section -->
 {% include reusable/block--service-features.html %}

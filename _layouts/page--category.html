@@ -45,6 +45,7 @@ Set in category page frontmatter:
 
 ============================================================================
 {% endcomment %}
+{% assign layout_extra_css = "/assets/css/datatable.css" %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'id' }}">
 {% include head.html %}
@@ -95,8 +96,7 @@ Set in category page frontmatter:
 
   {% include footer.html %}
 
-  <!-- DataTable CSS & JS -->
-  <link rel="stylesheet" href="{{ '/assets/css/datatable.css' | relative_url }}">
+  <!-- DataTable JS -->
   <script src="{{ '/assets/js/datatable.js' | relative_url }}"></script>
   <script>
     // Initialize DataTable when DOM is ready

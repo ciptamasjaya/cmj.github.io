@@ -64,4 +64,16 @@
 
   <!-- Theme Color -->
   <meta name="theme-color" content="#0d6efd">
+
+  <!-- Page-specific CSS (from frontmatter) -->
+  {% if page.extra_css %}
+    {% for css in page.extra_css %}
+  <link rel="stylesheet" href="{{ css | relative_url }}">
+    {% endfor %}
+  {% endif %}
+
+  <!-- Layout-specific CSS (from layout template) -->
+  {% if layout_extra_css %}
+  <link rel="stylesheet" href="{{ layout_extra_css | relative_url }}">
+  {% endif %}
 </head>
