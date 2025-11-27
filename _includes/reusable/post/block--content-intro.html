@@ -32,26 +32,52 @@ content_intro:
 {% assign section = include.section %}
 
 {% if section and section.paragraphs and section.paragraphs.size > 0 %}
-<section id="block--content-intro" class="block--content-intro">
+<section id="block--content-intro" class="block--content-intro my-5">
 
-  <!-- Section Header (optional) -->
+  <!-- H2: Main Section Header (optional) -->
   {% if section.title %}
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon bi {{ section.icon }}"></i>
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient">
+      <i class="bi {{ section.icon | default: 'bi-journal-text' }} mb-2 display-5"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-info-circle me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-info-circle ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
-  </header>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- H3: Content Overview -->
+  {% if section.heading %}
+  <div class="d-flex align-items-center mb-3">
+    <div class="heading-strip px-3 py-2 rounded-3 flex-grow-1">
+      <h3 class="h4 mb-0 fw-bold heading-title">
+        <i class="bi {{ section.heading_icon | default: 'bi-card-text' }} me-2 heading-icon"></i>{{ section.heading }}
+      </h3>
+      {% if section.heading_desc %}
+      <p class="small text-muted mb-0 mt-1">{{ section.heading_desc }}</p>
+      {% endif %}
+    </div>
+  </div>
   {% endif %}
 
   <!-- Paragraphs as Cards -->
-  <div class="paragraphs">
+  <div class="row g-3">
     {% for paragraph in section.paragraphs %}
-    <div class="card paragraph-card">
-      <div class="card-body">
-        <p class="paragraph-text mb-0">{{ paragraph }}</p>
+    <div class="col-12">
+      <div class="card border-0 shadow-sm paragraph-card hover-lift">
+        <div class="card-body">
+          <div class="d-flex align-items-start">
+            <div class="icon-circle me-3 flex-shrink-0">
+              <i class="bi bi-chevron-double-right"></i>
+            </div>
+            <p class="paragraph-text mb-0">{{ paragraph }}</p>
+          </div>
+        </div>
       </div>
     </div>
     {% endfor %}
