@@ -1,3 +1,6 @@
+---
+layout: compress
+---
 {% comment %}
 ============================================================================
 Page Wrapper: Blog Post Pages (page--post.html)
@@ -22,6 +25,13 @@ Related templates:
 Used by:
 - _posts/*.md (all blog posts)
 
+Schema includes (conditional):
+- schema--blogposting.html (always - main schema)
+- schema--howto-post.html (if howto_post.steps exists)
+- schema--faq-post.html (if faq_post.faqs exists)
+- schema--itemlist-post.html (if itemlist_post.items exists)
+- schema--video-post.html (if video_post.src exists)
+
 ============================================================================
 {% endcomment %}
 <!DOCTYPE html>
@@ -40,7 +50,42 @@ Used by:
   <!-- Floating WhatsApp Button -->
   {% include components/cta-whatsapp.html style="floating" %}
 
-  <!-- Post-specific schemas -->
-  <!-- {% include schema/schema--post.html %} -->
+  <!-- ================================================================== -->
+  <!-- POST SCHEMAS -->
+  <!-- ================================================================== -->
+
+  <!-- Global Schema: WebSite + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- BlogPosting Schema (Main - Always Active) -->
+  {% include schema/post/schema--blogposting.html %}
+
+  <!-- HowTo Schema (Tutorial/Guide Posts) -->
+  {% if page.howto_post and page.howto_post.steps.size > 0 %}
+    {% include schema/post/schema--howto-post.html %}
+  {% endif %}
+
+  <!-- FAQ Schema (Posts with FAQ Section) -->
+  {% if page.faq_post and page.faq_post.faqs.size > 0 %}
+    {% include schema/post/schema--faq-post.html %}
+  {% endif %}
+
+  <!-- ItemList Schema (Posts with List Content) -->
+  {% if page.itemlist_post and page.itemlist_post.items.size > 0 %}
+    {% include schema/post/schema--itemlist-post.html %}
+  {% endif %}
+
+  <!-- Video Schema (Posts with Video) -->
+  {% if page.video_post and page.video_post.src %}
+    {% include schema/post/schema--video-post.html %}
+  {% endif %}
+
+  <!-- Breadcrumb Schema -->
+  {% if page.show_breadcrumb_schema %}
+    {% include schema/schema--breadcrumb.html current_title=page.title %}
+  {% endif %}
+
 </body>
 </html>

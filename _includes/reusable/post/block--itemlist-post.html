@@ -1,0 +1,77 @@
+{% comment %}
+============================================================================
+Block: ItemList Post
+============================================================================
+
+@file        block--itemlist-post.html
+@path        _includes/reusable/post/block--itemlist-post.html
+@type        Block (reusable)
+@description Displays item list for blog post pages
+@author      arisciwek
+@created     2025-11-27
+
+Parameters:
+-----------
+- itemlist: ItemList object from frontmatter with:
+  - name: List title
+  - description: Brief description
+  - items: Array of item objects with name, description, optional icon
+
+Usage:
+------
+{% include reusable/post/block--itemlist-post.html itemlist=page.itemlist_post %}
+
+============================================================================
+{% endcomment %}
+
+{% assign itemlist = include.itemlist %}
+
+{% if itemlist and itemlist.items.size > 0 %}
+<section id="itemlist-{{ itemlist.name | slugify }}" class="itemlist-post-section py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Section Header -->
+        <div class="text-center mb-4">
+          <h2 class="mb-3">
+            <i class="bi bi-list-check text-primary me-2"></i>
+            {{ itemlist.name }}
+          </h2>
+          {% if itemlist.description %}
+          <p class="text-muted">{{ itemlist.description }}</p>
+          {% endif %}
+        </div>
+
+        <!-- Items Grid -->
+        <div class="row g-3">
+          {% for item in itemlist.items %}
+          <div class="col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="d-flex align-items-start">
+                  {% if item.icon %}
+                  <div class="flex-shrink-0 me-3">
+                    <i class="{{ item.icon }} text-primary fs-4"></i>
+                  </div>
+                  {% else %}
+                  <div class="flex-shrink-0 me-3">
+                    <span class="badge bg-primary rounded-pill">{{ forloop.index }}</span>
+                  </div>
+                  {% endif %}
+                  <div>
+                    <h3 class="h6 fw-bold mb-1">{{ item.name }}</h3>
+                    <p class="text-muted small mb-0">{{ item.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

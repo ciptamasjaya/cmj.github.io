@@ -1,0 +1,64 @@
+{% comment %}
+============================================================================
+Schema: Video Post (schema--video-post.html)
+============================================================================
+
+@file        schema--video-post.html
+@path        _includes/schema/post/schema--video-post.html
+@type        Schema (VideoObject for blog posts)
+@description Schema.org VideoObject markup for posts with video content
+@author      arisciwek
+@created     2025-11-27
+
+Expected Frontmatter:
+---
+video_post:
+  name: "Proses Riksa Uji Forklift"
+  description: "Video dokumentasi proses riksa uji"
+  thumbnail: "/assets/images/posts/thumb.jpg"
+  src: "https://www.youtube.com/watch?v=XXXXX"
+  duration: "PT5M30S"
+  upload_date: "2024-08-26"
+---
+
+Usage:
+{% if page.video_post and page.video_post.src %}
+  {% include schema/post/schema--video-post.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign video = page.video_post %}
+
+{% if video and video.src %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "{{ page.url | absolute_url }}#video",
+  "name": "{{ video.name | escape }}",
+  "description": "{{ video.description | escape }}",
+  {% if video.thumbnail %}
+  "thumbnailUrl": "{{ video.thumbnail | absolute_url }}",
+  {% endif %}
+  "contentUrl": "{{ video.src }}",
+  {% if video.src contains 'youtube' %}
+  "embedUrl": "{{ video.src | replace: 'watch?v=', 'embed/' }}",
+  {% endif %}
+  "uploadDate": "{{ video.upload_date | default: page.date | date: '%Y-%m-%d' }}",
+  {% if video.duration %}
+  "duration": "{{ video.duration }}",
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name }}"
+  },
+  "isPartOf": {
+    "@type": "BlogPosting",
+    "@id": "{{ page.url | absolute_url }}#blogposting"
+  }
+}
+</script>
+{% endif %}

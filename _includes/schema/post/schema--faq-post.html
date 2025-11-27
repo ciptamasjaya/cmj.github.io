@@ -1,0 +1,61 @@
+{% comment %}
+============================================================================
+Schema: FAQ Post (schema--faq-post.html)
+============================================================================
+
+@file        schema--faq-post.html
+@path        _includes/schema/post/schema--faq-post.html
+@type        Schema (FAQPage for blog posts)
+@description Schema.org FAQPage markup for posts with FAQ section
+@author      arisciwek
+@created     2025-11-27
+
+Expected Frontmatter:
+---
+faq_post:
+  name: "FAQ Riksa Uji Forklift"
+  description: "Pertanyaan yang sering diajukan"
+  faqs:
+    - question: "Apa itu riksa uji forklift?"
+      answer: "Riksa uji adalah proses pemeriksaan..."
+    - question: "Berapa lama prosesnya?"
+      answer: "Proses inspeksi memerlukan 1-2 jam..."
+---
+
+Usage:
+{% if page.faq_post and page.faq_post.faqs.size > 0 %}
+  {% include schema/post/schema--faq-post.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign faq = page.faq_post %}
+
+{% if faq and faq.faqs.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ page.url | absolute_url }}#faq",
+  "name": "{{ faq.name | escape }}",
+  "description": "{{ faq.description | escape }}",
+  "mainEntity": [
+    {% for item in faq.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "isPartOf": {
+    "@type": "BlogPosting",
+    "@id": "{{ page.url | absolute_url }}#blogposting"
+  }
+}
+</script>
+{% endif %}

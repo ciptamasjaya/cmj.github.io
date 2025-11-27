@@ -1,0 +1,64 @@
+{% comment %}
+============================================================================
+Schema: HowTo Post (schema--howto-post.html)
+============================================================================
+
+@file        schema--howto-post.html
+@path        _includes/schema/post/schema--howto-post.html
+@type        Schema (HowTo for blog posts)
+@description Schema.org HowTo markup for tutorial/guide posts
+@author      arisciwek
+@created     2025-11-27
+
+Expected Frontmatter:
+---
+howto_post:
+  name: "Proses Riksa Uji Forklift"
+  description: "Tahapan inspeksi forklift"
+  totalTime: "PT2H"
+  steps:
+    - name: "Persiapan"
+      text: "Pengumpulan dokumen..."
+    - name: "Pemeriksaan Visual"
+      text: "Inspeksi kondisi fisik..."
+---
+
+Usage:
+{% if page.howto_post and page.howto_post.steps.size > 0 %}
+  {% include schema/post/schema--howto-post.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign howto = page.howto_post %}
+
+{% if howto and howto.steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "{{ page.url | absolute_url }}#howto",
+  "name": "{{ howto.name | escape }}",
+  "description": "{{ howto.description | escape }}",
+  {% if howto.totalTime %}
+  "totalTime": "{{ howto.totalTime }}",
+  {% endif %}
+  "step": [
+    {% for step in howto.steps %}
+    {
+      "@type": "HowToStep",
+      "position": {{ forloop.index }},
+      "name": "{{ step.name | escape }}",
+      "text": "{{ step.text | escape }}"{% if step.image %},
+      "image": "{{ step.image | absolute_url }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "isPartOf": {
+    "@type": "BlogPosting",
+    "@id": "{{ page.url | absolute_url }}#blogposting"
+  }
+}
+</script>
+{% endif %}

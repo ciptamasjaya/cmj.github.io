@@ -50,7 +50,7 @@ keywords: "riksa uji k3, jasa riksa uji, inspeksi k3, sertifikasi k3, pesawat an
 
 # Build Settings
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title/
 
 # SCSS/Sass Settings
 sass:
@@ -68,6 +68,7 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-last-modified-at
+  - jekyll-redirect-from
 
 # Pagination Settings
 pagination:

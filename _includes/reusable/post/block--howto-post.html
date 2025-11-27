@@ -1,0 +1,86 @@
+{% comment %}
+============================================================================
+Block: HowTo Post
+============================================================================
+
+@file        block--howto-post.html
+@path        _includes/reusable/post/block--howto-post.html
+@type        Block (reusable)
+@description Displays HowTo steps for blog post pages
+@author      arisciwek
+@created     2025-11-27
+
+Parameters:
+-----------
+- howto: HowTo object from frontmatter with:
+  - name: HowTo title
+  - description: Brief description
+  - totalTime: Estimated total time (e.g., "PT2H" for 2 hours)
+  - steps: Array of step objects with name, text, optional image
+
+Usage:
+------
+{% include reusable/post/block--howto-post.html howto=page.howto_post %}
+
+============================================================================
+{% endcomment %}
+
+{% assign howto = include.howto %}
+
+{% if howto and howto.steps.size > 0 %}
+<section id="howto-{{ howto.name | slugify }}" class="howto-post-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Section Header -->
+        <div class="mb-4">
+          <h2 class="mb-3">
+            <i class="bi bi-list-ol text-primary me-2"></i>
+            {{ howto.name }}
+          </h2>
+          {% if howto.description %}
+          <p class="text-muted">{{ howto.description }}</p>
+          {% endif %}
+
+          {% if howto.totalTime %}
+          <div class="mb-3">
+            <span class="badge bg-info">
+              <i class="bi bi-clock me-1"></i>
+              Estimasi waktu:
+              {% assign time = howto.totalTime | remove: "PT" | remove: "H" | remove: "M" %}
+              {% if howto.totalTime contains 'H' %}
+                {{ time }} jam
+              {% else %}
+                {{ time }} menit
+              {% endif %}
+            </span>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Steps -->
+        <div class="howto-steps">
+          {% for step in howto.steps %}
+          <div class="howto-step d-flex mb-4">
+            <div class="howto-step__number flex-shrink-0 me-3">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                <span class="fw-bold">{{ forloop.index }}</span>
+              </div>
+            </div>
+            <div class="howto-step__content">
+              <h3 class="h5 fw-bold mb-2">{{ step.name }}</h3>
+              <p class="text-muted mb-0">{{ step.text }}</p>
+              {% if step.image %}
+              <img src="{{ step.image | relative_url }}" alt="{{ step.name }}" class="img-fluid rounded mt-3">
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
