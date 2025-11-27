@@ -53,32 +53,98 @@
 // CONTENT INTRO BLOCK (Paragraf Tambahan)
 // ----------------------------------------------------------------------------
 .block--content-intro {
-  margin-bottom: 2rem;
+  padding: 2rem 0;
 
-  .content-intro__card {
-    border: 1px solid #e9ecef;
-    border-left: 4px solid #0d6efd;
-    transition: all 0.3s ease;
+  // Section Header (optional - if title exists)
+  > .header {
+    background: linear-gradient(135deg, #6f42c1 0%, #9b59b6 100%);
+    color: #fff;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(111, 66, 193, 0.3);
 
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(13, 110, 253, 0.15);
-      border-left-color: #0a58ca;
+    > .title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      > .icon {
+        font-size: 1.75rem;
+        margin-right: 0.75rem;
+        color: #fff;
+      }
     }
   }
 
-  .content-intro__paragraph {
-    font-size: 1.1rem;
+  // Paragraphs Container
+  > .paragraphs {
+    display: grid;
+    gap: 1rem;
+  }
+
+  // Paragraph Cards
+  .paragraph-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    // Gradient accent on left
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #6f42c1, #9b59b6);
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(111, 66, 193, 0.15);
+    }
+
+    // Alternate colors for visual variety
+    &:nth-child(2)::before {
+      background: linear-gradient(180deg, #0d6efd, #6610f2);
+    }
+
+    &:nth-child(3)::before {
+      background: linear-gradient(180deg, #20c997, #198754);
+    }
+
+    &:nth-child(4)::before {
+      background: linear-gradient(180deg, #fd7e14, #ffc107);
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      padding-left: 1.5rem;
+    }
+  }
+
+  // Paragraph Text
+  .paragraph-text {
+    font-size: 1.05rem;
     line-height: 1.8;
     color: #495057;
 
     a {
-      color: #0d6efd;
+      color: #6f42c1;
       text-decoration: none;
+      font-weight: 500;
       transition: color 0.2s ease;
 
       &:hover {
-        color: #0a58ca;
+        color: #9b59b6;
         text-decoration: underline;
       }
     }
@@ -332,6 +398,31 @@
 // RESPONSIVE
 // ----------------------------------------------------------------------------
 @media (max-width: 768px) {
+  .block--content-intro {
+    > .header {
+      padding: 1rem 1.25rem;
+
+      > .title {
+        font-size: 1.15rem;
+
+        > .icon {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .paragraph-card {
+      .card-body {
+        padding: 1rem;
+        padding-left: 1.25rem;
+      }
+    }
+
+    .paragraph-text {
+      font-size: 0.95rem;
+    }
+  }
+
   .block--importance {
     > .header {
       padding: 1.25rem 1.5rem;

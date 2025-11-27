@@ -33,12 +33,29 @@ content_intro:
 
 {% if section and section.paragraphs and section.paragraphs.size > 0 %}
 <section id="block--content-intro" class="block--content-intro">
-  {% for paragraph in section.paragraphs %}
-  <div class="card content-intro__card mb-3">
-    <div class="card-body">
-      <p class="content-intro__paragraph mb-0">{{ paragraph }}</p>
+
+  <!-- Section Header (optional) -->
+  {% if section.title %}
+  <header class="header">
+    <h2 class="title">
+      {% if section.icon %}
+      <i class="icon bi {{ section.icon }}"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
+  </header>
+  {% endif %}
+
+  <!-- Paragraphs as Cards -->
+  <div class="paragraphs">
+    {% for paragraph in section.paragraphs %}
+    <div class="card paragraph-card">
+      <div class="card-body">
+        <p class="paragraph-text mb-0">{{ paragraph }}</p>
+      </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
+
 </section>
 {% endif %}
