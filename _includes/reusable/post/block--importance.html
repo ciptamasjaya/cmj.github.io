@@ -65,62 +65,102 @@ numbers: []     → <ol><li>      (ordered list)
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--importance" class="block--importance">
+<section id="block--importance" class="block--importance my-5">
 
-  <!-- Section Header -->
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon bi {{ section.icon }}"></i>
+  <!-- H2: Main Section Header - GILA EDITION -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient">
+      <i class="bi {{ section.icon | default: 'bi-shield-check' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-star-fill me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-star-fill ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
-
-    {% if section.paragraphs and section.paragraphs.size > 0 %}
-    <div class="paragraphs">
-      {% for paragraph in section.paragraphs %}
-      <p>{{ paragraph }}</p>
-      {% endfor %}
     </div>
-    {% endif %}
-  </header>
+  </div>
+
+  <!-- Paragraphs after H2 -->
+  {% if section.paragraphs and section.paragraphs.size > 0 %}
+  <div class="intro-paragraphs mb-4">
+    {% for paragraph in section.paragraphs %}
+    <div class="card border-0 shadow-sm intro-card mb-3 hover-lift">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <p class="mb-0 intro-text">{{ paragraph }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
 
   <!-- Subsections -->
   {% if section.subsections and section.subsections.size > 0 %}
   <div class="subsections">
     {% for subsection in section.subsections %}
-    <div class="subsection">
-      <h3 class="title">
-        {% if subsection.icon %}
-        <i class="icon bi {{ subsection.icon }}"></i>
-        {% endif %}
-        {{ subsection.title }}
-      </h3>
+    {% assign sub_index = forloop.index %}
+    <div class="subsection-wrapper mb-4">
 
+      <!-- H3: Subsection Header Strip -->
+      <div class="d-flex align-items-center mb-3">
+        <div class="subsection-strip subsection-strip-{{ sub_index }} px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 fw-bold subsection-title">
+            <span class="subsection-number me-2">{{ sub_index }}</span>
+            {% if subsection.icon %}
+            <i class="bi {{ subsection.icon }} me-2 subsection-icon"></i>
+            {% endif %}
+            {{ subsection.title }}
+          </h3>
+          {% if subsection.desc %}
+          <p class="small text-muted mb-0 mt-1 ps-4">{{ subsection.desc }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Paragraphs after H3 -->
       {% if subsection.paragraphs and subsection.paragraphs.size > 0 %}
-      <div class="paragraphs">
+      <div class="subsection-paragraphs mb-3">
         {% for paragraph in subsection.paragraphs %}
-        <p>{{ paragraph }}</p>
+        <div class="card border-0 shadow-sm subsection-para-card mb-2 hover-lift">
+          <div class="card-body py-3">
+            <p class="mb-0 text-muted">
+              <i class="bi bi-arrow-right-circle text-primary me-2"></i>{{ paragraph }}
+            </p>
+          </div>
+        </div>
         {% endfor %}
       </div>
       {% endif %}
 
+      <!-- Bullets as Cards Grid -->
       {% if subsection.bullets and subsection.bullets.size > 0 %}
-      <div class="bullets">
-        <div class="row">
-          {% for bullet in subsection.bullets %}
-          <div class="col-lg-6 mb-3">
-            <div class="card card-bullet h-100">
-              <div class="card-body">
-                <h4 class="key">{{ bullet.key }}</h4>
-                <p class="value">{{ bullet.value }}</p>
+      <div class="row g-3">
+        {% for bullet in subsection.bullets %}
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm h-100 bullet-card bullet-card-{{ sub_index }} hover-lift">
+            <div class="card-body">
+              <div class="d-flex align-items-start">
+                <div class="bullet-icon-circle bullet-icon-{{ sub_index }} me-3 flex-shrink-0">
+                  <i class="bi bi-check-lg"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h4 class="h6 fw-bold mb-2 bullet-key">{{ bullet.key }}</h4>
+                  <p class="small text-muted mb-0 bullet-value">{{ bullet.value }}</p>
+                </div>
               </div>
             </div>
           </div>
-          {% endfor %}
         </div>
+        {% endfor %}
       </div>
       {% endif %}
+
     </div>
     {% endfor %}
   </div>

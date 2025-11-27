@@ -52,6 +52,15 @@
 // ----------------------------------------------------------------------------
 // CONTENT INTRO BLOCK (Paragraf Tambahan) - HEBOH EDITION!
 // ----------------------------------------------------------------------------
+
+// Color palette for alternating styles
+$content-intro-colors: (
+  1: (#6f42c1, #9b59b6),  // purple
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#198754, #20c997),  // green
+  4: (#fd7e14, #ffc107)   // orange
+);
+
 .block--content-intro {
 
   // H2: Main Section Header with gradient card
@@ -103,38 +112,24 @@
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(111, 66, 193, 0.2) !important;
+      box-shadow: 0 12px 30px rgba(111, 66, 193, 0.2);
     }
 
     .card-body {
       padding: 1.25rem;
     }
 
-    // Alternate colors for variety
-    &:nth-child(2) {
-      border-left-color: #0d6efd;
+    // Alternate colors using @each loop
+    @each $index, $colors in $content-intro-colors {
+      @if $index > 1 {
+        &:nth-child(#{$index}) {
+          border-left-color: nth($colors, 1);
 
-      .icon-circle {
-        background: linear-gradient(135deg, #0d6efd, #6610f2);
-        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
-      }
-    }
-
-    &:nth-child(3) {
-      border-left-color: #198754;
-
-      .icon-circle {
-        background: linear-gradient(135deg, #198754, #20c997);
-        box-shadow: 0 4px 12px rgba(25, 135, 84, 0.3);
-      }
-    }
-
-    &:nth-child(4) {
-      border-left-color: #fd7e14;
-
-      .icon-circle {
-        background: linear-gradient(135deg, #fd7e14, #ffc107);
-        box-shadow: 0 4px 12px rgba(253, 126, 20, 0.3);
+          .icon-circle {
+            background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+            box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+          }
+        }
       }
     }
   }
@@ -169,166 +164,123 @@
 }
 
 // ----------------------------------------------------------------------------
-// IMPORTANCE BLOCK (Pentingnya)
+// IMPORTANCE BLOCK (Pentingnya) - GILA EDITION!
 // ----------------------------------------------------------------------------
+
+// Color palette for importance block (supports 6 variants + cycles for more)
+$importance-colors: (
+  1: (#198754, #20c997),  // green
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#fd7e14, #ffc107),  // orange
+  4: (#dc3545, #e91e63),  // red
+  5: (#6f42c1, #9b59b6),  // purple
+  6: (#20c997, #0dcaf0)   // teal
+);
+
+// Function to get color with cycling fallback
+@function get-importance-color($index) {
+  $total: length($importance-colors);
+  $normalized: (($index - 1) % $total) + 1;
+  @return map-get($importance-colors, $normalized);
+}
+
 .block--importance {
-  padding: 2rem 0;
 
-  // Section Header (H2)
-  > .header {
-    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  // H2: Main Header Gradient Card
+  .header-gradient {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro paragraphs after H2
+  .intro-card {
+    border-left: 4px solid #0d6efd;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
-
-    > .title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0;
-      display: flex;
-      align-items: center;
-
-      > .icon {
-        font-size: 2rem;
-        margin-right: 0.75rem;
-        color: #fff;
-      }
-    }
-
-    > .paragraphs {
-      margin-top: 1rem;
-
-      > p {
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 0.5rem;
-        line-height: 1.7;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
   }
 
-  // Subsections Container
-  > .subsections {
-    display: grid;
-    gap: 1.5rem;
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
   }
 
-  // Each Subsection (H3) - Card Style
-  .subsection {
-    background: #fff;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e9ecef;
-    transition: all 0.3s ease;
+  // Subsection Strip (H3 header) - base styles
+  .subsection-strip {
     position: relative;
     overflow: hidden;
 
-    // Color accent top border
     &::before {
       content: '';
       position: absolute;
-      top: 0;
       left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #198754, #20c997);
-    }
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    }
-
-    // Alternate colors for visual variety
-    &:nth-child(2)::before {
-      background: linear-gradient(90deg, #0d6efd, #6610f2);
-    }
-
-    &:nth-child(3)::before {
-      background: linear-gradient(90deg, #fd7e14, #ffc107);
-    }
-
-    &:nth-child(4)::before {
-      background: linear-gradient(90deg, #dc3545, #e91e63);
-    }
-
-    // Subsection Title (H3)
-    > .title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #212529;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-
-      > .icon {
-        width: 40px;
-        height: 40px;
-        background: rgba(25, 135, 84, 0.1);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 0.75rem;
-        color: #198754;
-        font-size: 1.25rem;
-      }
-    }
-
-    &:nth-child(2) > .title > .icon {
-      background: rgba(13, 110, 253, 0.1);
-      color: #0d6efd;
-    }
-
-    &:nth-child(3) > .title > .icon {
-      background: rgba(253, 126, 20, 0.1);
-      color: #fd7e14;
-    }
-
-    &:nth-child(4) > .title > .icon {
-      background: rgba(220, 53, 69, 0.1);
-      color: #dc3545;
-    }
-
-    // Paragraphs after H3
-    > .paragraphs {
-      margin-bottom: 1rem;
-      padding-left: 0.5rem;
-      border-left: 3px solid #e9ecef;
-
-      > p {
-        font-size: 0.95rem;
-        color: #6c757d;
-        margin-bottom: 0.5rem;
-        line-height: 1.7;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      border-radius: 3px 0 0 3px;
     }
   }
 
-  // Bullets Container (Bootstrap row)
-  .bullets {
-    margin-top: 1rem;
+  // Subsection number - base styles
+  .subsection-number {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    vertical-align: middle;
   }
 
-  // Card Bullet
-  .card-bullet {
-    height: 100%;
-    border: 1px solid #e9ecef;
+  // Generate subsection strip color variants (1-6, cycles for more)
+  @each $index, $colors in $importance-colors {
+    .subsection-strip-#{$index} {
+      background: rgba(nth($colors, 1), 0.1);
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      .subsection-title { color: nth($colors, 1); }
+      .subsection-number {
+        background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+        box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+      }
+      .subsection-icon { color: nth($colors, 2); }
+    }
+  }
+
+  // Paragraphs after H3
+  .subsection-para-card {
+    border-left: 3px solid #e9ecef;
+    border-radius: 8px;
+  }
+
+  // Bullet Cards - base styles
+  .bullet-card {
     border-radius: 12px;
-    margin-bottom: 1rem;
     transition: all 0.3s ease;
+    position: relative;
     overflow: hidden;
 
     &::before {
@@ -338,44 +290,41 @@
       left: 0;
       width: 4px;
       height: 100%;
-      background: linear-gradient(180deg, #198754, #20c997);
+    }
+  }
+
+  // Bullet Icon Circle - base styles
+  .bullet-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  // Generate bullet card and icon color variants (1-6, cycles for more)
+  @each $index, $colors in $importance-colors {
+    .bullet-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2); }
     }
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    .bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
     }
+  }
 
-    .card-body {
-      padding: 1.25rem;
-      padding-left: 1.5rem;
-    }
+  // Bullet text
+  .bullet-key {
+    color: #212529;
+  }
 
-    // H4 Key
-    .key {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #212529;
-      margin: 0 0 0.5rem 0;
-      display: flex;
-      align-items: center;
-
-      &::before {
-        content: '\F26A'; // bi-check-circle-fill
-        font-family: 'bootstrap-icons';
-        color: #198754;
-        margin-right: 0.5rem;
-        font-size: 1rem;
-      }
-    }
-
-    // Value paragraph
-    .value {
-      font-size: 0.9rem;
-      color: #6c757d;
-      margin: 0;
-      line-height: 1.6;
-    }
+  .bullet-value {
+    line-height: 1.6;
   }
 }
 
@@ -416,9 +365,11 @@
 // ----------------------------------------------------------------------------
 @media (max-width: 768px) {
   .block--content-intro {
-    .header-gradient {
-      padding: 1rem 1.25rem !important;
+    .header-gradient.card-body {
+      padding: 1rem 1.25rem;
+    }
 
+    .header-gradient {
       .display-5 {
         font-size: 2rem;
       }
@@ -444,39 +395,52 @@
   }
 
   .block--importance {
-    > .header {
-      padding: 1.25rem 1.5rem;
+    .header-gradient.card-body {
+      padding: 1rem 1.25rem;
+    }
 
-      > .title {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
         font-size: 1.25rem;
       }
     }
 
-    .subsection {
-      padding: 1.25rem;
-
-      > .title {
-        font-size: 1.1rem;
-
-        > .icon {
-          width: 35px;
-          height: 35px;
-          font-size: 1.1rem;
-        }
-      }
+    .intro-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
     }
 
-    .bullet {
-      padding: 0.875rem 1rem;
-      padding-left: 1.25rem;
+    .intro-text {
+      font-size: 0.95rem;
+    }
 
-      > .key {
-        font-size: 0.95rem;
-      }
+    .subsection-number {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
 
-      > .value {
-        font-size: 0.85rem;
-      }
+    .subsection-title {
+      font-size: 1rem;
+    }
+
+    .bullet-icon-circle {
+      width: 35px;
+      height: 35px;
+      font-size: 0.9rem;
+    }
+
+    .bullet-key {
+      font-size: 0.9rem;
+    }
+
+    .bullet-value {
+      font-size: 0.8rem;
     }
   }
 }
