@@ -54,6 +54,9 @@ Schema includes (conditional):
     {% include schema/schema--page.html %}
   {% endunless %}
   {% include schema/post/schema--blogposting.html %}
+  {% if page.section_importance %}
+    {% include schema/post/schema--importance.html %}
+  {% endif %}
 
   {% comment %}
   {% if page.howto_post and page.howto_post.steps.size > 0 %}

@@ -1,0 +1,47 @@
+{% comment %}
+============================================================================
+Schema: DefinedTermSet for Importance Section
+============================================================================
+
+@file        schema--importance.html
+@path        _includes/schema/post/schema--importance.html
+@type        Schema (DefinedTermSet)
+@description Schema.org DefinedTermSet markup for importance/benefits section
+@author      arisciwek
+@created     2025-11-28
+
+Features:
+- DefinedTermSet for section title
+- DefinedTerm for each subsection (H3)
+- Nested terms for bullets (H4)
+
+Usage:
+{% include schema/post/schema--importance.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_importance %}
+{% assign section = page.section_importance %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "{{ page.url | absolute_url }}#importance",
+  "name": "{{ section.title | escape }}",
+  {% if section.paragraphs and section.paragraphs.size > 0 %}
+  "description": "{{ section.paragraphs | first | escape }}",
+  {% endif %}
+  "hasDefinedTerm": [
+    {% for subsection in section.subsections %}
+    {
+      "@type": "DefinedTerm",
+      "@id": "{{ page.url | absolute_url }}#importance-{{ forloop.index }}",
+      "name": "{{ subsection.title | escape }}",
+      "description": "{% if subsection.paragraphs and subsection.paragraphs.size > 0 %}{{ subsection.paragraphs | first | escape }} {% endif %}{% if subsection.bullets and subsection.bullets.size > 0 %}{% for bullet in subsection.bullets %}{{ bullet.key | escape }}: {{ bullet.value | escape }}{% unless forloop.last %} {% endunless %}{% endfor %}{% endif %}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
