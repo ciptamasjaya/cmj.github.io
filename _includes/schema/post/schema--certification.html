@@ -48,7 +48,7 @@ Usage:
   "@type": "GovernmentService",
   "@id": "{{ page.url | absolute_url }}#certification",
   "name": "{{ cert.title | escape }}",
-  "description": "{% if cert.intro %}{{ cert.intro | strip_html | truncate: 200 | escape }}{% else %}{{ cert.title | escape }}{% endif %}",
+  "description": "{% if cert.paragraphs and cert.paragraphs.first %}{{ cert.paragraphs.first | strip_html | truncate: 200 | escape }}{% elsif cert.intro %}{{ cert.intro | strip_html | truncate: 200 | escape }}{% else %}{{ cert.title | escape }}{% endif %}",
   "serviceType": "Design Approval",
   "serviceOperator": {
     "@type": "GovernmentOrganization",

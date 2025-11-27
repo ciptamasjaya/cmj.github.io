@@ -2015,6 +2015,16 @@ $certification-item-colors: (
     line-height: 1.7;
   }
 
+  .certification-bullet-key {
+    color: #047857;
+  }
+
+  .certification-bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
   // Generate bullet card color variants
   @each $index, $colors in $certification-item-colors {
     .certification-bullet-card-#{$index} {

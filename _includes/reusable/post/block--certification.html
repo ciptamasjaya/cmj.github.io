@@ -132,7 +132,7 @@ Usage:
       </div>
       {% endif %}
 
-      <!-- Bullets (string array) in 2-column grid -->
+      <!-- Bullets (string array OR key-value) in 2-column grid -->
       {% if topic.bullets and topic.bullets.size > 0 %}
       <div class="certification-bullets-container">
         <div class="row g-3">
@@ -145,7 +145,16 @@ Usage:
                   <div class="certification-bullet-icon certification-bullet-icon-{{ bullet_index }} me-3 flex-shrink-0">
                     <i class="bi bi-check2-circle"></i>
                   </div>
+                  {% if bullet.key %}
+                  <!-- Key-value format -->
+                  <div class="certification-bullet-content">
+                    <h4 class="h6 fw-bold mb-1 certification-bullet-key">{{ bullet.key }}</h4>
+                    <p class="mb-0 certification-bullet-value">{{ bullet.value }}</p>
+                  </div>
+                  {% else %}
+                  <!-- String format -->
                   <p class="mb-0 certification-bullet-text">{{ bullet }}</p>
+                  {% endif %}
                 </div>
               </div>
             </div>

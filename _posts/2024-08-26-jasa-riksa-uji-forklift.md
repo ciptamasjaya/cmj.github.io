@@ -434,6 +434,32 @@ section_certification:
       bullets:
         - "Pemeriksaan dan pengujian forklift dilakukan oleh pihak yang berkompeten, seperti Ahli K3 Bidang Pesawat Angkat dan Angkut, Penguji K3, atau Pengawas Ketenagakerjaan Spesialis K3 Pesawat Angkat dan Pesawat Angkut."
         - "Pemeriksaan dan pengujian berkala harus dilakukan secara rutin, biasanya setiap tahun atau sesuai dengan ketentuan yang berlaku."
+    - title: "Aspek Teknis yang Dipertimbangkan"
+      icon: "bi-clipboard-check"
+      bullets:
+        - key: "Desain Konstruksi"
+          value: "Evaluasi kekuatan rangka, tiang angkat (mast), garpu (fork), dan komponen struktural lainnya untuk memastikan mampu menahan beban kerja maksimal."
+        - key: "Sistem Angkat dan Kendali"
+          value: "Pemeriksaan desain hidrolik atau elektrik untuk mekanisme pengangkatan, kemiringan, dan pergerakan lainnya, termasuk sistem rem dan kemudi."
+        - key: "Stabilitas"
+          value: "Penilaian desain forklift untuk menjamin stabilitas alat saat mengangkat dan memindahkan beban, mencegah terguling."
+        - key: "Sistem Pengaman"
+          value: "Verifikasi keberadaan dan desain sistem keselamatan seperti overhead guard, backrest extension, sabuk pengaman, alarm mundur, dan lampu peringatan."
+        - key: "Spesifikasi Material"
+          value: "Memastikan material yang digunakan dalam pembuatan forklift sesuai dengan standar kekuatan dan durabilitas yang disyaratkan."
+        - key: "Ergonomi Operator"
+          value: "Desain area operator (kursi, kontrol) untuk kenyamanan dan keselamatan pengemudi."
+    - title: "Manfaat Pengesahan Gambar"
+      icon: "bi-award"
+      bullets:
+        - key: "Kepatuhan Regulasi"
+          value: "Memastikan perusahaan memenuhi semua peraturan K3 yang berlaku, menghindari sanksi hukum dan denda."
+        - key: "Peningkatan Keselamatan"
+          value: "Desain yang telah disetujui mengurangi risiko kecelakaan, cedera pada pekerja, dan kerusakan properti."
+        - key: "Peningkatan Kepercayaan"
+          value: "Menunjukkan komitmen perusahaan terhadap keselamatan dan standar kualitas."
+        - key: "Asuransi dan Klaim"
+          value: "Dokumen pengesahan yang lengkap dapat mempermudah proses klaim asuransi jika terjadi insiden."
 
 # Section 7: SLO Forklift
 # Block: block--section-permit.html
@@ -462,60 +488,7 @@ section_permit:
           value: "Fokus pada operator, memastikan operator memiliki kompetensi dan kualifikasi untuk mengoperasikan forklift."
   summary: "SLO Forklift adalah dokumen penting yang menjamin keamanan dan legalitas operasional forklift. Memperoleh SLO adalah langkah penting bagi perusahaan untuk memastikan keselamatan kerja dan kepatuhan terhadap peraturan yang berlaku."
 
-# Section 8: Aspek Teknis Pengesahan Gambar Forklift
-# Block: block--section-technical.html
-section_technical:
-  title: "Aspek Teknis Pengesahan Gambar Forklift"
-  icon: "bi-gear-wide-connected"
-  intro: "Pengesahan Gambar Forklift adalah prosedur formal yang tak terhindarkan untuk mendapatkan validasi desain konstruksi dan modifikasi forklift dari otoritas pemerintah yang berwenang. Ini merupakan langkah preventif utama yang menjamin setiap aspek teknis forklift—mulai dari struktur rangka, sistem angkat, hingga fitur keselamatan—telah dirancang sesuai dengan standar K3 yang ketat, demi mencegah insiden dan memastikan operasional yang aman di lingkungan kerja."
-  topics:
-    - title: "Pentingnya Pengesahan Gambar untuk Forklift"
-      icon: "bi-exclamation-circle"
-      content: "Forklift adalah alat angkat dan angkut yang sangat vital dalam berbagai industri, mulai dari logistik, manufaktur, hingga pergudangan. Mengingat fungsinya yang melibatkan pengangkatan beban berat dan mobilitas di area terbatas, keselamatan operasional forklift menjadi prioritas utama. Pengesahan gambar forklift oleh pihak berwenang adalah langkah krusial untuk memastikan bahwa desain, konstruksi, dan modifikasi forklift memenuhi standar keselamatan dan kesehatan kerja (K3) yang berlaku. Proses ini bertujuan untuk mencegah kecelakaan kerja, melindungi operator dan pekerja lain di sekitarnya, serta memastikan kepatuhan terhadap regulasi pemerintah. Tanpa pengesahan yang sah, risiko insiden dan sanksi hukum dapat mengancam operasional perusahaan."
-    - title: "Aspek yang Dipertimbangkan dalam Pengesahan Gambar Forklift"
-      icon: "bi-clipboard-check"
-      content: "Proses pengesahan gambar forklift melibatkan pemeriksaan detail terhadap berbagai aspek teknis dan struktural alat:"
-      bullets:
-        - key: "Desain Konstruksi"
-          value: "Evaluasi kekuatan rangka, tiang angkat (mast), garpu (fork), dan komponen struktural lainnya untuk memastikan mampu menahan beban kerja maksimal."
-        - key: "Sistem Angkat dan Kendali"
-          value: "Pemeriksaan desain hidrolik atau elektrik untuk mekanisme pengangkatan, kemiringan, dan pergerakan lainnya, termasuk sistem rem dan kemudi."
-        - key: "Stabilitas"
-          value: "Penilaian desain forklift untuk menjamin stabilitas alat saat mengangkat dan memindahkan beban, mencegah terguling. Ini mencakup titik berat, radius putar, dan distribusi beban."
-        - key: "Sistem Pengaman"
-          value: "Verifikasi keberadaan dan desain sistem keselamatan seperti overhead guard, backrest extension, sabuk pengaman, alarm mundur, lampu peringatan, dan sistem interlock."
-        - key: "Spesifikasi Teknis Material"
-          value: "Memastikan material yang digunakan dalam pembuatan forklift sesuai dengan standar kekuatan dan durabilitas yang disyaratkan."
-        - key: "Ergonomi Operator"
-          value: "Meskipun tidak selalu inti dari gambar teknis, desain area operator (kursi, kontrol) dapat menjadi pertimbangan untuk kenyamanan dan keselamatan pengemudi."
-    - title: "Prosedur Pengajuan Pengesahan Gambar Forklift"
-      icon: "bi-list-ol"
-      content: "Meskipun detail prosedur dapat bervariasi tergantung peraturan daerah, umumnya proses pengajuan pengesahan gambar forklift mengikuti tahapan berikut:"
-      steps:
-        - title: "Persiapan Dokumen Teknis"
-          content: "Pemohon (pemilik, perusahaan, atau PJK3) menyiapkan gambar teknik detail forklift (GA drawing), perhitungan kekuatan, spesifikasi teknis, sertifikat material, dan data pendukung lainnya."
-        - title: "Pengajuan Permohonan"
-          content: "Dokumen-dokumen diajukan kepada instansi yang berwenang (misalnya, Direktorat Jenderal Pembinaan Pengawasan Ketenagakerjaan Kementerian Ketenagakerjaan RI atau dinas terkait) melalui sistem daring atau manual."
-        - title: "Verifikasi Dokumen"
-          content: "Pihak berwenang akan melakukan verifikasi kelengkapan dan kesesuaian dokumen yang diajukan dengan standar dan regulasi. Jika ada kekurangan, pemohon akan diminta untuk melengkapi."
-        - title: "Evaluasi Teknis dan Pembahasan"
-          content: "Tim ahli akan mengevaluasi desain forklift secara teknis. Jika diperlukan, akan ada sesi pembahasan untuk klarifikasi atau koreksi desain."
-        - title: "Penerbitan Surat Pengesahan"
-          content: "Setelah semua persyaratan terpenuhi dan desain dinyatakan aman, surat pengesahan gambar forklift akan diterbitkan. Surat ini menjadi legalitas untuk pembuatan atau modifikasi forklift."
-    - title: "Manfaat Pengesahan Gambar Forklift"
-      icon: "bi-award"
-      content: "Pengesahan gambar forklift membawa manfaat signifikan bagi perusahaan:"
-      bullets:
-        - key: "Kepatuhan Regulasi"
-          value: "Memastikan perusahaan memenuhi semua peraturan K3 yang berlaku, menghindari sanksi hukum dan denda."
-        - key: "Peningkatan Keselamatan Kerja"
-          value: "Desain yang telah disetujui mengurangi risiko kecelakaan, cedera pada pekerja, dan kerusakan properti."
-        - key: "Peningkatan Kepercayaan"
-          value: "Menunjukkan komitmen perusahaan terhadap keselamatan dan standar kualitas, yang dapat meningkatkan citra dan kepercayaan dari klien dan mitra."
-        - key: "Asuransi dan Klaim"
-          value: "Dokumen pengesahan yang lengkap dapat mempermudah proses klaim asuransi jika terjadi insiden."
-
-# Section 9: Kesimpulan
+# Section 8: Kesimpulan
 # Block: block--section-conclusion.html
 section_conclusion:
   title: "Kesimpulan"
