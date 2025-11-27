@@ -1,6 +1,6 @@
 {% comment %}
 ============================================================================
-Block: Permit (Perizinan/SLO)
+Block: Permit (Perizinan/SLO) - HEBOH EDITION!
 ============================================================================
 
 @file        block--permit.html
@@ -9,15 +9,16 @@ Block: Permit (Perizinan/SLO)
 @description Displays permit/license section with flexible topic types
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
-H2 title
+H2 title (gradient card header - document/legal theme)
   intro paragraph
-  H3 topic (multiple) - supports:
-    - bullets (key-value pairs)
+  H3 topics (multiple) - supports:
+    - bullets (key-value pairs with H4)
     - content (paragraph)
-    - numbers (numbered list)
+    - numbers (numbered list with title/content)
   summary paragraph
 
 Naming Convention:
@@ -31,6 +32,21 @@ Suitable for:
 - Perizinan K3
 - Prosedur administratif
 
+Parameters:
+-----------
+- section: Object from frontmatter with:
+  - title: Section title (H2)
+  - icon: Bootstrap icon class (optional)
+  - subtitle: Subtitle text (optional)
+  - intro: Section intro paragraph (optional, supports markdown)
+  - topics: Array of topic objects with:
+    - title: Topic title (H3)
+    - icon: Bootstrap icon class (optional)
+    - bullets: Array of {key, value} pairs (optional)
+    - content: Paragraph text (optional, supports markdown)
+    - numbers: Array of {title, content} pairs (optional)
+  - summary: Closing summary text (optional)
+
 Usage:
 ------
 {% include reusable/post/block--permit.html section=page.section_permit %}
@@ -41,70 +57,120 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--permit" class="block--permit">
+<section id="block--permit" class="block--permit my-5">
 
-  <!-- Section Header -->
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon {{ section.icon }}"></i>
+  <!-- H2: Main Section Header - HEBOH EDITION (Legal/Document Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient permit-header">
+      <i class="bi {{ section.icon | default: 'bi-file-earmark-medical' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-patch-check-fill me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-patch-check-fill ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
-  </header>
+    </div>
+  </div>
 
-  <!-- Intro -->
+  <!-- Intro after H2 -->
   {% if section.intro %}
-  <div class="intro">
-    {{ section.intro | markdownify }}
+  <div class="intro-description mb-4">
+    <div class="card border-0 shadow-sm intro-card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-info-circle-fill"></i>
+          </div>
+          <div class="mb-0 intro-text">{{ section.intro | markdownify }}</div>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 
   <!-- Topics -->
   {% if section.topics and section.topics.size > 0 %}
-  <div class="topics">
+  <div class="permit-topics">
     {% for topic in section.topics %}
-    <div class="topic">
-      <h3 class="title">
-        {% if topic.icon %}
-        <i class="icon {{ topic.icon }}"></i>
-        {% endif %}
-        {{ topic.title }}
-      </h3>
+    {% assign topic_index = forloop.index %}
+    <div class="permit-topic mb-4">
 
-      <!-- Bullets (key-value pairs) -->
-      {% if topic.bullets and topic.bullets.size > 0 %}
-      <ul class="bullets">
-        {% for bullet in topic.bullets %}
-        <li class="bullet">
-          <i class="icon bi bi-check-circle-fill"></i>
-          <div class="text">
-            <strong class="key">{{ bullet.key }}</strong>:
-            <span class="value">{{ bullet.value }}</span>
+      <!-- H3: Topic Header -->
+      <div class="permit-topic-header mb-3">
+        <div class="d-flex align-items-center">
+          <div class="permit-topic-icon permit-topic-icon-{{ topic_index }} me-3">
+            <i class="bi {{ topic.icon | default: 'bi-bookmark-check' }}"></i>
           </div>
-        </li>
-        {% endfor %}
-      </ul>
+          <h3 class="h4 fw-bold mb-0 permit-topic-title">{{ topic.title }}</h3>
+        </div>
+      </div>
+
+      <!-- Bullets (key-value pairs) - H4 for key in 2-column grid -->
+      {% if topic.bullets and topic.bullets.size > 0 %}
+      <div class="permit-bullets-container">
+        <div class="row g-3">
+          {% for bullet in topic.bullets %}
+          {% assign bullet_index = forloop.index %}
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100 permit-bullet-card permit-bullet-card-{{ bullet_index }}">
+              <div class="card-body py-3">
+                <div class="d-flex align-items-start">
+                  <div class="permit-bullet-icon permit-bullet-icon-{{ bullet_index }} me-3 flex-shrink-0">
+                    <i class="bi bi-check-circle-fill"></i>
+                  </div>
+                  <div class="permit-bullet-content">
+                    <h4 class="h6 fw-bold mb-1 permit-bullet-key">{{ bullet.key }}</h4>
+                    <p class="mb-0 permit-bullet-value">{{ bullet.value }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
       {% endif %}
 
       <!-- Content (paragraph) -->
       {% if topic.content %}
-      <div class="content">
-        {{ topic.content | markdownify }}
+      <div class="permit-content-card mb-3">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex align-items-start">
+              <div class="permit-content-icon me-3 flex-shrink-0">
+                <i class="bi bi-file-text"></i>
+              </div>
+              <div class="permit-content-text">{{ topic.content | markdownify }}</div>
+            </div>
+          </div>
+        </div>
       </div>
       {% endif %}
 
       <!-- Numbers (numbered list) -->
       {% if topic.numbers and topic.numbers.size > 0 %}
-      <ol class="numbers">
+      <div class="permit-numbers-container">
         {% for number in topic.numbers %}
-        <li class="number">
-          <strong class="title">{{ number.title }}</strong>
-          <span class="content">{{ number.content }}</span>
-        </li>
+        {% assign number_index = forloop.index %}
+        <div class="card border-0 shadow-sm mb-3 permit-number-card">
+          <div class="card-body py-3">
+            <div class="d-flex align-items-start">
+              <div class="permit-number-badge permit-number-badge-{{ number_index }} me-3 flex-shrink-0">
+                {{ number_index }}
+              </div>
+              <div class="permit-number-content">
+                <h4 class="h6 fw-bold mb-1 permit-number-title">{{ number.title }}</h4>
+                <p class="mb-0 permit-number-text">{{ number.content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
         {% endfor %}
-      </ol>
+      </div>
       {% endif %}
+
     </div>
     {% endfor %}
   </div>
@@ -112,8 +178,17 @@ Usage:
 
   <!-- Summary -->
   {% if section.summary %}
-  <div class="summary">
-    <p class="text">{{ section.summary }}</p>
+  <div class="summary-card mt-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body summary-body permit-summary">
+        <div class="d-flex align-items-start">
+          <div class="summary-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-shield-fill-check"></i>
+          </div>
+          <p class="mb-0 summary-text">{{ section.summary }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 

@@ -71,6 +71,10 @@ structure with specialized sections (importance, process, regulation, etc).
                 {% include reusable/post/block--specs.html section=page.section_specs %}
               {% endif %}
 
+              {% if page.section_permit %}
+                {% include reusable/post/block--permit.html section=page.section_permit %}
+              {% endif %}
+
               {% comment %}
 
               {% if page.section_certification %}

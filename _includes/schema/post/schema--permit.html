@@ -1,0 +1,70 @@
+{% comment %}
+============================================================================
+Schema: Permit Section (section_permit)
+============================================================================
+
+@file        schema--permit.html
+@path        _includes/schema/post/schema--permit.html
+@type        Schema (GovernmentPermit)
+@description Schema.org GovernmentPermit for SLO/Perizinan
+@author      arisciwek
+@created     2025-11-28
+
+Features:
+- GovernmentPermit schema for official permits (SLO, SIO, etc.)
+- Links to issuedBy organization (government authority)
+- validFor duration
+- References to related legislation
+
+Expected Frontmatter Structure:
+---
+section_permit:
+  title: "SLO Forklift"
+  icon: "bi-file-earmark-medical"
+  intro: |
+    SLO Forklift adalah singkatan dari...
+  permit_schema:
+    name: "Surat Izin Layak Operasi (SLO) Forklift"
+    permit_type: "GovernmentPermit"
+    issued_by: "Kementerian Ketenagakerjaan RI"
+    valid_duration: "P1Y"
+    description: "Dokumen resmi yang menyatakan forklift layak operasi"
+  topics:
+    - title: "Pentingnya SLO"
+      bullets:
+        - key: "Keamanan"
+          value: "..."
+  summary: "..."
+---
+
+Usage:
+{% if page.section_permit %}
+  {% include schema/post/schema--permit.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign permit = page.section_permit %}
+
+{% if permit %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentPermit",
+  "@id": "{{ page.url | absolute_url }}#permit",
+  "name": "{% if permit.permit_schema.name %}{{ permit.permit_schema.name | escape }}{% else %}{{ permit.title | escape }}{% endif %}",
+  "description": "{% if permit.permit_schema.description %}{{ permit.permit_schema.description | escape }}{% elsif permit.intro %}{{ permit.intro | strip_html | truncate: 200 | escape }}{% else %}{{ permit.title | escape }}{% endif %}",
+  "issuedBy": {
+    "@type": "GovernmentOrganization",
+    "name": "{% if permit.permit_schema.issued_by %}{{ permit.permit_schema.issued_by | escape }}{% else %}Kementerian Ketenagakerjaan Republik Indonesia{% endif %}",
+    "url": "https://kemnaker.go.id"
+  },
+  {% if permit.permit_schema.valid_duration %}
+  "validFor": "{{ permit.permit_schema.valid_duration }}"
+  {% else %}
+  "validFor": "P1Y"
+  {% endif %}
+}
+</script>
+{% endif %}

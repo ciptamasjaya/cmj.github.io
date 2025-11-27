@@ -69,6 +69,9 @@ Schema includes (conditional):
   {% if page.section_specs and page.section_specs.specs.size > 0 %}
     {% include schema/post/schema--specs.html %}
   {% endif %}
+  {% if page.section_permit %}
+    {% include schema/post/schema--permit.html %}
+  {% endif %}
 
   {% comment %}
   {% if page.howto_post and page.howto_post.steps.size > 0 %}

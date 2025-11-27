@@ -442,12 +442,11 @@ section_certification:
 section_permit:
   title: "SLO Forklift"
   icon: "bi-file-earmark-medical"
-  intro: |
-    SLO Forklift adalah singkatan dari Surat Izin Layak Operasi Forklift. Ini adalah dokumen resmi yang menyatakan bahwa sebuah forklift telah memenuhi standar keselamatan dan laik operasi. SLO dikeluarkan setelah forklift melalui serangkaian pemeriksaan dan pengujian oleh lembaga yang berwenang.
+  intro: "SLO Forklift adalah singkatan dari Surat Izin Layak Operasi Forklift. Ini adalah dokumen resmi yang menyatakan bahwa sebuah forklift telah memenuhi standar keselamatan dan laik operasi. SLO dikeluarkan setelah forklift melalui serangkaian pemeriksaan dan pengujian oleh lembaga yang berwenang."
   topics:
     - title: "Pentingnya SLO Forklift"
       icon: "bi-shield-check"
-      points:
+      bullets:
         - key: "Keamanan"
           value: "SLO memastikan bahwa forklift dalam kondisi baik dan aman untuk digunakan, mengurangi risiko kecelakaan kerja."
         - key: "Kepatuhan"
@@ -458,24 +457,11 @@ section_permit:
           value: "Menunjukkan bahwa perusahaan memperhatikan keselamatan dan kesehatan kerja, meningkatkan kepercayaan pelanggan dan mitra bisnis."
     - title: "Perbedaan SLO dengan SIO"
       icon: "bi-arrows-angle-expand"
-      points:
+      bullets:
         - key: "SLO (Surat Izin Layak Operasi)"
           value: "Fokus pada alat (forklift), memastikan kelayakan dan keamanannya."
         - key: "SIO (Surat Izin Operator)"
           value: "Fokus pada operator, memastikan operator memiliki kompetensi dan kualifikasi untuk mengoperasikan forklift."
-    - title: "Contoh Kasus"
-      icon: "bi-journal-text"
-      content: |
-        Perusahaan yang memiliki forklift wajib memiliki SLO untuk forklift yang digunakan. Begitu juga, operator forklift harus memiliki SIO untuk dapat mengoperasikan forklift tersebut secara legal. Tanpa SLO, penggunaan forklift bisa dianggap ilegal dan berpotensi menimbulkan risiko kecelakaan.
-    - title: "Proses Pengurusan SLO"
-      icon: "bi-list-ol"
-      steps:
-        - title: "Pemeriksaan dan Pengujian"
-          content: "Forklift diperiksa dan diuji oleh lembaga yang berwenang (PJK3)."
-        - title: "Penerbitan Sertifikat"
-          content: "Jika memenuhi syarat, lembaga tersebut akan menerbitkan SLO."
-        - title: "Pembaruan"
-          content: "SLO memiliki masa berlaku dan perlu diperbarui secara berkala sesuai dengan peraturan yang berlaku."
   summary: "SLO Forklift adalah dokumen penting yang menjamin keamanan dan legalitas operasional forklift. Memperoleh SLO adalah langkah penting bagi perusahaan untuk memastikan keselamatan kerja dan kepatuhan terhadap peraturan yang berlaku."
 
 # Section 8: Aspek Teknis Pengesahan Gambar Forklift
@@ -483,13 +469,11 @@ section_permit:
 section_technical:
   title: "Aspek Teknis Pengesahan Gambar Forklift"
   icon: "bi-gear-wide-connected"
-  intro: |
-    Pengesahan Gambar Forklift adalah prosedur formal yang tak terhindarkan untuk mendapatkan validasi desain konstruksi dan modifikasi forklift dari otoritas pemerintah yang berwenang. Ini merupakan langkah preventif utama yang menjamin setiap aspek teknis forklift—mulai dari struktur rangka, sistem angkat, hingga fitur keselamatan—telah dirancang sesuai dengan standar K3 yang ketat, demi mencegah insiden dan memastikan operasional yang aman di lingkungan kerja.
+  intro: "Pengesahan Gambar Forklift adalah prosedur formal yang tak terhindarkan untuk mendapatkan validasi desain konstruksi dan modifikasi forklift dari otoritas pemerintah yang berwenang. Ini merupakan langkah preventif utama yang menjamin setiap aspek teknis forklift—mulai dari struktur rangka, sistem angkat, hingga fitur keselamatan—telah dirancang sesuai dengan standar K3 yang ketat, demi mencegah insiden dan memastikan operasional yang aman di lingkungan kerja."
   topics:
     - title: "Pentingnya Pengesahan Gambar untuk Forklift"
       icon: "bi-exclamation-circle"
-      content: |
-        Forklift adalah alat angkat dan angkut yang sangat vital dalam berbagai industri, mulai dari logistik, manufaktur, hingga pergudangan. Mengingat fungsinya yang melibatkan pengangkatan beban berat dan mobilitas di area terbatas, keselamatan operasional forklift menjadi prioritas utama. Pengesahan gambar forklift oleh pihak berwenang adalah langkah krusial untuk memastikan bahwa desain, konstruksi, dan modifikasi forklift memenuhi standar keselamatan dan kesehatan kerja (K3) yang berlaku. Proses ini bertujuan untuk mencegah kecelakaan kerja, melindungi operator dan pekerja lain di sekitarnya, serta memastikan kepatuhan terhadap regulasi pemerintah. Tanpa pengesahan yang sah, risiko insiden dan sanksi hukum dapat mengancam operasional perusahaan.
+      content: "Forklift adalah alat angkat dan angkut yang sangat vital dalam berbagai industri, mulai dari logistik, manufaktur, hingga pergudangan. Mengingat fungsinya yang melibatkan pengangkatan beban berat dan mobilitas di area terbatas, keselamatan operasional forklift menjadi prioritas utama. Pengesahan gambar forklift oleh pihak berwenang adalah langkah krusial untuk memastikan bahwa desain, konstruksi, dan modifikasi forklift memenuhi standar keselamatan dan kesehatan kerja (K3) yang berlaku. Proses ini bertujuan untuk mencegah kecelakaan kerja, melindungi operator dan pekerja lain di sekitarnya, serta memastikan kepatuhan terhadap regulasi pemerintah. Tanpa pengesahan yang sah, risiko insiden dan sanksi hukum dapat mengancam operasional perusahaan."
     - title: "Aspek yang Dipertimbangkan dalam Pengesahan Gambar Forklift"
       icon: "bi-clipboard-check"
       content: "Proses pengesahan gambar forklift melibatkan pemeriksaan detail terhadap berbagai aspek teknis dan struktural alat:"
@@ -540,8 +524,7 @@ section_technical:
 section_conclusion:
   title: "Kesimpulan"
   icon: "bi-check2-square"
-  intro: |
-    <a href="https://maps.app.goo.gl/KwFSALZKY9WMrK5C6">Riksa uji forklift</a> merupakan langkah penting untuk memastikan keselamatan dan efisiensi operasional dalam penggunaan alat berat ini. Proses riksa uji yang sistematis dan rutin, mulai dari persiapan hingga dokumentasi hasil, sangat penting untuk mengidentifikasi potensi masalah sebelum menjadi kecelakaan. Dengan melakukan riksa uji secara berkala, perusahaan dapat:
+  intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa uji forklift</a> merupakan langkah penting untuk memastikan keselamatan dan efisiensi operasional dalam penggunaan alat berat ini. Proses riksa uji yang sistematis dan rutin, mulai dari persiapan hingga dokumentasi hasil, sangat penting untuk mengidentifikasi potensi masalah sebelum menjadi kecelakaan. Dengan melakukan riksa uji secara berkala, perusahaan dapat:"
   highlights:
     - key: "Mencegah Kecelakaan Kerja"
       value: "Menjaga keselamatan pekerja dan menghindari cedera."
@@ -549,8 +532,7 @@ section_conclusion:
       value: "Mengoptimalkan kinerja forklift dan mengurangi waktu henti."
     - key: "Mematuhi Regulasi"
       value: "Memastikan kepatuhan terhadap standar keselamatan yang berlaku."
-  closing: |
-    Oleh karena itu, penting bagi setiap perusahaan yang menggunakan forklift untuk mengintegrasikan riksa uji dalam rutinitas pemeliharaan alat mereka. Dengan demikian, tidak hanya keselamatan yang terjaga, tetapi juga produktivitas dan efisiensi operasional yang akan meningkat.
+  closing: "Oleh karena itu, penting bagi setiap perusahaan yang menggunakan forklift untuk mengintegrasikan riksa uji dalam rutinitas pemeliharaan alat mereka. Dengan demikian, tidak hanya keselamatan yang terjaga, tetapi juga produktivitas dan efisiensi operasional yang akan meningkat."
   cta:
     text: "Untuk informasi lebih lanjut tentang layanan riksa uji forklift, silakan hubungi PT. Cipta Mas Jaya sebagai PJK3 resmi yang berpengalaman."
     link: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/"
