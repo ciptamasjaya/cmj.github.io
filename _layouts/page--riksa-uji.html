@@ -53,7 +53,7 @@ Schema includes (conditional):
   {% unless page.skip_page_schema %}
     {% include schema/schema--page.html %}
   {% endunless %}
-  {% include schema/post/schema--blogposting.html %}
+  {% include schema/post/schema--techarticle.html %}
   {% if page.section_importance %}
     {% include schema/post/schema--importance.html %}
   {% endif %}
@@ -65,6 +65,9 @@ Schema includes (conditional):
   {% endif %}
   {% if page.section_training and page.section_training.cards.size > 0 %}
     {% include schema/post/schema--training.html %}
+  {% endif %}
+  {% if page.section_specs and page.section_specs.specs.size > 0 %}
+    {% include schema/post/schema--specs.html %}
   {% endif %}
 
   {% comment %}

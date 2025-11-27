@@ -356,21 +356,44 @@ section_training:
 # Block: block--section-specs.html
 section_specs:
   title: "Standar Spesifikasi Forklift"
-  icon: "bi-speedometer2"
-  description: "Standar kecepatan forklift umumnya adalah 8 mph (13 km/jam). Namun, ada beberapa standar yang lebih rendah untuk area dengan pejalan kaki, yaitu 3 mph (5 km/jam). Beberapa perusahaan bahkan menetapkan batas kecepatan 5 mph (8 km/jam)."
+  icon: "bi-gear-wide-connected"
+  description: "Spesifikasi teknis forklift mencakup berbagai parameter penting yang harus dipenuhi untuk memastikan keselamatan dan efisiensi operasional. Berikut adalah standar spesifikasi utama yang perlu diperhatikan dalam riksa uji forklift."
+  specs_heading: "Parameter Teknis Forklift"
+  specs_intro: "Berikut adalah 6 parameter teknis utama yang diperiksa dalam proses riksa uji forklift:"
   specs:
-    - title: "Kecepatan Umum Forklift"
+    - title: "Kapasitas Angkat"
+      icon: "bi-box-arrow-up"
+      value: "1-5 Ton"
+      paragraphs:
+        - "Forklift standar memiliki kapasitas angkat mulai dari 1 ton hingga 5 ton, tergantung jenis dan ukurannya. Forklift kecil untuk gudang biasanya berkapasitas 1-2 ton, sedangkan untuk industri berat bisa mencapai 5 ton atau lebih."
+        - "Kapasitas angkat harus selalu sesuai dengan beban yang diangkat. Overload dapat menyebabkan forklift terbalik dan kecelakaan fatal."
+    - title: "Tinggi Angkat Maksimum"
+      icon: "bi-arrows-expand"
+      value: "3-6 Meter"
+      paragraphs:
+        - "Tinggi angkat forklift bervariasi dari 3 meter untuk model standar hingga 6 meter atau lebih untuk model high-lift. Pemilihan tinggi angkat disesuaikan dengan kebutuhan operasional gudang atau area kerja."
+    - title: "Kecepatan Operasional"
       icon: "bi-speedometer"
-      value: "8-10 mph"
-      content: "Forklift umumnya memiliki kecepatan maksimum sekitar 10 mph (16 km/jam), tetapi banyak perusahaan menetapkan batas kecepatan yang lebih rendah, seperti 8 mph (13 km/jam)."
-    - title: "Kecepatan di Area Pejalan Kaki"
-      icon: "bi-people"
-      value: "3 mph"
-      content: "Di area dengan pejalan kaki, kecepatan forklift sebaiknya tidak lebih dari 3 mph (5 km/jam) untuk keselamatan semua pihak."
-    - title: "Kecepatan di Dalam Pabrik"
-      icon: "bi-building"
       value: "8-16 km/jam"
-      content: "Kecepatan maksimum forklift di dalam pabrik biasanya dibatasi, umumnya sekitar 16 km/jam, namun banyak perusahaan menetapkan batas yang lebih rendah, seperti 8 km/jam, terutama di area dengan lalu lintas pejalan kaki atau peralatan lain. Beberapa faktor seperti lingkungan kerja, visibilitas operator, jenis forklift, dan kondisi permukaan jalan juga mempengaruhi kecepatan aman forklift."
+      paragraphs:
+        - "Kecepatan maksimum forklift umumnya 16 km/jam, namun banyak perusahaan membatasi hingga 8 km/jam untuk keselamatan. Di area pejalan kaki, kecepatan dibatasi maksimal 5 km/jam."
+    - title: "Dimensi dan Radius Putar"
+      icon: "bi-arrows-angle-contract"
+      value: "1.5-2.5 m"
+      paragraphs:
+        - "Radius putar forklift berkisar 1.5-2.5 meter tergantung ukuran. Dimensi dan radius putar penting untuk menentukan lebar lorong minimum yang diperlukan di area kerja."
+    - title: "Sistem Pengereman"
+      icon: "bi-sign-stop"
+      value: "3 Sistem"
+      paragraphs:
+        - "Forklift dilengkapi dengan tiga sistem rem: service brake untuk operasional normal, parking brake untuk kondisi parkir, dan emergency brake untuk situasi darurat."
+        - "Semua sistem rem harus berfungsi optimal dan diperiksa secara berkala dalam riksa uji."
+    - title: "Kapasitas Bahan Bakar/Baterai"
+      icon: "bi-battery-charging"
+      value: "8-10 Jam"
+      paragraphs:
+        - "Forklift listrik dapat beroperasi 8-10 jam dengan sekali pengisian baterai. Forklift diesel/LPG memiliki tangki bahan bakar yang cukup untuk operasi satu shift kerja."
+        - "Kondisi baterai atau sistem bahan bakar harus diperiksa untuk memastikan tidak ada kebocoran atau kerusakan."
 
 # Section 6: Pengesahan Gambar Forklift
 # Block: block--section-certification.html
