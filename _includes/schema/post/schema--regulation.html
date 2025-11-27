@@ -1,0 +1,85 @@
+{% comment %}
+============================================================================
+Schema: Regulation/Legislation Section (section_regulation)
+============================================================================
+
+@file        schema--regulation.html
+@path        _includes/schema/post/schema--regulation.html
+@type        Schema (ItemList with Legislation references)
+@description Schema.org markup for regulation/compliance section in articles
+@author      arisciwek
+@created     2025-11-28
+
+Features:
+- ItemList wrapper for organized legal references
+- ListItem for each regulation subsection
+- DefinedTerm for specific regulations/laws
+- Proper hierarchy linking to BlogPosting
+
+Expected Frontmatter Structure:
+---
+section_regulation:
+  title: "Sanksi Hukum dan Regulasi"
+  icon: "bi-bank"
+  subtitle: "Dasar Hukum"
+  description: "Pengoperasian forklift diatur oleh..."
+  summary: "Dengan mematuhi regulasi..."
+  subsections:
+    - title: "Kepatuhan Terhadap Peraturan"
+      icon: "bi-clipboard-check"
+      description: "Forklift harus mematuhi..."
+      bullets:
+        - key: "Permenaker No. 5 Tahun 2018"
+          value: "Peraturan tentang K3..."
+        - key: "UU No. 1 Tahun 1970"
+          value: "Undang-Undang Keselamatan..."
+---
+
+Usage:
+{% if page.section_regulation and page.section_regulation.subsections.size > 0 %}
+  {% include schema/post/schema--regulation.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign regulation = page.section_regulation %}
+
+{% if regulation and regulation.subsections.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#regulation",
+  "name": "{{ regulation.title | escape }}",
+  "description": "{{ regulation.description | default: regulation.title | escape }}",
+  "numberOfItems": {{ regulation.subsections.size }},
+  "itemListElement": [
+    {% for subsection in regulation.subsections %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ subsection.title | escape }}",
+      {% if subsection.description %}"description": "{{ subsection.description | escape }}",{% endif %}
+      "item": {
+        "@type": "DefinedTermSet",
+        "@id": "{{ page.url | absolute_url }}#regulation-{{ forloop.index }}",
+        "name": "{{ subsection.title | escape }}",
+        {% if subsection.bullets and subsection.bullets.size > 0 %}
+        "hasDefinedTerm": [
+          {% for bullet in subsection.bullets %}
+          {
+            "@type": "DefinedTerm",
+            "name": "{{ bullet.key | escape }}",
+            "description": "{{ bullet.value | escape }}"
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+        {% endif %}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

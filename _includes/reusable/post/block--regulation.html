@@ -1,34 +1,39 @@
 {% comment %}
 ============================================================================
-Block: Regulation (Regulasi/Hukum)
+Block: Regulation (Regulasi/Hukum) - HEBOH EDITION!
 ============================================================================
 
 @file        block--regulation.html
 @path        _includes/reusable/post/block--regulation.html
 @type        Block (reusable)
-@description Displays regulation/compliance section with subsections containing intro + bullet points
+@description Displays regulation/compliance section with subsections and bullet points
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
-H2 title
-  H3 subsection (multiple)
+H2 title (gradient card header)
+  intro paragraph
+  H3 subsection (cards with color variants, multiple)
     intro paragraph
-    - bullet with **bold key**: description
+    H4 bullet key (mini cards)
+      - bullet value
 
 Parameters:
 -----------
 - section: Object from frontmatter with:
   - title: Section title (H2)
   - icon: Bootstrap icon class (optional)
+  - subtitle: Subtitle text (optional)
   - description: Section intro paragraph (optional)
+  - summary: Closing summary (optional)
   - subsections: Array of subsection objects with:
     - title: Subsection title (H3)
     - icon: Bootstrap icon class (optional)
     - description: Subsection intro paragraph (optional)
     - bullets: Array of bullet objects with:
-      - key: Bold text
+      - key: Bold text (H4)
       - value: Description text
 
 Naming Convention:
@@ -47,53 +52,100 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--regulation" class="block--regulation">
+<section id="block--regulation" class="block--regulation my-5">
 
-  <!-- Section Header -->
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon {{ section.icon }}"></i>
+  <!-- H2: Main Section Header - HEBOH EDITION -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient regulation-header">
+      <i class="bi {{ section.icon | default: 'bi-bank' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-scales me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-scales ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
+    </div>
+  </div>
 
-    {% if section.description %}
-    <p class="description">{{ section.description }}</p>
-    {% endif %}
-  </header>
+  <!-- Description after H2 -->
+  {% if section.description %}
+  <div class="intro-description mb-4">
+    <div class="card border-0 shadow-sm intro-card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-info-circle-fill"></i>
+          </div>
+          <p class="mb-0 intro-text">{{ section.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
   <!-- Subsections -->
   {% if section.subsections and section.subsections.size > 0 %}
-  <div class="subsections">
+  <div class="row g-4 subsections-grid">
     {% for subsection in section.subsections %}
-    <div class="subsection">
-      <h3 class="title">
-        {% if subsection.icon %}
-        <i class="icon {{ subsection.icon }}"></i>
-        {% endif %}
-        {{ subsection.title }}
-      </h3>
-
-      {% if subsection.description %}
-      <p class="description">{{ subsection.description }}</p>
-      {% endif %}
-
-      {% if subsection.bullets and subsection.bullets.size > 0 %}
-      <ul class="bullets">
-        {% for bullet in subsection.bullets %}
-        <li class="bullet">
-          <i class="icon bi bi-check-circle-fill"></i>
-          <div class="content">
-            <strong class="key">{{ bullet.key }}</strong>:
-            <span class="value">{{ bullet.value }}</span>
+    {% assign subsec_index = forloop.index %}
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm h-100 subsection-card subsection-card-{{ subsec_index }} hover-lift">
+        <!-- Subsection Header Strip -->
+        <div class="subsection-header subsection-header-{{ subsec_index }}">
+          <div class="subsection-number-circle subsection-number-{{ subsec_index }}">
+            <i class="bi {{ subsection.icon | default: 'bi-file-text' }}"></i>
           </div>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+          <h3 class="h5 mb-0 fw-bold subsection-title">{{ subsection.title }}</h3>
+        </div>
+
+        <div class="card-body pt-3 d-flex flex-column">
+          <!-- Subsection Description - Card with equal height -->
+          <div class="card border-0 subsection-desc-card mb-3">
+            <div class="card-body p-0">
+              {% if subsection.description %}
+              <p class="subsection-desc mb-0">{{ subsection.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Bullets as Mini Cards - Aligned Start -->
+          {% if subsection.bullets and subsection.bullets.size > 0 %}
+          <div class="bullets-container">
+            {% for bullet in subsection.bullets %}
+            <div class="regulation-bullet-card regulation-bullet-variant-{{ subsec_index }}">
+              <div class="regulation-bullet-header">
+                <span class="regulation-bullet-icon regulation-bullet-icon-{{ subsec_index }}">
+                  <i class="bi bi-paragraph"></i>
+                </span>
+                <h4 class="regulation-bullet-key">{{ bullet.key }}</h4>
+              </div>
+              <p class="regulation-bullet-value">{{ bullet.value }}</p>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
     {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Summary -->
+  {% if section.summary %}
+  <div class="summary-card mt-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body summary-body regulation-summary">
+        <div class="d-flex align-items-start">
+          <div class="summary-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <p class="mb-0 summary-text">{{ section.summary }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 

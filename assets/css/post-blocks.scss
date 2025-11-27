@@ -615,6 +615,260 @@ $process-colors: (
 }
 
 // ----------------------------------------------------------------------------
+// REGULATION BLOCK (Regulasi/Hukum) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for regulation block (3 variants for 3-column layout)
+$regulation-colors: (
+  1: (#0d6efd, #6610f2),  // blue (kepatuhan)
+  2: (#198754, #20c997),  // green (dasar hukum)
+  3: (#dc3545, #e91e63)   // red (sanksi)
+);
+
+.block--regulation {
+
+  // H2: Main Header Gradient Card - Legal Authority Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #3182ce 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .regulation-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card after H2
+  .intro-card {
+    border-left: 4px solid #2c5282;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2c5282, #3182ce);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(44, 82, 130, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Subsection Card - full card with header strip
+  .subsection-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+  }
+
+  // Subsection Header - inside card (fixed height for alignment)
+  .subsection-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-radius: 16px 16px 0 0;
+    min-height: 80px;
+  }
+
+  .subsection-number-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .subsection-title {
+    color: #212529;
+    line-height: 1.3;
+  }
+
+  // Description card - equal height across columns
+  .subsection-desc-card {
+    min-height: 130px;
+    background: transparent;
+  }
+
+  .subsection-desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate subsection color variants
+  @each $index, $colors in $regulation-colors {
+    .subsection-card-#{$index} {
+      &::before { background: linear-gradient(90deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .subsection-header-#{$index} {
+      background: rgba(nth($colors, 1), 0.08);
+    }
+
+    .subsection-number-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Regulation Bullet Cards - Document Style
+  .bullets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .regulation-bullet-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e5e7eb;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-color: transparent;
+    }
+  }
+
+  .regulation-bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .regulation-bullet-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .regulation-bullet-key {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .regulation-bullet-value {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.65;
+    margin: 0;
+    padding-left: 2.375rem;
+  }
+
+  // Generate regulation bullet color variants
+  @each $index, $colors in $regulation-colors {
+    .regulation-bullet-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover {
+        box-shadow: 0 6px 20px rgba(nth($colors, 1), 0.12);
+        &::before { width: 5px; }
+      }
+
+      .regulation-bullet-key { color: nth($colors, 1); }
+    }
+
+    .regulation-bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 2px 8px rgba(nth($colors, 1), 0.25);
+    }
+  }
+
+  // Summary Card - Shield Style
+  .regulation-summary {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border-left: 4px solid #0284c7;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #075985;
+  }
+}
+
+// ----------------------------------------------------------------------------
 // ANNOUNCE BLOCK (Paragraf Penutup)
 // ----------------------------------------------------------------------------
 .block--announce {
@@ -790,6 +1044,71 @@ $process-colors: (
     .bullet-value {
       font-size: 0.85rem;
       padding-left: 2.25rem;
+    }
+  }
+
+  .block--regulation {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .summary-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .summary-text {
+      font-size: 0.95rem;
+    }
+
+    .subsection-header {
+      padding: 0.875rem 1rem;
+    }
+
+    .subsection-number-circle {
+      width: 32px;
+      height: 32px;
+      font-size: 0.85rem;
+    }
+
+    .subsection-title {
+      font-size: 0.95rem;
+    }
+
+    .subsection-desc-card {
+      min-height: auto;
+    }
+
+    .subsection-desc {
+      font-size: 0.9rem;
+    }
+
+    .regulation-bullet-card {
+      padding: 0.875rem;
+    }
+
+    .regulation-bullet-icon {
+      width: 24px;
+      height: 24px;
+      font-size: 0.7rem;
+    }
+
+    .regulation-bullet-key {
+      font-size: 0.85rem;
+    }
+
+    .regulation-bullet-value {
+      font-size: 0.8rem;
+      padding-left: 2rem;
     }
   }
 }

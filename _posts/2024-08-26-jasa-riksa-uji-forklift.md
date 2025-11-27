@@ -268,15 +268,40 @@ section_process:
 section_regulation:
   title: "Sanksi Hukum dan Regulasi"
   icon: "bi-bank"
+  subtitle: "Dasar Hukum Riksa Uji Forklift"
+  description: "Pengoperasian forklift di Indonesia diatur oleh berbagai peraturan yang wajib dipatuhi. Ketidakpatuhan dapat berakibat sanksi administratif hingga pidana."
+  summary: "Dengan mematuhi regulasi yang berlaku, perusahaan tidak hanya menghindari sanksi hukum tetapi juga menunjukkan komitmen terhadap keselamatan kerja."
   subsections:
     - title: "Kepatuhan Terhadap Peraturan"
       icon: "bi-clipboard-check"
-      description: "Forklift, seperti alat berat lainnya, harus mematuhi peraturan keselamatan yang ditetapkan oleh pemerintah dan lembaga terkait. Riksa uji yang rutin membantu perusahaan untuk:"
-      points:
+      description: "Alat berat harus mematuhi peraturan keselamatan yang ditetapkan oleh pemerintah dan lembaga terkait. Riksa uji forklift yang rutin membantu perusahaan untuk:"
+      bullets:
         - key: "Mematuhi Standar Keselamatan"
           value: "Dengan melakukan riksa uji, perusahaan dapat memastikan bahwa forklift memenuhi standar keselamatan yang ditetapkan."
         - key: "Menghindari Denda"
           value: "Ketidakpatuhan terhadap peraturan keselamatan dapat mengakibatkan denda yang signifikan dan bahkan penutupan sementara dari operasional."
+        - key: "Menjaga Reputasi Perusahaan"
+          value: "Perusahaan yang mematuhi regulasi akan memiliki citra positif di mata stakeholder dan mitra bisnis."
+    - title: "Sanksi Pelanggaran"
+      icon: "bi-exclamation-triangle"
+      description: "Konsekuensi yang dapat dihadapi perusahaan jika tidak mematuhi regulasi keselamatan forklift:"
+      bullets:
+        - key: "Sanksi Administratif"
+          value: "Peringatan tertulis, penghentian sementara operasional, hingga pencabutan izin usaha."
+        - key: "Sanksi Pidana"
+          value: "Jika terjadi kecelakaan kerja akibat kelalaian, dapat dikenakan sanksi pidana sesuai KUHP."
+        - key: "Tuntutan Perdata"
+          value: "Korban kecelakaan atau keluarganya dapat mengajukan tuntutan ganti rugi kepada perusahaan."
+    - title: "Dasar Hukum Pengoperasian"
+      icon: "bi-journal-bookmark"
+      description: "Berbagai peraturan perundang-undangan yang mengatur penggunaan forklift dan pesawat angkat angkut lainnya:"
+      bullets:
+        - key: "UU No. 1 Tahun 1970"
+          value: "Undang-Undang tentang Keselamatan Kerja yang menjadi dasar hukum utama K3 di Indonesia."
+        - key: "PP No. 50 Tahun 2012"
+          value: "Peraturan Pemerintah tentang Penerapan Sistem Manajemen Keselamatan dan Kesehatan Kerja (SMK3)."
+        - key: "Permenaker No. 5 Tahun 2018"
+          value: "Peraturan tentang Keselamatan dan Kesehatan Kerja Lingkungan Kerja yang mencakup persyaratan pengoperasian alat berat."
 
 # Section 4: Pelatihan dan Sertifikasi Operator Forklift
 # Block: block--section-training.html

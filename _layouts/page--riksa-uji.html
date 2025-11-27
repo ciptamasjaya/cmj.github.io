@@ -60,6 +60,9 @@ Schema includes (conditional):
   {% if page.section_process and page.section_process.steps.size > 0 %}
     {% include schema/post/schema--process.html %}
   {% endif %}
+  {% if page.section_regulation and page.section_regulation.subsections.size > 0 %}
+    {% include schema/post/schema--regulation.html %}
+  {% endif %}
 
   {% comment %}
   {% if page.howto_post and page.howto_post.steps.size > 0 %}
