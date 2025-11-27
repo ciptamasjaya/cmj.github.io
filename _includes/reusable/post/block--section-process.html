@@ -1,0 +1,135 @@
+{% comment %}
+============================================================================
+Block: Section Process (Proses)
+============================================================================
+
+@file        block--section-process.html
+@path        _includes/reusable/post/block--section-process.html
+@type        Block (reusable)
+@description Displays process/procedure section with numbered steps, substeps, and bullet points
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+H2 title
+  intro paragraph
+  H3 step (numbered, multiple)
+    intro paragraph (optional)
+    H4 substep (multiple)
+      - bullet with **bold key**: description
+
+Parameters:
+-----------
+- section: Object from frontmatter with:
+  - title: Section title (H2)
+  - icon: Bootstrap icon class (optional)
+  - description: Intro paragraph (optional)
+  - steps: Array of step objects with:
+    - title: Step title (H3)
+    - icon: Bootstrap icon class (optional)
+    - description: Step intro paragraph (optional)
+    - substeps: Array of substep objects with:
+      - title: Substep title (H4)
+      - points: Array of point objects with:
+        - key: Bold text
+        - value: Description text
+
+Usage:
+------
+{% include reusable/post/block--section-process.html section=page.section_process %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section id="{{ section.title | slugify }}" class="section-process">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Section Header -->
+        <header class="header">
+          <h2 class="title">
+            {% if section.icon %}
+            <i class="icon {{ section.icon }}"></i>
+            {% endif %}
+            {{ section.title }}
+          </h2>
+
+          {% if section.description %}
+          <p class="description">{{ section.description }}</p>
+          {% endif %}
+        </header>
+
+        <!-- Steps -->
+        {% if section.steps and section.steps.size > 0 %}
+        <div class="steps">
+          {% for step in section.steps %}
+          <div class="step">
+
+            <!-- Step Header -->
+            <div class="step-header">
+              <span class="number">{{ forloop.index }}</span>
+              <h3 class="title">
+                {% if step.icon %}
+                <i class="icon {{ step.icon }}"></i>
+                {% endif %}
+                {{ step.title }}
+              </h3>
+            </div>
+
+            <!-- Step Description -->
+            {% if step.description %}
+            <p class="description">{{ step.description }}</p>
+            {% endif %}
+
+            <!-- Substeps -->
+            {% if step.substeps and step.substeps.size > 0 %}
+            <div class="substeps">
+              {% for substep in step.substeps %}
+              <div class="substep">
+                <h4 class="title">
+                  {% if substep.icon %}
+                  <i class="icon {{ substep.icon }}"></i>
+                  {% endif %}
+                  {{ substep.title }}
+                </h4>
+
+                {% if substep.points and substep.points.size > 0 %}
+                <ul class="points">
+                  {% for point in substep.points %}
+                  <li class="point">
+                    <i class="icon bi bi-arrow-right-circle"></i>
+                    <div class="content">
+                      <strong class="key">{{ point.key }}</strong>:
+                      <span class="value">{{ point.value }}</span>
+                    </div>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Closing/Summary -->
+        {% if section.summary %}
+        <div class="summary">
+          <p class="text">{{ section.summary }}</p>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

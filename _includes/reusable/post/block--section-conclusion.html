@@ -1,0 +1,99 @@
+{% comment %}
+============================================================================
+Block: Section Conclusion (Kesimpulan)
+============================================================================
+
+@file        block--section-conclusion.html
+@path        _includes/reusable/post/block--section-conclusion.html
+@type        Block (reusable)
+@description Displays conclusion section with intro, highlights, and closing
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+H2 title
+  intro paragraph
+  highlights (bullet list)
+  closing paragraph
+  cta (call to action with link)
+
+Suitable for:
+- Kesimpulan artikel
+- Ringkasan post
+- Penutup dengan CTA
+
+Usage:
+------
+{% include reusable/post/block--section-conclusion.html section=page.section_conclusion %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section id="{{ section.title | slugify }}" class="section-conclusion">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Section Header -->
+        <header class="header">
+          <h2 class="title">
+            {% if section.icon %}
+            <i class="icon {{ section.icon }}"></i>
+            {% endif %}
+            {{ section.title }}
+          </h2>
+        </header>
+
+        <!-- Intro -->
+        {% if section.intro %}
+        <div class="intro">
+          {{ section.intro | markdownify }}
+        </div>
+        {% endif %}
+
+        <!-- Highlights (bullet points) -->
+        {% if section.highlights and section.highlights.size > 0 %}
+        <ul class="highlights">
+          {% for highlight in section.highlights %}
+          <li class="highlight">
+            <i class="icon bi bi-check-circle-fill"></i>
+            <div class="text">
+              <strong class="key">{{ highlight.key }}</strong>:
+              <span class="value">{{ highlight.value }}</span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        <!-- Closing -->
+        {% if section.closing %}
+        <div class="closing">
+          {{ section.closing | markdownify }}
+        </div>
+        {% endif %}
+
+        <!-- CTA (Call to Action) -->
+        {% if section.cta %}
+        <div class="cta">
+          <p class="text">{{ section.cta.text }}</p>
+          {% if section.cta.link %}
+          <a href="{{ section.cta.link }}" class="btn btn-primary">
+            {% if section.cta.icon %}
+            <i class="{{ section.cta.icon }} me-2"></i>
+            {% endif %}
+            {{ section.cta.label }}
+          </a>
+          {% endif %}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

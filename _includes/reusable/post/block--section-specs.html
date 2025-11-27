@@ -1,0 +1,96 @@
+{% comment %}
+============================================================================
+Block: Section Specs (Spesifikasi)
+============================================================================
+
+@file        block--section-specs.html
+@path        _includes/reusable/post/block--section-specs.html
+@type        Block (reusable)
+@description Displays specifications section with intro and multiple spec items
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+H2 title
+  intro paragraph
+  H3 spec item (multiple)
+    paragraph content
+
+Suitable for:
+- Standar kecepatan forklift
+- Kapasitas angkat crane
+- Spesifikasi teknis hoist
+- dll
+
+Parameters:
+-----------
+- section: Object from frontmatter with:
+  - title: Section title (H2)
+  - icon: Bootstrap icon class (optional)
+  - description: Section intro paragraph (optional)
+  - specs: Array of spec objects with:
+    - title: Spec title (H3)
+    - icon: Bootstrap icon class (optional)
+    - content: Spec content (supports markdown via markdownify)
+    - value: Short value/highlight (optional, e.g., "8 mph")
+
+Usage:
+------
+{% include reusable/post/block--section-specs.html section=page.section_specs %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section id="{{ section.title | slugify }}" class="section-specs">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- Section Header -->
+        <header class="header">
+          <h2 class="title">
+            {% if section.icon %}
+            <i class="icon {{ section.icon }}"></i>
+            {% endif %}
+            {{ section.title }}
+          </h2>
+
+          {% if section.description %}
+          <p class="description">{{ section.description }}</p>
+          {% endif %}
+        </header>
+
+        <!-- Specs -->
+        {% if section.specs and section.specs.size > 0 %}
+        <div class="specs">
+          {% for spec in section.specs %}
+          <div class="spec">
+            <div class="spec-header">
+              {% if spec.icon %}
+              <i class="icon {{ spec.icon }}"></i>
+              {% endif %}
+              <h3 class="title">{{ spec.title }}</h3>
+              {% if spec.value %}
+              <span class="value">{{ spec.value }}</span>
+              {% endif %}
+            </div>
+
+            {% if spec.content %}
+            <div class="content">
+              {{ spec.content | markdownify }}
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

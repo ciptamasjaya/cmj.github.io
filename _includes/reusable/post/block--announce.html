@@ -1,0 +1,38 @@
+{% comment %}
+============================================================================
+Block: Announce (Paragraf Penutup)
+============================================================================
+
+@file        block--announce.html
+@path        _includes/reusable/post/block--announce.html
+@type        Block (reusable)
+@description Displays closing announcement paragraphs without heading (supports loop)
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+Multiple paragraphs as article closing announcement
+
+Usage:
+------
+{% include reusable/post/block--announce.html paragraphs=page.announce %}
+
+Frontmatter example:
+--------------------
+announce:
+  - "PT. Cipta Mas Jaya sebagai perusahaan K3 resmi siap membantu kebutuhan riksa uji forklift Anda."
+  - "Hubungi kami untuk konsultasi dan penawaran terbaik."
+
+============================================================================
+{% endcomment %}
+
+{% assign paragraphs = include.paragraphs %}
+
+{% if paragraphs and paragraphs.size > 0 %}
+<div class="block--announce">
+  {% for paragraph in paragraphs %}
+  <p class="block--announce__text">{{ paragraph | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  {% endfor %}
+</div>
+{% endif %}

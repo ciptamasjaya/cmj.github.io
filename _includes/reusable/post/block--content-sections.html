@@ -1,0 +1,79 @@
+{% comment %}
+============================================================================
+Block: Content Sections
+============================================================================
+
+@file        block--content-sections.html
+@path        _includes/reusable/post/block--content-sections.html
+@type        Block (reusable)
+@description Displays content sections from frontmatter for blog posts
+@author      arisciwek
+@created     2025-11-27
+
+Parameters:
+-----------
+- sections: Array of section objects from frontmatter with:
+  - id: Section anchor ID (optional, auto-generated from title)
+  - title: Section heading (h2)
+  - icon: Bootstrap icon class (optional)
+  - content: Section content (supports markdown via markdownify)
+  - subsections: Array of subsection objects (optional) with:
+    - title: Subsection heading (h3)
+    - content: Subsection content
+
+Usage:
+------
+{% include reusable/post/block--content-sections.html sections=page.content_sections %}
+
+============================================================================
+{% endcomment %}
+
+{% assign sections = include.sections %}
+
+{% if sections and sections.size > 0 %}
+<div class="content-sections">
+  {% for section in sections %}
+  {% assign section_id = section.id | default: section.title | slugify %}
+
+  <section id="{{ section_id }}" class="content-section py-4 {% if forloop.index > 1 %}border-top{% endif %}">
+
+    <!-- Section Header -->
+    <h2 class="section-title h3 fw-bold mb-4">
+      {% if section.icon %}
+      <i class="{{ section.icon }} text-primary me-2"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
+
+    <!-- Section Content -->
+    {% if section.content %}
+    <div class="section-content mb-4">
+      {{ section.content | markdownify }}
+    </div>
+    {% endif %}
+
+    <!-- Subsections -->
+    {% if section.subsections and section.subsections.size > 0 %}
+    <div class="subsections">
+      {% for subsection in section.subsections %}
+      <div class="subsection mb-4">
+        <h3 class="subsection-title h5 fw-semibold mb-3">
+          {% if subsection.icon %}
+          <i class="{{ subsection.icon }} text-secondary me-2"></i>
+          {% endif %}
+          {{ subsection.title }}
+        </h3>
+        {% if subsection.content %}
+        <div class="subsection-content text-muted">
+          {{ subsection.content | markdownify }}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </section>
+  {% endfor %}
+</div>
+{% endif %}

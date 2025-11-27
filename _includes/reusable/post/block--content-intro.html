@@ -1,0 +1,39 @@
+{% comment %}
+============================================================================
+Block: Content Intro (Paragraf Pembuka)
+============================================================================
+
+@file        block--content-intro.html
+@path        _includes/reusable/post/block--content-intro.html
+@type        Block (reusable)
+@description Displays intro paragraphs after H1 title (supports multiple paragraphs)
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+Multiple paragraphs rendered from array
+
+Usage:
+------
+{% include reusable/post/block--content-intro.html paragraphs=page.content_intro %}
+
+Frontmatter example:
+--------------------
+content_intro:
+  - "First paragraph text with [links](/url/) supported."
+  - "Second paragraph text."
+  - "Third paragraph text."
+
+============================================================================
+{% endcomment %}
+
+{% assign paragraphs = include.paragraphs %}
+
+{% if paragraphs and paragraphs.size > 0 %}
+<div class="content-intro">
+  {% for paragraph in paragraphs %}
+  <p class="content-intro__paragraph">{{ paragraph | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+  {% endfor %}
+</div>
+{% endif %}
