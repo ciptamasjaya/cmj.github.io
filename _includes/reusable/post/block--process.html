@@ -1,6 +1,6 @@
 {% comment %}
 ============================================================================
-Block: Process (Proses)
+Block: Process (Proses) - HEBOH EDITION!
 ============================================================================
 
 @file        block--process.html
@@ -9,12 +9,13 @@ Block: Process (Proses)
 @description Displays process/procedure section with numbered steps, substeps, and bullet points
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
-H2 title
+H2 title (gradient card header)
   intro paragraph
-  H3 step (numbered, multiple)
+  H3 step (numbered cards, multiple)
     intro paragraph (optional)
     H4 substep (multiple)
       - bullet with **bold key**: description
@@ -51,69 +52,100 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--process" class="block--process">
+<section id="block--process" class="block--process my-5">
 
-  <!-- Section Header -->
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon {{ section.icon }}"></i>
+  <!-- H2: Main Section Header - HEBOH EDITION -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient">
+      <i class="bi {{ section.icon | default: 'bi-gear' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-arrow-right me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-arrow-left ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
+    </div>
+  </div>
 
-    {% if section.description %}
-    <p class="description">{{ section.description }}</p>
-    {% endif %}
-  </header>
+  <!-- Description after H2 -->
+  {% if section.description %}
+  <div class="intro-description mb-4">
+    <div class="card border-0 shadow-sm intro-card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-info-circle-fill"></i>
+          </div>
+          <p class="mb-0 intro-text">{{ section.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
   <!-- Steps -->
   {% if section.steps and section.steps.size > 0 %}
-  <div class="steps">
+  <div class="steps-container">
     {% for step in section.steps %}
-    <div class="step">
+    {% assign step_index = forloop.index %}
+    <div class="step-wrapper mb-4">
 
-      <!-- Step Header -->
-      <div class="step-header">
-        <span class="number">{{ forloop.index }}</span>
-        <h3 class="title">
-          {% if step.icon %}
-          <i class="icon {{ step.icon }}"></i>
+      <!-- H3: Step Header Strip -->
+      <div class="d-flex align-items-center mb-3">
+        <div class="step-strip step-strip-{{ step_index }} px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 fw-bold step-title">
+            <span class="step-number me-2">{{ step_index }}</span>
+            {% if step.icon %}
+            <i class="bi {{ step.icon }} me-2 step-icon"></i>
+            {% endif %}
+            {{ step.title }}
+          </h3>
+          {% if step.description %}
+          <p class="small text-muted mb-0 mt-1 ps-4 step-desc">{{ step.description }}</p>
           {% endif %}
-          {{ step.title }}
-        </h3>
+        </div>
       </div>
-
-      <!-- Step Description -->
-      {% if step.description %}
-      <p class="description">{{ step.description }}</p>
-      {% endif %}
 
       <!-- Substeps -->
       {% if step.substeps and step.substeps.size > 0 %}
-      <div class="substeps">
+      <div class="row g-3 substeps-grid">
         {% for substep in step.substeps %}
-        <div class="substep">
-          <h4 class="title">
-            {% if substep.icon %}
-            <i class="icon {{ substep.icon }}"></i>
-            {% endif %}
-            {{ substep.title }}
-          </h4>
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm h-100 substep-card substep-card-{{ step_index }} hover-lift">
+            <div class="card-body">
+              <!-- H4: Substep Title -->
+              <h4 class="h6 fw-bold mb-2 substep-title">
+                <span class="substep-icon-circle substep-icon-{{ step_index }} me-2">
+                  <i class="bi bi-check-lg"></i>
+                </span>
+                {{ substep.title }}
+              </h4>
 
-          {% if substep.bullets and substep.bullets.size > 0 %}
-          <ul class="bullets">
-            {% for bullet in substep.bullets %}
-            <li class="bullet">
-              <i class="icon bi bi-arrow-right-circle"></i>
-              <div class="content">
-                <strong class="key">{{ bullet.key }}</strong>:
-                <span class="value">{{ bullet.value }}</span>
+              <!-- Substep Description -->
+              {% if substep.desc %}
+              <p class="substep-desc mb-3">{{ substep.desc }}</p>
+              {% endif %}
+
+              <!-- Bullets as Mini Cards -->
+              {% if substep.bullets and substep.bullets.size > 0 %}
+              <div class="bullets-container">
+                {% for bullet in substep.bullets %}
+                <div class="bullet-card bullet-card-variant-{{ step_index }}">
+                  <div class="bullet-header">
+                    <span class="bullet-icon-box bullet-icon-box-{{ step_index }}">
+                      <i class="bi bi-lightning-charge-fill"></i>
+                    </span>
+                    <h5 class="bullet-key">{{ bullet.key }}</h5>
+                  </div>
+                  <p class="bullet-value">{{ bullet.value }}</p>
+                </div>
+                {% endfor %}
               </div>
-            </li>
-            {% endfor %}
-          </ul>
-          {% endif %}
+              {% endif %}
+            </div>
+          </div>
         </div>
         {% endfor %}
       </div>
@@ -124,10 +156,19 @@ Usage:
   </div>
   {% endif %}
 
-  <!-- Closing/Summary -->
+  <!-- Summary -->
   {% if section.summary %}
-  <div class="summary">
-    <p class="text">{{ section.summary }}</p>
+  <div class="summary-card mt-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body summary-body">
+        <div class="d-flex align-items-start">
+          <div class="summary-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-flag-fill"></i>
+          </div>
+          <p class="mb-0 summary-text">{{ section.summary }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 

@@ -329,6 +329,292 @@ $importance-colors: (
 }
 
 // ----------------------------------------------------------------------------
+// PROCESS BLOCK (Proses/Langkah-langkah) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for process block (6 variants + cycles for more)
+$process-colors: (
+  1: (#d97706, #f59e0b),  // amber/orange
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#198754, #20c997),  // green
+  4: (#dc3545, #e91e63),  // red
+  5: (#6f42c1, #9b59b6),  // purple
+  6: (#0891b2, #06b6d4)   // cyan
+);
+
+.block--process {
+
+  // H2: Main Header Gradient Card
+  .header-gradient {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 50%, #92400e 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card after H2
+  .intro-card {
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Step Strip (H3 header) - base styles
+  .step-strip {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  // Step number - base styles
+  .step-number {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  // Generate step strip color variants (1-6, cycles for more)
+  @each $index, $colors in $process-colors {
+    .step-strip-#{$index} {
+      background: rgba(nth($colors, 1), 0.1);
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      .step-title { color: nth($colors, 1); }
+      .step-number {
+        background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+        box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+      }
+      .step-icon { color: nth($colors, 2); }
+    }
+  }
+
+  // Substep Cards - base styles
+  .substep-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+  }
+
+  // Substep Icon Circle - base styles
+  .substep-icon-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+    vertical-align: middle;
+  }
+
+  // Generate substep card and icon color variants (1-6)
+  @each $index, $colors in $process-colors {
+    .substep-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .substep-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 8px rgba(nth($colors, 1), 0.3);
+    }
+
+    .bullet-arrow-#{$index} {
+      color: nth($colors, 1);
+    }
+  }
+
+  // Substep title
+  .substep-title {
+    color: #212529;
+  }
+
+  // Substep description - untuk keseimbangan visual
+  .substep-desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    padding-left: 2.25rem;
+    border-left: 2px solid #e5e7eb;
+    margin-left: 0.25rem;
+  }
+
+  // Bullets Container - GILA EDITION!
+  .bullets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  // Bullet Card - Each bullet is now a mini card!
+  .bullet-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      opacity: 0.05;
+      transform: translate(30%, -30%);
+    }
+
+    &:hover {
+      transform: translateX(8px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bullet-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .bullet-key {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 2.75rem;
+  }
+
+  // Generate bullet card color variants - RAINBOW MADNESS!
+  @each $index, $colors in $process-colors {
+    .bullet-card-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &::after { background: nth($colors, 1); }
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+        &::before { width: 6px; }
+      }
+
+      .bullet-key { color: nth($colors, 1); }
+    }
+
+    .bullet-icon-box-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card
+  .summary-body {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #92400e;
+  }
+}
+
+// ----------------------------------------------------------------------------
 // ANNOUNCE BLOCK (Paragraf Penutup)
 // ----------------------------------------------------------------------------
 .block--announce {
@@ -441,6 +727,69 @@ $importance-colors: (
 
     .bullet-value {
       font-size: 0.8rem;
+    }
+  }
+
+  .block--process {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .summary-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .summary-text {
+      font-size: 0.95rem;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+
+    .step-title {
+      font-size: 1rem;
+    }
+
+    .substep-icon-circle {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+
+    .substep-title {
+      font-size: 0.9rem;
+    }
+
+    .bullet-card {
+      padding: 0.875rem 1rem;
+    }
+
+    .bullet-icon-box {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .bullet-key {
+      font-size: 0.9rem;
+    }
+
+    .bullet-value {
+      font-size: 0.85rem;
+      padding-left: 2.25rem;
     }
   }
 }

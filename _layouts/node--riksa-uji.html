@@ -54,13 +54,12 @@ structure with specialized sections (importance, process, regulation, etc).
               {% if page.section_importance %}
                 {% include reusable/post/block--importance.html section=page.section_importance %}
               {% endif %}
-              
-              {% comment %}
-
 
               {% if page.section_process %}
                 {% include reusable/post/block--process.html section=page.section_process %}
               {% endif %}
+
+              {% comment %}
 
               {% if page.section_regulation %}
                 {% include reusable/post/block--regulation.html section=page.section_regulation %}

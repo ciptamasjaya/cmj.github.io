@@ -1,0 +1,108 @@
+{% comment %}
+============================================================================
+Schema: HowTo for Process Section (section_process)
+============================================================================
+
+@file        schema--process.html
+@path        _includes/schema/post/schema--process.html
+@type        Schema (HowTo with nested sections)
+@description Schema.org HowTo markup for process/steps section in articles
+@author      arisciwek
+@created     2025-11-28
+
+Features:
+- HowTo main wrapper for process section
+- HowToSection for each main step (with substeps)
+- HowToStep for each substep
+- HowToDirection for bullets within substeps
+- Supports nested structure: steps > substeps > bullets
+
+Expected Frontmatter Structure:
+---
+section_process:
+  title: "Proses Riksa Uji Forklift"
+  icon: "bi-gear"
+  description: "Proses riksa uji adalah..."
+  steps:
+    - title: "Persiapan Sebelum Riksa Uji"
+      icon: "bi-clipboard-check"
+      description: "Optional step description"
+      substeps:
+        - title: "Pengumpulan Dokumen"
+          bullets:
+            - key: "Manual Penggunaan"
+              value: "Dokumen ini berisi..."
+            - key: "Catatan Pemeliharaan"
+              value: "Mengumpulkan catatan..."
+        - title: "Peralatan Uji"
+          bullets:
+            - key: "Peralatan Pengukuran"
+              value: "Pastikan semua alat..."
+    - title: "Pemeriksaan Visual"
+      icon: "bi-eye"
+      description: "Pemeriksaan visual adalah..."
+      substeps:
+        - title: "Kondisi Fisik Forklift"
+          bullets:
+            - key: "Struktur Forklift"
+              value: "Periksa bagian-bagian..."
+---
+
+Usage:
+{% if page.section_process and page.section_process.steps.size > 0 %}
+  {% include schema/post/schema--process.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign process = page.section_process %}
+
+{% if process and process.steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "{{ page.url | absolute_url }}#process",
+  "name": "{{ process.title | escape }}",
+  "description": "{{ process.description | escape }}",
+  "step": [
+    {% for step in process.steps %}
+    {
+      "@type": "HowToSection",
+      "position": {{ forloop.index }},
+      "name": "{{ step.title | escape }}",
+      {% if step.description %}"description": "{{ step.description | escape }}",{% endif %}
+      "itemListElement": [
+        {% for substep in step.substeps %}
+        {
+          "@type": "HowToStep",
+          "position": {{ forloop.index }},
+          "name": "{{ substep.title | escape }}",
+          {% if substep.desc %}"description": "{{ substep.desc | escape }}",{% endif %}
+          {% if substep.bullets and substep.bullets.size > 0 %}
+          "itemListElement": [
+            {% for bullet in substep.bullets %}
+            {
+              "@type": "HowToDirection",
+              "position": {{ forloop.index }},
+              "text": "{{ bullet.key | escape }}: {{ bullet.value | escape }}"
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+          {% else %}
+          "text": "{{ substep.title | escape }}"
+          {% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "isPartOf": {
+    "@type": "BlogPosting",
+    "@id": "{{ page.url | absolute_url }}#blogposting"
+  }
+}
+</script>
+{% endif %}

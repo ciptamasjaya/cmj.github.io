@@ -149,15 +149,16 @@ section_process:
   steps:
     - title: "Persiapan Sebelum Riksa Uji"
       icon: "bi-clipboard-check"
+      description: "Tahap awal yang krusial untuk memastikan kelengkapan dokumen dan peralatan sebelum memulai proses riksa uji forklift."
       substeps:
         - title: "Pengumpulan Dokumen"
-          points:
+          bullets:
             - key: "Manual Penggunaan"
               value: "Dokumen ini berisi informasi penting mengenai spesifikasi teknis dan instruksi penggunaan forklift. Memahami manual ini sangat penting untuk memastikan bahwa setiap langkah dalam riksa uji dilakukan sesuai dengan pedoman yang dicantumkan."
             - key: "Catatan Pemeliharaan"
               value: "Mengumpulkan catatan pemeliharaan sebelumnya akan memberikan gambaran tentang riwayat penggunaan forklift. Ini membantu dalam mengidentifikasi masalah yang mungkin berulang dan area yang perlu diperhatikan lebih lanjut."
         - title: "Peralatan Uji"
-          points:
+          bullets:
             - key: "Peralatan Pengukuran"
               value: "Pastikan semua alat yang diperlukan untuk melakukan pengujian, seperti alat ukur untuk mengukur tekanan, aliran, dan kekuatan, tersedia dan dalam kondisi baik."
             - key: "Alat Pelindung Diri (APD)"
@@ -167,7 +168,8 @@ section_process:
       description: "Pemeriksaan visual adalah langkah pertama yang sangat penting dalam proses riksa uji forklift."
       substeps:
         - title: "Kondisi Fisik Forklift"
-          points:
+          desc: "Inspeksi menyeluruh terhadap kondisi fisik dan struktural forklift untuk memastikan tidak ada kerusakan yang membahayakan."
+          bullets:
             - key: "Struktur Forklift"
               value: "Periksa bagian-bagian penting seperti kerangka, garpu, dan roda. Cari tanda-tanda kerusakan, seperti retakan atau deformasi yang dapat mempengaruhi stabilitas dan keamanan forklift."
             - key: "Sistem Hidrolik"
@@ -175,42 +177,54 @@ section_process:
             - key: "Kabel dan Komponen Listrik"
               value: "Periksa kabel untuk mencari tanda-tanda keausan atau korosi. Pastikan semua koneksi listrik dalam kondisi baik dan aman."
         - title: "Tanda Peringatan"
-          points:
+          desc: "Verifikasi kelengkapan dan keterbacaan semua label keselamatan serta tanda peringatan pada forklift."
+          bullets:
             - key: "Label Keselamatan"
               value: "Pastikan semua label dan tanda peringatan terpasang dengan baik dan mudah dibaca. Ini penting untuk memastikan bahwa semua operator forklift memahami protokol keselamatan yang harus diikuti."
+            - key: "Stiker Kapasitas Beban"
+              value: "Periksa keberadaan dan keterbacaan stiker kapasitas beban maksimum. Informasi ini krusial untuk mencegah overload yang dapat menyebabkan kecelakaan."
+            - key: "Tanda Titik Jepit"
+              value: "Pastikan tanda peringatan titik jepit (pinch point) pada area mast dan rantai terpasang dengan jelas untuk menghindari cedera operator."
     - title: "Uji Fungsi Forklift"
       icon: "bi-gear-wide-connected"
       description: "Setelah pemeriksaan visual, lakukan uji fungsi untuk memastikan bahwa semua komponen berfungsi dengan baik."
       substeps:
         - title: "Uji Angkat"
-          points:
+          bullets:
             - key: "Pengujian Beban"
               value: "Lakukan pengujian dengan mengangkat beban yang sesuai dengan kapasitas forklift. Pastikan forklift dapat mengangkat, menurunkan, dan memindahkan beban dengan lancar tanpa suara aneh atau getaran yang tidak wajar."
             - key: "Uji Tinggi Angkat"
               value: "Periksa apakah forklift dapat mencapai tinggi angkat maksimum yang ditentukan oleh pabrikan. Ini penting untuk memastikan forklift dapat digunakan dalam berbagai aplikasi."
         - title: "Uji Rem"
-          points:
+          bullets:
             - key: "Pengujian Rem"
               value: "Uji sistem rem dengan cara menjalankan forklift pada kecepatan rendah dan kemudian melakukan pengereman. Pastikan forklift berhenti dengan tepat dan tidak meluncur setelah rem dilepas."
             - key: "Uji Rem Parkir"
               value: "Uji juga rem parkir untuk memastikan bahwa forklift dapat diam dengan aman saat tidak digunakan."
         - title: "Uji Kontrol"
-          points:
+          bullets:
             - key: "Pengujian Tuas dan Tombol"
               value: "Pastikan semua kontrol, termasuk tuas dan tombol, berfungsi dengan baik dan responsif. Kontrol yang tidak berfungsi dapat menyebabkan situasi berbahaya saat mengoperasikan forklift."
             - key: "Uji Sistem Indikator"
               value: "Periksa sistem indikator di panel kontrol, seperti indikator bahan bakar, suhu, dan tekanan, untuk memastikan bahwa semua indikator berfungsi dengan baik."
+        - title: "Uji Kemudi"
+          bullets:
+            - key: "Responsivitas Kemudi"
+              value: "Uji sistem kemudi untuk memastikan responsivitas yang baik. Kemudi harus berputar dengan mulus tanpa hambatan atau bunyi yang tidak wajar."
+            - key: "Power Steering"
+              value: "Periksa fungsi power steering jika tersedia. Pastikan tidak ada kebocoran oli power steering dan sistem bekerja dengan optimal untuk kemudahan manuver."
     - title: "Uji Keselamatan"
       icon: "bi-shield-check"
+      description: "Pengujian menyeluruh terhadap semua fitur keselamatan forklift untuk memastikan perlindungan optimal bagi operator dan pekerja sekitar."
       substeps:
         - title: "Sistem Peringatan"
-          points:
+          bullets:
             - key: "Pengujian Alarm dan Lampu Indikator"
               value: "Pastikan semua sistem peringatan, seperti alarm suara dan lampu indikator, berfungsi dengan baik. Ini penting untuk memberikan peringatan kepada operator tentang masalah yang mungkin timbul."
             - key: "Sistem Peringatan Overload"
               value: "Uji sensor overload untuk memastikan bahwa forklift dapat mendeteksi dan memberikan peringatan saat beban melebihi kapasitas yang ditentukan."
         - title: "Sistem Keselamatan Lainnya"
-          points:
+          bullets:
             - key: "Pengujian Sabuk Pengaman"
               value: "Pastikan sabuk pengaman berfungsi dengan baik dan tidak ada kerusakan. Penggunaan sabuk pengaman yang baik dapat mengurangi risiko cedera saat terjadi kecelakaan."
             - key: "Periksa Area Kerja"
@@ -220,29 +234,33 @@ section_process:
       description: "Setelah semua langkah riksa uji selesai, penting untuk mendokumentasikan semua hasil secara detail."
       substeps:
         - title: "Catatan Temuan"
-          points:
+          bullets:
             - key: "Pencatatan Hasil"
               value: "Catat semua temuan selama riksa uji, baik yang positif maupun negatif. Ini akan menjadi referensi untuk pemeliharaan di masa mendatang dan membantu dalam evaluasi kinerja forklift."
             - key: "Rekomendasi Perbaikan"
               value: "Jika ada masalah yang ditemukan, buat rekomendasi perbaikan yang jelas dan terperinci untuk tindakan lebih lanjut."
         - title: "Sertifikat"
-          points:
+          bullets:
             - key: "Penerbitan Sertifikat"
               value: "Setelah forklift lulus uji, terbitkan sertifikat yang menyatakan bahwa alat tersebut layak untuk digunakan. Sertifikat ini menjadi bukti bahwa forklift telah memenuhi standar keselamatan yang ditetapkan."
+            - key: "Masa Berlaku Sertifikat"
+              value: "Catat masa berlaku sertifikat riksa uji yang umumnya 1 tahun. Pastikan untuk memperpanjang sebelum masa berlaku habis agar forklift tetap legal dioperasikan."
     - title: "Tindak Lanjut"
       icon: "bi-arrow-repeat"
       description: "Setelah proses riksa uji selesai, penting untuk melakukan tindak lanjut terhadap temuan yang ada."
       substeps:
         - title: "Pelaksanaan Perbaikan"
-          points:
+          bullets:
             - key: "Perbaikan yang Diperlukan"
               value: "Segera lakukan perbaikan pada semua masalah yang ditemukan selama riksa uji. Ini akan membantu mencegah kerusakan lebih lanjut dan memastikan forklift kembali beroperasi dengan aman."
             - key: "Pemeriksaan Ulang"
               value: "Setelah perbaikan selesai, lakukan pemeriksaan ulang untuk memastikan bahwa semua masalah telah diatasi dan forklift berfungsi dengan baik."
         - title: "Penjadwalan Riksa Uji Berikutnya"
-          points:
+          bullets:
             - key: "Jadwalkan Riksa Uji Berkala"
               value: "Buat jadwal untuk riksa uji berikutnya berdasarkan hasil dari riksa uji saat ini. Ini akan membantu memastikan bahwa forklift selalu dalam kondisi yang baik dan memenuhi standar keselamatan."
+            - key: "Pengingat Otomatis"
+              value: "Atur sistem pengingat atau reminder untuk riksa uji berikutnya agar tidak terlewat. Keterlambatan riksa uji dapat mengakibatkan sanksi dan risiko kecelakaan."
   summary: "Proses riksa uji forklift merupakan langkah krusial untuk memastikan keselamatan dan efisiensi operasional dalam penggunaan alat berat ini. Dari persiapan hingga dokumentasi hasil, setiap tahap dalam proses ini bertujuan untuk menjaga keselamatan pekerja dan integritas alat. Dengan melakukan riksa uji yang rutin dan sistematis, perusahaan dapat mengurangi risiko kecelakaan, meningkatkan produktivitas, dan mematuhi regulasi keselamatan yang berlaku."
 
 # Section 3: Sanksi Hukum dan Regulasi
