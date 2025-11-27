@@ -1,5 +1,5 @@
 ---
-layout: node--post
+layout: node--riksa-uji
 title: "Riksa Uji Forklift"
 description: "Riksa uji forklift adalah proses pemeriksaan dan pengujian terhadap kondisi teknis dan operasional forklift mencakup inspeksi komponen mekanis, sistem hidraulik, rem, ban, serta sistem pengangkutan beban, Tujuannya adalah untuk mengidentifikasi potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, memastikan bahwa alat tersebut berfungsi dengan baik dan aman digunakan dan memastikan forklift memenuhi standar keselamatan yang berlaku."
 # Content Intro - Paragraf pembuka setelah H1

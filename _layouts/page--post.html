@@ -9,28 +9,24 @@ Page Wrapper: Blog Post Pages (page--post.html)
 @file        page--post.html
 @path        _layouts/page--post.html
 @type        Page (wrapper - variant)
-@variant     post (blog post pages)
-@description Blog post page wrapper with post-specific features
+@variant     post (general blog post pages)
+@description Blog post page wrapper for general articles (non-riksa-uji)
 @author      arisciwek
 
 Drupal-style naming: page--post.html (variant of page.html)
 
-This is the blog post page wrapper, created to separate post-specific
-includes from the pure entity content (node--post.html).
+This is the blog post page wrapper for general articles.
+For K3/riksa uji articles, use page--riksa-uji.html.
 
 Related templates:
 - page.html (base page wrapper)
 - node--post.html (post entity content)
 
 Used by:
-- _posts/*.md (all blog posts)
+- _posts/*.md (general blog posts with layout: node--post)
 
-Schema includes (conditional):
+Schema includes:
 - schema--blogposting.html (always - main schema)
-- schema--howto-post.html (if howto_post.steps exists)
-- schema--faq-post.html (if faq_post.faqs exists)
-- schema--itemlist-post.html (if itemlist_post.items exists)
-- schema--video-post.html (if video_post.src exists)
 
 ============================================================================
 {% endcomment %}
@@ -50,10 +46,6 @@ Schema includes (conditional):
   <!-- Floating WhatsApp Button -->
   {% include components/cta-whatsapp.html style="floating" %}
 
-  <!-- ================================================================== -->
-  <!-- POST SCHEMAS -->
-  <!-- ================================================================== -->
-
   <!-- Global Schema: WebSite + Organization + Navigation -->
   {% unless page.skip_page_schema %}
     {% include schema/schema--page.html %}
@@ -61,26 +53,6 @@ Schema includes (conditional):
 
   <!-- BlogPosting Schema (Main - Always Active) -->
   {% include schema/post/schema--blogposting.html %}
-
-  <!-- HowTo Schema (Tutorial/Guide Posts) -->
-  {% if page.howto_post and page.howto_post.steps.size > 0 %}
-    {% include schema/post/schema--howto-post.html %}
-  {% endif %}
-
-  <!-- FAQ Schema (Posts with FAQ Section) -->
-  {% if page.faq_post and page.faq_post.faqs.size > 0 %}
-    {% include schema/post/schema--faq-post.html %}
-  {% endif %}
-
-  <!-- ItemList Schema (Posts with List Content) -->
-  {% if page.itemlist_post and page.itemlist_post.items.size > 0 %}
-    {% include schema/post/schema--itemlist-post.html %}
-  {% endif %}
-
-  <!-- Video Schema (Posts with Video) -->
-  {% if page.video_post and page.video_post.src %}
-    {% include schema/post/schema--video-post.html %}
-  {% endif %}
 
   <!-- Breadcrumb Schema -->
   {% if page.show_breadcrumb_schema %}
