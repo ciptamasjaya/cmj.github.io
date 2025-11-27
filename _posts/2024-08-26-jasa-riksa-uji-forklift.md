@@ -400,16 +400,17 @@ section_specs:
 section_certification:
   title: "Pengesahan Gambar Forklift"
   icon: "bi-file-earmark-check"
-  intro: |
-    Pengesahan gambar forklift adalah proses verifikasi resmi yang memastikan desain dan konstruksi forklift memenuhi standar keselamatan dan kelayakan yang ditetapkan oleh peraturan perundangan. Ini adalah bagian dari pengujian dan pemeriksaan yang lebih luas untuk pesawat angkat dan angkut, termasuk forklift, yang bertujuan untuk mencegah kecelakaan dan memastikan operasi yang aman.
-
-    Pengesahan gambar forklift merupakan bagian dari <a href="/2025/05/25/dasar-hukum-k3-pesawat-angkat-dan-angkut/">pengesahan gambar pesawat angkat angkut</a> yang diatur oleh Kementerian Ketenagakerjaan. Forklift termasuk dalam kategori pesawat angkat karena berfungsi untuk mengangkat dan memindahkan beban secara vertikal maupun horizontal dalam area kerja. Oleh karena itu, setiap gambar rencana forklift yang akan dipasang atau digunakan harus mendapatkan pengesahan dari instansi berwenang sebagai bagian dari upaya pemenuhan standar keselamatan dan kesehatan kerja (K3). Proses pengesahan ini bertujuan memastikan bahwa desain dan spesifikasi teknis forklift sesuai dengan ketentuan teknis, sehingga aman digunakan dan tidak membahayakan pekerja di sekitarnya.
-
-    <a href="/layanan/">Pengesahan gambar pesawat angkat dan angkut</a> adalah proses verifikasi dan persetujuan resmi terhadap gambar teknis alat angkat angkut seperti forklift, crane, hoist, gondola, dan sejenisnya yang dilakukan oleh instansi berwenang, seperti Kementerian Ketenagakerjaan. Proses ini bertujuan memastikan bahwa rancangan alat tersebut telah memenuhi standar keselamatan dan ketentuan teknis sesuai peraturan perundang-undangan K3. Pengesahan ini menjadi syarat penting sebelum alat tersebut dapat digunakan di lingkungan kerja, guna meminimalkan risiko kecelakaan kerja serta melindungi keselamatan operator dan pekerja lainnya.
+  intro: 
+  paragraphs:
+    - "Pengesahan gambar forklift adalah proses verifikasi resmi yang memastikan desain dan konstruksi forklift memenuhi standar keselamatan dan kelayakan yang ditetapkan oleh peraturan perundangan. Ini adalah bagian dari pengujian dan pemeriksaan yang lebih luas untuk pesawat angkat dan angkut, termasuk forklift, yang bertujuan untuk mencegah kecelakaan dan memastikan operasi yang aman."
+    - "<a href='/layanan/''>Pengesahan gambar pesawat angkat dan angkut</a> adalah proses verifikasi dan persetujuan resmi terhadap gambar teknis alat angkat angkut seperti forklift, crane, hoist, gondola, dan sejenisnya yang dilakukan oleh instansi berwenang, seperti Kementerian Ketenagakerjaan. Proses ini bertujuan memastikan bahwa rancangan alat tersebut telah memenuhi standar keselamatan dan ketentuan teknis sesuai peraturan perundang-undangan K3. Pengesahan ini menjadi syarat penting sebelum alat tersebut dapat digunakan di lingkungan kerja, guna meminimalkan risiko kecelakaan kerja serta melindungi keselamatan operator dan pekerja lainnya."
   topics:
     - title: "Proses Pengesahan Gambar Forklift"
       icon: "bi-list-check"
       items:
+        - title: "Pengajuan Permohonan"
+          icon: "bi-file-earmark-arrow-up"
+          content: "Pemohon menyiapkan dan mengajukan dokumen permohonan pengesahan gambar ke instansi berwenang, meliputi gambar teknis, spesifikasi, perhitungan kekuatan, dan dokumen pendukung lainnya."
         - title: "Verifikasi Desain"
           icon: "bi-pencil-square"
           content: "Pihak berwenang, seperti Direktorat Jenderal Pembinaan Pengawasan Ketenagakerjaan Kementerian Ketenagakerjaan, akan meninjau gambar teknis forklift untuk memastikan bahwa desainnya sesuai dengan standar keselamatan yang berlaku."
@@ -428,9 +429,6 @@ section_certification:
         - title: "Kepatuhan Hukum"
           icon: "bi-bank"
           content: "Pengesahan gambar adalah persyaratan hukum untuk pesawat angkat dan angkut, termasuk forklift, untuk beroperasi secara legal."
-        - title: "Efisiensi"
-          icon: "bi-graph-up"
-          content: "Forklift yang telah disahkan dan diuji secara berkala cenderung beroperasi lebih efisien dan andal, mengurangi waktu henti produksi."
     - title: "Siapa yang Melakukan Pengesahan?"
       icon: "bi-people"
       bullets:
@@ -512,8 +510,6 @@ section_technical:
           value: "Memastikan perusahaan memenuhi semua peraturan K3 yang berlaku, menghindari sanksi hukum dan denda."
         - key: "Peningkatan Keselamatan Kerja"
           value: "Desain yang telah disetujui mengurangi risiko kecelakaan, cedera pada pekerja, dan kerusakan properti."
-        - key: "Efisiensi Operasional"
-          value: "Forklift yang dirancang sesuai standar cenderung lebih andal dan efisien dalam jangka panjang, mengurangi waktu henti akibat kerusakan."
         - key: "Peningkatan Kepercayaan"
           value: "Menunjukkan komitmen perusahaan terhadap keselamatan dan standar kualitas, yang dapat meningkatkan citra dan kepercayaan dari klien dan mitra."
         - key: "Asuransi dan Klaim"

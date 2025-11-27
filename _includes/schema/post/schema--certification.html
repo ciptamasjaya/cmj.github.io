@@ -1,0 +1,69 @@
+{% comment %}
+============================================================================
+Schema: Certification Section (section_certification)
+============================================================================
+
+@file        schema--certification.html
+@path        _includes/schema/post/schema--certification.html
+@type        Schema (GovernmentService)
+@description Schema.org GovernmentService for design approval/certification
+@author      arisciwek
+@created     2025-11-28
+
+Features:
+- GovernmentService schema for design approval process
+- Links to serviceOperator (government authority)
+- areaServed for Indonesia
+- References to related legislation
+
+Expected Frontmatter Structure:
+---
+section_certification:
+  title: "Pengesahan Gambar Forklift"
+  icon: "bi-file-earmark-check"
+  intro: |
+    Pengesahan gambar forklift adalah proses verifikasi resmi...
+  topics:
+    - title: "Proses Pengesahan"
+      items:
+        - title: "Verifikasi Desain"
+          content: "..."
+  summary: "..."
+---
+
+Usage:
+{% if page.section_certification %}
+  {% include schema/post/schema--certification.html %}
+{% endif %}
+
+============================================================================
+{% endcomment %}
+
+{% assign cert = page.section_certification %}
+
+{% if cert %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "@id": "{{ page.url | absolute_url }}#certification",
+  "name": "{{ cert.title | escape }}",
+  "description": "{% if cert.intro %}{{ cert.intro | strip_html | truncate: 200 | escape }}{% else %}{{ cert.title | escape }}{% endif %}",
+  "serviceType": "Design Approval",
+  "serviceOperator": {
+    "@type": "GovernmentOrganization",
+    "name": "Kementerian Ketenagakerjaan Republik Indonesia",
+    "url": "https://kemnaker.go.id"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "provider": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name }}"
+  }
+}
+</script>
+{% endif %}

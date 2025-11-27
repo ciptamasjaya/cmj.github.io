@@ -1,6 +1,6 @@
 {% comment %}
 ============================================================================
-Block: Certification (Pengesahan/Sertifikasi)
+Block: Certification (Pengesahan/Sertifikasi) - HEBOH EDITION!
 ============================================================================
 
 @file        block--certification.html
@@ -9,14 +9,15 @@ Block: Certification (Pengesahan/Sertifikasi)
 @description Displays certification/approval section with intro, topics with items, and notes
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
-H2 title
+H2 title (gradient card header - certificate/badge theme)
   intro paragraphs (supports markdown)
   H3 topic (multiple)
-    H4 item (multiple) with content
-    OR bullets list
+    H4 item cards (multiple) with icon + content
+    OR bullets list (string array)
 
 Suitable for:
 - Pengesahan gambar forklift/crane/hoist
@@ -28,14 +29,17 @@ Parameters:
 - section: Object from frontmatter with:
   - title: Section title (H2)
   - icon: Bootstrap icon class (optional)
+  - subtitle: Subtitle text (optional)
   - intro: Intro content (supports markdown via markdownify)
   - topics: Array of topic objects with:
     - title: Topic title (H3)
     - icon: Bootstrap icon class (optional)
     - items: Array of item objects with:
       - title: Item title (H4)
+      - icon: Bootstrap icon class (optional)
       - content: Item content
     - bullets: Array of bullet strings (alternative to items)
+  - summary: Closing summary text (optional)
 
 Usage:
 ------
@@ -47,71 +51,128 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--certification" class="block--certification">
+<section id="block--certification" class="block--certification my-5">
 
-  <!-- Section Header -->
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon {{ section.icon }}"></i>
+  <!-- H2: Main Section Header - HEBOH EDITION (Certificate/Badge Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient certification-header">
+      <i class="bi {{ section.icon | default: 'bi-file-earmark-check' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-award-fill me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-award-fill ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
-  </header>
+    </div>
+  </div>
 
-  <!-- Intro -->
-  {% if section.intro %}
-  <div class="intro">
-    {{ section.intro | markdownify }}
+  <!-- Paragraphs after H2 -->
+  {% if section.paragraphs and section.paragraphs.size > 0 %}
+  <div class="intro-paragraphs mb-4">
+    {% for paragraph in section.paragraphs %}
+    {% assign para_index = forloop.index %}
+    <div class="card border-0 shadow-sm mb-3 intro-card paragraph-card-{{ para_index }}">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle para-icon-{{ para_index }} me-3 flex-shrink-0">
+            <i class="bi bi-info-circle-fill"></i>
+          </div>
+          <p class="mb-0 intro-text">{{ paragraph }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
   {% endif %}
 
   <!-- Topics -->
   {% if section.topics and section.topics.size > 0 %}
-  <div class="topics">
+  <div class="certification-topics">
     {% for topic in section.topics %}
-    <div class="topic">
-      <h3 class="title">
-        {% if topic.icon %}
-        <i class="icon {{ topic.icon }}"></i>
-        {% endif %}
-        {{ topic.title }}
-      </h3>
+    {% assign topic_index = forloop.index %}
+    <div class="certification-topic mb-4">
 
-      <!-- Items (H4 + content) -->
-      {% if topic.items and topic.items.size > 0 %}
-      <div class="items">
-        {% for item in topic.items %}
-        <div class="item">
-          <h4 class="title">
-            {% if item.icon %}
-            <i class="icon {{ item.icon }}"></i>
-            {% endif %}
-            {{ item.title }}
-          </h4>
-          {% if item.content %}
-          <div class="content">
-            {{ item.content | markdownify }}
+      <!-- H3: Topic Header -->
+      <div class="certification-topic-header mb-3">
+        <div class="d-flex align-items-center">
+          <div class="certification-topic-icon certification-topic-icon-{{ topic_index }} me-3">
+            <i class="bi {{ topic.icon | default: 'bi-bookmark-check' }}"></i>
           </div>
-          {% endif %}
+          <h3 class="h4 fw-bold mb-0 certification-topic-title">{{ topic.title }}</h3>
         </div>
-        {% endfor %}
+      </div>
+
+      <!-- Items (H4 + content) in 2-column grid -->
+      {% if topic.items and topic.items.size > 0 %}
+      <div class="certification-items-container">
+        <div class="row g-3">
+          {% for item in topic.items %}
+          {% assign item_index = forloop.index %}
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100 certification-item-card certification-item-card-{{ item_index }}">
+              <div class="card-body py-3">
+                <div class="d-flex align-items-start">
+                  <div class="certification-item-icon certification-item-icon-{{ item_index }} me-3 flex-shrink-0">
+                    <i class="bi {{ item.icon | default: 'bi-check-lg' }}"></i>
+                  </div>
+                  <div class="certification-item-content">
+                    <h4 class="h6 fw-bold mb-2 certification-item-title">{{ item.title }}</h4>
+                    {% if item.content %}
+                    <p class="mb-0 certification-item-text">{{ item.content }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
       {% endif %}
 
-      <!-- Bullets (alternative) -->
+      <!-- Bullets (string array) in 2-column grid -->
       {% if topic.bullets and topic.bullets.size > 0 %}
-      <ul class="bullets">
-        {% for bullet in topic.bullets %}
-        <li class="bullet">
-          <i class="icon bi bi-check2-circle"></i>
-          <span class="text">{{ bullet }}</span>
-        </li>
-        {% endfor %}
-      </ul>
+      <div class="certification-bullets-container">
+        <div class="row g-3">
+          {% for bullet in topic.bullets %}
+          {% assign bullet_index = forloop.index %}
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-sm h-100 certification-bullet-card certification-bullet-card-{{ bullet_index }}">
+              <div class="card-body py-3">
+                <div class="d-flex align-items-start">
+                  <div class="certification-bullet-icon certification-bullet-icon-{{ bullet_index }} me-3 flex-shrink-0">
+                    <i class="bi bi-check2-circle"></i>
+                  </div>
+                  <p class="mb-0 certification-bullet-text">{{ bullet }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
       {% endif %}
+
     </div>
     {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Summary -->
+  {% if section.summary %}
+  <div class="summary-card mt-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body summary-body certification-summary">
+        <div class="d-flex align-items-start">
+          <div class="summary-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-patch-check-fill"></i>
+          </div>
+          <p class="mb-0 summary-text">{{ section.summary }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 
