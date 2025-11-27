@@ -1,6 +1,6 @@
 {% comment %}
 ============================================================================
-Block: Specs (Spesifikasi)
+Block: Specs (Spesifikasi) - HEBOH EDITION!
 ============================================================================
 
 @file        block--specs.html
@@ -9,13 +9,14 @@ Block: Specs (Spesifikasi)
 @description Displays specifications section with intro and multiple spec items
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
-H2 title
+H2 title (gradient card header - speedometer theme)
   intro paragraph
-  H3 spec item (multiple)
-    paragraph content
+  H3 spec cards (horizontal cards with value badge)
+    paragraphs
 
 Suitable for:
 - Standar kecepatan forklift
@@ -28,12 +29,19 @@ Parameters:
 - section: Object from frontmatter with:
   - title: Section title (H2)
   - icon: Bootstrap icon class (optional)
+  - subtitle: Subtitle text (optional)
   - description: Section intro paragraph (optional)
   - specs: Array of spec objects with:
     - title: Spec title (H3)
     - icon: Bootstrap icon class (optional)
-    - content: Spec content (supports markdown via markdownify)
+    - paragraphs: Array of paragraph strings
     - value: Short value/highlight (optional, e.g., "8 mph")
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 Usage:
 ------
@@ -45,44 +53,113 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--specs" class="block--specs">
+<section id="block--specs" class="block--specs my-5">
 
-  <!-- Section Header -->
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon {{ section.icon }}"></i>
-      {% endif %}
-      {{ section.title }}
-    </h2>
-
-    {% if section.description %}
-    <p class="description">{{ section.description }}</p>
-    {% endif %}
-  </header>
-
-  <!-- Specs -->
-  {% if section.specs and section.specs.size > 0 %}
-  <div class="specs">
-    {% for spec in section.specs %}
-    <div class="spec">
-      <div class="spec-header">
-        {% if spec.icon %}
-        <i class="icon {{ spec.icon }}"></i>
-        {% endif %}
-        <h3 class="title">{{ spec.title }}</h3>
-        {% if spec.value %}
-        <span class="value">{{ spec.value }}</span>
-        {% endif %}
-      </div>
-
-      {% if spec.content %}
-      <div class="content">
-        {{ spec.content | markdownify }}
-      </div>
+  <!-- H2: Main Section Header - HEBOH EDITION (Speedometer Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient specs-header">
+      <i class="bi {{ section.icon | default: 'bi-speedometer2' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-speedometer me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-speedometer ms-1"></i>
+      </p>
       {% endif %}
     </div>
+  </div>
+
+  <!-- Description after H2 -->
+  {% if section.description %}
+  <div class="intro-description mb-4">
+    <div class="card border-0 shadow-sm intro-card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-info-circle-fill"></i>
+          </div>
+          <p class="mb-0 intro-text">{{ section.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- H3: Specs Section Heading -->
+  {% if section.specs_heading %}
+  <div class="section-heading specs-heading mb-4">
+    <h3 class="h4 fw-bold section-heading-title">
+      <i class="bi bi-list-check me-2"></i>
+      {{ section.specs_heading }}
+    </h3>
+  </div>
+  {% endif %}
+
+  <!-- Specs Intro -->
+  {% if section.specs_intro %}
+  <div class="specs-intro-card mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body py-3">
+        <div class="d-flex align-items-center">
+          <div class="specs-intro-icon me-3">
+            <i class="bi bi-clipboard-data-fill"></i>
+          </div>
+          <p class="mb-0 fw-semibold specs-intro-text">{{ section.specs_intro }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- H4: Specs Cards -->
+  {% if section.specs and section.specs.size > 0 %}
+  <div class="specs-container">
+    {% for spec in section.specs %}
+    {% assign spec_index = forloop.index %}
+    <div class="card border-0 shadow-sm mb-3 spec-card spec-card-{{ spec_index }}">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <!-- Icon & Value Badge -->
+          <div class="spec-icon-wrapper me-3 flex-shrink-0">
+            <div class="spec-icon-circle spec-icon-{{ spec_index }}">
+              <i class="bi {{ spec.icon | default: 'bi-gear' }}"></i>
+            </div>
+            {% if spec.value %}
+            <div class="spec-value-badge spec-value-{{ spec_index }}">
+              {{ spec.value }}
+            </div>
+            {% endif %}
+          </div>
+          <!-- Content -->
+          <div class="spec-content flex-grow-1">
+            <h4 class="h5 fw-bold mb-2 spec-title">{{ spec.title }}</h4>
+            {% if spec.paragraphs and spec.paragraphs.size > 0 %}
+            {% for paragraph in spec.paragraphs %}
+            <p class="mb-{% if forloop.last %}0{% else %}2{% endif %} spec-text">{{ paragraph }}</p>
+            {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
     {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Summary -->
+  {% if section.summary %}
+  <div class="summary-card mt-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body summary-body specs-summary">
+        <div class="d-flex align-items-start">
+          <div class="summary-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-lightning-charge-fill"></i>
+          </div>
+          <p class="mb-0 summary-text">{{ section.summary }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 

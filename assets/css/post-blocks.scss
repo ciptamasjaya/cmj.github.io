@@ -1212,6 +1212,250 @@ $training-bullet-colors: (
 }
 
 // ----------------------------------------------------------------------------
+// SPECS BLOCK (Spesifikasi) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for specs block (6 specs)
+$specs-colors: (
+  1: (#ef4444, #f87171),  // red (kapasitas angkat)
+  2: (#3b82f6, #60a5fa),  // blue (tinggi angkat)
+  3: (#f59e0b, #fbbf24),  // amber (kecepatan)
+  4: (#8b5cf6, #a78bfa),  // violet (dimensi)
+  5: (#10b981, #34d399),  // emerald (pengereman)
+  6: (#06b6d4, #22d3ee)   // cyan (baterai)
+);
+
+.block--specs {
+
+  // H2: Main Header Gradient Card - Speedometer Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .specs-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+
+  // H3: Section Heading
+  .section-heading {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 4px solid #f59e0b;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #f59e0b, #fbbf24);
+      border-radius: 2px;
+    }
+  }
+
+  .section-heading-title {
+    color: #b45309;
+    margin: 0;
+
+    i {
+      color: #f59e0b;
+    }
+  }
+
+  // Specs Intro Card
+  .specs-intro-card {
+    .card {
+      border-left: 3px solid #fbbf24;
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    }
+  }
+
+  .specs-intro-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .specs-intro-text {
+    color: #92400e;
+    font-size: 0.95rem;
+  }
+
+  // Spec Cards - Horizontal Layout with Value Badge
+  .spec-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .spec-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 90px;
+    min-width: 90px;
+  }
+
+  .spec-icon-circle {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  .spec-value-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 70px;
+  }
+
+  .spec-title {
+    color: #1f2937;
+  }
+
+  .spec-text {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate spec card color variants
+  @each $index, $colors in $specs-colors {
+    .spec-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .spec-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 6px 20px rgba(nth($colors, 1), 0.35);
+    }
+
+    .spec-value-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card
+  .specs-summary {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #92400e;
+  }
+}
+
+// ----------------------------------------------------------------------------
 // ANNOUNCE BLOCK (Paragraf Penutup)
 // ----------------------------------------------------------------------------
 .block--announce {
