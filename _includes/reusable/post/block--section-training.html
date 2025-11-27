@@ -43,68 +43,62 @@ Usage:
 
 {% if section %}
 <section id="{{ section.title | slugify }}" class="section-training">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
 
-        <!-- Section Header -->
-        <header class="header">
-          <h2 class="title">
-            {% if section.icon %}
-            <i class="icon {{ section.icon }}"></i>
-            {% endif %}
-            {{ section.title }}
-          </h2>
+  <!-- Section Header -->
+  <header class="header">
+    <h2 class="title">
+      {% if section.icon %}
+      <i class="icon {{ section.icon }}"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
 
-          {% if section.description %}
-          <p class="description">{{ section.description }}</p>
-          {% endif %}
-        </header>
+    {% if section.description %}
+    <p class="description">{{ section.description }}</p>
+    {% endif %}
+  </header>
 
-        <!-- Subsections -->
-        {% if section.subsections and section.subsections.size > 0 %}
-        <div class="subsections">
-          {% for subsection in section.subsections %}
-          <div class="subsection">
-            <h3 class="title">
-              {% if subsection.icon %}
-              <i class="icon {{ subsection.icon }}"></i>
-              {% endif %}
-              {{ subsection.title }}
-            </h3>
+  <!-- Subsections -->
+  {% if section.subsections and section.subsections.size > 0 %}
+  <div class="subsections">
+    {% for subsection in section.subsections %}
+    <div class="subsection">
+      <h3 class="title">
+        {% if subsection.icon %}
+        <i class="icon {{ subsection.icon }}"></i>
+        {% endif %}
+        {{ subsection.title }}
+      </h3>
 
-            {% if subsection.content %}
-            <div class="content">
-              {{ subsection.content | markdownify }}
-            </div>
-            {% endif %}
+      {% if subsection.content %}
+      <div class="content">
+        {{ subsection.content | markdownify }}
+      </div>
+      {% endif %}
 
-            {% if subsection.points and subsection.points.size > 0 %}
-            <div class="points-wrapper">
-              {% if subsection.points_intro %}
-              <p class="points-intro">{{ subsection.points_intro }}</p>
-              {% endif %}
-
-              <ul class="points">
-                {% for point in subsection.points %}
-                <li class="point">
-                  <i class="icon bi bi-check-circle-fill"></i>
-                  <div class="text">
-                    <strong class="key">{{ point.key }}</strong>:
-                    <span class="value">{{ point.value }}</span>
-                  </div>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
+      {% if subsection.points and subsection.points.size > 0 %}
+      <div class="points-wrapper">
+        {% if subsection.points_intro %}
+        <p class="points-intro">{{ subsection.points_intro }}</p>
         {% endif %}
 
+        <ul class="points">
+          {% for point in subsection.points %}
+          <li class="point">
+            <i class="icon bi bi-check-circle-fill"></i>
+            <div class="text">
+              <strong class="key">{{ point.key }}</strong>:
+              <span class="value">{{ point.value }}</span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
+      {% endif %}
     </div>
+    {% endfor %}
   </div>
+  {% endif %}
+
 </section>
 {% endif %}

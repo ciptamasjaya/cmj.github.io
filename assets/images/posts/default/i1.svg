@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d6efd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a58ca;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#grad1)"/>
+  <g fill="#ffffff" opacity="0.15">
+    <circle cx="100" cy="100" r="80"/>
+    <circle cx="700" cy="300" r="120"/>
+    <circle cx="400" cy="50" r="40"/>
+  </g>
+  <g transform="translate(400, 200)">
+    <g fill="#ffffff" opacity="0.9">
+      <rect x="-60" y="-40" width="120" height="80" rx="8"/>
+      <circle cx="0" cy="-60" r="25"/>
+    </g>
+    <path d="M-30 -10 L-30 20 L30 20 L30 -10 L15 -10 L15 -25 L-15 -25 L-15 -10 Z" fill="#0d6efd"/>
+    <circle cx="0" cy="5" r="12" fill="#ffffff"/>
+  </g>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle" opacity="0.8">Riksa Uji K3</text>
+</svg>

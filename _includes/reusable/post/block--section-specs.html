@@ -46,51 +46,45 @@ Usage:
 
 {% if section %}
 <section id="{{ section.title | slugify }}" class="section-specs">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
 
-        <!-- Section Header -->
-        <header class="header">
-          <h2 class="title">
-            {% if section.icon %}
-            <i class="icon {{ section.icon }}"></i>
-            {% endif %}
-            {{ section.title }}
-          </h2>
+  <!-- Section Header -->
+  <header class="header">
+    <h2 class="title">
+      {% if section.icon %}
+      <i class="icon {{ section.icon }}"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
 
-          {% if section.description %}
-          <p class="description">{{ section.description }}</p>
-          {% endif %}
-        </header>
+    {% if section.description %}
+    <p class="description">{{ section.description }}</p>
+    {% endif %}
+  </header>
 
-        <!-- Specs -->
-        {% if section.specs and section.specs.size > 0 %}
-        <div class="specs">
-          {% for spec in section.specs %}
-          <div class="spec">
-            <div class="spec-header">
-              {% if spec.icon %}
-              <i class="icon {{ spec.icon }}"></i>
-              {% endif %}
-              <h3 class="title">{{ spec.title }}</h3>
-              {% if spec.value %}
-              <span class="value">{{ spec.value }}</span>
-              {% endif %}
-            </div>
-
-            {% if spec.content %}
-            <div class="content">
-              {{ spec.content | markdownify }}
-            </div>
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
+  <!-- Specs -->
+  {% if section.specs and section.specs.size > 0 %}
+  <div class="specs">
+    {% for spec in section.specs %}
+    <div class="spec">
+      <div class="spec-header">
+        {% if spec.icon %}
+        <i class="icon {{ spec.icon }}"></i>
         {% endif %}
-
+        <h3 class="title">{{ spec.title }}</h3>
+        {% if spec.value %}
+        <span class="value">{{ spec.value }}</span>
+        {% endif %}
       </div>
+
+      {% if spec.content %}
+      <div class="content">
+        {{ spec.content | markdownify }}
+      </div>
+      {% endif %}
     </div>
+    {% endfor %}
   </div>
+  {% endif %}
+
 </section>
 {% endif %}

@@ -35,83 +35,77 @@ Usage:
 
 {% if section %}
 <section id="{{ section.title | slugify }}" class="section-technical">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
 
-        <!-- Section Header -->
-        <header class="header">
-          <h2 class="title">
-            {% if section.icon %}
-            <i class="icon {{ section.icon }}"></i>
-            {% endif %}
-            {{ section.title }}
-          </h2>
-        </header>
+  <!-- Section Header -->
+  <header class="header">
+    <h2 class="title">
+      {% if section.icon %}
+      <i class="icon {{ section.icon }}"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
+  </header>
 
-        <!-- Intro -->
-        {% if section.intro %}
-        <div class="intro">
-          {{ section.intro | markdownify }}
-        </div>
+  <!-- Intro -->
+  {% if section.intro %}
+  <div class="intro">
+    {{ section.intro | markdownify }}
+  </div>
+  {% endif %}
+
+  <!-- Topics -->
+  {% if section.topics and section.topics.size > 0 %}
+  <div class="topics">
+    {% for topic in section.topics %}
+    <div class="topic">
+      <h3 class="title">
+        {% if topic.icon %}
+        <i class="icon {{ topic.icon }}"></i>
         {% endif %}
+        {{ topic.title }}
+      </h3>
 
-        <!-- Topics -->
-        {% if section.topics and section.topics.size > 0 %}
-        <div class="topics">
-          {% for topic in section.topics %}
-          <div class="topic">
-            <h3 class="title">
-              {% if topic.icon %}
-              <i class="icon {{ topic.icon }}"></i>
-              {% endif %}
-              {{ topic.title }}
-            </h3>
+      <!-- Content (paragraph) -->
+      {% if topic.content %}
+      <div class="content">
+        {{ topic.content | markdownify }}
+      </div>
+      {% endif %}
 
-            <!-- Content (paragraph) -->
-            {% if topic.content %}
-            <div class="content">
-              {{ topic.content | markdownify }}
-            </div>
-            {% endif %}
-
-            <!-- Bullets (unordered list) -->
-            {% if topic.bullets and topic.bullets.size > 0 %}
-            <ul class="bullets">
-              {% for bullet in topic.bullets %}
-              <li class="bullet">
-                <i class="icon bi bi-check2-circle"></i>
-                <div class="text">
-                  {% if bullet.key %}
-                  <strong class="key">{{ bullet.key }}</strong>:
-                  <span class="value">{{ bullet.value }}</span>
-                  {% else %}
-                  <span class="value">{{ bullet }}</span>
-                  {% endif %}
-                </div>
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-
-            <!-- Steps (ordered/numbered list) -->
-            {% if topic.steps and topic.steps.size > 0 %}
-            <ol class="steps">
-              {% for step in topic.steps %}
-              <li class="step">
-                <strong class="title">{{ step.title }}</strong>
-                <span class="content">{{ step.content }}</span>
-              </li>
-              {% endfor %}
-            </ol>
+      <!-- Bullets (unordered list) -->
+      {% if topic.bullets and topic.bullets.size > 0 %}
+      <ul class="bullets">
+        {% for bullet in topic.bullets %}
+        <li class="bullet">
+          <i class="icon bi bi-check2-circle"></i>
+          <div class="text">
+            {% if bullet.key %}
+            <strong class="key">{{ bullet.key }}</strong>:
+            <span class="value">{{ bullet.value }}</span>
+            {% else %}
+            <span class="value">{{ bullet }}</span>
             {% endif %}
           </div>
-          {% endfor %}
-        </div>
-        {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
 
-      </div>
+      <!-- Steps (ordered/numbered list) -->
+      {% if topic.steps and topic.steps.size > 0 %}
+      <ol class="steps">
+        {% for step in topic.steps %}
+        <li class="step">
+          <strong class="title">{{ step.title }}</strong>
+          <span class="content">{{ step.content }}</span>
+        </li>
+        {% endfor %}
+      </ol>
+      {% endif %}
     </div>
+    {% endfor %}
   </div>
+  {% endif %}
+
 </section>
 {% endif %}

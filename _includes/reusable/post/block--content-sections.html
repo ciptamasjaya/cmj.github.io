@@ -31,11 +31,11 @@ Usage:
 {% assign sections = include.sections %}
 
 {% if sections and sections.size > 0 %}
-<div class="content-sections">
+<section class="content-sections">
   {% for section in sections %}
   {% assign section_id = section.id | default: section.title | slugify %}
 
-  <section id="{{ section_id }}" class="content-section py-4 {% if forloop.index > 1 %}border-top{% endif %}">
+  <article id="{{ section_id }}" class="content-section py-4 {% if forloop.index > 1 %}border-top{% endif %}">
 
     <!-- Section Header -->
     <h2 class="section-title h3 fw-bold mb-4">
@@ -73,7 +73,7 @@ Usage:
     </div>
     {% endif %}
 
-  </section>
+  </article>
   {% endfor %}
-</div>
+</section>
 {% endif %}

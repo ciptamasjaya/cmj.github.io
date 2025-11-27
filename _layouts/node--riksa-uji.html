@@ -22,17 +22,28 @@ structure with specialized sections (importance, process, regulation, etc).
 {% endcomment %}
 
 <article class="post-content py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Spacer Left -->
+      <div class="col-lg-1 d-none d-lg-block"></div>
 
-        <!-- Breadcrumb will be added as reusable block -->
+      <!-- Main Content -->
+      <div class="col-lg-10">
+        <div class="row">
 
-        <!-- Post Header -->
-        {% include reusable/post/block--post-header.html %}
+          <div class="col-lg-12">
+            <!-- Post Header -->
+            {% include reusable/post/block--post-header.html %}
+          </div>
 
-        <!-- Post Body -->
-        <div class="post-body mb-5">
+          <div class="col-lg-8">
+
+            {% include reusable/post/block--breadcrumb-post.html %}
+
+            <div class="post-body mb-5">
+
+          <!-- Post Image -->
+          {% include reusable/post/block--post-image.html %}
 
           <!-- Content Intro (Paragraf Pembuka setelah H1) -->
           {% if page.content_intro %}
@@ -126,6 +137,18 @@ structure with specialized sections (importance, process, regulation, etc).
         <!-- Post Footer - Share buttons will be added as reusable block -->
 
       </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            {% include reusable/post/block--sidebar-post.html %}
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Spacer Right -->
+      <div class="col-lg-1 d-none d-lg-block"></div>
+
     </div>
   </div>
 </article>

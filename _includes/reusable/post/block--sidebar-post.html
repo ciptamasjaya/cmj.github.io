@@ -1,0 +1,89 @@
+{% comment %}
+============================================================================
+Block: Post Sidebar
+============================================================================
+
+@file        block--sidebar-post.html
+@path        _includes/reusable/post/block--sidebar-post.html
+@type        Block (reusable)
+@description Sidebar for blog posts with categories and tags
+@author      arisciwek
+@created     2025-11-27
+
+Structure:
+----------
+- Categories list
+- Tags cloud
+- Optional: Related services link
+
+Usage:
+------
+{% include reusable/post/block--sidebar-post.html %}
+
+============================================================================
+{% endcomment %}
+
+<aside class="post-sidebar">
+
+  <!-- Categories -->
+  {% if page.categories and page.categories.size > 0 %}
+  <div class="sidebar-widget mb-4">
+    <h3 class="sidebar-widget__title h6 fw-bold mb-3">
+      <i class="bi bi-folder me-2 text-primary"></i>Kategori
+    </h3>
+    <ul class="list-unstyled mb-0">
+      {% for category in page.categories %}
+      <li class="mb-2">
+        <a href="{{ '/kategori/' | append: category | slugify | relative_url }}" class="text-decoration-none text-muted d-flex align-items-center">
+          <i class="bi bi-chevron-right me-2 small"></i>
+          {{ category }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <!-- Tags -->
+  {% if page.tags and page.tags.size > 0 %}
+  <div class="sidebar-widget mb-4">
+    <h3 class="sidebar-widget__title h6 fw-bold mb-3">
+      <i class="bi bi-tags me-2 text-primary"></i>Tags
+    </h3>
+    <div class="d-flex flex-wrap gap-2">
+      {% for tag in page.tags %}
+      <a href="{{ '/tag/' | append: tag | slugify | relative_url }}" class="badge bg-light text-dark text-decoration-none border">
+        {{ tag }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Related Service Link -->
+  {% if page.related_service %}
+  <div class="sidebar-widget mb-4">
+    <h3 class="sidebar-widget__title h6 fw-bold mb-3">
+      <i class="bi bi-link-45deg me-2 text-primary"></i>Layanan Terkait
+    </h3>
+    <a href="{{ page.related_service.url | relative_url }}" class="btn btn-outline-primary btn-sm w-100">
+      <i class="bi bi-arrow-right me-2"></i>{{ page.related_service.title }}
+    </a>
+  </div>
+  {% endif %}
+
+  <!-- CTA Contact -->
+  <div class="sidebar-widget mb-4">
+    <div class="card bg-primary text-white">
+      <div class="card-body text-center p-4">
+        <i class="bi bi-telephone-fill fs-2 mb-3 d-block"></i>
+        <h4 class="h6 fw-bold mb-2">Butuh Konsultasi?</h4>
+        <p class="small mb-3 opacity-75">Tim kami siap membantu kebutuhan K3 Anda</p>
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-light btn-sm">
+          Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </div>
+
+</aside>

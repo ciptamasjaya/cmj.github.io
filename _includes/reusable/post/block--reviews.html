@@ -32,7 +32,7 @@ Data source:
 {% assign rating = site.data.rating--post.ratings | where: "slug", post_slug | first %}
 
 {% if rating and rating.total_reviews > 0 %}
-<div id="reviews" class="block--reviews mt-5 pt-4 border-top">
+<section id="reviews" class="block--reviews mt-5 pt-4 border-top">
   <h2 class="mb-4">
     <i class="bi bi-star-fill text-warning me-2"></i>
     Rating & Ulasan Artikel
@@ -45,5 +45,5 @@ Data source:
       {% include components/review-list.html reviews=reviews limit=5 %}
     </div>
   </div>
-</div>
+</section>
 {% endif %}

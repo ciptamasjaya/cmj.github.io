@@ -26,7 +26,7 @@ tags:
   - Pesawat Angkat Angkut
   - Riksa Uji
   - Forklift
-image: "/assets/images/posts/riksa-uji-forklift.jpg"
+image: ""
 
 # ============================================================================
 # SCHEMA DATA - Optional data for structured markup

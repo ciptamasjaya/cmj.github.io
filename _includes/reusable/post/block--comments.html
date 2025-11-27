@@ -29,11 +29,11 @@ Data source:
 {% assign comments = site.data.comment--post.comments | where: "slug", post_slug %}
 
 {% if comments.size > 0 %}
-<div id="comments" class="block--comments mt-5 pt-4 border-top">
+<section id="comments" class="block--comments mt-5 pt-4 border-top">
   <h2 class="mb-4">
     <i class="bi bi-chat-dots text-primary me-2"></i>
     Komentar
   </h2>
   {% include components/comment-thread.html comments=comments limit=10 %}
-</div>
+</section>
 {% endif %}

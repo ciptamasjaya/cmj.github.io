@@ -1,0 +1,30 @@
+{% comment %}
+============================================================================
+Block: Post Image
+============================================================================
+
+@file        block--post-image.html
+@path        _includes/reusable/post/block--post-image.html
+@type        Block (reusable)
+@description Displays featured image with default fallback
+@author      arisciwek
+@created     2025-11-27
+
+Default Images:
+---------------
+- default_image: /assets/images/posts/default/i1.svg (single featured image)
+
+Usage:
+------
+{% include reusable/post/block--post-image.html %}
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Default image fallback {% endcomment %}
+{% assign default_image = "/assets/images/posts/default/i1.svg" %}
+{% assign featured_image = page.image | default: default_image %}
+
+<section id="post-image" class="post-image mb-4">
+  <img src="{{ featured_image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded shadow w-100">
+</section>

@@ -46,90 +46,84 @@ Usage:
 
 {% if section %}
 <section id="{{ section.title | slugify }}" class="section-process">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
 
-        <!-- Section Header -->
-        <header class="header">
-          <h2 class="title">
-            {% if section.icon %}
-            <i class="icon {{ section.icon }}"></i>
-            {% endif %}
-            {{ section.title }}
-          </h2>
+  <!-- Section Header -->
+  <header class="header">
+    <h2 class="title">
+      {% if section.icon %}
+      <i class="icon {{ section.icon }}"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
 
-          {% if section.description %}
-          <p class="description">{{ section.description }}</p>
+    {% if section.description %}
+    <p class="description">{{ section.description }}</p>
+    {% endif %}
+  </header>
+
+  <!-- Steps -->
+  {% if section.steps and section.steps.size > 0 %}
+  <div class="steps">
+    {% for step in section.steps %}
+    <div class="step">
+
+      <!-- Step Header -->
+      <div class="step-header">
+        <span class="number">{{ forloop.index }}</span>
+        <h3 class="title">
+          {% if step.icon %}
+          <i class="icon {{ step.icon }}"></i>
           {% endif %}
-        </header>
-
-        <!-- Steps -->
-        {% if section.steps and section.steps.size > 0 %}
-        <div class="steps">
-          {% for step in section.steps %}
-          <div class="step">
-
-            <!-- Step Header -->
-            <div class="step-header">
-              <span class="number">{{ forloop.index }}</span>
-              <h3 class="title">
-                {% if step.icon %}
-                <i class="icon {{ step.icon }}"></i>
-                {% endif %}
-                {{ step.title }}
-              </h3>
-            </div>
-
-            <!-- Step Description -->
-            {% if step.description %}
-            <p class="description">{{ step.description }}</p>
-            {% endif %}
-
-            <!-- Substeps -->
-            {% if step.substeps and step.substeps.size > 0 %}
-            <div class="substeps">
-              {% for substep in step.substeps %}
-              <div class="substep">
-                <h4 class="title">
-                  {% if substep.icon %}
-                  <i class="icon {{ substep.icon }}"></i>
-                  {% endif %}
-                  {{ substep.title }}
-                </h4>
-
-                {% if substep.points and substep.points.size > 0 %}
-                <ul class="points">
-                  {% for point in substep.points %}
-                  <li class="point">
-                    <i class="icon bi bi-arrow-right-circle"></i>
-                    <div class="content">
-                      <strong class="key">{{ point.key }}</strong>:
-                      <span class="value">{{ point.value }}</span>
-                    </div>
-                  </li>
-                  {% endfor %}
-                </ul>
-                {% endif %}
-              </div>
-              {% endfor %}
-            </div>
-            {% endif %}
-
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
-
-        <!-- Closing/Summary -->
-        {% if section.summary %}
-        <div class="summary">
-          <p class="text">{{ section.summary }}</p>
-        </div>
-        {% endif %}
-
+          {{ step.title }}
+        </h3>
       </div>
+
+      <!-- Step Description -->
+      {% if step.description %}
+      <p class="description">{{ step.description }}</p>
+      {% endif %}
+
+      <!-- Substeps -->
+      {% if step.substeps and step.substeps.size > 0 %}
+      <div class="substeps">
+        {% for substep in step.substeps %}
+        <div class="substep">
+          <h4 class="title">
+            {% if substep.icon %}
+            <i class="icon {{ substep.icon }}"></i>
+            {% endif %}
+            {{ substep.title }}
+          </h4>
+
+          {% if substep.points and substep.points.size > 0 %}
+          <ul class="points">
+            {% for point in substep.points %}
+            <li class="point">
+              <i class="icon bi bi-arrow-right-circle"></i>
+              <div class="content">
+                <strong class="key">{{ point.key }}</strong>:
+                <span class="value">{{ point.value }}</span>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
     </div>
+    {% endfor %}
   </div>
+  {% endif %}
+
+  <!-- Closing/Summary -->
+  {% if section.summary %}
+  <div class="summary">
+    <p class="text">{{ section.summary }}</p>
+  </div>
+  {% endif %}
+
 </section>
 {% endif %}

@@ -36,86 +36,80 @@ Usage:
 
 {% if section %}
 <section id="{{ section.title | slugify }}" class="section-permit">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
 
-        <!-- Section Header -->
-        <header class="header">
-          <h2 class="title">
-            {% if section.icon %}
-            <i class="icon {{ section.icon }}"></i>
-            {% endif %}
-            {{ section.title }}
-          </h2>
-        </header>
+  <!-- Section Header -->
+  <header class="header">
+    <h2 class="title">
+      {% if section.icon %}
+      <i class="icon {{ section.icon }}"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
+  </header>
 
-        <!-- Intro -->
-        {% if section.intro %}
-        <div class="intro">
-          {{ section.intro | markdownify }}
-        </div>
-        {% endif %}
-
-        <!-- Topics -->
-        {% if section.topics and section.topics.size > 0 %}
-        <div class="topics">
-          {% for topic in section.topics %}
-          <div class="topic">
-            <h3 class="title">
-              {% if topic.icon %}
-              <i class="icon {{ topic.icon }}"></i>
-              {% endif %}
-              {{ topic.title }}
-            </h3>
-
-            <!-- Points (key-value pairs) -->
-            {% if topic.points and topic.points.size > 0 %}
-            <ul class="points">
-              {% for point in topic.points %}
-              <li class="point">
-                <i class="icon bi bi-check-circle-fill"></i>
-                <div class="text">
-                  <strong class="key">{{ point.key }}</strong>:
-                  <span class="value">{{ point.value }}</span>
-                </div>
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-
-            <!-- Content (paragraph) -->
-            {% if topic.content %}
-            <div class="content">
-              {{ topic.content | markdownify }}
-            </div>
-            {% endif %}
-
-            <!-- Steps (numbered list) -->
-            {% if topic.steps and topic.steps.size > 0 %}
-            <ol class="steps">
-              {% for step in topic.steps %}
-              <li class="step">
-                <strong class="title">{{ step.title }}</strong>
-                <span class="content">{{ step.content }}</span>
-              </li>
-              {% endfor %}
-            </ol>
-            {% endif %}
-          </div>
-          {% endfor %}
-        </div>
-        {% endif %}
-
-        <!-- Summary -->
-        {% if section.summary %}
-        <div class="summary">
-          <p class="text">{{ section.summary }}</p>
-        </div>
-        {% endif %}
-
-      </div>
-    </div>
+  <!-- Intro -->
+  {% if section.intro %}
+  <div class="intro">
+    {{ section.intro | markdownify }}
   </div>
+  {% endif %}
+
+  <!-- Topics -->
+  {% if section.topics and section.topics.size > 0 %}
+  <div class="topics">
+    {% for topic in section.topics %}
+    <div class="topic">
+      <h3 class="title">
+        {% if topic.icon %}
+        <i class="icon {{ topic.icon }}"></i>
+        {% endif %}
+        {{ topic.title }}
+      </h3>
+
+      <!-- Points (key-value pairs) -->
+      {% if topic.points and topic.points.size > 0 %}
+      <ul class="points">
+        {% for point in topic.points %}
+        <li class="point">
+          <i class="icon bi bi-check-circle-fill"></i>
+          <div class="text">
+            <strong class="key">{{ point.key }}</strong>:
+            <span class="value">{{ point.value }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+
+      <!-- Content (paragraph) -->
+      {% if topic.content %}
+      <div class="content">
+        {{ topic.content | markdownify }}
+      </div>
+      {% endif %}
+
+      <!-- Steps (numbered list) -->
+      {% if topic.steps and topic.steps.size > 0 %}
+      <ol class="steps">
+        {% for step in topic.steps %}
+        <li class="step">
+          <strong class="title">{{ step.title }}</strong>
+          <span class="content">{{ step.content }}</span>
+        </li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Summary -->
+  {% if section.summary %}
+  <div class="summary">
+    <p class="text">{{ section.summary }}</p>
+  </div>
+  {% endif %}
+
 </section>
 {% endif %}
