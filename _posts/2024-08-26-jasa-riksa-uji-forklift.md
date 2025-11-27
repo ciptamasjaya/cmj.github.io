@@ -114,21 +114,27 @@ section_importance:
   subsections:
     - title: "Mencegah Kecelakaan Kerja"
       icon: "bi-exclamation-triangle"
-      points:
+      paragraphs:
+        - "Keselamatan kerja adalah prioritas utama dalam setiap operasional industri. Forklift yang tidak terawat dengan baik dapat menjadi sumber bahaya yang serius."
+      bullets:
         - key: "Identifikasi Masalah"
           value: "Riksa uji secara berkala membantu mengidentifikasi masalah sebelum menjadi krisis. Kerusakan atau keausan yang tidak terdeteksi dapat meningkatkan risiko kecelakaan."
         - key: "Keselamatan Pekerja"
           value: "Forklift yang tidak terawat dapat menyebabkan cedera serius bagi operator dan pekerja lain di sekitar. Dengan melakukan riksa uji, perusahaan dapat memastikan bahwa semua aspek keselamatan terpenuhi."
     - title: "Meningkatkan Efisiensi Operasional"
       icon: "bi-graph-up-arrow"
-      points:
+      paragraphs:
+        - "Efisiensi operasional sangat bergantung pada kondisi peralatan yang digunakan. Forklift yang terawat dengan baik akan memberikan performa optimal."
+      bullets:
         - key: "Optimalisasi Performa"
           value: "Forklift yang berfungsi dengan baik dapat meningkatkan produktivitas. Alat yang dalam kondisi prima dapat mengangkut beban lebih cepat dan dengan lebih sedikit energi."
         - key: "Pengurangan Waktu Henti"
           value: "Riksa uji yang rutin dapat mengurangi kemungkinan kerusakan mendadak, yang dapat menyebabkan waktu henti yang tidak direncanakan."
     - title: "Memperpanjang Umur Forklift"
       icon: "bi-clock-history"
-      points:
+      paragraphs:
+        - "Investasi pada forklift merupakan pengeluaran besar bagi perusahaan. Perawatan yang tepat dapat memperpanjang masa pakai alat secara signifikan."
+      bullets:
         - key: "Perawatan Preventif"
           value: "Dengan melakukan riksa uji secara berkala, kerusakan kecil dapat diperbaiki sebelum menjadi masalah yang lebih besar. Ini dapat memperpanjang umur forklift secara keseluruhan."
         - key: "Penggantian Komponen yang Tepat Waktu"

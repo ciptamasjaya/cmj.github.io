@@ -1,0 +1,371 @@
+---
+# Styles for Post/Article Blocks
+# PT. Cipta Mas Jaya
+---
+
+// ============================================================================
+// POST BLOCKS STYLES
+// ============================================================================
+// @file        post-blocks.scss
+// @description Styles untuk block-block di post/article pages
+// @author      arisciwek
+// @created     2025-11-27
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// POST DESCRIPTION BLOCK (Meta Description as First Paragraph)
+// ----------------------------------------------------------------------------
+.block--post-description {
+  margin-bottom: 1rem;
+
+  .post-description__card {
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #198754;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(25, 135, 84, 0.15);
+      border-left-color: #157347;
+    }
+  }
+
+  .post-description__text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    font-weight: 500;
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0a58ca;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// CONTENT INTRO BLOCK (Paragraf Tambahan)
+// ----------------------------------------------------------------------------
+.block--content-intro {
+  margin-bottom: 2rem;
+
+  .content-intro__card {
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #0d6efd;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(13, 110, 253, 0.15);
+      border-left-color: #0a58ca;
+    }
+  }
+
+  .content-intro__paragraph {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0a58ca;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// IMPORTANCE BLOCK (Pentingnya)
+// ----------------------------------------------------------------------------
+.block--importance {
+  padding: 2rem 0;
+
+  // Section Header (H2)
+  > .header {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    color: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+
+    > .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      > .icon {
+        font-size: 2rem;
+        margin-right: 0.75rem;
+        color: #fff;
+      }
+    }
+
+    > .paragraphs {
+      margin-top: 1rem;
+
+      > p {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.5rem;
+        line-height: 1.7;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Subsections Container
+  > .subsections {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  // Each Subsection (H3) - Card Style
+  .subsection {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    // Color accent top border
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #198754, #20c997);
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    // Alternate colors for visual variety
+    &:nth-child(2)::before {
+      background: linear-gradient(90deg, #0d6efd, #6610f2);
+    }
+
+    &:nth-child(3)::before {
+      background: linear-gradient(90deg, #fd7e14, #ffc107);
+    }
+
+    &:nth-child(4)::before {
+      background: linear-gradient(90deg, #dc3545, #e91e63);
+    }
+
+    // Subsection Title (H3)
+    > .title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #212529;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+
+      > .icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(25, 135, 84, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        color: #198754;
+        font-size: 1.25rem;
+      }
+    }
+
+    &:nth-child(2) > .title > .icon {
+      background: rgba(13, 110, 253, 0.1);
+      color: #0d6efd;
+    }
+
+    &:nth-child(3) > .title > .icon {
+      background: rgba(253, 126, 20, 0.1);
+      color: #fd7e14;
+    }
+
+    &:nth-child(4) > .title > .icon {
+      background: rgba(220, 53, 69, 0.1);
+      color: #dc3545;
+    }
+
+    // Paragraphs after H3
+    > .paragraphs {
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      border-left: 3px solid #e9ecef;
+
+      > p {
+        font-size: 0.95rem;
+        color: #6c757d;
+        margin-bottom: 0.5rem;
+        line-height: 1.7;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Bullets Container (Bootstrap row)
+  .bullets {
+    margin-top: 1rem;
+  }
+
+  // Card Bullet
+  .card-bullet {
+    height: 100%;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #198754, #20c997);
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    // H4 Key
+    .key {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #212529;
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        content: '\F26A'; // bi-check-circle-fill
+        font-family: 'bootstrap-icons';
+        color: #198754;
+        margin-right: 0.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    // Value paragraph
+    .value {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// ANNOUNCE BLOCK (Paragraf Penutup)
+// ----------------------------------------------------------------------------
+.block--announce {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  border-left: 4px solid #198754;
+
+  .block--announce__text {
+    font-size: 1.05rem;
+    color: #2e7d32;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #1b5e20;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:hover {
+        color: #0d6efd;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// RESPONSIVE
+// ----------------------------------------------------------------------------
+@media (max-width: 768px) {
+  .block--importance {
+    > .header {
+      padding: 1.25rem 1.5rem;
+
+      > .title {
+        font-size: 1.25rem;
+      }
+    }
+
+    .subsection {
+      padding: 1.25rem;
+
+      > .title {
+        font-size: 1.1rem;
+
+        > .icon {
+          width: 35px;
+          height: 35px;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .bullet {
+      padding: 0.875rem 1rem;
+      padding-left: 1.25rem;
+
+      > .key {
+        font-size: 0.95rem;
+      }
+
+      > .value {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

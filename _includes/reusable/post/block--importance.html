@@ -13,9 +13,10 @@ Block: Importance (Pentingnya)
 Structure:
 ----------
 H2 title
-  <p> intro paragraphs (loop)
+  paragraphs[] (optional)
   H3 subsection (multiple)
-    - bullet with **bold key**: description
+    paragraphs[] (optional)
+    bullets[] with H4 key + value
 
 Parameters:
 -----------
@@ -26,8 +27,9 @@ Parameters:
   - subsections: Array of subsection objects with:
     - title: Subsection title (H3)
     - icon: Bootstrap icon class (optional)
+    - paragraphs: Array of paragraphs after H3 (optional)
     - bullets: Array of bullet objects with:
-      - key: Bold text (benefit name)
+      - key: H4 title
       - value: Description text
 
 Usage:
@@ -69,7 +71,7 @@ numbers: []     → <ol><li>      (ordered list)
   <header class="header">
     <h2 class="title">
       {% if section.icon %}
-      <i class="icon {{ section.icon }}"></i>
+      <i class="icon bi {{ section.icon }}"></i>
       {% endif %}
       {{ section.title }}
     </h2>
@@ -90,23 +92,34 @@ numbers: []     → <ol><li>      (ordered list)
     <div class="subsection">
       <h3 class="title">
         {% if subsection.icon %}
-        <i class="icon {{ subsection.icon }}"></i>
+        <i class="icon bi {{ subsection.icon }}"></i>
         {% endif %}
         {{ subsection.title }}
       </h3>
 
-      {% if subsection.bullets and subsection.bullets.size > 0 %}
-      <ul class="bullets">
-        {% for bullet in subsection.bullets %}
-        <li class="bullet">
-          <i class="icon bi bi-check-circle-fill"></i>
-          <div class="content">
-            <strong class="key">{{ bullet.key }}</strong>:
-            <span class="value">{{ bullet.value }}</span>
-          </div>
-        </li>
+      {% if subsection.paragraphs and subsection.paragraphs.size > 0 %}
+      <div class="paragraphs">
+        {% for paragraph in subsection.paragraphs %}
+        <p>{{ paragraph }}</p>
         {% endfor %}
-      </ul>
+      </div>
+      {% endif %}
+
+      {% if subsection.bullets and subsection.bullets.size > 0 %}
+      <div class="bullets">
+        <div class="row">
+          {% for bullet in subsection.bullets %}
+          <div class="col-lg-6 mb-3">
+            <div class="card card-bullet h-100">
+              <div class="card-body">
+                <h4 class="key">{{ bullet.key }}</h4>
+                <p class="value">{{ bullet.value }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
       {% endif %}
     </div>
     {% endfor %}
