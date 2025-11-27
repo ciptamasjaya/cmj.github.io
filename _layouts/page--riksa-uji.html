@@ -63,6 +63,9 @@ Schema includes (conditional):
   {% if page.section_regulation and page.section_regulation.subsections.size > 0 %}
     {% include schema/post/schema--regulation.html %}
   {% endif %}
+  {% if page.section_training and page.section_training.cards.size > 0 %}
+    {% include schema/post/schema--training.html %}
+  {% endif %}
 
   {% comment %}
   {% if page.howto_post and page.howto_post.steps.size > 0 %}

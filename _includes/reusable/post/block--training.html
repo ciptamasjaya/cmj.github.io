@@ -1,6 +1,6 @@
 {% comment %}
 ============================================================================
-Block: Training (Pelatihan)
+Block: Training (Pelatihan) - HEBOH EDITION!
 ============================================================================
 
 @file        block--training.html
@@ -9,27 +9,32 @@ Block: Training (Pelatihan)
 @description Displays training/certification section with cards and bullet points
 @author      arisciwek
 @created     2025-11-27
-@updated     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
-H2 title
-  Cards grid (each card has icon, title, content)
-  Points list (bullet points with key-value)
+H2 title (gradient card header - education theme)
+  intro paragraph
+  H3 cards grid (6 cards in 3x2 layout)
+    - icon, title, content
+  Bullets intro
+  H4 bullet cards (benefits)
 
 Parameters:
 -----------
 - section: Object from frontmatter with:
   - title: Section title (H2)
   - icon: Bootstrap icon class (optional)
+  - subtitle: Subtitle text (optional)
   - description: Section intro paragraph (optional)
+  - summary: Closing summary (optional)
   - cards: Array of card objects with:
-    - title: Card title
+    - title: Card title (H3)
     - icon: Bootstrap icon class (optional)
     - content: Card content text
   - bullets_intro: Intro text before bullets (optional)
   - bullets: Array of bullet objects with:
-    - key: Bold text
+    - key: Bold text (H4)
     - value: Description text
 
 Naming Convention:
@@ -48,38 +53,82 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--training" class="block--training mb-5">
+<section id="block--training" class="block--training my-5">
 
-  <!-- Section Header -->
-  <header class="section-header mb-4">
-    <h2 class="section-title">
-      {% if section.icon %}
-      <i class="{{ section.icon }} me-2"></i>
+  <!-- H2: Main Section Header - HEBOH EDITION (Education Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient training-header">
+      <i class="bi {{ section.icon | default: 'bi-mortarboard' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-mortarboard-fill me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-mortarboard-fill ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
+    </div>
+  </div>
 
-    {% if section.description %}
-    <p class="section-description text-muted">{{ section.description }}</p>
-    {% endif %}
-  </header>
-
-  <!-- Cards Grid -->
-  {% if section.cards and section.cards.size > 0 %}
-  <div class="training-cards row g-4 mb-4">
-    {% for card in section.cards %}
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm border-0">
-        <div class="card-body">
-          <div class="card-icon-title d-flex align-items-center mb-3">
-            {% if card.icon %}
-            <div class="card-icon bg-primary bg-opacity-10 rounded-circle p-3 me-3">
-              <i class="{{ card.icon }} text-primary fs-4"></i>
-            </div>
-            {% endif %}
-            <h3 class="card-title h5 mb-0">{{ card.title }}</h3>
+  <!-- Description after H2 -->
+  {% if section.description %}
+  <div class="intro-description mb-4">
+    <div class="card border-0 shadow-sm intro-card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-info-circle-fill"></i>
           </div>
-          <p class="card-text text-muted">{{ card.content }}</p>
+          <p class="mb-0 intro-text">{{ section.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- H3: Cards Section Heading -->
+  {% if section.cards_heading %}
+  <div class="section-heading cards-heading mb-4">
+    <h3 class="h4 fw-bold section-heading-title">
+      <i class="bi bi-collection me-2"></i>
+      {{ section.cards_heading }}
+    </h3>
+  </div>
+  {% endif %}
+
+  <!-- Cards Intro -->
+  {% if section.cards_intro %}
+  <div class="cards-intro-card mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body py-3">
+        <div class="d-flex align-items-center">
+          <div class="cards-intro-icon me-3">
+            <i class="bi bi-bookmark-star-fill"></i>
+          </div>
+          <p class="mb-0 fw-semibold cards-intro-text">{{ section.cards_intro }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Cards Grid - 3x2 Layout -->
+  {% if section.cards and section.cards.size > 0 %}
+  <div class="row g-4 training-cards-grid mb-4">
+    {% for card in section.cards %}
+    {% assign card_index = forloop.index %}
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 shadow-sm h-100 training-card training-card-{{ card_index }} hover-lift">
+        <div class="card-body">
+          <!-- H4: Card Header with Icon -->
+          <div class="training-card-header mb-3">
+            <div class="training-card-icon training-card-icon-{{ card_index }}">
+              <i class="bi {{ card.icon | default: 'bi-bookmark-check' }}"></i>
+            </div>
+            <h4 class="h6 fw-bold mb-0 training-card-title">{{ card.title }}</h4>
+          </div>
+          <!-- Card Content -->
+          <p class="training-card-content mb-0">{{ card.content }}</p>
         </div>
       </div>
     </div>
@@ -87,24 +136,68 @@ Usage:
   </div>
   {% endif %}
 
-  <!-- Bullets Section -->
+  <!-- Bullets Section - Benefits -->
   {% if section.bullets and section.bullets.size > 0 %}
-  <div class="training-bullets">
-    {% if section.bullets_intro %}
-    <p class="bullets-intro fw-semibold mb-3">{{ section.bullets_intro }}</p>
+  <div class="training-bullets-section">
+    <!-- H3: Bullets Section Heading -->
+    {% if section.bullets_heading %}
+    <div class="section-heading bullets-heading mb-4">
+      <h3 class="h4 fw-bold section-heading-title">
+        <i class="bi bi-star-fill me-2"></i>
+        {{ section.bullets_heading }}
+      </h3>
+    </div>
     {% endif %}
 
-    <ul class="bullets-list list-unstyled">
-      {% for bullet in section.bullets %}
-      <li class="bullet-item d-flex align-items-start mb-3">
-        <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-        <div class="bullet-text">
-          <strong class="bullet-key">{{ bullet.key }}</strong>:
-          <span class="bullet-value text-muted">{{ bullet.value }}</span>
+    <!-- Bullets Intro -->
+    {% if section.bullets_intro %}
+    <div class="bullets-intro-card mb-3">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body py-3">
+          <div class="d-flex align-items-center">
+            <div class="bullets-intro-icon me-3">
+              <i class="bi bi-lightbulb-fill"></i>
+            </div>
+            <p class="mb-0 fw-semibold bullets-intro-text">{{ section.bullets_intro }}</p>
+          </div>
         </div>
-      </li>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Bullets Grid - 2x2 Layout -->
+    <div class="row g-3 bullets-grid">
+      {% for bullet in section.bullets %}
+      {% assign bullet_index = forloop.index %}
+      <div class="col-md-6">
+        <div class="training-bullet-card training-bullet-variant-{{ bullet_index }}">
+          <div class="training-bullet-header">
+            <span class="training-bullet-icon training-bullet-icon-{{ bullet_index }}">
+              <i class="bi bi-check2-circle"></i>
+            </span>
+            <h4 class="training-bullet-key">{{ bullet.key }}</h4>
+          </div>
+          <p class="training-bullet-value">{{ bullet.value }}</p>
+        </div>
+      </div>
       {% endfor %}
-    </ul>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Summary -->
+  {% if section.summary %}
+  <div class="summary-card mt-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body summary-body training-summary">
+        <div class="d-flex align-items-start">
+          <div class="summary-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-award-fill"></i>
+          </div>
+          <p class="mb-0 summary-text">{{ section.summary }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 
