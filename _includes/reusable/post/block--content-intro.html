@@ -1,18 +1,19 @@
 {% comment %}
 ============================================================================
-Block: Content Intro (Paragraf Pembuka)
+Block: Content Intro (Paragraf Tambahan)
 ============================================================================
 
 @file        block--content-intro.html
 @path        _includes/reusable/post/block--content-intro.html
 @type        Block (reusable)
-@description Displays intro paragraphs after H1 title (supports multiple paragraphs)
+@description Additional intro paragraphs (after node__description)
 @author      arisciwek
 @created     2025-11-27
 
-Structure:
-----------
-Multiple paragraphs rendered from content_intro.paragraphs array
+Note:
+-----
+page.description is rendered directly in node layout (node__description).
+This block is for ADDITIONAL paragraphs only.
 
 Usage:
 ------
@@ -22,9 +23,8 @@ Frontmatter example:
 --------------------
 content_intro:
   paragraphs:
-    - "First paragraph text with <a href='/url/'>links</a> supported."
-    - "Second paragraph text."
-    - "Third paragraph text."
+    - "Additional paragraph text."
+    - "Another paragraph."
 
 ============================================================================
 {% endcomment %}
@@ -36,7 +36,7 @@ content_intro:
   {% for paragraph in section.paragraphs %}
   <div class="card content-intro__card mb-3">
     <div class="card-body">
-      <p class="card-text mb-0">{{ paragraph }}</p>
+      <p class="content-intro__paragraph mb-0">{{ paragraph }}</p>
     </div>
   </div>
   {% endfor %}

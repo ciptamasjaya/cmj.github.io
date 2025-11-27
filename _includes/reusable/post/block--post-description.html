@@ -1,0 +1,34 @@
+{% comment %}
+============================================================================
+Block: Post Description (Meta Description as First Paragraph)
+============================================================================
+
+@file        block--post-description.html
+@path        _includes/reusable/post/block--post-description.html
+@type        Block (reusable)
+@description Displays page.description as first visible paragraph (also used for SEO meta)
+@author      arisciwek
+@created     2025-11-27
+
+Note:
+-----
+page.description serves dual purpose:
+1. SEO meta description
+2. First visible paragraph in content
+
+Usage:
+------
+{% include reusable/post/block--node-description.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.description %}
+<section id="block--post-description" class="block--post-description">
+  <div class="card post-description__card mb-3">
+    <div class="card-body">
+      <p class="post-description__text mb-0">{{ page.description }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}

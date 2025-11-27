@@ -53,6 +53,8 @@ Schema includes (conditional):
     {% include schema/schema--page.html %}
   {% endunless %}
   {% include schema/post/schema--blogposting.html %}
+
+  {% comment %}
   {% if page.howto_post and page.howto_post.steps.size > 0 %}
     {% include schema/post/schema--howto-post.html %}
   {% endif %}
@@ -68,6 +70,7 @@ Schema includes (conditional):
   {% if page.show_breadcrumb_schema %}
     {% include schema/schema--breadcrumb.html current_title=page.title %}
   {% endif %}
+  {% endcomment %}
 
 </body>
 </html>

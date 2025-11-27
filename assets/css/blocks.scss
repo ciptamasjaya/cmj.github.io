@@ -2887,20 +2887,64 @@
 }
 
 /* ============================================================================
-   CONTENT INTRO BLOCK (Paragraf Pembuka setelah H1)
+   POST DESCRIPTION BLOCK (Meta Description as First Paragraph)
    ============================================================================ */
-.content-intro {
+.block--post-description {
+  margin-bottom: 1rem;
+
+  .post-description__card {
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #198754;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(25, 135, 84, 0.15);
+      border-left-color: #157347;
+    }
+  }
+
+  .post-description__text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    font-weight: 500;
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0a58ca;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* ============================================================================
+   CONTENT INTRO BLOCK (Paragraf Tambahan)
+   ============================================================================ */
+.block--content-intro {
   margin-bottom: 2rem;
+
+  .content-intro__card {
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #0d6efd;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(13, 110, 253, 0.15);
+      border-left-color: #0a58ca;
+    }
+  }
 
   .content-intro__paragraph {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #495057;
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
 
     a {
       color: #0d6efd;

@@ -43,11 +43,15 @@ structure with specialized sections (importance, process, regulation, etc).
                 {% include reusable/post/block--gallery.html images=page.images %}
               {% endif %}
 
+              {% include reusable/post/block--post-description.html %}
+
               {% if page.content_intro %}
                 {% include reusable/post/block--content-intro.html section=page.content_intro %}
               {% endif %}
 
               {{ content }}
+
+              {% comment %}
 
               {% if page.section_importance %}
                 {% include reusable/post/block--importance.html section=page.section_importance %}
@@ -110,6 +114,8 @@ structure with specialized sections (importance, process, regulation, etc).
               {% include reusable/post/block--reviews.html %}
 
               {% include reusable/post/block--comments.html %}
+
+              {% endcomment %}
 
             </div>
 
