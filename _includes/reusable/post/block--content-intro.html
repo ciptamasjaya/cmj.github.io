@@ -12,27 +12,28 @@ Block: Content Intro (Paragraf Pembuka)
 
 Structure:
 ----------
-Multiple paragraphs rendered from array
+Multiple paragraphs rendered from content_intro.paragraphs array
 
 Usage:
 ------
-{% include reusable/post/block--content-intro.html paragraphs=page.content_intro %}
+{% include reusable/post/block--content-intro.html section=page.content_intro %}
 
 Frontmatter example:
 --------------------
 content_intro:
-  - "First paragraph text with [links](/url/) supported."
-  - "Second paragraph text."
-  - "Third paragraph text."
+  paragraphs:
+    - "First paragraph text with <a href='/url/'>links</a> supported."
+    - "Second paragraph text."
+    - "Third paragraph text."
 
 ============================================================================
 {% endcomment %}
 
-{% assign paragraphs = include.paragraphs %}
+{% assign section = include.section %}
 
-{% if paragraphs and paragraphs.size > 0 %}
+{% if section and section.paragraphs and section.paragraphs.size > 0 %}
 <section id="block--content-intro" class="block--content-intro">
-  {% for paragraph in paragraphs %}
+  {% for paragraph in section.paragraphs %}
   <div class="card content-intro__card mb-3">
     <div class="card-body">
       <p class="card-text mb-0">{{ paragraph }}</p>

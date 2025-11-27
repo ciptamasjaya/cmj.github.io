@@ -1,0 +1,67 @@
+{% comment %}
+============================================================================
+Schema: Reviews (schema--reviews.html)
+============================================================================
+
+@file        schema--reviews.html
+@path        _includes/schema/post/schema--reviews.html
+@type        Schema (AggregateRating + Review)
+@description Schema.org AggregateRating and Review markup for reviews block
+@author      arisciwek
+@created     2025-11-27
+
+Related block:
+- _includes/reusable/post/block--reviews.html
+
+Data source:
+- site.data.review--post.reviews
+- site.data.rating--post.ratings
+
+Usage:
+{% include schema/post/schema--reviews.html %}
+
+============================================================================
+{% endcomment %}
+
+{% assign post_slug = page.url | split: "/" | compact | last %}
+{% assign reviews = site.data.review--post.reviews | where: "slug", post_slug %}
+{% assign rating = site.data.rating--post.ratings | where: "slug", post_slug | first %}
+
+{% if rating and rating.total_reviews > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{ page.url | absolute_url }}#blogposting",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "@id": "{{ page.url | absolute_url }}#aggregaterating",
+    "ratingValue": "{{ rating.average_rating }}",
+    "reviewCount": "{{ rating.total_reviews }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  }{% if reviews.size > 0 %},
+  "review": [
+    {% for review in reviews limit: 10 %}
+    {
+      "@type": "Review",
+      "@id": "{{ page.url | absolute_url }}#review-{{ forloop.index }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review.author | escape }}"
+      },
+      "datePublished": "{{ review.date | date: '%Y-%m-%d' }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review.rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review.content | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+  {% endif %}
+}
+</script>
+{% endif %}

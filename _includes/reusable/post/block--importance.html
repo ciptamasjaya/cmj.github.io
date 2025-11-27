@@ -13,6 +13,7 @@ Block: Importance (Pentingnya)
 Structure:
 ----------
 H2 title
+  <p> intro paragraphs (loop)
   H3 subsection (multiple)
     - bullet with **bold key**: description
 
@@ -21,11 +22,11 @@ Parameters:
 - section: Object from frontmatter with:
   - title: Section title (H2)
   - icon: Bootstrap icon class (optional)
-  - description: Intro paragraph (optional)
+  - paragraphs: Array of paragraphs after H2 (optional)
   - subsections: Array of subsection objects with:
     - title: Subsection title (H3)
     - icon: Bootstrap icon class (optional)
-    - points: Array of point objects with:
+    - bullets: Array of bullet objects with:
       - key: Bold text (benefit name)
       - value: Description text
 
@@ -38,6 +39,9 @@ Frontmatter Example:
 section_importance:
   title: "Pentingnya Riksa Uji Forklift"
   icon: "bi-shield-check"
+  paragraphs:
+    - "Paragraf pertama setelah H2..."
+    - "Paragraf kedua (optional)..."
   subsections:
     - title: "Mencegah Kecelakaan Kerja"
       icon: "bi-exclamation-triangle"
@@ -46,6 +50,12 @@ section_importance:
           value: "Riksa uji secara berkala membantu mengidentifikasi masalah..."
         - key: "Keselamatan Pekerja"
           value: "Forklift yang tidak terawat dapat menyebabkan cedera..."
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 ============================================================================
 {% endcomment %}
@@ -64,8 +74,12 @@ section_importance:
       {{ section.title }}
     </h2>
 
-    {% if section.description %}
-    <p class="description">{{ section.description }}</p>
+    {% if section.paragraphs and section.paragraphs.size > 0 %}
+    <div class="paragraphs">
+      {% for paragraph in section.paragraphs %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
+    </div>
     {% endif %}
   </header>
 
@@ -81,14 +95,14 @@ section_importance:
         {{ subsection.title }}
       </h3>
 
-      {% if subsection.points and subsection.points.size > 0 %}
-      <ul class="points">
-        {% for point in subsection.points %}
-        <li class="point">
+      {% if subsection.bullets and subsection.bullets.size > 0 %}
+      <ul class="bullets">
+        {% for bullet in subsection.bullets %}
+        <li class="bullet">
           <i class="icon bi bi-check-circle-fill"></i>
           <div class="content">
-            <strong class="key">{{ point.key }}</strong>:
-            <span class="value">{{ point.value }}</span>
+            <strong class="key">{{ bullet.key }}</strong>:
+            <span class="value">{{ bullet.value }}</span>
           </div>
         </li>
         {% endfor %}

@@ -31,9 +31,15 @@ Parameters:
     - description: Step intro paragraph (optional)
     - substeps: Array of substep objects with:
       - title: Substep title (H4)
-      - points: Array of point objects with:
+      - bullets: Array of bullet objects with:
         - key: Bold text
         - value: Description text
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 Usage:
 ------
@@ -95,14 +101,14 @@ Usage:
             {{ substep.title }}
           </h4>
 
-          {% if substep.points and substep.points.size > 0 %}
-          <ul class="points">
-            {% for point in substep.points %}
-            <li class="point">
+          {% if substep.bullets and substep.bullets.size > 0 %}
+          <ul class="bullets">
+            {% for bullet in substep.bullets %}
+            <li class="bullet">
               <i class="icon bi bi-arrow-right-circle"></i>
               <div class="content">
-                <strong class="key">{{ point.key }}</strong>:
-                <span class="value">{{ point.value }}</span>
+                <strong class="key">{{ bullet.key }}</strong>:
+                <span class="value">{{ bullet.value }}</span>
               </div>
             </li>
             {% endfor %}

@@ -27,9 +27,15 @@ Parameters:
     - title: Subsection title (H3)
     - icon: Bootstrap icon class (optional)
     - description: Subsection intro paragraph (optional)
-    - points: Array of point objects with:
+    - bullets: Array of bullet objects with:
       - key: Bold text
       - value: Description text
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 Usage:
 ------
@@ -73,14 +79,14 @@ Usage:
       <p class="description">{{ subsection.description }}</p>
       {% endif %}
 
-      {% if subsection.points and subsection.points.size > 0 %}
-      <ul class="points">
-        {% for point in subsection.points %}
-        <li class="point">
+      {% if subsection.bullets and subsection.bullets.size > 0 %}
+      <ul class="bullets">
+        {% for bullet in subsection.bullets %}
+        <li class="bullet">
           <i class="icon bi bi-check-circle-fill"></i>
           <div class="content">
-            <strong class="key">{{ point.key }}</strong>:
-            <span class="value">{{ point.value }}</span>
+            <strong class="key">{{ bullet.key }}</strong>:
+            <span class="value">{{ bullet.value }}</span>
           </div>
         </li>
         {% endfor %}

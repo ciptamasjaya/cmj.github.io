@@ -14,9 +14,15 @@ Structure:
 ----------
 H2 title
   intro paragraph
-  highlights (bullet list)
+  bullets (bullet list)
   closing paragraph
   cta (call to action with link)
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 Suitable for:
 - Kesimpulan artikel
@@ -52,15 +58,15 @@ Usage:
   </div>
   {% endif %}
 
-  <!-- Highlights (bullet points) -->
-  {% if section.highlights and section.highlights.size > 0 %}
-  <ul class="highlights">
-    {% for highlight in section.highlights %}
-    <li class="highlight">
+  <!-- Bullets (bullet points) -->
+  {% if section.bullets and section.bullets.size > 0 %}
+  <ul class="bullets">
+    {% for bullet in section.bullets %}
+    <li class="bullet">
       <i class="icon bi bi-check-circle-fill"></i>
       <div class="text">
-        <strong class="key">{{ highlight.key }}</strong>:
-        <span class="value">{{ highlight.value }}</span>
+        <strong class="key">{{ bullet.key }}</strong>:
+        <span class="value">{{ bullet.value }}</span>
       </div>
     </li>
     {% endfor %}

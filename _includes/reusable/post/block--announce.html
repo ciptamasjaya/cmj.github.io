@@ -12,26 +12,27 @@ Block: Announce (Paragraf Penutup)
 
 Structure:
 ----------
-Multiple paragraphs as article closing announcement
+Multiple paragraphs from announce.paragraphs array
 
 Usage:
 ------
-{% include reusable/post/block--announce.html paragraphs=page.announce %}
+{% include reusable/post/block--announce.html section=page.announce %}
 
 Frontmatter example:
 --------------------
 announce:
-  - "PT. Cipta Mas Jaya sebagai perusahaan K3 resmi siap membantu kebutuhan riksa uji forklift Anda."
-  - "Hubungi kami untuk konsultasi dan penawaran terbaik."
+  paragraphs:
+    - "PT. Cipta Mas Jaya sebagai perusahaan K3 resmi siap membantu kebutuhan riksa uji forklift Anda."
+    - "Hubungi kami untuk konsultasi dan penawaran terbaik."
 
 ============================================================================
 {% endcomment %}
 
-{% assign paragraphs = include.paragraphs %}
+{% assign section = include.section %}
 
-{% if paragraphs and paragraphs.size > 0 %}
+{% if section and section.paragraphs and section.paragraphs.size > 0 %}
 <section id="block--announce" class="block--announce">
-  {% for paragraph in paragraphs %}
+  {% for paragraph in section.paragraphs %}
   <p class="block--announce__text">{{ paragraph }}</p>
   {% endfor %}
 </section>

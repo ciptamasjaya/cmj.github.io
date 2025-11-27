@@ -17,7 +17,13 @@ H2 title
   H3 topic (multiple)
     content (paragraph)
     bullets (list)
-    steps (numbered list)
+    numbers (numbered list)
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 Suitable for:
 - Aspek teknis pengesahan gambar
@@ -91,13 +97,13 @@ Usage:
       </ul>
       {% endif %}
 
-      <!-- Steps (ordered/numbered list) -->
-      {% if topic.steps and topic.steps.size > 0 %}
-      <ol class="steps">
-        {% for step in topic.steps %}
-        <li class="step">
-          <strong class="title">{{ step.title }}</strong>
-          <span class="content">{{ step.content }}</span>
+      <!-- Numbers (ordered/numbered list) -->
+      {% if topic.numbers and topic.numbers.size > 0 %}
+      <ol class="numbers">
+        {% for number in topic.numbers %}
+        <li class="number">
+          <strong class="title">{{ number.title }}</strong>
+          <span class="content">{{ number.content }}</span>
         </li>
         {% endfor %}
       </ol>

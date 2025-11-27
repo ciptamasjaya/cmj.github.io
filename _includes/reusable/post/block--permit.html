@@ -15,10 +15,16 @@ Structure:
 H2 title
   intro paragraph
   H3 topic (multiple) - supports:
-    - points (key-value pairs)
+    - bullets (key-value pairs)
     - content (paragraph)
-    - steps (numbered list)
+    - numbers (numbered list)
   summary paragraph
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 Suitable for:
 - SLO Forklift/Crane
@@ -66,15 +72,15 @@ Usage:
         {{ topic.title }}
       </h3>
 
-      <!-- Points (key-value pairs) -->
-      {% if topic.points and topic.points.size > 0 %}
-      <ul class="points">
-        {% for point in topic.points %}
-        <li class="point">
+      <!-- Bullets (key-value pairs) -->
+      {% if topic.bullets and topic.bullets.size > 0 %}
+      <ul class="bullets">
+        {% for bullet in topic.bullets %}
+        <li class="bullet">
           <i class="icon bi bi-check-circle-fill"></i>
           <div class="text">
-            <strong class="key">{{ point.key }}</strong>:
-            <span class="value">{{ point.value }}</span>
+            <strong class="key">{{ bullet.key }}</strong>:
+            <span class="value">{{ bullet.value }}</span>
           </div>
         </li>
         {% endfor %}
@@ -88,13 +94,13 @@ Usage:
       </div>
       {% endif %}
 
-      <!-- Steps (numbered list) -->
-      {% if topic.steps and topic.steps.size > 0 %}
-      <ol class="steps">
-        {% for step in topic.steps %}
-        <li class="step">
-          <strong class="title">{{ step.title }}</strong>
-          <span class="content">{{ step.content }}</span>
+      <!-- Numbers (numbered list) -->
+      {% if topic.numbers and topic.numbers.size > 0 %}
+      <ol class="numbers">
+        {% for number in topic.numbers %}
+        <li class="number">
+          <strong class="title">{{ number.title }}</strong>
+          <span class="content">{{ number.content }}</span>
         </li>
         {% endfor %}
       </ol>

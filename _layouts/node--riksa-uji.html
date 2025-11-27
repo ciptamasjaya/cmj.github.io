@@ -44,7 +44,7 @@ structure with specialized sections (importance, process, regulation, etc).
               {% endif %}
 
               {% if page.content_intro %}
-                {% include reusable/post/block--content-intro.html paragraphs=page.content_intro %}
+                {% include reusable/post/block--content-intro.html section=page.content_intro %}
               {% endif %}
 
               {{ content }}
@@ -86,7 +86,7 @@ structure with specialized sections (importance, process, regulation, etc).
               {% endif %}
 
               {% if page.announce %}
-                {% include reusable/post/block--announce.html paragraphs=page.announce %}
+                {% include reusable/post/block--announce.html section=page.announce %}
               {% endif %}
 
               {% if page.howto_post %}

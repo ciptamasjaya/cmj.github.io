@@ -27,10 +27,16 @@ Parameters:
     - title: Card title
     - icon: Bootstrap icon class (optional)
     - content: Card content text
-  - points_intro: Intro text before points (optional)
-  - points: Array of point objects with:
+  - bullets_intro: Intro text before bullets (optional)
+  - bullets: Array of bullet objects with:
     - key: Bold text
     - value: Description text
+
+Naming Convention:
+------------------
+paragraphs: []  → <p>           (paragraf)
+bullets: []     → <ul><li>      (unordered list)
+numbers: []     → <ol><li>      (ordered list)
 
 Usage:
 ------
@@ -81,20 +87,20 @@ Usage:
   </div>
   {% endif %}
 
-  <!-- Points Section -->
-  {% if section.points and section.points.size > 0 %}
-  <div class="training-points">
-    {% if section.points_intro %}
-    <p class="points-intro fw-semibold mb-3">{{ section.points_intro }}</p>
+  <!-- Bullets Section -->
+  {% if section.bullets and section.bullets.size > 0 %}
+  <div class="training-bullets">
+    {% if section.bullets_intro %}
+    <p class="bullets-intro fw-semibold mb-3">{{ section.bullets_intro }}</p>
     {% endif %}
 
-    <ul class="points-list list-unstyled">
-      {% for point in section.points %}
-      <li class="point-item d-flex align-items-start mb-3">
+    <ul class="bullets-list list-unstyled">
+      {% for bullet in section.bullets %}
+      <li class="bullet-item d-flex align-items-start mb-3">
         <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-        <div class="point-text">
-          <strong class="point-key">{{ point.key }}</strong>:
-          <span class="point-value text-muted">{{ point.value }}</span>
+        <div class="bullet-text">
+          <strong class="bullet-key">{{ bullet.key }}</strong>:
+          <span class="bullet-value text-muted">{{ bullet.value }}</span>
         </div>
       </li>
       {% endfor %}

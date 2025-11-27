@@ -4,13 +4,15 @@ title: "Riksa Uji Forklift"
 description: "Riksa uji forklift adalah proses pemeriksaan dan pengujian terhadap kondisi teknis dan operasional forklift mencakup inspeksi komponen mekanis, sistem hidraulik, rem, ban, serta sistem pengangkutan beban, Tujuannya adalah untuk mengidentifikasi potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, memastikan bahwa alat tersebut berfungsi dengan baik dan aman digunakan dan memastikan forklift memenuhi standar keselamatan yang berlaku."
 # Content Intro - Paragraf pembuka setelah H1
 content_intro:
-  - "Riksa uji forklift yang merupakan bagian dari <a href=\"/layanan/riksa-uji-pesawat-angkat-dan-angkut/\">riksa uji pesawat angkat dan angkut</a> adalah langkah penting yang harus dilakukan secara berkala untuk memastikan bahwa alat ini berfungsi dengan baik dan memenuhi standar keselamatan. Dalam artikel ini, kita akan membahas pentingnya riksa uji forklift, proses riksa uji, serta faktor-faktor yang harus diperhatikan."
-  - "Riksa uji forklift harus dilakukan secara rutin, oleh <a href=\"/about/pjk3/\">PJK3</a> terutama pada forklift yang sering digunakan dalam aktivitas industri atau gudang. Riksa Uji Forklift ini melibatkan pengujian kinerja dan keamanan forklift, termasuk pemeriksaan rem, hidrolik, dan sistem kemudi, untuk mencegah kecelakaan di tempat kerja."
-  - "<a href=\"https://id.wikipedia.org/wiki/Forklift\">Forklift</a> merupakan alat berat yang digunakan secara luas dalam berbagai industri untuk mengangkut dan memindahkan barang. Penggunaan forklift yang efektif dan aman sangat penting untuk menjaga keselamatan kerja dan efisiensi operasional. Riksa uji forklift adalah langkah penting yang harus dilakukan secara berkala untuk memastikan bahwa alat ini berfungsi dengan baik dan memenuhi standar keselamatan. Dalam artikel ini, kita akan membahas pentingnya riksa uji forklift, proses riksa uji, serta faktor-faktor yang harus diperhatikan."
+  paragraphs:
+    - "Riksa uji forklift yang merupakan bagian dari <a href=\"/layanan/riksa-uji-pesawat-angkat-dan-angkut/\">riksa uji pesawat angkat dan angkut</a> adalah langkah penting yang harus dilakukan secara berkala untuk memastikan bahwa alat ini berfungsi dengan baik dan memenuhi standar keselamatan. Dalam artikel ini, kita akan membahas pentingnya riksa uji forklift, proses riksa uji, serta faktor-faktor yang harus diperhatikan."
+    - "Riksa uji forklift harus dilakukan secara rutin, oleh <a href=\"/about/pjk3/\">PJK3</a> terutama pada forklift yang sering digunakan dalam aktivitas industri atau gudang. Riksa Uji Forklift ini melibatkan pengujian kinerja dan keamanan forklift, termasuk pemeriksaan rem, hidrolik, dan sistem kemudi, untuk mencegah kecelakaan di tempat kerja."
+    - "<a href=\"https://id.wikipedia.org/wiki/Forklift\">Forklift</a> merupakan alat berat yang digunakan secara luas dalam berbagai industri untuk mengangkut dan memindahkan barang. Penggunaan forklift yang efektif dan aman sangat penting untuk menjaga keselamatan kerja dan efisiensi operasional. Riksa uji forklift adalah langkah penting yang harus dilakukan secara berkala untuk memastikan bahwa alat ini berfungsi dengan baik dan memenuhi standar keselamatan. Dalam artikel ini, kita akan membahas pentingnya riksa uji forklift, proses riksa uji, serta faktor-faktor yang harus diperhatikan."
 
 # Announce - Paragraf penutup tanpa heading
 announce:
-  - "PT. Cipta Mas Jaya merupakan perusahaan <a href=\"/about/pjk3-riksa-uji/\">PJK3 Riksa Uji</a> yang menyediakan layanan profesional dalam Riksa Uji Forklift. Mereka berfokus pada pemeriksaan dan pengujian keselamatan forklift untuk memastikan bahwa alat angkat ini memenuhi standar operasional dan keselamatan kerja. Selain itu, PT. Cipta Mas Jaya juga menawarkan solusi perbaikan dan pemeliharaan guna menjaga kinerja optimal forklift serta mencegah potensi risiko kecelakaan di lingkungan kerja."
+  paragraphs:
+    - "PT. Cipta Mas Jaya merupakan perusahaan <a href=\"/about/pjk3-riksa-uji/\">PJK3 Riksa Uji</a> yang menyediakan layanan profesional dalam Riksa Uji Forklift. Mereka berfokus pada pemeriksaan dan pengujian keselamatan forklift untuk memastikan bahwa alat angkat ini memenuhi standar operasional dan keselamatan kerja. Selain itu, PT. Cipta Mas Jaya juga menawarkan solusi perbaikan dan pemeliharaan guna menjaga kinerja optimal forklift serta mencegah potensi risiko kecelakaan di lingkungan kerja."
 permalink: /2024/08/26/jasa-riksa-uji-forklift/
 redirect_from:
   - /blog/2024/08/26/jasa-riksa-uji-forklift/
@@ -107,6 +109,8 @@ video_post:
 section_importance:
   title: "Pentingnya Riksa Uji Forklift"
   icon: "bi-shield-check"
+  paragraphs:
+    - "Riksa uji forklift merupakan langkah kritis dalam menjaga keselamatan dan efisiensi operasional di tempat kerja. Pemeriksaan berkala ini tidak hanya memastikan kepatuhan terhadap regulasi K3, tetapi juga memberikan berbagai manfaat penting bagi perusahaan dan pekerja."
   subsections:
     - title: "Mencegah Kecelakaan Kerja"
       icon: "bi-exclamation-triangle"
