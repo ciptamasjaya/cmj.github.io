@@ -27,29 +27,19 @@ intro:
 # Block 2: Sub-Categories List
 jenis_layanan:
   h2: "Jenis Layanan Riksa Uji Pesawat Angkat Angkut"
-  para: "Kami menyediakan layanan riksa uji untuk berbagai jenis pesawat angkat angkut sesuai kebutuhan industri Anda. Setiap jenis peralatan memiliki prosedur inspeksi khusus yang mengacu pada standar teknis dan regulasi Kemnaker RI."
+  para: "Layanan riksa uji pesawat angkat angkut terbagi menjadi dua kategori utama berdasarkan fungsi peralatan: Pesawat Angkat untuk mengangkat beban secara vertikal, dan Pesawat Angkut untuk memindahkan beban secara horizontal. Setiap kategori memiliki prosedur inspeksi khusus yang mengacu pada Permenaker No. 8 Tahun 2020."
 
-  # Sub-categories yang akan di-loop
+  # Sub-categories yang akan di-loop (2 sub-category)
   sub_categories:
-    - title: "Riksa Uji Forklift"
-      description: "Inspeksi dan pengujian forklift counterbalance, reach truck, dan stacker"
-      url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-forklift/"
-      icon: "bi-box-arrow-up"
-
-    - title: "Riksa Uji Crane"
-      description: "Pemeriksaan crane overhead, gantry crane, dan mobile crane"
-      url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-crane/"
+    - title: "Pesawat Angkat"
+      description: "Peralatan mengangkat beban secara vertikal: Overhead Crane, Gantry Crane, Tower Crane, Mobile Crane, Crawler Crane, Jib Crane, Hoist, Chain Block, Dongkrak Hidrolik, Gondola, Passenger Hoist, Manlift, dan Scissor Lift."
+      url: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/"
       icon: "bi-arrow-up-square"
 
-    - title: "Riksa Uji Hoist"
-      description: "Inspeksi chain hoist, wire rope hoist, dan electric hoist"
-      url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-hoist/"
-      icon: "bi-arrow-bar-up"
-
-    - title: "Riksa Uji Lift Barang"
-      description: "Pengujian lift barang, cargo lift, dan material hoist"
-      url: "/layanan/riksa-uji-pesawat-angkat-angkut/riksa-uji-lift-barang/"
-      icon: "bi-arrows-move"
+    - title: "Pesawat Angkut"
+      description: "Peralatan memindahkan beban secara horizontal: Forklift, Excavator, Wheel Loader, Bulldozer, Reach Stacker, dan Conveyor."
+      url: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/"
+      icon: "bi-truck"
 
 # Block 3: Mengapa Penting
 mengapa_penting:
