@@ -1,10 +1,10 @@
 {% comment %}
 ============================================================================
-Block: Section Specs (Spesifikasi)
+Block: Specs (Spesifikasi)
 ============================================================================
 
-@file        block--section-specs.html
-@path        _includes/reusable/post/block--section-specs.html
+@file        block--specs.html
+@path        _includes/reusable/post/block--specs.html
 @type        Block (reusable)
 @description Displays specifications section with intro and multiple spec items
 @author      arisciwek
@@ -37,7 +37,7 @@ Parameters:
 
 Usage:
 ------
-{% include reusable/post/block--section-specs.html section=page.section_specs %}
+{% include reusable/post/block--specs.html section=page.section_specs %}
 
 ============================================================================
 {% endcomment %}
@@ -45,7 +45,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="{{ section.title | slugify }}" class="section-specs">
+<section id="block--specs" class="block--specs">
 
   <!-- Section Header -->
   <header class="header">

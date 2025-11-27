@@ -1,10 +1,10 @@
 {% comment %}
 ============================================================================
-Block: Section Technical (Aspek Teknis)
+Block: Technical (Aspek Teknis)
 ============================================================================
 
-@file        block--section-technical.html
-@path        _includes/reusable/post/block--section-technical.html
+@file        block--technical.html
+@path        _includes/reusable/post/block--technical.html
 @type        Block (reusable)
 @description Displays technical aspects section with intro, topics with content/bullets/steps
 @author      arisciwek
@@ -26,7 +26,7 @@ Suitable for:
 
 Usage:
 ------
-{% include reusable/post/block--section-technical.html section=page.section_technical %}
+{% include reusable/post/block--technical.html section=page.section_technical %}
 
 ============================================================================
 {% endcomment %}
@@ -34,7 +34,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="{{ section.title | slugify }}" class="section-technical">
+<section id="block--technical" class="block--technical">
 
   <!-- Section Header -->
   <header class="header">

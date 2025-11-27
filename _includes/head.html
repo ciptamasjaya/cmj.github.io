@@ -9,8 +9,8 @@
   <meta name="author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.business.name }}{% endif %}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-  {% comment %} OG Image Logic: page.image > default service image {% endcomment %}
-  {% assign og_image = '/assets/images/services/1.svg' %}
+  {% comment %} OG Image Logic: image > default i1.svg {% endcomment %}
+  {% assign og_image = '/assets/images/posts/default/i1.svg' %}
   {% if page.image and page.image != '' %}
     {% assign og_image = page.image %}
   {% endif %}

@@ -1,10 +1,10 @@
 {% comment %}
 ============================================================================
-Block: Section Process (Proses)
+Block: Process (Proses)
 ============================================================================
 
-@file        block--section-process.html
-@path        _includes/reusable/post/block--section-process.html
+@file        block--process.html
+@path        _includes/reusable/post/block--process.html
 @type        Block (reusable)
 @description Displays process/procedure section with numbered steps, substeps, and bullet points
 @author      arisciwek
@@ -37,7 +37,7 @@ Parameters:
 
 Usage:
 ------
-{% include reusable/post/block--section-process.html section=page.section_process %}
+{% include reusable/post/block--process.html section=page.section_process %}
 
 ============================================================================
 {% endcomment %}
@@ -45,7 +45,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="{{ section.title | slugify }}" class="section-process">
+<section id="block--process" class="block--process">
 
   <!-- Section Header -->
   <header class="header">

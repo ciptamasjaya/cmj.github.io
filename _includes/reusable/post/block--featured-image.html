@@ -1,0 +1,38 @@
+{% comment %}
+============================================================================
+Block: Featured Image
+============================================================================
+
+@file        block--featured-image.html
+@path        _includes/reusable/post/block--featured-image.html
+@type        Block (reusable)
+@description Displays featured image with fallback chain
+@author      arisciwek
+@created     2025-11-27
+
+Fallback Chain:
+---------------
+1. page.featured_image (jika ada)
+2. page.images[0] (jika ada)
+3. /assets/images/posts/default/i1.svg (default)
+
+Usage:
+------
+{% include reusable/post/block--featured-image.html %}
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Fallback chain: featured_image -> images[0] -> default {% endcomment %}
+{% assign default_image = "/assets/images/posts/default/i1.svg" %}
+{% if page.featured_image and page.featured_image != "" %}
+  {% assign featured_image = page.featured_image %}
+{% elsif page.images and page.images.size > 0 %}
+  {% assign featured_image = page.images[0] %}
+{% else %}
+  {% assign featured_image = default_image %}
+{% endif %}
+
+<section id="block--featured-image" class="block--featured-image mb-4">
+  <img src="{{ featured_image | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded shadow w-100">
+</section>

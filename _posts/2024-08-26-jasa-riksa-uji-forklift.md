@@ -26,7 +26,15 @@ tags:
   - Pesawat Angkat Angkut
   - Riksa Uji
   - Forklift
+# Images
+# image: featured image untuk og:image, schema, thumbnail (fallback: i1.svg)
+# images: gallery slider (fallback: i1-i4.svg)
 image: ""
+images:
+  - ""
+  - ""
+  - ""
+  - ""
 
 # ============================================================================
 # SCHEMA DATA - Optional data for structured markup
@@ -247,32 +255,32 @@ section_regulation:
 section_training:
   title: "Pelatihan dan Sertifikasi Operator Forklift"
   icon: "bi-mortarboard"
-  subsections:
-    - title: "Pentingnya Pelatihan"
-      icon: "bi-person-check"
-      content: |
-        **Sertifikasi Operator Forklift** merupakan proses penting yang harus dijalani oleh setiap individu yang akan mengoperasikan forklift di lingkungan kerja. Sertifikasi ini memastikan bahwa operator memiliki pengetahuan dan keterampilan yang diperlukan untuk mengoperasikan forklift dengan aman dan efisien. Proses sertifikasi biasanya mencakup pelatihan teori tentang aspek-aspek keselamatan, hukum dan peraturan yang berlaku, serta pelatihan praktis di lapangan yang mengajarkan cara mengendalikan forklift, memindahkan beban, dan melakukan inspeksi harian sebelum operasi. Dengan memiliki sertifikasi, operator diakui secara resmi telah memenuhi standar keselamatan yang ditetapkan oleh otoritas terkait.
-
-        Pelatihan untuk sertifikasi operator forklift mencakup berbagai materi, termasuk identifikasi dan penilaian risiko, prosedur penanganan material, pemeliharaan dasar forklift, serta teknik pengoperasian yang benar. Selain itu, pelatihan ini juga mengajarkan cara menangani situasi darurat, seperti apa yang harus dilakukan jika terjadi malfungsi mesin atau saat menghadapi kondisi kerja yang berbahaya. Pemahaman yang baik terhadap semua aspek ini penting untuk meminimalkan risiko kecelakaan di tempat kerja dan memastikan keselamatan semua pekerja.
-
-        Proses sertifikasi biasanya diakhiri dengan ujian, yang meliputi tes tertulis dan evaluasi keterampilan praktis. Tes tertulis mengukur pemahaman operator tentang teori keselamatan dan peraturan, sementara evaluasi praktis memastikan bahwa operator mampu mengoperasikan forklift dengan benar dalam situasi nyata. Setelah lulus ujian, operator akan mendapatkan sertifikat yang menunjukkan bahwa mereka kompeten dalam mengoperasikan forklift sesuai dengan standar yang ditetapkan. Sertifikasi ini juga harus diperbarui secara berkala untuk memastikan bahwa operator tetap mengikuti perkembangan teknologi dan peraturan keselamatan terbaru.
-
-        Memiliki sertifikasi operator forklift tidak hanya penting dari segi kepatuhan hukum, tetapi juga memberikan keuntungan bagi perusahaan. Operator yang bersertifikat cenderung lebih sadar akan keselamatan, lebih efisien dalam bekerja, dan mampu mengurangi risiko kerusakan pada peralatan serta produk yang ditangani. Selain itu, perusahaan yang memastikan operator mereka bersertifikat dapat mengurangi kemungkinan kecelakaan kerja, yang pada akhirnya dapat menurunkan biaya asuransi dan meningkatkan reputasi perusahaan dalam hal kepatuhan terhadap standar keselamatan kerja.
-      points_intro: "Pelatihan operator adalah faktor penting yang tidak boleh diabaikan. Operator yang terlatih dengan baik dapat:"
-      points:
-        - key: "Mengurangi Risiko Kecelakaan"
-          value: "Operator yang memahami cara mengoperasikan forklift dengan benar cenderung lebih aman dalam pekerjaannya."
-        - key: "Meningkatkan Efisiensi"
-          value: "Pelatihan dapat membantu operator memahami cara terbaik untuk menggunakan forklift, yang pada gilirannya dapat meningkatkan efisiensi operasional."
+  cards:
+    - title: "Sertifikasi Operator Forklift"
+      icon: "bi-award"
+      content: "Sertifikasi Operator Forklift merupakan proses penting yang harus dijalani oleh setiap individu yang akan mengoperasikan forklift di lingkungan kerja. Sertifikasi ini memastikan bahwa operator memiliki pengetahuan dan keterampilan yang diperlukan untuk mengoperasikan forklift dengan aman dan efisien. Proses sertifikasi biasanya mencakup pelatihan teori tentang aspek-aspek keselamatan, hukum dan peraturan yang berlaku, serta pelatihan praktis di lapangan yang mengajarkan cara mengendalikan forklift, memindahkan beban, dan melakukan inspeksi harian sebelum operasi. Dengan memiliki sertifikasi, operator diakui secara resmi telah memenuhi standar keselamatan yang ditetapkan oleh otoritas terkait."
+    - title: "Materi Pelatihan"
+      icon: "bi-book"
+      content: "Pelatihan untuk sertifikasi operator forklift mencakup berbagai materi, termasuk identifikasi dan penilaian risiko, prosedur penanganan material, pemeliharaan dasar forklift, serta teknik pengoperasian yang benar. Selain itu, pelatihan ini juga mengajarkan cara menangani situasi darurat, seperti apa yang harus dilakukan jika terjadi malfungsi mesin atau saat menghadapi kondisi kerja yang berbahaya. Pemahaman yang baik terhadap semua aspek ini penting untuk meminimalkan risiko kecelakaan di tempat kerja dan memastikan keselamatan semua pekerja."
+    - title: "Proses Ujian Sertifikasi"
+      icon: "bi-clipboard-check"
+      content: "Proses sertifikasi biasanya diakhiri dengan ujian, yang meliputi tes tertulis dan evaluasi keterampilan praktis. Tes tertulis mengukur pemahaman operator tentang teori keselamatan dan peraturan, sementara evaluasi praktis memastikan bahwa operator mampu mengoperasikan forklift dengan benar dalam situasi nyata. Setelah lulus ujian, operator akan mendapatkan sertifikat yang menunjukkan bahwa mereka kompeten dalam mengoperasikan forklift sesuai dengan standar yang ditetapkan. Sertifikasi ini juga harus diperbarui secara berkala untuk memastikan bahwa operator tetap mengikuti perkembangan teknologi dan peraturan keselamatan terbaru."
+    - title: "Keuntungan Sertifikasi"
+      icon: "bi-graph-up-arrow"
+      content: "Memiliki sertifikasi operator forklift tidak hanya penting dari segi kepatuhan hukum, tetapi juga memberikan keuntungan bagi perusahaan. Operator yang bersertifikat cenderung lebih sadar akan keselamatan, lebih efisien dalam bekerja, dan mampu mengurangi risiko kerusakan pada peralatan serta produk yang ditangani. Selain itu, perusahaan yang memastikan operator mereka bersertifikat dapat mengurangi kemungkinan kecelakaan kerja, yang pada akhirnya dapat menurunkan biaya asuransi dan meningkatkan reputasi perusahaan dalam hal kepatuhan terhadap standar keselamatan kerja."
     - title: "Pelatihan Berkala"
       icon: "bi-arrow-repeat"
-      content: |
-        Hal ini tidak hanya dilakukan satu kali. Pelatihan berkala sangat penting untuk:
-      points:
-        - key: "Memperbarui Pengetahuan"
-          value: "Dengan perkembangan teknologi dan peraturan, penting bagi operator untuk selalu mendapatkan informasi terbaru."
-        - key: "Meningkatkan Keselamatan"
-          value: "Pelatihan berkala dapat membantu memperkuat budaya keselamatan di tempat kerja."
+      content: "Pelatihan tidak hanya dilakukan satu kali. Pelatihan berkala sangat penting untuk memperbarui pengetahuan operator seiring perkembangan teknologi dan peraturan, serta memperkuat budaya keselamatan di tempat kerja."
+  points_intro: "Pelatihan operator adalah faktor penting yang tidak boleh diabaikan. Operator yang terlatih dengan baik dapat:"
+  points:
+    - key: "Mengurangi Risiko Kecelakaan"
+      value: "Operator yang memahami cara mengoperasikan forklift dengan benar cenderung lebih aman dalam pekerjaannya."
+    - key: "Meningkatkan Efisiensi"
+      value: "Pelatihan dapat membantu operator memahami cara terbaik untuk menggunakan forklift, yang pada gilirannya dapat meningkatkan efisiensi operasional."
+    - key: "Memperbarui Pengetahuan"
+      value: "Dengan perkembangan teknologi dan peraturan, penting bagi operator untuk selalu mendapatkan informasi terbaru."
+    - key: "Meningkatkan Keselamatan"
+      value: "Pelatihan berkala dapat membantu memperkuat budaya keselamatan di tempat kerja."
 
 # Section 5: Standar Spesifikasi Forklift
 # Block: block--section-specs.html
@@ -302,9 +310,9 @@ section_certification:
   intro: |
     Pengesahan gambar forklift adalah proses verifikasi resmi yang memastikan desain dan konstruksi forklift memenuhi standar keselamatan dan kelayakan yang ditetapkan oleh peraturan perundangan. Ini adalah bagian dari pengujian dan pemeriksaan yang lebih luas untuk pesawat angkat dan angkut, termasuk forklift, yang bertujuan untuk mencegah kecelakaan dan memastikan operasi yang aman.
 
-    Pengesahan gambar forklift merupakan bagian dari [pengesahan gambar pesawat angkat angkut](/2025/05/25/dasar-hukum-k3-pesawat-angkat-dan-angkut/) yang diatur oleh Kementerian Ketenagakerjaan. Forklift termasuk dalam kategori pesawat angkat karena berfungsi untuk mengangkat dan memindahkan beban secara vertikal maupun horizontal dalam area kerja. Oleh karena itu, setiap gambar rencana forklift yang akan dipasang atau digunakan harus mendapatkan pengesahan dari instansi berwenang sebagai bagian dari upaya pemenuhan standar keselamatan dan kesehatan kerja (K3). Proses pengesahan ini bertujuan memastikan bahwa desain dan spesifikasi teknis forklift sesuai dengan ketentuan teknis, sehingga aman digunakan dan tidak membahayakan pekerja di sekitarnya.
+    Pengesahan gambar forklift merupakan bagian dari <a href="/2025/05/25/dasar-hukum-k3-pesawat-angkat-dan-angkut/">pengesahan gambar pesawat angkat angkut</a> yang diatur oleh Kementerian Ketenagakerjaan. Forklift termasuk dalam kategori pesawat angkat karena berfungsi untuk mengangkat dan memindahkan beban secara vertikal maupun horizontal dalam area kerja. Oleh karena itu, setiap gambar rencana forklift yang akan dipasang atau digunakan harus mendapatkan pengesahan dari instansi berwenang sebagai bagian dari upaya pemenuhan standar keselamatan dan kesehatan kerja (K3). Proses pengesahan ini bertujuan memastikan bahwa desain dan spesifikasi teknis forklift sesuai dengan ketentuan teknis, sehingga aman digunakan dan tidak membahayakan pekerja di sekitarnya.
 
-    [Pengesahan gambar pesawat angkat dan angkut](/layanan/) adalah proses verifikasi dan persetujuan resmi terhadap gambar teknis alat angkat angkut seperti forklift, crane, hoist, gondola, dan sejenisnya yang dilakukan oleh instansi berwenang, seperti Kementerian Ketenagakerjaan. Proses ini bertujuan memastikan bahwa rancangan alat tersebut telah memenuhi standar keselamatan dan ketentuan teknis sesuai peraturan perundang-undangan K3. Pengesahan ini menjadi syarat penting sebelum alat tersebut dapat digunakan di lingkungan kerja, guna meminimalkan risiko kecelakaan kerja serta melindungi keselamatan operator dan pekerja lainnya.
+    <a href="/layanan/">Pengesahan gambar pesawat angkat dan angkut</a> adalah proses verifikasi dan persetujuan resmi terhadap gambar teknis alat angkat angkut seperti forklift, crane, hoist, gondola, dan sejenisnya yang dilakukan oleh instansi berwenang, seperti Kementerian Ketenagakerjaan. Proses ini bertujuan memastikan bahwa rancangan alat tersebut telah memenuhi standar keselamatan dan ketentuan teknis sesuai peraturan perundang-undangan K3. Pengesahan ini menjadi syarat penting sebelum alat tersebut dapat digunakan di lingkungan kerja, guna meminimalkan risiko kecelakaan kerja serta melindungi keselamatan operator dan pekerja lainnya.
   topics:
     - title: "Proses Pengesahan Gambar Forklift"
       icon: "bi-list-check"
@@ -440,7 +448,7 @@ section_conclusion:
   title: "Kesimpulan"
   icon: "bi-check2-square"
   intro: |
-    [Riksa uji forklift](https://maps.app.goo.gl/KwFSALZKY9WMrK5C6) merupakan langkah penting untuk memastikan keselamatan dan efisiensi operasional dalam penggunaan alat berat ini. Proses riksa uji yang sistematis dan rutin, mulai dari persiapan hingga dokumentasi hasil, sangat penting untuk mengidentifikasi potensi masalah sebelum menjadi kecelakaan. Dengan melakukan riksa uji secara berkala, perusahaan dapat:
+    <a href="https://maps.app.goo.gl/KwFSALZKY9WMrK5C6">Riksa uji forklift</a> merupakan langkah penting untuk memastikan keselamatan dan efisiensi operasional dalam penggunaan alat berat ini. Proses riksa uji yang sistematis dan rutin, mulai dari persiapan hingga dokumentasi hasil, sangat penting untuk mengidentifikasi potensi masalah sebelum menjadi kecelakaan. Dengan melakukan riksa uji secara berkala, perusahaan dapat:
   highlights:
     - key: "Mencegah Kecelakaan Kerja"
       value: "Menjaga keselamatan pekerja dan menghindari cedera."

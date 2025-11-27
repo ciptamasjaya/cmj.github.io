@@ -1,10 +1,10 @@
 {% comment %}
 ============================================================================
-Block: Section Conclusion (Kesimpulan)
+Block: Conclusion (Kesimpulan)
 ============================================================================
 
-@file        block--section-conclusion.html
-@path        _includes/reusable/post/block--section-conclusion.html
+@file        block--conclusion.html
+@path        _includes/reusable/post/block--conclusion.html
 @type        Block (reusable)
 @description Displays conclusion section with intro, highlights, and closing
 @author      arisciwek
@@ -25,7 +25,7 @@ Suitable for:
 
 Usage:
 ------
-{% include reusable/post/block--section-conclusion.html section=page.section_conclusion %}
+{% include reusable/post/block--conclusion.html section=page.section_conclusion %}
 
 ============================================================================
 {% endcomment %}
@@ -33,7 +33,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="{{ section.title | slugify }}" class="section-conclusion">
+<section id="block--conclusion" class="block--conclusion">
 
   <!-- Section Header -->
   <header class="header">

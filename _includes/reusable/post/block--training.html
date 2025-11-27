@@ -1,0 +1,106 @@
+{% comment %}
+============================================================================
+Block: Training (Pelatihan)
+============================================================================
+
+@file        block--training.html
+@path        _includes/reusable/post/block--training.html
+@type        Block (reusable)
+@description Displays training/certification section with cards and bullet points
+@author      arisciwek
+@created     2025-11-27
+@updated     2025-11-27
+
+Structure:
+----------
+H2 title
+  Cards grid (each card has icon, title, content)
+  Points list (bullet points with key-value)
+
+Parameters:
+-----------
+- section: Object from frontmatter with:
+  - title: Section title (H2)
+  - icon: Bootstrap icon class (optional)
+  - description: Section intro paragraph (optional)
+  - cards: Array of card objects with:
+    - title: Card title
+    - icon: Bootstrap icon class (optional)
+    - content: Card content text
+  - points_intro: Intro text before points (optional)
+  - points: Array of point objects with:
+    - key: Bold text
+    - value: Description text
+
+Usage:
+------
+{% include reusable/post/block--training.html section=page.section_training %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section id="block--training" class="block--training mb-5">
+
+  <!-- Section Header -->
+  <header class="section-header mb-4">
+    <h2 class="section-title">
+      {% if section.icon %}
+      <i class="{{ section.icon }} me-2"></i>
+      {% endif %}
+      {{ section.title }}
+    </h2>
+
+    {% if section.description %}
+    <p class="section-description text-muted">{{ section.description }}</p>
+    {% endif %}
+  </header>
+
+  <!-- Cards Grid -->
+  {% if section.cards and section.cards.size > 0 %}
+  <div class="training-cards row g-4 mb-4">
+    {% for card in section.cards %}
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body">
+          <div class="card-icon-title d-flex align-items-center mb-3">
+            {% if card.icon %}
+            <div class="card-icon bg-primary bg-opacity-10 rounded-circle p-3 me-3">
+              <i class="{{ card.icon }} text-primary fs-4"></i>
+            </div>
+            {% endif %}
+            <h3 class="card-title h5 mb-0">{{ card.title }}</h3>
+          </div>
+          <p class="card-text text-muted">{{ card.content }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Points Section -->
+  {% if section.points and section.points.size > 0 %}
+  <div class="training-points">
+    {% if section.points_intro %}
+    <p class="points-intro fw-semibold mb-3">{{ section.points_intro }}</p>
+    {% endif %}
+
+    <ul class="points-list list-unstyled">
+      {% for point in section.points %}
+      <li class="point-item d-flex align-items-start mb-3">
+        <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+        <div class="point-text">
+          <strong class="point-key">{{ point.key }}</strong>:
+          <span class="point-value text-muted">{{ point.value }}</span>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+</section>
+{% endif %}

@@ -59,13 +59,45 @@ Usage:
       "height": 60
     }
   },
-  {% if page.image %}
+  {% comment %} Primary image: image > default i1.svg {% endcomment %}
+  {% assign primary_image = '/assets/images/posts/default/i1.svg' %}
+  {% if page.image and page.image != '' %}
+    {% assign primary_image = page.image %}
+  {% endif %}
   "image": {
     "@type": "ImageObject",
-    "url": "{{ page.image | absolute_url }}",
+    "@id": "{{ page.url | absolute_url }}#primaryimage",
+    "url": "{{ primary_image | absolute_url }}",
     "caption": "{{ page.title | escape }}"
   },
+  {% comment %} Gallery images as associatedMedia (fallback i1-i4.svg) {% endcomment %}
+  {% assign default_images = "/assets/images/posts/default/i1.svg,/assets/images/posts/default/i2.svg,/assets/images/posts/default/i3.svg,/assets/images/posts/default/i4.svg" | split: "," %}
+  {% assign gallery_images = page.images | default: default_images %}
+  {% assign has_gallery = false %}
+  {% for img in gallery_images %}
+    {% if img and img != '' %}
+      {% assign has_gallery = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if has_gallery == false %}
+    {% assign gallery_images = default_images %}
   {% endif %}
+  "associatedMedia": [
+    {% for img in gallery_images %}
+    {% if img and img != '' %}
+      {% assign img_url = img %}
+    {% else %}
+      {% assign img_url = default_images[forloop.index0] %}
+    {% endif %}
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page.url | absolute_url }}#image{{ forloop.index }}",
+      "url": "{{ img_url | absolute_url }}",
+      "caption": "{{ page.title | escape }} - Image {{ forloop.index }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
   {% if page.categories.size > 0 %}
   "articleSection": [{% for cat in page.categories %}"{{ cat | escape }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
   {% endif %}

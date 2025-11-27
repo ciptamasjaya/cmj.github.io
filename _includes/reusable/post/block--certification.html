@@ -1,10 +1,10 @@
 {% comment %}
 ============================================================================
-Block: Section Certification (Pengesahan/Sertifikasi)
+Block: Certification (Pengesahan/Sertifikasi)
 ============================================================================
 
-@file        block--section-certification.html
-@path        _includes/reusable/post/block--section-certification.html
+@file        block--certification.html
+@path        _includes/reusable/post/block--certification.html
 @type        Block (reusable)
 @description Displays certification/approval section with intro, topics with items, and notes
 @author      arisciwek
@@ -39,7 +39,7 @@ Parameters:
 
 Usage:
 ------
-{% include reusable/post/block--section-certification.html section=page.section_certification %}
+{% include reusable/post/block--certification.html section=page.section_certification %}
 
 ============================================================================
 {% endcomment %}
@@ -47,7 +47,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="{{ section.title | slugify }}" class="section-certification">
+<section id="block--certification" class="block--certification">
 
   <!-- Section Header -->
   <header class="header">

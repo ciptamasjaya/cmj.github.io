@@ -1,10 +1,10 @@
 {% comment %}
 ============================================================================
-Block: Section Permit (Perizinan/SLO)
+Block: Permit (Perizinan/SLO)
 ============================================================================
 
-@file        block--section-permit.html
-@path        _includes/reusable/post/block--section-permit.html
+@file        block--permit.html
+@path        _includes/reusable/post/block--permit.html
 @type        Block (reusable)
 @description Displays permit/license section with flexible topic types
 @author      arisciwek
@@ -27,7 +27,7 @@ Suitable for:
 
 Usage:
 ------
-{% include reusable/post/block--section-permit.html section=page.section_permit %}
+{% include reusable/post/block--permit.html section=page.section_permit %}
 
 ============================================================================
 {% endcomment %}
@@ -35,7 +35,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="{{ section.title | slugify }}" class="section-permit">
+<section id="block--permit" class="block--permit">
 
   <!-- Section Header -->
   <header class="header">

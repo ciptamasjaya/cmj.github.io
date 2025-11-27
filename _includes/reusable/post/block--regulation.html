@@ -1,12 +1,12 @@
 {% comment %}
 ============================================================================
-Block: Section Importance (Pentingnya)
+Block: Regulation (Regulasi/Hukum)
 ============================================================================
 
-@file        block--section-importance.html
-@path        _includes/reusable/post/block--section-importance.html
+@file        block--regulation.html
+@path        _includes/reusable/post/block--regulation.html
 @type        Block (reusable)
-@description Displays importance/benefits section with H3 subsections and bullet points
+@description Displays regulation/compliance section with subsections containing intro + bullet points
 @author      arisciwek
 @created     2025-11-27
 
@@ -14,6 +14,7 @@ Structure:
 ----------
 H2 title
   H3 subsection (multiple)
+    intro paragraph
     - bullet with **bold key**: description
 
 Parameters:
@@ -21,31 +22,18 @@ Parameters:
 - section: Object from frontmatter with:
   - title: Section title (H2)
   - icon: Bootstrap icon class (optional)
-  - description: Intro paragraph (optional)
+  - description: Section intro paragraph (optional)
   - subsections: Array of subsection objects with:
     - title: Subsection title (H3)
     - icon: Bootstrap icon class (optional)
+    - description: Subsection intro paragraph (optional)
     - points: Array of point objects with:
-      - key: Bold text (benefit name)
+      - key: Bold text
       - value: Description text
 
 Usage:
 ------
-{% include reusable/post/block--section-importance.html section=page.section_importance %}
-
-Frontmatter Example:
---------------------
-section_importance:
-  title: "Pentingnya Riksa Uji Forklift"
-  icon: "bi-shield-check"
-  subsections:
-    - title: "Mencegah Kecelakaan Kerja"
-      icon: "bi-exclamation-triangle"
-      points:
-        - key: "Identifikasi Masalah"
-          value: "Riksa uji secara berkala membantu mengidentifikasi masalah..."
-        - key: "Keselamatan Pekerja"
-          value: "Forklift yang tidak terawat dapat menyebabkan cedera..."
+{% include reusable/post/block--regulation.html section=page.section_regulation %}
 
 ============================================================================
 {% endcomment %}
@@ -53,7 +41,7 @@ section_importance:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="{{ section.title | slugify }}" class="section-importance">
+<section id="block--regulation" class="block--regulation">
 
   <!-- Section Header -->
   <header class="header">
@@ -80,6 +68,10 @@ section_importance:
         {% endif %}
         {{ subsection.title }}
       </h3>
+
+      {% if subsection.description %}
+      <p class="description">{{ subsection.description }}</p>
+      {% endif %}
 
       {% if subsection.points and subsection.points.size > 0 %}
       <ul class="points">
