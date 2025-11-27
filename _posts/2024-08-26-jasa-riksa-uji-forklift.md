@@ -145,7 +145,10 @@ section_importance:
 section_process:
   title: "Proses Riksa Uji Forklift"
   icon: "bi-gear"
+  subtitle: "Tahapan Lengkap Pemeriksaan Forklift"
   description: "Proses riksa uji forklift adalah langkah-langkah yang dilakukan untuk memastikan bahwa forklift beroperasi dengan aman dan efisien. Setiap tahap dalam proses ini memiliki tujuan dan pentingnya masing-masing, dan harus dilakukan dengan seksama untuk menghindari risiko kecelakaan kerja."
+  steps_heading: "Tahapan Proses Riksa Uji"
+  steps_intro: "Berikut adalah 6 tahapan utama dalam proses riksa uji forklift yang harus dilakukan secara sistematis:"
   steps:
     - title: "Persiapan Sebelum Riksa Uji"
       icon: "bi-clipboard-check"
@@ -176,6 +179,8 @@ section_process:
               value: "Periksa sistem hidrolik untuk kebocoran. Kebocoran dapat menyebabkan penurunan kinerja dan masalah serius jika tidak segera ditangani."
             - key: "Kabel dan Komponen Listrik"
               value: "Periksa kabel untuk mencari tanda-tanda keausan atau korosi. Pastikan semua koneksi listrik dalam kondisi baik dan aman."
+            - key: "Sistem Pengereman"
+              value: "Periksa kondisi rem service, rem parkir, dan rem darurat. Pastikan semua sistem pengereman berfungsi optimal untuk menghentikan forklift dengan aman."
         - title: "Tanda Peringatan"
           desc: "Verifikasi kelengkapan dan keterbacaan semua label keselamatan serta tanda peringatan pada forklift."
           bullets:
@@ -185,6 +190,8 @@ section_process:
               value: "Periksa keberadaan dan keterbacaan stiker kapasitas beban maksimum. Informasi ini krusial untuk mencegah overload yang dapat menyebabkan kecelakaan."
             - key: "Tanda Titik Jepit"
               value: "Pastikan tanda peringatan titik jepit (pinch point) pada area mast dan rantai terpasang dengan jelas untuk menghindari cedera operator."
+            - key: "Tanda Bahaya Listrik"
+              value: "Verifikasi keberadaan tanda peringatan bahaya listrik pada area baterai dan komponen elektrik forklift untuk mencegah risiko sengatan listrik saat perawatan."
     - title: "Uji Fungsi Forklift"
       icon: "bi-gear-wide-connected"
       description: "Setelah pemeriksaan visual, lakukan uji fungsi untuk memastikan bahwa semua komponen berfungsi dengan baik."

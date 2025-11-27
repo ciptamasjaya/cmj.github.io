@@ -85,6 +85,32 @@ Usage:
   </div>
   {% endif %}
 
+  <!-- H3: Steps Section Heading -->
+  {% if section.steps_heading %}
+  <div class="section-heading steps-heading mb-4">
+    <h3 class="h4 fw-bold section-heading-title">
+      <i class="bi bi-list-ol me-2"></i>
+      {{ section.steps_heading }}
+    </h3>
+  </div>
+  {% endif %}
+
+  <!-- Steps Intro -->
+  {% if section.steps_intro %}
+  <div class="steps-intro-card mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body py-3">
+        <div class="d-flex align-items-center">
+          <div class="steps-intro-icon me-3">
+            <i class="bi bi-signpost-2-fill"></i>
+          </div>
+          <p class="mb-0 fw-semibold steps-intro-text">{{ section.steps_intro }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
   <!-- Steps -->
   {% if section.steps and section.steps.size > 0 %}
   <div class="steps-container">
@@ -108,44 +134,44 @@ Usage:
         </div>
       </div>
 
-      <!-- Substeps -->
+      <!-- Substeps - NOT nested, H4 and H5 are siblings -->
       {% if step.substeps and step.substeps.size > 0 %}
-      <div class="row g-3 substeps-grid">
+      <div class="substeps-container">
         {% for substep in step.substeps %}
-        <div class="col-lg-6">
-          <div class="card border-0 shadow-sm h-100 substep-card substep-card-{{ step_index }} hover-lift">
-            <div class="card-body">
-              <!-- H4: Substep Title -->
-              <h4 class="h6 fw-bold mb-2 substep-title">
+        <div class="substep-wrapper mb-4">
+          <!-- H4: Substep Title Card -->
+          <div class="card border-0 substep-card substep-card-{{ step_index }} mb-3">
+            <div class="card-body py-3">
+              <h4 class="h6 fw-bold mb-0 substep-title">
                 <span class="substep-icon-circle substep-icon-{{ step_index }} me-2">
                   <i class="bi bi-check-lg"></i>
                 </span>
                 {{ substep.title }}
               </h4>
-
-              <!-- Substep Description -->
               {% if substep.desc %}
-              <p class="substep-desc mb-3">{{ substep.desc }}</p>
-              {% endif %}
-
-              <!-- Bullets as Mini Cards -->
-              {% if substep.bullets and substep.bullets.size > 0 %}
-              <div class="bullets-container">
-                {% for bullet in substep.bullets %}
-                <div class="bullet-card bullet-card-variant-{{ step_index }}">
-                  <div class="bullet-header">
-                    <span class="bullet-icon-box bullet-icon-box-{{ step_index }}">
-                      <i class="bi bi-lightning-charge-fill"></i>
-                    </span>
-                    <h5 class="bullet-key">{{ bullet.key }}</h5>
-                  </div>
-                  <p class="bullet-value">{{ bullet.value }}</p>
-                </div>
-                {% endfor %}
-              </div>
+              <p class="substep-desc mb-0 mt-2">{{ substep.desc }}</p>
               {% endif %}
             </div>
           </div>
+
+          <!-- H5: Bullets Grid - Separate from H4 card -->
+          {% if substep.bullets and substep.bullets.size > 0 %}
+          <div class="row g-3 bullets-grid">
+            {% for bullet in substep.bullets %}
+            <div class="col-md-6">
+              <div class="bullet-card bullet-card-variant-{{ step_index }} h-100">
+                <div class="bullet-header">
+                  <span class="bullet-icon-box bullet-icon-box-{{ step_index }}">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                  </span>
+                  <h5 class="bullet-key">{{ bullet.key }}</h5>
+                </div>
+                <p class="bullet-value">{{ bullet.value }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
         {% endfor %}
       </div>

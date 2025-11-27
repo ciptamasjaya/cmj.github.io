@@ -428,12 +428,13 @@ $process-colors: (
     }
   }
 
-  // Substep Cards - base styles
+  // Substep Cards - base styles (H4) - shadow di atas
   .substep-card {
     border-radius: 12px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
 
     &::before {
       content: '';
