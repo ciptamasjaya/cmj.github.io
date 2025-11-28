@@ -6,13 +6,15 @@ Block: Post Header
 @file        block--post-header.html
 @path        _includes/reusable/post/block--post-header.html
 @type        Block (reusable)
-@description Displays post header with title and meta info (no image)
+@description Displays post header with title, rating, and meta info
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
 - H1 title
+- Rating stars (from JSON data)
 - Meta: date, author
 
 Note: Image is now in separate block--post-image.html
@@ -24,18 +26,44 @@ Usage:
 ============================================================================
 {% endcomment %}
 
+{% assign post_slug = page.url | split: "/" | compact | last %}
+{% assign rating = site.data.rating--post.ratings | where: "slug", post_slug | first %}
+
 <header class="post-header mb-4">
   <h1 class="post-title display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
 
-  <div class="post-meta text-muted mb-3">
-    <span class="me-3">
+  <div class="post-meta d-flex flex-wrap align-items-center gap-3 text-muted mb-3">
+    {% if rating and rating.total_reviews > 0 %}
+    <a href="#block--reviews" class="text-decoration-none d-inline-flex align-items-center">
+      <span class="post-rating__stars me-2">
+        {% assign avg = rating.average %}
+        {% assign full_stars = avg | floor %}
+        {% assign decimal = avg | minus: full_stars %}
+        {% for i in (1..5) %}
+          {% if i <= full_stars %}
+            <i class="bi bi-star-fill text-warning"></i>
+          {% elsif decimal >= 0.3 and decimal < 0.8 and i == full_stars | plus: 1 %}
+            <i class="bi bi-star-half text-warning"></i>
+          {% elsif decimal >= 0.8 and i == full_stars | plus: 1 %}
+            <i class="bi bi-star-fill text-warning"></i>
+          {% else %}
+            <i class="bi bi-star text-warning"></i>
+          {% endif %}
+        {% endfor %}
+      </span>
+      <span class="post-rating__score fw-bold text-dark me-1">{{ rating.average }}</span>
+      <span class="post-rating__count text-muted">({{ rating.total_reviews }} ulasan)</span>
+    </a>
+    <span class="text-muted">|</span>
+    {% endif %}
+    <span>
       <i class="bi bi-calendar3 me-1"></i>
       <time datetime="{{ page.date | date_to_xmlschema }}">
         {{ page.date | date: "%d %B %Y" }}
       </time>
     </span>
     {% if page.author %}
-    <span class="me-3">
+    <span>
       <i class="bi bi-person me-1"></i>{{ page.author }}
     </span>
     {% endif %}

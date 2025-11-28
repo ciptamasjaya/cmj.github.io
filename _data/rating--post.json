@@ -1,3 +1,16 @@
 {
-  "ratings": []
+  "ratings": [
+    {
+      "slug": "jasa-riksa-uji-forklift",
+      "average": 4.7,
+      "total_reviews": 15,
+      "distribution": {
+        "5": 10,
+        "4": 3,
+        "3": 2,
+        "2": 0,
+        "1": 0
+      }
+    }
+  ]
 }
