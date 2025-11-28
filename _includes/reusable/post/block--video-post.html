@@ -1,14 +1,15 @@
 {% comment %}
 ============================================================================
-Block: Video Post
+Block: Video Post - HEBOH EDITION!
 ============================================================================
 
 @file        block--video-post.html
 @path        _includes/reusable/post/block--video-post.html
 @type        Block (reusable)
-@description Displays video embed for blog post pages
+@description Displays video embed for blog post pages with fancy styling
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Parameters:
 -----------
@@ -29,24 +30,26 @@ Usage:
 {% assign video = include.video %}
 
 {% if video and video.src %}
-<section id="block--video-post" class="block--video-post py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
+<section id="block--video-post" class="block--video-post my-5">
 
-        <!-- Section Header -->
-        <div class="text-center mb-4">
-          <h2 class="mb-3">
-            <i class="bi bi-play-circle text-primary me-2"></i>
-            {{ video.name }}
-          </h2>
-          {% if video.description %}
-          <p class="text-muted">{{ video.description }}</p>
-          {% endif %}
-        </div>
+  <!-- H2: Main Section Header - HEBOH EDITION (Play/Cinema Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient video-header">
+      <i class="bi bi-play-circle-fill mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ video.name }}</h2>
+      {% if video.description %}
+      <p class="mb-0 mt-2 subtitle-text">{{ video.description }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Video Container -->
+  <div class="video-wrapper">
+    <div class="card border-0 shadow-lg video-card">
+      <div class="card-body p-0">
 
         <!-- Video Embed -->
-        <div class="video-container rounded shadow overflow-hidden">
+        <div class="video-container">
           {% if video.src contains 'youtube' %}
             {% assign youtube_id = video.src | split: 'v=' | last | split: '&' | first %}
             <div class="ratio ratio-16x9">
@@ -78,33 +81,35 @@ Usage:
           {% endif %}
         </div>
 
-        {% if video.duration %}
-        <div class="text-center mt-3">
-          <span class="badge bg-secondary">
-            <i class="bi bi-clock me-1"></i>
-            Durasi:
-            {% assign duration = video.duration | remove: "PT" %}
-            {% if duration contains 'H' %}
-              {% assign hours = duration | split: 'H' | first %}
-              {% assign rest = duration | split: 'H' | last %}
-              {{ hours }} jam
-              {% if rest contains 'M' %}
-                {% assign minutes = rest | split: 'M' | first %}
-                {{ minutes }} menit
-              {% endif %}
-            {% elsif duration contains 'M' %}
-              {% assign minutes = duration | split: 'M' | first %}
-              {% assign seconds = duration | split: 'M' | last | remove: 'S' %}
-              {{ minutes }}:{% if seconds.size == 1 %}0{% endif %}{{ seconds }}
-            {% else %}
-              {{ duration | remove: 'S' }} detik
-            {% endif %}
-          </span>
-        </div>
-        {% endif %}
-
       </div>
     </div>
+
+    <!-- Duration Badge -->
+    {% if video.duration %}
+    <div class="duration-badge-wrapper text-center mt-3">
+      <span class="duration-badge">
+        <i class="bi bi-clock-fill me-2"></i>
+        Durasi:
+        {% assign duration = video.duration | remove: "PT" %}
+        {% if duration contains 'H' %}
+          {% assign hours = duration | split: 'H' | first %}
+          {% assign rest = duration | split: 'H' | last %}
+          {{ hours }} jam
+          {% if rest contains 'M' %}
+            {% assign minutes = rest | split: 'M' | first %}
+            {{ minutes }} menit
+          {% endif %}
+        {% elsif duration contains 'M' %}
+          {% assign minutes = duration | split: 'M' | first %}
+          {% assign seconds = duration | split: 'M' | last | remove: 'S' %}
+          {{ minutes }}:{% if seconds.size == 1 %}0{% endif %}{{ seconds }}
+        {% else %}
+          {{ duration | remove: 'S' }} detik
+        {% endif %}
+      </span>
+    </div>
+    {% endif %}
   </div>
+
 </section>
 {% endif %}

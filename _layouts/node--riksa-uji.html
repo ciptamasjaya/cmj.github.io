@@ -87,23 +87,15 @@ structure with specialized sections (importance, process, regulation, etc).
                 {% include reusable/post/block--conclusion.html section=page.section_conclusion %}
               {% endif %}
 
-              {% comment %}
-
               {% if page.announce %}
                 {% include reusable/post/block--announce.html section=page.announce %}
-              {% endif %}
-
-              {% if page.howto_post %}
-                {% include reusable/post/block--howto-post.html howto=page.howto_post %}
-              {% endif %}
-
-              {% if page.itemlist_post %}
-                {% include reusable/post/block--itemlist-post.html itemlist=page.itemlist_post %}
               {% endif %}
 
               {% if page.video_post %}
                 {% include reusable/post/block--video-post.html video=page.video_post %}
               {% endif %}
+
+              {% comment %}
 
               {% if page.faq_post %}
                 {% include reusable/post/block--faq-post.html faq=page.faq_post %}
