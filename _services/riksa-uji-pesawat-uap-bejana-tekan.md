@@ -7,7 +7,7 @@ category: "Riksa Uji Pesawat Uap Bejana Tekan"
 is_category_page: true
 service_type: "Safety Inspection"
 icon: "bi-thermometer-half"
-image: "/assets/images/services/default-pesawat-uap-bejana-tekan.svg"
+image: "/assets/images/services/default-bejana-tekan.svg"
 area_served: "Indonesia"
 content_structure: "1xh1, 2xpara, h2(list-subcategories), h2(para), h2(para)"
 date: 2025-11-28

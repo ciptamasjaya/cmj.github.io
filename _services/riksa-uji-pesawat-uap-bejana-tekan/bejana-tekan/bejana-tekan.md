@@ -8,7 +8,7 @@ sub_category: "Bejana Tekan"
 is_subcategory_page: true
 service_type: "Safety Inspection"
 icon: "bi-speedometer2"
-image: "/assets/images/services/default-pesawat-uap-bejana-tekan.svg"
+image: "/assets/images/services/default-bejana-tekan.svg"
 area_served: "Indonesia"
 content_structure: "1xh1, 2xpara, h2(list-services)"
 date: 2025-11-28
