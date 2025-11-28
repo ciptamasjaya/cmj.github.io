@@ -1,0 +1,128 @@
+{% comment %}
+============================================================================
+Schema: Article (schema--article.html)
+============================================================================
+
+@file        schema--article.html
+@path        _includes/schema/schema--article.html
+@type        Schema (article - can be used in list or detail)
+@description Schema.org markup for formal/informative article pages
+@author      arisciwek
+@created     2025-11-28
+
+Features:
+- WebPage schema for article page
+- Article schema (not BlogPosting - for formal content)
+- Author and Publisher info
+- Image support
+- LocalBusiness reference for location-based articles
+
+Parameters:
+-----------
+- post: Post object (optional, defaults to page)
+- mode: "list" or "detail" (optional, default: detail)
+
+Difference from schema--post.html:
+- schema--post.html: BlogPosting (casual blog posts)
+- schema--article.html: Article (formal/informative content)
+
+Usage in list:
+{% include schema/schema--article.html post=post mode="list" %}
+
+Usage in detail page:
+{% include schema/schema--article.html %}
+
+============================================================================
+{% endcomment %}
+
+{% assign item = include.post | default: page %}
+{% assign item_image = item.image | default: site.default_image %}
+{% assign schema_mode = include.mode | default: "detail" %}
+
+<!-- WebPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "{{ item.url | absolute_url }}#webpage",
+  "url": "{{ item.url | absolute_url }}",
+  "name": "{{ item.title | escape }}",
+  "description": "{{ item.description | default: item.excerpt | strip_html | truncate: 160 | escape }}",
+  "inLanguage": "id",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#website"
+  },
+  "datePublished": "{{ item.date | default: site.time | date_to_xmlschema }}",
+  "dateModified": "{{ item.last_modified_at | default: item.date | default: site.time | date_to_xmlschema }}",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "{{ item_image | absolute_url }}",
+    "caption": "{{ item.title | escape }}"
+  }
+}
+</script>
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "{{ item.url | absolute_url }}#article",
+  "headline": "{{ item.title | escape }}",
+  "description": "{{ item.description | default: item.excerpt | strip_html | truncate: 160 | escape }}",
+  "url": "{{ item.url | absolute_url }}",
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.business.name }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.business.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ '/assets/images/logo.svg' | absolute_url }}"
+    }
+  },
+  "datePublished": "{{ item.date | default: site.time | date_to_xmlschema }}",
+  "dateModified": "{{ item.last_modified_at | default: item.date | default: site.time | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@id": "{{ item.url | absolute_url }}#webpage"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ item_image | absolute_url }}",
+    "caption": "{{ item.title | escape }}"
+  }{% if item.categories %},
+  "articleSection": "{{ item.categories | first | escape }}"{% endif %}{% if item.tags %},
+  "keywords": "{{ item.tags | join: ', ' | escape }}"{% endif %}{% if item.word_count %},
+  "wordCount": "{{ item.word_count }}"{% endif %}
+}
+</script>
+
+{% if schema_mode == "detail" and item.area_served %}
+<!-- LocalBusiness Reference for Location-based Articles -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#localbusiness-{{ item.area_served | slugify }}",
+  "name": "{{ site.business.name }} - {{ item.area_served }}",
+  "description": "Layanan PJK3 dan Riksa Uji K3 di wilayah {{ item.area_served }}",
+  "url": "{{ item.url | absolute_url }}",
+  "telephone": "{{ site.business.phone }}",
+  "email": "{{ site.business.email }}",
+  "areaServed": {
+    "@type": "City",
+    "name": "{{ item.area_served }}"
+  },
+  "parentOrganization": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+  },
+  "priceRange": "$$",
+  "image": "{{ item_image | absolute_url }}"
+}
+</script>
+{% endif %}

@@ -34,6 +34,8 @@ custom_schema:
       <div class="col-md-6 col-lg-4">
         {% if post.layout == 'node--riksa-uji' %}
           {% include reusable/block--riksa-uji.html post=post color_index=color_index %}
+        {% elsif post.layout == 'node--article' %}
+          {% include reusable/block--article.html post=post color_index=color_index %}
         {% else %}
           {% include reusable/block--post.html post=post color_index=color_index %}
         {% endif %}
@@ -41,6 +43,8 @@ custom_schema:
       <!-- Schema for this post -->
       {% if post.layout == 'node--riksa-uji' %}
         {% include schema/schema--riksa-uji.html post=post mode="list" %}
+      {% elsif post.layout == 'node--article' %}
+        {% include schema/schema--article.html post=post mode="list" %}
       {% else %}
         {% include schema/schema--post.html post=post %}
       {% endif %}
