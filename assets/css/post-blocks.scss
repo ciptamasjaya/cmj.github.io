@@ -2289,6 +2289,180 @@ $conclusion-highlight-colors: (
 }
 
 // ----------------------------------------------------------------------------
+// FAQ POST BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for FAQ items (6 variants, cycles for more)
+$faq-colors: (
+  1: (#6366f1, #8b5cf6),  // indigo/violet
+  2: (#0ea5e9, #06b6d4),  // sky/cyan
+  3: (#10b981, #34d399),  // emerald
+  4: (#f59e0b, #fbbf24),  // amber
+  5: (#ec4899, #f472b6),  // pink
+  6: (#8b5cf6, #a78bfa)   // violet
+);
+
+.block--faq-post {
+
+  // H2: Main Header Gradient Card - Question/Help Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .faq-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    color: #e0e7ff;
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  // FAQ Accordion Wrapper
+  .faq-accordion-wrapper {
+    .accordion {
+      --bs-accordion-btn-focus-box-shadow: none;
+    }
+  }
+
+  // FAQ Item
+  .faq-item {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  // FAQ Button (Question)
+  .faq-button {
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+
+    &:not(.collapsed) {
+      background: #fff;
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::after {
+      background-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  // FAQ Number Badge
+  .faq-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  // Generate FAQ number color variants
+  @each $index, $colors in $faq-colors {
+    .faq-number-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // FAQ Question Text
+  .faq-question {
+    font-size: 1rem;
+    color: #1f2937;
+    line-height: 1.5;
+  }
+
+  // FAQ Answer
+  .faq-answer {
+    padding: 1rem 1.25rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  // FAQ Answer Icon
+  .faq-answer-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  // Generate FAQ answer icon color variants
+  @each $index, $colors in $faq-colors {
+    .faq-answer-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.25);
+    }
+  }
+
+  // FAQ Answer Text
+  .faq-answer-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.8;
+  }
+
+  // Generate FAQ item hover variants
+  @each $index, $colors in $faq-colors {
+    .faq-item-#{$index} {
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
 // VIDEO POST BLOCK - HEBOH EDITION!
 // ----------------------------------------------------------------------------
 
@@ -2887,6 +3061,50 @@ $conclusion-highlight-colors: (
       i {
         font-size: 0.9rem;
       }
+    }
+  }
+
+  .block--faq-post {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .subtitle-text {
+      font-size: 0.85rem;
+    }
+
+    .faq-button {
+      padding: 0.875rem 1rem;
+    }
+
+    .faq-number {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .faq-question {
+      font-size: 0.9rem;
+    }
+
+    .faq-answer {
+      padding: 0.875rem 1rem;
+    }
+
+    .faq-answer-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 0.85rem;
+    }
+
+    .faq-answer-text {
+      font-size: 0.85rem;
     }
   }
 }

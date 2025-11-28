@@ -1,14 +1,15 @@
 {% comment %}
 ============================================================================
-Block: FAQ Post
+Block: FAQ Post - HEBOH EDITION!
 ============================================================================
 
 @file        block--faq-post.html
 @path        _includes/reusable/post/block--faq-post.html
 @type        Block (reusable)
-@description Displays FAQ accordion for blog post pages
+@description Displays FAQ accordion for blog post pages with fancy styling
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Parameters:
 -----------
@@ -27,49 +28,53 @@ Usage:
 {% assign faq = include.faq %}
 
 {% if faq and faq.faqs.size > 0 %}
-<section id="block--faq-post" class="block--faq-post py-5 bg-light">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
+<section id="block--faq-post" class="block--faq-post my-5">
 
-        <!-- Section Header -->
-        <div class="text-center mb-4">
-          <h2 class="mb-3">
-            <i class="bi bi-question-circle text-primary me-2"></i>
-            {{ faq.name }}
-          </h2>
-          {% if faq.description %}
-          <p class="text-muted">{{ faq.description }}</p>
-          {% endif %}
-        </div>
-
-        <!-- FAQ Accordion -->
-        <div class="accordion" id="faqPostAccordion">
-          {% for item in faq.faqs %}
-          <div class="accordion-item border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %}">
-            <h3 class="accordion-header">
-              <button class="accordion-button{% unless forloop.first %} collapsed{% endunless %} fw-semibold"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#faq-post-{{ forloop.index }}"
-                      {% if forloop.first %}aria-expanded="true"{% endif %}>
-                <i class="bi bi-patch-question text-primary me-2"></i>
-                {{ item.question }}
-              </button>
-            </h3>
-            <div id="faq-post-{{ forloop.index }}"
-                 class="accordion-collapse collapse{% if forloop.first %} show{% endif %}"
-                 data-bs-parent="#faqPostAccordion">
-              <div class="accordion-body text-muted">
-                {{ item.answer }}
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-
-      </div>
+  <!-- H2: Main Section Header - HEBOH EDITION (Question/Help Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient faq-header">
+      <i class="bi bi-question-circle-fill mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ faq.name }}</h2>
+      {% if faq.description %}
+      <p class="mb-0 mt-2 subtitle-text">{{ faq.description }}</p>
+      {% endif %}
     </div>
   </div>
+
+  <!-- FAQ Accordion -->
+  <div class="faq-accordion-wrapper">
+    <div class="accordion" id="faqPostAccordion">
+      {% for item in faq.faqs %}
+      {% assign faq_index = forloop.index %}
+      {% assign color_index = faq_index | modulo: 6 %}
+      {% if color_index == 0 %}{% assign color_index = 6 %}{% endif %}
+      <div class="accordion-item border-0 shadow-sm mb-3 faq-item faq-item-{{ color_index }}">
+        <h3 class="accordion-header">
+          <button class="accordion-button{% unless forloop.first %} collapsed{% endunless %} fw-semibold faq-button faq-button-{{ color_index }}"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq-post-{{ forloop.index }}"
+                  {% if forloop.first %}aria-expanded="true"{% endif %}>
+            <span class="faq-number faq-number-{{ color_index }} me-3">{{ forloop.index }}</span>
+            <span class="faq-question">{{ item.question }}</span>
+          </button>
+        </h3>
+        <div id="faq-post-{{ forloop.index }}"
+             class="accordion-collapse collapse{% if forloop.first %} show{% endif %}"
+             data-bs-parent="#faqPostAccordion">
+          <div class="accordion-body faq-answer">
+            <div class="d-flex align-items-start">
+              <div class="faq-answer-icon faq-answer-icon-{{ color_index }} me-3 flex-shrink-0">
+                <i class="bi bi-chat-left-text-fill"></i>
+              </div>
+              <div class="faq-answer-text">{{ item.answer }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
 </section>
 {% endif %}

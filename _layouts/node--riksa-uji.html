@@ -95,11 +95,11 @@ structure with specialized sections (importance, process, regulation, etc).
                 {% include reusable/post/block--video-post.html video=page.video_post %}
               {% endif %}
 
-              {% comment %}
-
               {% if page.faq_post %}
                 {% include reusable/post/block--faq-post.html faq=page.faq_post %}
               {% endif %}
+
+              {% comment %}
 
               {% include reusable/post/block--related-post.html limit=3 %}
 
