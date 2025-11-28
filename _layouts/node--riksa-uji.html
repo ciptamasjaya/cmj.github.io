@@ -30,82 +30,82 @@ structure with specialized sections (importance, process, regulation, etc).
         <div class="row">
 
           <div class="col-lg-12">
-            {% include reusable/post/block--post-header.html %}
+            {% include reusable/node--riksa-uji/block--post-header.html %}
           </div>
 
           <div class="col-lg-8">
 
-            {% include reusable/post/block--breadcrumb-post.html %}
+            {% include reusable/node--riksa-uji/block--breadcrumb-post.html %}
 
             <div class="post-body mb-5">
 
               {% if page.images %}
-                {% include reusable/post/block--gallery.html images=page.images %}
+                {% include reusable/node--riksa-uji/block--gallery.html images=page.images %}
               {% endif %}
 
-              {% include reusable/post/block--post-description.html %}
+              {% include reusable/node--riksa-uji/block--post-description.html %}
 
               {% if page.content_intro %}
-                {% include reusable/post/block--content-intro.html section=page.content_intro %}
+                {% include reusable/node--riksa-uji/block--content-intro.html section=page.content_intro %}
               {% endif %}
 
               {{ content }}
 
               {% if page.section_importance %}
-                {% include reusable/post/block--importance.html section=page.section_importance %}
+                {% include reusable/node--riksa-uji/block--importance.html section=page.section_importance %}
               {% endif %}
 
               {% if page.section_process %}
-                {% include reusable/post/block--process.html section=page.section_process %}
+                {% include reusable/node--riksa-uji/block--process.html section=page.section_process %}
               {% endif %}
 
               {% if page.section_regulation %}
-                {% include reusable/post/block--regulation.html section=page.section_regulation %}
+                {% include reusable/node--riksa-uji/block--regulation.html section=page.section_regulation %}
               {% endif %}
 
               {% if page.section_training %}
-                {% include reusable/post/block--training.html section=page.section_training %}
+                {% include reusable/node--riksa-uji/block--training.html section=page.section_training %}
               {% endif %}
 
               {% if page.section_specs %}
-                {% include reusable/post/block--specs.html section=page.section_specs %}
+                {% include reusable/node--riksa-uji/block--specs.html section=page.section_specs %}
               {% endif %}
 
               {% if page.section_permit %}
-                {% include reusable/post/block--permit.html section=page.section_permit %}
+                {% include reusable/node--riksa-uji/block--permit.html section=page.section_permit %}
               {% endif %}
 
               {% if page.section_certification %}
-                {% include reusable/post/block--certification.html section=page.section_certification %}
+                {% include reusable/node--riksa-uji/block--certification.html section=page.section_certification %}
               {% endif %}
 
               {% if page.section_technical %}
-                {% include reusable/post/block--technical.html section=page.section_technical %}
+                {% include reusable/node--riksa-uji/block--technical.html section=page.section_technical %}
               {% endif %}
 
               {% if page.section_conclusion %}
-                {% include reusable/post/block--conclusion.html section=page.section_conclusion %}
+                {% include reusable/node--riksa-uji/block--conclusion.html section=page.section_conclusion %}
               {% endif %}
 
               {% if page.announce %}
-                {% include reusable/post/block--announce.html section=page.announce %}
+                {% include reusable/node--riksa-uji/block--announce.html section=page.announce %}
               {% endif %}
 
               {% if page.video_post %}
-                {% include reusable/post/block--video-post.html video=page.video_post %}
+                {% include reusable/node--riksa-uji/block--video-post.html video=page.video_post %}
               {% endif %}
 
               {% if page.faq_post %}
-                {% include reusable/post/block--faq-post.html faq=page.faq_post %}
+                {% include reusable/node--riksa-uji/block--faq-post.html faq=page.faq_post %}
               {% endif %}
 
-              {% include reusable/post/block--related-post.html limit=3 %}
+              {% include reusable/node--riksa-uji/block--related-post.html limit=3 %}
 
-              {% include reusable/post/block--reviews.html %}
+              {% include reusable/node--riksa-uji/block--reviews.html %}
 
               {% comment %}
               
-              {% include reusable/post/block--comments.html %}
+              {% include reusable/node--riksa-uji/block--comments.html %}
 
               {% endcomment %}
 
@@ -114,7 +114,7 @@ structure with specialized sections (importance, process, regulation, etc).
           </div>
 
           <div class="col-lg-4">
-            {% include reusable/post/block--sidebar-post.html %}
+            {% include reusable/node--riksa-uji/block--sidebar-post.html %}
           </div>
 
         </div>

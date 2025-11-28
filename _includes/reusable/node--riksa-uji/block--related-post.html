@@ -1,0 +1,92 @@
+{% comment %}
+============================================================================
+Block: Related Posts - HEBOH EDITION!
+============================================================================
+
+@file        block--related-post.html
+@path        _includes/reusable/post/block--related-post.html
+@type        Block (reusable)
+@description Displays related posts based on categories/tags with fancy styling
+@author      arisciwek
+@created     2025-11-27
+@updated     2025-11-28
+
+Parameters:
+-----------
+- limit: Number of related posts to show (default: 3)
+
+Usage:
+------
+{% include reusable/post/block--related-post.html limit=3 %}
+
+============================================================================
+{% endcomment %}
+
+{% assign limit = include.limit | default: 3 %}
+{% assign current_categories = page.categories %}
+{% assign current_tags = page.tags %}
+
+{% comment %} Find related posts by matching categories or tags {% endcomment %}
+{% assign related_posts = "" | split: "" %}
+{% for post in site.posts %}
+  {% if post.url != page.url %}
+    {% assign match = false %}
+
+    {% comment %} Check category match {% endcomment %}
+    {% for cat in post.categories %}
+      {% if current_categories contains cat %}
+        {% assign match = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% comment %} Check tag match if no category match {% endcomment %}
+    {% unless match %}
+      {% for tag in post.tags %}
+        {% if current_tags contains tag %}
+          {% assign match = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endunless %}
+
+    {% if match %}
+      {% assign related_posts = related_posts | push: post %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign related_posts = related_posts | slice: 0, limit %}
+
+{% if related_posts.size > 0 %}
+<section id="block--related-post" class="block--related-post my-5">
+
+  <!-- H2: Main Section Header - HEBOH EDITION (Link/Connection Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient related-header">
+      <i class="bi bi-link-45deg mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">Artikel Terkait</h2>
+      <p class="mb-0 mt-2 subtitle-text">Baca juga artikel lainnya</p>
+    </div>
+  </div>
+
+  <!-- Related Posts Grid -->
+  <div class="related-posts-grid">
+    <div class="row g-4">
+      {% for post in related_posts %}
+      {% assign post_index = forloop.index %}
+      {% assign color_index = post_index | modulo: 3 %}
+      {% if color_index == 0 %}{% assign color_index = 3 %}{% endif %}
+      <div class="col-lg-4">
+        {% if post.layout == 'node--riksa-uji' %}
+          {% include reusable/block--riksa-uji.html post=post color_index=color_index %}
+        {% else %}
+          {% include reusable/block--post.html post=post color_index=color_index %}
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+{% endif %}
