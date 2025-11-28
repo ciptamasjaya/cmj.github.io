@@ -82,13 +82,12 @@ structure with specialized sections (importance, process, regulation, etc).
               {% if page.section_technical %}
                 {% include reusable/post/block--technical.html section=page.section_technical %}
               {% endif %}
-              
-              {% comment %}
-
 
               {% if page.section_conclusion %}
                 {% include reusable/post/block--conclusion.html section=page.section_conclusion %}
               {% endif %}
+
+              {% comment %}
 
               {% if page.announce %}
                 {% include reusable/post/block--announce.html section=page.announce %}

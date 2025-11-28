@@ -1,33 +1,34 @@
 {% comment %}
 ============================================================================
-Block: Conclusion (Kesimpulan)
+Block: Conclusion (Kesimpulan) - HEBOH EDITION!
 ============================================================================
 
 @file        block--conclusion.html
 @path        _includes/reusable/post/block--conclusion.html
 @type        Block (reusable)
-@description Displays conclusion section with intro, highlights, and closing
+@description Displays conclusion section with intro, highlights, closing, and CTA
 @author      arisciwek
 @created     2025-11-27
+@updated     2025-11-28
 
 Structure:
 ----------
-H2 title
+H2 title (gradient card header - celebration/finish theme)
   intro paragraph
-  bullets (bullet list)
+  highlights (key-value cards in grid)
   closing paragraph
-  cta (call to action with link)
+  cta (call to action button)
 
-Naming Convention:
-------------------
-paragraphs: []  → <p>           (paragraf)
-bullets: []     → <ul><li>      (unordered list)
-numbers: []     → <ol><li>      (ordered list)
-
-Suitable for:
-- Kesimpulan artikel
-- Ringkasan post
-- Penutup dengan CTA
+Parameters:
+-----------
+- section: Object from frontmatter with:
+  - title: Section title (H2)
+  - icon: Bootstrap icon class (optional)
+  - subtitle: Subtitle text (optional)
+  - intro: Intro paragraph (supports HTML/markdown)
+  - highlights: Array of {key, value} for summary points
+  - closing: Closing paragraph
+  - cta: Object with {text, link, label, icon}
 
 Usage:
 ------
@@ -39,59 +40,93 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section id="block--conclusion" class="block--conclusion">
+<section id="block--conclusion" class="block--conclusion my-5">
 
-  <!-- Section Header -->
-  <header class="header">
-    <h2 class="title">
-      {% if section.icon %}
-      <i class="icon {{ section.icon }}"></i>
+  <!-- H2: Main Section Header - HEBOH EDITION (Celebration Theme) -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient conclusion-header">
+      <i class="bi {{ section.icon | default: 'bi-check2-square' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      {% if section.subtitle %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-stars me-1"></i>
+        {{ section.subtitle }}
+        <i class="bi bi-stars ms-1"></i>
+      </p>
       {% endif %}
-      {{ section.title }}
-    </h2>
-  </header>
+    </div>
+  </div>
 
-  <!-- Intro -->
+  <!-- Intro after H2 -->
   {% if section.intro %}
-  <div class="intro">
-    {{ section.intro | markdownify }}
+  <div class="intro-description mb-4">
+    <div class="card border-0 shadow-sm intro-card">
+      <div class="card-body">
+        <div class="d-flex align-items-start">
+          <div class="intro-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <div class="mb-0 intro-text">{{ section.intro }}</div>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 
-  <!-- Bullets (bullet points) -->
-  {% if section.bullets and section.bullets.size > 0 %}
-  <ul class="bullets">
-    {% for bullet in section.bullets %}
-    <li class="bullet">
-      <i class="icon bi bi-check-circle-fill"></i>
-      <div class="text">
-        <strong class="key">{{ bullet.key }}</strong>:
-        <span class="value">{{ bullet.value }}</span>
+  <!-- Highlights (key-value summary points) -->
+  {% if section.highlights and section.highlights.size > 0 %}
+  <div class="conclusion-highlights mb-4">
+    <div class="row g-3">
+      {% for highlight in section.highlights %}
+      {% assign highlight_index = forloop.index %}
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm h-100 highlight-card highlight-card-{{ highlight_index }}">
+          <div class="card-body text-center py-4">
+            <div class="highlight-icon-circle highlight-icon-{{ highlight_index }} mx-auto mb-3">
+              <i class="bi bi-check-lg"></i>
+            </div>
+            <h3 class="h6 fw-bold mb-2 highlight-key">{{ highlight.key }}</h3>
+            <p class="mb-0 highlight-value">{{ highlight.value }}</p>
+          </div>
+        </div>
       </div>
-    </li>
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </div>
+  </div>
   {% endif %}
 
   <!-- Closing -->
   {% if section.closing %}
-  <div class="closing">
-    {{ section.closing | markdownify }}
+  <div class="closing-card mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body closing-body">
+        <div class="d-flex align-items-start">
+          <div class="closing-icon-circle me-3 flex-shrink-0">
+            <i class="bi bi-hand-thumbs-up-fill"></i>
+          </div>
+          <p class="mb-0 closing-text">{{ section.closing }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   {% endif %}
 
   <!-- CTA (Call to Action) -->
   {% if section.cta %}
-  <div class="cta">
-    <p class="text">{{ section.cta.text }}</p>
-    {% if section.cta.link %}
-    <a href="{{ section.cta.link }}" class="btn btn-primary">
-      {% if section.cta.icon %}
-      <i class="{{ section.cta.icon }} me-2"></i>
-      {% endif %}
-      {{ section.cta.label }}
-    </a>
-    {% endif %}
+  <div class="cta-card">
+    <div class="card border-0 shadow-lg">
+      <div class="card-body cta-body text-center py-4">
+        <p class="mb-3 cta-text">{{ section.cta.text }}</p>
+        {% if section.cta.link %}
+        <a href="{{ section.cta.link }}" class="btn btn-lg cta-button">
+          {% if section.cta.icon %}
+          <i class="{{ section.cta.icon }} me-2"></i>
+          {% endif %}
+          {{ section.cta.label }}
+        </a>
+        {% endif %}
+      </div>
+    </div>
   </div>
   {% endif %}
 
