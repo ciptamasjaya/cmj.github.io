@@ -28,22 +28,22 @@ custom_schema:
   <div class="row g-4 mb-5">
     {% if paginator.posts.size > 0 %}
       {% for post in paginator.posts %}
+      {% assign post_index = forloop.index %}
+      {% assign color_index = post_index | modulo: 3 %}
+      {% if color_index == 0 %}{% assign color_index = 3 %}{% endif %}
       <div class="col-md-6 col-lg-4">
-        <article class="card blog-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
-            </h5>
-            <p class="card-text text-muted">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</p>
-            <p class="text-muted small">
-              <i class="bi bi-calendar3 me-1"></i>{{ post.date | date: "%d %b %Y" }}
-            </p>
-            <a href="{{ post.url | relative_url }}" class="btn btn-sm btn-outline-primary">
-              Baca Selengkapnya <i class="bi bi-arrow-right ms-1"></i>
-            </a>
-          </div>
-        </article>
+        {% if post.layout == 'node--riksa-uji' %}
+          {% include reusable/block--riksa-uji.html post=post color_index=color_index %}
+        {% else %}
+          {% include reusable/block--post.html post=post color_index=color_index %}
+        {% endif %}
       </div>
+      <!-- Schema for this post -->
+      {% if post.layout == 'node--riksa-uji' %}
+        {% include schema/schema--riksa-uji.html post=post mode="list" %}
+      {% else %}
+        {% include schema/schema--post.html post=post %}
+      {% endif %}
       {% endfor %}
     {% else %}
       <div class="col-12">

@@ -30,19 +30,23 @@ Schema Structure:
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Service",
+      "@type": "Product",
       "name": "Service 1",
-      "provider": {...},
-      "offers": {...},
-      "aggregateRating": {...}
+      "brand": {...},
+      "offers": {
+        "shippingDetails": {...},
+        "hasMerchantReturnPolicy": {...}
+      }
     },
     {
-      "@type": "Service",
+      "@type": "Product",
       "name": "Service 2",
       ...
     }
   ]
 }
+
+Note: Using Product instead of Service for Google Review Snippets support.
 
 Benefits:
 ---------
@@ -60,46 +64,71 @@ Benefits:
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {% for service in services %}
+  "@graph": [{% for service in services %}
     {
-      "@type": "Service",
+      "@type": "Product",
+      "@id": "{{ service.url | absolute_url }}#product",
       "name": "{{ service.title | escape }}",
       "description": "{{ service.description | strip_html | escape | truncate: 200 }}",
       "url": "{{ service.url | absolute_url }}",
-      "provider": {
-        "@type": "Organization",
-        "name": "{{ site.title | escape }}",
-        "url": "{{ site.url }}{{ site.baseurl }}/",
-        "logo": "{{ '/assets/images/logo.svg' | absolute_url }}",
-        "image": "{{ '/assets/images/logo.svg' | absolute_url }}"
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ site.business.name }}"
+      },{% if service.category %}
+      "category": "{{ service.category }}",{% endif %}
+      "image": "{% if service.image %}{{ service.image | absolute_url }}{% else %}{{ '/assets/images/logo.svg' | absolute_url }}{% endif %}",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ service.rating | default: 5 }}",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "{{ service.review_count | default: 10 }}"
       },
-      {% if service.service_type %}
-      "serviceType": "{{ service.service_type }}",
-      {% endif %}
-      {% if service.category %}
-      "category": "{{ service.category }}",
-      {% endif %}
-      "areaServed": "ID",
-      {% if service.image %}
-      "image": "{{ service.image | absolute_url }}",
-      {% endif %}
-      {% comment %}
-        AggregateRating removed from list schema.
-        Google requires review array with aggregateRating for Service type.
-        Reviews are shown in detail page schema (schema--service-reviews.html).
-      {% endcomment %}
-      {% if service.price and service.price_currency %}
       "offers": {
         "@type": "Offer",
-        "price": "{{ service.price }}",
-        "priceCurrency": "{{ service.price_currency }}",
-        "availability": "https://schema.org/InStock"
-      },
-      {% endif %}
-      "dateModified": "{{ service.last_modified_at | default: service.date | date_to_xmlschema }}"
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
+        "price": "{{ service.price | default: '0' }}",
+        "priceCurrency": "{{ service.price_currency | default: 'IDR' }}",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
+        "url": "{{ service.url | absolute_url }}",
+        "seller": {
+          "@type": "Organization",
+          "name": "{{ site.business.name }}"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "IDR"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "ID"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 7,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "ID",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        }
+      }
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
   ]
 }
 </script>

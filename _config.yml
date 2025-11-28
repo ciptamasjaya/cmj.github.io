@@ -48,6 +48,14 @@ lang: id
 timezone: Asia/Jakarta
 keywords: "riksa uji k3, jasa riksa uji, inspeksi k3, sertifikasi k3, pesawat angkat, bejana tekan, instalasi listrik, proteksi kebakaran, elevator"
 
+# Default Images (fallback when image not provided)
+default_image: "/assets/images/posts/default/i1.svg"
+default_images:
+  - "/assets/images/posts/default/i1.svg"
+  - "/assets/images/posts/default/i2.svg"
+  - "/assets/images/posts/default/i3.svg"
+  - "/assets/images/posts/default/i4.svg"
+
 # Build Settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title/

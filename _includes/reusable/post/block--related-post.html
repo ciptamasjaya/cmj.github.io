@@ -78,41 +78,11 @@ Usage:
       {% assign color_index = post_index | modulo: 3 %}
       {% if color_index == 0 %}{% assign color_index = 3 %}{% endif %}
       <div class="col-lg-4">
-        <article class="card h-100 border-0 shadow-sm related-card related-card-{{ color_index }}">
-          {% if post.image %}
-          <div class="related-card-image">
-            <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
-            <div class="related-card-overlay related-card-overlay-{{ color_index }}"></div>
-          </div>
-          {% else %}
-          <div class="related-card-placeholder related-card-placeholder-{{ color_index }}">
-            <i class="bi bi-file-earmark-text"></i>
-          </div>
-          {% endif %}
-          <div class="card-body">
-            {% if post.categories.first %}
-            <span class="related-category-badge related-category-badge-{{ color_index }}">
-              {{ post.categories.first }}
-            </span>
-            {% endif %}
-            <h3 class="card-title h6 fw-bold mt-2 related-title">
-              <a href="{{ post.url | relative_url }}" class="text-decoration-none stretched-link">
-                {{ post.title }}
-              </a>
-            </h3>
-            <p class="card-text small related-excerpt">
-              {{ post.description | default: post.excerpt | strip_html | truncate: 80 }}
-            </p>
-          </div>
-          <div class="card-footer bg-transparent border-0 related-footer">
-            <div class="d-flex align-items-center">
-              <div class="related-date-icon related-date-icon-{{ color_index }} me-2">
-                <i class="bi bi-calendar3"></i>
-              </div>
-              <small class="related-date">{{ post.date | date: "%d %b %Y" }}</small>
-            </div>
-          </div>
-        </article>
+        {% if post.layout == 'node--riksa-uji' %}
+          {% include reusable/block--riksa-uji.html post=post color_index=color_index %}
+        {% else %}
+          {% include reusable/block--post.html post=post color_index=color_index %}
+        {% endif %}
       </div>
       {% endfor %}
     </div>

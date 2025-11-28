@@ -1,0 +1,93 @@
+{% comment %}
+============================================================================
+Schema: Blog Post Page (schema--post.html)
+============================================================================
+
+@file        schema--post.html
+@path        _includes/schema/schema--post.html
+@type        Schema (blog post - can be used in list or detail)
+@description Schema.org markup for blog post/article pages
+@author      arisciwek
+@created     2025-11-28
+
+Features:
+- WebPage schema for post detail page
+- BlogPosting schema for content
+- Author and Publisher info
+- Image support
+
+Parameters:
+-----------
+- post: Post object (optional, defaults to page)
+
+Usage in list (blog.html):
+{% include schema/schema--post.html post=post %}
+
+Usage in detail page:
+{% include schema/schema--post.html %}
+
+============================================================================
+{% endcomment %}
+
+{% assign item = include.post | default: page %}
+{% assign item_image = item.image | default: site.default_image %}
+
+<!-- WebPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "{{ item.url | absolute_url }}#webpage",
+  "url": "{{ item.url | absolute_url }}",
+  "name": "{{ item.title | escape }}",
+  "description": "{{ item.description | default: item.excerpt | strip_html | truncate: 160 | escape }}",
+  "inLanguage": "id",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#website"
+  },
+  "datePublished": "{{ item.date | default: site.time | date_to_xmlschema }}",
+  "dateModified": "{{ item.last_modified_at | default: item.date | default: site.time | date_to_xmlschema }}",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "{{ item_image | absolute_url }}",
+    "caption": "{{ item.title | escape }}"
+  }
+}
+</script>
+
+<!-- BlogPosting Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "{{ item.url | absolute_url }}#blogposting",
+  "headline": "{{ item.title | escape }}",
+  "description": "{{ item.description | default: item.excerpt | strip_html | truncate: 160 | escape }}",
+  "url": "{{ item.url | absolute_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ item.author | default: 'Editor' }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.business.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ '/assets/images/logo.svg' | absolute_url }}"
+    }
+  },
+  "datePublished": "{{ item.date | default: site.time | date_to_xmlschema }}",
+  "dateModified": "{{ item.last_modified_at | default: item.date | default: site.time | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@id": "{{ item.url | absolute_url }}#webpage"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ item_image | absolute_url }}",
+    "caption": "{{ item.title | escape }}"
+  }{% if item.categories %},
+  "articleSection": "{{ item.categories | first | escape }}"{% endif %}{% if item.tags %},
+  "keywords": "{{ item.tags | join: ', ' | escape }}"{% endif %}
+}
+</script>
