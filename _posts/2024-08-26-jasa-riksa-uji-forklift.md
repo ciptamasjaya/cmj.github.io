@@ -236,38 +236,6 @@ section_process:
               value: "Pastikan sabuk pengaman berfungsi dengan baik dan tidak ada kerusakan. Penggunaan sabuk pengaman yang baik dapat mengurangi risiko cedera saat terjadi kecelakaan."
             - key: "Periksa Area Kerja"
               value: "Pastikan area kerja di sekitar forklift aman dan bebas dari hambatan yang dapat menyebabkan kecelakaan."
-    - title: "Dokumentasi Hasil"
-      icon: "bi-file-earmark-text"
-      description: "Setelah semua langkah riksa uji selesai, penting untuk mendokumentasikan semua hasil secara detail."
-      substeps:
-        - title: "Catatan Temuan"
-          bullets:
-            - key: "Pencatatan Hasil"
-              value: "Catat semua temuan selama riksa uji, baik yang positif maupun negatif. Ini akan menjadi referensi untuk pemeliharaan di masa mendatang dan membantu dalam evaluasi kinerja forklift."
-            - key: "Rekomendasi Perbaikan"
-              value: "Jika ada masalah yang ditemukan, buat rekomendasi perbaikan yang jelas dan terperinci untuk tindakan lebih lanjut."
-        - title: "Sertifikat"
-          bullets:
-            - key: "Penerbitan Sertifikat"
-              value: "Setelah forklift lulus uji, terbitkan sertifikat yang menyatakan bahwa alat tersebut layak untuk digunakan. Sertifikat ini menjadi bukti bahwa forklift telah memenuhi standar keselamatan yang ditetapkan."
-            - key: "Masa Berlaku Sertifikat"
-              value: "Catat masa berlaku sertifikat riksa uji yang umumnya 1 tahun. Pastikan untuk memperpanjang sebelum masa berlaku habis agar forklift tetap legal dioperasikan."
-    - title: "Tindak Lanjut"
-      icon: "bi-arrow-repeat"
-      description: "Setelah proses riksa uji selesai, penting untuk melakukan tindak lanjut terhadap temuan yang ada."
-      substeps:
-        - title: "Pelaksanaan Perbaikan"
-          bullets:
-            - key: "Perbaikan yang Diperlukan"
-              value: "Segera lakukan perbaikan pada semua masalah yang ditemukan selama riksa uji. Ini akan membantu mencegah kerusakan lebih lanjut dan memastikan forklift kembali beroperasi dengan aman."
-            - key: "Pemeriksaan Ulang"
-              value: "Setelah perbaikan selesai, lakukan pemeriksaan ulang untuk memastikan bahwa semua masalah telah diatasi dan forklift berfungsi dengan baik."
-        - title: "Penjadwalan Riksa Uji Berikutnya"
-          bullets:
-            - key: "Jadwalkan Riksa Uji Berkala"
-              value: "Buat jadwal untuk riksa uji berikutnya berdasarkan hasil dari riksa uji saat ini. Ini akan membantu memastikan bahwa forklift selalu dalam kondisi yang baik dan memenuhi standar keselamatan."
-            - key: "Pengingat Otomatis"
-              value: "Atur sistem pengingat atau reminder untuk riksa uji berikutnya agar tidak terlewat. Keterlambatan riksa uji dapat mengakibatkan sanksi dan risiko kecelakaan."
   summary: "Proses riksa uji forklift merupakan langkah krusial untuk memastikan keselamatan dan efisiensi operasional dalam penggunaan alat berat ini. Dari persiapan hingga dokumentasi hasil, setiap tahap dalam proses ini bertujuan untuk menjaga keselamatan pekerja dan integritas alat. Dengan melakukan riksa uji yang rutin dan sistematis, perusahaan dapat mengurangi risiko kecelakaan, meningkatkan produktivitas, dan mematuhi regulasi keselamatan yang berlaku."
 
 # Section 3: Sanksi Hukum dan Regulasi

@@ -172,9 +172,8 @@ $importance-colors: (
   1: (#198754, #20c997),  // green
   2: (#0d6efd, #6610f2),  // blue
   3: (#fd7e14, #ffc107),  // orange
-  4: (#dc3545, #e91e63),  // red
-  5: (#6f42c1, #9b59b6),  // purple
-  6: (#20c997, #0dcaf0)   // teal
+  4: (#6f42c1, #9b59b6),  // purple
+  5: (#20c997, #0dcaf0)   // teal
 );
 
 // Function to get color with cycling fallback
@@ -337,7 +336,7 @@ $process-colors: (
   1: (#d97706, #f59e0b),  // amber/orange
   2: (#0d6efd, #6610f2),  // blue
   3: (#198754, #20c997),  // green
-  4: (#dc3545, #e91e63),  // red
+  4: (#0891b2, #0891b2),  // red
   5: (#6f42c1, #9b59b6),  // purple
   6: (#0891b2, #06b6d4)   // cyan
 );
@@ -623,7 +622,7 @@ $process-colors: (
 $regulation-colors: (
   1: (#0d6efd, #6610f2),  // blue (kepatuhan)
   2: (#198754, #20c997),  // green (dasar hukum)
-  3: (#dc3545, #e91e63)   // red (sanksi)
+  3: (#0891b2, #0891b2)   // red (sanksi)
 );
 
 .block--regulation {
