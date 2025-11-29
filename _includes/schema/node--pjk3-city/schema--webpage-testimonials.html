@@ -31,12 +31,12 @@ Usage:
 {% assign testimonials_text = "" %}
 {% if section.testimoni_industri %}
   {% for testi in section.testimoni_industri %}
-    {% assign testimonials_text = testimonials_text | append: testi.nama | append: " (" | append: testi.perusahaan | append: "): " | append: testi.komentar | append: " " %}
+    {% assign testimonials_text = testimonials_text | append: testi.nama | append: " (" | append: testi.jenis_usaha | append: "): " | append: testi.komentar | append: " " %}
   {% endfor %}
 {% endif %}
 {% if section.testimoni_komersial %}
   {% for testi in section.testimoni_komersial %}
-    {% assign testimonials_text = testimonials_text | append: testi.nama | append: " (" | append: testi.perusahaan | append: "): " | append: testi.komentar | append: " " %}
+    {% assign testimonials_text = testimonials_text | append: testi.nama | append: " (" | append: testi.jenis_usaha | append: "): " | append: testi.komentar | append: " " %}
   {% endfor %}
 {% endif %}
 

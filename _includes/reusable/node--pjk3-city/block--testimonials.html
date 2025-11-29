@@ -22,7 +22,7 @@ Parameters:
   - intro: Introduction paragraph
   - testimoni_industri: Array of industrial client testimonials
     - nama: Customer name
-    - perusahaan: Company name
+    - jenis_usaha: Business type (e.g., "Perusahaan Logistik", "Mall di Bekasi")
     - jabatan: Position/title
     - rating: Star rating (1-5)
     - judul: Review title
@@ -91,7 +91,7 @@ Usage:
                 <div class="flex-grow-1">
                   <h4 class="h6 mb-1 fw-bold text-dark testi__nama">{{ testi.nama }}</h4>
                   <small class="text-muted d-block testi__jabatan">{{ testi.jabatan }}</small>
-                  <small class="text-primary fw-semibold testi__perusahaan">{{ testi.perusahaan }}</small>
+                  <small class="text-primary fw-semibold testi__jenis-usaha">{{ testi.jenis_usaha }}</small>
                   <div class="text-warning mt-1 testi__rating">
                     {% assign rating = testi.rating | default: 5 %}
                     {% for i in (1..rating) %}
@@ -144,7 +144,7 @@ Usage:
                 <div class="flex-grow-1">
                   <h4 class="h6 mb-1 fw-bold text-dark testi__nama">{{ testi.nama }}</h4>
                   <small class="text-muted d-block testi__jabatan">{{ testi.jabatan }}</small>
-                  <small class="text-success fw-semibold testi__perusahaan">{{ testi.perusahaan }}</small>
+                  <small class="text-success fw-semibold testi__jenis-usaha">{{ testi.jenis_usaha }}</small>
                   <div class="text-warning mt-1 testi__rating">
                     {% assign rating = testi.rating | default: 5 %}
                     {% for i in (1..rating) %}
