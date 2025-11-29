@@ -1,5 +1,110 @@
 # Changelog
 
+## v1.0.4 - PJK3 City Pages & Code Quality (2025-11-29)
+
+Complete PJK3 city page system with 14 WebPageElement schemas, inline style extraction, and JS modularization. **66 commits** since v1.0.3.
+
+### 🎯 Major Features
+
+#### 🏙️ PJK3 City Content Type
+New content type for city-specific PJK3 service pages:
+- **node--pjk3-city template**: Complete page layout with 17 block sections
+- **page--pjk3-city layout**: Wrapper with all schema includes
+- **12 city-specific blocks**: hero, about-city, services, tips, risks, roles, business, coverage, testimonials, FAQ, video, order process
+- **Media fallbacks**: Default images (i1-i4.svg) and video when not provided
+
+#### 📊 Article Schema Enhancement
+Extended Article schema with comprehensive hasPart references:
+- **14 WebPageElement schemas**: Each section referenced in Article hasPart
+- **Schema files renamed**: `schema--webpage-*` prefix for clarity
+- **Proper @id linking**: Article references WebPageElement by @id only
+- **Google Rich Results**: All sections properly indexed
+
+#### 🎨 Code Quality - Inline Style Extraction
+Moved all 48 inline styles to external SCSS:
+- **block--pjk3-city.scss**: New 326-line SCSS file
+- **High specificity selectors**: No `!important` needed
+- **Conditional CSS loading**: Only loaded for PJK3 city layouts
+- **12 block files cleaned**: Zero inline `style=` attributes
+
+#### 📦 JS Modularization
+Extracted inline scripts and added frontmatter support:
+- **gallery-modal.js**: Lightbox functionality extracted
+- **extra_js mechanism**: Like extra_css in head.html
+- **layout_extra_js**: Support for layout-specific JS
+- **Zero inline `<script>` tags**: All JS in external files
+
+### 📝 Detailed Changes
+
+#### PJK3 City System (20 commits)
+```
+be0ca09 - Rename node--article to node--pjk3-city for city-specific content
+19dab81 - Add complete node--article blocks with media fallbacks
+6ac8ea0 - Rename reusable/post folder to reusable/node--riksa-uji
+5929392 - Add article content type with templates and schema
+d64aac6 - Update block--articles-related-service to use reusable blocks
+b63365a - Add reusable blocks and schemas for posts and services
+```
+
+#### Schema Enhancement (15 commits)
+```
+26b3ff2 - Add 14 WebPageElement schemas for Article hasPart references
+6f6961a - Add schemas for blocks and extend LocalBusiness areaServed
+b650c92 - Change company-intro schema from FAQPage to WebPageElement
+c934114 - Add schema documentation and block-- prefix to section IDs
+380bb89 - Add schemas for business-potential and company-intro blocks
+90f32e1 - Simplify about-city structure and add area keywords to schema
+2bcf5a2 - Embed reviews in LocalBusiness to fix duplicate schema error
+7c4df5a - Migrate schemas to reusable folder with parameter-based approach
+d1c6b1f - Fix schema--howto.html to use initial_steps/final_steps structure
+db12258 - Add complete schemas for node--pjk3-city blocks
+```
+
+#### Post/Riksa Uji Blocks (15 commits)
+```
+84214cf - Add riksa uji boiler post and template files
+a0ddd95 - Add reviews data and upgrade block--reviews
+95e7a77 - Upgrade block--related-post
+fe47a01 - Upgrade block--faq-post with question theme
+863732f - Upgrade block--video-post to HEBOH edition with cinema theme
+0f24100 - Add block--conclusion with celebration theme
+ccec962 - Upgrade block--certification and merge section_technical
+8b5a919 - Add block--certification
+14bd23f - Add block--permit with GovernmentPermit schema
+35596c5 - Add block--specs with DataCatalog schema
+9288929 - Add block--training with Course schema
+1dfe52f - Add block--regulation HEBOH EDITION with ItemList schema
+fd4fb8a - Add block--process fancy style with HowTo schema
+```
+
+#### Code Quality (10 commits)
+```
+b62896b - Add extra_js mechanism and extract inline script to separate file
+f0866dd - Move gallery hover styles from inline <style> to SCSS
+9e28b7f - Extract inline styles to block--pjk3-city.scss
+8c8b94c - Create check-schema.sh
+84c5615 - Refactor SCSS: use @each loops, remove !important, add more color variants
+b50400b - Add block-- prefix to all section IDs in node--pjk3-city blocks
+```
+
+### 📊 Impact
+- **66 commits** since v1.0.3
+- **14 WebPageElement schemas** for Article hasPart
+- **12 city blocks** with zero inline styles
+- **48 inline styles** extracted to SCSS
+- **1 new JS file** (gallery-modal.js)
+- **check-schema.sh** verification script
+- **Build**: 126 files (12M)
+
+### 🔧 Technical Improvements
+- High specificity CSS selectors (no `!important`)
+- Conditional asset loading (CSS/JS per layout)
+- Schema verification script for debugging
+- Consistent `block--` prefix for section IDs
+- Proper frontmatter support for extra_js
+
+---
+
 ## v1.0.3 - Service Schema & Certification Enhancement (2025-11-26)
 
 Comprehensive Schema.org implementation for service pages, PJK3 certification system, and enhanced geographic coverage with 53 commits.
