@@ -1,0 +1,176 @@
+{% comment %}
+============================================================================
+Block: About City - Article Section
+============================================================================
+
+@file        block--about-city.html
+@path        _includes/reusable/node--article/block--about-city.html
+@type        Block (reusable)
+@description City information section with history and modern life for SEO word count
+@author      arisciwek
+@created     2025-11-29
+
+Adopted from: block--tentang-kota-kami.html
+
+Features:
+---------
+- H2 heading for SEO with dynamic city and tagline
+- City overview with statistics
+- 2 main categories (Informasi Kota, Lebih Lanjut)
+- 2 cards per category (4 cards total)
+- Flexible array structure for facts/landmarks
+- Good for SEO word count
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - tagline: City tagline (e.g., "Kota Industri")
+  - deskripsi_singkat: Brief description text
+  - overview: City overview with statistics
+  - about_1: Array of 2 cards (any topic - history, economy, culture, etc.)
+    Each with: judul, icon, subjudul, deskripsi, fakta (array)
+  - about_2: Array of 2 cards (any topic - landmarks, business, tourism, etc.)
+    Each with: judul, icon, subjudul, deskripsi, list_item (array)
+
+Usage:
+------
+{% include reusable/node--article/block--about-city.html section=page.section_about_city %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+
+{% if section %}
+<section class="article-section about-city-section py-5" id="about-city">
+  <div class="container">
+
+    <!-- Header Section -->
+    <div class="mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);">
+          <i class="bi bi-buildings-fill mb-2 fs-1"></i>
+          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Tentang" }}{% if area %} {{ area }}{% endif %}{% if section.tagline %}: {{ section.tagline }}{% endif %}</h2>
+          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+            <i class="bi bi-geo-alt me-1"></i>
+            {{ section.deskripsi_singkat | default: "Informasi lengkap tentang kota ini" }}
+            <i class="bi bi-geo-alt ms-1"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% if section.overview %}
+    <!-- Overview -->
+    <div class="card border-0 shadow-sm mb-5">
+      <div class="card-body">
+        <p class="mb-0">{{ section.overview }}</p>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if section.about_1 %}
+    <!-- Section 1: Informasi Kota -->
+    <div class="mb-5">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 text-primary fw-bold">
+            <i class="bi bi-info-circle text-primary me-2"></i>{{ section.judul_1 | default: "Informasi" }}{% if area %} {{ area }}{% endif %}
+          </h3>
+          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_1 | default: "Mengenal lebih dekat tentang kota ini" }}</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        {% for item in section.about_1 %}
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-primary text-white">
+              <div class="d-flex align-items-center">
+                <i class="bi {{ item.icon | default: 'bi-info-circle' }} me-2 fs-4"></i>
+                <h4 class="h5 mb-0 fw-bold">{{ item.judul }}</h4>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="h6 fw-bold text-dark mb-2">
+                <i class="bi {{ item.icon_subjudul | default: 'bi-book' }} me-1 text-primary"></i>{{ item.subjudul }}
+              </h5>
+
+              {% if item.deskripsi %}
+              <p class="small mb-3">{{ item.deskripsi }}</p>
+              {% endif %}
+
+              {% if item.fakta %}
+                {% for fakta in item.fakta %}
+                <p class="small {% if forloop.last %}mb-0 text-muted{% else %}mb-3{% endif %}">
+                  <i class="bi bi-info-circle me-1 text-primary"></i>{{ fakta }}
+                </p>
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if section.about_2 %}
+    <!-- Section 2: Lebih Lanjut -->
+    <div class="mb-4">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-success bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 text-success fw-bold">
+            <i class="bi bi-building text-success me-2"></i>{{ section.judul_2 | default: "Lebih Lanjut tentang" }}{% if area %} {{ area }}{% endif %}
+          </h3>
+          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_2 | default: "Hal menarik lainnya yang perlu Anda ketahui" }}</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        {% for item in section.about_2 %}
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-success text-white">
+              <div class="d-flex align-items-center">
+                <i class="bi {{ item.icon | default: 'bi-building' }} me-2 fs-4"></i>
+                <h4 class="h5 mb-0 fw-bold">{{ item.judul }}</h4>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="h6 fw-bold text-dark mb-2">
+                <i class="bi {{ item.icon_subjudul | default: 'bi-pin-map' }} me-1 text-success"></i>{{ item.subjudul }}
+              </h5>
+
+              {% if item.deskripsi %}
+              <p class="small mb-3">{{ item.deskripsi }}</p>
+              {% endif %}
+
+              {% if item.list_item %}
+              <ul class="list-unstyled small {% if item.info_tambahan %}mb-3{% else %}mb-0{% endif %}">
+                {% for list in item.list_item %}
+                <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>{{ list }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if item.info_tambahan %}
+              <p class="small mb-0 text-muted">
+                <i class="bi bi-info-circle me-1"></i>{{ item.info_tambahan }}
+              </p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

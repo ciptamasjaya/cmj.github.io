@@ -1,0 +1,289 @@
+{% comment %}
+============================================================================
+Block: Service Coverage Area - Article Section
+============================================================================
+
+@file        block--service-coverage.html
+@path        _includes/reusable/node--article/block--service-coverage.html
+@type        Block (reusable)
+@description Displays service coverage area with categorized districts for PJK3
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - section showing service coverage area
+with districts, industrial zones, and strategic locations.
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - area: Service area (city/region)
+  - intro: Introduction paragraph
+  - zona_industri: Array of industrial zone objects
+    - nama: Zone name
+    - kawasan: Array of industrial areas/companies
+    - warna: Bootstrap color class
+  - wilayah_kota: Array of city district objects
+    - nama: District name
+    - kelurahan: Array of sub-districts
+    - warna: Bootstrap color class
+  - wilayah_pinggiran: Array of suburban district objects
+    - nama: District name
+    - kelurahan: Array of sub-districts
+    - warna: Bootstrap color class
+  - kecamatan_lainnya: Array of other district names
+  - landmark_industri: Array of industrial landmark objects
+    - nama: Landmark name
+    - icon: Bootstrap icon class
+    - warna: Bootstrap color class
+  - landmark_komersial: Array of commercial landmark objects
+    - nama: Landmark name
+    - icon: Bootstrap icon class
+    - warna: Bootstrap color class
+
+Usage:
+------
+{% include reusable/node--article/block--service-coverage.html section=page.section_coverage %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+
+{% if section %}
+<section class="article-section service-coverage-section py-5" id="service-coverage">
+  <div class="container">
+
+    <!-- Header Section -->
+    <div class="mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);">
+          <i class="bi bi-geo-alt-fill fs-1 mb-2"></i>
+          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Area Pelayanan Riksa Uji" }}{% if area %} {{ area }}{% endif %}</h2>
+          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+            <i class="bi bi-shield-check me-1"></i>
+            Layanan inspeksi K3 ke seluruh wilayah{% if area %} {{ area }} dan sekitarnya{% endif %}
+            <i class="bi bi-shield-check ms-1"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro: Jangkauan Pelayanan -->
+    <div class="mb-4">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 text-primary fw-bold">
+            <i class="bi bi-building text-primary me-2"></i>{{ section.judul_jangkauan | default: "Jangkauan Pelayanan Lengkap" }}
+          </h3>
+          <p class="small text-muted mb-0 mt-1">{{ section.intro | default: "Kami melayani inspeksi dan riksa uji K3 ke seluruh wilayah untuk kebutuhan industri, komersial, dan fasilitas publik Anda." }}</p>
+        </div>
+      </div>
+    </div>
+
+    {% if section.zona_industri %}
+    <!-- Zona Industri -->
+    <div class="card border-0 shadow-sm">
+      <div class="card-body bg-light py-3">
+        <h4 class="h5 text-primary mb-2 fw-bold">
+          <i class="bi bi-buildings me-2"></i>{{ section.judul_industri | default: "Kawasan Industri" }}
+        </h4>
+        <p class="small text-muted mb-0">{{ section.deskripsi_industri | default: "Kawasan industri utama dengan kebutuhan inspeksi K3 tinggi untuk berbagai peralatan dan instalasi." }}</p>
+      </div>
+    </div>
+
+    <div class="row g-3 my-4">
+      {% for zona in section.zona_industri %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-{{ zona.warna | default: 'primary' }} text-white">
+            <h5 class="h6 mb-0">
+              <i class="bi bi-building me-2"></i>{{ zona.nama }}
+            </h5>
+          </div>
+          <div class="card-body">
+            {% if zona.kawasan %}
+            <ul class="list-unstyled small mb-0">
+              {% for kws in zona.kawasan %}
+              <li class="{% if forloop.last %}mb-0{% else %}mb-1{% endif %}">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>{{ kws }}
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if section.wilayah_kota %}
+    <!-- Wilayah Kota -->
+    <div class="card border-0 shadow-sm my-4">
+      <div class="card-body bg-light py-3">
+        <h4 class="h5 text-primary mb-2 fw-bold">
+          <i class="bi bi-geo-fill me-2"></i>{{ section.judul_kota | default: "Wilayah Kota" }}
+        </h4>
+        <p class="small text-muted mb-0">{{ section.deskripsi_kota | default: "Kecamatan dan kelurahan di pusat kota dengan akses mudah untuk inspeksi cepat." }}</p>
+      </div>
+    </div>
+
+    <div class="row g-3 my-4">
+      {% for wilayah in section.wilayah_kota %}
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-{{ wilayah.warna | default: 'success' }} text-white">
+            <h5 class="h6 mb-0">
+              <i class="bi bi-pin-map-fill me-2"></i>{{ wilayah.nama }}
+            </h5>
+          </div>
+          <div class="card-body">
+            {% if wilayah.kelurahan %}
+            <ul class="list-unstyled small mb-0">
+              {% for kel in wilayah.kelurahan %}
+              <li class="{% if forloop.last %}mb-0{% else %}mb-1{% endif %}">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>{{ kel }}
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if section.wilayah_pinggiran %}
+    <!-- Wilayah Pinggiran & Pengembangan -->
+    <div class="card border-0 shadow-sm my-4">
+      <div class="card-body bg-light py-3">
+        <h4 class="h5 text-primary mb-2 fw-bold">
+          <i class="bi bi-map-fill me-2"></i>{{ section.judul_pinggiran | default: "Wilayah Pinggiran & Pengembangan" }}
+        </h4>
+        <p class="small text-muted mb-0">{{ section.deskripsi_pinggiran | default: "Area pengembangan dengan pertumbuhan industri dan perumahan yang pesat." }}</p>
+      </div>
+    </div>
+
+    <div class="row g-3 my-4">
+      {% for wilayah in section.wilayah_pinggiran %}
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-{{ wilayah.warna | default: 'info' }} text-white">
+            <h5 class="h6 mb-0">
+              <i class="bi bi-pin-map-fill me-2"></i>{{ wilayah.nama }}
+            </h5>
+          </div>
+          <div class="card-body">
+            {% if wilayah.kelurahan %}
+            <ul class="list-unstyled small mb-0">
+              {% for kel in wilayah.kelurahan %}
+              <li class="{% if forloop.last %}mb-0{% else %}mb-1{% endif %}">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>{{ kel }}
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% if section.kecamatan_lainnya %}
+      <div class="col-12">
+        <div class="card border-0 shadow-sm">
+          <div class="card-header bg-secondary text-white">
+            <h5 class="h6 mb-0">
+              <i class="bi bi-pin-map-fill me-2"></i>{{ section.judul_lainnya | default: "Kecamatan Lainnya" }}
+            </h5>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              {% assign half = section.kecamatan_lainnya.size | divided_by: 2 %}
+              <div class="col-md-6">
+                <ul class="list-unstyled small mb-0">
+                  {% for kec in section.kecamatan_lainnya limit:half %}
+                  <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ kec }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled small mb-0">
+                  {% for kec in section.kecamatan_lainnya offset:half %}
+                  <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>{{ kec }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if section.landmark_industri or section.landmark_komersial %}
+    <!-- Landmark & Lokasi Strategis -->
+    <div class="my-4">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-warning bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 text-primary fw-bold">
+            <i class="bi bi-star-fill text-warning me-2"></i>{{ section.judul_landmark | default: "Landmark & Lokasi Strategis" }}
+          </h3>
+          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_landmark | default: "Kami juga melayani area landmark dan lokasi strategis untuk kebutuhan inspeksi fasilitas industri dan komersial." }}</p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        {% if section.landmark_industri %}
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body bg-light py-3">
+              <h4 class="h5 text-primary mb-2 fw-bold">
+                <i class="bi bi-building-fill me-2"></i>{{ section.judul_landmark_industri | default: "Kawasan Industri & Pelabuhan" }}
+              </h4>
+              <p class="small text-muted mb-3">{{ section.deskripsi_landmark_industri | default: "Kawasan industri strategis dan fasilitas logistik." }}</p>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled small mb-0">
+                {% for landmark in section.landmark_industri %}
+                <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
+                  <i class="bi {{ landmark.icon | default: 'bi-building' }} text-{{ landmark.warna | default: 'primary' }} me-2"></i><strong>{{ landmark.nama }}</strong>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        {% if section.landmark_komersial %}
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body bg-light py-3">
+              <h4 class="h5 text-primary mb-2 fw-bold">
+                <i class="bi bi-shop-window me-2"></i>{{ section.judul_landmark_komersial | default: "Pusat Perbelanjaan & Komersial" }}
+              </h4>
+              <p class="small text-muted mb-3">{{ section.deskripsi_landmark_komersial | default: "Mall, gedung perkantoran, dan pusat bisnis strategis." }}</p>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled small mb-0">
+                {% for landmark in section.landmark_komersial %}
+                <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
+                  <i class="bi {{ landmark.icon | default: 'bi-shop' }} text-{{ landmark.warna | default: 'info' }} me-2"></i><strong>{{ landmark.nama }}</strong>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

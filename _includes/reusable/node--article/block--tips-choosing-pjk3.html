@@ -1,0 +1,147 @@
+{% comment %}
+============================================================================
+Block: Tips Memilih PJK3 - Article Section
+============================================================================
+
+@file        block--tips-choosing-pjk3.html
+@path        _includes/reusable/node--article/block--tips-choosing-pjk3.html
+@type        Block (reusable)
+@description Displays tips for choosing the right PJK3 service provider
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - section showing tips and criteria
+for selecting a reliable PJK3 service provider.
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - area: Service area (city/region)
+  - intro: Introduction paragraph
+  - tips: Array of tip categories
+    - kategori: Category name
+    - deskripsi: Category description
+    - kriteria: Array of criteria/advantages
+    - warna: Bootstrap color class
+    - icon: Bootstrap icon class
+
+Usage:
+------
+{% include reusable/node--article/block--tips-choosing-pjk3.html section=page.section_tips %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+
+{% if section %}
+<section class="article-section tips-choosing-section py-5" id="tips-choosing-pjk3">
+  <div class="container">
+
+    <!-- Header Section -->
+    <div class="mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);">
+          <i class="bi bi-lightbulb-fill fs-1 mb-2"></i>
+          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Tips Memilih PJK3" }}{% if area %} di {{ area }}{% endif %}</h2>
+          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+            <i class="bi bi-check-circle me-1"></i>
+            Pilih partner inspeksi K3 yang tepat untuk keselamatan bisnis Anda
+            <i class="bi bi-check-circle ms-1"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% if section.tips %}
+    <!-- Panduan Pemilihan PJK3 -->
+    <div class="mb-4">
+      <div class="d-flex align-items-center mb-3">
+        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h4 mb-0 text-primary fw-bold">
+            <i class="bi bi-diagram-3 text-primary me-2"></i>{{ section.judul_panduan | default: "Kriteria Memilih PJK3 Terpercaya" }}
+          </h3>
+          <p class="small text-muted mb-0 mt-1">{{ section.intro | default: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut untuk hasil inspeksi yang optimal" }}</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        {% for tip in section.tips %}
+        <div class="col-md-6 col-lg-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-{{ tip.warna | default: 'primary' }} text-white">
+              <div class="d-flex align-items-center">
+                <i class="bi {{ tip.icon | default: 'bi-check-circle' }} me-2 fs-4"></i>
+                <h4 class="h6 mb-0 fw-bold">{{ tip.kategori }}</h4>
+              </div>
+              <small style="opacity: 0.85;">{{ tip.deskripsi }}</small>
+            </div>
+            <div class="card-body">
+              <!-- Kriteria -->
+              <h5 class="h6 fw-bold text-dark mb-3">
+                <i class="bi bi-star me-1 text-{{ tip.warna | default: 'primary' }}"></i>Yang Perlu Diperhatikan
+              </h5>
+              <ul class="list-unstyled small mb-0">
+                {% for item in tip.kriteria %}
+                <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
+                  <i class="bi bi-check-circle-fill text-{{ tip.warna | default: 'primary' }} me-2"></i>{{ item }}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Why Choose CMJ -->
+    <div class="card border-0 shadow-lg my-5" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+      <div class="card-body py-4">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h4 class="h5 fw-bold text-success mb-3">
+              <i class="bi bi-award me-2"></i>Mengapa PT. Cipta Mas Jaya?
+            </h4>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled small mb-0">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Izin resmi dari Kemenaker</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Tenaga ahli bersertifikat</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Pengalaman lebih dari 10 tahun</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled small mb-0">
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Harga kompetitif & transparan</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Laporan detail & tepat waktu</li>
+                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Layanan seluruh {% if area %}{{ area }}{% else %}Indonesia{% endif %}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center mt-4 mt-lg-0">
+            <i class="bi bi-shield-check text-success" style="font-size: 4rem; opacity: 0.3;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consultation CTA -->
+    <div class="card border-0 shadow-sm">
+      <div class="card-body text-center py-4" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);">
+        <i class="bi bi-headset text-primary mb-3 fs-1"></i>
+        <h5 class="fw-bold text-primary mb-2">Butuh Konsultasi?</h5>
+        <p class="text-muted mb-3">Tim kami siap membantu Anda memilih layanan riksa uji yang tepat untuk kebutuhan bisnis Anda!</p>
+        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20butuh%20konsultasi%20memilih%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-primary px-4" target="_blank">
+          <i class="bi bi-whatsapp me-2"></i>Konsultasi Gratis
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,60 @@
+{% comment %}
+============================================================================
+Block: Conclusion - Article Section
+============================================================================
+
+@file        block--conclusion.html
+@path        _includes/reusable/node--article/block--conclusion.html
+@type        Block (reusable)
+@description Displays conclusion section for article pages
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - conclusion section with summary
+and call-to-action.
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title (optional, default: "Kesimpulan")
+  - paragraphs: Array of paragraph strings
+
+Usage:
+------
+{% include reusable/node--article/block--conclusion.html section=page.section_conclusion %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section conclusion-section py-5" id="conclusion">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+
+        <!-- Section Header -->
+        <div class="section-header mb-4">
+          <h2 class="section-title h3 fw-bold text-primary">
+            <i class="bi bi-check-circle me-2"></i>
+            {{ section.title | default: "Kesimpulan" }}
+          </h2>
+        </div>
+
+        <!-- Conclusion Content -->
+        <div class="conclusion-content bg-light rounded p-4">
+          {% if section.paragraphs %}
+            {% for paragraph in section.paragraphs %}
+            <p class="{% if forloop.last %}mb-0{% endif %}">{{ paragraph }}</p>
+            {% endfor %}
+          {% elsif section.content %}
+            {{ section.content | markdownify }}
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -54,6 +54,21 @@ Schema includes:
   <!-- Article Schema (Main - Always Active) -->
   {% include schema/schema--article.html %}
 
+  <!-- LocalBusiness Schema for Area-based Articles -->
+  {% if page.area_served %}
+    {% include schema/node--article/schema--local-business.html %}
+  {% endif %}
+
+  <!-- Service Offer Schema -->
+  {% if page.section_services.services %}
+    {% include schema/node--article/schema--service-offer.html services=page.section_services.services %}
+  {% endif %}
+
+  <!-- FAQ Schema -->
+  {% if page.faq %}
+    {% include schema/node--article/schema--faq.html faq=page.faq %}
+  {% endif %}
+
   <!-- Breadcrumb Schema -->
   {% include schema/schema--breadcrumb.html current_title=page.title %}
 

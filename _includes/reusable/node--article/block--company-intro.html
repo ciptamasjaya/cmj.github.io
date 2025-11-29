@@ -1,0 +1,95 @@
+{% comment %}
+============================================================================
+Block: Company Introduction - Article Section
+============================================================================
+
+@file        block--company-intro.html
+@path        _includes/reusable/node--article/block--company-intro.html
+@type        Block (reusable)
+@description Displays company introduction section with PJK3 explanation
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - first section introducing company
+and its role as PJK3 in specific area.
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - company_name: Company name
+  - area: Service area (city/region)
+  - intro: Introduction paragraph
+  - subsections: Array of subsection objects
+    - title: Subsection title
+    - paragraphs: Array of paragraph strings
+
+Usage:
+------
+{% include reusable/node--article/block--company-intro.html section=page.section_company_intro %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section company-intro-section py-5" id="company-intro">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header mb-4">
+      <h2 class="section-title h3 fw-bold text-primary">
+        <i class="bi bi-building me-2"></i>
+        {{ section.title | default: "Tentang Perusahaan" }}
+      </h2>
+      {% if section.intro %}
+      <p class="lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Company Highlight Card -->
+    {% if section.company_name and section.area %}
+    <div class="company-highlight bg-light rounded p-4 mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h3 class="h5 fw-bold mb-2">{{ section.company_name }}</h3>
+          <p class="mb-0 text-muted">
+            <i class="bi bi-geo-alt me-1"></i>
+            PJK3 Riksa Uji melayani wilayah <strong>{{ section.area }}</strong>
+          </p>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <a href="{{ site.business.whatsapp_url }}" class="btn btn-success" target="_blank">
+            <i class="bi bi-whatsapp me-1"></i> Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Subsections -->
+    {% if section.subsections %}
+    <div class="subsections">
+      {% for subsection in section.subsections %}
+      <div class="subsection-item mb-4">
+        <h3 class="subsection-title h5 fw-semibold text-dark mb-3">
+          {{ subsection.title }}
+        </h3>
+        <div class="subsection-content">
+          {% if subsection.paragraphs %}
+            {% for paragraph in subsection.paragraphs %}
+            <p>{{ paragraph }}</p>
+            {% endfor %}
+          {% elsif subsection.content %}
+            {{ subsection.content | markdownify }}
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

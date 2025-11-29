@@ -1,0 +1,146 @@
+{% comment %}
+============================================================================
+Block: Image Gallery - Article Section
+============================================================================
+
+@file        block--gallery.html
+@path        _includes/reusable/node--article/block--gallery.html
+@type        Block (reusable)
+@description Image gallery/slider for article pages with fallback to default images
+@author      arisciwek
+@created     2025-11-29
+
+Features:
+---------
+- Displays image gallery from page.images array
+- Fallback to default images (i1.svg - i4.svg) if not provided or empty
+- Bootstrap carousel/slider style
+- Responsive grid layout
+- Lightbox-ready structure
+
+Parameters:
+-----------
+- section: Section data object from front matter (optional)
+  - title: Gallery title
+  - description: Gallery description
+- Uses page.images directly for image array
+
+Image Logic:
+------------
+- If page.images exists and has valid (non-empty) entries, use those
+- If page.images is empty/missing, use default: i1.svg, i2.svg, i3.svg, i4.svg
+
+Usage:
+------
+{% include reusable/node--article/block--gallery.html section=page.section_gallery %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+
+{% comment %} Build images array with fallback logic {% endcomment %}
+{% assign default_images = "/assets/images/posts/default/i1.svg,/assets/images/posts/default/i2.svg,/assets/images/posts/default/i3.svg,/assets/images/posts/default/i4.svg" | split: "," %}
+{% assign gallery_images = "" | split: "," %}
+{% assign has_valid_images = false %}
+
+{% if page.images and page.images.size > 0 %}
+  {% for img in page.images %}
+    {% if img and img != '' %}
+      {% assign has_valid_images = true %}
+      {% assign gallery_images = gallery_images | push: img %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% unless has_valid_images %}
+  {% assign gallery_images = default_images %}
+{% endunless %}
+
+<section class="article-section gallery-section py-5 bg-light" id="gallery">
+  <div class="container">
+
+    <!-- Header Section -->
+    <div class="mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);">
+          <i class="bi bi-images fs-1 mb-2"></i>
+          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Galeri" }}{% if area %} {{ area }}{% endif %}</h2>
+          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+            <i class="bi bi-camera me-1"></i>
+            {{ section.description | default: "Dokumentasi layanan dan kegiatan kami" }}
+            <i class="bi bi-camera ms-1"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="row g-4">
+      {% for img in gallery_images %}
+      <div class="col-6 col-md-3">
+        <div class="card border-0 shadow-sm h-100 overflow-hidden">
+          <a href="{{ img | relative_url }}" class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="{{ img | relative_url }}">
+            <img src="{{ img | relative_url }}"
+                 alt="{{ page.title }} - Gambar {{ forloop.index }}"
+                 class="card-img-top img-fluid"
+                 style="height: 180px; object-fit: cover; transition: transform 0.3s ease;">
+            <div class="card-img-overlay d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3); opacity: 0; transition: opacity 0.3s ease;">
+              <i class="bi bi-zoom-in text-white fs-2"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if section.caption %}
+    <!-- Caption -->
+    <div class="text-center mt-4">
+      <p class="text-muted small mb-0">
+        <i class="bi bi-info-circle me-1"></i>{{ section.caption }}
+      </p>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<!-- Gallery Modal (Lightbox) -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center p-0">
+        <img src="" alt="Gallery Image" class="img-fluid rounded shadow-lg" id="galleryModalImage">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item:hover .card-img-overlay {
+  opacity: 1 !important;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const modalImage = document.getElementById('galleryModalImage');
+
+  galleryItems.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const imgSrc = this.getAttribute('data-img');
+      modalImage.setAttribute('src', imgSrc);
+    });
+  });
+});
+</script>

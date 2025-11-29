@@ -9,10 +9,12 @@
   <meta name="author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.business.name }}{% endif %}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-  {% comment %} OG Image Logic: image > default i1.svg {% endcomment %}
+  {% comment %} OG Image Logic: image > images[0] > default i1.svg {% endcomment %}
   {% assign og_image = '/assets/images/posts/default/i1.svg' %}
   {% if page.image and page.image != '' %}
     {% assign og_image = page.image %}
+  {% elsif page.images and page.images[0] and page.images[0] != '' %}
+    {% assign og_image = page.images[0] %}
   {% endif %}
 
   <!-- Open Graph / Facebook -->

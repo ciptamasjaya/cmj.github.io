@@ -1,0 +1,110 @@
+{% comment %}
+============================================================================
+Block: City Profile - Article Section
+============================================================================
+
+@file        block--city-profile.html
+@path        _includes/reusable/node--article/block--city-profile.html
+@type        Block (reusable)
+@description Displays city/region profile and overview
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - section providing overview
+of the city/region where services are offered.
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - city_name: Name of the city
+  - intro: Introduction paragraph
+  - highlights: Array of highlight objects
+    - title: Highlight title
+    - description: Highlight description
+    - icon: Bootstrap icon class (optional)
+
+Usage:
+------
+{% include reusable/node--article/block--city-profile.html section=page.section_city %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section city-profile-section py-5" id="city-profile">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header mb-4">
+      <h2 class="section-title h3 fw-bold text-primary">
+        <i class="bi bi-buildings me-2"></i>
+        {{ section.title | default: "Tentang Kota" }}
+      </h2>
+      {% if section.intro %}
+      <p class="lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+
+    <!-- City Highlights -->
+    {% if section.highlights %}
+    <div class="city-highlights">
+      <div class="row g-4">
+        {% for highlight in section.highlights %}
+        <div class="col-md-6 col-lg-3">
+          <div class="highlight-item text-center p-3">
+            <div class="highlight-icon mb-3">
+              <i class="bi {{ highlight.icon | default: 'bi-star' }} fs-1 text-primary"></i>
+            </div>
+            <h3 class="h6 fw-bold">{{ highlight.title }}</h3>
+            <p class="small text-muted mb-0">{{ highlight.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- City Stats (Optional) -->
+    {% if section.stats %}
+    <div class="city-stats mt-5 py-4 bg-light rounded">
+      <div class="row text-center">
+        {% for stat in section.stats %}
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <div class="stat-number h3 fw-bold text-primary mb-0">{{ stat.value }}</div>
+            <div class="stat-label small text-muted">{{ stat.label }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- K3 Needs Summary -->
+    <div class="k3-needs-summary mt-5 p-4 border rounded">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h4 class="h5 fw-bold mb-2">
+            <i class="bi bi-shield-check text-success me-2"></i>
+            Kebutuhan Layanan K3 di {{ section.city_name | default: "Wilayah Ini" }}
+          </h4>
+          <p class="text-muted mb-0">
+            Dengan kompleksitas aktivitas industri dan permukiman, kebutuhan akan layanan K3
+            yang terintegrasi dan menggunakan teknologi modern semakin penting.
+            PT. Cipta Mas Jaya menjawab tantangan ini dengan layanan PJK3 yang komprehensif.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="/contact/" class="btn btn-outline-primary">
+            <i class="bi bi-envelope me-1"></i> Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,81 @@
+{% comment %}
+============================================================================
+Schema: LocalBusiness for Area-based Articles
+============================================================================
+
+@file        schema--local-business.html
+@path        _includes/schema/node--article/schema--local-business.html
+@type        Schema (LocalBusiness)
+@description Schema.org LocalBusiness markup for location-based articles
+@author      arisciwek
+@created     2025-11-28
+
+For articles about PJK3 services in specific cities/regions.
+Generates LocalBusiness schema with areaServed.
+
+Parameters:
+-----------
+- area: Service area name (e.g., "Bekasi", "Jakarta") - defaults to page.area_served
+
+Usage:
+------
+{% include schema/node--article/schema--local-business.html %}
+{% include schema/node--article/schema--local-business.html area="Bekasi" %}
+
+============================================================================
+{% endcomment %}
+
+{% assign service_area = include.area | default: page.area_served %}
+{% assign item_image = page.image | default: site.default_image %}
+
+{% if service_area %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#localbusiness-{{ service_area | slugify }}",
+  "name": "{{ site.business.name }} - {{ service_area }}",
+  "description": "Layanan PJK3 dan Riksa Uji K3 di wilayah {{ service_area }}. {{ page.description | default: site.description | truncate: 150 }}",
+  "url": "{{ page.url | absolute_url }}",
+  "telephone": "{{ site.business.phone }}",
+  "email": "{{ site.business.email }}",
+  "image": "{{ item_image | absolute_url }}",
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "City",
+    "name": "{{ service_area }}"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.business.address.street }}",
+    "addressLocality": "{{ site.business.address.city }}",
+    "addressRegion": "{{ site.business.address.region }}",
+    "postalCode": "{{ site.business.address.postal_code }}",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "{{ site.business.geo.latitude }}",
+    "longitude": "{{ site.business.geo.longitude }}"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "parentOrganization": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name }}"
+  },
+  "sameAs": [
+    {% if site.social.facebook %}"{{ site.social.facebook }}"{% endif %}
+    {% if site.social.instagram %}{% if site.social.facebook %},{% endif %}"{{ site.social.instagram }}"{% endif %}
+    {% if site.social.linkedin %}{% if site.social.facebook or site.social.instagram %},{% endif %}"{{ site.social.linkedin }}"{% endif %}
+  ]
+}
+</script>
+{% endif %}

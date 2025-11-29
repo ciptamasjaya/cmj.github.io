@@ -1,0 +1,78 @@
+{% comment %}
+============================================================================
+Block: Strategic Role - Article Section
+============================================================================
+
+@file        block--strategic-role.html
+@path        _includes/reusable/node--article/block--strategic-role.html
+@type        Block (reusable)
+@description Displays strategic role of PJK3 in city/region development
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - section explaining PJK3's strategic
+role in supporting city development and safety compliance.
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - intro: Introduction paragraph
+  - roles: Array of role objects
+    - title: Role title
+    - description: Role description
+    - icon: Bootstrap icon class (optional)
+
+Usage:
+------
+{% include reusable/node--article/block--strategic-role.html section=page.section_role %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section strategic-role-section py-5" id="strategic-role">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title h3 fw-bold text-primary">
+        <i class="bi bi-diagram-3 me-2"></i>
+        {{ section.title | default: "Peran Strategis PJK3" }}
+      </h2>
+      {% if section.intro %}
+      <p class="lead text-muted mx-auto" style="max-width: 800px;">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Roles Timeline/List -->
+    {% if section.roles %}
+    <div class="roles-container">
+      {% for role in section.roles %}
+      <div class="role-item d-flex mb-4 pb-4 {% unless forloop.last %}border-bottom{% endunless %}">
+        <div class="role-icon me-4">
+          <div class="icon-circle bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+            <i class="bi {{ role.icon | default: 'bi-bullseye' }} fs-4"></i>
+          </div>
+        </div>
+        <div class="role-content flex-grow-1">
+          <h3 class="h5 fw-bold text-dark mb-2">{{ role.title }}</h3>
+          <p class="text-muted mb-0">{{ role.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Additional Content -->
+    {% if section.content %}
+    <div class="additional-content mt-4">
+      {{ section.content | markdownify }}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

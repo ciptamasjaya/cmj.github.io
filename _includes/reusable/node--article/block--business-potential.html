@@ -1,0 +1,114 @@
+{% comment %}
+============================================================================
+Block: Business Potential - Article Section
+============================================================================
+
+@file        block--business-potential.html
+@path        _includes/reusable/node--article/block--business-potential.html
+@type        Block (reusable)
+@description Displays business and investment potential in the area
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - section highlighting business
+opportunities and investment potential in the service area.
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - intro: Introduction paragraph
+  - potentials: Array of potential objects
+    - title: Potential area title
+    - description: Description of the opportunity
+    - icon: Bootstrap icon class (optional)
+
+Usage:
+------
+{% include reusable/node--article/block--business-potential.html section=page.section_business %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section business-potential-section py-5 bg-light" id="business-potential">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header mb-4">
+      <h2 class="section-title h3 fw-bold text-primary">
+        <i class="bi bi-graph-up-arrow me-2"></i>
+        {{ section.title | default: "Potensi Bisnis dan Investasi" }}
+      </h2>
+      {% if section.intro %}
+      <p class="lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Potentials Grid -->
+    {% if section.potentials %}
+    <div class="row g-4">
+      {% for potential in section.potentials %}
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm text-center">
+          <div class="card-body">
+            <div class="potential-icon mb-3">
+              <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                <i class="bi {{ potential.icon | default: 'bi-briefcase' }} fs-2 text-success"></i>
+              </div>
+            </div>
+            <h3 class="card-title h6 fw-bold">{{ potential.title }}</h3>
+            <p class="card-text small text-muted">{{ potential.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Business Value Proposition -->
+    <div class="value-proposition mt-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h3 class="h5 fw-bold text-dark mb-3">
+            <i class="bi bi-lightbulb text-warning me-2"></i>
+            Mengapa Memilih PT. Cipta Mas Jaya?
+          </h3>
+          <ul class="list-unstyled">
+            <li class="d-flex mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+              <span>Mengurangi risiko downtime operasional</span>
+            </li>
+            <li class="d-flex mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+              <span>Memenuhi persyaratan regulasi K3</span>
+            </li>
+            <li class="d-flex mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+              <span>Inspeksi berkala untuk kelancaran operasional</span>
+            </li>
+            <li class="d-flex mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
+              <span>Tenaga ahli bersertifikat dan berpengalaman</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="cta-box bg-primary text-white rounded p-4">
+            <h4 class="h5 mb-3">Mulai Inspeksi Sekarang</h4>
+            <p class="small mb-3 opacity-75">
+              Dapatkan layanan riksa uji profesional untuk bisnis Anda
+            </p>
+            <a href="{{ site.business.whatsapp_url }}" class="btn btn-light" target="_blank">
+              <i class="bi bi-whatsapp me-1"></i> Hubungi Kami
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,78 @@
+{% comment %}
+============================================================================
+Block: Services Excellence - Article Section
+============================================================================
+
+@file        block--services-excellence.html
+@path        _includes/reusable/node--article/block--services-excellence.html
+@type        Block (reusable)
+@description Displays company services and excellence highlights
+@author      arisciwek
+@created     2025-11-28
+
+For formal/informative articles - section highlighting company services
+and competitive advantages (Keunggulan).
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - intro: Introduction paragraph
+  - services: Array of service objects
+    - title: Service title
+    - description: Service description
+    - icon: Bootstrap icon class (optional)
+
+Usage:
+------
+{% include reusable/node--article/block--services-excellence.html section=page.section_services %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section services-excellence-section py-5 bg-light" id="services-excellence">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title h3 fw-bold text-primary">
+        <i class="bi bi-award me-2"></i>
+        {{ section.title | default: "Keunggulan Layanan" }}
+      </h2>
+      {% if section.intro %}
+      <p class="lead text-muted mx-auto" style="max-width: 800px;">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Services Grid -->
+    {% if section.services %}
+    <div class="row g-4">
+      {% for service in section.services %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="service-icon mb-3">
+              <i class="bi {{ service.icon | default: 'bi-check-circle' }} fs-2 text-primary"></i>
+            </div>
+            <h3 class="card-title h5 fw-bold">{{ service.title }}</h3>
+            <p class="card-text text-muted">{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Additional Content -->
+    {% if section.content %}
+    <div class="additional-content mt-5">
+      {{ section.content | markdownify }}
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endif %}

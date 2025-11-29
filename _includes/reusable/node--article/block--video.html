@@ -1,0 +1,119 @@
+{% comment %}
+============================================================================
+Block: Video - Article Section
+============================================================================
+
+@file        block--video.html
+@path        _includes/reusable/node--article/block--video.html
+@type        Block (reusable)
+@description Video section for article pages with fallback to default video
+@author      arisciwek
+@created     2025-11-29
+
+Features:
+---------
+- Displays video from page.video or section.video
+- Fallback to default video if not provided
+- Supports .webm, .mp4, and other HTML5 video formats
+- Responsive video container
+- Optional poster/thumbnail image
+
+Parameters:
+-----------
+- section: Section data object from front matter (optional)
+  - title: Video section title
+  - description: Video description
+  - video: Video file path (overrides page.video)
+  - poster: Poster/thumbnail image path
+  - caption: Video caption text
+
+Video Logic:
+------------
+- If section.video exists and not empty, use it
+- Else if page.video exists and not empty, use it
+- Else fallback to /assets/videos/service-page/riksa-uji-forklift.webm
+
+Usage:
+------
+{% include reusable/node--article/block--video.html section=page.section_video %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+
+{% comment %} Video Logic: section.video > page.video > default {% endcomment %}
+{% assign default_video = '/assets/videos/service-page/riksa-uji-forklift.webm' %}
+{% assign video_src = default_video %}
+{% assign video_poster = '' %}
+
+{% if section.video and section.video != '' %}
+  {% assign video_src = section.video %}
+{% elsif page.video and page.video != '' %}
+  {% assign video_src = page.video %}
+{% endif %}
+
+{% if section.poster and section.poster != '' %}
+  {% assign video_poster = section.poster %}
+{% elsif page.images and page.images[0] and page.images[0] != '' %}
+  {% assign video_poster = page.images[0] %}
+{% else %}
+  {% assign video_poster = '/assets/images/posts/default/i1.svg' %}
+{% endif %}
+
+<section class="article-section video-section py-5" id="video">
+  <div class="container">
+
+    <!-- Header Section -->
+    <div class="mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);">
+          <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
+          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Video Layanan" }}{% if area %} {{ area }}{% endif %}</h2>
+          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+            <i class="bi bi-film me-1"></i>
+            {{ section.description | default: "Lihat dokumentasi proses layanan kami" }}
+            <i class="bi bi-film ms-1"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Container -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card border-0 shadow-lg overflow-hidden">
+          <div class="ratio ratio-16x9">
+            <video
+              controls
+              preload="metadata"
+              {% if video_poster %}poster="{{ video_poster | relative_url }}"{% endif %}
+              class="w-100"
+              style="background: #000;">
+              <source src="{{ video_src | relative_url }}" type="video/webm">
+              <source src="{{ video_src | replace: '.webm', '.mp4' | relative_url }}" type="video/mp4">
+              Browser Anda tidak mendukung tag video HTML5.
+            </video>
+          </div>
+          {% if section.caption %}
+          <div class="card-footer bg-light text-center py-3">
+            <p class="text-muted small mb-0">
+              <i class="bi bi-info-circle me-1"></i>{{ section.caption }}
+            </p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-5">
+      <p class="text-muted mb-3">{{ section.cta_text | default: "Ingin melihat langsung proses inspeksi K3 di lokasi Anda?" }}</p>
+      <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-success btn-lg" target="_blank">
+        <i class="bi bi-whatsapp me-2"></i>{{ section.cta_button | default: "Hubungi Kami" }}
+      </a>
+    </div>
+
+  </div>
+</section>
