@@ -1,0 +1,66 @@
+{% comment %}
+============================================================================
+Schema: Video (Reusable)
+============================================================================
+
+@file        schema--video.html
+@path        _includes/schema/reusable/schema--video.html
+@type        Schema (VideoObject) - Reusable
+@description Reusable VideoObject schema with parameter-based data
+@author      arisciwek
+@created     2025-11-29
+
+Parameters:
+-----------
+- src: Video source URL (optional, has default fallback)
+- title: Video title (optional, default: "Video")
+- description: Video description (optional)
+- thumbnail: Thumbnail image URL (optional, uses images[0] or default)
+- duration: ISO 8601 duration (optional, default: "PT3M30S")
+- id_suffix: ID suffix for unique @id (optional, default: "video")
+
+Usage:
+------
+{% include schema/reusable/schema--video.html %}
+{% include schema/reusable/schema--video.html src="/assets/videos/demo.webm" title="Demo Video" %}
+{% include schema/reusable/schema--video.html src=page.video title=page.section_video.title %}
+
+============================================================================
+{% endcomment %}
+
+{% assign default_video = '/assets/videos/service-page/riksa-uji-forklift.webm' %}
+{% assign default_thumb = '/assets/images/posts/default/i1.svg' %}
+
+{% comment %} Get values from parameters {% endcomment %}
+{% assign video_src = include.src | default: page.video | default: default_video %}
+{% assign video_title = include.title | default: "Video" %}
+{% assign video_desc = include.description | default: "Dokumentasi video" %}
+{% assign video_duration = include.duration | default: "PT3M30S" %}
+{% assign id_suffix = include.id_suffix | default: "video" %}
+
+{% comment %} Thumbnail: parameter > images[0] > default {% endcomment %}
+{% assign video_thumb = default_thumb %}
+{% if include.thumbnail and include.thumbnail != '' %}
+  {% assign video_thumb = include.thumbnail %}
+{% elsif page.images and page.images[0] and page.images[0] != '' %}
+  {% assign video_thumb = page.images[0] %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}",
+  "name": "{{ video_title | escape }}",
+  "description": "{{ video_desc | escape }}",
+  "thumbnailUrl": "{{ video_thumb | absolute_url }}",
+  "contentUrl": "{{ video_src | absolute_url }}",
+  "uploadDate": "{{ page.date | date_to_xmlschema }}",
+  "duration": "{{ video_duration }}",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name }}"
+  }
+}
+</script>

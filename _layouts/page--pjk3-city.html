@@ -26,15 +26,16 @@ Related templates:
 - page.html (base page wrapper)
 - node--pjk3-city.html (PJK3 city content template)
 
-Schema includes:
+Schema includes (using reusable schemas):
 - schema--article.html (Article schema - not BlogPosting)
-- schema--local-business.html (for area_served)
-- schema--service-offer.html (for services)
-- schema--faq.html (for FAQ)
-- schema--gallery.html (for images)
-- schema--video.html (for video)
-- schema--reviews.html (for testimonials)
-- schema--howto.html (for order process)
+- schema--local-business.html (for area_served) - specific
+- schema--service-offer.html (for services) - specific
+- schema/reusable/schema--faq.html (for FAQ)
+- schema/reusable/schema--gallery.html (for images)
+- schema/reusable/schema--video.html (for video)
+- schema/reusable/schema--reviews.html (for testimonials)
+- schema/reusable/schema--howto.html (for order process)
+- schema/reusable/schema--itemlist.html (for services, tips, etc.)
 
 ============================================================================
 {% endcomment %}
@@ -72,25 +73,80 @@ Schema includes:
     {% include schema/node--pjk3-city/schema--service-offer.html services=page.section_services.services %}
   {% endif %}
 
-  <!-- FAQ Schema -->
+  <!-- FAQ Schema (reusable) -->
   {% if page.section_faq %}
-    {% include schema/node--pjk3-city/schema--faq.html %}
+    {% comment %} Collect all FAQs from different categories {% endcomment %}
+    {% assign all_faqs = "" | split: "" %}
+    {% if page.section_faq.faq_layanan %}
+      {% for item in page.section_faq.faq_layanan %}
+        {% assign all_faqs = all_faqs | push: item %}
+      {% endfor %}
+    {% endif %}
+    {% if page.section_faq.faq_sertifikasi %}
+      {% for item in page.section_faq.faq_sertifikasi %}
+        {% assign all_faqs = all_faqs | push: item %}
+      {% endfor %}
+    {% endif %}
+    {% if page.section_faq.faq_biaya %}
+      {% for item in page.section_faq.faq_biaya %}
+        {% assign all_faqs = all_faqs | push: item %}
+      {% endfor %}
+    {% endif %}
+    {% include schema/reusable/schema--faq.html faqs=all_faqs %}
   {% endif %}
 
-  <!-- Gallery Schema -->
-  {% include schema/node--pjk3-city/schema--gallery.html %}
+  <!-- Gallery Schema (reusable) -->
+  {% include schema/reusable/schema--gallery.html images=page.images title=page.title %}
 
-  <!-- Video Schema -->
-  {% include schema/node--pjk3-city/schema--video.html %}
+  <!-- Video Schema (reusable) -->
+  {% assign video_title = page.section_video.title | default: "Video Layanan" %}
+  {% assign video_desc = page.section_video.description | default: "Dokumentasi layanan" %}
+  {% include schema/reusable/schema--video.html src=page.video title=video_title description=video_desc %}
 
-  <!-- Reviews/Testimonials Schema -->
+  <!-- Reviews/Testimonials Schema (reusable) -->
   {% if page.section_testimonials %}
-    {% include schema/node--pjk3-city/schema--reviews.html %}
+    {% comment %} Collect all testimonials {% endcomment %}
+    {% assign all_reviews = "" | split: "" %}
+    {% if page.section_testimonials.testimoni_industri %}
+      {% for testi in page.section_testimonials.testimoni_industri %}
+        {% assign all_reviews = all_reviews | push: testi %}
+      {% endfor %}
+    {% endif %}
+    {% if page.section_testimonials.testimoni_komersial %}
+      {% for testi in page.section_testimonials.testimoni_komersial %}
+        {% assign all_reviews = all_reviews | push: testi %}
+      {% endfor %}
+    {% endif %}
+    {% include schema/reusable/schema--reviews.html reviews=all_reviews %}
   {% endif %}
 
-  <!-- HowTo/Order Process Schema -->
+  <!-- HowTo/Order Process Schema (reusable) -->
   {% if page.section_order %}
-    {% include schema/node--pjk3-city/schema--howto.html %}
+    {% comment %} Collect all steps {% endcomment %}
+    {% assign all_steps = "" | split: "" %}
+    {% if page.section_order.initial_steps %}
+      {% for step in page.section_order.initial_steps %}
+        {% assign all_steps = all_steps | push: step %}
+      {% endfor %}
+    {% endif %}
+    {% if page.section_order.final_steps %}
+      {% for step in page.section_order.final_steps %}
+        {% assign all_steps = all_steps | push: step %}
+      {% endfor %}
+    {% endif %}
+    {% assign howto_title = page.section_order.title | default: "Cara Memesan Layanan" %}
+    {% assign howto_desc = page.section_order.intro | default: "Langkah-langkah pemesanan" %}
+    {% include schema/reusable/schema--howto.html steps=all_steps title=howto_title description=howto_desc %}
+  {% endif %}
+
+  <!-- Services ItemList Schema (reusable) -->
+  {% if page.section_services.services %}
+    {% include schema/reusable/schema--itemlist.html items=page.section_services.services title="Layanan Riksa Uji K3" id_suffix="services-list" %}
+  {% endif %}
+
+  <!-- Tips ItemList Schema (reusable) -->
+  {% if page.section_tips.tips %}
+    {% include schema/reusable/schema--itemlist.html items=page.section_tips.tips title="Tips Memilih PJK3" id_suffix="tips-list" %}
   {% endif %}
 
   <!-- Breadcrumb Schema -->

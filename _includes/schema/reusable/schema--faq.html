@@ -1,0 +1,50 @@
+{% comment %}
+============================================================================
+Schema: FAQ (Reusable)
+============================================================================
+
+@file        schema--faq.html
+@path        _includes/schema/reusable/schema--faq.html
+@type        Schema (FAQPage) - Reusable
+@description Reusable FAQPage schema with parameter-based data
+@author      arisciwek
+@created     2025-11-29
+
+Parameters:
+-----------
+- faqs: Array of FAQ objects (required)
+  Each FAQ: { pertanyaan, jawaban } or { question, answer }
+- id_suffix: ID suffix for unique @id (optional, default: "faqpage")
+
+Usage:
+------
+{% include schema/reusable/schema--faq.html faqs=all_faqs %}
+{% include schema/reusable/schema--faq.html faqs=page.faq_post.faqs %}
+
+============================================================================
+{% endcomment %}
+
+{% assign faqs = include.faqs %}
+{% assign id_suffix = include.id_suffix | default: "faqpage" %}
+
+{% if faqs and faqs.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}",
+  "mainEntity": [
+    {% for item in faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ item.pertanyaan | default: item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.jawaban | default: item.answer | strip_html | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

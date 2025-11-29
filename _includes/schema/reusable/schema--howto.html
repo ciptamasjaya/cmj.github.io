@@ -1,0 +1,58 @@
+{% comment %}
+============================================================================
+Schema: HowTo (Reusable)
+============================================================================
+
+@file        schema--howto.html
+@path        _includes/schema/reusable/schema--howto.html
+@type        Schema (HowTo) - Reusable
+@description Reusable HowTo schema with parameter-based data
+@author      arisciwek
+@created     2025-11-29
+
+Parameters:
+-----------
+- steps: Array of step objects (required)
+  Each step: { title, description } or { name, text } or { judul, deskripsi }
+- title: HowTo title (optional)
+- description: HowTo description (optional)
+- total_time: ISO 8601 duration (optional, default: "PT30M")
+- id_suffix: ID suffix for unique @id (optional, default: "howto")
+
+Usage:
+------
+{% include schema/reusable/schema--howto.html steps=all_steps title="Cara Memesan" %}
+{% include schema/reusable/schema--howto.html steps=page.howto_post.steps title=page.howto_post.name %}
+
+============================================================================
+{% endcomment %}
+
+{% assign steps = include.steps %}
+{% assign howto_title = include.title | default: "Panduan" %}
+{% assign howto_desc = include.description | default: "Langkah-langkah panduan" %}
+{% assign total_time = include.total_time | default: "PT30M" %}
+{% assign id_suffix = include.id_suffix | default: "howto" %}
+
+{% if steps and steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}",
+  "name": "{{ howto_title | escape }}",
+  "description": "{{ howto_desc | escape }}",
+  "totalTime": "{{ total_time }}",
+  "step": [
+    {% for step in steps %}
+    {
+      "@type": "HowToStep",
+      "position": {{ forloop.index }},
+      "name": "{{ step.title | default: step.name | default: step.judul | escape }}",
+      "text": "{{ step.description | default: step.text | default: step.deskripsi | escape }}"{% if step.image %},
+      "image": "{{ step.image | absolute_url }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

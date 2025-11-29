@@ -1,0 +1,55 @@
+{% comment %}
+============================================================================
+Schema: ItemList (Reusable)
+============================================================================
+
+@file        schema--itemlist.html
+@path        _includes/schema/reusable/schema--itemlist.html
+@type        Schema (ItemList) - Reusable
+@description Reusable ItemList schema with parameter-based data
+@author      arisciwek
+@created     2025-11-29
+
+Parameters:
+-----------
+- items: Array of item objects (required)
+  Each item: { name, description } or { title, description } or { judul, deskripsi }
+- title: ItemList name (optional)
+- description: ItemList description (optional)
+- id_suffix: ID suffix for unique @id (optional, default: "itemlist")
+
+Usage:
+------
+{% include schema/reusable/schema--itemlist.html items=page.services title="Layanan Kami" %}
+{% include schema/reusable/schema--itemlist.html items=page.tips title="Tips" %}
+
+============================================================================
+{% endcomment %}
+
+{% assign items = include.items %}
+{% assign list_title = include.title | default: "Daftar Item" %}
+{% assign list_desc = include.description | default: "" %}
+{% assign id_suffix = include.id_suffix | default: "itemlist" %}
+
+{% if items and items.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}",
+  "name": "{{ list_title | escape }}",
+  {% if list_desc != "" %}"description": "{{ list_desc | escape }}",{% endif %}
+  "numberOfItems": {{ items.size }},
+  "itemListElement": [
+    {% for item in items %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ item.name | default: item.title | default: item.judul | escape }}",
+      "description": "{{ item.description | default: item.deskripsi | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

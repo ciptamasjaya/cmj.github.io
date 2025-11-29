@@ -1,0 +1,72 @@
+{% comment %}
+============================================================================
+Schema: Gallery (Reusable)
+============================================================================
+
+@file        schema--gallery.html
+@path        _includes/schema/reusable/schema--gallery.html
+@type        Schema (ImageGallery) - Reusable
+@description Reusable ImageGallery schema with parameter-based data
+@author      arisciwek
+@created     2025-11-29
+
+Parameters:
+-----------
+- images: Array of image paths (required)
+- title: Gallery title (optional, default: page.title)
+- description: Gallery description (optional)
+- id_suffix: ID suffix for unique @id (optional, default: "gallery")
+
+Usage:
+------
+{% include schema/reusable/schema--gallery.html images=page.images %}
+{% include schema/reusable/schema--gallery.html images=page.images title="Galeri Layanan" %}
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Default fallback images {% endcomment %}
+{% assign default_images = "/assets/images/posts/default/i1.svg,/assets/images/posts/default/i2.svg,/assets/images/posts/default/i3.svg,/assets/images/posts/default/i4.svg" | split: "," %}
+
+{% comment %} Get images from parameter or default {% endcomment %}
+{% assign gallery_images = include.images | default: page.images %}
+{% assign gallery_title = include.title | default: page.title %}
+{% assign gallery_desc = include.description | default: "Dokumentasi gambar" %}
+{% assign id_suffix = include.id_suffix | default: "gallery" %}
+
+{% comment %} Check if images provided and has content {% endcomment %}
+{% assign has_images = false %}
+{% if gallery_images and gallery_images.size > 0 %}
+  {% for img in gallery_images %}
+    {% if img and img != '' %}
+      {% assign has_images = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}",
+  "name": "{{ gallery_title | escape }} - Gallery",
+  "description": "{{ gallery_desc | escape }}",
+  "image": [
+    {% for i in (0..3) %}
+    {% if has_images and gallery_images[i] and gallery_images[i] != '' %}
+      {% assign img_url = gallery_images[i] %}
+    {% else %}
+      {% assign img_url = default_images[i] %}
+    {% endif %}
+    {
+      "@type": "ImageObject",
+      "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}-image-{{ forloop.index }}",
+      "url": "{{ img_url | absolute_url }}",
+      "caption": "{{ gallery_title | escape }} - Gambar {{ forloop.index }}",
+      "representativeOfPage": {% if forloop.first %}true{% else %}false{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
