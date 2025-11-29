@@ -24,14 +24,24 @@ Usage:
 
 {% assign post = include.post %}
 {% assign color_index = include.color_index | default: 1 %}
-{% assign rating = post.rating | default: 5 %}
-{% assign has_image = post.image | strip | size | plus: 0 %}
+{% assign has_image = post.images[0] | strip | size | plus: 0 %}
 
-<article class="card h-100 border-0 shadow-sm block-card block-card-{{ color_index }}">
+{% comment %} Get rating from JSON data {% endcomment %}
+{% assign post_slug = post.url | split: "/" | compact | last %}
+{% assign rating_data = site.data.rating--post.ratings | where: "slug", post_slug | first %}
+{% if rating_data %}
+  {% assign rating = rating_data.average %}
+  {% assign rating_count = rating_data.total_reviews %}
+{% else %}
+  {% assign rating = 5 %}
+  {% assign rating_count = 0 %}
+{% endif %}
+
+<article class="card h-100 border-0 shadow-sm block-card block-card--riksa-uji block-card-{{ color_index }}">
   <!-- Image -->
   {% if has_image > 0 %}
   <div class="block-card-image">
-    <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+    <img src="{{ post.images[0] | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
     <div class="block-card-overlay block-card-overlay-{{ color_index }}"></div>
   </div>
   {% else %}
@@ -54,16 +64,22 @@ Usage:
       {{ post.description | default: post.excerpt | strip_html | truncate: 100 }}
     </p>
 
-    <!-- Rating -->
+    <!-- Rating from JSON data -->
     <div class="block-rating">
+      {% assign full_stars = rating | floor %}
+      {% assign decimal = rating | minus: full_stars %}
       {% for i in (1..5) %}
-        {% if i <= rating %}
-        <i class="bi bi-star-fill text-warning"></i>
+        {% if i <= full_stars %}
+          <i class="bi bi-star-fill text-warning"></i>
+        {% elsif decimal >= 0.3 and decimal < 0.8 and i == full_stars | plus: 1 %}
+          <i class="bi bi-star-half text-warning"></i>
+        {% elsif decimal >= 0.8 and i == full_stars | plus: 1 %}
+          <i class="bi bi-star-fill text-warning"></i>
         {% else %}
-        <i class="bi bi-star text-muted"></i>
+          <i class="bi bi-star text-warning"></i>
         {% endif %}
       {% endfor %}
-      <small class="text-muted ms-1">({{ rating }}/5)</small>
+      <small class="text-muted ms-1">{{ rating }}{% if rating_count > 0 %} ({{ rating_count }}){% endif %}</small>
     </div>
   </div>
 </article>

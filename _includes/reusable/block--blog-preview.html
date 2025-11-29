@@ -76,139 +76,32 @@ Archive page:
         {% assign loop_posts = blog_posts | limit: post_limit %}
       {% endif %}
       {% for post in loop_posts %}
-      {% comment %} Determine semantic class based on layout/node type {% endcomment %}
-      {% case post.layout %}
-        {% when 'node--riksa-uji' %}
-          {% assign node_class = "blog-card--riksa-uji" %}
-        {% when 'node--pjk3-city' %}
-          {% assign node_class = "blog-card--pjk3-city" %}
-        {% when 'node--article' %}
-          {% assign node_class = "blog-card--article" %}
-        {% when 'node--service' %}
-          {% assign node_class = "blog-card--service" %}
-        {% else %}
-          {% assign node_class = "blog-card--post" %}
-      {% endcase %}
+      {% assign post_index = forloop.index %}
+      {% assign color_index = post_index | modulo: 3 %}
+      {% if color_index == 0 %}{% assign color_index = 3 %}{% endif %}
+
       <div class="col-md-6 col-lg-4">
-        <article class="card blog-card {{ node_class }} border-0 shadow-sm h-100">
-
-          <!-- Post Thumbnail -->
-          {% if post.thumbnail %}
-          <div class="blog-card-image">
-            <img src="{{ post.thumbnail | relative_url }}"
-                 class="card-img-top"
-                 alt="{{ post.title }}"
-                 loading="lazy">
-
-            <!-- Category Badge -->
-            {% if post.category %}
-            <span class="category-badge badge bg-primary">
-              {{ post.category }}
-            </span>
-            {% endif %}
-          </div>
+        {% comment %} Include card template based on layout/node type {% endcomment %}
+        {% case post.layout %}
+          {% when 'node/node--riksa-uji' %}
+            {% include block/block--riksa-uji.html post=post color_index=color_index %}
+          {% when 'node/node--pjk3-city' %}
+            {% include block/block--pjk3-city.html post=post color_index=color_index %}
+          {% when 'node/node--service' %}
+            {% include block/block--service.html post=post color_index=color_index %}
           {% else %}
-          <div class="blog-card-image bg-gradient-primary">
-            <div class="placeholder-icon">
-              <i class="bi bi-newspaper text-white"></i>
-            </div>
-
-            <!-- Category Badge -->
-            {% if post.category %}
-            <span class="category-badge badge bg-light text-dark">
-              {{ post.category }}
-            </span>
-            {% endif %}
-          </div>
-          {% endif %}
-
-          <div class="card-body p-4">
-
-            <!-- Post Meta with Rating -->
-            {% assign post_slug = post.url | split: "/" | compact | last %}
-            {% assign rating_data = site.data.rating--post.ratings | where: "slug", post_slug | first %}
-
-            {% if rating_data and rating_data.total_reviews > 0 %}
-            <div class="post-meta d-flex flex-wrap align-items-center gap-2 text-muted mb-2 small">
-              <!-- Rating Stars from JSON data -->
-              <span class="d-inline-flex align-items-center">
-                <span class="post-rating__stars me-1">
-                  {% assign avg = rating_data.average %}
-                  {% assign full_stars = avg | floor %}
-                  {% assign decimal = avg | minus: full_stars %}
-                  {% for i in (1..5) %}
-                    {% if i <= full_stars %}
-                      <i class="bi bi-star-fill text-warning"></i>
-                    {% elsif decimal >= 0.3 and decimal < 0.8 and i == full_stars | plus: 1 %}
-                      <i class="bi bi-star-half text-warning"></i>
-                    {% elsif decimal >= 0.8 and i == full_stars | plus: 1 %}
-                      <i class="bi bi-star-fill text-warning"></i>
-                    {% else %}
-                      <i class="bi bi-star text-warning"></i>
-                    {% endif %}
-                  {% endfor %}
-                </span>
-                <span class="post-rating__score fw-bold text-dark">{{ rating_data.average }}</span>
-                <span class="post-rating__count text-muted ms-1">({{ rating_data.total_reviews }} ulasan)</span>
-              </span>
-            </div>
-            {% endif %}
-
-            <div class="post-meta d-flex flex-wrap align-items-center gap-2 text-muted mb-2 small">
-              <span>
-                <i class="bi bi-calendar3 me-1"></i>
-                {{ post.date | date: "%d %B %Y" }}
-              </span>
-              {% if post.author %}
-              <span>
-                <i class="bi bi-person me-1"></i>
-                {{ post.author }}
-              </span>
-              {% endif %}
-            </div>
-
-            <!-- Post Title -->
-            <h3 class="h5 card-title fw-bold mb-3">
-              <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark">
-                {{ post.title }}
-              </a>
-            </h3>
-
-            <!-- Post Description -->
-            <p class="card-text text-muted small mb-3">
-              {{ post.description | default: post.excerpt | strip_html | truncate: 100 }}
-            </p>
-
-            <!-- Read More Link -->
-            <a href="{{ post.url | relative_url }}" class="btn btn-outline-primary btn-sm">
-              <i class="bi bi-arrow-right me-1"></i>
-              Baca Selengkapnya
-            </a>
-
-          </div>
-
-          <!-- Post Footer with Tags -->
-          {% if post.tags.size > 0 %}
-          <div class="card-footer bg-light border-0 py-2">
-            <div class="d-flex flex-wrap gap-1">
-              {% for tag in post.tags limit: 3 %}
-              <span class="badge bg-secondary">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          </div>
-          {% endif %}
-
-        </article>
+            {% include block/block--post.html post=post color_index=color_index %}
+        {% endcase %}
       </div>
+
       {% if variant == "archive" %}
       <!-- Schema for this post -->
-      {% if post.layout == 'node--riksa-uji' %}
-        {% include schema/schema--riksa-uji.html post=post mode="list" %}
-      {% elsif post.layout == 'node--article' %}
-        {% include schema/schema--article.html post=post mode="list" %}
-      {% else %}
-        {% include schema/schema--post.html post=post %}
-      {% endif %}
+      {% case post.layout %}
+        {% when 'node/node--riksa-uji' %}
+          {% include schema/schema--riksa-uji.html post=post mode="list" %}
+        {% else %}
+          {% include schema/schema--post.html post=post %}
+      {% endcase %}
       {% endif %}
       {% endfor %}
 
