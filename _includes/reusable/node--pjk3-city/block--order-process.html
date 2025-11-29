@@ -111,7 +111,7 @@ Usage:
                 <div class="step-icon-wrapper bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex mb-3 step__icon-wrapper">
                   <i class="bi {{ step.icon | default: 'bi-check-circle' }} step-icon text-{{ step_color }} step__icon"></i>
                 </div>
-                <h4 class="h6 text-dark mb-2 fw-bold step__title">{{ step.title }}</h4>
+                <h5 class="h6 text-dark mb-2 fw-bold step__title">{{ step.title }}</h5>
                 <p class="small text-muted mb-0 step__description">{{ step.description }}</p>
               </div>
             </div>
@@ -149,7 +149,7 @@ Usage:
                 <div class="step-icon-wrapper bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex mb-3 step__icon-wrapper">
                   <i class="bi {{ step.icon | default: 'bi-check-circle' }} step-icon text-{{ step_color }} step__icon"></i>
                 </div>
-                <h4 class="h6 text-dark mb-2 fw-bold step__title">{{ step.title }}</h4>
+                <h5 class="h6 text-dark mb-2 fw-bold step__title">{{ step.title }}</h5>
                 <p class="small text-muted mb-0 step__description">{{ step.description }}</p>
               </div>
             </div>
@@ -164,7 +164,7 @@ Usage:
       <div class="card whatsapp-cta-card border-0 shadow-lg">
         <div class="card-body text-white text-center py-4 cta__body">
           <i class="bi bi-whatsapp whatsapp-icon-large mb-3 cta__icon"></i>
-          <h4 class="h5 mb-3 fw-bold cta__title">Konsultasi Gratis Sekarang!</h4>
+          <h5 class="h5 mb-3 fw-bold cta__title">Konsultasi Gratis Sekarang!</h5>
           <p class="mb-3 cta__description">Klik tombol WhatsApp di bawah atau langsung hubungi <strong>{{ phone }}</strong> untuk konsultasi kebutuhan riksa uji{% if area %} di {{ area }}{% endif %}, cek jadwal inspeksi, dan penawaran terbaik!</p>
           <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-light btn-lg px-5 cta__button" target="_blank">
             <i class="bi bi-whatsapp me-2"></i>Hubungi WhatsApp
