@@ -25,7 +25,20 @@ Usage:
 {% assign order = page.section_order %}
 {% assign area = page.area_served | default: "" %}
 
-{% if order and order.steps and order.steps.size > 0 %}
+{% comment %} Collect all steps from initial_steps and final_steps {% endcomment %}
+{% assign all_steps = "" | split: "" %}
+{% if order.initial_steps %}
+  {% for step in order.initial_steps %}
+    {% assign all_steps = all_steps | push: step %}
+  {% endfor %}
+{% endif %}
+{% if order.final_steps %}
+  {% for step in order.final_steps %}
+    {% assign all_steps = all_steps | push: step %}
+  {% endfor %}
+{% endif %}
+
+{% if order and all_steps.size > 0 %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,12 +53,12 @@ Usage:
     "value": "Hubungi untuk penawaran"
   },
   "step": [
-    {% for step in order.steps %}
+    {% for step in all_steps %}
     {
       "@type": "HowToStep",
       "position": {{ forloop.index }},
-      "name": "{{ step.judul | escape }}",
-      "text": "{{ step.deskripsi | escape }}"{% if step.image %},
+      "name": "{{ step.title | escape }}",
+      "text": "{{ step.description | escape }}"{% if step.image %},
       "image": "{{ step.image | absolute_url }}"{% endif %}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
