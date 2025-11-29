@@ -4,7 +4,7 @@ Block: Risk Analysis - Article Section
 ============================================================================
 
 @file        block--risk-analysis.html
-@path        _includes/reusable/node--article/block--risk-analysis.html
+@path        _includes/reusable/node--pjk3-city/block--risk-analysis.html
 @type        Block (reusable)
 @description Displays K3 risks analysis for industrial and residential areas
 @author      arisciwek
@@ -24,9 +24,15 @@ Parameters:
     - severity: low/medium/high (optional, for styling)
     - icon: Bootstrap icon class (optional)
 
+Schema:
+-------
+Uses: _includes/schema/reusable/schema--itemlist.html (ItemList)
+Include in layout with:
+{% include schema/reusable/schema--itemlist.html items=page.section_risks.risks title="Analisis Risiko K3" id_suffix="risks-list" %}
+
 Usage:
 ------
-{% include reusable/node--article/block--risk-analysis.html section=page.section_risks %}
+{% include reusable/node--pjk3-city/block--risk-analysis.html section=page.section_risks %}
 
 ============================================================================
 {% endcomment %}

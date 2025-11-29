@@ -19,11 +19,17 @@ Parameters:
 -----------
 - area: Service area name (e.g., "Bekasi", "Jakarta") - defaults to page.area_served
 - reviews: Array of review objects (optional) - embedded in LocalBusiness
+- coverage: Coverage section data (optional) - for detailed areaServed
+  - zona_industri: Array of industrial zones
+  - wilayah_kota: Array of city districts
+  - wilayah_pinggiran: Array of suburban districts
+  - kecamatan_lainnya: Array of other district names
 
 Usage:
 ------
 {% include schema/node--pjk3-city/schema--local-business.html %}
 {% include schema/node--pjk3-city/schema--local-business.html area="Bekasi" reviews=all_reviews %}
+{% include schema/node--pjk3-city/schema--local-business.html reviews=all_reviews coverage=page.section_coverage %}
 
 ============================================================================
 {% endcomment %}
@@ -31,6 +37,7 @@ Usage:
 {% assign service_area = include.area | default: page.area_served %}
 {% assign item_image = page.image | default: site.default_image %}
 {% assign reviews = include.reviews %}
+{% assign coverage = include.coverage %}
 
 {% comment %} Calculate average rating if reviews exist {% endcomment %}
 {% if reviews and reviews.size > 0 %}
@@ -57,10 +64,44 @@ Usage:
   "email": "{{ site.business.email }}",
   "image": "{{ item_image | absolute_url }}",
   "priceRange": "$$",
-  "areaServed": {
+  "areaServed": {% if coverage %}[
+    {
+      "@type": "City",
+      "name": "{{ service_area }}"{% if coverage.zona_industri or coverage.wilayah_kota or coverage.wilayah_pinggiran or coverage.kecamatan_lainnya %},
+      "containsPlace": [
+        {% assign place_items = "" | split: "" %}
+        {% if coverage.zona_industri %}
+          {% for zona in coverage.zona_industri %}
+            {% assign place_items = place_items | push: zona.nama %}
+          {% endfor %}
+        {% endif %}
+        {% if coverage.wilayah_kota %}
+          {% for wilayah in coverage.wilayah_kota %}
+            {% assign place_items = place_items | push: wilayah.nama %}
+          {% endfor %}
+        {% endif %}
+        {% if coverage.wilayah_pinggiran %}
+          {% for wilayah in coverage.wilayah_pinggiran %}
+            {% assign place_items = place_items | push: wilayah.nama %}
+          {% endfor %}
+        {% endif %}
+        {% if coverage.kecamatan_lainnya %}
+          {% for kec in coverage.kecamatan_lainnya %}
+            {% assign place_items = place_items | push: kec %}
+          {% endfor %}
+        {% endif %}
+        {% for place in place_items %}
+        {
+          "@type": "AdministrativeArea",
+          "name": "{{ place | escape }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]{% endif %}
+    }
+  ]{% else %}{
     "@type": "City",
     "name": "{{ service_area }}"
-  },
+  }{% endif %},
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "{{ site.business.address.street }}",

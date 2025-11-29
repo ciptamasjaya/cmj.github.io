@@ -1,0 +1,46 @@
+{% comment %}
+============================================================================
+Schema: Hero PJK3 - WebPageElement
+============================================================================
+
+@file        schema--hero-pjk3.html
+@path        _includes/schema/node--pjk3-city/schema--hero-pjk3.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for hero section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for hero PJK3 section.
+Referenced by Article via hasPart.
+
+Parameters:
+-----------
+- section: Section data from page.section_hero (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--hero-pjk3.html section=page.section_hero %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+
+{% if section %}
+{% assign hero_title = section.title | default: "Butuh Layanan Riksa Uji K3" %}
+{% if area %}{% assign hero_title = hero_title | append: " di " | append: area %}{% endif %}
+
+{% assign hero_desc = section.description | default: "Sedang mencari jasa riksa uji K3 terpercaya? PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian peralatan K3 dengan standar profesional." %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#hero-pjk3",
+  "name": "{{ hero_title | escape }}",
+  "description": "{{ hero_desc | escape }}"{% if section.wilayah_layanan %},
+  "text": "Melayani Wilayah: {{ section.wilayah_layanan | join: ', ' | escape }}"{% endif %}
+}
+</script>
+{% endif %}

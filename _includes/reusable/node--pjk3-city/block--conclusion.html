@@ -4,11 +4,12 @@ Block: Conclusion - Article Section
 ============================================================================
 
 @file        block--conclusion.html
-@path        _includes/reusable/node--article/block--conclusion.html
+@path        _includes/reusable/node--pjk3-city/block--conclusion.html
 @type        Block (reusable)
 @description Displays conclusion section for article pages
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - conclusion section with summary
 and call-to-action.
@@ -19,9 +20,16 @@ Parameters:
   - title: Section title (optional, default: "Kesimpulan")
   - paragraphs: Array of paragraph strings
 
+Schema:
+-------
+Uses: _includes/schema/node--pjk3-city/schema--conclusion.html (WebPageElement)
+Referenced by Article via hasPart in schema--article.html
+Include in layout with:
+{% include schema/node--pjk3-city/schema--conclusion.html section=page.section_conclusion %}
+
 Usage:
 ------
-{% include reusable/node--article/block--conclusion.html section=page.section_conclusion %}
+{% include reusable/node--pjk3-city/block--conclusion.html section=page.section_conclusion %}
 
 ============================================================================
 {% endcomment %}

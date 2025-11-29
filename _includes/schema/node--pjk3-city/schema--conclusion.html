@@ -1,0 +1,41 @@
+{% comment %}
+============================================================================
+Schema: Conclusion - WebPageElement
+============================================================================
+
+@file        schema--conclusion.html
+@path        _includes/schema/node--pjk3-city/schema--conclusion.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for conclusion section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for conclusion section.
+Referenced by Article via hasPart.
+
+Parameters:
+-----------
+- section: Section data from page.section_conclusion (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--conclusion.html section=page.section_conclusion %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section and section.paragraphs %}
+{% assign all_text = section.paragraphs | join: ' ' %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#conclusion",
+  "name": "{{ section.title | default: 'Kesimpulan' | escape }}",
+  "text": "{{ all_text | escape }}"
+}
+</script>
+{% endif %}

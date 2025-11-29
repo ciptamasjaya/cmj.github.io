@@ -4,11 +4,12 @@ Block: Strategic Role - Article Section
 ============================================================================
 
 @file        block--strategic-role.html
-@path        _includes/reusable/node--article/block--strategic-role.html
+@path        _includes/reusable/node--pjk3-city/block--strategic-role.html
 @type        Block (reusable)
 @description Displays strategic role of PJK3 in city/region development
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - section explaining PJK3's strategic
 role in supporting city development and safety compliance.
@@ -23,9 +24,15 @@ Parameters:
     - description: Role description
     - icon: Bootstrap icon class (optional)
 
+Schema:
+-------
+Uses: _includes/schema/reusable/schema--itemlist.html (ItemList)
+Include in layout with:
+{% include schema/reusable/schema--itemlist.html items=page.section_role.roles title="Peran Strategis PJK3" id_suffix="roles-list" %}
+
 Usage:
 ------
-{% include reusable/node--article/block--strategic-role.html section=page.section_role %}
+{% include reusable/node--pjk3-city/block--strategic-role.html section=page.section_role %}
 
 ============================================================================
 {% endcomment %}

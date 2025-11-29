@@ -4,7 +4,7 @@ Block: Hero PJK3 - Article Section
 ============================================================================
 
 @file        block--hero-pjk3.html
-@path        _includes/reusable/node--article/block--hero-pjk3.html
+@path        _includes/reusable/node--pjk3-city/block--hero-pjk3.html
 @type        Block (reusable)
 @description Hero section for PJK3 location/service pages with CTA
 @author      arisciwek
@@ -36,9 +36,16 @@ Parameters:
   - cta_button: CTA button text
   - cta_notice: Small notice below CTA
 
+Schema:
+-------
+Uses: _includes/schema/node--pjk3-city/schema--hero-pjk3.html (WebPageElement)
+Referenced by Article via hasPart in schema--article.html
+Include in layout with:
+{% include schema/node--pjk3-city/schema--hero-pjk3.html section=page.section_hero %}
+
 Usage:
 ------
-{% include reusable/node--article/block--hero-pjk3.html section=page.section_hero %}
+{% include reusable/node--pjk3-city/block--hero-pjk3.html section=page.section_hero %}
 
 ============================================================================
 {% endcomment %}

@@ -4,7 +4,7 @@ Block: Service Coverage Area - Article Section
 ============================================================================
 
 @file        block--service-coverage.html
-@path        _includes/reusable/node--article/block--service-coverage.html
+@path        _includes/reusable/node--pjk3-city/block--service-coverage.html
 @type        Block (reusable)
 @description Displays service coverage area with categorized districts for PJK3
 @author      arisciwek
@@ -41,9 +41,16 @@ Parameters:
     - icon: Bootstrap icon class
     - warna: Bootstrap color class
 
+Schema:
+-------
+Uses: _includes/schema/node--pjk3-city/schema--local-business.html (LocalBusiness areaServed)
+Coverage data extends LocalBusiness areaServed with containsPlace (AdministrativeArea)
+Include in layout with:
+{% include schema/node--pjk3-city/schema--local-business.html reviews=all_reviews coverage=page.section_coverage %}
+
 Usage:
 ------
-{% include reusable/node--article/block--service-coverage.html section=page.section_coverage %}
+{% include reusable/node--pjk3-city/block--service-coverage.html section=page.section_coverage %}
 
 ============================================================================
 {% endcomment %}

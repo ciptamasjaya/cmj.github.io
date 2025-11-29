@@ -97,11 +97,21 @@ Usage in detail page:
   }{% if item.categories %},
   "articleSection": "{{ item.categories | first | escape }}"{% endif %}{% if item.tags or item.area_served %},
   "keywords": "{% if item.tags %}{{ item.tags | join: ', ' | escape }}{% endif %}{% if item.tags and item.area_served %}, {% endif %}{% if item.area_served %}{{ item.area_served }}, PJK3 {{ item.area_served }}, Riksa Uji {{ item.area_served }}{% endif %}"{% endif %}{% if item.word_count %},
-  "wordCount": "{{ item.word_count }}"{% endif %}{% if item.section_company_intro.subsections %},
-  "hasPart": {
-    "@type": "WebPageElement",
-    "@id": "{{ item.url | absolute_url }}#company-intro"
-  }{% endif %}
+  "wordCount": "{{ item.word_count }}"{% endif %}{% if item.section_hero or item.section_company_intro.subsections or item.section_conclusion.paragraphs %},
+  "hasPart": [
+    {% if item.section_hero %}{
+      "@type": "WebPageElement",
+      "@id": "{{ item.url | absolute_url }}#hero-pjk3"
+    }{% if item.section_company_intro.subsections or item.section_conclusion.paragraphs %},{% endif %}{% endif %}
+    {% if item.section_company_intro.subsections %}{
+      "@type": "WebPageElement",
+      "@id": "{{ item.url | absolute_url }}#company-intro"
+    }{% if item.section_conclusion.paragraphs %},{% endif %}{% endif %}
+    {% if item.section_conclusion.paragraphs %}{
+      "@type": "WebPageElement",
+      "@id": "{{ item.url | absolute_url }}#conclusion"
+    }{% endif %}
+  ]{% endif %}
 }
 </script>
 
