@@ -56,6 +56,11 @@
   <link rel="stylesheet" href="{{ '/assets/css/post-blocks.css' | relative_url }}">
   {% endif %}
 
+  <!-- PJK3 City-specific CSS (loaded only for PJK3 city layouts) -->
+  {% if page.layout == 'page--pjk3-city' or page.layout == 'node--pjk3-city' %}
+  <link rel="stylesheet" href="{{ '/assets/css/block--pjk3-city.css' | relative_url }}">
+  {% endif %}
+
   <!-- Favicon & App Icons -->
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/logo.svg' | relative_url }}">

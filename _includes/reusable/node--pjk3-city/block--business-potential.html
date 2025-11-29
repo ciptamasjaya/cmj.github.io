@@ -40,7 +40,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="article-section business-potential-section py-5 bg-light" id="block--business-potential">
+<section class="article-section block--business-potential py-5 bg-light" id="block--business-potential">
   <div class="container">
 
     <!-- Section Header -->
@@ -62,7 +62,7 @@ Usage:
         <div class="card h-100 border-0 shadow-sm text-center">
           <div class="card-body">
             <div class="potential-icon mb-3">
-              <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+              <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle d-inline-flex">
                 <i class="bi {{ potential.icon | default: 'bi-briefcase' }} fs-2 text-success"></i>
               </div>
             </div>

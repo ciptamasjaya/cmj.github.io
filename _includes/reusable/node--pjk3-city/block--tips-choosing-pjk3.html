@@ -44,16 +44,16 @@ Usage:
 {% assign area = section.area | default: page.area_served %}
 
 {% if section %}
-<section class="article-section tips-choosing-section py-5" id="block--tips-choosing-pjk3">
+<section class="article-section block--tips-choosing-pjk3 py-5" id="block--tips-choosing-pjk3">
   <div class="container">
 
     <!-- Header Section -->
     <div class="mb-5">
       <div class="card border-0 shadow-lg">
-        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);">
+        <div class="card-body header-gradient text-white text-center py-4 px-3">
           <i class="bi bi-lightbulb-fill fs-1 mb-2"></i>
           <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Tips Memilih PJK3" }}{% if area %} di {{ area }}{% endif %}</h2>
-          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+          <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-check-circle me-1"></i>
             Pilih partner inspeksi K3 yang tepat untuk keselamatan bisnis Anda
             <i class="bi bi-check-circle ms-1"></i>
@@ -83,7 +83,7 @@ Usage:
                 <i class="bi {{ tip.icon | default: 'bi-check-circle' }} me-2 fs-4"></i>
                 <h4 class="h6 mb-0 fw-bold">{{ tip.kategori }}</h4>
               </div>
-              <small style="opacity: 0.85;">{{ tip.deskripsi }}</small>
+              <small class="tip-description">{{ tip.deskripsi }}</small>
             </div>
             <div class="card-body">
               <!-- Kriteria -->
@@ -106,7 +106,7 @@ Usage:
     {% endif %}
 
     <!-- Why Choose CMJ -->
-    <div class="card border-0 shadow-lg my-5" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);">
+    <div class="card cta-card-green border-0 shadow-lg my-5">
       <div class="card-body py-4">
         <div class="row align-items-center">
           <div class="col-lg-8">
@@ -131,7 +131,7 @@ Usage:
             </div>
           </div>
           <div class="col-lg-4 text-center mt-4 mt-lg-0">
-            <i class="bi bi-shield-check text-success" style="font-size: 4rem; opacity: 0.3;"></i>
+            <i class="bi bi-shield-check text-success cta-icon-large"></i>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@ Usage:
 
     <!-- Consultation CTA -->
     <div class="card border-0 shadow-sm">
-      <div class="card-body text-center py-4" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);">
+      <div class="card-body cta-card-blue text-center py-4">
         <i class="bi bi-headset text-primary mb-3 fs-1"></i>
         <h5 class="fw-bold text-primary mb-2">Butuh Konsultasi?</h5>
         <p class="text-muted mb-3">Tim kami siap membantu Anda memilih layanan riksa uji yang tepat untuk kebutuhan bisnis Anda!</p>

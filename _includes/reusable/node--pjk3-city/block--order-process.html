@@ -53,16 +53,16 @@ Usage:
 {% assign phone = section.phone | default: site.business.phone %}
 
 {% if section %}
-<section class="article-section order-process-section py-5" id="block--order-process">
+<section class="article-section block--order-process py-5" id="block--order-process">
   <div class="container">
 
     <!-- Header Section -->
     <div class="mb-5">
       <div class="card border-0 shadow-lg">
-        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 50%, #0a58ca 100%);">
+        <div class="card-body header-gradient text-white text-center py-4 px-3">
           <i class="bi bi-clipboard-check fs-1 mb-2"></i>
           <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Cara Pemesanan Layanan Riksa Uji" }}{% if area %} {{ area }}{% endif %}</h2>
-          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+          <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-phone me-1"></i>
             Hubungi: {{ phone }} (Telepon / WhatsApp)
             <i class="bi bi-phone ms-1"></i>
@@ -102,13 +102,13 @@ Usage:
         <div class="card border-0 shadow-sm h-100 hover-lift">
           <div class="card-body text-center position-relative">
             <div class="position-absolute top-0 start-50 translate-middle">
-              <div class="bg-{{ step_color }} text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 40px; height: 40px; font-size: 1.25rem;">
+              <div class="step-number bg-{{ step_color }} text-white rounded-circle fw-bold">
                 {{ step_num }}
               </div>
             </div>
             <div class="mt-4 pt-2">
-              <div class="bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <i class="bi {{ step.icon | default: 'bi-check-circle' }} text-{{ step_color }}" style="font-size: 2rem;"></i>
+              <div class="step-icon-wrapper bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex mb-3">
+                <i class="bi {{ step.icon | default: 'bi-check-circle' }} step-icon text-{{ step_color }}"></i>
               </div>
               <h4 class="h6 text-dark mb-2 fw-bold">{{ step.title }}</h4>
               <p class="small text-muted mb-0">{{ step.description }}</p>
@@ -138,13 +138,13 @@ Usage:
         <div class="card border-0 shadow-sm h-100 hover-lift">
           <div class="card-body text-center position-relative">
             <div class="position-absolute top-0 start-50 translate-middle">
-              <div class="bg-{{ step_color }} text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 40px; height: 40px; font-size: 1.25rem;">
+              <div class="step-number bg-{{ step_color }} text-white rounded-circle fw-bold">
                 {{ step_num }}
               </div>
             </div>
             <div class="mt-4 pt-2">
-              <div class="bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
-                <i class="bi {{ step.icon | default: 'bi-check-circle' }} text-{{ step_color }}" style="font-size: 2rem;"></i>
+              <div class="step-icon-wrapper bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex mb-3">
+                <i class="bi {{ step.icon | default: 'bi-check-circle' }} step-icon text-{{ step_color }}"></i>
               </div>
               <h4 class="h6 text-dark mb-2 fw-bold">{{ step.title }}</h4>
               <p class="small text-muted mb-0">{{ step.description }}</p>
@@ -156,9 +156,9 @@ Usage:
     </div>
 
     <!-- WhatsApp CTA -->
-    <div class="card border-0 shadow-lg my-4" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);">
+    <div class="card whatsapp-cta-card border-0 shadow-lg my-4">
       <div class="card-body text-white text-center py-4">
-        <i class="bi bi-whatsapp mb-3" style="font-size: 3rem;"></i>
+        <i class="bi bi-whatsapp whatsapp-icon-large mb-3"></i>
         <h4 class="h5 mb-3 fw-bold">Konsultasi Gratis Sekarang!</h4>
         <p class="mb-3">Klik tombol WhatsApp di bawah atau langsung hubungi <strong>{{ phone }}</strong> untuk konsultasi kebutuhan riksa uji{% if area %} di {{ area }}{% endif %}, cek jadwal inspeksi, dan penawaran terbaik!</p>
         <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-light btn-lg px-5" target="_blank">

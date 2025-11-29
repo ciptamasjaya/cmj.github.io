@@ -54,24 +54,24 @@ Usage:
 {% assign area = section.area | default: page.area_served %}
 
 {% if section %}
-<section class="article-section hero-pjk3-section" id="block--hero-pjk3-{{ area | slugify }}">
+<section class="article-section block--hero-pjk3" id="block--hero-pjk3-{{ area | slugify }}">
   <div class="container py-4">
-    <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 50%, #0a58ca 100%);">
+    <div class="card hero-card shadow-lg">
       <div class="card-body text-white py-4">
         <div class="row align-items-center">
           <div class="col-lg-8">
             <h2 class="h2 fw-bold mb-3">
               <i class="bi bi-geo-alt-fill me-2"></i>{{ section.title | default: "Butuh Layanan Riksa Uji K3" }}{% if area %} di {{ area }}{% endif %}?
             </h2>
-            <p class="mb-3" style="opacity: 0.95; font-size: 1.05rem;">
+            <p class="hero-description mb-3">
               {{ section.description | default: "Sedang mencari jasa riksa uji K3 terpercaya? PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian peralatan K3 dengan standar profesional." }}
             </p>
             <div class="bg-white bg-opacity-10 p-3 rounded mb-3">
-              <p class="mb-2" style="opacity: 0.95;">
+              <p class="hero-text-main mb-2">
                 <i class="bi bi-building me-2"></i>
                 <strong>{{ section.label_wilayah | default: "Melayani Wilayah:" }}</strong>
               </p>
-              <p class="mb-0 small" style="opacity: 0.9;">
+              <p class="hero-text-sub mb-0 small">
                 {% if section.wilayah_layanan %}
                   {{ section.wilayah_layanan | join: ', ' }}
                 {% else %}
@@ -101,7 +101,7 @@ Usage:
           </div>
           <div class="col-lg-4 text-center mt-4 mt-lg-0">
             <div class="bg-white p-4 rounded shadow-lg">
-              <i class="bi bi-telephone-fill text-primary mb-3" style="font-size: 3rem;"></i>
+              <i class="bi bi-telephone-fill text-primary contact-icon mb-3"></i>
               <h4 class="h5 fw-bold text-primary mb-2">{{ section.cta_title | default: "Hubungi Kami Sekarang!" }}</h4>
               <p class="h3 fw-bold text-dark mb-3">{{ site.business.phone }}</p>
               <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}"

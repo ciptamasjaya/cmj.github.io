@@ -69,16 +69,16 @@ Usage:
   {% assign video_poster = '/assets/images/posts/default/i1.svg' %}
 {% endif %}
 
-<section class="article-section video-section py-5" id="block--video">
+<section class="article-section block--video py-5" id="block--video">
   <div class="container">
 
     <!-- Header Section -->
     <div class="mb-5">
       <div class="card border-0 shadow-lg">
-        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);">
+        <div class="card-body header-gradient text-white text-center py-4 px-3">
           <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
           <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Video Layanan" }}{% if area %} {{ area }}{% endif %}</h2>
-          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+          <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-film me-1"></i>
             {{ section.description | default: "Lihat dokumentasi proses layanan kami" }}
             <i class="bi bi-film ms-1"></i>
@@ -96,8 +96,7 @@ Usage:
               controls
               preload="metadata"
               {% if video_poster %}poster="{{ video_poster | relative_url }}"{% endif %}
-              class="w-100"
-              style="background: #000;">
+              class="video-container w-100">
               <source src="{{ video_src | relative_url }}" type="video/webm">
               <source src="{{ video_src | replace: '.webm', '.mp4' | relative_url }}" type="video/mp4">
               Browser Anda tidak mendukung tag video HTML5.

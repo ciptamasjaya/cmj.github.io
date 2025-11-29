@@ -1,0 +1,325 @@
+---
+# Styles for PJK3 City Block Components
+# PT. Cipta Mas Jaya
+---
+
+/* ============================================================================
+   PJK3 CITY BLOCKS - Extracted from inline styles
+   ============================================================================
+   @file        block--pjk3-city.scss
+   @path        assets/css/block--pjk3-city.scss
+   @description Styles for PJK3 city-specific block components
+   @author      arisciwek
+   @created     2025-11-29
+
+   Blocks covered:
+   - block--hero-pjk3
+   - block--about-city
+   - block--services-excellence
+   - block--strategic-role
+   - block--tips-choosing-pjk3
+   - block--order-process
+   - block--business-potential
+   - block--gallery
+   - block--video
+   - block--faq-riksa-uji
+   - block--testimonials
+   - block--service-coverage
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   SHARED VARIABLES (matching Bootstrap & site theme)
+   ---------------------------------------------------------------------------- */
+$gradient-primary: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 50%, #0a58ca 100%);
+$gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+$gradient-indigo: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+$gradient-blue: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+$gradient-green: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+$gradient-green-light: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+$gradient-blue-light: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+$gradient-orange: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+$gradient-red: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%);
+$gradient-whatsapp: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+
+$icon-circle-sm: 40px;
+$icon-circle-md: 50px;
+$icon-circle-lg: 60px;
+$icon-circle-xl: 70px;
+
+$text-muted-opacity: 0.85;
+$text-light-opacity: 0.95;
+$text-lighter-opacity: 0.9;
+
+/* ----------------------------------------------------------------------------
+   SHARED MIXINS
+   ---------------------------------------------------------------------------- */
+@mixin header-gradient($gradient) {
+  background: $gradient;
+  padding: 1rem 1.25rem;
+}
+
+@mixin icon-circle($size) {
+  width: $size;
+  height: $size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin text-muted-white {
+  opacity: $text-muted-opacity;
+}
+
+@mixin lead-constrained {
+  max-width: 800px;
+}
+
+/* ----------------------------------------------------------------------------
+   HIGH SPECIFICITY SELECTORS
+   ----------------------------------------------------------------------------
+   Note: We use high specificity selectors to override Bootstrap defaults
+   without using !important. The pattern [class*="block--"] ensures our
+   styles win over Bootstrap's single class selectors.
+   ---------------------------------------------------------------------------- */
+
+/* ============================================================================
+   BLOCK: HERO PJK3
+   ============================================================================ */
+section.block--hero-pjk3 {
+  .card.hero-card {
+    background: $gradient-primary;
+    border: 0;
+  }
+
+  p.hero-description {
+    opacity: $text-light-opacity;
+    font-size: 1.05rem;
+  }
+
+  p.hero-text-main {
+    opacity: $text-light-opacity;
+  }
+
+  p.hero-text-sub {
+    opacity: $text-lighter-opacity;
+  }
+
+  i.contact-icon {
+    font-size: 3rem;
+  }
+}
+
+/* ============================================================================
+   BLOCK: ABOUT CITY
+   ============================================================================ */
+section.block--about-city {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-blue);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+}
+
+/* ============================================================================
+   BLOCK: SERVICES EXCELLENCE
+   ============================================================================ */
+section.block--services-excellence {
+  p.section-intro {
+    @include lead-constrained;
+  }
+}
+
+/* ============================================================================
+   BLOCK: STRATEGIC ROLE
+   ============================================================================ */
+section.block--strategic-role {
+  p.section-intro {
+    @include lead-constrained;
+  }
+
+  div.icon-circle {
+    @include icon-circle($icon-circle-lg);
+  }
+}
+
+/* ============================================================================
+   BLOCK: TIPS CHOOSING PJK3
+   ============================================================================ */
+section.block--tips-choosing-pjk3 {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-purple);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
+  small.tip-description {
+    @include text-muted-white;
+  }
+
+  .card.cta-card-green {
+    background: $gradient-green-light;
+  }
+
+  i.cta-icon-large {
+    font-size: 4rem;
+    opacity: 0.3;
+  }
+
+  .card-body.cta-card-blue {
+    background: $gradient-blue-light;
+  }
+}
+
+/* ============================================================================
+   BLOCK: ORDER PROCESS
+   ============================================================================ */
+section.block--order-process {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-primary);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
+  div.step-number {
+    @include icon-circle($icon-circle-sm);
+    font-size: 1.25rem;
+  }
+
+  div.step-icon-wrapper {
+    @include icon-circle($icon-circle-xl);
+  }
+
+  i.step-icon {
+    font-size: 2rem;
+  }
+
+  .card.whatsapp-cta-card {
+    background: $gradient-whatsapp;
+  }
+
+  i.whatsapp-icon-large {
+    font-size: 3rem;
+  }
+}
+
+/* ============================================================================
+   BLOCK: BUSINESS POTENTIAL
+   ============================================================================ */
+section.block--business-potential {
+  div.icon-wrapper {
+    @include icon-circle($icon-circle-xl);
+  }
+}
+
+/* ============================================================================
+   BLOCK: GALLERY
+   ============================================================================ */
+section.block--gallery {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-indigo);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
+  img.gallery-image {
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .card-img-overlay.gallery-overlay {
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover {
+    img.gallery-image {
+      transform: scale(1.05);
+    }
+
+    .card-img-overlay.gallery-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+/* ============================================================================
+   BLOCK: VIDEO
+   ============================================================================ */
+section.block--video {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-red);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
+  div.video-container {
+    background: #000;
+  }
+}
+
+/* ============================================================================
+   BLOCK: FAQ RIKSA UJI
+   ============================================================================ */
+section.block--faq-riksa-uji {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-purple);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
+  div.faq-icon-circle {
+    @include icon-circle($icon-circle-md);
+  }
+
+  .card-body.cta-footer {
+    background: $gradient-blue-light;
+  }
+}
+
+/* ============================================================================
+   BLOCK: TESTIMONIALS
+   ============================================================================ */
+section.block--testimonials {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-orange);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
+  div.testimonial-avatar {
+    @include icon-circle($icon-circle-lg);
+  }
+
+  i.quote-icon {
+    vertical-align: text-top;
+  }
+}
+
+/* ============================================================================
+   BLOCK: SERVICE COVERAGE
+   ============================================================================ */
+section.block--service-coverage {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-green);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+}

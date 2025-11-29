@@ -49,16 +49,16 @@ Usage:
 {% assign area = section.area | default: page.area_served %}
 
 {% if section %}
-<section class="article-section testimonials-section py-5 bg-light" id="block--testimonials">
+<section class="article-section block--testimonials py-5 bg-light" id="block--testimonials">
   <div class="container">
 
     <!-- Header Section -->
     <div class="mb-5">
       <div class="card border-0 shadow-lg">
-        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);">
+        <div class="card-body header-gradient text-white text-center py-4 px-3">
           <i class="bi bi-chat-quote-fill fs-1 mb-2"></i>
           <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Testimoni Pelanggan" }}{% if area %} {{ area }}{% endif %}</h2>
-          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+          <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-star-fill me-1"></i>
             Kepuasan pelanggan adalah prioritas kami
             <i class="bi bi-star-fill ms-1"></i>
@@ -85,7 +85,7 @@ Usage:
           <div class="card border-0 shadow-sm h-100">
             <div class="card-body">
               <div class="d-flex mb-3">
-                <div class="bg-{{ testi.warna | default: 'primary' }} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                <div class="testimonial-avatar bg-{{ testi.warna | default: 'primary' }} bg-opacity-10 rounded-circle me-3">
                   <i class="bi bi-person-fill text-{{ testi.warna | default: 'primary' }} fs-4"></i>
                 </div>
                 <div class="flex-grow-1">
@@ -109,7 +109,7 @@ Usage:
                 <i class="bi bi-chat-left-quote text-primary me-1"></i>{{ testi.judul }}
               </h5>
               <p class="small text-muted fst-italic mb-0">
-                <i class="bi bi-quote text-primary me-1 fs-5" style="vertical-align: text-top;"></i>
+                <i class="bi bi-quote quote-icon text-primary me-1 fs-5"></i>
                 {{ testi.komentar }}
               </p>
             </div>
@@ -138,7 +138,7 @@ Usage:
           <div class="card border-0 shadow-sm h-100">
             <div class="card-body">
               <div class="d-flex mb-3">
-                <div class="bg-{{ testi.warna | default: 'success' }} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 60px; height: 60px;">
+                <div class="testimonial-avatar bg-{{ testi.warna | default: 'success' }} bg-opacity-10 rounded-circle me-3">
                   <i class="bi bi-person-fill text-{{ testi.warna | default: 'success' }} fs-4"></i>
                 </div>
                 <div class="flex-grow-1">
@@ -162,7 +162,7 @@ Usage:
                 <i class="bi bi-chat-left-quote text-success me-1"></i>{{ testi.judul }}
               </h5>
               <p class="small text-muted fst-italic mb-0">
-                <i class="bi bi-quote text-success me-1 fs-5" style="vertical-align: text-top;"></i>
+                <i class="bi bi-quote quote-icon text-success me-1 fs-5"></i>
                 {{ testi.komentar }}
               </p>
             </div>

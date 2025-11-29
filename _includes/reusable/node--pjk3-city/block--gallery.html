@@ -65,16 +65,16 @@ Usage:
   {% assign gallery_images = default_images %}
 {% endunless %}
 
-<section class="article-section gallery-section py-5 bg-light" id="block--gallery">
+<section class="article-section block--gallery py-5 bg-light" id="block--gallery">
   <div class="container">
 
     <!-- Header Section -->
     <div class="mb-5">
       <div class="card border-0 shadow-lg">
-        <div class="card-body text-white text-center py-4 px-3" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);">
+        <div class="card-body header-gradient text-white text-center py-4 px-3">
           <i class="bi bi-images fs-1 mb-2"></i>
           <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Galeri" }}{% if area %} {{ area }}{% endif %}</h2>
-          <p class="mb-0 mt-2 small" style="opacity: 0.85;">
+          <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-camera me-1"></i>
             {{ section.description | default: "Dokumentasi layanan dan kegiatan kami" }}
             <i class="bi bi-camera ms-1"></i>
@@ -91,9 +91,8 @@ Usage:
           <a href="{{ img | relative_url }}" class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="{{ img | relative_url }}">
             <img src="{{ img | relative_url }}"
                  alt="{{ page.title }} - Gambar {{ forloop.index }}"
-                 class="card-img-top img-fluid"
-                 style="height: 180px; object-fit: cover; transition: transform 0.3s ease;">
-            <div class="card-img-overlay d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.3); opacity: 0; transition: opacity 0.3s ease;">
+                 class="gallery-image card-img-top img-fluid">
+            <div class="card-img-overlay gallery-overlay d-flex align-items-center justify-content-center">
               <i class="bi bi-zoom-in text-white fs-2"></i>
             </div>
           </a>

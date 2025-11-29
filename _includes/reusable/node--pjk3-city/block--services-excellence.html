@@ -40,7 +40,7 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="article-section services-excellence-section py-5 bg-light" id="block--services-excellence">
+<section class="article-section block--services-excellence py-5 bg-light" id="block--services-excellence">
   <div class="container">
 
     <!-- Section Header -->
@@ -50,7 +50,7 @@ Usage:
         {{ section.title | default: "Keunggulan Layanan" }}
       </h2>
       {% if section.intro %}
-      <p class="lead text-muted mx-auto" style="max-width: 800px;">{{ section.intro }}</p>
+      <p class="section-intro lead text-muted mx-auto">{{ section.intro }}</p>
       {% endif %}
     </div>
 
