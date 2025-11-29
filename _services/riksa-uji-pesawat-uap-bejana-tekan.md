@@ -1,5 +1,5 @@
 ---
-layout: page--category
+layout: page/page--category
 title: "Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun"
 description: "Jasa riksa uji dan inspeksi K3 pesawat uap, bejana tekan, dan tangki timbun profesional meliputi boiler, pressure vessel, heat exchanger, dan storage tank sesuai standar Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan sertifikat resmi."
 permalink: /layanan/riksa-uji-pesawat-uap-bejana-tekan/

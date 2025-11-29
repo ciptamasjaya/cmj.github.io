@@ -1,5 +1,5 @@
 ---
-layout: page--subcategory
+layout: page/page--subcategory
 title: "Bejana Tekan"
 description: "Jasa riksa uji dan inspeksi K3 bejana tekan profesional meliputi air receiver, pressure vessel, heat exchanger, autoclave, dan separator. Sertifikat resmi dari Disnaker setempat."
 permalink: /layanan/riksa-uji-pesawat-uap-bejana-tekan/bejana-tekan/

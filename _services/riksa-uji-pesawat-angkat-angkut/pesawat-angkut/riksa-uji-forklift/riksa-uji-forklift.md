@@ -1,5 +1,5 @@
 ---
-layout: node--service
+layout: node/node--service
 title: "Riksa Uji Forklift"
 description: "Jasa riksa uji dan inspeksi K3 forklift profesional dengan sertifikat resmi Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan inspector bersertifikat dan peralatan terkalibrasi."
 para_1: "Riksa uji forklift merupakan pemeriksaan dan pengujian keselamatan terhadap forklift yang wajib dilakukan secara berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini bertujuan untuk memastikan forklift beroperasi dengan aman dan sesuai standar keselamatan kerja yang berlaku."

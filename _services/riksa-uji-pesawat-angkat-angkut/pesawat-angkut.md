@@ -1,5 +1,5 @@
 ---
-layout: page--subcategory
+layout: page/page--subcategory
 title: "Pesawat Angkut"
 description: "Jasa riksa uji dan inspeksi K3 pesawat angkut profesional meliputi forklift, excavator, wheel loader, bulldozer, reach stacker, dan conveyor. Sertifikat resmi Kementerian Ketenagakerjaan RI."
 permalink: /layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/

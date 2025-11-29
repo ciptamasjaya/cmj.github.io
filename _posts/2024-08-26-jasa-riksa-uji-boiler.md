@@ -1,5 +1,5 @@
 ---
-layout: node--riksa-uji
+layout: node/node--riksa-uji
 title: "Riksa Uji Boiler"
 description: "Riksa uji boiler adalah pemeriksaan dan pengujian keselamatan ketel uap untuk memastikan operasional aman sesuai standar K3 dan Permenaker."
 # Content Intro - Paragraf pembuka setelah H1

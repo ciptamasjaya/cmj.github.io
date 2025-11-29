@@ -1,5 +1,5 @@
 ---
-layout: page--subcategory
+layout: page/page--subcategory
 title: "Pesawat Uap"
 description: "Jasa riksa uji dan inspeksi K3 pesawat uap profesional meliputi boiler pipa api, boiler pipa air, steam generator, dan thermal oil heater. Sertifikat resmi dari Disnaker setempat."
 permalink: /layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/

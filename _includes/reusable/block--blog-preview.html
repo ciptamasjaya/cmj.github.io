@@ -76,8 +76,21 @@ Archive page:
         {% assign loop_posts = blog_posts | limit: post_limit %}
       {% endif %}
       {% for post in loop_posts %}
+      {% comment %} Determine semantic class based on layout/node type {% endcomment %}
+      {% case post.layout %}
+        {% when 'node--riksa-uji' %}
+          {% assign node_class = "blog-card--riksa-uji" %}
+        {% when 'node--pjk3-city' %}
+          {% assign node_class = "blog-card--pjk3-city" %}
+        {% when 'node--article' %}
+          {% assign node_class = "blog-card--article" %}
+        {% when 'node--service' %}
+          {% assign node_class = "blog-card--service" %}
+        {% else %}
+          {% assign node_class = "blog-card--post" %}
+      {% endcase %}
       <div class="col-md-6 col-lg-4">
-        <article class="card blog-card border-0 shadow-sm h-100">
+        <article class="card blog-card {{ node_class }} border-0 shadow-sm h-100">
 
           <!-- Post Thumbnail -->
           {% if post.thumbnail %}

@@ -115,11 +115,11 @@ category: "Riksa Uji Pesawat Angkat Angkut"
       {% if color_index == 0 %}{% assign color_index = 3 %}{% endif %}
       <div class="col-md-4">
         {% if post.layout == 'node--riksa-uji' %}
-          {% include reusable/block--riksa-uji.html post=post color_index=color_index %}
+          {% include block/block--riksa-uji.html post=post color_index=color_index %}
         {% elsif post.layout == 'node--article' %}
           {% include reusable/block--article.html post=post color_index=color_index %}
         {% else %}
-          {% include reusable/block--post.html post=post color_index=color_index %}
+          {% include block/block--post.html post=post color_index=color_index %}
         {% endif %}
       </div>
       <!-- Schema for this post -->
