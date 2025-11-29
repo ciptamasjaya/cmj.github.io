@@ -5,7 +5,7 @@ Blog Preview/Archive Block
 
 @file        _includes/reusable/block--blog-preview.html
 @description Blog posts grid - reusable for homepage preview and archive page
-@version     1.1.0
+@version     1.0.5
 @date        2025-11-22
 @updated     2025-11-29
 @author      arisciwek (PT. Cipta Mas Jaya)
@@ -81,17 +81,7 @@ Archive page:
       {% if color_index == 0 %}{% assign color_index = 3 %}{% endif %}
 
       <div class="col-md-6 col-lg-4">
-        {% comment %} Include card template based on layout/node type {% endcomment %}
-        {% case post.layout %}
-          {% when 'node/node--riksa-uji' %}
-            {% include block/block--riksa-uji.html post=post color_index=color_index %}
-          {% when 'node/node--pjk3-city' %}
-            {% include block/block--pjk3-city.html post=post color_index=color_index %}
-          {% when 'node/node--service' %}
-            {% include block/block--service.html post=post color_index=color_index %}
-          {% else %}
-            {% include block/block--post.html post=post color_index=color_index %}
-        {% endcase %}
+        {% include block/block--card.html post=post color_index=color_index %}
       </div>
 
       {% if variant == "archive" %}

@@ -5,29 +5,52 @@ Component: Rating Stars
 
 @file        rating-stars.html
 @path        _includes/components/rating-stars.html
-@description Display star rating with optional text from JSON data
-@version     1.0.0
-@date        2025-11-25
+@description Display star rating with half-star support
+@version     1.0.5
+@date        2025-11-29
 
 Parameters:
 -----------
-- rating: Rating object from rating--service.json (required)
+Mode 1 - Direct values (for block cards):
+- rating: Rating value 0-5 (number)
+- count: Total review count (number)
+
+Mode 2 - Object (for service pages):
+- rating_data: Rating object with .average and .total_reviews
+
+Common:
 - size: Star size - "sm" | "md" | "lg" (default: "md")
 - show_count: Show review count (default: true)
 - show_text: Show "ulasan" text (default: true)
+- wrapper_class: Additional wrapper class (default: "block-rating")
+
+Half-star Logic:
+----------------
+- decimal < 0.3  = empty star
+- decimal 0.3-0.8 = half star
+- decimal >= 0.8 = full star
 
 Usage:
 ------
-{% assign rating = site.data.rating--service.ratings | where: "slug", page_slug | first %}
-{% include components/rating-stars.html rating=rating size="md" %}
+Mode 1: {% include components/rating-stars.html rating=4.5 count=12 %}
+Mode 2: {% include components/rating-stars.html rating_data=rating_obj size="md" %}
 
 ============================================================================
 {% endcomment %}
 
-{% assign rating_data = include.rating %}
+{% comment %} Determine mode and get values {% endcomment %}
+{% if include.rating_data %}
+  {% assign avg = include.rating_data.average | default: 0 %}
+  {% assign count = include.rating_data.total_reviews | default: 0 %}
+{% else %}
+  {% assign avg = include.rating | default: 5 %}
+  {% assign count = include.count | default: 0 %}
+{% endif %}
+
 {% assign size = include.size | default: "md" %}
 {% assign show_count = include.show_count | default: true %}
-{% assign show_text = include.show_text | default: true %}
+{% assign show_text = include.show_text | default: false %}
+{% assign wrapper_class = include.wrapper_class | default: "block-rating" %}
 
 {% comment %} Set size classes {% endcomment %}
 {% if size == "sm" %}
@@ -41,46 +64,27 @@ Usage:
   {% assign text_class = "" %}
 {% endif %}
 
-{% if rating_data %}
-  {% assign avg = rating_data.average | default: 0 %}
-  {% assign count = rating_data.total_reviews | default: 0 %}
-
-  {% comment %} Calculate full/half/empty stars {% endcomment %}
-  {% assign full_stars = avg | floor %}
-  {% assign decimal = avg | minus: full_stars %}
-  {% assign has_half = false %}
-  {% if decimal >= 0.3 and decimal < 0.8 %}
-    {% assign has_half = true %}
-  {% elsif decimal >= 0.8 %}
-    {% assign full_stars = full_stars | plus: 1 %}
-  {% endif %}
-
-  <div class="rating-stars d-inline-flex align-items-center gap-1 {{ text_class }}">
-    <span class="stars">
-      {% for i in (1..5) %}
-        {% if i <= full_stars %}
-          <i class="bi bi-star-fill text-warning {{ star_class }}"></i>
-        {% elsif has_half and i == full_stars | plus: 1 %}
-          <i class="bi bi-star-half text-warning {{ star_class }}"></i>
-        {% else %}
-          <i class="bi bi-star text-warning {{ star_class }}"></i>
-        {% endif %}
-      {% endfor %}
-    </span>
-    <span class="rating-value fw-bold ms-1">{{ avg }}</span>
-    {% if show_count %}
-      <span class="rating-count text-muted">
-        ({{ count }}{% if show_text %} ulasan{% endif %})
-      </span>
-    {% endif %}
-  </div>
-{% else %}
-  <div class="rating-stars d-inline-flex align-items-center gap-1 {{ text_class }}">
-    <span class="stars">
-      {% for i in (1..5) %}
-        <i class="bi bi-star text-muted {{ star_class }}"></i>
-      {% endfor %}
-    </span>
-    <span class="rating-count text-muted ms-1">Belum ada ulasan</span>
-  </div>
+{% comment %} Calculate full/half/empty stars {% endcomment %}
+{% assign full_stars = avg | floor %}
+{% assign decimal = avg | minus: full_stars %}
+{% assign has_half = false %}
+{% if decimal >= 0.3 and decimal < 0.8 %}
+  {% assign has_half = true %}
+{% elsif decimal >= 0.8 %}
+  {% assign full_stars = full_stars | plus: 1 %}
 {% endif %}
+
+<div class="{{ wrapper_class }} {{ text_class }}">
+  {% for i in (1..5) %}
+    {% if i <= full_stars %}
+      <i class="bi bi-star-fill text-warning {{ star_class }}"></i>
+    {% elsif has_half and i == full_stars | plus: 1 %}
+      <i class="bi bi-star-half text-warning {{ star_class }}"></i>
+    {% else %}
+      <i class="bi bi-star text-warning {{ star_class }}"></i>
+    {% endif %}
+  {% endfor %}
+  {% if show_count %}
+    <small class="text-muted ms-1">{{ avg }}{% if count > 0 %} ({{ count }}{% if show_text %} ulasan{% endif %}){% endif %}</small>
+  {% endif %}
+</div>
