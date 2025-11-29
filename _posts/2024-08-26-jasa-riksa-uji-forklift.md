@@ -29,9 +29,9 @@ tags:
   - Riksa Uji
   - Forklift
 # Images
-# image: featured image untuk og:image, schema, thumbnail (fallback: i1.svg)
-# images: gallery slider (fallback: i1-i4.svg)
-image: ""
+# images[0] = featured image untuk og:image, schema, thumbnail
+# images[1-3] = gallery images
+# Jika kosong, fallback ke default i1-i4.svg
 images:
   - ""
   - ""

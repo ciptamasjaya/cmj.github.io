@@ -1,40 +1,56 @@
 {% comment %}
 ============================================================================
-Blog Preview Block
+Blog Preview/Archive Block
 ============================================================================
 
 @file        _includes/reusable/block--blog-preview.html
-@description Preview artikel blog terbaru untuk homepage
-@version     1.0.0
+@description Blog posts grid - reusable for homepage preview and archive page
+@version     1.1.0
 @date        2025-11-22
+@updated     2025-11-29
 @author      arisciwek (PT. Cipta Mas Jaya)
 
 Features:
 ---------
-- Display latest 3 blog posts
-- Post thumbnail, title, excerpt, date
-- Responsive card grid
-- Link to full blog archive
+- Display blog posts in responsive card grid
+- Post thumbnail, title, excerpt, date, tags
+- Two variants: preview (homepage) and archive (full page)
 
-Data Source:
-------------
-Uses Jekyll site.posts collection:
-- Automatically sorted by date (newest first)
-- Limits to first 3 posts
+Parameters:
+-----------
+- variant: "preview" (default) or "archive"
+  - preview: Shows limited posts with "View All" button, uses site.posts
+  - archive: Shows paginated posts, uses paginator.posts, no "View All" button
+- limit: Number of posts to show (default: 3, only for preview variant)
+- posts: Custom posts collection (optional, for archive with paginator)
+- show_cta: Show newsletter CTA section (default: false, for archive)
 
 Usage:
 ------
+Homepage (preview):
 {% include reusable/block--blog-preview.html %}
+{% include reusable/block--blog-preview.html limit=6 %}
 
-Optional parameters:
-- limit: Number of posts to show (default: 3)
+Archive page:
+{% include reusable/block--blog-preview.html variant="archive" posts=paginator.posts show_cta=true %}
 
 ============================================================================
 {% endcomment %}
 
+{% assign variant = include.variant | default: "preview" %}
 {% assign post_limit = include.limit | default: 3 %}
+{% assign show_cta = include.show_cta | default: false %}
 
-<section class="block--blog-preview py-5 bg-light">
+{% comment %} Determine posts source based on variant {% endcomment %}
+{% if variant == "archive" %}
+  {% assign blog_posts = include.posts %}
+  {% assign block_class = "block--blog-archive" %}
+{% else %}
+  {% assign blog_posts = site.posts %}
+  {% assign block_class = "block--blog-preview" %}
+{% endif %}
+
+<section class="{{ block_class }} py-5 bg-light" id="{{ block_class }}">
   <div class="container">
 
     <!-- Section Header -->
@@ -51,10 +67,15 @@ Optional parameters:
     </div>
 
     <!-- Blog Posts Grid -->
-    {% if site.posts.size > 0 %}
-    <div class="row g-4">
+    {% if blog_posts.size > 0 %}
+    <div class="row g-4 mb-5">
 
-      {% for post in site.posts limit: post_limit %}
+      {% if variant == "archive" %}
+        {% assign loop_posts = blog_posts %}
+      {% else %}
+        {% assign loop_posts = blog_posts | limit: post_limit %}
+      {% endif %}
+      {% for post in loop_posts %}
       <div class="col-md-6 col-lg-4">
         <article class="card blog-card border-0 shadow-sm h-100">
 
@@ -90,17 +111,46 @@ Optional parameters:
 
           <div class="card-body p-4">
 
-            <!-- Post Meta -->
-            <div class="post-meta mb-2">
-              <small class="text-muted">
+            <!-- Post Meta with Rating -->
+            {% assign post_slug = post.url | split: "/" | compact | last %}
+            {% assign rating_data = site.data.rating--post.ratings | where: "slug", post_slug | first %}
+
+            {% if rating_data and rating_data.total_reviews > 0 %}
+            <div class="post-meta d-flex flex-wrap align-items-center gap-2 text-muted mb-2 small">
+              <!-- Rating Stars from JSON data -->
+              <span class="d-inline-flex align-items-center">
+                <span class="post-rating__stars me-1">
+                  {% assign avg = rating_data.average %}
+                  {% assign full_stars = avg | floor %}
+                  {% assign decimal = avg | minus: full_stars %}
+                  {% for i in (1..5) %}
+                    {% if i <= full_stars %}
+                      <i class="bi bi-star-fill text-warning"></i>
+                    {% elsif decimal >= 0.3 and decimal < 0.8 and i == full_stars | plus: 1 %}
+                      <i class="bi bi-star-half text-warning"></i>
+                    {% elsif decimal >= 0.8 and i == full_stars | plus: 1 %}
+                      <i class="bi bi-star-fill text-warning"></i>
+                    {% else %}
+                      <i class="bi bi-star text-warning"></i>
+                    {% endif %}
+                  {% endfor %}
+                </span>
+                <span class="post-rating__score fw-bold text-dark">{{ rating_data.average }}</span>
+                <span class="post-rating__count text-muted ms-1">({{ rating_data.total_reviews }} ulasan)</span>
+              </span>
+            </div>
+            {% endif %}
+
+            <div class="post-meta d-flex flex-wrap align-items-center gap-2 text-muted mb-2 small">
+              <span>
                 <i class="bi bi-calendar3 me-1"></i>
                 {{ post.date | date: "%d %B %Y" }}
-              </small>
+              </span>
               {% if post.author %}
-              <small class="text-muted ms-2">
+              <span>
                 <i class="bi bi-person me-1"></i>
                 {{ post.author }}
-              </small>
+              </span>
               {% endif %}
             </div>
 
@@ -111,9 +161,9 @@ Optional parameters:
               </a>
             </h3>
 
-            <!-- Post Excerpt -->
+            <!-- Post Description -->
             <p class="card-text text-muted small mb-3">
-              {{ post.excerpt | strip_html | truncatewords: 20 }}
+              {{ post.description | default: post.excerpt | strip_html | truncate: 100 }}
             </p>
 
             <!-- Read More Link -->
@@ -137,11 +187,22 @@ Optional parameters:
 
         </article>
       </div>
+      {% if variant == "archive" %}
+      <!-- Schema for this post -->
+      {% if post.layout == 'node--riksa-uji' %}
+        {% include schema/schema--riksa-uji.html post=post mode="list" %}
+      {% elsif post.layout == 'node--article' %}
+        {% include schema/schema--article.html post=post mode="list" %}
+      {% else %}
+        {% include schema/schema--post.html post=post %}
+      {% endif %}
+      {% endif %}
       {% endfor %}
 
     </div>
 
-    <!-- View All Posts Link -->
+    {% if variant == "preview" %}
+    <!-- View All Posts Link (only for preview variant) -->
     <div class="row mt-5">
       <div class="col-12 text-center">
         <a href="{{ '/blog' | relative_url }}" class="btn btn-primary btn-lg">
@@ -150,15 +211,31 @@ Optional parameters:
         </a>
       </div>
     </div>
+    {% endif %}
+
+    {% if variant == "archive" and show_cta %}
+    <!-- Newsletter/CTA Section (only for archive variant with show_cta) -->
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="card border-0 shadow bg-primary text-white">
+          <div class="card-body p-4 text-center">
+            <h4 class="mb-3"><i class="bi bi-envelope-heart me-2"></i>Ingin Update Terbaru?</h4>
+            <p class="mb-4">Hubungi kami untuk mendapatkan info terbaru seputar K3!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
 
     {% else %}
 
     <!-- No Posts Message -->
     <div class="row">
       <div class="col-12">
-        <div class="alert alert-info text-center">
-          <i class="bi bi-info-circle me-2"></i>
-          Belum ada artikel yang dipublikasikan. Pantau terus untuk update terbaru!
+        <div class="alert alert-info text-center py-5">
+          <i class="bi bi-info-circle fs-3 d-block mb-3"></i>
+          <h4>Belum Ada Artikel</h4>
+          <p class="mb-0">Artikel akan segera hadir. Pantau terus halaman ini untuk update terbaru!</p>
         </div>
       </div>
     </div>
