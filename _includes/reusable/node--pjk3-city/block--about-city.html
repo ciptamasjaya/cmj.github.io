@@ -4,37 +4,35 @@ Block: About City - Article Section
 ============================================================================
 
 @file        block--about-city.html
-@path        _includes/reusable/node--article/block--about-city.html
+@path        _includes/reusable/node--pjk3-city/block--about-city.html
 @type        Block (reusable)
-@description City information section with history and modern life for SEO word count
+@description City information section with paragraphs array for SEO word count
 @author      arisciwek
 @created     2025-11-29
-
-Adopted from: block--tentang-kota-kami.html
+@updated     2025-11-29
 
 Features:
 ---------
 - H2 heading for SEO with dynamic city and tagline
 - City overview with statistics
-- 2 main categories (Informasi Kota, Lebih Lanjut)
-- 2 cards per category (4 cards total)
-- Flexible array structure for facts/landmarks
+- Single paragraphs array for all cards (simplified structure)
+- Each card can have fakta[] or list_item[] for flexible content
 - Good for SEO word count
 
 Parameters:
 -----------
 - section: Section data object from front matter (required)
+  - title: Section title (e.g., "Tentang")
+  - area: City name (e.g., "Bekasi")
   - tagline: City tagline (e.g., "Kota Industri")
   - deskripsi_singkat: Brief description text
-  - overview: City overview with statistics
-  - about_1: Array of 2 cards (any topic - history, economy, culture, etc.)
-    Each with: judul, icon, subjudul, deskripsi, fakta (array)
-  - about_2: Array of 2 cards (any topic - landmarks, business, tourism, etc.)
-    Each with: judul, icon, subjudul, deskripsi, list_item (array)
+  - overview: City overview paragraph
+  - paragraphs: Array of cards
+    Each with: judul, icon, subjudul, deskripsi, fakta[] or list_item[], info_tambahan
 
 Usage:
 ------
-{% include reusable/node--article/block--about-city.html section=page.section_about_city %}
+{% include reusable/node--pjk3-city/block--about-city.html section=page.section_about_city %}
 
 ============================================================================
 {% endcomment %}
@@ -70,104 +68,55 @@ Usage:
     </div>
     {% endif %}
 
-    {% if section.about_1 %}
-    <!-- Section 1: Informasi Kota -->
-    <div class="mb-5">
-      <div class="d-flex align-items-center mb-3">
-        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
-          <h3 class="h4 mb-0 text-primary fw-bold">
-            <i class="bi bi-info-circle text-primary me-2"></i>{{ section.judul_1 | default: "Informasi" }}{% if area %} {{ area }}{% endif %}
-          </h3>
-          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_1 | default: "Mengenal lebih dekat tentang kota ini" }}</p>
-        </div>
-      </div>
-
-      <div class="row g-4">
-        {% for item in section.about_1 %}
-        <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-header bg-primary text-white">
-              <div class="d-flex align-items-center">
-                <i class="bi {{ item.icon | default: 'bi-info-circle' }} me-2 fs-4"></i>
-                <h4 class="h5 mb-0 fw-bold">{{ item.judul }}</h4>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="h6 fw-bold text-dark mb-2">
-                <i class="bi {{ item.icon_subjudul | default: 'bi-book' }} me-1 text-primary"></i>{{ item.subjudul }}
-              </h5>
-
-              {% if item.deskripsi %}
-              <p class="small mb-3">{{ item.deskripsi }}</p>
-              {% endif %}
-
-              {% if item.fakta %}
-                {% for fakta in item.fakta %}
-                <p class="small {% if forloop.last %}mb-0 text-muted{% else %}mb-3{% endif %}">
-                  <i class="bi bi-info-circle me-1 text-primary"></i>{{ fakta }}
-                </p>
-                {% endfor %}
-              {% endif %}
+    {% if section.paragraphs %}
+    <!-- Paragraphs Cards -->
+    <div class="row g-4">
+      {% for item in section.paragraphs %}
+      <div class="col-md-6">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-header bg-primary text-white">
+            <div class="d-flex align-items-center">
+              <i class="bi {{ item.icon | default: 'bi-info-circle' }} me-2 fs-4"></i>
+              <h3 class="h5 mb-0 fw-bold">{{ item.judul }}</h3>
             </div>
           </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
+          <div class="card-body">
+            <h4 class="h6 fw-bold text-dark mb-2">
+              <i class="bi {{ item.icon_subjudul | default: 'bi-bookmark' }} me-1 text-primary"></i>{{ item.subjudul }}
+            </h4>
 
-    {% if section.about_2 %}
-    <!-- Section 2: Lebih Lanjut -->
-    <div class="mb-4">
-      <div class="d-flex align-items-center mb-3">
-        <div class="bg-success bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
-          <h3 class="h4 mb-0 text-success fw-bold">
-            <i class="bi bi-building text-success me-2"></i>{{ section.judul_2 | default: "Lebih Lanjut tentang" }}{% if area %} {{ area }}{% endif %}
-          </h3>
-          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_2 | default: "Hal menarik lainnya yang perlu Anda ketahui" }}</p>
-        </div>
-      </div>
+            {% if item.deskripsi %}
+            <p class="small mb-3">{{ item.deskripsi }}</p>
+            {% endif %}
 
-      <div class="row g-4">
-        {% for item in section.about_2 %}
-        <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-header bg-success text-white">
-              <div class="d-flex align-items-center">
-                <i class="bi {{ item.icon | default: 'bi-building' }} me-2 fs-4"></i>
-                <h4 class="h5 mb-0 fw-bold">{{ item.judul }}</h4>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="h6 fw-bold text-dark mb-2">
-                <i class="bi {{ item.icon_subjudul | default: 'bi-pin-map' }} me-1 text-success"></i>{{ item.subjudul }}
-              </h5>
-
-              {% if item.deskripsi %}
-              <p class="small mb-3">{{ item.deskripsi }}</p>
-              {% endif %}
-
-              {% if item.list_item %}
-              <ul class="list-unstyled small {% if item.info_tambahan %}mb-3{% else %}mb-0{% endif %}">
-                {% for list in item.list_item %}
-                <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
-                  <i class="bi bi-check-circle-fill text-success me-2"></i>
-                  <span>{{ list }}</span>
-                </li>
-                {% endfor %}
-              </ul>
-              {% endif %}
-
-              {% if item.info_tambahan %}
-              <p class="small mb-0 text-muted">
-                <i class="bi bi-info-circle me-1"></i>{{ item.info_tambahan }}
+            {% if item.fakta %}
+              {% for fakta in item.fakta %}
+              <p class="small {% if forloop.last and item.info_tambahan == nil %}mb-0 text-muted{% else %}mb-3{% endif %}">
+                <i class="bi bi-info-circle me-1 text-primary"></i>{{ fakta }}
               </p>
-              {% endif %}
-            </div>
+              {% endfor %}
+            {% endif %}
+
+            {% if item.list_item %}
+            <ul class="list-unstyled small {% if item.info_tambahan %}mb-3{% else %}mb-0{% endif %}">
+              {% for list in item.list_item %}
+              <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span>{{ list }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if item.info_tambahan %}
+            <p class="small mb-0 text-muted">
+              <i class="bi bi-info-circle me-1"></i>{{ item.info_tambahan }}
+            </p>
+            {% endif %}
           </div>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
     </div>
     {% endif %}
 

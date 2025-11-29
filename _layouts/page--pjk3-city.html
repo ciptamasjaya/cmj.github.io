@@ -149,6 +149,11 @@ Schema includes (using reusable schemas):
     {% include schema/reusable/schema--itemlist.html items=page.section_tips.tips title="Tips Memilih PJK3" id_suffix="tips-list" %}
   {% endif %}
 
+  <!-- About City ItemList Schema -->
+  {% if page.section_about_city %}
+    {% include schema/node--pjk3-city/schema--about-city.html section=page.section_about_city %}
+  {% endif %}
+
   <!-- Breadcrumb Schema -->
   {% include schema/schema--breadcrumb.html current_title=page.title %}
 

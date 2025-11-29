@@ -1,0 +1,52 @@
+{% comment %}
+============================================================================
+Schema: About City ItemList
+============================================================================
+
+@file        schema--about-city.html
+@path        _includes/schema/node--pjk3-city/schema--about-city.html
+@type        Schema (ItemList)
+@description ItemList schema for city information from block--about-city
+@author      arisciwek
+@created     2025-11-29
+@updated     2025-11-29
+
+Generates ItemList from paragraphs array in section_about_city.
+
+Parameters:
+-----------
+- section: Section data from page.section_about_city (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--about-city.html section=page.section_about_city %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+{% assign paragraphs = section.paragraphs %}
+
+{% if paragraphs and paragraphs.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#about-city",
+  "name": "Informasi {{ area | default: 'Kota' }}",
+  "description": "{{ section.deskripsi_singkat | default: 'Informasi lengkap tentang kota ini' | escape }}",
+  "numberOfItems": {{ paragraphs.size }},
+  "itemListElement": [
+    {% for item in paragraphs %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ item.judul | escape }}",
+      "description": "{{ item.deskripsi | default: item.subjudul | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
