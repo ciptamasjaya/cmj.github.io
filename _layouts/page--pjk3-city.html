@@ -3,30 +3,34 @@ layout: compress
 ---
 {% comment %}
 ============================================================================
-Page Wrapper: Article Pages (page--article.html)
+Page Wrapper: PJK3 City Pages (page--pjk3-city.html)
 ============================================================================
 
-@file        page--article.html
-@path        _layouts/page--article.html
+@file        page--pjk3-city.html
+@path        _layouts/page--pjk3-city.html
 @type        Page (wrapper - variant)
-@variant     article (formal/informative article pages)
-@description Article page wrapper for formal/informative content
+@variant     pjk3-city (PJK3 location-based pages)
+@description Page wrapper for PJK3 city/location pages
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
-Drupal-style naming: page--article.html (variant of page.html)
+Drupal-style naming: page--pjk3-city.html (variant of page.html)
 
-This is the article page wrapper for formal/informative articles like:
-- PJK3 location pages (PJK3 Bekasi, PJK3 Jakarta, etc.)
-- Company information articles
-- Industry guides and educational content
+This is the page wrapper for PJK3 location-based pages like:
+- PJK3 Bekasi, PJK3 Jakarta, PJK3 Surabaya, etc.
+- Area-specific service pages
+- City-based SEO content
 
 Related templates:
 - page.html (base page wrapper)
-- node--article.html (article entity content)
+- node--pjk3-city.html (PJK3 city content template)
 
 Schema includes:
 - schema--article.html (Article schema - not BlogPosting)
+- schema--local-business.html (for area_served)
+- schema--service-offer.html (for services)
+- schema--faq.html (for FAQ)
 
 ============================================================================
 {% endcomment %}
@@ -56,17 +60,17 @@ Schema includes:
 
   <!-- LocalBusiness Schema for Area-based Articles -->
   {% if page.area_served %}
-    {% include schema/node--article/schema--local-business.html %}
+    {% include schema/node--pjk3-city/schema--local-business.html %}
   {% endif %}
 
   <!-- Service Offer Schema -->
   {% if page.section_services.services %}
-    {% include schema/node--article/schema--service-offer.html services=page.section_services.services %}
+    {% include schema/node--pjk3-city/schema--service-offer.html services=page.section_services.services %}
   {% endif %}
 
   <!-- FAQ Schema -->
   {% if page.faq %}
-    {% include schema/node--article/schema--faq.html faq=page.faq %}
+    {% include schema/node--pjk3-city/schema--faq.html faq=page.faq %}
   {% endif %}
 
   <!-- Breadcrumb Schema -->

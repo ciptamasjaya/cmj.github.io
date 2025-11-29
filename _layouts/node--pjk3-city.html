@@ -1,30 +1,28 @@
 ---
-layout: page--article
+layout: page--pjk3-city
 ---
 {% comment %}
 ============================================================================
-Content Template: Article (node--article.html)
+Content Template: PJK3 City (node--pjk3-city.html)
 ============================================================================
 
-@file        node--article.html
-@path        _layouts/node--article.html
+@file        node--pjk3-city.html
+@path        _layouts/node--pjk3-city.html
 @type        Node (content template - variant)
-@variant     article (formal/informative articles)
-@description Content template for formal articles (SEO, company info, location pages)
+@variant     pjk3-city (PJK3 location-based pages)
+@description Content template for PJK3 city/location pages
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
-Drupal-style naming: node--article.html (variant of node.html)
+Drupal-style naming: node--pjk3-city.html (variant of node.html)
 
-This template is for formal/informative articles like:
-- PJK3 location pages (PJK3 Bekasi, PJK3 Jakarta, etc.)
-- Company information articles
-- Industry guides and educational content
-- SEO content pages
+This template is for PJK3 location-based pages like:
+- PJK3 Bekasi, PJK3 Jakarta, PJK3 Surabaya, etc.
+- Area-specific service pages
+- City-based SEO content
 
-Difference from node--post:
-- node--post: casual blog posts (BlogPosting schema)
-- node--article: formal articles (Article schema)
+Schema: Article (not BlogPosting)
 
 ============================================================================
 {% endcomment %}
@@ -84,83 +82,83 @@ Difference from node--post:
 
     <!-- Section 0: Hero PJK3 -->
     {% if page.section_hero %}
-      {% include reusable/node--article/block--hero-pjk3.html section=page.section_hero %}
+      {% include reusable/node--pjk3-city/block--hero-pjk3.html section=page.section_hero %}
     {% endif %}
 
     <!-- Gallery Section (uses page.images with fallback) -->
-    {% include reusable/node--article/block--gallery.html section=page.section_gallery %}
+    {% include reusable/node--pjk3-city/block--gallery.html section=page.section_gallery %}
 
     <!-- Section 1: Company Intro -->
     {% if page.section_company_intro %}
-      {% include reusable/node--article/block--company-intro.html section=page.section_company_intro %}
+      {% include reusable/node--pjk3-city/block--company-intro.html section=page.section_company_intro %}
     {% endif %}
 
     <!-- Section 2: Services Excellence -->
     {% if page.section_services %}
-      {% include reusable/node--article/block--services-excellence.html section=page.section_services %}
+      {% include reusable/node--pjk3-city/block--services-excellence.html section=page.section_services %}
     {% endif %}
 
     <!-- Section 3: Area Characteristics -->
     {% if page.section_area %}
-      {% include reusable/node--article/block--area-characteristics.html section=page.section_area %}
+      {% include reusable/node--pjk3-city/block--area-characteristics.html section=page.section_area %}
     {% endif %}
 
     <!-- Section 4: Risk Analysis -->
     {% if page.section_risks %}
-      {% include reusable/node--article/block--risk-analysis.html section=page.section_risks %}
+      {% include reusable/node--pjk3-city/block--risk-analysis.html section=page.section_risks %}
     {% endif %}
 
     <!-- Section 5: Strategic Role -->
     {% if page.section_role %}
-      {% include reusable/node--article/block--strategic-role.html section=page.section_role %}
+      {% include reusable/node--pjk3-city/block--strategic-role.html section=page.section_role %}
     {% endif %}
 
     <!-- Section 6: Business Potential -->
     {% if page.section_business %}
-      {% include reusable/node--article/block--business-potential.html section=page.section_business %}
+      {% include reusable/node--pjk3-city/block--business-potential.html section=page.section_business %}
     {% endif %}
 
     <!-- Section 7: City Profile -->
     {% if page.section_city %}
-      {% include reusable/node--article/block--city-profile.html section=page.section_city %}
+      {% include reusable/node--pjk3-city/block--city-profile.html section=page.section_city %}
     {% endif %}
 
     <!-- Section 8: Service Coverage Area -->
     {% if page.section_coverage %}
-      {% include reusable/node--article/block--service-coverage.html section=page.section_coverage %}
+      {% include reusable/node--pjk3-city/block--service-coverage.html section=page.section_coverage %}
     {% endif %}
 
     <!-- Section 9: Order Process -->
     {% if page.section_order %}
-      {% include reusable/node--article/block--order-process.html section=page.section_order %}
+      {% include reusable/node--pjk3-city/block--order-process.html section=page.section_order %}
     {% endif %}
 
     <!-- Section 10: Testimonials -->
     {% if page.section_testimonials %}
-      {% include reusable/node--article/block--testimonials.html section=page.section_testimonials %}
+      {% include reusable/node--pjk3-city/block--testimonials.html section=page.section_testimonials %}
     {% endif %}
 
     <!-- Section 11: Tips Choosing PJK3 -->
     {% if page.section_tips %}
-      {% include reusable/node--article/block--tips-choosing-pjk3.html section=page.section_tips %}
+      {% include reusable/node--pjk3-city/block--tips-choosing-pjk3.html section=page.section_tips %}
     {% endif %}
 
     <!-- Section 12: FAQ Riksa Uji -->
     {% if page.section_faq %}
-      {% include reusable/node--article/block--faq-riksa-uji.html section=page.section_faq %}
+      {% include reusable/node--pjk3-city/block--faq-riksa-uji.html section=page.section_faq %}
     {% endif %}
 
     <!-- Section 13: About City (for SEO word count) -->
     {% if page.section_about_city %}
-      {% include reusable/node--article/block--about-city.html section=page.section_about_city %}
+      {% include reusable/node--pjk3-city/block--about-city.html section=page.section_about_city %}
     {% endif %}
 
     <!-- Video Section (uses page.video with fallback) -->
-    {% include reusable/node--article/block--video.html section=page.section_video %}
+    {% include reusable/node--pjk3-city/block--video.html section=page.section_video %}
 
     <!-- Section 14: Conclusion -->
     {% if page.section_conclusion %}
-      {% include reusable/node--article/block--conclusion.html section=page.section_conclusion %}
+      {% include reusable/node--pjk3-city/block--conclusion.html section=page.section_conclusion %}
     {% endif %}
 
     <!-- Additional Content (from markdown body) -->
