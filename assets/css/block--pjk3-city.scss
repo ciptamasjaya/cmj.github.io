@@ -101,29 +101,13 @@ section[class*="block--"] {
 
 /* ============================================================================
    BLOCK: HERO PJK3
+   ============================================================================
+   Note: Base hero styles and theme variants are in block--hero.scss
+   This section only contains PJK3-specific overrides
    ============================================================================ */
 section.block--hero-pjk3 {
-  .card.hero-card {
-    background: $gradient-primary;
-    border: 0;
-  }
-
-  p.hero-description {
-    opacity: $text-light-opacity;
-    font-size: 1.05rem;
-  }
-
-  p.hero-text-main {
-    opacity: $text-light-opacity;
-  }
-
-  p.hero-text-sub {
-    opacity: $text-lighter-opacity;
-  }
-
-  i.contact-icon {
-    font-size: 3rem;
-  }
+  // PJK3-specific hero adjustments (if needed)
+  // Base styles come from .block--hero in block--hero.scss
 }
 
 /* ============================================================================

@@ -52,9 +52,10 @@ Usage:
 
 {% assign section = include.section %}
 {% assign area = section.area | default: page.area_served %}
+{% assign hero_theme = section.theme | default: "blue" %}
 
 {% if section %}
-<section class="article-section block--hero-pjk3" id="block--hero-pjk3-{{ area | slugify }}">
+<section class="article-section block--hero block--hero-pjk3 hero-theme--{{ hero_theme }}" id="block--hero-pjk3-{{ area | slugify }}">
   <div class="container py-4">
     <div class="card hero-card shadow-lg">
       <div class="card-body text-white py-4">
