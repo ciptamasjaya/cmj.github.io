@@ -107,7 +107,9 @@ Schema includes (using reusable schemas):
         {% assign all_faqs = all_faqs | push: item %}
       {% endfor %}
     {% endif %}
-    {% include schema/reusable/schema--faq.html faqs=all_faqs %}
+    {% assign faq_title = page.section_faq.title | default: "FAQ Riksa Uji K3" %}
+    {% if page.area_served %}{% assign faq_title = faq_title | append: " " | append: page.area_served %}{% endif %}
+    {% include schema/reusable/schema--faq.html faqs=all_faqs name=faq_title %}
   {% endif %}
 
   <!-- Gallery Schema (reusable) -->
@@ -152,6 +154,16 @@ Schema includes (using reusable schemas):
   <!-- About City ItemList Schema -->
   {% if page.section_about_city %}
     {% include schema/node--pjk3-city/schema--about-city.html section=page.section_about_city %}
+  {% endif %}
+
+  <!-- Business Potential ItemList Schema -->
+  {% if page.section_business.potentials %}
+    {% include schema/node--pjk3-city/schema--business-potential.html section=page.section_business %}
+  {% endif %}
+
+  <!-- Company Intro ItemList Schema -->
+  {% if page.section_company_intro.subsections %}
+    {% include schema/node--pjk3-city/schema--company-intro.html section=page.section_company_intro %}
   {% endif %}
 
   <!-- Breadcrumb Schema -->

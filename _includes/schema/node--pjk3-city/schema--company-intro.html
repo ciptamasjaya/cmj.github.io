@@ -1,0 +1,54 @@
+{% comment %}
+============================================================================
+Schema: Company Introduction FAQ
+============================================================================
+
+@file        schema--company-intro.html
+@path        _includes/schema/node--pjk3-city/schema--company-intro.html
+@type        Schema (FAQPage)
+@description FAQPage schema for company intro subsections
+@author      arisciwek
+@created     2025-11-29
+@updated     2025-11-29
+
+Generates FAQPage from subsections array in section_company_intro.
+Each subsection.title becomes Question, paragraphs become Answer.
+
+Parameters:
+-----------
+- section: Section data from page.section_company_intro (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--company-intro.html section=page.section_company_intro %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: page.area_served %}
+{% assign subsections = section.subsections %}
+
+{% if subsections and subsections.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ page.url | absolute_url }}#company-intro-faq",
+  "name": "FAQ Tentang PJK3{% if area %} {{ area }}{% endif %}",
+  "description": "{{ section.intro | escape }}",
+  "mainEntity": [
+    {% for item in subsections %}
+    {
+      "@type": "Question",
+      "name": "{{ item.title | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.paragraphs | join: ' ' | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
