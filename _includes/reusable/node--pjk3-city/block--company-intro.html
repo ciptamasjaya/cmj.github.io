@@ -4,11 +4,12 @@ Block: Company Introduction - Article Section
 ============================================================================
 
 @file        block--company-intro.html
-@path        _includes/reusable/node--article/block--company-intro.html
+@path        _includes/reusable/node--pjk3-city/block--company-intro.html
 @type        Block (reusable)
 @description Displays company introduction section with PJK3 explanation
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - first section introducing company
 and its role as PJK3 in specific area.
@@ -24,9 +25,15 @@ Parameters:
     - title: Subsection title
     - paragraphs: Array of paragraph strings
 
+Schema:
+-------
+Uses: _includes/schema/node--pjk3-city/schema--company-intro.html (FAQPage)
+Include in layout with:
+{% include schema/node--pjk3-city/schema--company-intro.html section=page.section_company_intro %}
+
 Usage:
 ------
-{% include reusable/node--article/block--company-intro.html section=page.section_company_intro %}
+{% include reusable/node--pjk3-city/block--company-intro.html section=page.section_company_intro %}
 
 ============================================================================
 {% endcomment %}

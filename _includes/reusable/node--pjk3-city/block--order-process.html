@@ -4,11 +4,12 @@ Block: Order Process - Article Section
 ============================================================================
 
 @file        block--order-process.html
-@path        _includes/reusable/node--article/block--order-process.html
+@path        _includes/reusable/node--pjk3-city/block--order-process.html
 @type        Block (reusable)
 @description Displays step-by-step order/consultation process for PJK3 services
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - section showing how to order/request
 riksa uji services with numbered steps.
@@ -31,9 +32,18 @@ Parameters:
     - icon: Bootstrap icon class
     - color: Bootstrap color class
 
+Schema:
+-------
+Uses: _includes/schema/reusable/schema--howto.html
+Include in layout with:
+{% include schema/reusable/schema--howto.html
+   initial_steps=page.section_order.initial_steps
+   final_steps=page.section_order.final_steps
+   name=page.section_order.title %}
+
 Usage:
 ------
-{% include reusable/node--article/block--order-process.html section=page.section_order %}
+{% include reusable/node--pjk3-city/block--order-process.html section=page.section_order %}
 
 ============================================================================
 {% endcomment %}

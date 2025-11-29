@@ -4,11 +4,12 @@ Block: Customer Testimonials - Article Section
 ============================================================================
 
 @file        block--testimonials.html
-@path        _includes/reusable/node--article/block--testimonials.html
+@path        _includes/reusable/node--pjk3-city/block--testimonials.html
 @type        Block (reusable)
 @description Displays customer testimonials with categories for PJK3 services
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - section showing customer testimonials
 categorized by industry type (industrial and commercial).
@@ -30,9 +31,16 @@ Parameters:
   - testimoni_komersial: Array of commercial client testimonials
     (same structure as industrial)
 
+Schema:
+-------
+Reviews embedded in LocalBusiness schema:
+_includes/schema/node--pjk3-city/schema--local-business.html
+Include in layout with reviews parameter:
+{% include schema/node--pjk3-city/schema--local-business.html reviews=all_reviews %}
+
 Usage:
 ------
-{% include reusable/node--article/block--testimonials.html section=page.section_testimonials %}
+{% include reusable/node--pjk3-city/block--testimonials.html section=page.section_testimonials %}
 
 ============================================================================
 {% endcomment %}

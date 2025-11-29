@@ -4,11 +4,12 @@ Block: Image Gallery - Article Section
 ============================================================================
 
 @file        block--gallery.html
-@path        _includes/reusable/node--article/block--gallery.html
+@path        _includes/reusable/node--pjk3-city/block--gallery.html
 @type        Block (reusable)
 @description Image gallery/slider for article pages with fallback to default images
 @author      arisciwek
 @created     2025-11-29
+@updated     2025-11-29
 
 Features:
 ---------
@@ -30,9 +31,15 @@ Image Logic:
 - If page.images exists and has valid (non-empty) entries, use those
 - If page.images is empty/missing, use default: i1.svg, i2.svg, i3.svg, i4.svg
 
+Schema:
+-------
+Uses: _includes/schema/reusable/schema--gallery.html
+Include in layout with:
+{% include schema/reusable/schema--gallery.html images=page.images title=page.title %}
+
 Usage:
 ------
-{% include reusable/node--article/block--gallery.html section=page.section_gallery %}
+{% include reusable/node--pjk3-city/block--gallery.html section=page.section_gallery %}
 
 ============================================================================
 {% endcomment %}

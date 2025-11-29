@@ -30,6 +30,12 @@ Parameters:
   - paragraphs: Array of cards
     Each with: judul, icon, subjudul, deskripsi, fakta[] or list_item[], info_tambahan
 
+Schema:
+-------
+Uses: _includes/schema/node--pjk3-city/schema--about-city.html
+Include in layout with:
+{% include schema/node--pjk3-city/schema--about-city.html section=page.section_about_city %}
+
 Usage:
 ------
 {% include reusable/node--pjk3-city/block--about-city.html section=page.section_about_city %}

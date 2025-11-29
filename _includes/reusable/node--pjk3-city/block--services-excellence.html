@@ -4,11 +4,12 @@ Block: Services Excellence - Article Section
 ============================================================================
 
 @file        block--services-excellence.html
-@path        _includes/reusable/node--article/block--services-excellence.html
+@path        _includes/reusable/node--pjk3-city/block--services-excellence.html
 @type        Block (reusable)
 @description Displays company services and excellence highlights
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - section highlighting company services
 and competitive advantages (Keunggulan).
@@ -23,9 +24,15 @@ Parameters:
     - description: Service description
     - icon: Bootstrap icon class (optional)
 
+Schema:
+-------
+Uses: _includes/schema/reusable/schema--itemlist.html
+Include in layout with:
+{% include schema/reusable/schema--itemlist.html items=page.section_services.services title="Layanan Riksa Uji K3" id_suffix="services-list" %}
+
 Usage:
 ------
-{% include reusable/node--article/block--services-excellence.html section=page.section_services %}
+{% include reusable/node--pjk3-city/block--services-excellence.html section=page.section_services %}
 
 ============================================================================
 {% endcomment %}

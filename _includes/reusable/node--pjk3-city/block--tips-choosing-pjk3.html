@@ -4,11 +4,12 @@ Block: Tips Memilih PJK3 - Article Section
 ============================================================================
 
 @file        block--tips-choosing-pjk3.html
-@path        _includes/reusable/node--article/block--tips-choosing-pjk3.html
+@path        _includes/reusable/node--pjk3-city/block--tips-choosing-pjk3.html
 @type        Block (reusable)
 @description Displays tips for choosing the right PJK3 service provider
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - section showing tips and criteria
 for selecting a reliable PJK3 service provider.
@@ -26,9 +27,15 @@ Parameters:
     - warna: Bootstrap color class
     - icon: Bootstrap icon class
 
+Schema:
+-------
+Uses: _includes/schema/reusable/schema--itemlist.html
+Include in layout with:
+{% include schema/reusable/schema--itemlist.html items=page.section_tips.tips title="Tips Memilih PJK3" id_suffix="tips-list" %}
+
 Usage:
 ------
-{% include reusable/node--article/block--tips-choosing-pjk3.html section=page.section_tips %}
+{% include reusable/node--pjk3-city/block--tips-choosing-pjk3.html section=page.section_tips %}
 
 ============================================================================
 {% endcomment %}

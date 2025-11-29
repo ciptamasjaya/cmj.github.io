@@ -4,11 +4,12 @@ Block: Business Potential - Article Section
 ============================================================================
 
 @file        block--business-potential.html
-@path        _includes/reusable/node--article/block--business-potential.html
+@path        _includes/reusable/node--pjk3-city/block--business-potential.html
 @type        Block (reusable)
 @description Displays business and investment potential in the area
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - section highlighting business
 opportunities and investment potential in the service area.
@@ -23,9 +24,15 @@ Parameters:
     - description: Description of the opportunity
     - icon: Bootstrap icon class (optional)
 
+Schema:
+-------
+Uses: _includes/schema/node--pjk3-city/schema--business-potential.html
+Include in layout with:
+{% include schema/node--pjk3-city/schema--business-potential.html section=page.section_business %}
+
 Usage:
 ------
-{% include reusable/node--article/block--business-potential.html section=page.section_business %}
+{% include reusable/node--pjk3-city/block--business-potential.html section=page.section_business %}
 
 ============================================================================
 {% endcomment %}

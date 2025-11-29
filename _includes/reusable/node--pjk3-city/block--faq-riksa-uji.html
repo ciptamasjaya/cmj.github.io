@@ -4,18 +4,15 @@ Block: FAQ Riksa Uji - Article Section
 ============================================================================
 
 @file        block--faq-riksa-uji.html
-@path        _includes/reusable/node--article/block--faq-riksa-uji.html
+@path        _includes/reusable/node--pjk3-city/block--faq-riksa-uji.html
 @type        Block (reusable)
 @description Displays FAQ section for riksa uji/PJK3 services with categories
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For formal/informative articles - FAQ section categorized by topic
 (layanan, sertifikasi, biaya).
-
-Schema:
--------
-Schema for this block is in: _includes/schema/node--article/schema--faq.html
 
 Parameters:
 -----------
@@ -30,9 +27,16 @@ Parameters:
     - jawaban: Answer text
     - icon: Bootstrap icon class (optional)
 
+Schema:
+-------
+Uses: _includes/schema/reusable/schema--faq.html
+Include in layout with:
+{% assign faq_title = page.section_faq.title | default: "FAQ Riksa Uji K3" %}
+{% include schema/reusable/schema--faq.html faqs=all_faqs name=faq_title %}
+
 Usage:
 ------
-{% include reusable/node--article/block--faq-riksa-uji.html section=page.section_faq %}
+{% include reusable/node--pjk3-city/block--faq-riksa-uji.html section=page.section_faq %}
 
 ============================================================================
 {% endcomment %}
