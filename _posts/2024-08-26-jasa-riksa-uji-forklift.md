@@ -43,6 +43,7 @@ images:
 # ============================================================================
 section_hero:
   title: "Butuh Layanan Riksa Uji Forklift"
+  theme: "orange"
   area: "Seluruh Indonesia"
   description: "PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian forklift dengan standar profesional. Dapatkan sertifikat kelayakan operasi untuk forklift Anda."
   label_wilayah: "Melayani Wilayah:"

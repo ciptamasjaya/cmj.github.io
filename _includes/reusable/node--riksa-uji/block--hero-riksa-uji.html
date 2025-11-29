@@ -46,9 +46,10 @@ Usage:
 
 {% assign section = include.section %}
 {% assign area = section.area | default: "Seluruh Indonesia" %}
+{% assign hero_theme = section.theme | default: "blue" %}
 
 {% if section %}
-<section class="article-section block--hero-riksa-uji" id="block--hero-riksa-uji">
+<section class="article-section block--hero-riksa-uji hero-theme--{{ hero_theme }}" id="block--hero-riksa-uji">
   <div class="container-fluid mb-4 px-0">
     <div class="card hero-card shadow-lg mx-0 rounded-0">
       <div class="card-body text-white py-4 px-4">

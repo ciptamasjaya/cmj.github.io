@@ -51,6 +51,11 @@
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" fetchpriority="high">
   <link rel="stylesheet" href="{{ '/assets/css/blocks.css' | relative_url }}">
 
+  <!-- Hero Block CSS (reusable across layouts) -->
+  {% if page.layout contains 'riksa-uji' or page.layout contains 'pjk3-city' or page.section_hero %}
+  <link rel="stylesheet" href="{{ '/assets/css/block--hero.css' | relative_url }}">
+  {% endif %}
+
   <!-- Post-specific CSS (loaded only for post layouts) -->
   {% if page.layout contains 'riksa-uji' or page.layout contains 'post' %}
   <link rel="stylesheet" href="{{ '/assets/css/post-blocks-core.css' | relative_url }}">
