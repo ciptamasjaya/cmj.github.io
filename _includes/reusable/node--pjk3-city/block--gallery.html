@@ -127,17 +127,4 @@ Usage:
   </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const modalImage = document.getElementById('galleryModalImage');
-
-  galleryItems.forEach(function(item) {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      const imgSrc = this.getAttribute('data-img');
-      modalImage.setAttribute('src', imgSrc);
-    });
-  });
-});
-</script>
+{% comment %} JS loaded via frontmatter extra_js: ['/assets/js/gallery-modal.js'] {% endcomment %}
