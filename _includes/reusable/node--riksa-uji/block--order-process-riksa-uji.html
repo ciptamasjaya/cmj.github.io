@@ -1,0 +1,168 @@
+{% comment %}
+============================================================================
+Block: Order Process Riksa Uji - Article Section (Dual Column Layout)
+============================================================================
+
+@file        block--order-process-riksa-uji.html
+@path        _includes/reusable/node--riksa-uji/block--order-process-riksa-uji.html
+@type        Block (reusable)
+@description Displays step-by-step order/consultation process for Riksa Uji services
+@author      arisciwek
+@created     2025-11-29
+
+Adopted from: block--order-process.html (node--pjk3-city)
+Adapted for: Dual-column layout (col-lg-8 main content + col-lg-4 sidebar)
+
+Key differences from pjk3-city version:
+- No container wrapper (parent layout provides container)
+- Optimized grid for narrower column width
+- Steps use col-md-6 instead of col-lg-4 for better fit
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - area: Service area (optional, defaults to "Seluruh Indonesia")
+  - phone: Contact phone number
+  - intro: Introduction paragraph
+  - initial_steps: Array of initial step objects (steps 1-3)
+    - title: Step title
+    - description: Step description
+    - icon: Bootstrap icon class
+    - color: Bootstrap color class (primary, success, warning, etc.)
+  - final_steps: Array of finalization step objects (steps 4-6)
+    - title: Step title
+    - description: Step description
+    - icon: Bootstrap icon class
+    - color: Bootstrap color class
+
+Usage:
+------
+{% include reusable/node--riksa-uji/block--order-process-riksa-uji.html section=page.section_order %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign area = section.area | default: "Seluruh Indonesia" %}
+{% assign phone = section.phone | default: site.business.phone %}
+
+{% if section %}
+<section class="article-section block--order-process-riksa-uji py-4 col-main__section" id="block--order-process-riksa-uji">
+
+  <!-- Header Section -->
+  <div class="block-header mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body header-gradient text-white text-center py-3 px-3">
+        <i class="bi bi-clipboard-check fs-2 mb-2 block-icon"></i>
+        <h2 class="h4 mb-0 fw-bold text-white block-title">{{ section.title | default: "Cara Pemesanan Layanan Riksa Uji" }}</h2>
+        <p class="header-subtitle mb-0 mt-2 small">
+          <i class="bi bi-phone me-1"></i>
+          Hubungi: {{ phone }} (Telepon / WhatsApp)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="order-intro mb-4">
+    <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 intro-header">
+      <h3 class="h5 mb-0 text-primary fw-bold intro-title">
+        <i class="bi bi-list-check me-2"></i>Langkah Mudah Pemesanan
+      </h3>
+      <p class="small text-muted mb-0 mt-1 intro-desc">{{ section.intro | default: "Proses pemesanan layanan riksa uji K3 sangat mudah dan praktis. Ikuti 6 langkah sederhana berikut untuk mendapatkan layanan inspeksi berkualitas." }}</p>
+    </div>
+  </div>
+
+  <!-- Initial Steps Header -->
+  <div class="step-category step-category--initial">
+    <div class="card border-0 shadow-sm category-header-card">
+      <div class="card-body bg-light py-2">
+        <h4 class="h6 text-primary mb-1 fw-bold category-title">
+          <i class="bi bi-clipboard-check me-2"></i>Proses Awal Konsultasi
+        </h4>
+        <p class="small text-muted mb-0 category-desc">Langkah 1-3: Identifikasi kebutuhan hingga konsultasi teknis.</p>
+      </div>
+    </div>
+
+    <!-- Initial Steps (1-3) - Using col-md-6 for dual-column layout -->
+    <div class="row g-3 my-3 step-list col-main__grid">
+      {% for step in section.initial_steps %}
+      {% assign step_num = forloop.index %}
+      {% assign step_color = step.color | default: "primary" %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card card--step border-0 shadow-sm h-100 hover-lift">
+          <div class="card-body text-center position-relative step__body py-3">
+            <div class="position-absolute top-0 start-50 translate-middle">
+              <div class="step-number bg-{{ step_color }} text-white rounded-circle fw-bold step__number" style="width: 28px; height: 28px; line-height: 28px; font-size: 0.85rem;">
+                {{ step_num }}
+              </div>
+            </div>
+            <div class="mt-3 pt-1 step__content">
+              <div class="step-icon-wrapper bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex mb-2 step__icon-wrapper" style="width: 48px; height: 48px;">
+                <i class="bi {{ step.icon | default: 'bi-check-circle' }} step-icon text-{{ step_color }} step__icon" style="font-size: 1.25rem;"></i>
+              </div>
+              <h5 class="small text-dark mb-1 fw-bold step__title">{{ step.title }}</h5>
+              <p class="small text-muted mb-0 step__description" style="font-size: 0.8rem;">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Final Steps Header -->
+  <div class="step-category step-category--final my-3">
+    <div class="card border-0 shadow-sm category-header-card">
+      <div class="card-body bg-light py-2">
+        <h4 class="h6 text-primary mb-1 fw-bold category-title">
+          <i class="bi bi-shield-check me-2"></i>Proses Inspeksi & Sertifikasi
+        </h4>
+        <p class="small text-muted mb-0 category-desc">Langkah 4-6: Inspeksi, laporan, hingga sertifikat resmi.</p>
+      </div>
+    </div>
+
+    <!-- Final Steps (4-6) -->
+    <div class="row g-3 my-3 step-list col-main__grid">
+      {% for step in section.final_steps %}
+      {% assign step_num = forloop.index | plus: 3 %}
+      {% assign step_color = step.color | default: "success" %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card card--step border-0 shadow-sm h-100 hover-lift">
+          <div class="card-body text-center position-relative step__body py-3">
+            <div class="position-absolute top-0 start-50 translate-middle">
+              <div class="step-number bg-{{ step_color }} text-white rounded-circle fw-bold step__number" style="width: 28px; height: 28px; line-height: 28px; font-size: 0.85rem;">
+                {{ step_num }}
+              </div>
+            </div>
+            <div class="mt-3 pt-1 step__content">
+              <div class="step-icon-wrapper bg-{{ step_color }} bg-opacity-10 rounded-circle d-inline-flex mb-2 step__icon-wrapper" style="width: 48px; height: 48px;">
+                <i class="bi {{ step.icon | default: 'bi-check-circle' }} step-icon text-{{ step_color }} step__icon" style="font-size: 1.25rem;"></i>
+              </div>
+              <h5 class="small text-dark mb-1 fw-bold step__title">{{ step.title }}</h5>
+              <p class="small text-muted mb-0 step__description" style="font-size: 0.8rem;">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- WhatsApp CTA -->
+  <div class="cta--whatsapp my-4 col-main__cta">
+    <div class="card whatsapp-cta-card border-0 shadow-sm">
+      <div class="card-body text-white text-center py-3 cta__body">
+        <i class="bi bi-whatsapp fs-2 mb-2 cta__icon"></i>
+        <h5 class="h6 mb-2 fw-bold cta__title">Konsultasi Gratis Sekarang!</h5>
+        <p class="small mb-3 cta__description">Hubungi <strong>{{ phone }}</strong> untuk konsultasi kebutuhan riksa uji dan penawaran terbaik!</p>
+        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3" class="btn btn-light btn-sm px-4 cta__button" target="_blank">
+          <i class="bi bi-whatsapp me-2"></i>Hubungi WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endif %}

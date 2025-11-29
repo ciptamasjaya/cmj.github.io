@@ -508,3 +508,92 @@ Uses embedded schema in layout with:
 - Perlu evaluasi apakah kedua layout bisa di-merge atau tetap terpisah
 - Fokus pada menambahkan section yang meningkatkan SEO dan user engagement
 - Schema pjk3-city mendapat score 100/100 di Google Rich Results Test
+
+
+## Hasil Evaluasi Layout
+
+  node--riksa-uji.html (127 lines)
+
+  Struktur:
+  article.post-content
+  ├── col-lg-12: post-header
+  ├── col-lg-8 (main content)
+  │   ├── breadcrumb
+  │   ├── gallery (optional)
+  │   ├── post-description
+  │   ├── content-intro (optional)
+  │   ├── {{ content }}
+  │   ├── section_importance
+  │   ├── section_process
+  │   ├── section_regulation
+  │   ├── section_training
+  │   ├── section_specs
+  │   ├── section_permit
+  │   ├── section_certification
+  │   ├── section_technical
+  │   ├── section_conclusion
+  │   ├── announce
+  │   ├── video_post
+  │   ├── faq_post
+  │   ├── related-post
+  │   └── reviews
+  └── col-lg-4: sidebar
+
+  Sections yang ada (10):
+  - content_intro, section_importance, section_process, section_regulation
+  - section_training, section_specs, section_permit, section_certification
+  - section_technical, section_conclusion, announce, video_post, faq_post
+
+  ---
+  node--pjk3-city.html (216 lines)
+
+  Struktur:
+  article.article-content
+  ├── header (breadcrumb, title, meta)
+  ├── article-sections (full-width)
+  │   ├── section_hero
+  │   ├── section_gallery
+  │   ├── section_company_intro
+  │   ├── section_services
+  │   ├── section_area
+  │   ├── section_risks
+  │   ├── section_role
+  │   ├── section_business
+  │   ├── section_city
+  │   ├── section_coverage
+  │   ├── section_order
+  │   ├── section_testimonials
+  │   ├── section_tips
+  │   ├── section_faq
+  │   ├── section_about_city
+  │   ├── section_video
+  │   └── section_conclusion
+  └── footer (tags, CTA)
+
+  Sections yang ada (14+):
+  - Marketing: hero, order, testimonials, tips
+  - Location: area, city, coverage, about_city
+  - Business: services, risks, role, business
+  - Content: company_intro, faq, video, conclusion
+
+  ---
+  Perbandingan Kunci
+
+  | Aspek         | riksa-uji                       | pjk3-city                      |
+  |---------------|---------------------------------|--------------------------------|
+  | Layout        | 2-column (8+4 sidebar)          | Full-width sections            |
+  | Header        | Separate block                  | Inline di layout               |
+  | Hero CTA      | ❌ Tidak ada                     | ✅ Ada                          |
+  | Sidebar       | ✅ Ada                           | ❌ Tidak ada                    |
+  | Fokus         | Technical content               | Marketing + SEO                |
+  | Section style | Technical (process, regulation) | Marketing (testimonials, tips) |
+
+  ---
+  Rekomendasi
+
+  Option A (Extend riksa-uji) masih valid, tapi perlu pertimbangan:
+
+  1. Keep sidebar - riksa-uji punya sidebar, pjk3-city tidak
+  2. Add hero before breadcrumb - Insert section_hero di awal
+  3. Add marketing sections - section_order, section_testimonials, section_tips setelah content
+  4. Upgrade FAQ - dari faq_post ke section_faq kategoris

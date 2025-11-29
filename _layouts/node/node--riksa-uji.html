@@ -22,6 +22,11 @@ structure with specialized sections (importance, process, regulation, etc).
 {% endcomment %}
 
 <article class="post-content py-5">
+
+  {% if page.section_hero %}
+    {% include reusable/node--riksa-uji/block--hero-riksa-uji.html section=page.section_hero %}
+  {% endif %}
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-1 d-none d-lg-block"></div>
@@ -47,6 +52,14 @@ structure with specialized sections (importance, process, regulation, etc).
 
               {% if page.content_intro %}
                 {% include reusable/node--riksa-uji/block--content-intro.html section=page.content_intro %}
+              {% endif %}
+
+              {% if page.section_company_intro %}
+                {% include reusable/node--riksa-uji/block--company-intro-riksa-uji.html section=page.section_company_intro %}
+              {% endif %}
+
+              {% if page.section_services %}
+                {% include reusable/node--riksa-uji/block--services-riksa-uji.html section=page.section_services %}
               {% endif %}
 
               {{ content }}
@@ -85,6 +98,22 @@ structure with specialized sections (importance, process, regulation, etc).
 
               {% if page.section_conclusion %}
                 {% include reusable/node--riksa-uji/block--conclusion.html section=page.section_conclusion %}
+              {% endif %}
+
+              {% if page.section_order %}
+                {% include reusable/node--riksa-uji/block--order-process-riksa-uji.html section=page.section_order %}
+              {% endif %}
+
+              {% if page.section_testimonials %}
+                {% include reusable/node--riksa-uji/block--testimonials-riksa-uji.html section=page.section_testimonials %}
+              {% endif %}
+
+              {% if page.section_faq %}
+                {% include reusable/node--riksa-uji/block--faq-kategoris-riksa-uji.html section=page.section_faq %}
+              {% endif %}
+
+              {% if page.section_tips %}
+                {% include reusable/node--riksa-uji/block--tips-riksa-uji.html section=page.section_tips %}
               {% endif %}
 
               {% if page.announce %}

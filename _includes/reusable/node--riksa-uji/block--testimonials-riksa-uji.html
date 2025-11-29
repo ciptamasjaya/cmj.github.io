@@ -1,0 +1,119 @@
+{% comment %}
+============================================================================
+Block: Customer Testimonials Riksa Uji - Article Section (Dual Column Layout)
+============================================================================
+
+@file        block--testimonials-riksa-uji.html
+@path        _includes/reusable/node--riksa-uji/block--testimonials-riksa-uji.html
+@type        Block (reusable)
+@description Displays customer testimonials for Riksa Uji services
+@author      arisciwek
+@created     2025-11-29
+
+Adopted from: block--testimonials.html (node--pjk3-city)
+Adapted for: Dual-column layout (col-lg-8 main content + col-lg-4 sidebar)
+
+Key differences from pjk3-city version:
+- No container wrapper (parent layout provides container)
+- Single testimonial list (no industry/commercial split)
+- Compact design for narrower column
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - intro: Introduction paragraph
+  - testimonials: Array of testimonial objects
+    - nama: Customer name
+    - jenis_usaha: Business type (e.g., "Perusahaan Logistik di Jabodetabek")
+    - jabatan: Position/title
+    - rating: Star rating (1-5)
+    - judul: Review title
+    - komentar: Review comment
+    - warna: Bootstrap color class
+
+Usage:
+------
+{% include reusable/node--riksa-uji/block--testimonials-riksa-uji.html section=page.section_testimonials %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section block--testimonials-riksa-uji py-4 col-main__section" id="block--testimonials-riksa-uji">
+
+  <!-- Header Section -->
+  <div class="block-header mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body header-gradient text-white text-center py-3 px-3">
+        <i class="bi bi-chat-quote-fill fs-3 mb-2 block-icon"></i>
+        <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "Testimoni Pelanggan" }}</h2>
+        <p class="header-subtitle mb-0 mt-1 small">
+          <i class="bi bi-star-fill me-1"></i>
+          Kepuasan pelanggan adalah prioritas kami
+          <i class="bi bi-star-fill ms-1"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  {% if section.intro %}
+  <div class="testimonials-intro mb-3">
+    <p class="small text-muted">{{ section.intro }}</p>
+  </div>
+  {% endif %}
+
+  <!-- Testimonials List -->
+  {% if section.testimonials %}
+  <div class="row g-3 testimoni-list col-main__grid">
+    {% for testi in section.testimonials %}
+    <div class="col-12">
+      <div class="card card--testimoni border-0 shadow-sm h-100">
+        <div class="card-body py-3">
+          <div class="d-flex mb-2">
+            <div class="testimonial-avatar bg-{{ testi.warna | default: 'primary' }} bg-opacity-10 rounded-circle me-3 testi__avatar d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; min-width: 48px;">
+              <i class="bi bi-person-fill text-{{ testi.warna | default: 'primary' }} fs-5"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h4 class="small mb-0 fw-bold text-dark testi__nama">{{ testi.nama }}</h4>
+              <small class="text-muted d-block testi__jabatan" style="font-size: 0.75rem;">{{ testi.jabatan }}</small>
+              <small class="text-primary fw-semibold testi__jenis-usaha" style="font-size: 0.75rem;">{{ testi.jenis_usaha }}</small>
+              <div class="text-warning testi__rating" style="font-size: 0.7rem;">
+                {% assign rating = testi.rating | default: 5 %}
+                {% for i in (1..rating) %}
+                <i class="bi bi-star-fill"></i>
+                {% endfor %}
+                {% assign empty_stars = 5 | minus: rating %}
+                {% for i in (1..empty_stars) %}
+                <i class="bi bi-star text-muted"></i>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <h5 class="small fw-bold text-dark mb-1 testi__judul">
+            <i class="bi bi-chat-left-quote text-primary me-1"></i>{{ testi.judul }}
+          </h5>
+          <p class="small text-muted fst-italic mb-0 testi__komentar" style="font-size: 0.8rem;">
+            "{{ testi.komentar }}"
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- CTA -->
+  <div class="cta--contact text-center mt-4 col-main__cta">
+    <p class="small text-muted mb-2">Bergabunglah dengan klien yang telah mempercayakan inspeksi K3 kepada kami</p>
+    <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3" class="btn btn-primary btn-sm cta__button" target="_blank">
+      <i class="bi bi-whatsapp me-2"></i>Konsultasi Sekarang
+    </a>
+  </div>
+
+</section>
+{% endif %}

@@ -39,6 +39,217 @@ images:
   - ""
 
 # ============================================================================
+# HERO SECTION - Marketing hero with CTA
+# ============================================================================
+section_hero:
+  title: "Butuh Layanan Riksa Uji Forklift"
+  area: "Seluruh Indonesia"
+  description: "PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian forklift dengan standar profesional. Dapatkan sertifikat kelayakan operasi untuk forklift Anda."
+  label_wilayah: "Melayani Wilayah:"
+  wilayah_layanan:
+    - Jabodetabek
+    - Jawa Barat
+    - Jawa Tengah
+    - Jawa Timur
+    - Sumatera
+    - Kalimantan
+    - Sulawesi
+    - Bali & NTB
+  badges:
+    - text: "Izin Resmi Kemenaker"
+      icon: "bi-shield-check"
+    - text: "Tenaga Ahli Bersertifikat"
+      icon: "bi-person-badge"
+    - text: "Harga Kompetitif"
+      icon: "bi-cash-coin"
+  cta_title: "Hubungi Kami Sekarang!"
+  cta_button: "Chat WhatsApp"
+  cta_notice: "Respon cepat 24/7"
+
+# ============================================================================
+# ORDER PROCESS - Proses pemesanan layanan
+# ============================================================================
+section_order:
+  title: "Cara Pemesanan Layanan Riksa Uji Forklift"
+  area: "Seluruh Indonesia"
+  phone: "08568258841"
+  intro: "Proses pemesanan layanan riksa uji forklift sangat mudah. Ikuti 6 langkah sederhana berikut untuk mendapatkan sertifikat kelayakan operasi forklift Anda."
+  initial_steps:
+    - title: "Hubungi Kami"
+      description: "Kontak via WhatsApp atau telepon untuk konsultasi awal kebutuhan riksa uji forklift Anda."
+      icon: "bi-telephone"
+      color: "primary"
+    - title: "Identifikasi Kebutuhan"
+      description: "Tim kami akan mengidentifikasi jenis forklift, jumlah unit, dan lokasi inspeksi."
+      icon: "bi-clipboard-data"
+      color: "info"
+    - title: "Penawaran Harga"
+      description: "Dapatkan penawaran harga kompetitif sesuai kebutuhan dan jadwal yang diinginkan."
+      icon: "bi-receipt"
+      color: "warning"
+  final_steps:
+    - title: "Pelaksanaan Inspeksi"
+      description: "Tim inspector bersertifikat datang ke lokasi untuk melakukan riksa uji forklift."
+      icon: "bi-search"
+      color: "success"
+    - title: "Pembuatan Laporan"
+      description: "Laporan hasil inspeksi lengkap dengan dokumentasi foto dan rekomendasi."
+      icon: "bi-file-earmark-text"
+      color: "primary"
+    - title: "Penerbitan Sertifikat"
+      description: "Sertifikat kelayakan operasi diterbitkan untuk forklift yang lulus uji."
+      icon: "bi-award"
+      color: "success"
+
+# ============================================================================
+# TESTIMONIALS - Testimoni pelanggan
+# ============================================================================
+section_testimonials:
+  title: "Testimoni Pelanggan Riksa Uji Forklift"
+  intro: "Berikut testimoni dari klien yang telah menggunakan layanan riksa uji forklift PT. Cipta Mas Jaya."
+  testimonials:
+    - nama: "Budi Santoso"
+      jenis_usaha: "Perusahaan Logistik di Jabodetabek"
+      jabatan: "HSE Manager"
+      rating: 5
+      judul: "Pelayanan Profesional dan Tepat Waktu"
+      komentar: "Tim inspector sangat profesional dan teliti dalam melakukan pemeriksaan forklift kami. Sertifikat terbit tepat waktu sesuai jadwal yang dijanjikan."
+      warna: "primary"
+    - nama: "Rina Wijaya"
+      jenis_usaha: "Perusahaan Warehouse di Bekasi"
+      jabatan: "Operational Manager"
+      rating: 5
+      judul: "Harga Kompetitif dengan Kualitas Terbaik"
+      komentar: "Sudah 3 tahun menggunakan jasa PT. Cipta Mas Jaya untuk riksa uji 12 unit forklift kami. Harga bersaing dan pelayanan sangat memuaskan."
+      warna: "success"
+    - nama: "Ahmad Hidayat"
+      jenis_usaha: "Perusahaan Manufaktur di Cikarang"
+      jabatan: "Plant Manager"
+      rating: 5
+      judul: "Rekomendasi Perbaikan yang Sangat Membantu"
+      komentar: "Selain inspeksi, tim juga memberikan rekomendasi perbaikan yang detail sehingga forklift kami selalu dalam kondisi prima dan aman dioperasikan."
+      warna: "info"
+
+# ============================================================================
+# FAQ KATEGORIS - FAQ dengan kategori layanan, sertifikasi, biaya
+# ============================================================================
+section_faq:
+  title: "FAQ Riksa Uji Forklift"
+
+  faq_layanan:
+    - pertanyaan: "Apa itu riksa uji forklift?"
+      jawaban: "Riksa uji forklift adalah proses pemeriksaan dan pengujian terhadap kondisi teknis dan operasional forklift yang dilakukan oleh PJK3 untuk memastikan forklift layak dan aman dioperasikan."
+      icon: "bi-question-circle"
+    - pertanyaan: "Berapa lama proses riksa uji forklift?"
+      jawaban: "Proses inspeksi on-site memerlukan waktu 1-2 jam per unit. Penerbitan sertifikat membutuhkan 3-7 hari kerja setelah forklift dinyatakan lulus uji."
+      icon: "bi-clock"
+    - pertanyaan: "Apa saja yang diperiksa dalam riksa uji forklift?"
+      jawaban: "Pemeriksaan meliputi sistem hidrolik, sistem pengereman, mast dan fork, sistem kemudi, komponen keselamatan (lampu, klakson, seat belt, overhead guard), serta dokumentasi dan label keselamatan."
+      icon: "bi-clipboard-check"
+  judul_layanan: "Layanan & Proses Inspeksi"
+  deskripsi_layanan: "Informasi seputar proses dan jenis pemeriksaan forklift"
+
+  faq_sertifikasi:
+    - pertanyaan: "Apa perbedaan SLO dan SIO?"
+      jawaban: "SLO (Surat Izin Layak Operasi) adalah izin untuk alat/forklift, sedangkan SIO (Surat Izin Operator) adalah izin untuk operator yang mengoperasikan forklift."
+      icon: "bi-file-earmark-diff"
+    - pertanyaan: "Berapa lama masa berlaku sertifikat riksa uji?"
+      jawaban: "Sertifikat riksa uji forklift berlaku selama 1 tahun sejak tanggal penerbitan dan wajib diperpanjang sebelum masa berlaku habis."
+      icon: "bi-calendar-check"
+    - pertanyaan: "Apakah sertifikat dari PT. Cipta Mas Jaya diakui Kemenaker?"
+      jawaban: "Ya, PT. Cipta Mas Jaya adalah PJK3 resmi yang terdaftar di Kementerian Ketenagakerjaan. Sertifikat yang kami terbitkan diakui secara nasional dan valid untuk keperluan audit K3."
+      icon: "bi-patch-check"
+  judul_sertifikasi: "Sertifikasi & Legalitas"
+  deskripsi_sertifikasi: "Informasi seputar sertifikat dan keabsahan hasil inspeksi"
+
+  faq_biaya:
+    - pertanyaan: "Berapa biaya riksa uji forklift?"
+      jawaban: "Biaya riksa uji forklift bervariasi tergantung jenis forklift, jumlah unit, dan lokasi inspeksi. Hubungi kami untuk mendapatkan penawaran harga yang kompetitif."
+      icon: "bi-cash-coin"
+    - pertanyaan: "Apakah ada diskon untuk inspeksi banyak unit?"
+      jawaban: "Ya, kami memberikan harga khusus untuk inspeksi dalam jumlah banyak. Semakin banyak unit yang diinspeksi, semakin kompetitif harga per unitnya."
+      icon: "bi-percent"
+    - pertanyaan: "Metode pembayaran apa saja yang diterima?"
+      jawaban: "Kami menerima pembayaran via transfer bank, dan untuk klien korporat tersedia opsi pembayaran dengan termin sesuai kesepakatan."
+      icon: "bi-credit-card"
+  judul_biaya: "Biaya & Pembayaran"
+  deskripsi_biaya: "Informasi seputar biaya inspeksi dan metode pembayaran"
+
+# ============================================================================
+# COMPANY INTRO - Pengenalan perusahaan
+# ============================================================================
+section_company_intro:
+  title: "PT. Cipta Mas Jaya: PJK3 Riksa Uji Forklift"
+  company_name: "PT. Cipta Mas Jaya"
+  intro: "PJK3 resmi berlisensi Kementerian Ketenagakerjaan untuk layanan riksa uji forklift"
+  subsections:
+    - title: "Tentang Layanan Riksa Uji Forklift"
+      paragraphs:
+        - "PT. Cipta Mas Jaya menyediakan layanan riksa uji forklift profesional untuk memastikan keselamatan dan kelayakan operasional forklift di berbagai sektor industri."
+        - "Dengan tim inspector bersertifikat dan pengalaman lebih dari 10 tahun, kami melayani inspeksi forklift di seluruh Indonesia dengan standar kualitas terbaik."
+    - title: "Komitmen Kami"
+      paragraphs:
+        - "Kami berkomitmen memberikan layanan inspeksi yang akurat, transparan, dan tepat waktu untuk mendukung kepatuhan K3 perusahaan Anda."
+
+# ============================================================================
+# SERVICES - Keunggulan layanan
+# ============================================================================
+section_services:
+  title: "Keunggulan PT. Cipta Mas Jaya"
+  intro: "Mengapa memilih kami untuk riksa uji forklift Anda?"
+  services:
+    - title: "Izin Resmi Kemenaker"
+      description: "PJK3 terdaftar dengan izin resmi dari Kementerian Ketenagakerjaan RI"
+      icon: "bi-shield-check"
+    - title: "Inspector Bersertifikat"
+      description: "Tim ahli K3 bersertifikat dengan pengalaman inspeksi forklift berbagai merk"
+      icon: "bi-person-badge"
+    - title: "Laporan Komprehensif"
+      description: "Laporan inspeksi detail dengan foto dokumentasi dan rekomendasi perbaikan"
+      icon: "bi-file-earmark-text"
+    - title: "Harga Kompetitif"
+      description: "Biaya inspeksi terjangkau dengan kualitas layanan terbaik"
+      icon: "bi-cash-coin"
+    - title: "Layanan Nasional"
+      description: "Melayani inspeksi forklift di seluruh wilayah Indonesia"
+      icon: "bi-geo-alt"
+    - title: "Respon Cepat"
+      description: "Jadwal inspeksi fleksibel dengan respon cepat 24/7"
+      icon: "bi-lightning"
+
+# ============================================================================
+# TIPS - Tips memilih PJK3
+# ============================================================================
+section_tips:
+  title: "Tips Memilih PJK3 Riksa Uji Forklift"
+  intro: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut untuk hasil inspeksi yang optimal dan sertifikat yang diakui."
+  tips:
+    - kategori: "Legalitas"
+      deskripsi: "Pastikan izin resmi"
+      kriteria:
+        - "Memiliki izin PJK3 dari Kemenaker yang masih berlaku"
+        - "Terdaftar di database resmi Kemenaker"
+        - "Sertifikat yang diterbitkan diakui secara nasional"
+      warna: "primary"
+      icon: "bi-shield-check"
+    - kategori: "Kompetensi"
+      deskripsi: "Tenaga ahli berkualitas"
+      kriteria:
+        - "Inspector memiliki sertifikat kompetensi K3"
+        - "Berpengalaman dalam inspeksi forklift berbagai jenis"
+        - "Update dengan regulasi K3 terbaru"
+      warna: "success"
+      icon: "bi-person-badge"
+    - kategori: "Layanan"
+      deskripsi: "Kualitas pelayanan"
+      kriteria:
+        - "Laporan inspeksi detail dan tepat waktu"
+        - "Harga transparan tanpa biaya tersembunyi"
+        - "Customer service responsif"
+      warna: "info"
+      icon: "bi-headset"
+
+# ============================================================================
 # SCHEMA DATA - Optional data for structured markup
 # ============================================================================
 
@@ -76,20 +287,6 @@ itemlist_post:
       description: "Steering wheel, power steering, dan responsivitas"
     - name: "Komponen Keselamatan"
       description: "Lampu, klakson, seat belt, dan overhead guard"
-
-# FAQ Schema (jika artikel berisi FAQ)
-faq_post:
-  name: "FAQ Riksa Uji Forklift"
-  description: "Pertanyaan yang sering diajukan tentang riksa uji forklift"
-  faqs:
-    - question: "Apa itu riksa uji forklift?"
-      answer: "Riksa uji forklift adalah proses pemeriksaan dan pengujian terhadap kondisi teknis dan operasional forklift yang dilakukan oleh PJK3 untuk memastikan forklift layak dan aman dioperasikan."
-    - question: "Berapa lama proses riksa uji forklift?"
-      answer: "Proses inspeksi on-site memerlukan waktu 1-2 jam per unit. Penerbitan sertifikat membutuhkan 3-7 hari kerja setelah forklift dinyatakan lulus uji."
-    - question: "Apa perbedaan SLO dan SIO?"
-      answer: "SLO (Surat Izin Layak Operasi) adalah izin untuk alat/forklift, sedangkan SIO (Surat Izin Operator) adalah izin untuk operator yang mengoperasikan forklift."
-    - question: "Berapa lama masa berlaku sertifikat riksa uji?"
-      answer: "Sertifikat riksa uji forklift berlaku selama 1 tahun sejak tanggal penerbitan dan wajib diperpanjang sebelum masa berlaku habis."
 
 # Video Schema (jika artikel berisi video)
 video_post:

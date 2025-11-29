@@ -1,0 +1,172 @@
+{% comment %}
+============================================================================
+Block: FAQ Kategoris Riksa Uji - Article Section (Dual Column Layout)
+============================================================================
+
+@file        block--faq-kategoris-riksa-uji.html
+@path        _includes/reusable/node--riksa-uji/block--faq-kategoris-riksa-uji.html
+@type        Block (reusable)
+@description Displays categorized FAQ section for Riksa Uji services
+@author      arisciwek
+@created     2025-11-29
+
+Adopted from: block--faq-riksa-uji.html (node--pjk3-city)
+Adapted for: Dual-column layout (col-lg-8 main content + col-lg-4 sidebar)
+
+Key differences from pjk3-city version:
+- No container wrapper (parent layout provides container)
+- Compact design for narrower column
+- Smaller fonts and spacing
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - faq_layanan: Array of service FAQs
+    - pertanyaan: Question text
+    - jawaban: Answer text
+    - icon: Bootstrap icon class (optional)
+  - judul_layanan: Category title for service FAQs
+  - deskripsi_layanan: Category description
+  - faq_sertifikasi: Array of certification FAQs
+  - judul_sertifikasi: Category title
+  - deskripsi_sertifikasi: Category description
+  - faq_biaya: Array of pricing FAQs
+  - judul_biaya: Category title
+  - deskripsi_biaya: Category description
+
+Usage:
+------
+{% include reusable/node--riksa-uji/block--faq-kategoris-riksa-uji.html section=page.section_faq %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section block--faq-kategoris-riksa-uji py-4 col-main__section" id="block--faq-kategoris-riksa-uji">
+
+  <!-- Header Section -->
+  <div class="block-header mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body header-gradient text-white text-center py-3 px-3">
+        <i class="bi bi-question-circle-fill fs-3 mb-2 block-icon"></i>
+        <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "FAQ Riksa Uji K3" }}</h2>
+        <p class="header-subtitle mb-0 mt-1 small">
+          Pertanyaan yang sering diajukan
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {% if section.faq_layanan %}
+  <!-- FAQ Layanan -->
+  <div class="faq-category faq-category--layanan mb-4">
+    <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 mb-3 category-header">
+      <h3 class="h6 mb-0 text-primary fw-bold category-title">
+        <i class="bi bi-clipboard-check text-primary me-2"></i>{{ section.judul_layanan | default: "Layanan & Proses Inspeksi" }}
+      </h3>
+      <p class="small text-muted mb-0 mt-1 category-desc" style="font-size: 0.75rem;">{{ section.deskripsi_layanan | default: "Informasi seputar jenis layanan dan proses inspeksi K3" }}</p>
+    </div>
+
+    <div class="row g-2 faq-list col-main__grid">
+      {% for faq in section.faq_layanan %}
+      <div class="col-12">
+        <div class="card card--faq border-0 shadow-sm">
+          <div class="card-body py-2 px-3">
+            <div class="d-flex align-items-start">
+              <div class="bg-primary bg-opacity-10 rounded-circle me-2 flex-shrink-0 faq__icon-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; min-width: 32px;">
+                <i class="bi {{ faq.icon | default: 'bi-question-circle' }} text-primary faq__icon" style="font-size: 0.875rem;"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="small fw-bold text-dark mb-1 faq__pertanyaan">{{ faq.pertanyaan }}</h4>
+                <p class="small text-muted mb-0 faq__jawaban" style="font-size: 0.8rem;">{{ faq.jawaban }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if section.faq_sertifikasi %}
+  <!-- FAQ Sertifikasi -->
+  <div class="faq-category faq-category--sertifikasi mb-4">
+    <div class="bg-success bg-opacity-10 px-3 py-2 rounded-3 mb-3 category-header">
+      <h3 class="h6 mb-0 text-success fw-bold category-title">
+        <i class="bi bi-award text-success me-2"></i>{{ section.judul_sertifikasi | default: "Sertifikasi & Legalitas" }}
+      </h3>
+      <p class="small text-muted mb-0 mt-1 category-desc" style="font-size: 0.75rem;">{{ section.deskripsi_sertifikasi | default: "Informasi seputar sertifikat dan keabsahan hasil inspeksi" }}</p>
+    </div>
+
+    <div class="row g-2 faq-list col-main__grid">
+      {% for faq in section.faq_sertifikasi %}
+      <div class="col-12">
+        <div class="card card--faq border-0 shadow-sm">
+          <div class="card-body py-2 px-3">
+            <div class="d-flex align-items-start">
+              <div class="bg-success bg-opacity-10 rounded-circle me-2 flex-shrink-0 faq__icon-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; min-width: 32px;">
+                <i class="bi {{ faq.icon | default: 'bi-patch-check' }} text-success faq__icon" style="font-size: 0.875rem;"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="small fw-bold text-dark mb-1 faq__pertanyaan">{{ faq.pertanyaan }}</h4>
+                <p class="small text-muted mb-0 faq__jawaban" style="font-size: 0.8rem;">{{ faq.jawaban }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if section.faq_biaya %}
+  <!-- FAQ Biaya -->
+  <div class="faq-category faq-category--biaya mb-4">
+    <div class="bg-warning bg-opacity-10 px-3 py-2 rounded-3 mb-3 category-header">
+      <h3 class="h6 mb-0 text-warning fw-bold category-title">
+        <i class="bi bi-cash-coin text-warning me-2"></i>{{ section.judul_biaya | default: "Biaya & Pembayaran" }}
+      </h3>
+      <p class="small text-muted mb-0 mt-1 category-desc" style="font-size: 0.75rem;">{{ section.deskripsi_biaya | default: "Informasi seputar biaya inspeksi dan metode pembayaran" }}</p>
+    </div>
+
+    <div class="row g-2 faq-list col-main__grid">
+      {% for faq in section.faq_biaya %}
+      <div class="col-12">
+        <div class="card card--faq border-0 shadow-sm">
+          <div class="card-body py-2 px-3">
+            <div class="d-flex align-items-start">
+              <div class="bg-warning bg-opacity-10 rounded-circle me-2 flex-shrink-0 faq__icon-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; min-width: 32px;">
+                <i class="bi {{ faq.icon | default: 'bi-currency-exchange' }} text-warning faq__icon" style="font-size: 0.875rem;"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h4 class="small fw-bold text-dark mb-1 faq__pertanyaan">{{ faq.pertanyaan }}</h4>
+                <p class="small text-muted mb-0 faq__jawaban" style="font-size: 0.8rem;">{{ faq.jawaban }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Contact CTA -->
+  <div class="card cta--contact border-0 shadow-sm mt-4 col-main__cta">
+    <div class="card-body bg-primary bg-opacity-10 text-center py-3">
+      <i class="bi bi-chat-left-text text-primary mb-2 fs-4 cta__icon"></i>
+      <h5 class="h6 fw-bold text-primary mb-2 cta__title">Masih Ada Pertanyaan?</h5>
+      <p class="small text-muted mb-2 cta__description">Tim kami siap menjawab pertanyaan Anda!</p>
+      <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20layanan%20riksa%20uji%20K3" class="btn btn-primary btn-sm px-3 cta__button" target="_blank">
+        <i class="bi bi-whatsapp me-2"></i>Tanya Sekarang
+      </a>
+    </div>
+  </div>
+
+</section>
+{% endif %}

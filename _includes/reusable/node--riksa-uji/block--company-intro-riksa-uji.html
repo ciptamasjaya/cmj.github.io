@@ -1,0 +1,94 @@
+{% comment %}
+============================================================================
+Block: Company Introduction Riksa Uji - Article Section (Dual Column Layout)
+============================================================================
+
+@file        block--company-intro-riksa-uji.html
+@path        _includes/reusable/node--riksa-uji/block--company-intro-riksa-uji.html
+@type        Block (reusable)
+@description Displays company introduction section for Riksa Uji services
+@author      arisciwek
+@created     2025-11-29
+
+Adopted from: block--company-intro.html (node--pjk3-city)
+Adapted for: Dual-column layout (col-lg-8 main content + col-lg-4 sidebar)
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - company_name: Company name
+  - intro: Introduction paragraph
+  - subsections: Array of subsection objects
+    - title: Subsection title
+    - paragraphs: Array of paragraph strings
+
+Usage:
+------
+{% include reusable/node--riksa-uji/block--company-intro-riksa-uji.html section=page.section_company_intro %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section block--company-intro-riksa-uji py-4 col-main__section" id="block--company-intro-riksa-uji">
+
+  <!-- Header Section -->
+  <div class="block-header mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body header-gradient text-white text-center py-3 px-3">
+        <i class="bi bi-building fs-3 mb-2 block-icon"></i>
+        <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "Tentang Perusahaan" }}</h2>
+        {% if section.intro %}
+        <p class="header-subtitle mb-0 mt-1 small block-intro">{{ section.intro }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Company Highlight Card -->
+  {% if section.company_name %}
+  <div class="company-highlight bg-light rounded p-3 mb-4">
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+      <div class="highlight__content mb-2 mb-md-0">
+        <h3 class="h6 fw-bold mb-1 highlight__company-name">{{ section.company_name }}</h3>
+        <p class="mb-0 text-muted small highlight__tagline">
+          <i class="bi bi-shield-check me-1"></i>
+          PJK3 Riksa Uji Resmi Berlisensi Kemenaker
+        </p>
+      </div>
+      <div class="highlight__cta">
+        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji" class="btn btn-success btn-sm cta__button" target="_blank">
+          <i class="bi bi-whatsapp me-1"></i> Hubungi
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Subsections -->
+  {% if section.subsections %}
+  <div class="subsections subsection-list">
+    {% for subsection in section.subsections %}
+    <div class="subsection-item mb-3">
+      <h3 class="subsection-title subsection__title small fw-bold text-dark mb-2">
+        {{ subsection.title }}
+      </h3>
+      <div class="subsection-content subsection__content">
+        {% if subsection.paragraphs %}
+          {% for paragraph in subsection.paragraphs %}
+          <p class="subsection__paragraph small text-muted mb-2" style="font-size: 0.85rem;">{{ paragraph }}</p>
+          {% endfor %}
+        {% elsif subsection.content %}
+          <div class="small text-muted">{{ subsection.content | markdownify }}</div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</section>
+{% endif %}

@@ -1,0 +1,116 @@
+{% comment %}
+============================================================================
+Block: Tips Memilih PJK3 Riksa Uji - Article Section (Dual Column Layout)
+============================================================================
+
+@file        block--tips-riksa-uji.html
+@path        _includes/reusable/node--riksa-uji/block--tips-riksa-uji.html
+@type        Block (reusable)
+@description Displays tips for choosing the right PJK3 service provider
+@author      arisciwek
+@created     2025-11-29
+
+Adopted from: block--tips-choosing-pjk3.html (node--pjk3-city)
+Adapted for: Dual-column layout (col-lg-8 main content + col-lg-4 sidebar)
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - intro: Introduction paragraph
+  - tips: Array of tip categories
+    - kategori: Category name
+    - deskripsi: Category description
+    - kriteria: Array of criteria/advantages
+    - warna: Bootstrap color class
+    - icon: Bootstrap icon class
+
+Usage:
+------
+{% include reusable/node--riksa-uji/block--tips-riksa-uji.html section=page.section_tips %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section block--tips-riksa-uji py-4 col-main__section" id="block--tips-riksa-uji">
+
+  <!-- Header Section -->
+  <div class="block-header mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body header-gradient text-white text-center py-3 px-3">
+        <i class="bi bi-lightbulb-fill fs-3 mb-2 block-icon"></i>
+        <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "Tips Memilih PJK3" }}</h2>
+        <p class="header-subtitle mb-0 mt-1 small">
+          Pilih partner inspeksi K3 yang tepat
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  {% if section.intro %}
+  <div class="tips-intro mb-3">
+    <p class="small text-muted mb-0">{{ section.intro }}</p>
+  </div>
+  {% endif %}
+
+  {% if section.tips %}
+  <!-- Tips Grid -->
+  <div class="row g-3 tips-list col-main__grid">
+    {% for tip in section.tips %}
+    <div class="col-12">
+      <div class="card card--tip border-0 shadow-sm">
+        <div class="card-header tip__header bg-{{ tip.warna | default: 'primary' }} text-white py-2">
+          <div class="d-flex align-items-center">
+            <i class="bi {{ tip.icon | default: 'bi-check-circle' }} tip__icon me-2"></i>
+            <div>
+              <h4 class="small mb-0 fw-bold tip__kategori">{{ tip.kategori }}</h4>
+              <small class="tip__deskripsi" style="font-size: 0.7rem;">{{ tip.deskripsi }}</small>
+            </div>
+          </div>
+        </div>
+        <div class="card-body py-2 px-3">
+          <ul class="list-unstyled small mb-0 tip__kriteria-list">
+            {% for item in tip.kriteria %}
+            <li class="tip__kriteria-item {% if forloop.last %}mb-0{% else %}mb-1{% endif %}" style="font-size: 0.8rem;">
+              <i class="bi bi-check-circle-fill text-{{ tip.warna | default: 'primary' }} me-2"></i>{{ item }}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Why Choose CMJ (compact) -->
+  <div class="card cta--why-cmj border-0 shadow-sm mt-4 col-main__cta">
+    <div class="card-body py-3">
+      <h3 class="h6 fw-bold mb-2 cta__title">
+        <i class="bi bi-award me-2 text-primary"></i>Mengapa PT. Cipta Mas Jaya?
+      </h3>
+      <div class="row">
+        <div class="col-6">
+          <ul class="list-unstyled mb-0 cta__list" style="font-size: 0.75rem;">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Izin resmi Kemenaker</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Tenaga ahli bersertifikat</li>
+            <li class="mb-0"><i class="bi bi-check-circle-fill text-success me-1"></i>Pengalaman 10+ tahun</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul class="list-unstyled mb-0 cta__list" style="font-size: 0.75rem;">
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Harga kompetitif</li>
+            <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-1"></i>Laporan tepat waktu</li>
+            <li class="mb-0"><i class="bi bi-check-circle-fill text-success me-1"></i>Layanan nasional</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endif %}

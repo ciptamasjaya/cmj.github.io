@@ -1,0 +1,75 @@
+{% comment %}
+============================================================================
+Block: Services Riksa Uji - Article Section (Dual Column Layout)
+============================================================================
+
+@file        block--services-riksa-uji.html
+@path        _includes/reusable/node--riksa-uji/block--services-riksa-uji.html
+@type        Block (reusable)
+@description Displays company services and excellence highlights for Riksa Uji
+@author      arisciwek
+@created     2025-11-29
+
+Adopted from: block--services-excellence.html (node--pjk3-city)
+Adapted for: Dual-column layout (col-lg-8 main content + col-lg-4 sidebar)
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - intro: Introduction paragraph
+  - services: Array of service objects
+    - title: Service title
+    - description: Service description
+    - icon: Bootstrap icon class (optional)
+
+Usage:
+------
+{% include reusable/node--riksa-uji/block--services-riksa-uji.html section=page.section_services %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section block--services-riksa-uji py-4 col-main__section" id="block--services-riksa-uji">
+
+  <!-- Header Section -->
+  <div class="block-header mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body header-gradient text-white text-center py-3 px-3">
+        <i class="bi bi-award fs-3 mb-2 block-icon"></i>
+        <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "Keunggulan Layanan" }}</h2>
+        {% if section.intro %}
+        <p class="header-subtitle mb-0 mt-1 small block-intro">{{ section.intro }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Grid -->
+  {% if section.services %}
+  <div class="row g-3 service-list col-main__grid">
+    {% for service in section.services %}
+    <div class="col-md-6">
+      <div class="card card--service h-100 border-0 shadow-sm">
+        <div class="card-body service__body py-3 px-3">
+          <div class="d-flex align-items-start">
+            <div class="service-icon me-3 service__icon-wrapper bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; min-width: 40px;">
+              <i class="bi {{ service.icon | default: 'bi-check-circle' }} text-primary service__icon"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="card-title small fw-bold mb-1 service__title">{{ service.title }}</h3>
+              <p class="card-text text-muted mb-0 service__description" style="font-size: 0.8rem;">{{ service.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+</section>
+{% endif %}
