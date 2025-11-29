@@ -113,12 +113,96 @@ section.block--hero-pjk3 {
    BLOCK: ABOUT CITY
    ============================================================================ */
 section.block--about-city {
-  .card-body.header-gradient {
-    @include header-gradient($gradient-blue);
+
+  /* Block header */
+  .block-header {
+    .header-gradient {
+      @include header-gradient($gradient-blue);
+    }
+
+    .block-icon {
+      display: block;
+    }
+
+    .block-title {
+      .block-area,
+      .block-tagline {
+        font-weight: inherit;
+      }
+    }
+
+    p.header-subtitle {
+      @include text-muted-white;
+
+      .deskripsi-singkat {
+        // from section.deskripsi_singkat
+      }
+    }
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
+  /* Overview card */
+  .card.card--overview {
+    .overview {
+      line-height: 1.7;
+    }
+  }
+
+  /* Paragraphs cards */
+  .paragraphs {
+    .card.card--paragraph {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .paragraph__header {
+        background: var(--bs-primary);
+
+        .paragraph__icon {
+          opacity: 0.9;
+        }
+
+        .paragraph__judul {
+          // from item.judul
+        }
+      }
+
+      .card-body {
+        .paragraph__subjudul {
+          color: var(--bs-dark);
+
+          i {
+            color: var(--bs-primary);
+          }
+        }
+
+        .paragraph__deskripsi {
+          // from item.deskripsi
+        }
+
+        .paragraph__fakta-list {
+          .paragraph__fakta {
+            i {
+              color: var(--bs-primary);
+            }
+          }
+        }
+
+        .paragraph__list {
+          .paragraph__list-item {
+            i {
+              color: var(--bs-success);
+            }
+          }
+        }
+
+        .paragraph__info-tambahan {
+          color: var(--bs-secondary);
+        }
+      }
+    }
   }
 }
 
