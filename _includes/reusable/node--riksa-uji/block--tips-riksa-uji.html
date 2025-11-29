@@ -43,8 +43,10 @@ Usage:
       <div class="card-body header-gradient text-white text-center py-3 px-3">
         <i class="bi bi-lightbulb-fill fs-3 mb-2 block-icon"></i>
         <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "Tips Memilih PJK3" }}</h2>
-        <p class="header-subtitle mb-0 mt-1 small">
-          Pilih partner inspeksi K3 yang tepat
+        <p class="subtitle-text mb-0 mt-2 small">
+          <i class="bi bi-lightbulb me-1"></i>
+          {{ section.subtitle | default: "Pilih partner inspeksi K3 yang tepat" }}
+          <i class="bi bi-lightbulb ms-1"></i>
         </p>
       </div>
     </div>

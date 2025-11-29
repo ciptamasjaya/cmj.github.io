@@ -106,6 +106,7 @@ section_order:
 # ============================================================================
 section_testimonials:
   title: "Testimoni Pelanggan Riksa Uji Forklift"
+  subtitle: "Kepuasan Klien adalah Prioritas Kami"
   intro: "Berikut testimoni dari klien yang telah menggunakan layanan riksa uji forklift PT. Cipta Mas Jaya."
   testimonials:
     - nama: "Budi Santoso"
@@ -135,6 +136,7 @@ section_testimonials:
 # ============================================================================
 section_faq:
   title: "FAQ Riksa Uji Forklift"
+  subtitle: "Jawaban untuk Pertanyaan Umum"
 
   faq_layanan:
     - pertanyaan: "Apa itu riksa uji forklift?"
@@ -222,6 +224,7 @@ section_services:
 # ============================================================================
 section_tips:
   title: "Tips Memilih PJK3 Riksa Uji Forklift"
+  subtitle: "Panduan Memilih Mitra Inspeksi Terpercaya"
   intro: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut untuk hasil inspeksi yang optimal dan sertifikat yang diakui."
   tips:
     - kategori: "Legalitas"
@@ -305,6 +308,7 @@ video_post:
 # Block: block--section-importance.html
 section_importance:
   title: "Pentingnya Riksa Uji Forklift"
+  subtitle: "Keselamatan Kerja & Efisiensi Operasional"
   icon: "bi-shield-check"
   paragraphs:
     - "Riksa uji forklift merupakan langkah kritis dalam menjaga keselamatan dan efisiensi operasional di tempat kerja. Pemeriksaan berkala ini tidak hanya memastikan kepatuhan terhadap regulasi K3, tetapi juga memberikan berbagai manfaat penting bagi perusahaan dan pekerja."
@@ -521,6 +525,7 @@ section_training:
 # Block: block--section-specs.html
 section_specs:
   title: "Standar Spesifikasi Forklift"
+  subtitle: "Parameter Teknis yang Wajib Diperiksa"
   icon: "bi-gear-wide-connected"
   description: "Spesifikasi teknis forklift mencakup berbagai parameter penting yang harus dipenuhi untuk memastikan keselamatan dan efisiensi operasional. Berikut adalah standar spesifikasi utama yang perlu diperhatikan dalam riksa uji forklift."
   specs_heading: "Parameter Teknis Forklift"
@@ -564,6 +569,7 @@ section_specs:
 # Block: block--section-certification.html
 section_certification:
   title: "Pengesahan Gambar Forklift"
+  subtitle: "Verifikasi Desain & Konstruksi Resmi"
   icon: "bi-file-earmark-check"
   intro: 
   paragraphs:
@@ -630,6 +636,7 @@ section_certification:
 # Block: block--section-permit.html
 section_permit:
   title: "SLO Forklift"
+  subtitle: "Surat Izin Layak Operasi Resmi Kemenaker"
   icon: "bi-file-earmark-medical"
   intro: "SLO Forklift adalah singkatan dari Surat Izin Layak Operasi Forklift. Ini adalah dokumen resmi yang menyatakan bahwa sebuah forklift telah memenuhi standar keselamatan dan laik operasi. SLO dikeluarkan setelah forklift melalui serangkaian pemeriksaan dan pengujian oleh lembaga yang berwenang."
   topics:

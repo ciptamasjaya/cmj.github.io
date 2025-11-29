@@ -38,11 +38,11 @@ Usage:
   <!-- Header Section -->
   <div class="block-header mb-4">
     <div class="card border-0 shadow-sm">
-      <div class="card-body header-gradient text-white text-center py-3 px-3">
-        <i class="bi bi-award fs-3 mb-2 block-icon"></i>
-        <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "Keunggulan Layanan" }}</h2>
+      <div class="card-body header-gradient text-white text-center py-4 px-3">
+        <i class="bi bi-award mb-2 display-4"></i>
+        <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Keunggulan Layanan" }}</h2>
         {% if section.intro %}
-        <p class="header-subtitle mb-0 mt-1 small block-intro">{{ section.intro }}</p>
+        <p class="mb-0 mt-1 small subtitle-text">{{ section.intro }}</p>
         {% endif %}
       </div>
     </div>

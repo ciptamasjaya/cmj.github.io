@@ -9,18 +9,21 @@ Block: Company Introduction Riksa Uji - Article Section (Dual Column Layout)
 @description Displays company introduction section for Riksa Uji services
 @author      arisciwek
 @created     2025-11-29
+@updated     2025-11-30
 
-Adopted from: block--company-intro.html (node--pjk3-city)
+Adopted from: block--importance.html styling
 Adapted for: Dual-column layout (col-lg-8 main content + col-lg-4 sidebar)
 
 Parameters:
 -----------
 - section: Section data object from front matter (required)
   - title: Section title
+  - icon: Bootstrap icon class (optional)
   - company_name: Company name
   - intro: Introduction paragraph
   - subsections: Array of subsection objects
     - title: Subsection title
+    - icon: Bootstrap icon class (optional)
     - paragraphs: Array of paragraph strings
 
 Usage:
@@ -33,58 +36,98 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="article-section block--company-intro-riksa-uji py-4 col-main__section" id="block--company-intro-riksa-uji">
+<section class="block--company-intro-riksa-uji block--importance my-5" id="block--company-intro-riksa-uji">
 
-  <!-- Header Section -->
-  <div class="block-header mb-4">
-    <div class="card border-0 shadow-sm">
-      <div class="card-body header-gradient text-white text-center py-3 px-3">
-        <i class="bi bi-building fs-3 mb-2 block-icon"></i>
-        <h2 class="h5 mb-0 fw-bold text-white block-title">{{ section.title | default: "Tentang Perusahaan" }}</h2>
-        {% if section.intro %}
-        <p class="header-subtitle mb-0 mt-1 small block-intro">{{ section.intro }}</p>
-        {% endif %}
-      </div>
+  <!-- H2: Main Section Header -->
+  <div class="card border-0 shadow-lg mb-4">
+    <div class="card-body text-white text-center py-4 px-3 header-gradient">
+      <i class="bi {{ section.icon | default: 'bi-building' }} mb-2 display-4"></i>
+      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Tentang Perusahaan" }}</h2>
+      {% if section.intro %}
+      <p class="mb-0 mt-2 small subtitle-text">
+        <i class="bi bi-star-fill me-1"></i>
+        {{ section.intro }}
+        <i class="bi bi-star-fill ms-1"></i>
+      </p>
+      {% endif %}
     </div>
   </div>
 
   <!-- Company Highlight Card -->
   {% if section.company_name %}
-  <div class="company-highlight bg-light rounded p-3 mb-4">
-    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between">
-      <div class="highlight__content mb-2 mb-md-0">
-        <h3 class="h6 fw-bold mb-1 highlight__company-name">{{ section.company_name }}</h3>
-        <p class="mb-0 text-muted small highlight__tagline">
-          <i class="bi bi-shield-check me-1"></i>
-          PJK3 Riksa Uji Resmi Berlisensi Kemenaker
-        </p>
-      </div>
-      <div class="highlight__cta">
-        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji" class="btn btn-success btn-sm cta__button" target="_blank">
-          <i class="bi bi-whatsapp me-1"></i> Hubungi
-        </a>
+  <div class="card border-0 shadow-sm intro-card mb-4 hover-lift">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <div class="intro-icon-circle me-3 flex-shrink-0">
+          <i class="bi bi-shield-check"></i>
+        </div>
+        <div class="flex-grow-1">
+          <h3 class="h5 fw-bold mb-1">{{ section.company_name }}</h3>
+          <p class="mb-0 text-muted small">
+            PJK3 Riksa Uji Resmi Berlisensi Kemenaker
+          </p>
+        </div>
+        <div class="ms-3">
+          <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji" class="btn btn-success btn-sm" target="_blank">
+            <i class="bi bi-whatsapp me-1"></i> Hubungi
+          </a>
+        </div>
       </div>
     </div>
   </div>
   {% endif %}
 
   <!-- Subsections -->
-  {% if section.subsections %}
-  <div class="subsections subsection-list">
+  {% if section.subsections and section.subsections.size > 0 %}
+  <div class="subsections">
     {% for subsection in section.subsections %}
-    <div class="subsection-item mb-3">
-      <h3 class="subsection-title subsection__title small fw-bold text-dark mb-2">
-        {{ subsection.title }}
-      </h3>
-      <div class="subsection-content subsection__content">
-        {% if subsection.paragraphs %}
-          {% for paragraph in subsection.paragraphs %}
-          <p class="subsection__paragraph small text-muted mb-2" style="font-size: 0.85rem;">{{ paragraph }}</p>
-          {% endfor %}
-        {% elsif subsection.content %}
-          <div class="small text-muted">{{ subsection.content | markdownify }}</div>
-        {% endif %}
+    {% assign sub_index = forloop.index %}
+    <div class="subsection-wrapper mb-4">
+
+      <!-- H3: Subsection Header Strip -->
+      <div class="d-flex align-items-center mb-3">
+        <div class="subsection-strip subsection-strip-{{ sub_index }} px-3 py-2 rounded-3 flex-grow-1">
+          <h3 class="h5 mb-0 fw-bold subsection-title">
+            <span class="subsection-number me-2">{{ sub_index }}</span>
+            {% if subsection.icon %}
+            <i class="bi {{ subsection.icon }} me-2 subsection-icon"></i>
+            {% endif %}
+            {{ subsection.title }}
+          </h3>
+        </div>
       </div>
+
+      <!-- Paragraphs -->
+      {% if subsection.paragraphs and subsection.paragraphs.size > 0 %}
+      <div class="row g-3">
+        {% for paragraph in subsection.paragraphs %}
+        <div class="col-12">
+          <div class="card border-0 shadow-sm h-100 bullet-card bullet-card-{{ sub_index }} hover-lift">
+            <div class="card-body">
+              <div class="d-flex align-items-start">
+                <div class="bullet-icon-circle bullet-icon-{{ sub_index }} me-3 flex-shrink-0">
+                  <i class="bi bi-arrow-right"></i>
+                </div>
+                <p class="mb-0 text-muted">{{ paragraph }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% elsif subsection.content %}
+      <div class="card border-0 shadow-sm bullet-card bullet-card-{{ sub_index }} hover-lift">
+        <div class="card-body">
+          <div class="d-flex align-items-start">
+            <div class="bullet-icon-circle bullet-icon-{{ sub_index }} me-3 flex-shrink-0">
+              <i class="bi bi-info-circle"></i>
+            </div>
+            <div class="text-muted">{{ subsection.content | markdownify }}</div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
     </div>
     {% endfor %}
   </div>

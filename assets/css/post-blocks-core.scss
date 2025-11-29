@@ -1,0 +1,192 @@
+---
+# Core Post Block Styles - Description, Content Intro
+# PT. Cipta Mas Jaya
+---
+
+// ============================================================================
+// POST BLOCKS CORE STYLES
+// ============================================================================
+// @file        post-blocks-core.scss
+// @description Core styles: post-description, content-intro, hover-lift
+// @author      arisciwek
+// @created     2025-11-30
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// GLOBAL MIXINS & UTILITIES
+// ----------------------------------------------------------------------------
+
+// Mixin: Subtitle text on gradient background (frosted glass pill)
+@mixin subtitle-pill {
+  opacity: 1;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  backdrop-filter: blur(5px);
+}
+
+// Global class for subtitle pill (can be used directly in HTML)
+.subtitle-pill {
+  @include subtitle-pill;
+}
+
+// ----------------------------------------------------------------------------
+// POST DESCRIPTION BLOCK (Meta Description as First Paragraph)
+// ----------------------------------------------------------------------------
+.block--post-description {
+  margin-bottom: 1rem;
+
+  .post-description__card {
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #198754;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(25, 135, 84, 0.15);
+      border-left-color: #157347;
+    }
+  }
+
+  .post-description__text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    font-weight: 500;
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0a58ca;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// CONTENT INTRO BLOCK (Paragraf Tambahan) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for alternating styles
+$content-intro-colors: (
+  1: (#6f42c1, #9b59b6),  // purple
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#198754, #20c997),  // green
+  4: (#fd7e14, #ffc107)   // orange
+);
+
+.block--content-intro {
+
+  // H2: Main Section Header with gradient card
+  .header-gradient {
+    background: linear-gradient(135deg, #6f42c1 0%, #8e44ad 50%, #9b59b6 100%);
+    border-radius: 12px;
+
+    .display-5 {
+      font-size: 2.5rem;
+    }
+  }
+
+  // H3: Heading Strip
+  .heading-strip {
+    background: rgba(111, 66, 193, 0.1);
+  }
+
+  .heading-title {
+    color: #6f42c1;
+  }
+
+  .heading-icon {
+    color: #8e44ad;
+  }
+
+  // Icon Circle for paragraphs
+  .icon-circle {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #6f42c1, #9b59b6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
+  }
+
+  // Paragraph Cards with hover lift
+  .paragraph-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #6f42c1;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(111, 66, 193, 0.2);
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    // Alternate colors using @each loop
+    @each $index, $colors in $content-intro-colors {
+      @if $index > 1 {
+        &:nth-child(#{$index}) {
+          border-left-color: nth($colors, 1);
+
+          .icon-circle {
+            background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+            box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  // Paragraph Text
+  .paragraph-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+
+    a {
+      color: #6f42c1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #9b59b6;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Hover Lift utility (reusable)
+.hover-lift {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// ----------------------------------------------------------------------------
+// GLOBAL SUBTITLE TEXT STYLE (applies to all blocks with gradient headers)
+// ----------------------------------------------------------------------------
+// This global rule ensures consistent subtitle styling across all blocks
+// Individual block files no longer need to define .subtitle-text styles
+
+.header-gradient .subtitle-text,
+.header-gradient .header-subtitle {
+  @include subtitle-pill;
+}

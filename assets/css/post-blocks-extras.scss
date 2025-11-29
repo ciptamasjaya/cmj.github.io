@@ -1,0 +1,594 @@
+---
+# Post Block Extras - Reviews, Related Post, FAQ Post, Video Post
+# PT. Cipta Mas Jaya
+---
+
+// ============================================================================
+// POST BLOCKS EXTRAS STYLES
+// ============================================================================
+// @file        post-blocks-extras.scss
+// @description Extras: reviews, related-post, faq-post, video-post
+// @author      arisciwek
+// @created     2025-11-30
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// REVIEWS BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+.block--reviews {
+
+  // H2: Main Header Gradient Card - Star/Rating Theme (Gold/Amber)
+  .header-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .reviews-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  // Rating Card (left column)
+  .rating-card {
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border-left: 4px solid #f59e0b;
+  }
+
+  .rating-badge-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  .rating-big-score {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  .rating-max {
+    font-size: 1.5rem;
+    color: #92400e;
+    font-weight: 600;
+  }
+
+  // Override rating-summary styles for HEBOH
+  .rating-summary {
+    .rating-summary__score {
+      display: none; // Hide default score, we use big score above
+    }
+
+    .rating-summary__stars {
+      .bi-star-fill,
+      .bi-star-half {
+        color: #f59e0b;
+        font-size: 1.25rem;
+      }
+    }
+
+    .rating-bar__fill {
+      background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    }
+
+    .rating-summary__badge .badge {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  // Reviews List Wrapper
+  .reviews-list-wrapper {
+    .review-card {
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+
+      &:hover {
+        transform: translateX(5px);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+        border-left-color: #f59e0b;
+      }
+    }
+
+    .review-card__avatar {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    }
+
+    .review-card__name {
+      color: #1f2937;
+    }
+
+    .stars .bi-star-fill {
+      color: #f59e0b;
+    }
+
+    .badge.bg-success-subtle {
+      background: linear-gradient(135deg, #10b981, #34d399);
+      color: #fff;
+    }
+
+    .badge.bg-warning-subtle {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      color: #fff;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// RELATED POST BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for related posts (3 variants for 3-column layout)
+$related-colors: (
+  1: (#0ea5e9, #06b6d4),  // sky/cyan
+  2: (#8b5cf6, #a78bfa),  // violet
+  3: (#10b981, #34d399)   // emerald
+);
+
+.block--related-post {
+
+  // H2: Main Header Gradient Card - Link/Connection Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .related-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  // Related Card
+  .related-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+
+  // Generate card hover variants
+  @each $index, $colors in $related-colors {
+    .related-card-#{$index} {
+      &:hover {
+        box-shadow: 0 15px 35px rgba(nth($colors, 1), 0.2);
+      }
+    }
+  }
+
+  // Card Image with overlay
+  .related-card-image {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      transition: transform 0.3s ease;
+    }
+
+    .related-card:hover & img {
+      transform: scale(1.05);
+    }
+  }
+
+  .related-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    pointer-events: none;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-card-overlay-#{$index} {
+      background: linear-gradient(to top, rgba(nth($colors, 1), 0.1), transparent);
+    }
+  }
+
+  // Card Placeholder (when no image)
+  .related-card-placeholder {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-card-placeholder-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+    }
+  }
+
+  // Category Badge
+  .related-category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    color: #fff;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-category-badge-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+    }
+  }
+
+  // Title
+  .related-title {
+    line-height: 1.4;
+
+    a {
+      color: #1f2937;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0ea5e9;
+      }
+    }
+  }
+
+  // Excerpt
+  .related-excerpt {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  // Footer
+  .related-footer {
+    padding-top: 0;
+  }
+
+  // Date Icon
+  .related-date-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-date-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+    }
+  }
+
+  // Date Text
+  .related-date {
+    color: #6b7280;
+    font-size: 0.8rem;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// FAQ POST BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for FAQ items (6 variants, cycles for more)
+$faq-colors: (
+  1: (#6366f1, #8b5cf6),  // indigo/violet
+  2: (#0ea5e9, #06b6d4),  // sky/cyan
+  3: (#10b981, #34d399),  // emerald
+  4: (#f59e0b, #fbbf24),  // amber
+  5: (#ec4899, #f472b6),  // pink
+  6: (#8b5cf6, #a78bfa)   // violet
+);
+
+.block--faq-post {
+
+  // H2: Main Header Gradient Card - Question/Help Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .faq-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  // FAQ Accordion Wrapper
+  .faq-accordion-wrapper {
+    .accordion {
+      --bs-accordion-btn-focus-box-shadow: none;
+    }
+  }
+
+  // FAQ Item
+  .faq-item {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  // FAQ Button (Question)
+  .faq-button {
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+
+    &:not(.collapsed) {
+      background: #fff;
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::after {
+      background-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  // FAQ Number Badge
+  .faq-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  // Generate FAQ number color variants
+  @each $index, $colors in $faq-colors {
+    .faq-number-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // FAQ Question Text
+  .faq-question {
+    font-size: 1rem;
+    color: #1f2937;
+    line-height: 1.5;
+  }
+
+  // FAQ Answer
+  .faq-answer {
+    padding: 1rem 1.25rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  // FAQ Answer Icon
+  .faq-answer-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  // Generate FAQ answer icon color variants
+  @each $index, $colors in $faq-colors {
+    .faq-answer-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.25);
+    }
+  }
+
+  // FAQ Answer Text
+  .faq-answer-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.8;
+  }
+
+  // Generate FAQ item hover variants
+  @each $index, $colors in $faq-colors {
+    .faq-item-#{$index} {
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// VIDEO POST BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+.block--video-post {
+
+  // H2: Main Header Gradient Card - Cinema/Play Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .video-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  // Video Wrapper
+  .video-wrapper {
+    position: relative;
+  }
+
+  // Video Card Container
+  .video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+    }
+  }
+
+  // Video Container
+  .video-container {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+
+    iframe,
+    video {
+      display: block;
+      border-radius: 12px;
+    }
+  }
+
+  // Duration Badge
+  .duration-badge-wrapper {
+    margin-top: 1rem;
+  }
+
+  .duration-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+

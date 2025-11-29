@@ -49,23 +49,23 @@ Usage:
 
 {% if section %}
 <section class="article-section block--hero-riksa-uji" id="block--hero-riksa-uji">
-  <div class="container-fluid px-0">
+  <div class="container-fluid mb-4 px-0">
     <div class="card hero-card shadow-lg mx-0 rounded-0">
       <div class="card-body text-white py-4 px-4">
         <div class="row align-items-center">
           <div class="col-lg-8 hero-content">
-            <h2 class="h2 fw-bold mb-3 hero__title">
+            <h2 class="h2 fw-bold mb-3 hero__title text-white">
               <i class="bi bi-tools me-2 hero__icon"></i>{{ section.title | default: "Butuh Layanan Riksa Uji K3" }}?
             </h2>
-            <p class="hero-description mb-3 hero__description">
+            <p class="hero-description mb-3 hero__description text-white">
               {{ section.description | default: "PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian peralatan K3 dengan standar profesional di seluruh Indonesia." }}
             </p>
             <div class="bg-white bg-opacity-10 p-3 rounded mb-3 hero__wilayah">
-              <p class="hero-text-main mb-2 hero__wilayah-label">
+              <p class="hero-text-main mb-2 hero__wilayah-label text-white">
                 <i class="bi bi-building me-2"></i>
                 <strong>{{ section.label_wilayah | default: "Melayani Wilayah:" }}</strong>
               </p>
-              <p class="hero-text-sub mb-0 small hero__wilayah-list">
+              <p class="hero-text-sub mb-0 small hero__wilayah-list text-white">
                 {% if section.wilayah_layanan %}
                   {{ section.wilayah_layanan | join: ', ' }}
                 {% else %}

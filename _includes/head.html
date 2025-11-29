@@ -52,12 +52,17 @@
   <link rel="stylesheet" href="{{ '/assets/css/blocks.css' | relative_url }}">
 
   <!-- Post-specific CSS (loaded only for post layouts) -->
-  {% if page.layout == 'node--riksa-uji' or page.layout contains 'post' %}
-  <link rel="stylesheet" href="{{ '/assets/css/post-blocks.css' | relative_url }}">
+  {% if page.layout contains 'riksa-uji' or page.layout contains 'post' %}
+  <link rel="stylesheet" href="{{ '/assets/css/post-blocks-core.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/post-blocks-sections.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/post-blocks-content.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/post-blocks-extras.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/post-blocks-responsive.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/post-blocks-riksa-uji.css' | relative_url }}">
   {% endif %}
 
   <!-- PJK3 City-specific CSS (loaded only for PJK3 city layouts) -->
-  {% if page.layout == 'page--pjk3-city' or page.layout == 'node--pjk3-city' %}
+  {% if page.layout contains 'pjk3-city' %}
   <link rel="stylesheet" href="{{ '/assets/css/block--pjk3-city.css' | relative_url }}">
   {% endif %}
 

@@ -1,0 +1,3695 @@
+---
+# Styles for Post/Article Blocks
+# PT. Cipta Mas Jaya
+---
+
+// ============================================================================
+// POST BLOCKS STYLES
+// ============================================================================
+// @file        post-blocks.scss
+// @description Styles untuk block-block di post/article pages
+// @author      arisciwek
+// @created     2025-11-27
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// POST DESCRIPTION BLOCK (Meta Description as First Paragraph)
+// ----------------------------------------------------------------------------
+.block--post-description {
+  margin-bottom: 1rem;
+
+  .post-description__card {
+    border: 1px solid #e9ecef;
+    border-left: 4px solid #198754;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(25, 135, 84, 0.15);
+      border-left-color: #157347;
+    }
+  }
+
+  .post-description__text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    font-weight: 500;
+
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0a58ca;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// CONTENT INTRO BLOCK (Paragraf Tambahan) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for alternating styles
+$content-intro-colors: (
+  1: (#6f42c1, #9b59b6),  // purple
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#198754, #20c997),  // green
+  4: (#fd7e14, #ffc107)   // orange
+);
+
+.block--content-intro {
+
+  // H2: Main Section Header with gradient card
+  .header-gradient {
+    background: linear-gradient(135deg, #6f42c1 0%, #8e44ad 50%, #9b59b6 100%);
+    border-radius: 12px;
+
+    .display-5 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.85;
+  }
+
+  // H3: Heading Strip
+  .heading-strip {
+    background: rgba(111, 66, 193, 0.1);
+  }
+
+  .heading-title {
+    color: #6f42c1;
+  }
+
+  .heading-icon {
+    color: #8e44ad;
+  }
+
+  // Icon Circle for paragraphs
+  .icon-circle {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #6f42c1, #9b59b6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
+  }
+
+  // Paragraph Cards with hover lift
+  .paragraph-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #6f42c1;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(111, 66, 193, 0.2);
+    }
+
+    .card-body {
+      padding: 1.25rem;
+    }
+
+    // Alternate colors using @each loop
+    @each $index, $colors in $content-intro-colors {
+      @if $index > 1 {
+        &:nth-child(#{$index}) {
+          border-left-color: nth($colors, 1);
+
+          .icon-circle {
+            background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+            box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  // Paragraph Text
+  .paragraph-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+
+    a {
+      color: #6f42c1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: #9b59b6;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Hover Lift utility (reusable)
+.hover-lift {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// ----------------------------------------------------------------------------
+// IMPORTANCE BLOCK (Pentingnya) - GILA EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for importance block (supports 6 variants + cycles for more)
+$importance-colors: (
+  1: (#198754, #20c997),  // green
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#fd7e14, #ffc107),  // orange
+  4: (#6f42c1, #9b59b6),  // purple
+  5: (#20c997, #0dcaf0)   // teal
+);
+
+// Function to get color with cycling fallback
+@function get-importance-color($index) {
+  $total: length($importance-colors);
+  $normalized: (($index - 1) % $total) + 1;
+  @return map-get($importance-colors, $normalized);
+}
+
+.block--importance {
+
+  // H2: Main Header Gradient Card
+  .header-gradient {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro paragraphs after H2
+  .intro-card {
+    border-left: 4px solid #0d6efd;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Subsection Strip (H3 header) - base styles
+  .subsection-strip {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  // Subsection number - base styles
+  .subsection-number {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  // Generate subsection strip color variants (1-6, cycles for more)
+  @each $index, $colors in $importance-colors {
+    .subsection-strip-#{$index} {
+      background: rgba(nth($colors, 1), 0.1);
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      .subsection-title { color: nth($colors, 1); }
+      .subsection-number {
+        background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+        box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+      }
+      .subsection-icon { color: nth($colors, 2); }
+    }
+  }
+
+  // Paragraphs after H3
+  .subsection-para-card {
+    border-left: 3px solid #e9ecef;
+    border-radius: 8px;
+  }
+
+  // Bullet Cards - base styles
+  .bullet-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+  }
+
+  // Bullet Icon Circle - base styles
+  .bullet-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  // Generate bullet card and icon color variants (1-6, cycles for more)
+  @each $index, $colors in $importance-colors {
+    .bullet-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Bullet text
+  .bullet-key {
+    color: #212529;
+  }
+
+  .bullet-value {
+    line-height: 1.6;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// PROCESS BLOCK (Proses/Langkah-langkah) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for process block (6 variants + cycles for more)
+$process-colors: (
+  1: (#d97706, #f59e0b),  // amber/orange
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#198754, #20c997),  // green
+  4: (#0891b2, #0891b2),  // red
+  5: (#6f42c1, #9b59b6),  // purple
+  6: (#0891b2, #06b6d4)   // cyan
+);
+
+.block--process {
+
+  // H2: Main Header Gradient Card
+  .header-gradient {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 50%, #92400e 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card after H2
+  .intro-card {
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Step Strip (H3 header) - base styles
+  .step-strip {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  // Step number - base styles
+  .step-number {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  // Generate step strip color variants (1-6, cycles for more)
+  @each $index, $colors in $process-colors {
+    .step-strip-#{$index} {
+      background: rgba(nth($colors, 1), 0.1);
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      .step-title { color: nth($colors, 1); }
+      .step-number {
+        background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+        box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+      }
+      .step-icon { color: nth($colors, 2); }
+    }
+  }
+
+  // Substep Cards - base styles (H4) - shadow di atas
+  .substep-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+  }
+
+  // Substep Icon Circle - base styles
+  .substep-icon-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+    vertical-align: middle;
+  }
+
+  // Generate substep card and icon color variants (1-6)
+  @each $index, $colors in $process-colors {
+    .substep-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .substep-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 8px rgba(nth($colors, 1), 0.3);
+    }
+
+    .bullet-arrow-#{$index} {
+      color: nth($colors, 1);
+    }
+  }
+
+  // Substep title
+  .substep-title {
+    color: #212529;
+  }
+
+  // Substep description - untuk keseimbangan visual
+  .substep-desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    padding-left: 2.25rem;
+    border-left: 2px solid #e5e7eb;
+    margin-left: 0.25rem;
+  }
+
+  // Bullets Container - GILA EDITION!
+  .bullets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  // Bullet Card - Each bullet is now a mini card!
+  .bullet-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      opacity: 0.05;
+      transform: translate(30%, -30%);
+    }
+
+    &:hover {
+      transform: translateX(8px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bullet-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .bullet-key {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 2.75rem;
+  }
+
+  // Generate bullet card color variants - RAINBOW MADNESS!
+  @each $index, $colors in $process-colors {
+    .bullet-card-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &::after { background: nth($colors, 1); }
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+        &::before { width: 6px; }
+      }
+
+      .bullet-key { color: nth($colors, 1); }
+    }
+
+    .bullet-icon-box-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card
+  .summary-body {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #92400e;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// REGULATION BLOCK (Regulasi/Hukum) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for regulation block (3 variants for 3-column layout)
+$regulation-colors: (
+  1: (#0d6efd, #6610f2),  // blue (kepatuhan)
+  2: (#198754, #20c997),  // green (dasar hukum)
+  3: (#0891b2, #0891b2)   // red (sanksi)
+);
+
+.block--regulation {
+
+  // H2: Main Header Gradient Card - Legal Authority Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #3182ce 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .regulation-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card after H2
+  .intro-card {
+    border-left: 4px solid #2c5282;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2c5282, #3182ce);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(44, 82, 130, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Subsection Card - full card with header strip
+  .subsection-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+  }
+
+  // Subsection Header - inside card (fixed height for alignment)
+  .subsection-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-radius: 16px 16px 0 0;
+    min-height: 80px;
+  }
+
+  .subsection-number-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .subsection-title {
+    color: #212529;
+    line-height: 1.3;
+  }
+
+  // Description card - equal height across columns
+  .subsection-desc-card {
+    min-height: 130px;
+    background: transparent;
+  }
+
+  .subsection-desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate subsection color variants
+  @each $index, $colors in $regulation-colors {
+    .subsection-card-#{$index} {
+      &::before { background: linear-gradient(90deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .subsection-header-#{$index} {
+      background: rgba(nth($colors, 1), 0.08);
+    }
+
+    .subsection-number-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Regulation Bullet Cards - Document Style
+  .bullets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .regulation-bullet-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e5e7eb;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-color: transparent;
+    }
+  }
+
+  .regulation-bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .regulation-bullet-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .regulation-bullet-key {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .regulation-bullet-value {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.65;
+    margin: 0;
+    padding-left: 2.375rem;
+  }
+
+  // Generate regulation bullet color variants
+  @each $index, $colors in $regulation-colors {
+    .regulation-bullet-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover {
+        box-shadow: 0 6px 20px rgba(nth($colors, 1), 0.12);
+        &::before { width: 5px; }
+      }
+
+      .regulation-bullet-key { color: nth($colors, 1); }
+    }
+
+    .regulation-bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 2px 8px rgba(nth($colors, 1), 0.25);
+    }
+  }
+
+  // Summary Card - Shield Style
+  .regulation-summary {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border-left: 4px solid #0284c7;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #075985;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// TRAINING BLOCK (Pelatihan/Sertifikasi) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for training block (6 cards + 4 bullets)
+$training-card-colors: (
+  1: (#6366f1, #8b5cf6),  // indigo/violet (sertifikasi)
+  2: (#0ea5e9, #06b6d4),  // sky/cyan (materi)
+  3: (#10b981, #34d399),  // emerald (ujian)
+  4: (#f59e0b, #fbbf24),  // amber (keuntungan)
+  5: (#ec4899, #f472b6),  // pink (berkala)
+  6: (#8b5cf6, #a78bfa)   // violet (durasi)
+);
+
+$training-bullet-colors: (
+  1: (#10b981, #34d399),  // emerald
+  2: (#0ea5e9, #06b6d4),  // sky
+  3: (#f59e0b, #fbbf24),  // amber
+  4: (#ec4899, #f472b6)   // pink
+);
+
+.block--training {
+
+  // H2: Main Header Gradient Card - Education Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #8b5cf6 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .training-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #6366f1;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // H3: Section Headings (cards & bullets)
+  .section-heading {
+    position: relative;
+    padding-left: 1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #6366f1, #8b5cf6);
+      border-radius: 2px;
+    }
+  }
+
+  .section-heading-title {
+    color: #4f46e5;
+
+    i {
+      color: #8b5cf6;
+    }
+  }
+
+  // Bullets heading variant (amber)
+  .bullets-heading {
+    &::before {
+      background: linear-gradient(180deg, #f59e0b, #fbbf24);
+    }
+
+    .section-heading-title {
+      color: #b45309;
+
+      i {
+        color: #f59e0b;
+      }
+    }
+  }
+
+  // Cards Intro Card (indigo theme)
+  .cards-intro-card .card {
+    border-left: 4px solid #6366f1;
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  }
+
+  .cards-intro-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 10px rgba(99, 102, 241, 0.3);
+  }
+
+  .cards-intro-text {
+    color: #4338ca;
+    font-size: 1rem;
+  }
+
+  // Training Cards - 3x2 Grid
+  .training-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+  }
+
+  .training-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .training-card-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .training-card-title {
+    color: #1f2937;
+    line-height: 1.3;
+  }
+
+  .training-card-content {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate training card color variants
+  @each $index, $colors in $training-card-colors {
+    .training-card-#{$index} {
+      &::before { background: linear-gradient(90deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .training-card-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Bullets Intro Card
+  .bullets-intro-card .card {
+    border-left: 4px solid #f59e0b;
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  }
+
+  .bullets-intro-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
+  }
+
+  .bullets-intro-text {
+    color: #92400e;
+    font-size: 1rem;
+  }
+
+  // Training Bullet Cards
+  .training-bullet-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    height: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .training-bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .training-bullet-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .training-bullet-key {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .training-bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.65;
+    margin: 0;
+    padding-left: 2.75rem;
+  }
+
+  // Generate training bullet color variants
+  @each $index, $colors in $training-bullet-colors {
+    .training-bullet-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+        &::before { width: 6px; }
+      }
+
+      .training-bullet-key { color: nth($colors, 1); }
+    }
+
+    .training-bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card - Award Style
+  .training-summary {
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+    border-left: 4px solid #8b5cf6;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5b21b6;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// SPECS BLOCK (Spesifikasi) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for specs block (6 specs)
+$specs-colors: (
+  1: (#ef4444, #f87171),  // red (kapasitas angkat)
+  2: (#3b82f6, #60a5fa),  // blue (tinggi angkat)
+  3: (#f59e0b, #fbbf24),  // amber (kecepatan)
+  4: (#8b5cf6, #a78bfa),  // violet (dimensi)
+  5: (#10b981, #34d399),  // emerald (pengereman)
+  6: (#06b6d4, #22d3ee)   // cyan (baterai)
+);
+
+.block--specs {
+
+  // H2: Main Header Gradient Card - Speedometer Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .specs-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+
+  // H3: Section Heading
+  .section-heading {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 4px solid #f59e0b;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #f59e0b, #fbbf24);
+      border-radius: 2px;
+    }
+  }
+
+  .section-heading-title {
+    color: #b45309;
+    margin: 0;
+
+    i {
+      color: #f59e0b;
+    }
+  }
+
+  // Specs Intro Card
+  .specs-intro-card {
+    .card {
+      border-left: 3px solid #fbbf24;
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    }
+  }
+
+  .specs-intro-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .specs-intro-text {
+    color: #92400e;
+    font-size: 0.95rem;
+  }
+
+  // Spec Cards - Horizontal Layout with Value Badge
+  .spec-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .spec-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 90px;
+    min-width: 90px;
+  }
+
+  .spec-icon-circle {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  .spec-value-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 70px;
+  }
+
+  .spec-title {
+    color: #1f2937;
+  }
+
+  .spec-text {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate spec card color variants
+  @each $index, $colors in $specs-colors {
+    .spec-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .spec-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 6px 20px rgba(nth($colors, 1), 0.35);
+    }
+
+    .spec-value-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card
+  .specs-summary {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #92400e;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// ANNOUNCE BLOCK (Paragraf Penutup)
+// ----------------------------------------------------------------------------
+.block--announce {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  border-left: 4px solid #198754;
+
+  .block--announce__text {
+    font-size: 1.05rem;
+    color: #2e7d32;
+    margin-bottom: 0.75rem;
+    line-height: 1.7;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: #1b5e20;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:hover {
+        color: #0d6efd;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// PERMIT BLOCK (Perizinan/SLO) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for permit block (4 topics + bullets variants)
+$permit-topic-colors: (
+  1: (#0891b2, #06b6d4),  // cyan (pentingnya)
+  2: (#8b5cf6, #a78bfa),  // violet (perbedaan)
+  3: (#f59e0b, #fbbf24),  // amber (contoh kasus)
+  4: (#10b981, #34d399)   // emerald (proses)
+);
+
+$permit-bullet-colors: (
+  1: (#0891b2, #06b6d4),  // cyan
+  2: (#8b5cf6, #a78bfa),  // violet
+  3: (#f59e0b, #fbbf24),  // amber
+  4: (#10b981, #34d399),  // emerald
+  5: (#ec4899, #f472b6),  // pink
+  6: (#3b82f6, #60a5fa)   // blue
+);
+
+.block--permit {
+
+  // H2: Main Header Gradient Card - Legal/Document Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 50%, #155e75 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .permit-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #0891b2;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+
+    p {
+      margin-bottom: 0.75rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Topic Header (H3)
+  .permit-topic-header {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: rgba(8, 145, 178, 0.08);
+    border-radius: 10px;
+    border-left: 4px solid #0891b2;
+  }
+
+  .permit-topic-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .permit-topic-title {
+    color: #0e7490;
+    line-height: 1.3;
+  }
+
+  // Generate topic icon color variants
+  @each $index, $colors in $permit-topic-colors {
+    .permit-topic-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Bullet Cards (key-value pairs)
+  .permit-bullet-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+
+  .permit-bullet-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+  }
+
+  .permit-bullet-key {
+    color: #0e7490;
+  }
+
+  .permit-bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate bullet card color variants
+  @each $index, $colors in $permit-bullet-colors {
+    .permit-bullet-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15); }
+    }
+
+    .permit-bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Content Card (paragraph)
+  .permit-content-card {
+    .card {
+      border-left: 3px solid #e5e7eb;
+      border-radius: 10px;
+    }
+  }
+
+  .permit-content-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #6b7280, #9ca3af);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .permit-content-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.8;
+
+    p {
+      margin-bottom: 0.75rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Number Cards (steps)
+  .permit-number-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #10b981, #34d399);
+    }
+
+    &:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+    }
+  }
+
+  .permit-number-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+  }
+
+  // Generate number badge color variants
+  .permit-number-badge-1 { background: linear-gradient(135deg, #0891b2, #06b6d4); box-shadow: 0 3px 10px rgba(8, 145, 178, 0.3); }
+  .permit-number-badge-2 { background: linear-gradient(135deg, #8b5cf6, #a78bfa); box-shadow: 0 3px 10px rgba(139, 92, 246, 0.3); }
+  .permit-number-badge-3 { background: linear-gradient(135deg, #10b981, #34d399); box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3); }
+  .permit-number-badge-4 { background: linear-gradient(135deg, #f59e0b, #fbbf24); box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3); }
+
+  .permit-number-title {
+    color: #065f46;
+  }
+
+  .permit-number-text {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Summary Card - Shield Style
+  .permit-summary {
+    background: linear-gradient(135deg, #ecfeff, #cffafe);
+    border-left: 4px solid #0891b2;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #155e75;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// CERTIFICATION BLOCK (Pengesahan/Sertifikasi) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for certification block (3 topics + 6 items/bullets variants)
+$certification-topic-colors: (
+  1: (#059669, #10b981),  // emerald (proses)
+  2: (#7c3aed, #8b5cf6),  // violet (pentingnya)
+  3: (#0284c7, #0ea5e9)   // sky (siapa)
+);
+
+$certification-item-colors: (
+  1: (#059669, #10b981),  // emerald
+  2: (#7c3aed, #8b5cf6),  // violet
+  3: (#f59e0b, #fbbf24),  // amber
+  4: (#ec4899, #f472b6),  // pink
+  5: (#0284c7, #0ea5e9),  // sky
+  6: (#ef4444, #f87171)   // red
+);
+
+.block--certification {
+
+  // H2: Main Header Gradient Card - Certificate/Badge Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .certification-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #059669;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #059669, #10b981);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Paragraph card variants
+  .paragraph-card-1 { border-left: 4px solid #059669; }
+  .paragraph-card-2 { border-left: 4px solid #7c3aed; }
+  .paragraph-card-3 { border-left: 4px solid #0284c7; }
+  .paragraph-card-4 { border-left: 4px solid #f59e0b; }
+
+  .para-icon-1 { background: linear-gradient(135deg, #059669, #10b981); box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4); }
+  .para-icon-2 { background: linear-gradient(135deg, #7c3aed, #8b5cf6); box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4); }
+  .para-icon-3 { background: linear-gradient(135deg, #0284c7, #0ea5e9); box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4); }
+  .para-icon-4 { background: linear-gradient(135deg, #f59e0b, #fbbf24); box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); }
+
+  // Topic Header (H3)
+  .certification-topic-header {
+    position: relative;
+    padding: 0.75rem 1rem;
+    background: rgba(5, 150, 105, 0.08);
+    border-radius: 10px;
+    border-left: 4px solid #059669;
+  }
+
+  .certification-topic-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .certification-topic-title {
+    color: #047857;
+    line-height: 1.3;
+  }
+
+  // Generate topic icon color variants
+  @each $index, $colors in $certification-topic-colors {
+    .certification-topic-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Item Cards (H4 + content)
+  .certification-item-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  .certification-item-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .certification-item-title {
+    color: #047857;
+  }
+
+  .certification-item-text {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate item card color variants
+  @each $index, $colors in $certification-item-colors {
+    .certification-item-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15); }
+    }
+
+    .certification-item-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Bullet Cards (string array)
+  .certification-bullet-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+
+  .certification-bullet-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+  }
+
+  .certification-bullet-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.7;
+  }
+
+  .certification-bullet-key {
+    color: #047857;
+  }
+
+  .certification-bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate bullet card color variants
+  @each $index, $colors in $certification-item-colors {
+    .certification-bullet-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15); }
+    }
+
+    .certification-bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card - Badge Style
+  .certification-summary {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border-left: 4px solid #059669;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #059669, #10b981);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #065f46;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// CONCLUSION BLOCK (Kesimpulan) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for highlights (3 cards)
+$conclusion-highlight-colors: (
+  1: (#6366f1, #8b5cf6),  // indigo/violet
+  2: (#0ea5e9, #06b6d4),  // sky/cyan
+  3: (#10b981, #34d399)   // emerald
+);
+
+.block--conclusion {
+
+  // H2: Main Header Gradient Card - Celebration Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .conclusion-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    opacity: 0.9;
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #6366f1;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+
+    a {
+      color: #6366f1;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Highlight Cards (3 columns)
+  .highlight-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .highlight-icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .highlight-key {
+    color: #1f2937;
+    font-size: 1rem;
+  }
+
+  .highlight-value {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  // Generate highlight card color variants
+  @each $index, $colors in $conclusion-highlight-colors {
+    .highlight-card-#{$index} {
+      &::before { background: linear-gradient(90deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .highlight-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 6px 20px rgba(nth($colors, 1), 0.35);
+    }
+  }
+
+  // Closing Card
+  .closing-body {
+    background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+    border-left: 4px solid #8b5cf6;
+    border-radius: 12px;
+  }
+
+  .closing-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  }
+
+  .closing-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5b21b6;
+  }
+
+  // CTA Card
+  .cta-body {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .cta-text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-button {
+    background: #fff;
+    color: #6366f1;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background: #fbbf24;
+      color: #1f2937;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    i {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// REVIEWS BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+.block--reviews {
+
+  // H2: Main Header Gradient Card - Star/Rating Theme (Gold/Amber)
+  .header-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .reviews-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    color: #fef3c7;
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  // Rating Card (left column)
+  .rating-card {
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border-left: 4px solid #f59e0b;
+  }
+
+  .rating-badge-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  .rating-big-score {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+  }
+
+  .rating-max {
+    font-size: 1.5rem;
+    color: #92400e;
+    font-weight: 600;
+  }
+
+  // Override rating-summary styles for HEBOH
+  .rating-summary {
+    .rating-summary__score {
+      display: none; // Hide default score, we use big score above
+    }
+
+    .rating-summary__stars {
+      .bi-star-fill,
+      .bi-star-half {
+        color: #f59e0b;
+        font-size: 1.25rem;
+      }
+    }
+
+    .rating-bar__fill {
+      background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    }
+
+    .rating-summary__badge .badge {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  // Reviews List Wrapper
+  .reviews-list-wrapper {
+    .review-card {
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+
+      &:hover {
+        transform: translateX(5px);
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
+        border-left-color: #f59e0b;
+      }
+    }
+
+    .review-card__avatar {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    }
+
+    .review-card__name {
+      color: #1f2937;
+    }
+
+    .stars .bi-star-fill {
+      color: #f59e0b;
+    }
+
+    .badge.bg-success-subtle {
+      background: linear-gradient(135deg, #10b981, #34d399);
+      color: #fff;
+    }
+
+    .badge.bg-warning-subtle {
+      background: linear-gradient(135deg, #f59e0b, #fbbf24);
+      color: #fff;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// RELATED POST BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for related posts (3 variants for 3-column layout)
+$related-colors: (
+  1: (#0ea5e9, #06b6d4),  // sky/cyan
+  2: (#8b5cf6, #a78bfa),  // violet
+  3: (#10b981, #34d399)   // emerald
+);
+
+.block--related-post {
+
+  // H2: Main Header Gradient Card - Link/Connection Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .related-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    color: #e0f2fe;
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  // Related Card
+  .related-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+
+  // Generate card hover variants
+  @each $index, $colors in $related-colors {
+    .related-card-#{$index} {
+      &:hover {
+        box-shadow: 0 15px 35px rgba(nth($colors, 1), 0.2);
+      }
+    }
+  }
+
+  // Card Image with overlay
+  .related-card-image {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      transition: transform 0.3s ease;
+    }
+
+    .related-card:hover & img {
+      transform: scale(1.05);
+    }
+  }
+
+  .related-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    pointer-events: none;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-card-overlay-#{$index} {
+      background: linear-gradient(to top, rgba(nth($colors, 1), 0.1), transparent);
+    }
+  }
+
+  // Card Placeholder (when no image)
+  .related-card-placeholder {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-card-placeholder-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+    }
+  }
+
+  // Category Badge
+  .related-category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    color: #fff;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-category-badge-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+    }
+  }
+
+  // Title
+  .related-title {
+    line-height: 1.4;
+
+    a {
+      color: #1f2937;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #0ea5e9;
+      }
+    }
+  }
+
+  // Excerpt
+  .related-excerpt {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  // Footer
+  .related-footer {
+    padding-top: 0;
+  }
+
+  // Date Icon
+  .related-date-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+  }
+
+  @each $index, $colors in $related-colors {
+    .related-date-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+    }
+  }
+
+  // Date Text
+  .related-date {
+    color: #6b7280;
+    font-size: 0.8rem;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// FAQ POST BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for FAQ items (6 variants, cycles for more)
+$faq-colors: (
+  1: (#6366f1, #8b5cf6),  // indigo/violet
+  2: (#0ea5e9, #06b6d4),  // sky/cyan
+  3: (#10b981, #34d399),  // emerald
+  4: (#f59e0b, #fbbf24),  // amber
+  5: (#ec4899, #f472b6),  // pink
+  6: (#8b5cf6, #a78bfa)   // violet
+);
+
+.block--faq-post {
+
+  // H2: Main Header Gradient Card - Question/Help Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 50%, #4338ca 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .faq-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    color: #e0e7ff;
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  // FAQ Accordion Wrapper
+  .faq-accordion-wrapper {
+    .accordion {
+      --bs-accordion-btn-focus-box-shadow: none;
+    }
+  }
+
+  // FAQ Item
+  .faq-item {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  // FAQ Button (Question)
+  .faq-button {
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+
+    &:not(.collapsed) {
+      background: #fff;
+      box-shadow: none;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::after {
+      background-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  // FAQ Number Badge
+  .faq-number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  // Generate FAQ number color variants
+  @each $index, $colors in $faq-colors {
+    .faq-number-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // FAQ Question Text
+  .faq-question {
+    font-size: 1rem;
+    color: #1f2937;
+    line-height: 1.5;
+  }
+
+  // FAQ Answer
+  .faq-answer {
+    padding: 1rem 1.25rem;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  // FAQ Answer Icon
+  .faq-answer-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  // Generate FAQ answer icon color variants
+  @each $index, $colors in $faq-colors {
+    .faq-answer-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.25);
+    }
+  }
+
+  // FAQ Answer Text
+  .faq-answer-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.8;
+  }
+
+  // Generate FAQ item hover variants
+  @each $index, $colors in $faq-colors {
+    .faq-item-#{$index} {
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// VIDEO POST BLOCK - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+.block--video-post {
+
+  // H2: Main Header Gradient Card - Cinema/Play Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .video-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  .subtitle-text {
+    color: #fef2f2;
+    font-size: 1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  // Video Wrapper
+  .video-wrapper {
+    position: relative;
+  }
+
+  // Video Card Container
+  .video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 20px 40px rgba(220, 38, 38, 0.2);
+    }
+  }
+
+  // Video Container
+  .video-container {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+
+    iframe,
+    video {
+      display: block;
+      border-radius: 12px;
+    }
+  }
+
+  // Duration Badge
+  .duration-badge-wrapper {
+    margin-top: 1rem;
+  }
+
+  .duration-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+
+    i {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// RESPONSIVE
+// ----------------------------------------------------------------------------
+@media (max-width: 768px) {
+  .block--content-intro {
+    .header-gradient.card-body {
+      padding: 1rem 1.25rem;
+    }
+
+    .header-gradient {
+      .display-5 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .icon-circle {
+      width: 38px;
+      height: 38px;
+      font-size: 0.9rem;
+    }
+
+    .paragraph-card .card-body {
+      padding: 1rem;
+    }
+
+    .paragraph-text {
+      font-size: 0.95rem;
+    }
+  }
+
+  .block--importance {
+    .header-gradient.card-body {
+      padding: 1rem 1.25rem;
+    }
+
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text {
+      font-size: 0.95rem;
+    }
+
+    .subsection-number {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+
+    .subsection-title {
+      font-size: 1rem;
+    }
+
+    .bullet-icon-circle {
+      width: 35px;
+      height: 35px;
+      font-size: 0.9rem;
+    }
+
+    .bullet-key {
+      font-size: 0.9rem;
+    }
+
+    .bullet-value {
+      font-size: 0.8rem;
+    }
+  }
+
+  .block--process {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .summary-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .summary-text {
+      font-size: 0.95rem;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+
+    .step-title {
+      font-size: 1rem;
+    }
+
+    .substep-icon-circle {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+
+    .substep-title {
+      font-size: 0.9rem;
+    }
+
+    .bullet-card {
+      padding: 0.875rem 1rem;
+    }
+
+    .bullet-icon-box {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .bullet-key {
+      font-size: 0.9rem;
+    }
+
+    .bullet-value {
+      font-size: 0.85rem;
+      padding-left: 2.25rem;
+    }
+  }
+
+  .block--regulation {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .summary-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .summary-text {
+      font-size: 0.95rem;
+    }
+
+    .subsection-header {
+      padding: 0.875rem 1rem;
+    }
+
+    .subsection-number-circle {
+      width: 32px;
+      height: 32px;
+      font-size: 0.85rem;
+    }
+
+    .subsection-title {
+      font-size: 0.95rem;
+    }
+
+    .subsection-desc-card {
+      min-height: auto;
+    }
+
+    .subsection-desc {
+      font-size: 0.9rem;
+    }
+
+    .regulation-bullet-card {
+      padding: 0.875rem;
+    }
+
+    .regulation-bullet-icon {
+      width: 24px;
+      height: 24px;
+      font-size: 0.7rem;
+    }
+
+    .regulation-bullet-key {
+      font-size: 0.85rem;
+    }
+
+    .regulation-bullet-value {
+      font-size: 0.8rem;
+      padding-left: 2rem;
+    }
+  }
+
+  .block--training {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .summary-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .summary-text {
+      font-size: 0.95rem;
+    }
+
+    .training-card-icon {
+      width: 38px;
+      height: 38px;
+      font-size: 1rem;
+    }
+
+    .training-card-title {
+      font-size: 0.9rem;
+    }
+
+    .training-card-content {
+      font-size: 0.85rem;
+    }
+
+    .bullets-intro-icon {
+      width: 35px;
+      height: 35px;
+      font-size: 0.95rem;
+    }
+
+    .bullets-intro-text {
+      font-size: 0.9rem;
+    }
+
+    .training-bullet-card {
+      padding: 0.875rem 1rem;
+    }
+
+    .training-bullet-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .training-bullet-key {
+      font-size: 0.9rem;
+    }
+
+    .training-bullet-value {
+      font-size: 0.85rem;
+      padding-left: 2.25rem;
+    }
+  }
+
+  .block--permit {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .summary-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .summary-text {
+      font-size: 0.95rem;
+    }
+
+    .permit-topic-header {
+      padding: 0.625rem 0.875rem;
+    }
+
+    .permit-topic-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 0.9rem;
+    }
+
+    .permit-topic-title {
+      font-size: 0.95rem;
+    }
+
+    .permit-bullet-card .card-body {
+      padding: 0.75rem;
+    }
+
+    .permit-bullet-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 0.75rem;
+    }
+
+    .permit-bullet-key {
+      font-size: 0.85rem;
+    }
+
+    .permit-bullet-value {
+      font-size: 0.8rem;
+    }
+
+    .permit-content-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 0.85rem;
+    }
+
+    .permit-content-text {
+      font-size: 0.85rem;
+    }
+
+    .permit-number-badge {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .permit-number-title {
+      font-size: 0.85rem;
+    }
+
+    .permit-number-text {
+      font-size: 0.8rem;
+    }
+  }
+
+  .block--certification {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .summary-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .summary-text {
+      font-size: 0.95rem;
+    }
+
+    .certification-topic-header {
+      padding: 0.625rem 0.875rem;
+    }
+
+    .certification-topic-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 0.9rem;
+    }
+
+    .certification-topic-title {
+      font-size: 0.95rem;
+    }
+
+    .certification-item-card .card-body {
+      padding: 0.75rem;
+    }
+
+    .certification-item-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 0.85rem;
+    }
+
+    .certification-item-title {
+      font-size: 0.85rem;
+    }
+
+    .certification-item-text {
+      font-size: 0.8rem;
+    }
+
+    .certification-bullet-card .card-body {
+      padding: 0.75rem;
+    }
+
+    .certification-bullet-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 0.75rem;
+    }
+
+    .certification-bullet-text {
+      font-size: 0.8rem;
+    }
+  }
+
+  .block--conclusion {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle,
+    .closing-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .intro-text,
+    .closing-text {
+      font-size: 0.95rem;
+    }
+
+    .highlight-icon-circle {
+      width: 50px;
+      height: 50px;
+      font-size: 1.25rem;
+    }
+
+    .highlight-key {
+      font-size: 0.9rem;
+    }
+
+    .highlight-value {
+      font-size: 0.8rem;
+    }
+
+    .cta-text {
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      padding: 0.625rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  .block--video-post {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .subtitle-text {
+      font-size: 0.85rem;
+    }
+
+    .duration-badge {
+      padding: 0.375rem 1rem;
+      font-size: 0.85rem;
+
+      i {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .block--faq-post {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .subtitle-text {
+      font-size: 0.85rem;
+    }
+
+    .faq-button {
+      padding: 0.875rem 1rem;
+    }
+
+    .faq-number {
+      width: 28px;
+      height: 28px;
+      font-size: 0.8rem;
+    }
+
+    .faq-question {
+      font-size: 0.9rem;
+    }
+
+    .faq-answer {
+      padding: 0.875rem 1rem;
+    }
+
+    .faq-answer-icon {
+      width: 30px;
+      height: 30px;
+      font-size: 0.85rem;
+    }
+
+    .faq-answer-text {
+      font-size: 0.85rem;
+    }
+  }
+
+  .block--related-post {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .subtitle-text {
+      font-size: 0.85rem;
+    }
+
+    .related-card-placeholder {
+      height: 100px;
+      font-size: 2rem;
+    }
+
+    .related-category-badge {
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+    }
+
+    .related-title {
+      font-size: 0.9rem;
+    }
+
+    .related-excerpt {
+      font-size: 0.8rem;
+    }
+
+    .related-date-icon {
+      width: 24px;
+      height: 24px;
+      font-size: 0.65rem;
+    }
+
+    .related-date {
+      font-size: 0.75rem;
+    }
+  }
+
+  .block--reviews {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .subtitle-text {
+      font-size: 0.85rem;
+    }
+
+    .rating-big-score {
+      font-size: 2.5rem;
+    }
+
+    .rating-max {
+      font-size: 1.25rem;
+    }
+
+    .rating-card {
+      .card-body {
+        padding: 1rem;
+      }
+    }
+
+    .reviews-list-wrapper {
+      .review-card__avatar {
+        width: 40px;
+        height: 40px;
+      }
+
+      .review-card__name {
+        font-size: 0.9rem;
+      }
+
+      .review-card__content {
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// COMPANY INTRO RIKSA UJI BLOCK
+// ----------------------------------------------------------------------------
+
+// Color palette for company intro block (reuse importance colors)
+$company-intro-colors: (
+  1: (#0d6efd, #6610f2),  // blue
+  2: (#198754, #20c997),  // green
+  3: (#fd7e14, #ffc107),  // orange
+  4: (#6f42c1, #9b59b6),  // purple
+  5: (#20c997, #0dcaf0)   // teal
+);
+
+.block--company-intro-riksa-uji {
+
+  // H2: Main Header Gradient Card
+  .header-gradient {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Intro Card with icon circle
+  .intro-card {
+    border-left: 4px solid #0d6efd;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+  }
+
+  // Subsection Strip - base styles
+  .subsection-strip {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  // Subsection number - base styles
+  .subsection-number {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  // Generate subsection strip color variants
+  @each $index, $colors in $company-intro-colors {
+    .subsection-strip-#{$index} {
+      background: rgba(nth($colors, 1), 0.1);
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      .subsection-title { color: nth($colors, 1); }
+      .subsection-number {
+        background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+        box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+      }
+      .subsection-icon { color: nth($colors, 2); }
+    }
+  }
+
+  // Bullet Cards - base styles
+  .bullet-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+  }
+
+  // Bullet Icon Circle - base styles
+  .bullet-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  // Generate bullet card and icon color variants
+  @each $index, $colors in $company-intro-colors {
+    .bullet-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2);
+        transform: translateY(-3px);
+      }
+    }
+
+    .bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767.98px) {
+  .block--company-intro-riksa-uji {
+    .header-gradient {
+      .display-4 {
+        font-size: 2rem;
+      }
+
+      .h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    .intro-icon-circle {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+
+    .subsection-number {
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+
+    .bullet-icon-circle {
+      width: 32px;
+      height: 32px;
+      font-size: 0.85rem;
+    }
+  }
+}

@@ -106,6 +106,7 @@ section_order:
 # ============================================================================
 section_testimonials:
   title: "Testimoni Pelanggan Riksa Uji Boiler"
+  subtitle: "Kepuasan Klien adalah Prioritas Kami"
   intro: "Berikut testimoni dari klien yang telah menggunakan layanan riksa uji boiler PT. Cipta Mas Jaya."
   testimonials:
     - nama: "Hendra Kusuma"
@@ -135,6 +136,7 @@ section_testimonials:
 # ============================================================================
 section_faq:
   title: "FAQ Riksa Uji Boiler"
+  subtitle: "Jawaban untuk Pertanyaan Umum"
 
   faq_layanan:
     - pertanyaan: "Apa itu riksa uji boiler?"
@@ -222,6 +224,7 @@ section_services:
 # ============================================================================
 section_tips:
   title: "Tips Memilih PJK3 Riksa Uji Boiler"
+  subtitle: "Panduan Memilih Mitra Inspeksi Terpercaya"
   intro: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut untuk hasil inspeksi boiler yang optimal dan sertifikat yang diakui."
   tips:
     - kategori: "Legalitas"
@@ -305,6 +308,7 @@ video_post:
 # Block: block--section-importance.html
 section_importance:
   title: "Pentingnya Riksa Uji Boiler"
+  subtitle: "Keselamatan & Kepatuhan Regulasi K3"
   icon: "bi-shield-check"
   paragraphs:
     - "Boiler beroperasi pada tekanan tinggi dan suhu tinggi, sehingga potensi kecelakaan seperti ledakan sangat besar. Riksa uji secara berkala membantu mendeteksi masalah sebelum menjadi berbahaya dan memastikan boiler memenuhi standar keselamatan yang ditetapkan oleh lembaga terkait."
@@ -520,6 +524,7 @@ section_training:
 # Block: block--section-specs.html
 section_specs:
   title: "Standar Spesifikasi Boiler"
+  subtitle: "Parameter Teknis yang Wajib Diperiksa"
   icon: "bi-gear-wide-connected"
   description: "Spesifikasi teknis boiler harus memenuhi standar yang ditetapkan untuk memastikan operasi yang aman dan efisien. Berikut adalah parameter teknis utama yang diperiksa dalam riksa uji boiler."
   specs_heading: "Parameter Teknis Boiler"
@@ -563,6 +568,7 @@ section_specs:
 # Block: block--section-certification.html
 section_certification:
   title: "Pengesahan Gambar Boiler"
+  subtitle: "Verifikasi Desain Teknis Resmi"
   icon: "bi-file-earmark-check"
   intro:
   paragraphs:
@@ -629,6 +635,7 @@ section_certification:
 # Block: block--section-permit.html
 section_permit:
   title: "Izin Pemakaian Pesawat Uap (Boiler)"
+  subtitle: "Dokumen Resmi Kelayakan Operasi Kemenaker"
   icon: "bi-file-earmark-medical"
   intro: "Izin Pemakaian Pesawat Uap adalah dokumen resmi yang dikeluarkan oleh Kementerian Ketenagakerjaan yang menyatakan bahwa boiler telah memenuhi persyaratan keselamatan dan layak untuk dioperasikan. Izin ini wajib dimiliki oleh setiap perusahaan yang mengoperasikan boiler."
   topics:

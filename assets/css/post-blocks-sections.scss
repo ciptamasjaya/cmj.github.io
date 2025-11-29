@@ -1,0 +1,1285 @@
+---
+# Post Block Sections - Importance, Process, Regulation, Training, Specs
+# PT. Cipta Mas Jaya
+---
+
+// ============================================================================
+// POST BLOCKS SECTIONS STYLES
+// ============================================================================
+// @file        post-blocks-sections.scss
+// @description Sections: importance, process, regulation, training, specs
+// @author      arisciwek
+// @created     2025-11-30
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// IMPORTANCE BLOCK (Pentingnya) - GILA EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for importance block (supports 6 variants + cycles for more)
+$importance-colors: (
+  1: (#198754, #20c997),  // green
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#fd7e14, #ffc107),  // orange
+  4: (#6f42c1, #9b59b6),  // purple
+  5: (#20c997, #0dcaf0)   // teal
+);
+
+// Function to get color with cycling fallback
+@function get-importance-color($index) {
+  $total: length($importance-colors);
+  $normalized: (($index - 1) % $total) + 1;
+  @return map-get($importance-colors, $normalized);
+}
+
+.block--importance {
+
+  // H2: Main Header Gradient Card
+  .header-gradient {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Intro paragraphs after H2
+  .intro-card {
+    border-left: 4px solid #0d6efd;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Subsection Strip (H3 header) - base styles
+  .subsection-strip {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  // Subsection number - base styles
+  .subsection-number {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  // Generate subsection strip color variants (1-6, cycles for more)
+  @each $index, $colors in $importance-colors {
+    .subsection-strip-#{$index} {
+      background: rgba(nth($colors, 1), 0.1);
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      .subsection-title { color: nth($colors, 1); }
+      .subsection-number {
+        background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+        box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+      }
+      .subsection-icon { color: nth($colors, 2); }
+    }
+  }
+
+  // Paragraphs after H3
+  .subsection-para-card {
+    border-left: 3px solid #e9ecef;
+    border-radius: 8px;
+  }
+
+  // Bullet Cards - base styles
+  .bullet-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+  }
+
+  // Bullet Icon Circle - base styles
+  .bullet-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  // Generate bullet card and icon color variants (1-6, cycles for more)
+  @each $index, $colors in $importance-colors {
+    .bullet-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Bullet text
+  .bullet-key {
+    color: #212529;
+  }
+
+  .bullet-value {
+    line-height: 1.6;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// PROCESS BLOCK (Proses/Langkah-langkah) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for process block (6 variants + cycles for more)
+$process-colors: (
+  1: (#d97706, #f59e0b),  // amber/orange
+  2: (#0d6efd, #6610f2),  // blue
+  3: (#198754, #20c997),  // green
+  4: (#0891b2, #0891b2),  // red
+  5: (#6f42c1, #9b59b6),  // purple
+  6: (#0891b2, #06b6d4)   // cyan
+);
+
+.block--process {
+
+  // H2: Main Header Gradient Card
+  .header-gradient {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 50%, #92400e 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Intro description card after H2
+  .intro-card {
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Step Strip (H3 header) - base styles
+  .step-strip {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      border-radius: 3px 0 0 3px;
+    }
+  }
+
+  // Step number - base styles
+  .step-number {
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  // Generate step strip color variants (1-6, cycles for more)
+  @each $index, $colors in $process-colors {
+    .step-strip-#{$index} {
+      background: rgba(nth($colors, 1), 0.1);
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      .step-title { color: nth($colors, 1); }
+      .step-number {
+        background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+        box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+      }
+      .step-icon { color: nth($colors, 2); }
+    }
+  }
+
+  // Substep Cards - base styles (H4) - shadow di atas
+  .substep-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+  }
+
+  // Substep Icon Circle - base styles
+  .substep-icon-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+    vertical-align: middle;
+  }
+
+  // Generate substep card and icon color variants (1-6)
+  @each $index, $colors in $process-colors {
+    .substep-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .substep-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 8px rgba(nth($colors, 1), 0.3);
+    }
+
+    .bullet-arrow-#{$index} {
+      color: nth($colors, 1);
+    }
+  }
+
+  // Substep title
+  .substep-title {
+    color: #212529;
+  }
+
+  // Substep description - untuk keseimbangan visual
+  .substep-desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.6;
+    padding-left: 2.25rem;
+    border-left: 2px solid #e5e7eb;
+    margin-left: 0.25rem;
+  }
+
+  // Bullets Container - GILA EDITION!
+  .bullets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  // Bullet Card - Each bullet is now a mini card!
+  .bullet-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      opacity: 0.05;
+      transform: translate(30%, -30%);
+    }
+
+    &:hover {
+      transform: translateX(8px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bullet-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .bullet-key {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 2.75rem;
+  }
+
+  // Generate bullet card color variants - RAINBOW MADNESS!
+  @each $index, $colors in $process-colors {
+    .bullet-card-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &::after { background: nth($colors, 1); }
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+        &::before { width: 6px; }
+      }
+
+      .bullet-key { color: nth($colors, 1); }
+    }
+
+    .bullet-icon-box-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card
+  .summary-body {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 4px solid #d97706;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #92400e;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// REGULATION BLOCK (Regulasi/Hukum) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for regulation block (3 variants for 3-column layout)
+$regulation-colors: (
+  1: (#0d6efd, #6610f2),  // blue (kepatuhan)
+  2: (#198754, #20c997),  // green (dasar hukum)
+  3: (#0891b2, #0891b2)   // red (sanksi)
+);
+
+.block--regulation {
+
+  // H2: Main Header Gradient Card - Legal Authority Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #3182ce 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .regulation-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  // Intro description card after H2
+  .intro-card {
+    border-left: 4px solid #2c5282;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2c5282, #3182ce);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(44, 82, 130, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // Subsection Card - full card with header strip
+  .subsection-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+  }
+
+  // Subsection Header - inside card (fixed height for alignment)
+  .subsection-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-radius: 16px 16px 0 0;
+    min-height: 80px;
+  }
+
+  .subsection-number-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .subsection-title {
+    color: #212529;
+    line-height: 1.3;
+  }
+
+  // Description card - equal height across columns
+  .subsection-desc-card {
+    min-height: 130px;
+    background: transparent;
+  }
+
+  .subsection-desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate subsection color variants
+  @each $index, $colors in $regulation-colors {
+    .subsection-card-#{$index} {
+      &::before { background: linear-gradient(90deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .subsection-header-#{$index} {
+      background: rgba(nth($colors, 1), 0.08);
+    }
+
+    .subsection-number-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Regulation Bullet Cards - Document Style
+  .bullets-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .regulation-bullet-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e5e7eb;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-color: transparent;
+    }
+  }
+
+  .regulation-bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .regulation-bullet-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .regulation-bullet-key {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .regulation-bullet-value {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.65;
+    margin: 0;
+    padding-left: 2.375rem;
+  }
+
+  // Generate regulation bullet color variants
+  @each $index, $colors in $regulation-colors {
+    .regulation-bullet-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover {
+        box-shadow: 0 6px 20px rgba(nth($colors, 1), 0.12);
+        &::before { width: 5px; }
+      }
+
+      .regulation-bullet-key { color: nth($colors, 1); }
+    }
+
+    .regulation-bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 2px 8px rgba(nth($colors, 1), 0.25);
+    }
+  }
+
+  // Summary Card - Shield Style
+  .regulation-summary {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    border-left: 4px solid #0284c7;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #075985;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// TRAINING BLOCK (Pelatihan/Sertifikasi) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for training block (6 cards + 4 bullets)
+$training-card-colors: (
+  1: (#6366f1, #8b5cf6),  // indigo/violet (sertifikasi)
+  2: (#0ea5e9, #06b6d4),  // sky/cyan (materi)
+  3: (#10b981, #34d399),  // emerald (ujian)
+  4: (#f59e0b, #fbbf24),  // amber (keuntungan)
+  5: (#ec4899, #f472b6),  // pink (berkala)
+  6: (#8b5cf6, #a78bfa)   // violet (durasi)
+);
+
+$training-bullet-colors: (
+  1: (#10b981, #34d399),  // emerald
+  2: (#0ea5e9, #06b6d4),  // sky
+  3: (#f59e0b, #fbbf24),  // amber
+  4: (#ec4899, #f472b6)   // pink
+);
+
+.block--training {
+
+  // H2: Main Header Gradient Card - Education Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 50%, #8b5cf6 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .training-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #6366f1;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #495057;
+  }
+
+  // H3: Section Headings (cards & bullets)
+  .section-heading {
+    position: relative;
+    padding-left: 1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #6366f1, #8b5cf6);
+      border-radius: 2px;
+    }
+  }
+
+  .section-heading-title {
+    color: #4f46e5;
+
+    i {
+      color: #8b5cf6;
+    }
+  }
+
+  // Bullets heading variant (amber)
+  .bullets-heading {
+    &::before {
+      background: linear-gradient(180deg, #f59e0b, #fbbf24);
+    }
+
+    .section-heading-title {
+      color: #b45309;
+
+      i {
+        color: #f59e0b;
+      }
+    }
+  }
+
+  // Cards Intro Card (indigo theme)
+  .cards-intro-card .card {
+    border-left: 4px solid #6366f1;
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+  }
+
+  .cards-intro-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 10px rgba(99, 102, 241, 0.3);
+  }
+
+  .cards-intro-text {
+    color: #4338ca;
+    font-size: 1rem;
+  }
+
+  // Training Cards - 3x2 Grid
+  .training-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+  }
+
+  .training-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .training-card-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .training-card-title {
+    color: #1f2937;
+    line-height: 1.3;
+  }
+
+  .training-card-content {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate training card color variants
+  @each $index, $colors in $training-card-colors {
+    .training-card-#{$index} {
+      &::before { background: linear-gradient(90deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .training-card-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 4px 12px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Bullets Intro Card
+  .bullets-intro-card .card {
+    border-left: 4px solid #f59e0b;
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  }
+
+  .bullets-intro-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
+  }
+
+  .bullets-intro-text {
+    color: #92400e;
+    font-size: 1rem;
+  }
+
+  // Training Bullet Cards
+  .training-bullet-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    height: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .training-bullet-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .training-bullet-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .training-bullet-key {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .training-bullet-value {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.65;
+    margin: 0;
+    padding-left: 2.75rem;
+  }
+
+  // Generate training bullet color variants
+  @each $index, $colors in $training-bullet-colors {
+    .training-bullet-variant-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover {
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.15);
+        &::before { width: 6px; }
+      }
+
+      .training-bullet-key { color: nth($colors, 1); }
+    }
+
+    .training-bullet-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card - Award Style
+  .training-summary {
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+    border-left: 4px solid #8b5cf6;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #5b21b6;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// SPECS BLOCK (Spesifikasi) - HEBOH EDITION!
+// ----------------------------------------------------------------------------
+
+// Color palette for specs block (6 specs)
+$specs-colors: (
+  1: (#ef4444, #f87171),  // red (kapasitas angkat)
+  2: (#3b82f6, #60a5fa),  // blue (tinggi angkat)
+  3: (#f59e0b, #fbbf24),  // amber (kecepatan)
+  4: (#8b5cf6, #a78bfa),  // violet (dimensi)
+  5: (#10b981, #34d399),  // emerald (pengereman)
+  6: (#06b6d4, #22d3ee)   // cyan (baterai)
+);
+
+.block--specs {
+
+  // H2: Main Header Gradient Card - Speedometer Theme
+  .header-gradient {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+    border-radius: 16px;
+
+    .display-4 {
+      font-size: 3rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .specs-header {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+  }
+
+  // Intro description card
+  .intro-card {
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+  }
+
+  .intro-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  }
+
+  .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+
+  // H3: Section Heading
+  .section-heading {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 4px solid #f59e0b;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #f59e0b, #fbbf24);
+      border-radius: 2px;
+    }
+  }
+
+  .section-heading-title {
+    color: #b45309;
+    margin: 0;
+
+    i {
+      color: #f59e0b;
+    }
+  }
+
+  // Specs Intro Card
+  .specs-intro-card {
+    .card {
+      border-left: 3px solid #fbbf24;
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    }
+  }
+
+  .specs-intro-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .specs-intro-text {
+    color: #92400e;
+    font-size: 0.95rem;
+  }
+
+  // Spec Cards - Horizontal Layout with Value Badge
+  .spec-card {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .spec-icon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 90px;
+    min-width: 90px;
+  }
+
+  .spec-icon-circle {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+  }
+
+  .spec-value-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 70px;
+  }
+
+  .spec-title {
+    color: #1f2937;
+  }
+
+  .spec-text {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  // Generate spec card color variants
+  @each $index, $colors in $specs-colors {
+    .spec-card-#{$index} {
+      &::before { background: linear-gradient(180deg, nth($colors, 1), nth($colors, 2)); }
+      &:hover { box-shadow: 0 12px 30px rgba(nth($colors, 1), 0.2); }
+    }
+
+    .spec-icon-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 6px 20px rgba(nth($colors, 1), 0.35);
+    }
+
+    .spec-value-#{$index} {
+      background: linear-gradient(135deg, nth($colors, 1), nth($colors, 2));
+      box-shadow: 0 3px 10px rgba(nth($colors, 1), 0.3);
+    }
+  }
+
+  // Summary Card
+  .specs-summary {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+  }
+
+  .summary-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  }
+
+  .summary-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #92400e;
+  }
+}
+
