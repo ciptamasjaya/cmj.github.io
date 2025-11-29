@@ -45,15 +45,17 @@ Usage:
 <section class="article-section block--company-intro company-intro-section py-5" id="block--company-intro">
   <div class="container">
 
-    <!-- Section Header -->
-    <div class="block-header section-header mb-4">
-      <h2 class="section-title block-title h3 fw-bold text-primary">
-        <i class="bi bi-building me-2 block-icon"></i>
-        {{ section.title | default: "Tentang Perusahaan" }}
-      </h2>
-      {% if section.intro %}
-      <p class="lead text-muted block-intro">{{ section.intro }}</p>
-      {% endif %}
+    <!-- Header Section -->
+    <div class="block-header mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body header-gradient text-white text-center py-4 px-3">
+          <i class="bi bi-building fs-1 mb-2 block-icon"></i>
+          <h2 class="h2 mb-0 fw-bold text-white block-title">{{ section.title | default: "Tentang Perusahaan" }}</h2>
+          {% if section.intro %}
+          <p class="header-subtitle mb-0 mt-2 small block-intro">{{ section.intro }}</p>
+          {% endif %}
+        </div>
+      </div>
     </div>
 
     <!-- Company Highlight Card -->

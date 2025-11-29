@@ -223,9 +223,53 @@ section.block--about-city {
 }
 
 /* ============================================================================
+   BLOCK: COMPANY INTRO
+   ============================================================================ */
+section.block--company-intro {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-primary);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
+  /* Company highlight hover effect */
+  .company-highlight {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  /* Subsection item hover effect */
+  .subsection-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      background-color: rgba(var(--bs-primary-rgb), 0.05);
+    }
+  }
+}
+
+/* ============================================================================
    BLOCK: CITY PROFILE
    ============================================================================ */
 section.block--city-profile {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-primary);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
   /* Highlight item hover effects */
   .highlight-item {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -262,6 +306,14 @@ section.block--city-profile {
    BLOCK: AREA CHARACTERISTICS
    ============================================================================ */
 section.block--area-characteristics {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-indigo);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
   /* Card hover effects */
   .card--characteristic {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -277,6 +329,14 @@ section.block--area-characteristics {
    BLOCK: RISK ANALYSIS
    ============================================================================ */
 section.block--risk-analysis {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-orange);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
   /* Card hover effects */
   .card--risk {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -302,8 +362,12 @@ section.block--risk-analysis {
    BLOCK: SERVICES EXCELLENCE
    ============================================================================ */
 section.block--services-excellence {
-  p.section-intro {
-    @include lead-constrained;
+  .card-body.header-gradient {
+    @include header-gradient($gradient-green);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
   }
 
   /* Card hover effects */
@@ -321,8 +385,12 @@ section.block--services-excellence {
    BLOCK: STRATEGIC ROLE
    ============================================================================ */
 section.block--strategic-role {
-  p.section-intro {
-    @include lead-constrained;
+  .card-body.header-gradient {
+    @include header-gradient($gradient-blue);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
   }
 
   div.icon-circle {
@@ -539,6 +607,14 @@ section.block--order-process {
    BLOCK: BUSINESS POTENTIAL
    ============================================================================ */
 section.block--business-potential {
+  .card-body.header-gradient {
+    @include header-gradient($gradient-green);
+  }
+
+  p.header-subtitle {
+    @include text-muted-white;
+  }
+
   div.icon-wrapper {
     @include icon-circle($icon-circle-xl);
   }
