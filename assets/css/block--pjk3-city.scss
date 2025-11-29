@@ -66,14 +66,12 @@ $text-lighter-opacity: 0.9;
   justify-content: center;
 }
 
-@mixin text-muted-white {
-  color: #ffffff;
-  opacity: 1;
-}
-
 @mixin lead-constrained {
   max-width: 800px;
 }
+
+// Note: Subtitle styles are handled globally in post-blocks-core.scss
+// via .header-gradient .subtitle-text rule
 
 /* ----------------------------------------------------------------------------
    HIGH SPECIFICITY SELECTORS
@@ -132,13 +130,6 @@ section.block--about-city {
       }
     }
 
-    p.header-subtitle {
-      @include text-muted-white;
-
-      .deskripsi-singkat {
-        // from section.deskripsi_singkat
-      }
-    }
   }
 
   /* Overview card */
@@ -215,10 +206,6 @@ section.block--company-intro {
     @include header-gradient($gradient-primary);
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
-  }
-
   /* Company highlight hover effect */
   .company-highlight {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -249,10 +236,6 @@ section.block--company-intro {
 section.block--city-profile {
   .card-body.header-gradient {
     @include header-gradient($gradient-primary);
-  }
-
-  p.header-subtitle {
-    @include text-muted-white;
   }
 
   /* Highlight item hover effects */
@@ -295,10 +278,6 @@ section.block--area-characteristics {
     @include header-gradient($gradient-indigo);
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
-  }
-
   /* Card hover effects */
   .card--characteristic {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -316,10 +295,6 @@ section.block--area-characteristics {
 section.block--risk-analysis {
   .card-body.header-gradient {
     @include header-gradient($gradient-orange);
-  }
-
-  p.header-subtitle {
-    @include text-muted-white;
   }
 
   /* Card hover effects */
@@ -351,10 +326,6 @@ section.block--services-excellence {
     @include header-gradient($gradient-green);
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
-  }
-
   /* Card hover effects */
   .card--service {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -372,10 +343,6 @@ section.block--services-excellence {
 section.block--strategic-role {
   .card-body.header-gradient {
     @include header-gradient($gradient-blue);
-  }
-
-  p.header-subtitle {
-    @include text-muted-white;
   }
 
   div.icon-circle {
@@ -419,9 +386,6 @@ section.block--tips-choosing-pjk3 {
       }
     }
 
-    p.header-subtitle {
-      @include text-muted-white;
-    }
   }
 
   /* Panduan area */
@@ -472,7 +436,6 @@ section.block--tips-choosing-pjk3 {
 
       /* tip.deskripsi */
       .tip__deskripsi {
-        @include text-muted-white;
         display: block;
         margin-top: 0.25rem;
       }
@@ -562,10 +525,6 @@ section.block--order-process {
     @include header-gradient($gradient-primary);
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
-  }
-
   div.step-number {
     @include icon-circle($icon-circle-sm);
     font-size: 1.25rem;
@@ -594,10 +553,6 @@ section.block--order-process {
 section.block--business-potential {
   .card-body.header-gradient {
     @include header-gradient($gradient-green);
-  }
-
-  p.header-subtitle {
-    @include text-muted-white;
   }
 
   div.icon-wrapper {
@@ -646,10 +601,6 @@ section.block--gallery {
     @include header-gradient($gradient-indigo);
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
-  }
-
   img.gallery-image {
     height: 180px;
     object-fit: cover;
@@ -692,10 +643,6 @@ section.block--video {
     @include header-gradient($gradient-red);
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
-  }
-
   div.video-container {
     background: #000;
   }
@@ -707,10 +654,6 @@ section.block--video {
 section.block--faq-riksa-uji {
   .card-body.header-gradient {
     @include header-gradient($gradient-purple);
-  }
-
-  p.header-subtitle {
-    @include text-muted-white;
   }
 
   div.faq-icon-circle {
@@ -748,10 +691,6 @@ section.block--faq-riksa-uji {
 section.block--testimonials {
   .card-body.header-gradient {
     @include header-gradient($gradient-orange);
-  }
-
-  p.header-subtitle {
-    @include text-muted-white;
   }
 
   div.testimonial-avatar {
@@ -792,10 +731,6 @@ section.block--testimonials {
 section.block--service-coverage {
   .card-body.header-gradient {
     @include header-gradient($gradient-green);
-  }
-
-  p.header-subtitle {
-    @include text-muted-white;
   }
 
   /* Card headers - consistent height across all cards */
