@@ -148,29 +148,157 @@ section.block--strategic-role {
    BLOCK: TIPS CHOOSING PJK3
    ============================================================================ */
 section.block--tips-choosing-pjk3 {
-  .card-body.header-gradient {
-    @include header-gradient($gradient-purple);
+
+  /* Block header - from section_tips frontmatter */
+  .block-header {
+    .header-gradient {
+      @include header-gradient($gradient-purple);
+    }
+
+    .block-icon {
+      display: block;
+    }
+
+    /* section.title */
+    .block-title {
+      /* section.area */
+      .block-area {
+        font-weight: inherit;
+      }
+    }
+
+    p.header-subtitle {
+      @include text-muted-white;
+    }
   }
 
-  p.header-subtitle {
-    @include text-muted-white;
+  /* Panduan area */
+  .panduan {
+    .panduan-header {
+      background-color: rgba(var(--bs-primary-rgb), 0.1);
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+
+      /* section.judul_panduan */
+      .judul-panduan {
+        color: var(--bs-primary);
+
+        i {
+          color: var(--bs-primary);
+        }
+      }
+
+      /* section.intro */
+      .intro {
+        color: var(--bs-secondary);
+      }
+    }
   }
 
-  small.tip-description {
-    @include text-muted-white;
+  /* Tip cards - from section.tips array */
+  .card.card--tip {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* tip header container */
+    .tip__header {
+      background: $gradient-primary;
+
+      /* tip.icon */
+      .tip__icon {
+        opacity: 0.9;
+      }
+
+      /* tip.kategori */
+      .tip__kategori {
+        letter-spacing: 0.02em;
+      }
+
+      /* tip.deskripsi */
+      .tip__deskripsi {
+        @include text-muted-white;
+        display: block;
+        margin-top: 0.25rem;
+      }
+    }
+
+    .card-body {
+      /* tip.kriteria title */
+      .tip__kriteria-title {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding-bottom: 0.5rem;
+
+        i {
+          color: var(--bs-primary);
+        }
+      }
+
+      /* tip.kriteria list */
+      .tip__kriteria-list {
+        /* tip.kriteria item */
+        .tip__kriteria-item {
+          line-height: 1.5;
+
+          i {
+            color: var(--bs-primary);
+          }
+        }
+      }
+    }
   }
 
-  .card.cta-card-green {
+  /* CTA: Why Choose CMJ */
+  .card.cta--why-cmj {
     background: $gradient-green-light;
+
+    .cta__title {
+      color: var(--bs-success);
+
+      .cta__title-icon {
+        color: var(--bs-success);
+      }
+    }
+
+    .cta__list {
+      .cta__list-item {
+        i {
+          color: var(--bs-success);
+        }
+      }
+    }
+
+    .cta__icon-large {
+      font-size: 4rem;
+      opacity: 0.3;
+      color: var(--bs-success);
+    }
   }
 
-  i.cta-icon-large {
-    font-size: 4rem;
-    opacity: 0.3;
-  }
+  /* CTA: Consultation */
+  .card.cta--consultation {
+    .card-body {
+      background: $gradient-blue-light;
+    }
 
-  .card-body.cta-card-blue {
-    background: $gradient-blue-light;
+    .cta__icon {
+      color: var(--bs-primary);
+    }
+
+    .cta__title {
+      color: var(--bs-primary);
+    }
+
+    .cta__description {
+      color: var(--bs-secondary);
+    }
+
+    .cta__button {
+      // Uses Bootstrap btn-primary
+    }
   }
 }
 

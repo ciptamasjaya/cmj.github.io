@@ -48,11 +48,11 @@ Usage:
   <div class="container">
 
     <!-- Header Section -->
-    <div class="mb-5">
+    <div class="block-header mb-5">
       <div class="card border-0 shadow-lg">
         <div class="card-body header-gradient text-white text-center py-4 px-3">
-          <i class="bi bi-lightbulb-fill fs-1 mb-2"></i>
-          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Tips Memilih PJK3" }}{% if area %} di {{ area }}{% endif %}</h2>
+          <i class="bi bi-lightbulb-fill fs-1 mb-2 block-icon"></i>
+          <h2 class="h2 mb-0 fw-bold text-white block-title">{{ section.title | default: "Tips Memilih PJK3" }}{% if area %} di <span class="block-area">{{ area }}</span>{% endif %}</h2>
           <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-check-circle me-1"></i>
             Pilih partner inspeksi K3 yang tepat untuk keselamatan bisnis Anda
@@ -64,36 +64,36 @@ Usage:
 
     {% if section.tips %}
     <!-- Panduan Pemilihan PJK3 -->
-    <div class="mb-4">
+    <div class="panduan mb-4">
       <div class="d-flex align-items-center mb-3">
-        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
-          <h3 class="h4 mb-0 text-primary fw-bold">
-            <i class="bi bi-diagram-3 text-primary me-2"></i>{{ section.judul_panduan | default: "Kriteria Memilih PJK3 Terpercaya" }}
+        <div class="panduan-header flex-grow-1">
+          <h3 class="h4 mb-0 fw-bold judul-panduan">
+            <i class="bi bi-diagram-3 me-2"></i>{{ section.judul_panduan | default: "Kriteria Memilih PJK3 Terpercaya" }}
           </h3>
-          <p class="small text-muted mb-0 mt-1">{{ section.intro | default: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut untuk hasil inspeksi yang optimal" }}</p>
+          <p class="small mb-0 mt-1 intro">{{ section.intro | default: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut untuk hasil inspeksi yang optimal" }}</p>
         </div>
       </div>
 
       <div class="row g-4">
         {% for tip in section.tips %}
         <div class="col-md-6 col-lg-4">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-header bg-{{ tip.warna | default: 'primary' }} text-white">
+          <div class="card card--tip border-0 shadow-sm h-100">
+            <div class="card-header tip__header text-white">
               <div class="d-flex align-items-center">
-                <i class="bi {{ tip.icon | default: 'bi-check-circle' }} me-2 fs-4"></i>
-                <h4 class="h6 mb-0 fw-bold">{{ tip.kategori }}</h4>
+                <i class="bi {{ tip.icon | default: 'bi-check-circle' }} tip__icon me-2 fs-4"></i>
+                <h4 class="h6 mb-0 fw-bold tip__kategori">{{ tip.kategori }}</h4>
               </div>
-              <small class="tip-description">{{ tip.deskripsi }}</small>
+              <small class="tip__deskripsi">{{ tip.deskripsi }}</small>
             </div>
-            <div class="card-body">
+            <div class="card-body d-flex flex-column">
               <!-- Kriteria -->
-              <h5 class="h6 fw-bold text-dark mb-3">
-                <i class="bi bi-star me-1 text-{{ tip.warna | default: 'primary' }}"></i>Yang Perlu Diperhatikan
+              <h5 class="h6 fw-bold text-dark mb-3 tip__kriteria-title">
+                <i class="bi bi-star me-1"></i>Yang Perlu Diperhatikan
               </h5>
-              <ul class="list-unstyled small mb-0">
+              <ul class="list-unstyled small mb-0 tip__kriteria-list flex-grow-1">
                 {% for item in tip.kriteria %}
-                <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
-                  <i class="bi bi-check-circle-fill text-{{ tip.warna | default: 'primary' }} me-2"></i>{{ item }}
+                <li class="tip__kriteria-item {% if forloop.last %}mb-0{% else %}mb-2{% endif %}">
+                  <i class="bi bi-check-circle-fill me-2"></i>{{ item }}
                 </li>
                 {% endfor %}
               </ul>
@@ -106,44 +106,44 @@ Usage:
     {% endif %}
 
     <!-- Why Choose CMJ -->
-    <div class="card cta-card-green border-0 shadow-lg my-5">
+    <div class="card cta--why-cmj border-0 shadow-lg my-5">
       <div class="card-body py-4">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h4 class="h5 fw-bold text-success mb-3">
-              <i class="bi bi-award me-2"></i>Mengapa PT. Cipta Mas Jaya?
+            <h4 class="h5 fw-bold mb-3 cta__title">
+              <i class="bi bi-award me-2 cta__title-icon"></i>Mengapa PT. Cipta Mas Jaya?
             </h4>
             <div class="row">
               <div class="col-md-6">
-                <ul class="list-unstyled small mb-0">
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Izin resmi dari Kemenaker</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Tenaga ahli bersertifikat</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Pengalaman lebih dari 10 tahun</li>
+                <ul class="list-unstyled small mb-0 cta__list">
+                  <li class="mb-2 cta__list-item"><i class="bi bi-check-circle-fill me-2"></i>Izin resmi dari Kemenaker</li>
+                  <li class="mb-2 cta__list-item"><i class="bi bi-check-circle-fill me-2"></i>Tenaga ahli bersertifikat</li>
+                  <li class="mb-2 cta__list-item"><i class="bi bi-check-circle-fill me-2"></i>Pengalaman lebih dari 10 tahun</li>
                 </ul>
               </div>
               <div class="col-md-6">
-                <ul class="list-unstyled small mb-0">
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Harga kompetitif & transparan</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Laporan detail & tepat waktu</li>
-                  <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Layanan seluruh {% if area %}{{ area }}{% else %}Indonesia{% endif %}</li>
+                <ul class="list-unstyled small mb-0 cta__list">
+                  <li class="mb-2 cta__list-item"><i class="bi bi-check-circle-fill me-2"></i>Harga kompetitif & transparan</li>
+                  <li class="mb-2 cta__list-item"><i class="bi bi-check-circle-fill me-2"></i>Laporan detail & tepat waktu</li>
+                  <li class="mb-2 cta__list-item"><i class="bi bi-check-circle-fill me-2"></i>Layanan seluruh {% if area %}{{ area }}{% else %}Indonesia{% endif %}</li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-lg-4 text-center mt-4 mt-lg-0">
-            <i class="bi bi-shield-check text-success cta-icon-large"></i>
+            <i class="bi bi-shield-check cta__icon-large"></i>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Consultation CTA -->
-    <div class="card border-0 shadow-sm">
-      <div class="card-body cta-card-blue text-center py-4">
-        <i class="bi bi-headset text-primary mb-3 fs-1"></i>
-        <h5 class="fw-bold text-primary mb-2">Butuh Konsultasi?</h5>
-        <p class="text-muted mb-3">Tim kami siap membantu Anda memilih layanan riksa uji yang tepat untuk kebutuhan bisnis Anda!</p>
-        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20butuh%20konsultasi%20memilih%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-primary px-4" target="_blank">
+    <div class="card cta--consultation border-0 shadow-sm">
+      <div class="card-body text-center py-4">
+        <i class="bi bi-headset mb-3 fs-1 cta__icon"></i>
+        <h5 class="fw-bold mb-2 cta__title">Butuh Konsultasi?</h5>
+        <p class="mb-3 cta__description">Tim kami siap membantu Anda memilih layanan riksa uji yang tepat untuk kebutuhan bisnis Anda!</p>
+        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20butuh%20konsultasi%20memilih%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-primary px-4 cta__button" target="_blank">
           <i class="bi bi-whatsapp me-2"></i>Konsultasi Gratis
         </a>
       </div>
