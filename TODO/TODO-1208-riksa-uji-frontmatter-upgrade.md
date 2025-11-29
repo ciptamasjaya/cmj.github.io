@@ -299,9 +299,212 @@ section_conclusion:
 
 ---
 
+---
+
+## Block Comparison
+
+### node--riksa-uji Blocks (24 files)
+```
+_includes/reusable/node--riksa-uji/
+├── block--announce.html          # Paragraf penutup
+├── block--breadcrumb-post.html   # Breadcrumb navigation
+├── block--certification.html     # Sertifikasi K3
+├── block--comments.html          # Komentar/review
+├── block--conclusion.html        # Kesimpulan
+├── block--content-intro.html     # Paragraf pembuka
+├── block--content-sections.html  # Container sections
+├── block--faq-post.html          # FAQ simple format
+├── block--featured-image.html    # Gambar utama
+├── block--gallery.html           # Galeri foto
+├── block--howto-post.html        # Schema HowTo
+├── block--importance.html        # Pentingnya riksa uji
+├── block--itemlist-post.html     # Schema ItemList
+├── block--permit.html            # Perizinan/SLO
+├── block--post-description.html  # Meta description
+├── block--post-header.html       # Header post
+├── block--process.html           # Proses riksa uji
+├── block--regulation.html        # Regulasi/dasar hukum
+├── block--related-post.html      # Artikel terkait
+├── block--reviews.html           # Reviews/rating
+├── block--sidebar-post.html      # Sidebar
+├── block--specs.html             # Spesifikasi teknis
+├── block--training.html          # Pelatihan operator
+└── block--video-post.html        # Video dokumentasi
+```
+
+### node--pjk3-city Blocks (17 files)
+```
+_includes/reusable/node--pjk3-city/
+├── block--about-city.html        # Tentang kota (SEO)
+├── block--area-characteristics.html # Karakteristik wilayah
+├── block--business-potential.html   # Potensi bisnis
+├── block--city-profile.html      # Profil kota
+├── block--company-intro.html     # Pengenalan perusahaan
+├── block--conclusion.html        # Kesimpulan
+├── block--faq-riksa-uji.html     # FAQ kategoris
+├── block--gallery.html           # Galeri foto
+├── block--hero-pjk3.html         # Hero section + CTA
+├── block--order-process.html     # Proses pemesanan
+├── block--risk-analysis.html     # Analisis risiko K3
+├── block--service-coverage.html  # Area pelayanan detail
+├── block--services-excellence.html # Layanan unggulan
+├── block--strategic-role.html    # Peran strategis PJK3
+├── block--testimonials.html      # Testimoni pelanggan
+├── block--tips-choosing-pjk3.html # Tips memilih PJK3
+└── block--video.html             # Video section
+```
+
+### Block Feature Comparison
+
+| Feature | riksa-uji | pjk3-city | Shared? |
+|---------|-----------|-----------|---------|
+| Hero + CTA | ❌ | ✅ `block--hero-pjk3` | No |
+| Content Intro | ✅ `block--content-intro` | ✅ `block--company-intro` | Similar |
+| Process Steps | ✅ `block--process` | ❌ | No |
+| HowTo Schema | ✅ `block--howto-post` | ❌ | No |
+| ItemList Schema | ✅ `block--itemlist-post` | ❌ | No |
+| Services List | ❌ | ✅ `block--services-excellence` | No |
+| Area Coverage | ❌ | ✅ `block--service-coverage` | No |
+| Testimonials | ❌ | ✅ `block--testimonials` | No |
+| FAQ | ✅ Simple | ✅ Categorized | Different |
+| Order Process | ❌ | ✅ `block--order-process` | No |
+| Gallery | ✅ `block--gallery` | ✅ `block--gallery` | **Yes** |
+| Video | ✅ `block--video-post` | ✅ `block--video` | Similar |
+| Conclusion | ✅ `block--conclusion` | ✅ `block--conclusion` | **Yes** |
+| Regulation | ✅ `block--regulation` | ❌ | No |
+| Training | ✅ `block--training` | ❌ | No |
+| Specs | ✅ `block--specs` | ❌ | No |
+| City Profile | ❌ | ✅ `block--city-profile` | No |
+| Risk Analysis | ❌ | ✅ `block--risk-analysis` | No |
+| Tips | ❌ | ✅ `block--tips-choosing-pjk3` | No |
+
+---
+
+## Schema Comparison
+
+### node--riksa-uji Schema
+Uses `schema--riksa-uji.html` with:
+- Article schema
+- HowTo schema (from `howto_post`)
+- ItemList schema (from `itemlist_post`)
+- FAQPage schema (from `faq_post`)
+- VideoObject schema (from `video_post`)
+- Breadcrumb schema
+
+### node--pjk3-city Schema
+Uses embedded schema in layout with:
+- Article schema (with `hasPart` WebPageElement)
+- LocalBusiness schema (with reviews, areaServed)
+- FAQPage schema (categorized)
+- VideoObject schema
+- ImageGallery schema
+- HowTo schema (implicit in order process)
+- BreadcrumbList schema
+- SiteNavigationElement schema
+
+### Schema Feature Comparison
+
+| Schema Type | riksa-uji | pjk3-city |
+|-------------|-----------|-----------|
+| Article | ✅ | ✅ Enhanced |
+| HowTo | ✅ Explicit | ✅ Implicit |
+| ItemList | ✅ | ✅ Multiple |
+| FAQPage | ✅ Simple | ✅ Categorized |
+| VideoObject | ✅ | ✅ |
+| LocalBusiness | ❌ | ✅ With reviews |
+| ImageGallery | ❌ | ✅ |
+| AggregateRating | ❌ | ✅ |
+| Review | ❌ | ✅ 4 reviews |
+| areaServed | ❌ | ✅ containsPlace |
+| hasPart | ❌ | ✅ 14 sections |
+
+---
+
+## Blocks to Create for riksa-uji
+
+### Priority 1: Marketing Blocks
+| Block | Purpose | Effort |
+|-------|---------|--------|
+| `block--hero-riksa-uji.html` | Hero + badges + CTA | Medium |
+| `block--order-process-riksa-uji.html` | Proses pemesanan | Low |
+| `block--testimonials-riksa-uji.html` | Testimoni klien | Medium |
+
+### Priority 2: Enhanced Blocks
+| Block | Purpose | Effort |
+|-------|---------|--------|
+| `block--faq-categorized.html` | FAQ dengan kategori | Medium |
+| `block--services-riksa-uji.html` | Daftar layanan | Low |
+| `block--tips-riksa-uji.html` | Tips memilih PJK3 | Low |
+
+### Priority 3: Reusable from pjk3-city
+| Block | Can Reuse? | Notes |
+|-------|------------|-------|
+| `block--gallery.html` | ✅ Already similar | Minor adjustment |
+| `block--video.html` | ✅ Already similar | Minor adjustment |
+| `block--conclusion.html` | ✅ Already exists | Same structure |
+
+---
+
+## Schema Enhancement for riksa-uji
+
+### Add to schema--riksa-uji.html
+```json
+{
+  "@type": "LocalBusiness",
+  "name": "PT. Cipta Mas Jaya",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ rating }}",
+    "reviewCount": "{{ review_count }}"
+  },
+  "review": [/* from testimonials */]
+}
+```
+
+### Add hasPart for Sections
+```json
+{
+  "@type": "Article",
+  "hasPart": [
+    {
+      "@type": "WebPageElement",
+      "name": "section_importance",
+      "cssSelector": "#section-importance"
+    }
+  ]
+}
+```
+
+---
+
+## Recommended Approach
+
+### Option A: Extend riksa-uji Layout (Recommended)
+1. Keep existing blocks (process, regulation, specs, etc.)
+2. Add new marketing blocks (hero, testimonials, order)
+3. Enhance schema with LocalBusiness + reviews
+4. Make new sections optional via frontmatter flags
+
+### Option B: Create riksa-uji-v2 Layout
+1. New layout based on pjk3-city structure
+2. Include both technical and marketing sections
+3. Full schema parity with pjk3-city
+4. Requires migration of existing posts
+
+### Option C: Merge into Single Universal Layout
+1. One layout for all article types
+2. Sections enabled/disabled via frontmatter
+3. Schema generated based on available data
+4. Maximum code reuse, complex logic
+
+**Recommendation:** Option A - Minimal disruption, gradual enhancement
+
+---
+
 ## Notes
 
 - PJK3 Bekasi menggunakan layout `node--pjk3-city` yang khusus untuk artikel kota
 - Riksa Uji Forklift/Boiler menggunakan layout `node--riksa-uji` untuk artikel layanan
 - Perlu evaluasi apakah kedua layout bisa di-merge atau tetap terpisah
 - Fokus pada menambahkan section yang meningkatkan SEO dan user engagement
+- Schema pjk3-city mendapat score 100/100 di Google Rich Results Test
