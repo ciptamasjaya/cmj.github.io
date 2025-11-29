@@ -34,32 +34,32 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="article-section city-profile-section py-5" id="block--city-profile">
+<section class="article-section block--city-profile city-profile-section py-5" id="block--city-profile">
   <div class="container">
 
     <!-- Section Header -->
-    <div class="section-header mb-4">
-      <h2 class="section-title h3 fw-bold text-primary">
-        <i class="bi bi-buildings me-2"></i>
+    <div class="block-header section-header mb-4">
+      <h2 class="section-title block-title h3 fw-bold text-primary">
+        <i class="bi bi-buildings me-2 block-icon"></i>
         {{ section.title | default: "Tentang Kota" }}
       </h2>
       {% if section.intro %}
-      <p class="lead text-muted">{{ section.intro }}</p>
+      <p class="lead text-muted block-intro">{{ section.intro }}</p>
       {% endif %}
     </div>
 
     <!-- City Highlights -->
     {% if section.highlights %}
-    <div class="city-highlights">
+    <div class="city-highlights highlight-list">
       <div class="row g-4">
         {% for highlight in section.highlights %}
         <div class="col-md-6 col-lg-3">
           <div class="highlight-item text-center p-3">
-            <div class="highlight-icon mb-3">
-              <i class="bi {{ highlight.icon | default: 'bi-star' }} fs-1 text-primary"></i>
+            <div class="highlight-icon mb-3 highlight__icon-wrapper">
+              <i class="bi {{ highlight.icon | default: 'bi-star' }} fs-1 text-primary highlight__icon"></i>
             </div>
-            <h3 class="h6 fw-bold">{{ highlight.title }}</h3>
-            <p class="small text-muted mb-0">{{ highlight.description }}</p>
+            <h3 class="h6 fw-bold highlight__title">{{ highlight.title }}</h3>
+            <p class="small text-muted mb-0 highlight__description">{{ highlight.description }}</p>
           </div>
         </div>
         {% endfor %}
@@ -69,13 +69,13 @@ Usage:
 
     <!-- City Stats (Optional) -->
     {% if section.stats %}
-    <div class="city-stats mt-5 py-4 bg-light rounded">
+    <div class="city-stats stat-list mt-5 py-4 bg-light rounded">
       <div class="row text-center">
         {% for stat in section.stats %}
         <div class="col-6 col-md-3">
           <div class="stat-item">
-            <div class="stat-number h3 fw-bold text-primary mb-0">{{ stat.value }}</div>
-            <div class="stat-label small text-muted">{{ stat.label }}</div>
+            <div class="stat-number stat__value h3 fw-bold text-primary mb-0">{{ stat.value }}</div>
+            <div class="stat-label stat__label small text-muted">{{ stat.label }}</div>
           </div>
         </div>
         {% endfor %}
@@ -84,21 +84,21 @@ Usage:
     {% endif %}
 
     <!-- K3 Needs Summary -->
-    <div class="k3-needs-summary mt-5 p-4 border rounded">
+    <div class="k3-needs-summary cta--k3-needs mt-5 p-4 border rounded">
       <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h4 class="h5 fw-bold mb-2">
+        <div class="col-lg-8 cta__content">
+          <h4 class="h5 fw-bold mb-2 cta__title">
             <i class="bi bi-shield-check text-success me-2"></i>
             Kebutuhan Layanan K3 di {{ section.city_name | default: "Wilayah Ini" }}
           </h4>
-          <p class="text-muted mb-0">
+          <p class="text-muted mb-0 cta__description">
             Dengan kompleksitas aktivitas industri dan permukiman, kebutuhan akan layanan K3
             yang terintegrasi dan menggunakan teknologi modern semakin penting.
             PT. Cipta Mas Jaya menjawab tantangan ini dengan layanan PJK3 yang komprehensif.
           </p>
         </div>
-        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-          <a href="/contact/" class="btn btn-outline-primary">
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 cta__action">
+          <a href="/contact/" class="btn btn-outline-primary cta__button">
             <i class="bi bi-envelope me-1"></i> Hubungi Kami
           </a>
         </div>

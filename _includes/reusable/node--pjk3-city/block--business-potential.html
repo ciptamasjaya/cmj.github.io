@@ -44,30 +44,30 @@ Usage:
   <div class="container">
 
     <!-- Section Header -->
-    <div class="section-header mb-4">
-      <h2 class="section-title h3 fw-bold text-primary">
-        <i class="bi bi-graph-up-arrow me-2"></i>
+    <div class="block-header section-header mb-4">
+      <h2 class="section-title block-title h3 fw-bold text-primary">
+        <i class="bi bi-graph-up-arrow me-2 block-icon"></i>
         {{ section.title | default: "Potensi Bisnis dan Investasi" }}
       </h2>
       {% if section.intro %}
-      <p class="lead text-muted">{{ section.intro }}</p>
+      <p class="lead text-muted block-intro">{{ section.intro }}</p>
       {% endif %}
     </div>
 
     <!-- Potentials Grid -->
     {% if section.potentials %}
-    <div class="row g-4">
+    <div class="row g-4 potential-list">
       {% for potential in section.potentials %}
       <div class="col-md-6 col-lg-3">
-        <div class="card h-100 border-0 shadow-sm text-center">
-          <div class="card-body">
-            <div class="potential-icon mb-3">
+        <div class="card card--potential h-100 border-0 shadow-sm text-center">
+          <div class="card-body potential__body">
+            <div class="potential-icon mb-3 potential__icon-wrapper">
               <div class="icon-wrapper bg-success bg-opacity-10 rounded-circle d-inline-flex">
-                <i class="bi {{ potential.icon | default: 'bi-briefcase' }} fs-2 text-success"></i>
+                <i class="bi {{ potential.icon | default: 'bi-briefcase' }} fs-2 text-success potential__icon"></i>
               </div>
             </div>
-            <h3 class="card-title h6 fw-bold">{{ potential.title }}</h3>
-            <p class="card-text small text-muted">{{ potential.description }}</p>
+            <h3 class="card-title h6 fw-bold potential__title">{{ potential.title }}</h3>
+            <p class="card-text small text-muted potential__description">{{ potential.description }}</p>
           </div>
         </div>
       </div>
@@ -78,37 +78,37 @@ Usage:
     <!-- Business Value Proposition -->
     <div class="value-proposition mt-5">
       <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h3 class="h5 fw-bold text-dark mb-3">
+        <div class="col-lg-6 value__content">
+          <h3 class="h5 fw-bold text-dark mb-3 value__title">
             <i class="bi bi-lightbulb text-warning me-2"></i>
             Mengapa Memilih PT. Cipta Mas Jaya?
           </h3>
-          <ul class="list-unstyled">
-            <li class="d-flex mb-2">
+          <ul class="list-unstyled value__list">
+            <li class="d-flex mb-2 value__item">
               <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
               <span>Mengurangi risiko downtime operasional</span>
             </li>
-            <li class="d-flex mb-2">
+            <li class="d-flex mb-2 value__item">
               <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
               <span>Memenuhi persyaratan regulasi K3</span>
             </li>
-            <li class="d-flex mb-2">
+            <li class="d-flex mb-2 value__item">
               <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
               <span>Inspeksi berkala untuk kelancaran operasional</span>
             </li>
-            <li class="d-flex mb-2">
+            <li class="d-flex mb-2 value__item">
               <i class="bi bi-check-circle-fill text-success me-2 mt-1"></i>
               <span>Tenaga ahli bersertifikat dan berpengalaman</span>
             </li>
           </ul>
         </div>
-        <div class="col-lg-6 text-center">
-          <div class="cta-box bg-primary text-white rounded p-4">
-            <h4 class="h5 mb-3">Mulai Inspeksi Sekarang</h4>
-            <p class="small mb-3 opacity-75">
+        <div class="col-lg-6 text-center value__cta">
+          <div class="cta-box cta--start bg-primary text-white rounded p-4">
+            <h4 class="h5 mb-3 cta__title">Mulai Inspeksi Sekarang</h4>
+            <p class="small mb-3 opacity-75 cta__description">
               Dapatkan layanan riksa uji profesional untuk bisnis Anda
             </p>
-            <a href="{{ site.business.whatsapp_url }}" class="btn btn-light" target="_blank">
+            <a href="{{ site.business.whatsapp_url }}" class="btn btn-light cta__button" target="_blank">
               <i class="bi bi-whatsapp me-1"></i> Hubungi Kami
             </a>
           </div>

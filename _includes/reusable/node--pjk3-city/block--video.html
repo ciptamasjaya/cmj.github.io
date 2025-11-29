@@ -73,11 +73,11 @@ Usage:
   <div class="container">
 
     <!-- Header Section -->
-    <div class="mb-5">
+    <div class="block-header mb-5">
       <div class="card border-0 shadow-lg">
         <div class="card-body header-gradient text-white text-center py-4 px-3">
-          <i class="bi bi-play-circle-fill fs-1 mb-2"></i>
-          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Video Layanan" }}{% if area %} {{ area }}{% endif %}</h2>
+          <i class="bi bi-play-circle-fill fs-1 mb-2 block-icon"></i>
+          <h2 class="h2 mb-0 fw-bold text-white block-title">{{ section.title | default: "Video Layanan" }}{% if area %} <span class="block-area">{{ area }}</span>{% endif %}</h2>
           <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-film me-1"></i>
             {{ section.description | default: "Lihat dokumentasi proses layanan kami" }}
@@ -88,22 +88,22 @@ Usage:
     </div>
 
     <!-- Video Container -->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center video-wrapper">
       <div class="col-lg-10">
-        <div class="card border-0 shadow-lg overflow-hidden">
+        <div class="card card--video border-0 shadow-lg overflow-hidden">
           <div class="ratio ratio-16x9">
             <video
               controls
               preload="metadata"
               {% if video_poster %}poster="{{ video_poster | relative_url }}"{% endif %}
-              class="video-container w-100">
+              class="video-container video__player w-100">
               <source src="{{ video_src | relative_url }}" type="video/webm">
               <source src="{{ video_src | replace: '.webm', '.mp4' | relative_url }}" type="video/mp4">
               Browser Anda tidak mendukung tag video HTML5.
             </video>
           </div>
           {% if section.caption %}
-          <div class="card-footer bg-light text-center py-3">
+          <div class="card-footer bg-light text-center py-3 video__caption">
             <p class="text-muted small mb-0">
               <i class="bi bi-info-circle me-1"></i>{{ section.caption }}
             </p>
@@ -114,9 +114,9 @@ Usage:
     </div>
 
     <!-- CTA -->
-    <div class="text-center mt-5">
-      <p class="text-muted mb-3">{{ section.cta_text | default: "Ingin melihat langsung proses inspeksi K3 di lokasi Anda?" }}</p>
-      <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-success btn-lg" target="_blank">
+    <div class="cta--contact text-center mt-5">
+      <p class="text-muted mb-3 cta__description">{{ section.cta_text | default: "Ingin melihat langsung proses inspeksi K3 di lokasi Anda?" }}</p>
+      <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-success btn-lg cta__button" target="_blank">
         <i class="bi bi-whatsapp me-2"></i>{{ section.cta_button | default: "Hubungi Kami" }}
       </a>
     </div>

@@ -69,11 +69,11 @@ Usage:
   <div class="container">
 
     <!-- Header Section -->
-    <div class="mb-5">
+    <div class="block-header mb-5">
       <div class="card border-0 shadow-lg">
         <div class="card-body header-gradient text-white text-center py-4 px-3">
-          <i class="bi bi-images fs-1 mb-2"></i>
-          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Galeri" }}{% if area %} {{ area }}{% endif %}</h2>
+          <i class="bi bi-images fs-1 mb-2 block-icon"></i>
+          <h2 class="h2 mb-0 fw-bold text-white block-title">{{ section.title | default: "Galeri" }}{% if area %} <span class="block-area">{{ area }}</span>{% endif %}</h2>
           <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-camera me-1"></i>
             {{ section.description | default: "Dokumentasi layanan dan kegiatan kami" }}
@@ -84,16 +84,16 @@ Usage:
     </div>
 
     <!-- Gallery Grid -->
-    <div class="row g-4">
+    <div class="row g-4 gallery-grid">
       {% for img in gallery_images %}
       <div class="col-6 col-md-3">
-        <div class="card border-0 shadow-sm h-100 overflow-hidden">
-          <a href="{{ img | relative_url }}" class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="{{ img | relative_url }}">
+        <div class="card card--gallery-item border-0 shadow-sm h-100 overflow-hidden">
+          <a href="{{ img | relative_url }}" class="gallery-item gallery__link" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="{{ img | relative_url }}">
             <img src="{{ img | relative_url }}"
                  alt="{{ page.title }} - Gambar {{ forloop.index }}"
-                 class="gallery-image card-img-top img-fluid">
-            <div class="card-img-overlay gallery-overlay d-flex align-items-center justify-content-center">
-              <i class="bi bi-zoom-in text-white fs-2"></i>
+                 class="gallery-image gallery__image card-img-top img-fluid">
+            <div class="card-img-overlay gallery-overlay gallery__overlay d-flex align-items-center justify-content-center">
+              <i class="bi bi-zoom-in text-white fs-2 gallery__icon"></i>
             </div>
           </a>
         </div>
@@ -103,8 +103,8 @@ Usage:
 
     {% if section.caption %}
     <!-- Caption -->
-    <div class="text-center mt-4">
-      <p class="text-muted small mb-0">
+    <div class="gallery-caption text-center mt-4">
+      <p class="text-muted small mb-0 gallery__caption-text">
         <i class="bi bi-info-circle me-1"></i>{{ section.caption }}
       </p>
     </div>

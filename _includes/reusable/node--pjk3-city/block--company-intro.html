@@ -42,17 +42,17 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="article-section company-intro-section py-5" id="block--company-intro">
+<section class="article-section block--company-intro company-intro-section py-5" id="block--company-intro">
   <div class="container">
 
     <!-- Section Header -->
-    <div class="section-header mb-4">
-      <h2 class="section-title h3 fw-bold text-primary">
-        <i class="bi bi-building me-2"></i>
+    <div class="block-header section-header mb-4">
+      <h2 class="section-title block-title h3 fw-bold text-primary">
+        <i class="bi bi-building me-2 block-icon"></i>
         {{ section.title | default: "Tentang Perusahaan" }}
       </h2>
       {% if section.intro %}
-      <p class="lead text-muted">{{ section.intro }}</p>
+      <p class="lead text-muted block-intro">{{ section.intro }}</p>
       {% endif %}
     </div>
 
@@ -60,15 +60,15 @@ Usage:
     {% if section.company_name and section.area %}
     <div class="company-highlight bg-light rounded p-4 mb-4">
       <div class="row align-items-center">
-        <div class="col-md-8">
-          <h3 class="h5 fw-bold mb-2">{{ section.company_name }}</h3>
-          <p class="mb-0 text-muted">
+        <div class="col-md-8 highlight__content">
+          <h3 class="h5 fw-bold mb-2 highlight__company-name">{{ section.company_name }}</h3>
+          <p class="mb-0 text-muted highlight__area">
             <i class="bi bi-geo-alt me-1"></i>
             PJK3 Riksa Uji melayani wilayah <strong>{{ section.area }}</strong>
           </p>
         </div>
-        <div class="col-md-4 text-md-end mt-3 mt-md-0">
-          <a href="{{ site.business.whatsapp_url }}" class="btn btn-success" target="_blank">
+        <div class="col-md-4 text-md-end mt-3 mt-md-0 highlight__cta">
+          <a href="{{ site.business.whatsapp_url }}" class="btn btn-success cta__button" target="_blank">
             <i class="bi bi-whatsapp me-1"></i> Hubungi Kami
           </a>
         </div>
@@ -78,16 +78,16 @@ Usage:
 
     <!-- Subsections -->
     {% if section.subsections %}
-    <div class="subsections">
+    <div class="subsections subsection-list">
       {% for subsection in section.subsections %}
       <div class="subsection-item mb-4">
-        <h3 class="subsection-title h5 fw-semibold text-dark mb-3">
+        <h3 class="subsection-title subsection__title h5 fw-semibold text-dark mb-3">
           {{ subsection.title }}
         </h3>
-        <div class="subsection-content">
+        <div class="subsection-content subsection__content">
           {% if subsection.paragraphs %}
             {% for paragraph in subsection.paragraphs %}
-            <p>{{ paragraph }}</p>
+            <p class="subsection__paragraph">{{ paragraph }}</p>
             {% endfor %}
           {% elsif subsection.content %}
             {{ subsection.content | markdownify }}

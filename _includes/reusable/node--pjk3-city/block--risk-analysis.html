@@ -40,23 +40,23 @@ Usage:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="article-section risk-analysis-section py-5 bg-light" id="block--risk-analysis">
+<section class="article-section block--risk-analysis risk-analysis-section py-5 bg-light" id="block--risk-analysis">
   <div class="container">
 
     <!-- Section Header -->
-    <div class="section-header mb-4">
-      <h2 class="section-title h3 fw-bold text-primary">
-        <i class="bi bi-exclamation-triangle me-2"></i>
+    <div class="block-header section-header mb-4">
+      <h2 class="section-title block-title h3 fw-bold text-primary">
+        <i class="bi bi-exclamation-triangle me-2 block-icon"></i>
         {{ section.title | default: "Analisis Risiko K3" }}
       </h2>
       {% if section.intro %}
-      <p class="lead text-muted">{{ section.intro }}</p>
+      <p class="lead text-muted block-intro">{{ section.intro }}</p>
       {% endif %}
     </div>
 
     <!-- Risk Cards -->
     {% if section.risks %}
-    <div class="row g-4">
+    <div class="row g-4 risk-list">
       {% for risk in section.risks %}
       {% assign severity_class = "border-warning" %}
       {% assign severity_bg = "bg-warning" %}
@@ -69,16 +69,16 @@ Usage:
       {% endif %}
 
       <div class="col-md-6">
-        <div class="card h-100 border-start border-4 {{ severity_class }}">
-          <div class="card-body">
-            <div class="d-flex align-items-start mb-3">
-              <div class="risk-icon {{ severity_bg }} bg-opacity-10 rounded p-2 me-3">
-                <i class="bi {{ risk.icon | default: 'bi-shield-exclamation' }} fs-4 text-{{ risk.severity | default: 'warning' }}"></i>
+        <div class="card card--risk h-100 border-start border-4 {{ severity_class }}">
+          <div class="card-body risk__body">
+            <div class="d-flex align-items-start mb-3 risk__header">
+              <div class="risk-icon {{ severity_bg }} bg-opacity-10 rounded p-2 me-3 risk__icon-wrapper">
+                <i class="bi {{ risk.icon | default: 'bi-shield-exclamation' }} fs-4 text-{{ risk.severity | default: 'warning' }} risk__icon"></i>
               </div>
-              <div>
-                <h3 class="card-title h5 fw-bold mb-0">{{ risk.title }}</h3>
+              <div class="risk__info">
+                <h3 class="card-title h5 fw-bold mb-0 risk__title">{{ risk.title }}</h3>
                 {% if risk.severity %}
-                <span class="badge {{ severity_bg }} bg-opacity-75 small mt-1">
+                <span class="badge {{ severity_bg }} bg-opacity-75 small mt-1 risk__severity">
                   {% if risk.severity == "high" %}Risiko Tinggi
                   {% elsif risk.severity == "low" %}Risiko Rendah
                   {% else %}Risiko Sedang{% endif %}
@@ -86,7 +86,7 @@ Usage:
                 {% endif %}
               </div>
             </div>
-            <p class="card-text text-muted">{{ risk.description }}</p>
+            <p class="card-text text-muted risk__description">{{ risk.description }}</p>
           </div>
         </div>
       </div>
@@ -95,20 +95,20 @@ Usage:
     {% endif %}
 
     <!-- Mitigation CTA -->
-    <div class="mitigation-cta mt-5 p-4 bg-primary bg-opacity-10 rounded">
+    <div class="cta--mitigation mitigation-cta mt-5 p-4 bg-primary bg-opacity-10 rounded">
       <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h4 class="h5 fw-bold text-primary mb-2">
+        <div class="col-lg-8 cta__content">
+          <h4 class="h5 fw-bold text-primary mb-2 cta__title">
             <i class="bi bi-shield-check me-2"></i>
             Minimalisir Risiko dengan Inspeksi Berkala
           </h4>
-          <p class="mb-0 text-muted">
+          <p class="mb-0 text-muted cta__description">
             PT. Cipta Mas Jaya menyediakan layanan riksa uji untuk membantu mengidentifikasi
             dan memitigasi risiko K3 di fasilitas Anda.
           </p>
         </div>
-        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-          <a href="{{ site.business.whatsapp_url }}" class="btn btn-primary" target="_blank">
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0 cta__action">
+          <a href="{{ site.business.whatsapp_url }}" class="btn btn-primary cta__button" target="_blank">
             <i class="bi bi-telephone me-1"></i> Konsultasi Gratis
           </a>
         </div>

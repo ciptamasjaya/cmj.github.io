@@ -49,11 +49,11 @@ Usage:
   <div class="container">
 
     <!-- Header Section -->
-    <div class="mb-5">
+    <div class="block-header mb-5">
       <div class="card border-0 shadow-lg">
         <div class="card-body header-gradient text-white text-center py-4 px-3">
-          <i class="bi bi-question-circle-fill fs-1 mb-2"></i>
-          <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "FAQ Riksa Uji K3" }}{% if area %} {{ area }}{% endif %}</h2>
+          <i class="bi bi-question-circle-fill fs-1 mb-2 block-icon"></i>
+          <h2 class="h2 mb-0 fw-bold text-white block-title">{{ section.title | default: "FAQ Riksa Uji K3" }}{% if area %} <span class="block-area">{{ area }}</span>{% endif %}</h2>
           <p class="header-subtitle mb-0 mt-2 small">
             <i class="bi bi-chat-dots me-1"></i>
             Pertanyaan yang sering diajukan tentang layanan riksa uji kami
@@ -65,28 +65,28 @@ Usage:
 
     {% if section.faq_layanan %}
     <!-- FAQ Layanan -->
-    <div class="mb-5">
+    <div class="faq-category faq-category--layanan mb-5">
       <div class="d-flex align-items-center mb-3">
-        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
-          <h3 class="h4 mb-0 text-primary fw-bold">
+        <div class="bg-primary bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1 category-header">
+          <h3 class="h4 mb-0 text-primary fw-bold category-title">
             <i class="bi bi-clipboard-check text-primary me-2"></i>{{ section.judul_layanan | default: "Layanan & Proses Inspeksi" }}
           </h3>
-          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_layanan | default: "Informasi seputar jenis layanan dan proses inspeksi K3" }}</p>
+          <p class="small text-muted mb-0 mt-1 category-desc">{{ section.deskripsi_layanan | default: "Informasi seputar jenis layanan dan proses inspeksi K3" }}</p>
         </div>
       </div>
 
-      <div class="row g-3">
+      <div class="row g-3 faq-list">
         {% for faq in section.faq_layanan %}
         <div class="col-12">
-          <div class="card border-0 shadow-sm">
+          <div class="card card--faq border-0 shadow-sm">
             <div class="card-body">
               <div class="d-flex align-items-start">
-                <div class="faq-icon-circle bg-primary bg-opacity-10 rounded-circle me-3 flex-shrink-0">
-                  <i class="bi {{ faq.icon | default: 'bi-question-circle' }} text-primary fs-5"></i>
+                <div class="bg-primary bg-opacity-10 rounded-circle me-3 flex-shrink-0 faq__icon-circle">
+                  <i class="bi {{ faq.icon | default: 'bi-question-circle' }} text-primary fs-5 faq__icon"></i>
                 </div>
                 <div class="flex-grow-1">
-                  <h4 class="h6 fw-bold text-dark mb-2">{{ faq.pertanyaan }}</h4>
-                  <p class="small text-muted mb-0">{{ faq.jawaban }}</p>
+                  <h4 class="h6 fw-bold text-dark mb-2 faq__pertanyaan">{{ faq.pertanyaan }}</h4>
+                  <p class="small text-muted mb-0 faq__jawaban">{{ faq.jawaban }}</p>
                 </div>
               </div>
             </div>
@@ -99,28 +99,28 @@ Usage:
 
     {% if section.faq_sertifikasi %}
     <!-- FAQ Sertifikasi -->
-    <div class="mb-5">
+    <div class="faq-category faq-category--sertifikasi mb-5">
       <div class="d-flex align-items-center mb-3">
-        <div class="bg-success bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
-          <h3 class="h4 mb-0 text-success fw-bold">
+        <div class="bg-success bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1 category-header">
+          <h3 class="h4 mb-0 text-success fw-bold category-title">
             <i class="bi bi-award text-success me-2"></i>{{ section.judul_sertifikasi | default: "Sertifikasi & Legalitas" }}
           </h3>
-          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_sertifikasi | default: "Informasi seputar sertifikat dan keabsahan hasil inspeksi" }}</p>
+          <p class="small text-muted mb-0 mt-1 category-desc">{{ section.deskripsi_sertifikasi | default: "Informasi seputar sertifikat dan keabsahan hasil inspeksi" }}</p>
         </div>
       </div>
 
-      <div class="row g-3">
+      <div class="row g-3 faq-list">
         {% for faq in section.faq_sertifikasi %}
         <div class="col-12">
-          <div class="card border-0 shadow-sm">
+          <div class="card card--faq border-0 shadow-sm">
             <div class="card-body">
               <div class="d-flex align-items-start">
-                <div class="faq-icon-circle bg-success bg-opacity-10 rounded-circle me-3 flex-shrink-0">
-                  <i class="bi {{ faq.icon | default: 'bi-patch-check' }} text-success fs-5"></i>
+                <div class="bg-success bg-opacity-10 rounded-circle me-3 flex-shrink-0 faq__icon-circle">
+                  <i class="bi {{ faq.icon | default: 'bi-patch-check' }} text-success fs-5 faq__icon"></i>
                 </div>
                 <div class="flex-grow-1">
-                  <h4 class="h6 fw-bold text-dark mb-2">{{ faq.pertanyaan }}</h4>
-                  <p class="small text-muted mb-0">{{ faq.jawaban }}</p>
+                  <h4 class="h6 fw-bold text-dark mb-2 faq__pertanyaan">{{ faq.pertanyaan }}</h4>
+                  <p class="small text-muted mb-0 faq__jawaban">{{ faq.jawaban }}</p>
                 </div>
               </div>
             </div>
@@ -133,28 +133,28 @@ Usage:
 
     {% if section.faq_biaya %}
     <!-- FAQ Biaya -->
-    <div class="mb-4">
+    <div class="faq-category faq-category--biaya mb-4">
       <div class="d-flex align-items-center mb-3">
-        <div class="bg-warning bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1">
-          <h3 class="h4 mb-0 text-warning fw-bold">
+        <div class="bg-warning bg-opacity-10 px-3 py-2 rounded-3 flex-grow-1 category-header">
+          <h3 class="h4 mb-0 text-warning fw-bold category-title">
             <i class="bi bi-cash-coin text-warning me-2"></i>{{ section.judul_biaya | default: "Biaya & Pembayaran" }}
           </h3>
-          <p class="small text-muted mb-0 mt-1">{{ section.deskripsi_biaya | default: "Informasi seputar biaya inspeksi dan metode pembayaran" }}</p>
+          <p class="small text-muted mb-0 mt-1 category-desc">{{ section.deskripsi_biaya | default: "Informasi seputar biaya inspeksi dan metode pembayaran" }}</p>
         </div>
       </div>
 
-      <div class="row g-3">
+      <div class="row g-3 faq-list">
         {% for faq in section.faq_biaya %}
         <div class="col-12">
-          <div class="card border-0 shadow-sm">
+          <div class="card card--faq border-0 shadow-sm">
             <div class="card-body">
               <div class="d-flex align-items-start">
-                <div class="faq-icon-circle bg-warning bg-opacity-10 rounded-circle me-3 flex-shrink-0">
-                  <i class="bi {{ faq.icon | default: 'bi-currency-exchange' }} text-warning fs-5"></i>
+                <div class="bg-warning bg-opacity-10 rounded-circle me-3 flex-shrink-0 faq__icon-circle">
+                  <i class="bi {{ faq.icon | default: 'bi-currency-exchange' }} text-warning fs-5 faq__icon"></i>
                 </div>
                 <div class="flex-grow-1">
-                  <h4 class="h6 fw-bold text-dark mb-2">{{ faq.pertanyaan }}</h4>
-                  <p class="small text-muted mb-0">{{ faq.jawaban }}</p>
+                  <h4 class="h6 fw-bold text-dark mb-2 faq__pertanyaan">{{ faq.pertanyaan }}</h4>
+                  <p class="small text-muted mb-0 faq__jawaban">{{ faq.jawaban }}</p>
                 </div>
               </div>
             </div>
@@ -166,12 +166,12 @@ Usage:
     {% endif %}
 
     <!-- Contact CTA -->
-    <div class="card border-0 shadow-sm mt-5">
-      <div class="card-body cta-footer text-center py-4">
-        <i class="bi bi-chat-left-text text-primary mb-3 fs-1"></i>
-        <h5 class="fw-bold text-primary mb-2">Masih Ada Pertanyaan?</h5>
-        <p class="text-muted mb-3">Tim kami siap menjawab semua pertanyaan Anda seputar layanan riksa uji K3!</p>
-        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20layanan%20riksa%20uji%20K3" class="btn btn-primary px-4" target="_blank">
+    <div class="card cta--contact border-0 shadow-sm mt-5">
+      <div class="card-body bg-primary bg-opacity-10 text-center py-4">
+        <i class="bi bi-chat-left-text text-primary mb-3 fs-1 cta__icon"></i>
+        <h5 class="fw-bold text-primary mb-2 cta__title">Masih Ada Pertanyaan?</h5>
+        <p class="text-muted mb-3 cta__description">Tim kami siap menjawab semua pertanyaan Anda seputar layanan riksa uji K3!</p>
+        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20bertanya%20tentang%20layanan%20riksa%20uji%20K3" class="btn btn-primary px-4 cta__button" target="_blank">
           <i class="bi bi-whatsapp me-2"></i>Tanya Sekarang
         </a>
       </div>
