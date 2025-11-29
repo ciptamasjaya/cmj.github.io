@@ -67,7 +67,8 @@ $text-lighter-opacity: 0.9;
 }
 
 @mixin text-muted-white {
-  opacity: $text-muted-opacity;
+  color: #ffffff;
+  opacity: 1;
 }
 
 @mixin lead-constrained {
