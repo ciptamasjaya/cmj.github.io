@@ -97,20 +97,23 @@ Usage in detail page:
   }{% if item.categories %},
   "articleSection": "{{ item.categories | first | escape }}"{% endif %}{% if item.tags or item.area_served %},
   "keywords": "{% if item.tags %}{{ item.tags | join: ', ' | escape }}{% endif %}{% if item.tags and item.area_served %}, {% endif %}{% if item.area_served %}{{ item.area_served }}, PJK3 {{ item.area_served }}, Riksa Uji {{ item.area_served }}{% endif %}"{% endif %}{% if item.word_count %},
-  "wordCount": "{{ item.word_count }}"{% endif %}{% if item.section_hero or item.section_company_intro.subsections or item.section_conclusion.paragraphs %},
+  "wordCount": "{{ item.word_count }}"{% endif %}{% comment %} Build hasPart array dynamically - all as WebPageElement for valid hasPart {% endcomment %}{% assign has_parts = false %}{% if item.section_hero or item.section_company_intro.subsections or item.section_services.services or item.section_tips.tips or item.section_risks.risks or item.section_role.roles or item.section_about_city or item.section_business.potentials or item.section_coverage or item.section_testimonials or item.section_faq or item.video or item.section_order or item.section_conclusion.paragraphs %}{% assign has_parts = true %}{% endif %}{% if has_parts %},
   "hasPart": [
-    {% if item.section_hero %}{
-      "@type": "WebPageElement",
-      "@id": "{{ item.url | absolute_url }}#hero-pjk3"
-    }{% if item.section_company_intro.subsections or item.section_conclusion.paragraphs %},{% endif %}{% endif %}
-    {% if item.section_company_intro.subsections %}{
-      "@type": "WebPageElement",
-      "@id": "{{ item.url | absolute_url }}#company-intro"
-    }{% if item.section_conclusion.paragraphs %},{% endif %}{% endif %}
-    {% if item.section_conclusion.paragraphs %}{
-      "@type": "WebPageElement",
-      "@id": "{{ item.url | absolute_url }}#conclusion"
-    }{% endif %}
+    {% assign need_comma = false %}
+    {% if item.section_hero %}{ "@id": "{{ item.url | absolute_url }}#hero-pjk3" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_company_intro.subsections %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#company-intro" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_services.services %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#services-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_tips.tips %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#tips-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_risks.risks %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#risks-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_role.roles %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#roles-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_about_city %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#about-city-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_business.potentials %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#business-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_coverage %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#coverage-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_testimonials %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#testimonials-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_faq %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#faq-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.video %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#video-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_order %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#order-section" }{% assign need_comma = true %}{% endif %}
+    {% if item.section_conclusion.paragraphs %}{% if need_comma %},{% endif %}{ "@id": "{{ item.url | absolute_url }}#conclusion" }{% endif %}
   ]{% endif %}
 }
 </script>

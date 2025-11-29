@@ -1,0 +1,45 @@
+{% comment %}
+============================================================================
+Schema: Roles Section - WebPageElement
+============================================================================
+
+@file        schema--roles-section.html
+@path        _includes/schema/node--pjk3-city/schema--roles-section.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for strategic roles section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for strategic roles section.
+Referenced by Article via hasPart.
+
+Parameters:
+-----------
+- section: Section data from page.section_role (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--roles-section.html section=page.section_role %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section and section.roles %}
+{% assign roles_text = "" %}
+{% for role in section.roles %}
+  {% assign roles_text = roles_text | append: role.title | append: ": " | append: role.description | append: " " %}
+{% endfor %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#roles-section",
+  "name": "{{ section.title | default: 'Peran Strategis PJK3' | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ roles_text | strip | escape }}"
+}
+</script>
+{% endif %}

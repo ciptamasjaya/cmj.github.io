@@ -26,9 +26,17 @@ Usage:
 
 {% assign section = include.section %}
 {% assign area = section.area | default: page.area_served %}
-{% assign paragraphs = section.paragraphs %}
 
-{% if paragraphs and paragraphs.size > 0 %}
+{% comment %} Support both structures: section.paragraphs OR section as array directly {% endcomment %}
+{% if section.paragraphs %}
+  {% assign items = section.paragraphs %}
+{% elsif section.first.judul %}
+  {% assign items = section %}
+{% else %}
+  {% assign items = null %}
+{% endif %}
+
+{% if items and items.size > 0 %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,9 +44,9 @@ Usage:
   "@id": "{{ page.url | absolute_url }}#about-city",
   "name": "Informasi {{ area | default: 'Kota' }}",
   "description": "{{ section.deskripsi_singkat | default: 'Informasi lengkap tentang kota ini' | escape }}",
-  "numberOfItems": {{ paragraphs.size }},
+  "numberOfItems": {{ items.size }},
   "itemListElement": [
-    {% for item in paragraphs %}
+    {% for item in items %}
     {
       "@type": "ListItem",
       "position": {{ forloop.index }},

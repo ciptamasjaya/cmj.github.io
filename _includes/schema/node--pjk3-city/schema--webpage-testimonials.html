@@ -1,0 +1,52 @@
+{% comment %}
+============================================================================
+Schema: Testimonials Section - WebPageElement
+============================================================================
+
+@file        schema--testimonials-section.html
+@path        _includes/schema/node--pjk3-city/schema--testimonials-section.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for testimonials section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for testimonials section.
+Referenced by Article via hasPart.
+Note: Reviews are embedded in LocalBusiness schema separately.
+
+Parameters:
+-----------
+- section: Section data from page.section_testimonials (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--testimonials-section.html section=page.section_testimonials %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+{% assign testimonials_text = "" %}
+{% if section.testimoni_industri %}
+  {% for testi in section.testimoni_industri %}
+    {% assign testimonials_text = testimonials_text | append: testi.nama | append: " (" | append: testi.perusahaan | append: "): " | append: testi.komentar | append: " " %}
+  {% endfor %}
+{% endif %}
+{% if section.testimoni_komersial %}
+  {% for testi in section.testimoni_komersial %}
+    {% assign testimonials_text = testimonials_text | append: testi.nama | append: " (" | append: testi.perusahaan | append: "): " | append: testi.komentar | append: " " %}
+  {% endfor %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#testimonials-section",
+  "name": "{{ section.title | default: 'Testimoni Pelanggan' | escape }}",
+  "text": "{{ testimonials_text | strip | escape }}"
+}
+</script>
+{% endif %}

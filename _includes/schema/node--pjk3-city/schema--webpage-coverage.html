@@ -1,0 +1,64 @@
+{% comment %}
+============================================================================
+Schema: Coverage Section - WebPageElement
+============================================================================
+
+@file        schema--coverage-section.html
+@path        _includes/schema/node--pjk3-city/schema--coverage-section.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for service coverage section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for service coverage section.
+Referenced by Article via hasPart.
+
+Parameters:
+-----------
+- section: Section data from page.section_coverage (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--coverage-section.html section=page.section_coverage %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+{% assign coverage_text = "" %}
+{% if section.zona_industri %}
+  {% for zona in section.zona_industri %}
+    {% assign kawasan_text = zona.kawasan | join: ", " %}
+    {% assign coverage_text = coverage_text | append: zona.nama | append: ": " | append: kawasan_text | append: ". " %}
+  {% endfor %}
+{% endif %}
+{% if section.wilayah_kota %}
+  {% for wilayah in section.wilayah_kota %}
+    {% assign kelurahan_text = wilayah.kelurahan | join: ", " %}
+    {% assign coverage_text = coverage_text | append: wilayah.nama | append: ": " | append: kelurahan_text | append: ". " %}
+  {% endfor %}
+{% endif %}
+{% if section.wilayah_pinggiran %}
+  {% for wilayah in section.wilayah_pinggiran %}
+    {% assign kelurahan_text = wilayah.kelurahan | join: ", " %}
+    {% assign coverage_text = coverage_text | append: wilayah.nama | append: ": " | append: kelurahan_text | append: ". " %}
+  {% endfor %}
+{% endif %}
+{% if section.kecamatan_lainnya %}
+  {% assign lainnya_text = section.kecamatan_lainnya | join: ", " %}
+  {% assign coverage_text = coverage_text | append: "Kecamatan lainnya: " | append: lainnya_text | append: ". " %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#coverage-section",
+  "name": "{{ section.title | default: 'Area Pelayanan' | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ coverage_text | strip | escape }}"
+}
+</script>
+{% endif %}

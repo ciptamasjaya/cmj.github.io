@@ -1,0 +1,53 @@
+{% comment %}
+============================================================================
+Schema: Order Section - WebPageElement
+============================================================================
+
+@file        schema--order-section.html
+@path        _includes/schema/node--pjk3-city/schema--order-section.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for order process section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for order process section.
+Referenced by Article via hasPart.
+Note: HowTo schema is generated separately for rich results.
+
+Parameters:
+-----------
+- section: Section data from page.section_order (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--order-section.html section=page.section_order %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+{% assign order_text = "" %}
+{% if section.initial_steps %}
+  {% for step in section.initial_steps %}
+    {% assign order_text = order_text | append: step.title | append: ": " | append: step.description | append: " " %}
+  {% endfor %}
+{% endif %}
+{% if section.final_steps %}
+  {% for step in section.final_steps %}
+    {% assign order_text = order_text | append: step.title | append: ": " | append: step.description | append: " " %}
+  {% endfor %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#order-section",
+  "name": "{{ section.title | default: 'Cara Memesan Layanan' | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ order_text | strip | escape }}"
+}
+</script>
+{% endif %}

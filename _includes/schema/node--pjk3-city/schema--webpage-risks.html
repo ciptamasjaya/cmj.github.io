@@ -1,0 +1,45 @@
+{% comment %}
+============================================================================
+Schema: Risks Section - WebPageElement
+============================================================================
+
+@file        schema--risks-section.html
+@path        _includes/schema/node--pjk3-city/schema--risks-section.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for risks section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for risks section.
+Referenced by Article via hasPart.
+
+Parameters:
+-----------
+- section: Section data from page.section_risks (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--risks-section.html section=page.section_risks %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section and section.risks %}
+{% assign risks_text = "" %}
+{% for risk in section.risks %}
+  {% assign risks_text = risks_text | append: risk.title | append: ": " | append: risk.description | append: " " %}
+{% endfor %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#risks-section",
+  "name": "{{ section.title | default: 'Analisis Risiko K3' | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ risks_text | strip | escape }}"
+}
+</script>
+{% endif %}

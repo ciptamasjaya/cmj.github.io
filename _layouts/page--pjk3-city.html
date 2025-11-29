@@ -177,17 +177,72 @@ Schema includes (using reusable schemas):
 
   <!-- Company Intro WebPageElement Schema (hasPart of Article) -->
   {% if page.section_company_intro.subsections %}
-    {% include schema/node--pjk3-city/schema--company-intro.html section=page.section_company_intro %}
+    {% include schema/node--pjk3-city/schema--webpage-company-intro.html section=page.section_company_intro %}
   {% endif %}
 
   <!-- Conclusion WebPageElement Schema (hasPart of Article) -->
   {% if page.section_conclusion.paragraphs %}
-    {% include schema/node--pjk3-city/schema--conclusion.html section=page.section_conclusion %}
+    {% include schema/node--pjk3-city/schema--webpage-conclusion.html section=page.section_conclusion %}
   {% endif %}
 
   <!-- Hero PJK3 WebPageElement Schema (hasPart of Article) -->
   {% if page.section_hero %}
-    {% include schema/node--pjk3-city/schema--hero-pjk3.html section=page.section_hero %}
+    {% include schema/node--pjk3-city/schema--webpage-hero.html section=page.section_hero %}
+  {% endif %}
+
+  <!-- Services WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_services.services %}
+    {% include schema/node--pjk3-city/schema--webpage-services.html section=page.section_services %}
+  {% endif %}
+
+  <!-- Tips WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_tips.tips %}
+    {% include schema/node--pjk3-city/schema--webpage-tips.html section=page.section_tips %}
+  {% endif %}
+
+  <!-- Risks WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_risks.risks %}
+    {% include schema/node--pjk3-city/schema--webpage-risks.html section=page.section_risks %}
+  {% endif %}
+
+  <!-- Roles WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_role.roles %}
+    {% include schema/node--pjk3-city/schema--webpage-roles.html section=page.section_role %}
+  {% endif %}
+
+  <!-- About City WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_about_city %}
+    {% include schema/node--pjk3-city/schema--webpage-about-city.html section=page.section_about_city %}
+  {% endif %}
+
+  <!-- Business WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_business.potentials %}
+    {% include schema/node--pjk3-city/schema--webpage-business.html section=page.section_business %}
+  {% endif %}
+
+  <!-- Coverage WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_coverage %}
+    {% include schema/node--pjk3-city/schema--webpage-coverage.html section=page.section_coverage %}
+  {% endif %}
+
+  <!-- Testimonials WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_testimonials %}
+    {% include schema/node--pjk3-city/schema--webpage-testimonials.html section=page.section_testimonials %}
+  {% endif %}
+
+  <!-- FAQ WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_faq %}
+    {% include schema/node--pjk3-city/schema--webpage-faq.html section=page.section_faq %}
+  {% endif %}
+
+  <!-- Video WebPageElement Schema (hasPart of Article) -->
+  {% if page.video %}
+    {% include schema/node--pjk3-city/schema--webpage-video.html section=page.section_video video=page.video %}
+  {% endif %}
+
+  <!-- Order WebPageElement Schema (hasPart of Article) -->
+  {% if page.section_order %}
+    {% include schema/node--pjk3-city/schema--webpage-order.html section=page.section_order %}
   {% endif %}
 
   <!-- Breadcrumb Schema -->

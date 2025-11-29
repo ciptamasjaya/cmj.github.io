@@ -1,0 +1,42 @@
+{% comment %}
+============================================================================
+Schema: Video Section - WebPageElement
+============================================================================
+
+@file        schema--video-section.html
+@path        _includes/schema/node--pjk3-city/schema--video-section.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for video section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for video section.
+Referenced by Article via hasPart.
+Note: VideoObject schema is generated separately for rich results.
+
+Parameters:
+-----------
+- section: Section data from page.section_video (required)
+- video: Video URL from page.video (required)
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--video-section.html section=page.section_video video=page.video %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign video = include.video %}
+
+{% if video %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#video-section",
+  "name": "{{ section.title | default: 'Video Layanan' | escape }}",
+  "description": "{{ section.description | default: 'Dokumentasi video layanan riksa uji K3' | escape }}"
+}
+</script>
+{% endif %}

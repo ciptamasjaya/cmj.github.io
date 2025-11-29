@@ -1,0 +1,84 @@
+{% comment %}
+============================================================================
+Schema: About City Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-about-city.html
+@path        _includes/schema/node--pjk3-city/schema--webpage-about-city.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for about city section (hasPart of Article)
+@author      arisciwek
+@created     2025-11-29
+
+Generates WebPageElement for about city section.
+Referenced by Article via hasPart.
+
+Parameters:
+-----------
+- section: Section data from page.section_about_city (required)
+  Structure can be:
+  - paragraphs: Array of paragraph strings (simple)
+  - Or array of objects with: judul, subjudul, deskripsi, fakta[]
+
+Usage:
+------
+{% include schema/node--pjk3-city/schema--webpage-about-city.html section=page.section_about_city %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+{% assign about_text = "" %}
+{% assign area = section.area | default: page.area_served %}
+
+{% comment %} Get name from title + area {% endcomment %}
+{% assign about_name = section.title %}
+{% if about_name and area %}
+  {% assign about_name = about_name | append: " " | append: area %}
+{% elsif area %}
+  {% assign about_name = "Tentang " | append: area %}
+{% endif %}
+
+{% comment %} Get description from deskripsi_singkat or overview {% endcomment %}
+{% assign about_desc = section.deskripsi_singkat | default: section.overview %}
+
+{% comment %} Build text from overview + paragraphs {% endcomment %}
+{% if section.overview %}
+  {% assign about_text = section.overview | append: " " %}
+{% endif %}
+
+{% if section.paragraphs %}
+  {% for item in section.paragraphs %}
+    {% if item.judul %}
+      {% assign about_text = about_text | append: item.judul | append: ": " %}
+    {% endif %}
+    {% if item.subjudul %}
+      {% assign about_text = about_text | append: item.subjudul | append: ". " %}
+    {% endif %}
+    {% if item.deskripsi %}
+      {% assign about_text = about_text | append: item.deskripsi | append: " " %}
+    {% endif %}
+    {% if item.fakta %}
+      {% assign fakta_text = item.fakta | join: ". " %}
+      {% assign about_text = about_text | append: "Fakta: " | append: fakta_text | append: ". " %}
+    {% endif %}
+    {% if item.list_item %}
+      {% assign list_text = item.list_item | join: ". " %}
+      {% assign about_text = about_text | append: list_text | append: ". " %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#about-city-section",
+  "name": "{{ about_name | default: 'Tentang Kota' | escape }}",
+  "description": "{{ about_desc | escape }}",
+  "text": "{{ about_text | strip | escape }}"
+}
+</script>
+{% endif %}
