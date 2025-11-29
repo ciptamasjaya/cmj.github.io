@@ -1,0 +1,70 @@
+{% comment %}
+============================================================================
+Schema: Video (schema--video.html)
+============================================================================
+
+@file        schema--video.html
+@path        _includes/schema/node--pjk3-city/schema--video.html
+@type        Schema (VideoObject)
+@description Schema.org VideoObject markup for PJK3 city video content
+@author      arisciwek
+@created     2025-11-29
+
+Related block:
+- _includes/reusable/node--pjk3-city/block--video.html
+
+Expected Frontmatter:
+---
+video: "/assets/videos/service-page/riksa-uji.webm"
+section_video:
+  title: "Video Layanan"
+  description: "Dokumentasi proses inspeksi K3"
+---
+
+Usage:
+{% include schema/node--pjk3-city/schema--video.html %}
+
+============================================================================
+{% endcomment %}
+
+{% assign default_video = '/assets/videos/service-page/riksa-uji-forklift.webm' %}
+{% assign video_src = default_video %}
+
+{% if page.section_video.video and page.section_video.video != '' %}
+  {% assign video_src = page.section_video.video %}
+{% elsif page.video and page.video != '' %}
+  {% assign video_src = page.video %}
+{% endif %}
+
+{% comment %} Thumbnail: images[0] or default {% endcomment %}
+{% assign video_thumb = '/assets/images/posts/default/i1.svg' %}
+{% if page.images and page.images[0] and page.images[0] != '' %}
+  {% assign video_thumb = page.images[0] %}
+{% endif %}
+
+{% assign area = page.area_served | default: "" %}
+{% assign video_title = page.section_video.title | default: "Video Layanan Riksa Uji K3" %}
+{% assign video_desc = page.section_video.description | default: "Dokumentasi proses inspeksi dan pengujian K3" %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "{{ page.url | absolute_url }}#video",
+  "name": "{{ video_title | escape }}{% if area %} {{ area }}{% endif %}",
+  "description": "{{ video_desc | escape }}{% if area %} di {{ area }}{% endif %} oleh {{ site.business.name }}",
+  "thumbnailUrl": "{{ video_thumb | absolute_url }}",
+  "contentUrl": "{{ video_src | absolute_url }}",
+  "uploadDate": "{{ page.date | date_to_xmlschema }}",
+  "duration": "{{ page.section_video.duration | default: 'PT3M30S' }}",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name }}"
+  },
+  "isPartOf": {
+    "@type": "Article",
+    "@id": "{{ page.url | absolute_url }}#article"
+  }
+}
+</script>

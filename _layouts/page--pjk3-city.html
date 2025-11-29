@@ -31,6 +31,10 @@ Schema includes:
 - schema--local-business.html (for area_served)
 - schema--service-offer.html (for services)
 - schema--faq.html (for FAQ)
+- schema--gallery.html (for images)
+- schema--video.html (for video)
+- schema--reviews.html (for testimonials)
+- schema--howto.html (for order process)
 
 ============================================================================
 {% endcomment %}
@@ -69,8 +73,24 @@ Schema includes:
   {% endif %}
 
   <!-- FAQ Schema -->
-  {% if page.faq %}
-    {% include schema/node--pjk3-city/schema--faq.html faq=page.faq %}
+  {% if page.section_faq %}
+    {% include schema/node--pjk3-city/schema--faq.html %}
+  {% endif %}
+
+  <!-- Gallery Schema -->
+  {% include schema/node--pjk3-city/schema--gallery.html %}
+
+  <!-- Video Schema -->
+  {% include schema/node--pjk3-city/schema--video.html %}
+
+  <!-- Reviews/Testimonials Schema -->
+  {% if page.section_testimonials %}
+    {% include schema/node--pjk3-city/schema--reviews.html %}
+  {% endif %}
+
+  <!-- HowTo/Order Process Schema -->
+  {% if page.section_order %}
+    {% include schema/node--pjk3-city/schema--howto.html %}
   {% endif %}
 
   <!-- Breadcrumb Schema -->
