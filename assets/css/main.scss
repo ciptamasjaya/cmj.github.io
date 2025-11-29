@@ -53,6 +53,12 @@
 @import "pages";
 
 // ----------------------------------------------------------------------------
+// 6. Import Block Styles
+// ----------------------------------------------------------------------------
+// Styles untuk reusable blocks di _includes/block/ dan _includes/reusable/
+@import "blocks/index";
+
+// ----------------------------------------------------------------------------
 // Custom Project Styles (Optional)
 // ----------------------------------------------------------------------------
 // Tambahkan custom styles di sini jika diperlukan

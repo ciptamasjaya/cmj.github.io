@@ -50,33 +50,33 @@ Usage:
 {% endif %}
 
 <article class="card h-100 border-0 shadow-sm block-card block-card--{{ card_type }} block-card-{{ color_index }}">
-  <!-- Image -->
+  <!-- Image: field--images -->
   {% if has_image > 0 %}
-  <div class="block-card-image">
+  <div class="field field--images">
     <img src="{{ post.images[0] | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
-    <div class="block-card-overlay block-card-overlay-{{ color_index }}"></div>
+    <div class="field--images-overlay field--images-overlay-{{ color_index }}"></div>
   </div>
   {% else %}
-  <div class="block-card-image">
+  <div class="field field--images">
     <img src="{{ site.default_images[color_index] | default: site.default_image }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
-    <div class="block-card-overlay block-card-overlay-{{ color_index }}"></div>
+    <div class="field--images-overlay field--images-overlay-{{ color_index }}"></div>
   </div>
   {% endif %}
 
   <div class="card-body">
-    <!-- Title with Link -->
-    <h3 class="card-title h6 fw-bold block-title">
+    <!-- Title: field--title -->
+    <h3 class="card-title h6 fw-bold field field--title">
       <a href="{{ post.url | relative_url }}" class="text-decoration-none stretched-link">
         {{ post.title }}
       </a>
     </h3>
 
-    <!-- Description -->
-    <p class="card-text small block-excerpt">
+    <!-- Description: field--description -->
+    <p class="card-text small field field--description">
       {{ post.description | default: post.excerpt | strip_html | truncate: 100 }}
     </p>
 
-    <!-- Rating -->
-    {% include components/rating-stars.html rating=rating count=rating_count %}
+    <!-- Rating: field--rating -->
+    {% include components/rating-stars.html rating=rating count=rating_count wrapper_class="field field--rating" %}
   </div>
 </article>

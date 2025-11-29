@@ -1,0 +1,127 @@
+/* ============================================================================
+   BLOCK COMPANY - Company Profile, Why Choose Us, Commitment, Business Info
+   ============================================================================
+   @file        _block-company.scss
+   @path        _sass/blocks/_block-company.scss
+   @description Company-related block styles
+   @version     1.0.5
+   @date        2025-11-29
+   ============================================================================ */
+
+/* ============================================================================
+   COMPANY PROFILE BLOCK
+   ============================================================================ */
+.block--company-profile .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--company-profile .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--company-profile a {
+  color: #0d6efd;
+  transition: color 0.2s ease;
+}
+
+.block--company-profile a:hover {
+  color: #0a58ca;
+}
+
+/* ============================================================================
+   WHY CHOOSE US BLOCK
+   ============================================================================ */
+.block--why-choose-us .card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.block--why-choose-us .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--why-choose-us .feature-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.block--why-choose-us .card:hover .feature-icon i {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .block--why-choose-us .feature-icon i {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================================================
+   COMMITMENT BLOCK
+   ============================================================================ */
+.block--commitment .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--commitment .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--commitment .commitment-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.block--commitment .card:hover .commitment-icon i {
+  transform: scale(1.1);
+}
+
+/* ============================================================================
+   BUSINESS INFO BLOCK
+   ============================================================================ */
+.block--business-info .info-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+}
+
+.block--business-info .info-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.block--business-info .info-icon i {
+  font-size: 1.25rem;
+}
+
+.block--business-info .info-content {
+  flex: 1;
+}
+
+.block--business-info .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--business-info .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--business-info a {
+  color: #0d6efd;
+  transition: color 0.2s ease;
+}
+
+.block--business-info a:hover {
+  color: #0a58ca;
+}

@@ -1,0 +1,161 @@
+/* ============================================================================
+   BLOCK CARD - Universal Card Template
+   ============================================================================
+   @file        _block-card.scss
+   @path        _sass/blocks/_block-card.scss
+   @description Universal block card styles with semantic field classes
+   @version     1.0.5
+   @date        2025-11-29
+
+   Semantic Classes (mapping to frontmatter fields):
+   - .field--images      → images[0] (featured image)
+   - .field--title       → title
+   - .field--description → description
+   - .field--rating      → rating (from JSON data)
+   ============================================================================ */
+
+/* ============================================================================
+   BLOCK CARD - Universal Card Template
+   ============================================================================
+   @file        blocks.scss (appended)
+   @description Styles for block--card.html universal template
+   @version     1.0.5
+   @date        2025-11-29
+
+   Semantic Classes (mapping to frontmatter fields):
+   - .field--images      → images[0] (featured image)
+   - .field--title       → title
+   - .field--description → description
+   - .field--rating      → rating (from JSON data)
+   ============================================================================ */
+
+/* Block Card Container */
+.block-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+/* Block Card Variants (auto-detected from post.layout) */
+.block-card--post,
+.block-card--riksa-uji,
+.block-card--pjk3-city,
+.block-card--service {
+  /* Variant-specific styles can be added here */
+}
+
+/* Block Card Color Variants */
+.block-card-1,
+.block-card-2,
+.block-card-3 {
+  /* Color variant styles */
+}
+
+/* ----------------------------------------------------------------------------
+   SEMANTIC FIELD CLASSES
+   ---------------------------------------------------------------------------- */
+
+/* Field: Images (featured image) */
+.field.field--images {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .block-card:hover & img {
+    transform: scale(1.05);
+  }
+}
+
+/* Field: Images Overlay (gradient overlay on image) */
+.field--images-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  pointer-events: none;
+}
+
+.field--images-overlay-1 {
+  background: linear-gradient(to top, rgba(13, 110, 253, 0.2), transparent);
+}
+
+.field--images-overlay-2 {
+  background: linear-gradient(to top, rgba(111, 66, 193, 0.2), transparent);
+}
+
+.field--images-overlay-3 {
+  background: linear-gradient(to top, rgba(25, 135, 84, 0.2), transparent);
+}
+
+/* Field: Title */
+.field.field--title {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+
+  a {
+    color: #212529;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #0d6efd;
+    }
+  }
+}
+
+/* Field: Description */
+.field.field--description {
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  
+  /* Truncate to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Field: Rating */
+.field.field--rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  i {
+    font-size: 0.875rem;
+  }
+
+  small {
+    font-size: 0.75rem;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+   ---------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .field.field--images img {
+    height: 150px;
+  }
+
+  .field.field--title {
+    font-size: 0.9rem;
+  }
+
+  .field.field--description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+  }
+}

@@ -1,0 +1,54 @@
+/* ============================================================================
+   BLOCKS INDEX - Import All Block Partials
+   ============================================================================
+   @file        _index.scss
+   @path        _sass/blocks/_index.scss
+   @description Main index file that imports all block partials
+   @version     1.0.5
+   @date        2025-11-29
+
+   File Structure:
+   ---------------
+   _sass/blocks/
+   ├── _index.scss           (this file)
+   ├── _block-common.scss    (~100 lines) - Breadcrumb, gradients, utilities
+   ├── _block-company.scss   (~120 lines) - Company profile, why choose us
+   ├── _block-contact.scss   (~260 lines) - CTA, contact cards, forms
+   ├── _block-service.scss   (~270 lines) - Service grid, intro, list
+   ├── _block-blog.scss      (~90 lines)  - Blog cards, preview/archive
+   ├── _block-about.scss     (~575 lines) - Tamasya, visi, misi
+   ├── _block-riksa-uji.scss (~500 lines) - Service detail, howto, faq
+   ├── _block-post-sections.scss (~690 lines) - Process, regulation, etc
+   ├── _block-post-content.scss  (~640 lines) - Permit, technical, etc
+   └── _block-card.scss      (~160 lines) - Universal card template
+   ============================================================================ */
+
+// Common utilities and breadcrumb
+@import 'block-common';
+
+// Company-related blocks
+@import 'block-company';
+
+// Contact-related blocks
+@import 'block-contact';
+
+// Service-related blocks
+@import 'block-service';
+
+// Blog-related blocks
+@import 'block-blog';
+
+// About page blocks
+@import 'block-about';
+
+// Riksa Uji specific blocks
+@import 'block-riksa-uji';
+
+// Post section blocks
+@import 'block-post-sections';
+
+// Post content blocks
+@import 'block-post-content';
+
+// Universal card template
+@import 'block-card';

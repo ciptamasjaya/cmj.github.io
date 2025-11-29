@@ -1,0 +1,575 @@
+/* ============================================================================
+   BLOCK ABOUT - Tamasya, Definitions, Visi, Misi, Pengesahan
+   ============================================================================
+   @file        _block-about.scss
+   @path        _sass/blocks/_block-about.scss
+   @description About page block styles
+   @version     1.0.5
+   @date        2025-11-29
+   ============================================================================ */
+
+/* ============================================================================
+   ABOUT TAMASYA BLOCK
+   ============================================================================ */
+.block--about-tamasya {
+
+  /* Philosophy cards (4 meanings) */
+  .tamasya-philosophy-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tamasya-philosophy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .tamasya-philosophy-card .display-6 {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .tamasya-philosophy-card:hover .display-6 {
+    transform: scale(1.1);
+    color: var(--bs-primary);
+  }
+
+  /* Core values cards */
+  .tamasya-value-card {
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .tamasya-value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.2);
+    background-color: rgba(13, 110, 253, 0.02);
+  }
+
+  /* Icon wrapper */
+  .tamasya-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    height: 80px;
+  }
+
+  /* Icon styling */
+  .tamasya-icon {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .tamasya-value-card:hover .tamasya-icon {
+    transform: scale(1.2) translateY(-5px);
+    filter: drop-shadow(0 8px 16px rgba(13, 110, 253, 0.4));
+  }
+
+  /* Title styling */
+  .tamasya-value-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #212529;
+    transition: color 0.3s ease;
+  }
+
+  .tamasya-value-card:hover .tamasya-value-title {
+    color: var(--bs-primary);
+  }
+
+  /* Description text */
+  .tamasya-value-description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #6c757d;
+  }
+}
+
+/* ============================================================================
+   ABOUT DEFINITIONS BLOCK
+   ============================================================================ */
+.block--about-definitions {
+
+  .definition-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .definition-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.2) !important;
+  }
+
+  .definition-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .definition-card:hover .definition-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.4);
+  }
+
+  .definition-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+  }
+
+  .definition-card:hover .definition-icon-wrapper::before {
+    opacity: 1;
+    left: 100%;
+  }
+
+  .definition-icon {
+    font-size: 2.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .definition-card:hover .definition-icon {
+    transform: scale(1.1);
+  }
+
+  .definition-title {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .definition-title a {
+    transition: color 0.3s ease;
+  }
+
+  .definition-card:hover .definition-title {
+    transform: scale(1.05);
+  }
+
+  .definition-card:hover .definition-title a {
+    color: #0a58ca !important;
+  }
+
+  .definition-description {
+    line-height: 1.7;
+    transition: color 0.3s ease;
+  }
+
+  .definition-card:hover .definition-description {
+    color: #495057 !important;
+  }
+}
+
+/* ============================================================================
+   ABOUT VISI CIPTA MAS JAYA BLOCK
+   ============================================================================ */
+.block--about-visi-ciptamasjaya {
+
+  /* Main section cards (Visi & Misi intro) */
+  .visi-card,
+  .misi-intro-card {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visi-card::before,
+  .misi-intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd 0%, #0a58ca 100%);
+    transition: height 0.3s ease;
+  }
+
+  .visi-card:hover,
+  .misi-intro-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.15);
+  }
+
+  .visi-card:hover::before,
+  .misi-intro-card:hover::before {
+    height: 6px;
+  }
+
+  /* Icon wrapper for Visi */
+  .visi-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55), box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visi-card:hover .visi-icon-wrapper {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.4);
+  }
+
+  .visi-icon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    transition: left 0.6s ease;
+  }
+
+  .visi-card:hover .visi-icon-wrapper::before {
+    left: 150%;
+  }
+
+  .visi-icon {
+    font-size: 3.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .visi-card:hover .visi-icon {
+    animation: none;
+    transform: scale(1.15);
+  }
+
+  /* Section title */
+  .visi-title,
+  .misi-title {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .visi-card:hover .visi-title,
+  .misi-intro-card:hover .misi-title {
+    transform: scale(1.03);
+  }
+
+  /* Visi & Misi content text */
+  .visi-content,
+  .misi-intro-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    transition: color 0.3s ease;
+  }
+
+  .visi-card:hover .visi-content,
+  .misi-intro-card:hover .misi-intro-content {
+    color: #212529;
+  }
+
+  /* Misi breakdown cards */
+  .misi-item-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 100%;
+    border-left: 4px solid transparent;
+  }
+
+  .misi-item-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(13, 110, 253, 0.2);
+    border-left-color: #0d6efd;
+  }
+
+  /* Icon for each misi item */
+  .misi-item-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Different gradient for each card */
+  .misi-item-card:nth-child(1) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  }
+
+  .misi-item-card:nth-child(2) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #6610f2 0%, #520dc2 100%);
+  }
+
+  .misi-item-card:nth-child(3) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #d63384 0%, #a02560 100%);
+  }
+
+  .misi-item-card:nth-child(4) .misi-item-icon-wrapper {
+    background: linear-gradient(135deg, #fd7e14 0%, #ca6510 100%);
+  }
+
+  .misi-item-card:hover .misi-item-icon-wrapper {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 8px 24px rgba(13, 110, 253, 0.3);
+  }
+
+  .misi-item-icon {
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .misi-item-card:hover .misi-item-icon {
+    transform: scale(1.2);
+  }
+
+  /* Misi item title */
+  .misi-item-title {
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s ease;
+  }
+
+  .misi-item-card:hover .misi-item-title {
+    color: #0d6efd;
+  }
+
+  /* Misi item description */
+  .misi-item-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+
+  .misi-item-card:hover .misi-item-description {
+    color: #495057;
+  }
+
+  /* Decorative divider */
+  .visi-misi-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd 0%, #0a58ca 100%);
+    margin: 3rem auto;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .visi-misi-divider::before,
+  .visi-misi-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: #0d6efd;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  .visi-misi-divider::before {
+    left: -20px;
+  }
+
+  .visi-misi-divider::after {
+    right: -20px;
+  }
+}
+
+/* ============================================================================
+   ABOUT MISI CIPTA MAS JAYA BLOCK
+   ============================================================================ */
+.block--about-misi-ciptamasjaya {
+
+  .misi-detail-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    height: 100%;
+    border-bottom: 4px solid transparent;
+  }
+
+  .misi-detail-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Colorful icon wrappers */
+  .misi-detail-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+  }
+
+  /* Individual colors for each card */
+  .misi-detail-card:nth-child(1) {
+    border-bottom-color: #fd7e14;
+  }
+
+  .misi-detail-card:nth-child(1) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(253, 126, 20, 0.1) 0%, rgba(253, 126, 20, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(1):hover {
+    box-shadow: 0 12px 32px rgba(253, 126, 20, 0.2);
+  }
+
+  .misi-detail-card:nth-child(2) {
+    border-bottom-color: #198754;
+  }
+
+  .misi-detail-card:nth-child(2) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.1) 0%, rgba(25, 135, 84, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(2):hover {
+    box-shadow: 0 12px 32px rgba(25, 135, 84, 0.2);
+  }
+
+  .misi-detail-card:nth-child(3) {
+    border-bottom-color: #ffc107;
+  }
+
+  .misi-detail-card:nth-child(3) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(3):hover {
+    box-shadow: 0 12px 32px rgba(255, 193, 7, 0.2);
+  }
+
+  .misi-detail-card:nth-child(4) {
+    border-bottom-color: #dc3545;
+  }
+
+  .misi-detail-card:nth-child(4) .misi-detail-icon-wrapper {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%);
+  }
+
+  .misi-detail-card:nth-child(4):hover {
+    box-shadow: 0 12px 32px rgba(220, 53, 69, 0.2);
+  }
+
+  .misi-detail-card:hover .misi-detail-icon-wrapper {
+    transform: scale(1.15) rotate(-5deg);
+  }
+
+  .misi-detail-icon {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .misi-detail-card:hover .misi-detail-icon {
+    transform: scale(1.15);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  }
+
+  .misi-detail-title {
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .misi-detail-card:hover .misi-detail-title {
+    transform: scale(1.05);
+  }
+
+  .misi-detail-card:nth-child(1):hover .misi-detail-title {
+    color: #fd7e14;
+  }
+
+  .misi-detail-card:nth-child(2):hover .misi-detail-title {
+    color: #198754;
+  }
+
+  .misi-detail-card:nth-child(3):hover .misi-detail-title {
+    color: #ffc107;
+  }
+
+  .misi-detail-card:nth-child(4):hover .misi-detail-title {
+    color: #dc3545;
+  }
+
+  .misi-detail-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+
+  .misi-detail-card:hover .misi-detail-description {
+    color: #495057;
+  }
+}
+
+/* ============================================================================
+   PENGESAHAN GAMBAR BLOCK
+   ============================================================================ */
+.block--pengesahan-gambar {
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+

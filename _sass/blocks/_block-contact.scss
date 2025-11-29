@@ -1,0 +1,298 @@
+/* ============================================================================
+   BLOCK CONTACT - CTA, Contact Cards, Quick Contact, FAQ Contact
+   ============================================================================
+   @file        _block-contact.scss
+   @path        _sass/blocks/_block-contact.scss
+   @description Contact-related block styles
+   @version     1.0.5
+   @date        2025-11-29
+   ============================================================================ */
+
+/* ============================================================================
+   CTA CONTACT BLOCK
+   ============================================================================ */
+.block--cta-contact {
+  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 50%, #084298 100%);
+  position: relative;
+  color: white;
+}
+
+/* Optional overlay for better text contrast */
+.block--cta-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.block--cta-contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Heading styles */
+.block--cta-contact h2 {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.block--cta-contact h2 i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Description/Lead text */
+.block--cta-contact .lead,
+.block--cta-contact p {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+  opacity: 1 !important;
+}
+
+/* Button styles */
+.block--cta-contact .btn {
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-shadow: none;
+  border: 2px solid transparent;
+}
+
+.block--cta-contact .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Additional info section */
+.block--cta-contact .mt-5 {
+  position: relative;
+  z-index: 2;
+}
+
+.block--cta-contact .border-top {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  padding-top: 2rem !important;
+  margin-top: 1rem !important;
+}
+
+/* Add semi-transparent background for better readability */
+.block--cta-contact .text-center.text-md-start {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+.block--cta-contact small {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 0 8px rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.25rem;
+  opacity: 1 !important;
+}
+
+.block--cta-contact strong {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+  font-size: 1.05rem;
+  opacity: 1 !important;
+}
+
+.block--cta-contact i {
+  color: #ffffff !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  opacity: 1 !important;
+}
+
+/* Force white color for all text in additional info */
+.block--cta-contact .text-center.text-md-start * {
+  color: #ffffff !important;
+}
+
+/* Specific overrides for common Bootstrap classes */
+.block--cta-contact .opacity-75 {
+  opacity: 1 !important;
+}
+
+/* Individual info items */
+.block--cta-contact .d-flex.align-items-center {
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.block--cta-contact .d-flex.align-items-center:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================================
+   CONTACT CARDS BLOCK
+   ============================================================================ */
+.block--contact-cards .contact-card {
+  transition: all 0.3s ease;
+}
+
+.block--contact-cards .contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--contact-cards .contact-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.block--contact-cards .contact-card:hover .contact-icon i {
+  transform: scale(1.1);
+}
+
+.block--contact-cards .btn {
+  transition: all 0.3s ease;
+}
+
+.block--contact-cards .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================================
+   QUICK CONTACT FORM BLOCK
+   ============================================================================ */
+.block--quick-contact-form .form-control {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.block--quick-contact-form .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+}
+
+.block--quick-contact-form .form-select {
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.block--quick-contact-form .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+}
+
+.block--quick-contact-form .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.block--quick-contact-form .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.block--quick-contact-form .card {
+  border-radius: 12px;
+}
+
+.block--quick-contact-form label {
+  margin-bottom: 0.5rem;
+}
+
+.block--quick-contact-form .form-label i {
+  opacity: 0.7;
+}
+
+.block--quick-contact-form .invalid-feedback {
+  font-size: 0.875rem;
+}
+
+.block--quick-contact-form .was-validated .form-control:invalid {
+  border-color: #dc3545;
+}
+
+.block--quick-contact-form .was-validated .form-control:valid {
+  border-color: #198754;
+}
+
+.block--quick-contact-form .was-validated .form-select:invalid {
+  border-color: #dc3545;
+}
+
+.block--quick-contact-form .was-validated .form-select:valid {
+  border-color: #198754;
+}
+
+/* ============================================================================
+   FAQ CONTACT BLOCK
+   ============================================================================ */
+.block--faq-contact .accordion-item {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.block--faq-contact .accordion-item:hover {
+  transform: translateY(-2px);
+}
+
+.block--faq-contact .accordion-button {
+  padding: 1.25rem 1.5rem;
+  font-size: 1.05rem;
+  background-color: #fff;
+  border: none;
+}
+
+.block--faq-contact .accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: #0d6efd;
+  box-shadow: none;
+}
+
+.block--faq-contact .accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.block--faq-contact .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.block--faq-contact .accordion-body {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.block--faq-contact .accordion-body ul {
+  padding-left: 1.5rem;
+}
+
+.block--faq-contact .accordion-body li {
+  margin-bottom: 0.5rem;
+}
+
+.block--faq-contact .accordion-body a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.block--faq-contact .accordion-body a:hover {
+  text-decoration: underline;
+}
+
+.block--faq-contact h3 {
+  margin-bottom: 0;
+}

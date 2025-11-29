@@ -1,0 +1,272 @@
+/* ============================================================================
+   BLOCK SERVICE - Service Grid, Coverage, Intro, List, Features
+   ============================================================================
+   @file        _block-service.scss
+   @path        _sass/blocks/_block-service.scss
+   @description Service-related block styles
+   @version     1.0.5
+   @date        2025-11-29
+   ============================================================================ */
+
+/* ============================================================================
+   SERVICE COVERAGE BLOCK
+   ============================================================================ */
+.block--service-coverage .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--service-coverage .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--service-coverage .coverage-item {
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.block--service-coverage .coverage-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* ============================================================================
+   SERVICES GRID BLOCK
+   ============================================================================ */
+.block--services-grid .service-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.block--services-grid .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 20px rgba(13, 110, 253, 0.3) !important;
+}
+
+.block--services-grid .service-card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.block--services-grid .service-icon {
+  flex-shrink: 0;
+}
+
+.block--services-grid .service-icon i {
+  font-size: 3.5rem;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--services-grid .service-card:hover .service-icon i {
+  transform: scale(1.15) rotate(5deg);
+  color: #0a58ca !important;
+  filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+}
+
+.block--services-grid .card-title {
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.block--services-grid .service-card:hover .card-title {
+  color: #0d6efd;
+}
+
+.block--services-grid .card-text {
+  flex-grow: 1;
+  margin-bottom: 1rem !important;
+}
+
+.block--services-grid .card-footer {
+  text-align: center;
+}
+
+.block--services-grid .btn {
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.block--services-grid .btn:hover {
+  transform: translateX(5px);
+  background-color: #0d6efd;
+  color: white !important;
+  border-color: #0d6efd;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+.block--services-grid .btn:hover i {
+  animation: arrowSlide 0.6s ease-in-out infinite;
+}
+
+@keyframes arrowSlide {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .block--services-grid .service-icon i {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============================================================================
+   SERVICE INTRO BLOCK
+   ============================================================================ */
+.block--service-intro .service-intro-heading {
+  position: relative;
+}
+
+.block--service-intro .service-intro-heading i {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-intro .service-intro-heading:hover i {
+  transform: scale(1.1) rotate(-5deg);
+  filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+}
+
+.block--service-intro .feature-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.block--service-intro .feature-badge:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.block--service-intro .card {
+  transition: all 0.3s ease;
+}
+
+.block--service-intro .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--service-intro .card i {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-intro .card:hover i {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* ============================================================================
+   SERVICE LIST BLOCK
+   ============================================================================ */
+.block--service-list .service-list-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.block--service-list .service-list-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--service-list .service-icon-large i {
+  font-size: 4rem;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-list .service-list-card:hover .service-icon-large i {
+  transform: scale(1.15) rotate(5deg);
+  color: #0a58ca !important;
+  filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+}
+
+.block--service-list .service-items ul {
+  margin-left: 0;
+}
+
+.block--service-list .btn {
+  transition: all 0.3s ease;
+}
+
+.block--service-list .btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .block--service-list .service-icon-large i {
+    font-size: 3rem;
+  }
+}
+
+/* ============================================================================
+   SERVICE FEATURES BLOCK
+   ============================================================================ */
+.block--service-features .feature-card {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.block--service-features .feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--service-features .feature-icon i {
+  font-size: 3rem;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-features .feature-card:hover .feature-icon i {
+  transform: scale(1.15) rotate(5deg);
+  color: #0a58ca !important;
+  filter: drop-shadow(0 4px 8px rgba(13, 110, 253, 0.3));
+}
+
+.block--service-features .step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.block--service-features .process-step {
+  position: relative;
+  padding: 0 15px;
+}
+
+.block--service-features .process-step:hover .step-number {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .block--service-features .feature-icon i {
+    font-size: 2.5rem;
+  }
+
+  .block--service-features .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
