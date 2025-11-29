@@ -105,7 +105,7 @@ Usage:
         {% for zona in section.zona_industri %}
         <div class="col-md-6 col-lg-4">
           <div class="card card--zone border-0 shadow-sm h-100">
-            <div class="card-header bg-{{ zona.warna | default: 'primary' }} text-white zone__header">
+            <div class="card-header bg-{{ zona.warna | default: 'primary' }} text-white zone__header d-flex align-items-center">
               <h5 class="h6 mb-0 zone__nama">
                 <i class="bi bi-building me-2"></i>{{ zona.nama }}
               </h5>
@@ -144,7 +144,7 @@ Usage:
         {% for wilayah in section.wilayah_kota %}
         <div class="col-md-6">
           <div class="card card--wilayah border-0 shadow-sm h-100">
-            <div class="card-header bg-{{ wilayah.warna | default: 'success' }} text-white wilayah__header">
+            <div class="card-header bg-{{ wilayah.warna | default: 'success' }} text-white wilayah__header d-flex align-items-center">
               <h5 class="h6 mb-0 wilayah__nama">
                 <i class="bi bi-pin-map-fill me-2"></i>{{ wilayah.nama }}
               </h5>
@@ -183,7 +183,7 @@ Usage:
         {% for wilayah in section.wilayah_pinggiran %}
         <div class="col-md-6">
           <div class="card card--wilayah border-0 shadow-sm h-100">
-            <div class="card-header bg-{{ wilayah.warna | default: 'info' }} text-white wilayah__header">
+            <div class="card-header bg-{{ wilayah.warna | default: 'info' }} text-white wilayah__header d-flex align-items-center">
               <h5 class="h6 mb-0 wilayah__nama">
                 <i class="bi bi-pin-map-fill me-2"></i>{{ wilayah.nama }}
               </h5>
@@ -206,7 +206,7 @@ Usage:
         {% if section.kecamatan_lainnya %}
         <div class="col-12">
           <div class="card card--kecamatan-lainnya border-0 shadow-sm">
-            <div class="card-header bg-secondary text-white kecamatan__header">
+            <div class="card-header bg-secondary text-white kecamatan__header d-flex align-items-center">
               <h5 class="h6 mb-0 kecamatan__nama">
                 <i class="bi bi-pin-map-fill me-2"></i>{{ section.judul_lainnya | default: "Kecamatan Lainnya" }}
               </h5>
@@ -253,13 +253,13 @@ Usage:
         {% if section.landmark_industri %}
         <div class="col-md-6">
           <div class="card card--landmark card--landmark-industri border-0 shadow-sm h-100">
-            <div class="card-body bg-light py-3 landmark__header">
-              <h4 class="h5 text-primary mb-2 fw-bold landmark__title">
+            <div class="card-header bg-primary text-white landmark__header d-flex align-items-center">
+              <h5 class="h6 mb-0 landmark__title">
                 <i class="bi bi-building-fill me-2"></i>{{ section.judul_landmark_industri | default: "Kawasan Industri & Pelabuhan" }}
-              </h4>
-              <p class="small text-muted mb-3 landmark__desc">{{ section.deskripsi_landmark_industri | default: "Kawasan industri strategis dan fasilitas logistik." }}</p>
+              </h5>
             </div>
             <div class="card-body landmark__body">
+              <p class="small text-muted mb-3 landmark__desc">{{ section.deskripsi_landmark_industri | default: "Kawasan industri strategis dan fasilitas logistik." }}</p>
               <ul class="list-unstyled small mb-0 landmark__list">
                 {% for landmark in section.landmark_industri %}
                 <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %} landmark__item">
@@ -275,13 +275,13 @@ Usage:
         {% if section.landmark_komersial %}
         <div class="col-md-6">
           <div class="card card--landmark card--landmark-komersial border-0 shadow-sm h-100">
-            <div class="card-body bg-light py-3 landmark__header">
-              <h4 class="h5 text-primary mb-2 fw-bold landmark__title">
+            <div class="card-header bg-info text-white landmark__header d-flex align-items-center">
+              <h5 class="h6 mb-0 landmark__title">
                 <i class="bi bi-shop-window me-2"></i>{{ section.judul_landmark_komersial | default: "Pusat Perbelanjaan & Komersial" }}
-              </h4>
-              <p class="small text-muted mb-3 landmark__desc">{{ section.deskripsi_landmark_komersial | default: "Mall, gedung perkantoran, dan pusat bisnis strategis." }}</p>
+              </h5>
             </div>
             <div class="card-body landmark__body">
+              <p class="small text-muted mb-3 landmark__desc">{{ section.deskripsi_landmark_komersial | default: "Mall, gedung perkantoran, dan pusat bisnis strategis." }}</p>
               <ul class="list-unstyled small mb-0 landmark__list">
                 {% for landmark in section.landmark_komersial %}
                 <li class="{% if forloop.last %}mb-0{% else %}mb-2{% endif %} landmark__item">

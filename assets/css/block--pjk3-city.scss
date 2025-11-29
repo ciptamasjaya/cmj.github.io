@@ -207,11 +207,97 @@ section.block--about-city {
 }
 
 /* ============================================================================
+   BLOCK: CITY PROFILE
+   ============================================================================ */
+section.block--city-profile {
+  /* Highlight item hover effects */
+  .highlight-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 0.5rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      background-color: rgba(var(--bs-primary-rgb), 0.05);
+    }
+  }
+
+  /* Stat item hover effects */
+  .stat-item {
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  /* CTA K3 needs hover effect */
+  .cta--k3-needs {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+}
+
+/* ============================================================================
+   BLOCK: AREA CHARACTERISTICS
+   ============================================================================ */
+section.block--area-characteristics {
+  /* Card hover effects */
+  .card--characteristic {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+}
+
+/* ============================================================================
+   BLOCK: RISK ANALYSIS
+   ============================================================================ */
+section.block--risk-analysis {
+  /* Card hover effects */
+  .card--risk {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+
+  /* CTA hover effect */
+  .cta--mitigation {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+}
+
+/* ============================================================================
    BLOCK: SERVICES EXCELLENCE
    ============================================================================ */
 section.block--services-excellence {
   p.section-intro {
     @include lead-constrained;
+  }
+
+  /* Card hover effects */
+  .card--service {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
   }
 }
 
@@ -225,6 +311,19 @@ section.block--strategic-role {
 
   div.icon-circle {
     @include icon-circle($icon-circle-lg);
+  }
+
+  /* Role item hover effects */
+  .role-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      background-color: rgba(var(--bs-primary-rgb), 0.05);
+    }
   }
 }
 
@@ -427,6 +526,39 @@ section.block--business-potential {
   div.icon-wrapper {
     @include icon-circle($icon-circle-xl);
   }
+
+  /* Card hover effects */
+  .card--potential {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+
+  /* Value proposition hover effect */
+  .value-proposition {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      background-color: rgba(var(--bs-primary-rgb), 0.05);
+    }
+  }
+
+  /* CTA box hover effect */
+  .cta--start {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
 }
 
 /* ============================================================================
@@ -511,6 +643,26 @@ section.block--faq-riksa-uji {
   .card-body.cta-footer {
     background: $gradient-blue-light;
   }
+
+  /* Card hover effects */
+  .card--faq {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+
+  /* CTA hover effect */
+  .cta--contact {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
 }
 
 /* ============================================================================
@@ -532,6 +684,29 @@ section.block--testimonials {
   i.quote-icon {
     vertical-align: text-top;
   }
+
+  /* Card hover effects */
+  .card--testimoni {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+
+  /* CTA hover effect */
+  .cta--contact {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      background-color: rgba(var(--bs-primary-rgb), 0.05);
+    }
+  }
 }
 
 /* ============================================================================
@@ -544,5 +719,26 @@ section.block--service-coverage {
 
   p.header-subtitle {
     @include text-muted-white;
+  }
+
+  /* Card headers - consistent height across all cards */
+  .zone__header,
+  .wilayah__header,
+  .kecamatan__header,
+  .landmark__header {
+    min-height: 70px;
+  }
+
+  /* Card hover effects */
+  .card--zone,
+  .card--wilayah,
+  .card--kecamatan-lainnya,
+  .card--landmark {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
   }
 }
