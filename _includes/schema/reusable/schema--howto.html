@@ -9,6 +9,7 @@ Schema: HowTo (Reusable)
 @description Reusable HowTo schema with parameter-based data
 @author      arisciwek
 @created     2025-11-29
+@updated     2025-11-29
 
 Parameters:
 -----------
@@ -17,12 +18,13 @@ Parameters:
 - title: HowTo title (optional)
 - description: HowTo description (optional)
 - total_time: ISO 8601 duration (optional, default: "PT30M")
+- is_part_of: Parent schema type, e.g. "BlogPosting" (optional)
 - id_suffix: ID suffix for unique @id (optional, default: "howto")
 
 Usage:
 ------
 {% include schema/reusable/schema--howto.html steps=all_steps title="Cara Memesan" %}
-{% include schema/reusable/schema--howto.html steps=page.howto_post.steps title=page.howto_post.name %}
+{% include schema/reusable/schema--howto.html steps=page.howto_post.steps title=page.howto_post.name is_part_of="BlogPosting" %}
 
 ============================================================================
 {% endcomment %}
@@ -31,6 +33,7 @@ Usage:
 {% assign howto_title = include.title | default: "Panduan" %}
 {% assign howto_desc = include.description | default: "Langkah-langkah panduan" %}
 {% assign total_time = include.total_time | default: "PT30M" %}
+{% assign is_part_of = include.is_part_of %}
 {% assign id_suffix = include.id_suffix | default: "howto" %}
 
 {% if steps and steps.size > 0 %}
@@ -52,7 +55,11 @@ Usage:
       "image": "{{ step.image | absolute_url }}"{% endif %}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
-  ]
+  ]{% if is_part_of %},
+  "isPartOf": {
+    "@type": "{{ is_part_of }}",
+    "@id": "{{ page.url | absolute_url }}#{{ is_part_of | downcase }}"
+  }{% endif %}
 }
 </script>
 {% endif %}

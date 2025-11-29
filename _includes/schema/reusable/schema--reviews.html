@@ -6,28 +6,30 @@ Schema: Reviews/Testimonials (Reusable)
 @file        schema--reviews.html
 @path        _includes/schema/reusable/schema--reviews.html
 @type        Schema (AggregateRating + Review) - Reusable
-@description Reusable reviews schema with parameter-based data
+@description Reusable reviews schema - references existing LocalBusiness
 @author      arisciwek
 @created     2025-11-29
+@updated     2025-11-29
 
 Parameters:
 -----------
 - reviews: Array of review objects (required)
   Each review: { nama, komentar, rating, jabatan, perusahaan }
   Or: { author, content, rating }
-- business_name: Business name for LocalBusiness (optional)
+- local_business_id: @id of existing LocalBusiness to reference (optional)
+  Default: site.url + site.baseurl + "/#organization"
 - id_suffix: ID suffix for unique @id (optional, default: "reviews")
 
 Usage:
 ------
 {% include schema/reusable/schema--reviews.html reviews=all_testimonials %}
-{% include schema/reusable/schema--reviews.html reviews=page.reviews business_name="PT. XYZ" %}
+{% include schema/reusable/schema--reviews.html reviews=page.reviews local_business_id="https://example.com/#localbusiness-bekasi" %}
 
 ============================================================================
 {% endcomment %}
 
 {% assign reviews = include.reviews %}
-{% assign business_name = include.business_name | default: site.business.name %}
+{% assign local_business_id = include.local_business_id | default: site.url | append: site.baseurl | append: "/#organization" %}
 {% assign id_suffix = include.id_suffix | default: "reviews" %}
 
 {% if reviews and reviews.size > 0 %}
@@ -46,8 +48,7 @@ Usage:
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}-business",
-  "name": "{{ business_name | escape }}",
+  "@id": "{{ local_business_id }}",
   "aggregateRating": {
     "@type": "AggregateRating",
     "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}-aggregaterating",

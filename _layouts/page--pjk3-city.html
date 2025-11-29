@@ -63,9 +63,24 @@ Schema includes (using reusable schemas):
   <!-- Article Schema (Main - Always Active) -->
   {% include schema/schema--article.html %}
 
-  <!-- LocalBusiness Schema for Area-based Articles -->
+  <!-- Collect all testimonials for LocalBusiness -->
+  {% assign all_reviews = "" | split: "" %}
+  {% if page.section_testimonials %}
+    {% if page.section_testimonials.testimoni_industri %}
+      {% for testi in page.section_testimonials.testimoni_industri %}
+        {% assign all_reviews = all_reviews | push: testi %}
+      {% endfor %}
+    {% endif %}
+    {% if page.section_testimonials.testimoni_komersial %}
+      {% for testi in page.section_testimonials.testimoni_komersial %}
+        {% assign all_reviews = all_reviews | push: testi %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+  <!-- LocalBusiness Schema for Area-based Articles (with embedded reviews) -->
   {% if page.area_served %}
-    {% include schema/node--pjk3-city/schema--local-business.html %}
+    {% include schema/node--pjk3-city/schema--local-business.html reviews=all_reviews %}
   {% endif %}
 
   <!-- Service Offer Schema -->
@@ -103,22 +118,7 @@ Schema includes (using reusable schemas):
   {% assign video_desc = page.section_video.description | default: "Dokumentasi layanan" %}
   {% include schema/reusable/schema--video.html src=page.video title=video_title description=video_desc %}
 
-  <!-- Reviews/Testimonials Schema (reusable) -->
-  {% if page.section_testimonials %}
-    {% comment %} Collect all testimonials {% endcomment %}
-    {% assign all_reviews = "" | split: "" %}
-    {% if page.section_testimonials.testimoni_industri %}
-      {% for testi in page.section_testimonials.testimoni_industri %}
-        {% assign all_reviews = all_reviews | push: testi %}
-      {% endfor %}
-    {% endif %}
-    {% if page.section_testimonials.testimoni_komersial %}
-      {% for testi in page.section_testimonials.testimoni_komersial %}
-        {% assign all_reviews = all_reviews | push: testi %}
-      {% endfor %}
-    {% endif %}
-    {% include schema/reusable/schema--reviews.html reviews=all_reviews %}
-  {% endif %}
+  <!-- Reviews/Testimonials: Embedded in LocalBusiness schema above -->
 
   <!-- HowTo/Order Process Schema (reusable) -->
   {% if page.section_order %}

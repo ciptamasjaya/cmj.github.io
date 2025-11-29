@@ -4,29 +4,45 @@ Schema: LocalBusiness for Area-based Articles
 ============================================================================
 
 @file        schema--local-business.html
-@path        _includes/schema/node--article/schema--local-business.html
+@path        _includes/schema/node--pjk3-city/schema--local-business.html
 @type        Schema (LocalBusiness)
 @description Schema.org LocalBusiness markup for location-based articles
 @author      arisciwek
 @created     2025-11-28
+@updated     2025-11-29
 
 For articles about PJK3 services in specific cities/regions.
 Generates LocalBusiness schema with areaServed.
+Reviews/testimonials are embedded directly to avoid duplicate LocalBusiness.
 
 Parameters:
 -----------
 - area: Service area name (e.g., "Bekasi", "Jakarta") - defaults to page.area_served
+- reviews: Array of review objects (optional) - embedded in LocalBusiness
 
 Usage:
 ------
-{% include schema/node--article/schema--local-business.html %}
-{% include schema/node--article/schema--local-business.html area="Bekasi" %}
+{% include schema/node--pjk3-city/schema--local-business.html %}
+{% include schema/node--pjk3-city/schema--local-business.html area="Bekasi" reviews=all_reviews %}
 
 ============================================================================
 {% endcomment %}
 
 {% assign service_area = include.area | default: page.area_served %}
 {% assign item_image = page.image | default: site.default_image %}
+{% assign reviews = include.reviews %}
+
+{% comment %} Calculate average rating if reviews exist {% endcomment %}
+{% if reviews and reviews.size > 0 %}
+  {% assign total_rating = 0 %}
+  {% assign review_count = 0 %}
+  {% for review in reviews %}
+    {% assign rating = review.rating | default: 5 %}
+    {% assign total_rating = total_rating | plus: rating %}
+    {% assign review_count = review_count | plus: 1 %}
+  {% endfor %}
+  {% assign avg_rating = total_rating | divided_by: review_count | round: 1 %}
+{% endif %}
 
 {% if service_area %}
 <script type="application/ld+json">
@@ -75,7 +91,33 @@ Usage:
     {% if site.social.facebook %}"{{ site.social.facebook }}"{% endif %}
     {% if site.social.instagram %}{% if site.social.facebook %},{% endif %}"{{ site.social.instagram }}"{% endif %}
     {% if site.social.linkedin %}{% if site.social.facebook or site.social.instagram %},{% endif %}"{{ site.social.linkedin }}"{% endif %}
-  ]
+  ]{% if reviews and reviews.size > 0 %},
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ avg_rating }}",
+    "reviewCount": "{{ review_count }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {% for review in reviews limit: 10 %}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review.nama | default: review.author | escape }}"
+      },
+      "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review.rating | default: 5 }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review.komentar | default: review.content | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]{% endif %}
 }
 </script>
 {% endif %}

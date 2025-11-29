@@ -76,23 +76,45 @@ Schema includes (conditional):
     {% include schema/post/schema--certification.html %}
   {% endif %}
 
-  {% comment %}
+  <!-- HowTo Schema (reusable with isPartOf) -->
   {% if page.howto_post and page.howto_post.steps.size > 0 %}
-    {% include schema/post/schema--howto-post.html %}
+    {% include schema/reusable/schema--howto.html
+      steps=page.howto_post.steps
+      title=page.howto_post.name
+      description=page.howto_post.description
+      total_time=page.howto_post.totalTime
+      is_part_of="TechArticle" %}
   {% endif %}
+
+  <!-- FAQ Schema (reusable with isPartOf) -->
   {% if page.faq_post and page.faq_post.faqs.size > 0 %}
-    {% include schema/post/schema--faq-post.html %}
+    {% include schema/reusable/schema--faq.html
+      faqs=page.faq_post.faqs
+      name=page.faq_post.name
+      description=page.faq_post.description
+      is_part_of="TechArticle" %}
   {% endif %}
+
+  <!-- ItemList Schema (reusable) -->
   {% if page.itemlist_post and page.itemlist_post.items.size > 0 %}
-    {% include schema/post/schema--itemlist-post.html %}
+    {% include schema/reusable/schema--itemlist.html
+      items=page.itemlist_post.items
+      title=page.itemlist_post.name
+      description=page.itemlist_post.description %}
   {% endif %}
+
+  <!-- Video Schema (reusable) -->
   {% if page.video_post and page.video_post.src %}
-    {% include schema/post/schema--video-post.html %}
+    {% include schema/reusable/schema--video.html
+      src=page.video_post.src
+      title=page.video_post.title
+      description=page.video_post.description %}
   {% endif %}
+
+  <!-- Breadcrumb Schema -->
   {% if page.show_breadcrumb_schema %}
     {% include schema/schema--breadcrumb.html current_title=page.title %}
   {% endif %}
-  {% endcomment %}
 
 </body>
 </html>

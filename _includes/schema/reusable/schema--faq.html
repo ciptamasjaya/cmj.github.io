@@ -9,22 +9,29 @@ Schema: FAQ (Reusable)
 @description Reusable FAQPage schema with parameter-based data
 @author      arisciwek
 @created     2025-11-29
+@updated     2025-11-29
 
 Parameters:
 -----------
 - faqs: Array of FAQ objects (required)
   Each FAQ: { pertanyaan, jawaban } or { question, answer }
+- name: FAQ section name (optional)
+- description: FAQ section description (optional)
+- is_part_of: Parent schema type, e.g. "BlogPosting" (optional)
 - id_suffix: ID suffix for unique @id (optional, default: "faqpage")
 
 Usage:
 ------
 {% include schema/reusable/schema--faq.html faqs=all_faqs %}
-{% include schema/reusable/schema--faq.html faqs=page.faq_post.faqs %}
+{% include schema/reusable/schema--faq.html faqs=page.faq_post.faqs is_part_of="BlogPosting" %}
 
 ============================================================================
 {% endcomment %}
 
 {% assign faqs = include.faqs %}
+{% assign faq_name = include.name %}
+{% assign faq_desc = include.description %}
+{% assign is_part_of = include.is_part_of %}
 {% assign id_suffix = include.id_suffix | default: "faqpage" %}
 
 {% if faqs and faqs.size > 0 %}
@@ -33,6 +40,8 @@ Usage:
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": "{{ page.url | absolute_url }}#{{ id_suffix }}",
+  {% if faq_name %}"name": "{{ faq_name | escape }}",{% endif %}
+  {% if faq_desc %}"description": "{{ faq_desc | escape }}",{% endif %}
   "mainEntity": [
     {% for item in faqs %}
     {
@@ -44,7 +53,11 @@ Usage:
       }
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
-  ]
+  ]{% if is_part_of %},
+  "isPartOf": {
+    "@type": "{{ is_part_of }}",
+    "@id": "{{ page.url | absolute_url }}#{{ is_part_of | downcase }}"
+  }{% endif %}
 }
 </script>
 {% endif %}
