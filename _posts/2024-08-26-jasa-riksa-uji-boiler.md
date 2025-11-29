@@ -39,6 +39,217 @@ images:
   - ""
 
 # ============================================================================
+# HERO SECTION - Marketing hero with CTA
+# ============================================================================
+section_hero:
+  title: "Butuh Layanan Riksa Uji Boiler"
+  area: "Seluruh Indonesia"
+  description: "PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian boiler/ketel uap dengan standar profesional. Dapatkan sertifikat kelayakan operasi untuk boiler Anda."
+  label_wilayah: "Melayani Wilayah:"
+  wilayah_layanan:
+    - Jabodetabek
+    - Jawa Barat
+    - Jawa Tengah
+    - Jawa Timur
+    - Sumatera
+    - Kalimantan
+    - Sulawesi
+    - Bali & NTB
+  badges:
+    - text: "Izin Resmi Kemenaker"
+      icon: "bi-shield-check"
+    - text: "Tenaga Ahli Bersertifikat"
+      icon: "bi-person-badge"
+    - text: "Harga Kompetitif"
+      icon: "bi-cash-coin"
+  cta_title: "Hubungi Kami Sekarang!"
+  cta_button: "Chat WhatsApp"
+  cta_notice: "Respon cepat 24/7"
+
+# ============================================================================
+# ORDER PROCESS - Proses pemesanan layanan
+# ============================================================================
+section_order:
+  title: "Cara Pemesanan Layanan Riksa Uji Boiler"
+  area: "Seluruh Indonesia"
+  phone: "08568258841"
+  intro: "Proses pemesanan layanan riksa uji boiler sangat mudah. Ikuti 6 langkah sederhana berikut untuk mendapatkan sertifikat kelayakan operasi boiler Anda."
+  initial_steps:
+    - title: "Hubungi Kami"
+      description: "Kontak via WhatsApp atau telepon untuk konsultasi awal kebutuhan riksa uji boiler Anda."
+      icon: "bi-telephone"
+      color: "primary"
+    - title: "Identifikasi Kebutuhan"
+      description: "Tim kami akan mengidentifikasi jenis boiler, kapasitas, tekanan kerja, dan lokasi inspeksi."
+      icon: "bi-clipboard-data"
+      color: "info"
+    - title: "Penawaran Harga"
+      description: "Dapatkan penawaran harga kompetitif sesuai spesifikasi boiler dan jadwal yang diinginkan."
+      icon: "bi-receipt"
+      color: "warning"
+  final_steps:
+    - title: "Pelaksanaan Inspeksi"
+      description: "Tim inspector bersertifikat datang ke lokasi untuk melakukan riksa uji boiler secara komprehensif."
+      icon: "bi-search"
+      color: "success"
+    - title: "Pembuatan Laporan"
+      description: "Laporan hasil inspeksi lengkap dengan dokumentasi foto, hasil pengukuran, dan rekomendasi."
+      icon: "bi-file-earmark-text"
+      color: "primary"
+    - title: "Penerbitan Sertifikat"
+      description: "Sertifikat kelayakan operasi diterbitkan untuk boiler yang lulus uji."
+      icon: "bi-award"
+      color: "success"
+
+# ============================================================================
+# TESTIMONIALS - Testimoni pelanggan
+# ============================================================================
+section_testimonials:
+  title: "Testimoni Pelanggan Riksa Uji Boiler"
+  intro: "Berikut testimoni dari klien yang telah menggunakan layanan riksa uji boiler PT. Cipta Mas Jaya."
+  testimonials:
+    - nama: "Hendra Kusuma"
+      jenis_usaha: "Pabrik Tekstil di Bandung"
+      jabatan: "Plant Manager"
+      rating: 5
+      judul: "Inspeksi Boiler yang Sangat Teliti"
+      komentar: "Tim PT. Cipta Mas Jaya sangat detail dalam melakukan pemeriksaan boiler kami. Laporan NDT dan hidrostatik test sangat komprehensif."
+      warna: "primary"
+    - nama: "Dewi Anggraeni"
+      jenis_usaha: "Pabrik Makanan di Tangerang"
+      jabatan: "HSE Supervisor"
+      rating: 5
+      judul: "Proses Cepat dan Profesional"
+      komentar: "Perpanjangan izin pemakaian boiler kami berjalan lancar berkat bantuan CMJ. Dokumen lengkap dan sertifikat terbit tepat waktu."
+      warna: "success"
+    - nama: "Bambang Setiawan"
+      jenis_usaha: "Rumah Sakit di Semarang"
+      jabatan: "Facility Manager"
+      rating: 5
+      judul: "Partner Terpercaya untuk Inspeksi Boiler"
+      komentar: "Sudah 5 tahun menggunakan jasa CMJ untuk riksa uji boiler rumah sakit. Selalu puas dengan hasil kerja yang profesional dan sesuai standar K3."
+      warna: "info"
+
+# ============================================================================
+# FAQ KATEGORIS - FAQ dengan kategori layanan, sertifikasi, biaya
+# ============================================================================
+section_faq:
+  title: "FAQ Riksa Uji Boiler"
+
+  faq_layanan:
+    - pertanyaan: "Apa itu riksa uji boiler?"
+      jawaban: "Riksa uji boiler adalah proses pemeriksaan menyeluruh terhadap semua komponen boiler untuk mengevaluasi kondisi operasional dan keamanannya, termasuk inspeksi visual, pengujian tekanan, dan pemeriksaan sistem keselamatan."
+      icon: "bi-question-circle"
+    - pertanyaan: "Berapa tahun sekali riksa uji boiler dilakukan?"
+      jawaban: "Menurut regulasi di Indonesia, riksa uji boiler wajib dilakukan setiap 2 tahun sekali untuk memastikan kelayakan operasional dan keamanan. Untuk boiler tekanan tinggi, pemeriksaan mungkin disarankan lebih sering."
+      icon: "bi-clock"
+    - pertanyaan: "Apa saja yang diperiksa dalam riksa uji boiler?"
+      jawaban: "Pemeriksaan meliputi drum uap, pipa pemanas, burner, katup pengaman, sistem kontrol tekanan, manometer, termometer, dan semua komponen keselamatan boiler."
+      icon: "bi-clipboard-check"
+  judul_layanan: "Layanan & Proses Inspeksi"
+  deskripsi_layanan: "Informasi seputar proses dan jenis pemeriksaan boiler"
+
+  faq_sertifikasi:
+    - pertanyaan: "Apa dasar hukum riksa uji boiler di Indonesia?"
+      jawaban: "Dasar hukum riksa uji boiler mencakup UU No. 1 Tahun 1970 tentang Keselamatan Kerja dan Permenaker No. 37 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja Bejana Tekanan dan Tangki Timbun."
+      icon: "bi-bank"
+    - pertanyaan: "Berapa lama masa berlaku izin pemakaian boiler?"
+      jawaban: "Izin Pemakaian Pesawat Uap (Boiler) berlaku selama 2 tahun sejak tanggal penerbitan dan wajib diperpanjang melalui riksa uji berkala sebelum masa berlaku habis."
+      icon: "bi-calendar-check"
+    - pertanyaan: "Apakah sertifikat dari PT. Cipta Mas Jaya diakui Kemenaker?"
+      jawaban: "Ya, PT. Cipta Mas Jaya adalah PJK3 resmi yang terdaftar di Kementerian Ketenagakerjaan. Sertifikat yang kami terbitkan diakui secara nasional dan valid untuk keperluan perpanjangan izin operasi."
+      icon: "bi-patch-check"
+  judul_sertifikasi: "Sertifikasi & Legalitas"
+  deskripsi_sertifikasi: "Informasi seputar sertifikat dan keabsahan hasil inspeksi"
+
+  faq_biaya:
+    - pertanyaan: "Berapa biaya riksa uji boiler?"
+      jawaban: "Biaya riksa uji boiler bervariasi tergantung pada jenis, kapasitas, tekanan kerja, dan lokasi inspeksi. Biaya biasanya berkisar dari jutaan hingga puluhan juta rupiah. Hubungi kami untuk penawaran detail."
+      icon: "bi-cash-coin"
+    - pertanyaan: "Apakah ada diskon untuk inspeksi beberapa unit boiler?"
+      jawaban: "Ya, kami memberikan harga khusus untuk inspeksi dalam jumlah banyak atau kontrak tahunan. Semakin banyak unit yang diinspeksi, semakin kompetitif harga per unitnya."
+      icon: "bi-percent"
+    - pertanyaan: "Metode pembayaran apa saja yang diterima?"
+      jawaban: "Kami menerima pembayaran via transfer bank, dan untuk klien korporat tersedia opsi pembayaran dengan termin sesuai kesepakatan."
+      icon: "bi-credit-card"
+  judul_biaya: "Biaya & Pembayaran"
+  deskripsi_biaya: "Informasi seputar biaya inspeksi dan metode pembayaran"
+
+# ============================================================================
+# COMPANY INTRO - Pengenalan perusahaan
+# ============================================================================
+section_company_intro:
+  title: "PT. Cipta Mas Jaya: PJK3 Riksa Uji Boiler"
+  company_name: "PT. Cipta Mas Jaya"
+  intro: "PJK3 resmi berlisensi Kementerian Ketenagakerjaan untuk layanan riksa uji boiler/ketel uap"
+  subsections:
+    - title: "Tentang Layanan Riksa Uji Boiler"
+      paragraphs:
+        - "PT. Cipta Mas Jaya menyediakan layanan riksa uji boiler profesional untuk memastikan keselamatan dan kelayakan operasional ketel uap di berbagai sektor industri."
+        - "Dengan tim inspector bersertifikat dan peralatan uji terkalibrasi, kami melayani inspeksi boiler di seluruh Indonesia dengan standar kualitas terbaik sesuai ASME dan Permenaker."
+    - title: "Komitmen Kami"
+      paragraphs:
+        - "Kami berkomitmen memberikan layanan inspeksi yang akurat, aman, dan tepat waktu untuk mendukung kepatuhan K3 dan operasional boiler yang optimal."
+
+# ============================================================================
+# SERVICES - Keunggulan layanan
+# ============================================================================
+section_services:
+  title: "Keunggulan PT. Cipta Mas Jaya"
+  intro: "Mengapa memilih kami untuk riksa uji boiler Anda?"
+  services:
+    - title: "Izin Resmi Kemenaker"
+      description: "PJK3 terdaftar dengan izin resmi dari Kementerian Ketenagakerjaan RI"
+      icon: "bi-shield-check"
+    - title: "Inspector Bersertifikat"
+      description: "Tim ahli K3 bersertifikat dengan pengalaman inspeksi boiler berbagai jenis dan kapasitas"
+      icon: "bi-person-badge"
+    - title: "Peralatan Terkalibrasi"
+      description: "Menggunakan peralatan uji NDT, ultrasonic, dan hidrostatik yang terkalibrasi"
+      icon: "bi-tools"
+    - title: "Laporan Komprehensif"
+      description: "Laporan inspeksi detail dengan foto dokumentasi, hasil pengukuran, dan rekomendasi teknis"
+      icon: "bi-file-earmark-text"
+    - title: "Harga Kompetitif"
+      description: "Biaya inspeksi terjangkau dengan kualitas layanan terbaik"
+      icon: "bi-cash-coin"
+    - title: "Layanan Nasional"
+      description: "Melayani inspeksi boiler di seluruh wilayah Indonesia"
+      icon: "bi-geo-alt"
+
+# ============================================================================
+# TIPS - Tips memilih PJK3
+# ============================================================================
+section_tips:
+  title: "Tips Memilih PJK3 Riksa Uji Boiler"
+  intro: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut untuk hasil inspeksi boiler yang optimal dan sertifikat yang diakui."
+  tips:
+    - kategori: "Legalitas"
+      deskripsi: "Pastikan izin resmi"
+      kriteria:
+        - "Memiliki izin PJK3 dari Kemenaker yang masih berlaku"
+        - "Terdaftar di database resmi Kemenaker"
+        - "Sertifikat yang diterbitkan diakui untuk perpanjangan izin operasi"
+      warna: "primary"
+      icon: "bi-shield-check"
+    - kategori: "Kompetensi"
+      deskripsi: "Tenaga ahli berkualitas"
+      kriteria:
+        - "Inspector memiliki sertifikat kompetensi K3 Pesawat Uap"
+        - "Berpengalaman dalam inspeksi boiler berbagai kapasitas"
+        - "Menguasai teknik NDT dan pengujian hidrostatik"
+      warna: "success"
+      icon: "bi-person-badge"
+    - kategori: "Peralatan"
+      deskripsi: "Alat uji memadai"
+      kriteria:
+        - "Peralatan uji terkalibrasi dan tersertifikasi"
+        - "Mampu melakukan uji NDT, ultrasonic, dan hidrostatik"
+        - "Dokumentasi hasil pengukuran yang akurat"
+      warna: "info"
+      icon: "bi-tools"
+
+# ============================================================================
 # SCHEMA DATA - Optional data for structured markup
 # ============================================================================
 
@@ -76,20 +287,6 @@ itemlist_post:
       description: "Pengujian fungsi katup pengaman untuk memastikan dapat membuka pada tekanan tertentu"
     - name: "Sistem Kontrol dan Instrumentasi"
       description: "Pemeriksaan manometer, termometer, level gauge, alarm, dan sistem kontrol otomatis"
-
-# FAQ Schema (jika artikel berisi FAQ)
-faq_post:
-  name: "FAQ Riksa Uji Boiler"
-  description: "Pertanyaan yang sering diajukan tentang riksa uji boiler/ketel uap"
-  faqs:
-    - question: "Berapa tahun sekali riksa uji boiler dilakukan?"
-      answer: "Menurut regulasi di Indonesia, riksa uji boiler wajib dilakukan setiap 2 tahun sekali untuk memastikan kelayakan operasional dan keamanan. Namun, untuk boiler dengan tekanan tinggi atau yang beroperasi dalam kondisi ekstrem, pemeriksaan mungkin disarankan lebih sering."
-    - question: "Berapa biaya untuk memeriksa boiler?"
-      answer: "Biaya riksa uji boiler bervariasi tergantung pada jenis, ukuran, dan kompleksitas boiler, serta cakupan pemeriksaan yang diperlukan. Biaya biasanya berkisar dari jutaan hingga puluhan juta rupiah, namun ini merupakan investasi penting untuk keselamatan dan kepatuhan regulasi."
-    - question: "Apa itu riksa uji boiler?"
-      answer: "Riksa uji boiler adalah proses pemeriksaan menyeluruh terhadap semua komponen boiler untuk mengevaluasi kondisi operasional dan keamanannya. Pemeriksaan mencakup inspeksi visual, pengujian tekanan, pengukuran ketebalan dinding, dan pemeriksaan sistem keselamatan."
-    - question: "Apa dasar hukum riksa uji boiler di Indonesia?"
-      answer: "Dasar hukum riksa uji boiler di Indonesia mencakup UU No. 1 Tahun 1970 tentang Keselamatan Kerja dan Permenaker No. 37 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja Bejana Tekanan dan Tangki Timbun."
 
 # Video Schema (jika artikel berisi video)
 video_post:
