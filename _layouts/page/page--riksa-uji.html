@@ -1,40 +1,12 @@
 ---
 layout: compress
 ---
-{% assign layout_extra_css = "/assets/css/blocks-post.css" %}
-{% comment %}
+{%- assign layout_extra_css = "/assets/css/blocks-post.css" -%}
+{%- comment -%}
 ============================================================================
 Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
 ============================================================================
-
-@file        page--riksa-uji.html
-@path        _layouts/page--riksa-uji.html
-@type        Page (wrapper - variant)
-@variant     riksa-uji (K3 technical article pages)
-@description Riksa uji article page wrapper with K3-specific features
-@author      arisciwek
-
-Drupal-style naming: page--riksa-uji.html (variant of page.html)
-
-This is the riksa uji article page wrapper, created for K3 technical
-articles with structured sections (importance, process, regulation, etc).
-
-Related templates:
-- page.html (base page wrapper)
-- node--riksa-uji.html (riksa uji entity content)
-
-Used by:
-- _posts/*.md (riksa uji articles with layout: node--riksa-uji)
-
-Schema includes (conditional):
-- schema--blogposting.html (always - main schema)
-- schema--howto-post.html (if howto_post.steps exists)
-- schema--faq-post.html (if faq_post.faqs exists)
-- schema--itemlist-post.html (if itemlist_post.items exists)
-- schema--video-post.html (if video_post.src exists)
-
-============================================================================
-{% endcomment %}
+{%- endcomment -%}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'id' }}">
 {% include head.html %}
@@ -53,7 +25,10 @@ Schema includes (conditional):
   {% unless page.skip_page_schema %}
     {% include schema/schema--page.html %}
   {% endunless %}
+  <!-- Main TechArticle Schema -->
   {% include schema/node--riksa-uji/schema--techarticle.html %}
+
+  <!-- Section-specific schemas (DefinedTermSet, ItemList, etc.) -->
   {% if page.section_importance %}
     {% include schema/node--riksa-uji/schema--importance.html %}
   {% endif %}
@@ -74,6 +49,56 @@ Schema includes (conditional):
   {% endif %}
   {% if page.section_certification %}
     {% include schema/node--riksa-uji/schema--certification.html %}
+  {% endif %}
+
+  <!-- WebPageElement schemas (hasPart of TechArticle) -->
+  {% if page.content_intro %}
+    {% include schema/node--riksa-uji/schema--webpage-content-intro.html %}
+  {% endif %}
+  {% if page.section_hero %}
+    {% include schema/node--riksa-uji/schema--webpage-hero.html %}
+  {% endif %}
+  {% if page.section_order %}
+    {% include schema/node--riksa-uji/schema--webpage-order.html %}
+  {% endif %}
+  {% if page.section_company_intro %}
+    {% include schema/node--riksa-uji/schema--webpage-company-intro.html %}
+  {% endif %}
+  {% if page.section_services %}
+    {% include schema/node--riksa-uji/schema--webpage-services.html %}
+  {% endif %}
+  {% if page.section_importance %}
+    {% include schema/node--riksa-uji/schema--webpage-importance.html %}
+  {% endif %}
+  {% if page.section_process and page.section_process.steps.size > 0 %}
+    {% include schema/node--riksa-uji/schema--webpage-process.html %}
+  {% endif %}
+  {% if page.section_regulation and page.section_regulation.subsections.size > 0 %}
+    {% include schema/node--riksa-uji/schema--webpage-regulation.html %}
+  {% endif %}
+  {% if page.section_training and page.section_training.cards.size > 0 %}
+    {% include schema/node--riksa-uji/schema--webpage-training.html %}
+  {% endif %}
+  {% if page.section_specs and page.section_specs.specs.size > 0 %}
+    {% include schema/node--riksa-uji/schema--webpage-specs.html %}
+  {% endif %}
+  {% if page.section_permit %}
+    {% include schema/node--riksa-uji/schema--webpage-permit.html %}
+  {% endif %}
+  {% if page.section_certification %}
+    {% include schema/node--riksa-uji/schema--webpage-certification.html %}
+  {% endif %}
+  {% if page.section_tips %}
+    {% include schema/node--riksa-uji/schema--webpage-tips.html %}
+  {% endif %}
+  {% if page.section_testimonials %}
+    {% include schema/node--riksa-uji/schema--webpage-testimonials.html %}
+  {% endif %}
+  {% if page.section_faq %}
+    {% include schema/node--riksa-uji/schema--webpage-faq.html %}
+  {% endif %}
+  {% if page.section_conclusion %}
+    {% include schema/node--riksa-uji/schema--webpage-conclusion.html %}
   {% endif %}
 
   <!-- HowTo Schema (reusable with isPartOf) -->
