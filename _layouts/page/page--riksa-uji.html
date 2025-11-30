@@ -156,5 +156,10 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
     {% include schema/schema--breadcrumb.html current_title=page.title %}
   {% endif %}
 
+  <!-- Gallery Slider JS -->
+  {% if page.images and page.images.size > 0 %}
+    <script src="{{ '/assets/js/gallery-slider.js' | relative_url }}" defer></script>
+  {% endif %}
+
 </body>
 </html>
