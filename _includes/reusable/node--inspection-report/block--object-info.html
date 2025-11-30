@@ -29,53 +29,53 @@ Parameters:
 {% assign object = include.object %}
 
 {% if object %}
-<section class="block--object-info py-4" id="object-info">
+<section class="object-info-section py-4" id="block--object-info">
   <!-- Section Header -->
-  <div class="card card-float mb-4">
+  <div class="block-header card card-float mb-4">
     <div class="card-body bg-info text-white text-center py-3">
-      <i class="bi bi-gear-wide-connected fs-3 mb-2"></i>
-      <h2 class="h4 mb-0 fw-bold">Data Objek yang Diuji</h2>
+      <i class="bi bi-gear-wide-connected fs-3 mb-2 block-icon"></i>
+      <h2 class="h4 mb-0 fw-bold block-title">Data Objek yang Diuji</h2>
     </div>
   </div>
 
   <!-- Object Details Card -->
-  <div class="card border-0 shadow-sm">
+  <div class="card border-0 shadow-sm object-info-wrapper">
     <div class="card-body p-4">
       <div class="row g-4">
         <!-- Primary Info -->
         <div class="col-md-6">
-          <h3 class="h5 fw-bold text-primary mb-3">
+          <h3 class="h5 fw-bold text-primary mb-3 object-info__subtitle">
             <i class="bi bi-info-circle me-2"></i>Informasi Utama
           </h3>
-          <table class="table table-borderless table-sm">
+          <table class="table table-borderless table-sm object-info__table">
             {% if object.name %}
-            <tr>
-              <td class="text-muted" style="width: 40%;">Nama Alat</td>
-              <td class="fw-semibold">{{ object.name }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label" style="width: 40%;">Nama Alat</td>
+              <td class="fw-semibold object-info__value">{{ object.name }}</td>
             </tr>
             {% endif %}
             {% if object.brand %}
-            <tr>
-              <td class="text-muted">Merek/Pabrikan</td>
-              <td class="fw-semibold">{{ object.brand }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Merek/Pabrikan</td>
+              <td class="fw-semibold object-info__value">{{ object.brand }}</td>
             </tr>
             {% endif %}
             {% if object.model %}
-            <tr>
-              <td class="text-muted">Model</td>
-              <td class="fw-semibold">{{ object.model }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Model</td>
+              <td class="fw-semibold object-info__value">{{ object.model }}</td>
             </tr>
             {% endif %}
             {% if object.serial %}
-            <tr>
-              <td class="text-muted">Nomor Seri</td>
-              <td class="fw-semibold text-primary">{{ object.serial }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Nomor Seri</td>
+              <td class="fw-semibold text-primary object-info__value">{{ object.serial }}</td>
             </tr>
             {% endif %}
             {% if object.type %}
-            <tr>
-              <td class="text-muted">Jenis/Kategori</td>
-              <td><span class="badge bg-primary">{{ object.type }}</span></td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Jenis/Kategori</td>
+              <td class="object-info__value"><span class="badge bg-primary">{{ object.type }}</span></td>
             </tr>
             {% endif %}
           </table>
@@ -83,38 +83,38 @@ Parameters:
 
         <!-- Secondary Info -->
         <div class="col-md-6">
-          <h3 class="h5 fw-bold text-success mb-3">
+          <h3 class="h5 fw-bold text-success mb-3 object-info__subtitle">
             <i class="bi bi-building me-2"></i>Informasi Operasional
           </h3>
-          <table class="table table-borderless table-sm">
+          <table class="table table-borderless table-sm object-info__table">
             {% if object.year %}
-            <tr>
-              <td class="text-muted" style="width: 40%;">Tahun Pembuatan</td>
-              <td class="fw-semibold">{{ object.year }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label" style="width: 40%;">Tahun Pembuatan</td>
+              <td class="fw-semibold object-info__value">{{ object.year }}</td>
             </tr>
             {% endif %}
             {% if object.capacity %}
-            <tr>
-              <td class="text-muted">Kapasitas</td>
-              <td class="fw-semibold">{{ object.capacity }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Kapasitas</td>
+              <td class="fw-semibold object-info__value">{{ object.capacity }}</td>
             </tr>
             {% endif %}
             {% if object.pressure %}
-            <tr>
-              <td class="text-muted">Tekanan Kerja</td>
-              <td class="fw-semibold">{{ object.pressure }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Tekanan Kerja</td>
+              <td class="fw-semibold object-info__value">{{ object.pressure }}</td>
             </tr>
             {% endif %}
             {% if object.location %}
-            <tr>
-              <td class="text-muted">Lokasi</td>
-              <td class="fw-semibold">{{ object.location }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Lokasi</td>
+              <td class="fw-semibold object-info__value">{{ object.location }}</td>
             </tr>
             {% endif %}
             {% if object.owner %}
-            <tr>
-              <td class="text-muted">Pemilik/Operator</td>
-              <td class="fw-semibold">{{ object.owner }}</td>
+            <tr class="object-info__row">
+              <td class="text-muted object-info__label">Pemilik/Operator</td>
+              <td class="fw-semibold object-info__value">{{ object.owner }}</td>
             </tr>
             {% endif %}
           </table>
@@ -124,15 +124,15 @@ Parameters:
       <!-- Specifications (if any) -->
       {% if object.specifications %}
       <hr class="my-4">
-      <h3 class="h5 fw-bold text-warning mb-3">
+      <h3 class="h5 fw-bold text-warning mb-3 object-info__subtitle">
         <i class="bi bi-clipboard-data me-2"></i>Spesifikasi Teknis
       </h3>
-      <div class="row g-3">
+      <div class="row g-3 object-specs">
         {% for spec in object.specifications %}
         <div class="col-md-4 col-6">
           <div class="spec-item bg-light rounded p-3 text-center h-100">
-            <div class="small text-muted">{{ spec.label }}</div>
-            <div class="fw-bold text-primary">{{ spec.value }}</div>
+            <div class="small text-muted spec-item__label">{{ spec.label }}</div>
+            <div class="fw-bold text-primary spec-item__value">{{ spec.value }}</div>
           </div>
         </div>
         {% endfor %}

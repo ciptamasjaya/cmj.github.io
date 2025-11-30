@@ -32,46 +32,46 @@ Parameters:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="block--analysis py-4" id="analysis">
+<section class="analysis-section py-4" id="block--analysis">
   <!-- Section Header -->
-  <div class="card card-float mb-4">
+  <div class="block-header card card-float mb-4">
     <div class="card-body bg-purple text-white text-center py-3" style="background-color: #6f42c1;">
-      <i class="bi bi-graph-up fs-3 mb-2"></i>
-      <h2 class="h4 mb-0 fw-bold">{{ section.title | default: "Analisis Data dan Pembahasan" }}</h2>
+      <i class="bi bi-graph-up fs-3 mb-2 block-icon"></i>
+      <h2 class="h4 mb-0 fw-bold block-title">{{ section.title | default: "Analisis Data dan Pembahasan" }}</h2>
     </div>
   </div>
 
   {% if section.intro %}
-  <div class="card border-0 shadow-sm mb-4">
+  <div class="card border-0 shadow-sm mb-4 intro-wrapper">
     <div class="card-body p-4">
-      <p class="mb-0">{{ section.intro }}</p>
+      <p class="mb-0 block-intro">{{ section.intro }}</p>
     </div>
   </div>
   {% endif %}
 
   <!-- Individual Analyses -->
   {% if section.analyses %}
-  <div class="row g-4 mb-4">
+  <div class="row g-4 mb-4 analyses-list">
     {% for analysis in section.analyses %}
     <div class="col-12">
-      <div class="card border-0 shadow-sm">
-        <div class="card-header bg-light">
-          <h3 class="h5 mb-0 fw-bold">
+      <div class="card border-0 shadow-sm analysis-item">
+        <div class="card-header bg-light analysis-item__header">
+          <h3 class="h5 mb-0 fw-bold analysis-item__title">
             <i class="bi bi-search me-2"></i>{{ analysis.title }}
           </h3>
         </div>
         <div class="card-body">
           {% if analysis.intro %}
-          <p class="text-muted mb-3">{{ analysis.intro }}</p>
+          <p class="text-muted mb-3 analysis-item__intro">{{ analysis.intro }}</p>
           {% endif %}
           {% if analysis.findings %}
-          <div class="mb-3">
+          <div class="mb-3 analysis-item__findings">
             <h4 class="h6 fw-bold text-primary">Temuan:</h4>
             <p class="text-muted">{{ analysis.findings }}</p>
           </div>
           {% endif %}
           {% if analysis.interpretation %}
-          <div>
+          <div class="analysis-item__interpretation">
             <h4 class="h6 fw-bold text-success">Kesimpulan:</h4>
             <p class="text-muted mb-0">{{ analysis.interpretation }}</p>
           </div>
@@ -85,18 +85,18 @@ Parameters:
 
   <!-- Key Findings Summary -->
   {% if section.key_findings %}
-  <div class="card border-0 shadow-sm mb-4">
-    <div class="card-header bg-primary text-white">
+  <div class="card border-0 shadow-sm mb-4 key-findings-wrapper">
+    <div class="card-header bg-primary text-white key-findings__header">
       <h3 class="h5 mb-0 fw-bold">
         <i class="bi bi-lightbulb me-2"></i>Temuan Utama
       </h3>
     </div>
     <div class="card-body">
-      <ul class="list-group list-group-flush">
+      <ul class="list-group list-group-flush key-findings__list">
         {% for finding in section.key_findings %}
-        <li class="list-group-item d-flex align-items-start px-0">
-          <span class="badge bg-primary rounded-pill me-3">{{ forloop.index }}</span>
-          <span>{{ finding }}</span>
+        <li class="list-group-item d-flex align-items-start px-0 key-findings__item">
+          <span class="badge bg-primary rounded-pill me-3 key-findings__index">{{ forloop.index }}</span>
+          <span class="key-findings__text">{{ finding }}</span>
         </li>
         {% endfor %}
       </ul>
@@ -106,26 +106,26 @@ Parameters:
 
   <!-- Discussion Section -->
   {% if section.discussion_title or section.discussion_intro %}
-  <div class="card border-0 shadow-sm">
-    <div class="card-header bg-light">
-      <h3 class="h5 mb-0 fw-bold">
+  <div class="card border-0 shadow-sm discussion-wrapper">
+    <div class="card-header bg-light discussion__header">
+      <h3 class="h5 mb-0 fw-bold discussion__title">
         <i class="bi bi-chat-square-text me-2"></i>{{ section.discussion_title | default: "Pembahasan Temuan Penelitian" }}
       </h3>
     </div>
     <div class="card-body">
       {% if section.discussion_intro %}
-      <p class="mb-4">{{ section.discussion_intro }}</p>
+      <p class="mb-4 discussion__intro">{{ section.discussion_intro }}</p>
       {% endif %}
 
       {% if section.discussion_findings %}
-      <div class="mb-4">
+      <div class="mb-4 discussion__findings">
         <h4 class="h6 fw-bold text-primary">Deskripsi Temuan:</h4>
         <p class="text-muted">{{ section.discussion_findings }}</p>
       </div>
       {% endif %}
 
       {% if section.discussion_result %}
-      <div>
+      <div class="discussion__result">
         <h4 class="h6 fw-bold text-success">Hasil Pembahasan:</h4>
         <p class="text-muted mb-0">{{ section.discussion_result }}</p>
       </div>

@@ -24,43 +24,43 @@ Parameters:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="block--intro py-4" id="intro">
+<section class="intro-section py-4" id="block--intro">
   <!-- Section Header -->
-  <div class="card card-float mb-4">
+  <div class="block-header card card-float mb-4">
     <div class="card-body bg-secondary text-white text-center py-3">
-      <i class="bi bi-journal-text fs-3 mb-2"></i>
-      <h2 class="h4 mb-0 fw-bold">{{ section.title | default: "Pendahuluan" }}</h2>
+      <i class="bi bi-journal-text fs-3 mb-2 block-icon"></i>
+      <h2 class="h4 mb-0 fw-bold block-title">{{ section.title | default: "Pendahuluan" }}</h2>
     </div>
   </div>
 
   <!-- Content Card -->
-  <div class="card border-0 shadow-sm">
+  <div class="card border-0 shadow-sm intro-content-wrapper">
     <div class="card-body p-4">
       {% if section.paragraphs %}
       <div class="intro-content mb-4">
         {% for paragraph in section.paragraphs %}
-        <p class="{% if forloop.last %}mb-0{% else %}mb-3{% endif %}">{{ paragraph }}</p>
+        <p class="intro-paragraph {% if forloop.last %}mb-0{% else %}mb-3{% endif %}">{{ paragraph }}</p>
         {% endfor %}
       </div>
       {% endif %}
 
       {% if section.background %}
       <div class="intro-background mb-4">
-        <h3 class="h5 fw-bold text-primary mb-3">
+        <h3 class="h5 fw-bold text-primary mb-3 intro-background__title">
           <i class="bi bi-info-circle me-2"></i>Latar Belakang
         </h3>
-        <p class="text-muted">{{ section.background }}</p>
+        <p class="text-muted intro-background__text">{{ section.background }}</p>
       </div>
       {% endif %}
 
       {% if section.objectives %}
       <div class="intro-objectives">
-        <h3 class="h5 fw-bold text-success mb-3">
+        <h3 class="h5 fw-bold text-success mb-3 intro-objectives__title">
           <i class="bi bi-bullseye me-2"></i>Tujuan Pemeriksaan
         </h3>
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush intro-objectives__list">
           {% for objective in section.objectives %}
-          <li class="list-group-item px-0">
+          <li class="list-group-item px-0 intro-objectives__item">
             <i class="bi bi-check-circle-fill text-success me-2"></i>
             {{ objective }}
           </li>

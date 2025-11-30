@@ -30,31 +30,31 @@ Parameters:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="block--operational-test py-4" id="operational-test">
+<section class="operational-test-section py-4" id="block--operational-test">
   <!-- Section Header -->
-  <div class="card card-float mb-4">
+  <div class="block-header card card-float mb-4">
     <div class="card-body bg-success text-white text-center py-3">
-      <i class="bi bi-gear-fill fs-3 mb-2"></i>
-      <h2 class="h4 mb-0 fw-bold">{{ section.title | default: "Pengujian Operasional" }}</h2>
+      <i class="bi bi-gear-fill fs-3 mb-2 block-icon"></i>
+      <h2 class="h4 mb-0 fw-bold block-title">{{ section.title | default: "Pengujian Operasional" }}</h2>
     </div>
   </div>
 
   {% if section.intro %}
-  <p class="lead text-muted mb-4">{{ section.intro }}</p>
+  <p class="lead text-muted mb-4 block-intro">{{ section.intro }}</p>
   {% endif %}
 
   <!-- Procedure Steps -->
   {% if section.procedure %}
-  <div class="card border-0 shadow-sm mb-4">
-    <div class="card-header bg-light">
+  <div class="card border-0 shadow-sm mb-4 procedure-wrapper">
+    <div class="card-header bg-light procedure-header">
       <h3 class="h5 mb-0 fw-bold">
         <i class="bi bi-list-ol me-2"></i>Prosedur Pengujian
       </h3>
     </div>
     <div class="card-body">
-      <ol class="mb-0">
+      <ol class="mb-0 procedure-list">
         {% for step in section.procedure %}
-        <li class="mb-2">{{ step }}</li>
+        <li class="mb-2 procedure-item">{{ step }}</li>
         {% endfor %}
       </ol>
     </div>
@@ -63,7 +63,7 @@ Parameters:
 
   <!-- Test Results Table -->
   {% if section.items %}
-  <div class="card border-0 shadow-sm mb-4">
+  <div class="card border-0 shadow-sm mb-4 test-table-wrapper">
     <div class="card-header bg-light">
       <h3 class="h5 mb-0 fw-bold">
         <i class="bi bi-table me-2"></i>Hasil Pengujian
@@ -71,7 +71,7 @@ Parameters:
     </div>
     <div class="card-body p-0">
       <div class="table-responsive">
-        <table class="table table-hover mb-0">
+        <table class="table table-hover mb-0 test-table">
           <thead class="table-light">
             <tr>
               <th style="width: 25%;">Parameter</th>
@@ -91,16 +91,16 @@ Parameters:
               {% assign status_text = "Tidak Lulus" %}
               {% assign status_icon = "bi-x-circle" %}
             {% endif %}
-            <tr>
-              <td class="fw-semibold">{{ item.parameter }}</td>
-              <td class="text-primary fw-bold">{{ item.result }}</td>
-              <td>{{ item.standard }}</td>
-              <td>
-                <span class="badge {{ status_class }}">
+            <tr class="test-item test-item--{{ item.status | default: 'lulus' }}">
+              <td class="fw-semibold test-item__parameter">{{ item.parameter }}</td>
+              <td class="text-primary fw-bold test-item__result">{{ item.result }}</td>
+              <td class="test-item__standard">{{ item.standard }}</td>
+              <td class="test-item__status">
+                <span class="badge {{ status_class }} status-badge">
                   <i class="bi {{ status_icon }} me-1"></i>{{ status_text }}
                 </span>
               </td>
-              <td class="small text-muted">{{ item.notes | default: "-" }}</td>
+              <td class="small text-muted test-item__notes">{{ item.notes | default: "-" }}</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -112,7 +112,7 @@ Parameters:
 
   <!-- Summary -->
   {% if section.summary %}
-  <div class="alert alert-success">
+  <div class="alert alert-success block-summary">
     <i class="bi bi-check-circle me-2"></i>
     <strong>Kesimpulan:</strong> {{ section.summary }}
   </div>

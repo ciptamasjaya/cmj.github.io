@@ -28,12 +28,12 @@ Parameters:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="block--conclusion py-4" id="conclusion">
+<section class="conclusion-section py-4" id="block--conclusion">
   <!-- Section Header -->
-  <div class="card card-float mb-4">
+  <div class="block-header card card-float mb-4">
     <div class="card-body bg-dark text-white text-center py-3">
-      <i class="bi bi-award fs-3 mb-2"></i>
-      <h2 class="h4 mb-0 fw-bold">{{ section.title | default: "Kesimpulan dan Rekomendasi" }}</h2>
+      <i class="bi bi-award fs-3 mb-2 block-icon"></i>
+      <h2 class="h4 mb-0 fw-bold block-title">{{ section.title | default: "Kesimpulan dan Rekomendasi" }}</h2>
     </div>
   </div>
 
@@ -52,33 +52,33 @@ Parameters:
     {% assign verdict_label = "LAYAK BERSYARAT" %}
   {% endif %}
 
-  <div class="card border-0 shadow-lg mb-4">
-    <div class="card-body {{ verdict_bg }} text-white text-center py-5">
-      <i class="bi {{ verdict_icon }} display-1 mb-3"></i>
-      <h3 class="h2 fw-bold mb-3">{{ verdict_label }}</h3>
+  <div class="card border-0 shadow-lg mb-4 verdict-wrapper verdict-wrapper--{{ section.verdict | default: 'layak' }}">
+    <div class="card-body {{ verdict_bg }} text-white text-center py-5 verdict-card">
+      <i class="bi {{ verdict_icon }} display-1 mb-3 verdict__icon"></i>
+      <h3 class="h2 fw-bold mb-3 verdict__label">{{ verdict_label }}</h3>
       {% if section.verdict_text %}
-      <p class="lead mb-0">{{ section.verdict_text }}</p>
+      <p class="lead mb-0 verdict__text">{{ section.verdict_text }}</p>
       {% endif %}
     </div>
   </div>
   {% endif %}
 
-  <div class="row g-4">
+  <div class="row g-4 conclusion-cards">
     <!-- Conclusions -->
     {% if section.conclusions %}
     <div class="col-lg-6">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-header bg-primary text-white py-3">
+      <div class="card border-0 shadow-sm h-100 conclusions-wrapper">
+        <div class="card-header bg-primary text-white py-3 conclusions__header">
           <h3 class="h5 mb-0 fw-bold">
             <i class="bi bi-clipboard-check me-2"></i>Kesimpulan
           </h3>
         </div>
         <div class="card-body">
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0 conclusions__list">
             {% for conclusion in section.conclusions %}
-            <li class="d-flex mb-3">
-              <i class="bi bi-check2-circle text-success fs-5 me-2 flex-shrink-0"></i>
-              <span>{{ conclusion }}</span>
+            <li class="d-flex mb-3 conclusion-item">
+              <i class="bi bi-check2-circle text-success fs-5 me-2 flex-shrink-0 conclusion-item__icon"></i>
+              <span class="conclusion-item__text">{{ conclusion }}</span>
             </li>
             {% endfor %}
           </ul>
@@ -90,18 +90,18 @@ Parameters:
     <!-- Recommendations -->
     {% if section.recommendations %}
     <div class="col-lg-6">
-      <div class="card border-0 shadow-sm h-100">
-        <div class="card-header bg-warning text-dark py-3">
+      <div class="card border-0 shadow-sm h-100 recommendations-wrapper">
+        <div class="card-header bg-warning text-dark py-3 recommendations__header">
           <h3 class="h5 mb-0 fw-bold">
             <i class="bi bi-lightbulb me-2"></i>Rekomendasi
           </h3>
         </div>
         <div class="card-body">
-          <ul class="list-unstyled mb-0">
+          <ul class="list-unstyled mb-0 recommendations__list">
             {% for rec in section.recommendations %}
-            <li class="d-flex mb-3">
-              <i class="bi bi-arrow-right-circle text-warning fs-5 me-2 flex-shrink-0"></i>
-              <span>{{ rec }}</span>
+            <li class="d-flex mb-3 recommendation-item">
+              <i class="bi bi-arrow-right-circle text-warning fs-5 me-2 flex-shrink-0 recommendation-item__icon"></i>
+              <span class="recommendation-item__text">{{ rec }}</span>
             </li>
             {% endfor %}
           </ul>
@@ -113,24 +113,24 @@ Parameters:
 
   <!-- Validity Info -->
   {% if section.next_inspection or section.validity_period %}
-  <div class="card border-0 shadow-sm mt-4">
+  <div class="card border-0 shadow-sm mt-4 validity-wrapper">
     <div class="card-body">
-      <div class="row text-center">
+      <div class="row text-center validity-info">
         {% if section.validity_period %}
         <div class="col-md-6 border-end">
-          <div class="p-3">
-            <i class="bi bi-calendar-check text-primary fs-1 mb-2"></i>
-            <h4 class="h6 text-muted mb-1">Masa Berlaku Sertifikat</h4>
-            <p class="h5 fw-bold text-primary mb-0">{{ section.validity_period }}</p>
+          <div class="p-3 validity-item validity-item--period">
+            <i class="bi bi-calendar-check text-primary fs-1 mb-2 validity-item__icon"></i>
+            <h4 class="h6 text-muted mb-1 validity-item__label">Masa Berlaku Sertifikat</h4>
+            <p class="h5 fw-bold text-primary mb-0 validity-item__value">{{ section.validity_period }}</p>
           </div>
         </div>
         {% endif %}
         {% if section.next_inspection %}
         <div class="col-md-6">
-          <div class="p-3">
-            <i class="bi bi-calendar-event text-success fs-1 mb-2"></i>
-            <h4 class="h6 text-muted mb-1">Riksa Uji Berikutnya</h4>
-            <p class="h5 fw-bold text-success mb-0">{{ section.next_inspection }}</p>
+          <div class="p-3 validity-item validity-item--next">
+            <i class="bi bi-calendar-event text-success fs-1 mb-2 validity-item__icon"></i>
+            <h4 class="h6 text-muted mb-1 validity-item__label">Riksa Uji Berikutnya</h4>
+            <p class="h5 fw-bold text-success mb-0 validity-item__value">{{ section.next_inspection }}</p>
           </div>
         </div>
         {% endif %}
@@ -141,10 +141,10 @@ Parameters:
 
   <!-- Additional Paragraphs -->
   {% if section.paragraphs %}
-  <div class="card border-0 shadow-sm mt-4">
+  <div class="card border-0 shadow-sm mt-4 additional-content">
     <div class="card-body">
       {% for paragraph in section.paragraphs %}
-      <p class="{% if forloop.last %}mb-0{% else %}mb-3{% endif %}">{{ paragraph }}</p>
+      <p class="additional-paragraph {% if forloop.last %}mb-0{% else %}mb-3{% endif %}">{{ paragraph }}</p>
       {% endfor %}
     </div>
   </div>

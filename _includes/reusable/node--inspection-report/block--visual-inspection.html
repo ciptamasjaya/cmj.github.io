@@ -28,25 +28,25 @@ Parameters:
 {% assign section = include.section %}
 
 {% if section %}
-<section class="block--visual-inspection py-4" id="visual-inspection">
+<section class="visual-inspection-section py-4" id="block--visual-inspection">
   <!-- Section Header -->
-  <div class="card card-float mb-4">
+  <div class="block-header card card-float mb-4">
     <div class="card-body bg-primary text-white text-center py-3">
-      <i class="bi bi-eye fs-3 mb-2"></i>
-      <h2 class="h4 mb-0 fw-bold">{{ section.title | default: "Pemeriksaan Visual" }}</h2>
+      <i class="bi bi-eye fs-3 mb-2 block-icon"></i>
+      <h2 class="h4 mb-0 fw-bold block-title">{{ section.title | default: "Pemeriksaan Visual" }}</h2>
     </div>
   </div>
 
   {% if section.intro %}
-  <p class="lead text-muted mb-4">{{ section.intro }}</p>
+  <p class="lead text-muted mb-4 block-intro">{{ section.intro }}</p>
   {% endif %}
 
   <!-- Inspection Results Table -->
   {% if section.items %}
-  <div class="card border-0 shadow-sm mb-4">
+  <div class="card border-0 shadow-sm mb-4 inspection-table-wrapper">
     <div class="card-body p-0">
       <div class="table-responsive">
-        <table class="table table-hover mb-0">
+        <table class="table table-hover mb-0 inspection-table">
           <thead class="table-light">
             <tr>
               <th style="width: 5%;">#</th>
@@ -67,14 +67,14 @@ Parameters:
               {% assign condition_class = "bg-danger" %}
               {% assign condition_text = "Rusak" %}
             {% endif %}
-            <tr>
-              <td>{{ forloop.index }}</td>
-              <td class="fw-semibold">{{ item.component }}</td>
-              <td>{{ item.result }}</td>
-              <td>
-                <span class="badge {{ condition_class }}">{{ condition_text }}</span>
+            <tr class="inspection-item inspection-item--{{ item.condition | default: 'baik' }}">
+              <td class="inspection-item__index">{{ forloop.index }}</td>
+              <td class="fw-semibold inspection-item__component">{{ item.component }}</td>
+              <td class="inspection-item__result">{{ item.result }}</td>
+              <td class="inspection-item__condition">
+                <span class="badge {{ condition_class }} condition-badge">{{ condition_text }}</span>
               </td>
-              <td class="small text-muted">{{ item.notes | default: "-" }}</td>
+              <td class="small text-muted inspection-item__notes">{{ item.notes | default: "-" }}</td>
             </tr>
             {% endfor %}
           </tbody>
@@ -86,7 +86,7 @@ Parameters:
 
   <!-- Summary -->
   {% if section.summary %}
-  <div class="alert alert-info">
+  <div class="alert alert-info block-summary">
     <i class="bi bi-info-circle me-2"></i>
     <strong>Kesimpulan:</strong> {{ section.summary }}
   </div>
