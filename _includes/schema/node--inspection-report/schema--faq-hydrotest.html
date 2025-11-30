@@ -1,0 +1,39 @@
+{% comment %}
+============================================================================
+Schema: FAQ Hydrotest (FAQPage)
+============================================================================
+
+@file        schema--faq-hydrotest.html
+@path        _includes/schema/node--inspection-report/schema--faq-hydrotest.html
+@type        Schema
+@description FAQPage schema for hydrotest FAQ section
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_hydrotest.faq and page.section_hydrotest.faq.size > 0 %}
+{% assign faq = page.section_hydrotest.faq %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ page.url | absolute_url }}#faq-hydrotest",
+  "name": "FAQ Pengujian Hidrostatik {{ page.object.name | default: 'Boiler' | escape }}",
+  "mainEntity": [
+    {% for item in faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

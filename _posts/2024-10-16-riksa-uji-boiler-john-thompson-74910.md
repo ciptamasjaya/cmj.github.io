@@ -335,6 +335,19 @@ section_hydrotest:
       result: "Tidak ditemukan kebocoran"
       status: "lulus"
   summary: "Pengujian hidrostatik pada tekanan 15.75 Bar selama 30 menit menunjukkan bahwa seluruh komponen boiler mampu menahan tekanan uji tanpa kebocoran atau deformasi. Boiler dinyatakan lulus uji hidrostatik."
+  faq:
+    - question: "Apa itu pengujian hidrostatik (hydrotest) pada boiler?"
+      answer: "Pengujian hidrostatik adalah metode pengujian tekanan yang dilakukan untuk memverifikasi integritas struktural boiler dengan memberikan tekanan uji yang lebih tinggi dari tekanan kerja normal, biasanya 1.5 kali tekanan kerja."
+    - question: "Mengapa hydrotest penting untuk boiler?"
+      answer: "Hydrotest penting untuk memastikan boiler mampu menahan tekanan operasional dengan margin keamanan yang memadai, mendeteksi kebocoran atau kelemahan struktural sebelum boiler dioperasikan."
+    - question: "Berapa tekanan uji yang digunakan dalam hydrotest boiler ini?"
+      answer: "Tekanan uji yang digunakan adalah 15.75 Bar, yaitu 1.5 kali dari tekanan kerja normal 10.5 Bar, sesuai dengan standar pengujian yang berlaku."
+    - question: "Berapa lama durasi pengujian hidrostatik dilakukan?"
+      answer: "Durasi pengujian hidrostatik adalah 30 menit, di mana tekanan uji dipertahankan sambil dilakukan pemeriksaan visual terhadap kebocoran atau deformasi."
+    - question: "Apa saja komponen yang diperiksa saat hydrotest?"
+      answer: "Komponen yang diperiksa meliputi drum uap, pipa header, tube bundle, sambungan flange, serta katup dan fitting untuk mendeteksi kebocoran atau deformasi."
+    - question: "Apakah hydrotest wajib dilakukan pada setiap riksa uji boiler?"
+      answer: "Pengujian hidrostatik bersifat opsional dan dilaksanakan jika diminta oleh klien atau diperlukan berdasarkan kondisi boiler dan persyaratan regulasi yang berlaku."
 
 # Safety Valve Test Section
 section_safety_valve:

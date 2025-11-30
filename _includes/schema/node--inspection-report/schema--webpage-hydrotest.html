@@ -22,12 +22,23 @@ Schema: Hydrotest Section - WebPageElement
   "@type": "WebPageElement",
   "@id": "{{ page.url | absolute_url }}#hydrotest",
   "name": "{{ section.title | default: 'Pengujian Hidrostatik' | escape }}",
-  "description": "Hasil pengujian hidrostatik (tekanan)"{% if section.steps and section.steps.size > 0 %},
-  "hasPart": {
-    "@type": "HowTo",
-    "@id": "{{ page.url | absolute_url }}#hydrotest-howto",
-    "name": "Prosedur Pengujian Hidrostatik"
-  }{% endif %}
+  "description": "Hasil pengujian hidrostatik (tekanan)"{% if section.steps and section.steps.size > 0 or section.faq and section.faq.size > 0 %},
+  "hasPart": [
+    {% if section.steps and section.steps.size > 0 %}
+    {
+      "@type": "HowTo",
+      "@id": "{{ page.url | absolute_url }}#hydrotest-howto",
+      "name": "Prosedur Pengujian Hidrostatik"
+    }{% if section.faq and section.faq.size > 0 %},{% endif %}
+    {% endif %}
+    {% if section.faq and section.faq.size > 0 %}
+    {
+      "@type": "FAQPage",
+      "@id": "{{ page.url | absolute_url }}#faq-hydrotest",
+      "name": "FAQ Pengujian Hidrostatik"
+    }
+    {% endif %}
+  ]{% endif %}
 }
 </script>
 {% endif %}
