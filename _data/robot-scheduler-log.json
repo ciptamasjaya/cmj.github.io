@@ -1,0 +1,6 @@
+{
+  "measurement": {
+    "last_run": "2025-12-01",
+    "script": "rotate-frontmatter.rb"
+  }
+}

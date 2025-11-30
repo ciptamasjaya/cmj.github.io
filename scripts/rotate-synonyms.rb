@@ -21,6 +21,8 @@ require 'json'
 # CONFIGURATION
 # ============================================================================
 
+SCRIPT_DIR = File.expand_path(__dir__)
+
 # Content directories to scan
 CONTENT_DIRS = [
   File.expand_path('../../_posts', __FILE__),
@@ -573,7 +575,27 @@ unless DRY_RUN
   puts "Log saved to: #{LOG_FILE}"
 end
 
+# ============================================================================
+# HOOK: Trigger propagator jika ada perubahan
+# ============================================================================
+
+if rotated_files.any? && !DRY_RUN
+  puts ""
+  puts "-" * 60
+  puts "  HOOK: Triggering timestamp propagation..."
+  puts "-" * 60
+  puts ""
+
+  propagator_script = File.join(SCRIPT_DIR, 'propagate-timestamp.rb')
+  reason = "Synonym rotation: #{rotated_files.length} files"
+
+  system("ruby", propagator_script, "--reason=#{reason}")
+end
+
 if DRY_RUN
   puts ""
   puts "[DRY RUN] No files were modified. Run without --dry-run to apply changes."
+  if rotated_files.any?
+    puts "[DRY RUN] Propagator hook would be triggered for #{rotated_files.length} files."
+  end
 end

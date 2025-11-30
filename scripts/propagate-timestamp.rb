@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 #
 # propagate-timestamp.rb
-# Robot untuk propagasi timestamp ke parent/listing pages
+# HOOK: Propagasi timestamp ke parent/listing pages
 #
-# Usage: ruby scripts/propagate-timestamp.rb [--dry-run]
+# Usage: ruby scripts/propagate-timestamp.rb [--dry-run] [--reason="..."]
 #
-# Logic:
-# 1. Cek timestamp terbaru dari _posts/ dan _services/
-# 2. Jika ada content yang diupdate hari ini oleh robot lain
-# 3. Update timestamp di parent/listing pages:
+# HOOK - dipanggil oleh robot lain setelah ada perubahan konten
+# Tidak di-random, langsung jalan jika dipanggil
+#
+# Update timestamp di:
 #    - index.html (homepage)
 #    - blog.html (posts listing)
 #    - layanan.html (services listing)
@@ -27,12 +27,6 @@ require 'json'
 SCRIPT_DIR = File.expand_path(__dir__)
 PROJECT_ROOT = File.expand_path('..', SCRIPT_DIR)
 
-# Content directories to check for updates
-CONTENT_DIRS = [
-  File.join(PROJECT_ROOT, '_posts'),
-  File.join(PROJECT_ROOT, '_services')
-]
-
 # Parent/listing pages to propagate timestamp to
 LISTING_PAGES = [
   File.join(PROJECT_ROOT, 'index.html'),
@@ -49,6 +43,9 @@ LOG_FILE = File.join(PROJECT_ROOT, '_data', 'propagate-timestamp-log.json')
 
 DRY_RUN = ARGV.include?('--dry-run')
 VERBOSE = ARGV.include?('--verbose') || ARGV.include?('-v')
+
+# Get reason from command line (passed by calling robot)
+REASON = ARGV.find { |a| a.start_with?('--reason=') }&.split('=', 2)&.last || "Hook triggered"
 
 # ============================================================================
 # HELPER FUNCTIONS
@@ -86,36 +83,6 @@ end
 def save_log(log)
   FileUtils.mkdir_p(File.dirname(LOG_FILE))
   File.write(LOG_FILE, JSON.pretty_generate(log))
-end
-
-# ============================================================================
-# TIMESTAMP CHECKING
-# ============================================================================
-
-# Get the most recent modification time from content directories
-def get_latest_content_mtime
-  latest = nil
-  latest_file = nil
-
-  CONTENT_DIRS.each do |dir|
-    next unless Dir.exist?(dir)
-
-    Dir.glob(File.join(dir, '**', '*.md')).each do |file|
-      mtime = File.mtime(file)
-      if latest.nil? || mtime > latest
-        latest = mtime
-        latest_file = file
-      end
-    end
-  end
-
-  [latest, latest_file]
-end
-
-# Check if content was updated today (by robots)
-def content_updated_today?(latest_mtime)
-  return false if latest_mtime.nil?
-  latest_mtime.to_date == Date.today
 end
 
 # ============================================================================
@@ -190,58 +157,23 @@ end
 # ============================================================================
 
 puts "=" * 60
-puts "  Timestamp Propagation Robot"
+puts "  Timestamp Propagation HOOK"
 puts "  Mode: #{DRY_RUN ? 'DRY RUN' : 'LIVE'}"
 puts "=" * 60
 puts ""
 
-# Check latest content modification
-latest_mtime, latest_file = get_latest_content_mtime
-
-if latest_mtime.nil?
-  puts "No content files found."
-  exit 0
-end
-
-puts "Latest content update:"
-puts "  File: #{File.basename(latest_file)}"
-puts "  Time: #{latest_mtime}"
-puts "  Today: #{content_updated_today?(latest_mtime) ? 'YES' : 'NO'}"
+puts "Reason: #{REASON}"
 puts ""
 
 # Load previous log
 log = load_log
-last_propagation = log['last_propagation'] ? Date.parse(log['last_propagation']) : nil
-
-# Check if we should propagate
-should_propagate = false
-reason = nil
-
-if content_updated_today?(latest_mtime)
-  if last_propagation == Date.today
-    puts "Already propagated today. Skipping."
-    puts "(Last propagation: #{last_propagation})"
-    exit 0
-  end
-  should_propagate = true
-  reason = "Content updated: #{File.basename(latest_file)}"
-end
-
-unless should_propagate
-  puts "No content updates today. Nothing to propagate."
-  exit 0
-end
-
-puts "Propagating timestamps..."
-puts "Reason: #{reason}"
-puts ""
 
 updated_pages = []
 
 # Update listing pages
 puts "Listing pages:"
 LISTING_PAGES.each do |page|
-  result = update_page_timestamp(page, reason)
+  result = update_page_timestamp(page, REASON)
   updated_pages << result if result
 end
 
@@ -250,7 +182,7 @@ puts ""
 puts "Category pages:"
 category_pages = find_category_pages
 category_pages.each do |page|
-  result = update_page_timestamp(page, reason)
+  result = update_page_timestamp(page, REASON)
   updated_pages << result if result
 end
 
@@ -273,7 +205,7 @@ end
 # Save log
 unless DRY_RUN
   log['last_propagation'] = Date.today.to_s
-  log['last_reason'] = reason
+  log['last_reason'] = REASON
   log['pages_updated'] = updated_pages.map { |p| p[:file] }
   save_log(log)
   puts ""
