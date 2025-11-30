@@ -63,10 +63,12 @@ Usage:
       <div class="col-md-6 col-lg-4">
         <div class="card card--service h-100 border-0 shadow-sm">
           <div class="card-body service__body">
-            <div class="service-icon mb-3 service__icon-wrapper">
-              <i class="bi {{ service.icon | default: 'bi-check-circle' }} fs-2 text-primary service__icon"></i>
+            <div class="icon-heading-inline mb-3">
+              <div class="icon-wrapper service-icon">
+                <i class="bi {{ service.icon | default: 'bi-check-circle' }} fs-2 text-primary service__icon"></i>
+              </div>
+              <h3 class="card-title h5 fw-bold mb-0 service__title">{{ service.title }}</h3>
             </div>
-            <h3 class="card-title h5 fw-bold service__title">{{ service.title }}</h3>
             <p class="card-text text-muted service__description">{{ service.description }}</p>
           </div>
         </div>

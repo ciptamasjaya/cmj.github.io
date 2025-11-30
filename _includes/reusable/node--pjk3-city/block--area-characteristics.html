@@ -56,12 +56,12 @@ Usage:
       <div class="col-md-6">
         <div class="characteristic-card card--characteristic d-flex p-3 bg-white rounded shadow-sm h-100">
           <div class="characteristic-icon me-3 characteristic__icon-wrapper">
-            <div class="icon-wrapper bg-primary bg-opacity-10 rounded-circle p-3">
+            <div class="icon-wrapper bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" style="width: 56px; height: 56px; min-width: 56px;">
               <i class="bi {{ item.icon | default: 'bi-pin-map' }} fs-4 text-primary characteristic__icon"></i>
             </div>
           </div>
           <div class="characteristic-content characteristic__content">
-            <h3 class="h5 fw-bold mb-2 characteristic__title">{{ item.title }}</h3>
+            <h3 class="h4 fw-bold mb-2 characteristic__title">{{ item.title }}</h3>
             <p class="text-muted mb-0 characteristic__description">{{ item.description }}</p>
           </div>
         </div>

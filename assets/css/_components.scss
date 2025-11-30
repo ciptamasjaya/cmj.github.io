@@ -22,6 +22,34 @@
 }
 
 // ----------------------------------------------------------------------------
+// Icon Heading Inline - Icon + Heading side by side, stack on mobile
+// ----------------------------------------------------------------------------
+// Usage: <div class="icon-heading-inline">
+//          <div class="icon-wrapper"><i class="bi ..."></i></div>
+//          <h3 class="mb-0">Title</h3>
+//        </div>
+
+.icon-heading-inline {
+  display: flex;
+  align-items: center;
+
+  .icon-wrapper {
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    text-align: center;
+
+    .icon-wrapper {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
 // Header & Navigation
 // ----------------------------------------------------------------------------
 

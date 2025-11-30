@@ -103,7 +103,7 @@ Usage:
           <div class="col-lg-4 text-center mt-4 mt-lg-0 hero-cta">
             <div class="bg-white p-4 rounded shadow-lg cta__card">
               <i class="bi bi-telephone-fill text-primary contact-icon mb-3 cta__icon"></i>
-              <h3 class="h5 fw-bold text-primary mb-2 cta__title">{{ section.cta_title | default: "Hubungi Kami Sekarang!" }}</h3>
+              <h3 class="h3 fw-bold text-primary mb-2 cta__title">{{ section.cta_title | default: "Hubungi Kami Sekarang!" }}</h3>
               <p class="h3 fw-bold text-dark mb-3 cta__phone">{{ site.business.phone }}</p>
               <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}"
                  class="btn btn-success btn-lg w-100 shadow-sm cta__button"
