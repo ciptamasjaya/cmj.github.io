@@ -1,0 +1,182 @@
+{% comment %}
+============================================================================
+Block: Customer Testimonials - Inspection Report
+============================================================================
+
+@file        block--testimonials.html
+@path        _includes/reusable/node--inspection-report/block--testimonials.html
+@type        Block (reusable)
+@description Displays customer testimonials/reviews from rating block JSON
+@author      arisciwek
+@created     2025-11-30
+
+Reads review data from the rating block JSON that was included in page wrapper.
+Uses JavaScript to parse the JSON and render testimonials dynamically.
+
+Usage:
+------
+{% include reusable/node--inspection-report/block--testimonials.html %}
+
+============================================================================
+{% endcomment %}
+
+<section class="block--testimonials py-4" id="block--testimonials">
+
+  <!-- Header Section -->
+  <div class="block-header mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body bg-primary text-white text-center py-3 px-3">
+        <i class="bi bi-chat-quote-fill fs-3 mb-2"></i>
+        <h2 class="h4 mb-0 fw-bold text-white">Testimoni Pelanggan</h2>
+        <p class="mb-0 mt-2 small opacity-75">
+          <i class="bi bi-star-fill me-1"></i>
+          Kepuasan pelanggan adalah prioritas kami
+          <i class="bi bi-star-fill ms-1"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rating Summary -->
+  <div class="rating-summary mb-4" id="rating-summary">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <div class="row align-items-center">
+          <div class="col-auto text-center">
+            <div class="rating-value display-4 fw-bold text-primary" id="rating-value">-</div>
+            <div class="rating-stars text-warning" id="rating-stars"></div>
+            <small class="text-muted"><span id="review-count">0</span> ulasan</small>
+          </div>
+          <div class="col">
+            <div class="rating-distribution" id="rating-distribution">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials List -->
+  <div class="testimonials-list" id="testimonials-list">
+    <!-- Filled by JS -->
+  </div>
+
+  <!-- CTA -->
+  <div class="text-center mt-4">
+    <p class="small text-muted mb-2">Bergabunglah dengan klien yang telah mempercayakan inspeksi K3 kepada kami</p>
+    <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3" class="btn btn-primary btn-sm" target="_blank">
+      <i class="bi bi-whatsapp me-2"></i>Konsultasi Sekarang
+    </a>
+  </div>
+
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const ratingDataEl = document.getElementById('rating-data');
+  if (!ratingDataEl) return;
+
+  try {
+    const data = JSON.parse(ratingDataEl.textContent);
+
+    // Rating Summary
+    document.getElementById('rating-value').textContent = data.average.toFixed(1);
+    document.getElementById('review-count').textContent = data.total_reviews;
+
+    // Stars
+    const starsHtml = renderStars(data.average);
+    document.getElementById('rating-stars').innerHTML = starsHtml;
+
+    // Distribution
+    const distHtml = renderDistribution(data.distribution, data.total_reviews);
+    document.getElementById('rating-distribution').innerHTML = distHtml;
+
+    // Reviews
+    if (data.reviews && data.reviews.length > 0) {
+      const reviewsHtml = data.reviews.map(renderReview).join('');
+      document.getElementById('testimonials-list').innerHTML = reviewsHtml;
+    }
+  } catch (e) {
+    console.error('Error parsing rating data:', e);
+  }
+});
+
+function renderStars(rating) {
+  let html = '';
+  const fullStars = Math.floor(rating);
+  const hasHalf = rating % 1 >= 0.5;
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= fullStars) {
+      html += '<i class="bi bi-star-fill"></i>';
+    } else if (i === fullStars + 1 && hasHalf) {
+      html += '<i class="bi bi-star-half"></i>';
+    } else {
+      html += '<i class="bi bi-star"></i>';
+    }
+  }
+  return html;
+}
+
+function renderDistribution(dist, total) {
+  let html = '';
+  for (let i = 5; i >= 1; i--) {
+    const count = dist[i] || 0;
+    const pct = total > 0 ? (count / total * 100) : 0;
+    html += `
+      <div class="d-flex align-items-center mb-1">
+        <small class="me-2" style="width: 20px;">${i}<i class="bi bi-star-fill text-warning ms-1" style="font-size: 0.6rem;"></i></small>
+        <div class="progress flex-grow-1" style="height: 8px;">
+          <div class="progress-bar bg-warning" style="width: ${pct}%"></div>
+        </div>
+        <small class="ms-2 text-muted" style="width: 30px;">${count}</small>
+      </div>
+    `;
+  }
+  return html;
+}
+
+function renderReview(review) {
+  const colors = ['primary', 'success', 'info', 'warning', 'danger'];
+  const color = colors[review.id % colors.length];
+  const starsHtml = renderStars(review.rating);
+  const verifiedBadge = review.verified
+    ? '<span class="badge bg-success bg-opacity-10 text-success ms-2"><i class="bi bi-patch-check-fill me-1"></i>Terverifikasi</span>'
+    : '';
+  const featuredBadge = review.featured
+    ? '<span class="badge bg-warning bg-opacity-10 text-warning ms-2"><i class="bi bi-star-fill me-1"></i>Unggulan</span>'
+    : '';
+
+  return `
+    <div class="card border-0 shadow-sm mb-3">
+      <div class="card-body py-3">
+        <div class="d-flex mb-2">
+          <div class="testimonial-avatar bg-${color} bg-opacity-10 rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; min-width: 48px;">
+            <i class="bi bi-person-fill text-${color} fs-5"></i>
+          </div>
+          <div class="flex-grow-1">
+            <h3 class="h6 mb-0 fw-bold text-dark">${review.nama}${verifiedBadge}${featuredBadge}</h3>
+            <small class="text-primary fw-semibold" style="font-size: 0.75rem;">${review.jenis_usaha}</small>
+            <div class="text-warning" style="font-size: 0.7rem;">
+              ${starsHtml}
+              <span class="text-muted ms-2">${review.tanggal}</span>
+            </div>
+          </div>
+        </div>
+        <h4 class="h6 fw-bold text-dark mb-1">
+          <i class="bi bi-chat-left-quote text-primary me-1"></i>${review.judul}
+        </h4>
+        <p class="small text-muted fst-italic mb-0" style="font-size: 0.85rem;">
+          "${review.komentar}"
+        </p>
+        ${review.helpful_count > 0 ? `
+        <div class="mt-2">
+          <small class="text-muted"><i class="bi bi-hand-thumbs-up me-1"></i>${review.helpful_count} orang merasa terbantu</small>
+        </div>
+        ` : ''}
+      </div>
+    </div>
+  `;
+}
+</script>

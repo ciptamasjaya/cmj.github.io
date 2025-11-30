@@ -30,6 +30,16 @@ In frontmatter: layout: node/node--inspection-report
 ============================================================================
 {%- endcomment -%}
 
+{% comment %} Load rating data BEFORE header (sets Liquid vars for use in header) {% endcomment %}
+{% assign rating_id = page.rating_id %}
+{% unless rating_id %}
+  {% assign post_slug = page.url | split: "/" | compact | last %}
+  {% assign slug_parts = post_slug | split: "-" %}
+  {% assign rating_id = slug_parts | last %}
+{% endunless %}
+{% capture rating_file %}reusable/node--inspection-report/block--rating--{{ rating_id }}.html{% endcapture %}
+{% include {{ rating_file }} %}
+
 <article class="inspection-report" itemscope itemtype="https://schema.org/Report">
 
   <!-- Report Header -->
@@ -110,6 +120,9 @@ In frontmatter: layout: node/node--inspection-report
 
         <!-- Video -->
         {% include reusable/node--inspection-report/block--video.html video=page.video %}
+
+        <!-- Testimonials -->
+        {% include reusable/node--inspection-report/block--testimonials.html %}
 
         <!-- Additional Content (from markdown body) -->
         {% if content and content != '' %}

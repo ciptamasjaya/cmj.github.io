@@ -23,6 +23,9 @@ Page Wrapper: Inspection Report Pages (page--inspection-report.html)
 <body>
   {% include header.html %}
 
+  <!-- Rating Data (sets Liquid vars BEFORE content, JSON output in body) -->
+  {% include schema/node--inspection-report/schema--rating.html %}
+
   <main class="main-content">
     {{ content }}
   </main>
@@ -30,9 +33,6 @@ Page Wrapper: Inspection Report Pages (page--inspection-report.html)
   {% include footer.html %}
 
   {% include components/cta-whatsapp.html style="floating" %}
-
-  <!-- Rating Data (sets Liquid vars + JSON output) -->
-  {% include schema/node--inspection-report/schema--rating.html %}
 
   <!-- Page Schema -->
   {% unless page.skip_page_schema %}
@@ -85,6 +85,9 @@ Page Wrapper: Inspection Report Pages (page--inspection-report.html)
 
   <!-- Combined FAQ Schema (FAQPage) -->
   {% include schema/node--inspection-report/schema--faq.html %}
+
+  <!-- Testimonials Schema (Reviews) -->
+  {% include schema/node--inspection-report/schema--testimonials.html %}
 
   <!-- Breadcrumb Schema -->
   {% if page.show_breadcrumb_schema %}

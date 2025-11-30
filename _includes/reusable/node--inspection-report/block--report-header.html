@@ -65,6 +65,31 @@ Block: Report Header
             <span class="meta-value text-white fw-semibold meta-item__value">{{ page.inspector }}</span>
           </div>
           {% endif %}
+
+          {% if rating_average and rating_count > 0 %}
+          <div class="meta-item meta-item--rating">
+            <a href="#block--testimonials" class="text-decoration-none d-inline-flex align-items-center">
+              <span class="rating-stars me-1">
+                {% assign avg = rating_average %}
+                {% assign full_stars = avg | floor %}
+                {% assign decimal = avg | minus: full_stars %}
+                {% for i in (1..5) %}
+                  {% if i <= full_stars %}
+                    <i class="bi bi-star-fill text-warning"></i>
+                  {% elsif decimal >= 0.3 and decimal < 0.8 and i == full_stars | plus: 1 %}
+                    <i class="bi bi-star-half text-warning"></i>
+                  {% elsif decimal >= 0.8 and i == full_stars | plus: 1 %}
+                    <i class="bi bi-star-fill text-warning"></i>
+                  {% else %}
+                    <i class="bi bi-star text-white-50"></i>
+                  {% endif %}
+                {% endfor %}
+              </span>
+              <span class="text-white fw-semibold me-1">{{ rating_average }}</span>
+              <span class="text-white-50">({{ rating_count }} ulasan)</span>
+            </a>
+          </div>
+          {% endif %}
         </div>
       </div>
 

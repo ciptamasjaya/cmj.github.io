@@ -1,0 +1,63 @@
+{% comment %}
+============================================================================
+Schema: Testimonials/Reviews for Inspection Report
+============================================================================
+
+@file        schema--testimonials.html
+@path        _includes/schema/node--inspection-report/schema--testimonials.html
+@type        Schema (Review)
+@description Review schema generated from json rating collection data
+@author      arisciwek
+@created     2025-11-30
+
+This schema reads from the rating_* Liquid variables set by block--rating--{id}.html
+and generates individual Review schemas that reference the parent Product.
+
+Note: AggregateRating is already included in schema--rating.html as part of Product.
+This schema adds the individual Review items.
+
+Usage:
+------
+{% include schema/node--inspection-report/schema--testimonials.html %}
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Get rating ID for include {% endcomment %}
+{% assign testi_rating_id = page.rating_id %}
+{% unless testi_rating_id %}
+  {% assign post_slug = page.url | split: "/" | compact | last %}
+  {% assign slug_parts = post_slug | split: "-" %}
+  {% assign testi_rating_id = slug_parts | last %}
+{% endunless %}
+
+{% comment %}
+Reviews are rendered via JavaScript from JSON data in block--rating--{id}.html
+Schema is generated inline in that JSON for better performance.
+This file generates the Review schema from Liquid if needed.
+{% endcomment %}
+
+{% if rating_count and rating_count > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "{{ page.url | absolute_url }}#service-reviews",
+  "name": "Layanan Riksa Uji - {{ page.title | escape }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+  "brand": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name }}"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "@id": "{{ page.url | absolute_url }}#aggregate-rating",
+    "ratingValue": "{{ rating_average }}",
+    "reviewCount": "{{ rating_count }}",
+    "bestRating": "{{ rating_best | default: 5 }}",
+    "worstRating": "{{ rating_worst | default: 1 }}"
+  }
+}
+</script>
+{% endif %}

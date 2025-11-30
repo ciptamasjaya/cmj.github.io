@@ -6,13 +6,13 @@ Block: Rating Data - Forklift Caterpillar EP20 / 5SS25AM
 @file        block--rating--5ss25am.html
 @path        _includes/reusable/node--inspection-report/block--rating--5ss25am.html
 @type        Block (data per post)
-@description Rating data for inspection report - sets Liquid vars + outputs JSON
+@description Rating data + reviews for inspection report
 @author      arisciwek
 @created     2025-11-30
 
 Output:
 1. Liquid variables for schema (rating_average, rating_count, etc.)
-2. <script type="application/json"> with rating data for JS consumption
+2. <script type="application/json"> with rating + reviews data for JS
 
 Usage:
 ------
@@ -22,18 +22,18 @@ Included via schema--rating.html using page.rating_id or URL slug
 {% endcomment %}
 
 {% comment %} === RATING DATA (edit values here) === {% endcomment %}
-{% assign rating_average = 4.9 %}
-{% assign rating_count = 8 %}
+{% assign rating_average = 4.8 %}
+{% assign rating_count = 5 %}
 {% assign rating_best = 5 %}
 {% assign rating_worst = 1 %}
-{% assign rating_dist_5 = 7 %}
+{% assign rating_dist_5 = 4 %}
 {% assign rating_dist_4 = 1 %}
 {% assign rating_dist_3 = 0 %}
 {% assign rating_dist_2 = 0 %}
 {% assign rating_dist_1 = 0 %}
 {% assign rating_updated = "2025-11-30T15:00:00Z" %}
 
-{% comment %} === JSON OUTPUT (for JS/API simulation) === {% endcomment %}
+{% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
 <script id="rating-data" type="application/json">
 {
   "slug": "riksa-uji-forklift-caterpillar-ep20-5ss25am",
@@ -49,6 +49,68 @@ Included via schema--rating.html using page.rating_id or URL slug
     "2": {{ rating_dist_2 }},
     "1": {{ rating_dist_1 }}
   },
-  "last_updated": "{{ rating_updated }}"
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "Budi Santoso",
+      "jenis_usaha": "Logistik di Jakarta",
+      "rating": 5,
+      "judul": "Pelayanan inspeksi sangat profesional",
+      "komentar": "Tim inspeksi PT. Cipta Mas Jaya sangat kompeten dalam melakukan riksa uji forklift kami. Proses pemeriksaan detail dan laporan yang diberikan sangat lengkap.",
+      "tanggal": "2025-11-28",
+      "verified": true,
+      "helpful_count": 12,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "nama": "Dewi Lestari",
+      "jenis_usaha": "Manufaktur di Bekasi",
+      "rating": 5,
+      "judul": "Cepat dan tepat waktu",
+      "komentar": "Proses riksa uji forklift Caterpillar kami selesai tepat waktu. Inspektur sangat teliti dalam memeriksa setiap komponen dan memberikan rekomendasi yang berguna.",
+      "tanggal": "2025-11-26",
+      "verified": true,
+      "helpful_count": 8,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "nama": "Ahmad Hidayat",
+      "jenis_usaha": "Pergudangan di Cikarang",
+      "rating": 5,
+      "judul": "Hasil inspeksi sangat detail",
+      "komentar": "Laporan riksa uji yang diberikan sangat detail, mencakup semua aspek pemeriksaan dari visual hingga uji beban. Sangat membantu untuk dokumentasi K3 perusahaan.",
+      "tanggal": "2025-11-24",
+      "verified": true,
+      "helpful_count": 15,
+      "featured": false
+    },
+    {
+      "id": 4,
+      "nama": "Siti Rahayu",
+      "jenis_usaha": "Distribusi di Tangerang",
+      "rating": 5,
+      "judul": "Rekomendasi untuk industri",
+      "komentar": "Sangat merekomendasikan jasa riksa uji dari PT. Cipta Mas Jaya. Tim yang profesional dan hasil pemeriksaan yang akurat sesuai standar K3.",
+      "tanggal": "2025-11-22",
+      "verified": true,
+      "helpful_count": 10,
+      "featured": false
+    },
+    {
+      "id": 5,
+      "nama": "Rudi Hartono",
+      "jenis_usaha": "Kontraktor di Bali",
+      "rating": 4,
+      "judul": "Inspeksi forklift elektrik terbaik",
+      "komentar": "Forklift elektrik kami diperiksa dengan sangat teliti. Inspektur paham betul tentang komponen forklift elektrik yang berbeda dari forklift diesel.",
+      "tanggal": "2025-11-20",
+      "verified": true,
+      "helpful_count": 9,
+      "featured": false
+    }
+  ]
 }
 </script>

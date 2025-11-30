@@ -6,13 +6,13 @@ Block: Rating Data - Boiler John Thompson 74910
 @file        block--rating--74910.html
 @path        _includes/reusable/node--inspection-report/block--rating--74910.html
 @type        Block (data per post)
-@description Rating data for inspection report - sets Liquid vars + outputs JSON
+@description Rating data + reviews for inspection report
 @author      arisciwek
 @created     2025-11-30
 
 Output:
 1. Liquid variables for schema (rating_average, rating_count, etc.)
-2. <script type="application/json"> with rating data for JS consumption
+2. <script type="application/json"> with rating + reviews data for JS
 
 Usage:
 ------
@@ -23,17 +23,17 @@ Included via schema--rating.html using page.rating_id or URL slug
 
 {% comment %} === RATING DATA (edit values here) === {% endcomment %}
 {% assign rating_average = 4.8 %}
-{% assign rating_count = 12 %}
+{% assign rating_count = 5 %}
 {% assign rating_best = 5 %}
 {% assign rating_worst = 1 %}
-{% assign rating_dist_5 = 9 %}
-{% assign rating_dist_4 = 2 %}
-{% assign rating_dist_3 = 1 %}
+{% assign rating_dist_5 = 4 %}
+{% assign rating_dist_4 = 1 %}
+{% assign rating_dist_3 = 0 %}
 {% assign rating_dist_2 = 0 %}
 {% assign rating_dist_1 = 0 %}
 {% assign rating_updated = "2025-11-30T10:00:00Z" %}
 
-{% comment %} === JSON OUTPUT (for JS/API simulation) === {% endcomment %}
+{% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
 <script id="rating-data" type="application/json">
 {
   "slug": "riksa-uji-boiler-john-thompson-74910",
@@ -49,6 +49,68 @@ Included via schema--rating.html using page.rating_id or URL slug
     "2": {{ rating_dist_2 }},
     "1": {{ rating_dist_1 }}
   },
-  "last_updated": "{{ rating_updated }}"
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "Ir. Suryadi Putra",
+      "jenis_usaha": "Pabrik Tekstil di Bandung",
+      "rating": 5,
+      "judul": "Inspeksi boiler sangat profesional",
+      "komentar": "Tim inspeksi PT. Cipta Mas Jaya sangat kompeten dalam melakukan riksa uji boiler kami. Pemeriksaan hidrostatik dan thickness test dilakukan dengan teliti.",
+      "tanggal": "2025-11-28",
+      "verified": true,
+      "helpful_count": 15,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "nama": "Herman Wijaya",
+      "jenis_usaha": "Industri Makanan di Semarang",
+      "rating": 5,
+      "judul": "Laporan lengkap dan detail",
+      "komentar": "Laporan riksa uji yang diberikan sangat lengkap, mencakup hasil hydrotest, safety valve test, dan analisis ketebalan. Sangat membantu untuk dokumentasi K3.",
+      "tanggal": "2025-11-25",
+      "verified": true,
+      "helpful_count": 12,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "nama": "Kartini Susanti",
+      "jenis_usaha": "Pabrik Kertas di Surabaya",
+      "rating": 5,
+      "judul": "Pelayanan cepat dan tepat",
+      "komentar": "Proses riksa uji boiler selesai tepat waktu. Inspektur sangat berpengalaman dan memberikan rekomendasi yang berguna untuk pemeliharaan boiler.",
+      "tanggal": "2025-11-22",
+      "verified": true,
+      "helpful_count": 10,
+      "featured": false
+    },
+    {
+      "id": 4,
+      "nama": "Wahyu Kurniawan",
+      "jenis_usaha": "Pabrik Kimia di Cilegon",
+      "rating": 5,
+      "judul": "Standar keselamatan terjamin",
+      "komentar": "Dengan sertifikat riksa uji dari PJK3 resmi, kami lebih yakin boiler beroperasi dengan aman. Tim sangat memahami regulasi K3 pesawat uap.",
+      "tanggal": "2025-11-18",
+      "verified": true,
+      "helpful_count": 8,
+      "featured": false
+    },
+    {
+      "id": 5,
+      "nama": "Rina Marlina",
+      "jenis_usaha": "Industri Garmen di Tangerang",
+      "rating": 4,
+      "judul": "Hasil inspeksi memuaskan",
+      "komentar": "Secara keseluruhan hasil inspeksi memuaskan. Pengujian safety valve dan hydrotest dilakukan sesuai standar. Rekomendasi untuk industri yang membutuhkan riksa uji boiler.",
+      "tanggal": "2025-11-15",
+      "verified": true,
+      "helpful_count": 6,
+      "featured": false
+    }
+  ]
 }
 </script>
