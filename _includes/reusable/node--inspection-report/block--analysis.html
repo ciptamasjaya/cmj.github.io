@@ -1,0 +1,112 @@
+{% comment %}
+============================================================================
+Block: Analysis and Discussion
+============================================================================
+
+@file        block--analysis.html
+@path        _includes/reusable/node--inspection-report/block--analysis.html
+@type        Block (reusable)
+@description Displays analysis of all test results with discussion
+@author      arisciwek
+@created     2025-11-30
+
+Parameters:
+-----------
+- section: Section data from frontmatter
+  - title: Section title
+  - intro: Introduction text
+  - analyses: Array of analysis items
+    - title: Analysis section title
+    - findings: Key findings
+    - interpretation: Interpretation of results
+  - discussion: Overall discussion text
+  - key_findings: Array of key findings (bullet points)
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="block--analysis py-4" id="analysis">
+  <!-- Section Header -->
+  <div class="card card-float mb-4">
+    <div class="card-body bg-purple text-white text-center py-3" style="background-color: #6f42c1;">
+      <i class="bi bi-graph-up fs-3 mb-2"></i>
+      <h2 class="h4 mb-0 fw-bold">{{ section.title | default: "Analisis Data dan Pembahasan" }}</h2>
+    </div>
+  </div>
+
+  {% if section.intro %}
+  <p class="lead text-muted mb-4">{{ section.intro }}</p>
+  {% endif %}
+
+  <!-- Individual Analyses -->
+  {% if section.analyses %}
+  <div class="row g-4 mb-4">
+    {% for analysis in section.analyses %}
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-light">
+          <h3 class="h5 mb-0 fw-bold">
+            <i class="bi bi-search me-2"></i>{{ analysis.title }}
+          </h3>
+        </div>
+        <div class="card-body">
+          {% if analysis.findings %}
+          <div class="mb-3">
+            <h4 class="h6 fw-bold text-primary">Temuan:</h4>
+            <p class="text-muted">{{ analysis.findings }}</p>
+          </div>
+          {% endif %}
+          {% if analysis.interpretation %}
+          <div>
+            <h4 class="h6 fw-bold text-success">Interpretasi:</h4>
+            <p class="text-muted mb-0">{{ analysis.interpretation }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Key Findings Summary -->
+  {% if section.key_findings %}
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h3 class="h5 mb-0 fw-bold">
+        <i class="bi bi-lightbulb me-2"></i>Temuan Utama
+      </h3>
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        {% for finding in section.key_findings %}
+        <li class="list-group-item d-flex align-items-start px-0">
+          <span class="badge bg-primary rounded-pill me-3">{{ forloop.index }}</span>
+          <span>{{ finding }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Overall Discussion -->
+  {% if section.discussion %}
+  <div class="card border-0 shadow-sm">
+    <div class="card-header bg-light">
+      <h3 class="h5 mb-0 fw-bold">
+        <i class="bi bi-chat-square-text me-2"></i>Pembahasan
+      </h3>
+    </div>
+    <div class="card-body">
+      <div class="discussion-content">
+        {{ section.discussion | markdownify }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% endif %}

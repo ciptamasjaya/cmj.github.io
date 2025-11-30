@@ -1,0 +1,48 @@
+---
+layout: compress
+---
+{%- assign layout_extra_css = "/assets/css/inspection-report.css" -%}
+{%- comment -%}
+============================================================================
+Page Wrapper: Inspection Report Pages (page--inspection-report.html)
+============================================================================
+
+@file        page--inspection-report.html
+@path        _layouts/page/page--inspection-report.html
+@type        Page wrapper layout
+@description Page wrapper for inspection report pages with schemas
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  {% include components/cta-whatsapp.html style="floating" %}
+
+  <!-- Page Schema -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Report Schema (TechArticle + Report) -->
+  {% include schema/node--inspection-report/schema--report.html %}
+
+  <!-- Breadcrumb Schema -->
+  {% if page.show_breadcrumb_schema %}
+    {% include schema/schema--breadcrumb.html current_title=page.title %}
+  {% endif %}
+
+</body>
+</html>

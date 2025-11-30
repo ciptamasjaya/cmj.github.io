@@ -1,0 +1,144 @@
+{% comment %}
+============================================================================
+Block: Object Information
+============================================================================
+
+@file        block--object-info.html
+@path        _includes/reusable/node--inspection-report/block--object-info.html
+@type        Block (reusable)
+@description Displays information about the inspected object/equipment
+@author      arisciwek
+@created     2025-11-30
+
+Parameters:
+-----------
+- object: Object data from frontmatter
+  - name: Equipment name (e.g., "Boiler")
+  - brand: Brand/manufacturer
+  - model: Model name
+  - serial: Serial number
+  - type: Equipment type category
+  - year: Year of manufacture
+  - capacity: Capacity/specifications
+  - location: Installation location
+  - owner: Owner/operator
+
+============================================================================
+{% endcomment %}
+
+{% assign object = include.object %}
+
+{% if object %}
+<section class="block--object-info py-4" id="object-info">
+  <!-- Section Header -->
+  <div class="card card-float mb-4">
+    <div class="card-body bg-info text-white text-center py-3">
+      <i class="bi bi-gear-wide-connected fs-3 mb-2"></i>
+      <h2 class="h4 mb-0 fw-bold">Data Objek yang Diuji</h2>
+    </div>
+  </div>
+
+  <!-- Object Details Card -->
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-4">
+      <div class="row g-4">
+        <!-- Primary Info -->
+        <div class="col-md-6">
+          <h3 class="h5 fw-bold text-primary mb-3">
+            <i class="bi bi-info-circle me-2"></i>Informasi Utama
+          </h3>
+          <table class="table table-borderless table-sm">
+            {% if object.name %}
+            <tr>
+              <td class="text-muted" style="width: 40%;">Nama Alat</td>
+              <td class="fw-semibold">{{ object.name }}</td>
+            </tr>
+            {% endif %}
+            {% if object.brand %}
+            <tr>
+              <td class="text-muted">Merek/Pabrikan</td>
+              <td class="fw-semibold">{{ object.brand }}</td>
+            </tr>
+            {% endif %}
+            {% if object.model %}
+            <tr>
+              <td class="text-muted">Model</td>
+              <td class="fw-semibold">{{ object.model }}</td>
+            </tr>
+            {% endif %}
+            {% if object.serial %}
+            <tr>
+              <td class="text-muted">Nomor Seri</td>
+              <td class="fw-semibold text-primary">{{ object.serial }}</td>
+            </tr>
+            {% endif %}
+            {% if object.type %}
+            <tr>
+              <td class="text-muted">Jenis/Kategori</td>
+              <td><span class="badge bg-primary">{{ object.type }}</span></td>
+            </tr>
+            {% endif %}
+          </table>
+        </div>
+
+        <!-- Secondary Info -->
+        <div class="col-md-6">
+          <h3 class="h5 fw-bold text-success mb-3">
+            <i class="bi bi-building me-2"></i>Informasi Operasional
+          </h3>
+          <table class="table table-borderless table-sm">
+            {% if object.year %}
+            <tr>
+              <td class="text-muted" style="width: 40%;">Tahun Pembuatan</td>
+              <td class="fw-semibold">{{ object.year }}</td>
+            </tr>
+            {% endif %}
+            {% if object.capacity %}
+            <tr>
+              <td class="text-muted">Kapasitas</td>
+              <td class="fw-semibold">{{ object.capacity }}</td>
+            </tr>
+            {% endif %}
+            {% if object.pressure %}
+            <tr>
+              <td class="text-muted">Tekanan Kerja</td>
+              <td class="fw-semibold">{{ object.pressure }}</td>
+            </tr>
+            {% endif %}
+            {% if object.location %}
+            <tr>
+              <td class="text-muted">Lokasi</td>
+              <td class="fw-semibold">{{ object.location }}</td>
+            </tr>
+            {% endif %}
+            {% if object.owner %}
+            <tr>
+              <td class="text-muted">Pemilik/Operator</td>
+              <td class="fw-semibold">{{ object.owner }}</td>
+            </tr>
+            {% endif %}
+          </table>
+        </div>
+      </div>
+
+      <!-- Specifications (if any) -->
+      {% if object.specifications %}
+      <hr class="my-4">
+      <h3 class="h5 fw-bold text-warning mb-3">
+        <i class="bi bi-clipboard-data me-2"></i>Spesifikasi Teknis
+      </h3>
+      <div class="row g-3">
+        {% for spec in object.specifications %}
+        <div class="col-md-4 col-6">
+          <div class="spec-item bg-light rounded p-3 text-center h-100">
+            <div class="small text-muted">{{ spec.label }}</div>
+            <div class="fw-bold text-primary">{{ spec.value }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}

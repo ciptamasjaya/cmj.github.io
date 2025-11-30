@@ -1,0 +1,99 @@
+---
+layout: page/page--inspection-report
+---
+{%- comment -%}
+============================================================================
+Node: Inspection Report (node--inspection-report.html)
+============================================================================
+
+@file        node--inspection-report.html
+@path        _layouts/node/node--inspection-report.html
+@type        Node layout (content structure)
+@description Layout for riksa uji inspection reports
+@author      arisciwek
+@created     2025-11-30
+
+For technical inspection reports with structured data:
+- Report header (number, date, inspector)
+- Object information (equipment details)
+- Visual inspection results
+- Operational test results
+- Technical test results
+- NDT (thickness) test results
+- Analysis and discussion
+- Conclusion and recommendations
+
+Usage:
+------
+In frontmatter: layout: node/node--inspection-report
+
+============================================================================
+{%- endcomment -%}
+
+<article class="inspection-report" itemscope itemtype="https://schema.org/Report">
+
+  <!-- Report Header -->
+  {% include reusable/node--inspection-report/block--report-header.html %}
+
+  <div class="container py-4">
+    <div class="row">
+      <!-- Main Content -->
+      <div class="col-lg-8 col-main">
+
+        <!-- Object Information -->
+        {% if page.object %}
+          {% include reusable/node--inspection-report/block--object-info.html object=page.object %}
+        {% endif %}
+
+        <!-- Introduction/Background -->
+        {% if page.section_intro %}
+          {% include reusable/node--inspection-report/block--intro.html section=page.section_intro %}
+        {% endif %}
+
+        <!-- Visual Inspection -->
+        {% if page.section_visual %}
+          {% include reusable/node--inspection-report/block--visual-inspection.html section=page.section_visual %}
+        {% endif %}
+
+        <!-- Operational Test -->
+        {% if page.section_operational %}
+          {% include reusable/node--inspection-report/block--operational-test.html section=page.section_operational %}
+        {% endif %}
+
+        <!-- Technical Test -->
+        {% if page.section_technical %}
+          {% include reusable/node--inspection-report/block--technical-test.html section=page.section_technical %}
+        {% endif %}
+
+        <!-- NDT Test (Thickness) -->
+        {% if page.section_ndt %}
+          {% include reusable/node--inspection-report/block--ndt-test.html section=page.section_ndt %}
+        {% endif %}
+
+        <!-- Analysis -->
+        {% if page.section_analysis %}
+          {% include reusable/node--inspection-report/block--analysis.html section=page.section_analysis %}
+        {% endif %}
+
+        <!-- Conclusion -->
+        {% if page.section_conclusion %}
+          {% include reusable/node--inspection-report/block--conclusion.html section=page.section_conclusion %}
+        {% endif %}
+
+        <!-- Additional Content (from markdown body) -->
+        {% if content and content != '' %}
+        <section class="report-content mt-4">
+          {{ content }}
+        </section>
+        {% endif %}
+
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-lg-4 col-sidebar">
+        {% include reusable/node--inspection-report/block--sidebar.html %}
+      </div>
+    </div>
+  </div>
+
+</article>

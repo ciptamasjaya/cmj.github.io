@@ -1,0 +1,223 @@
+---
+---
+/**
+ * ============================================================================
+ * Inspection Report Styles
+ * ============================================================================
+ *
+ * @file        inspection-report.scss
+ * @path        assets/css/inspection-report.scss
+ * @description Styles specific to inspection report pages (node--inspection-report)
+ * @author      arisciwek
+ * @created     2025-11-30
+ *
+ * ============================================================================
+ */
+
+/* ============================================================================
+   Report Header
+   ============================================================================ */
+.report-header {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+  }
+
+  .report-meta {
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .meta-label {
+      font-size: 0.875rem;
+    }
+  }
+
+  .company-badge {
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  }
+}
+
+/* ============================================================================
+   Section Headers (Card Float style)
+   ============================================================================ */
+.inspection-report {
+  .card-float {
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    overflow: hidden;
+  }
+}
+
+/* ============================================================================
+   Object Info Section
+   ============================================================================ */
+.block--object-info {
+  .spec-item {
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* ============================================================================
+   Test Results Tables
+   ============================================================================ */
+.block--visual-inspection,
+.block--operational-test,
+.block--technical-test,
+.block--ndt-test {
+  .table {
+    th {
+      font-weight: 600;
+      font-size: 0.875rem;
+      white-space: nowrap;
+    }
+
+    td {
+      vertical-align: middle;
+    }
+
+    .badge {
+      font-weight: 500;
+    }
+  }
+}
+
+/* ============================================================================
+   NDT Thickness Chart
+   ============================================================================ */
+.thickness-chart {
+  .thickness-item {
+    .progress {
+      background-color: #e9ecef;
+      border-radius: 0.375rem;
+    }
+  }
+}
+
+/* ============================================================================
+   Analysis Section
+   ============================================================================ */
+.block--analysis {
+  .discussion-content {
+    p {
+      line-height: 1.8;
+    }
+  }
+}
+
+/* ============================================================================
+   Conclusion Section - Verdict Card
+   ============================================================================ */
+.block--conclusion {
+  .verdict-card {
+    .display-1 {
+      opacity: 0.9;
+    }
+  }
+}
+
+/* ============================================================================
+   Sidebar
+   ============================================================================ */
+.report-sidebar {
+  .nav-link {
+    color: #495057;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #f8f9fa;
+      color: #0d6efd;
+    }
+
+    &.active {
+      background-color: #e7f1ff;
+      color: #0d6efd;
+      font-weight: 600;
+    }
+  }
+}
+
+/* ============================================================================
+   Print Styles
+   ============================================================================ */
+@media print {
+  .report-header {
+    background: #0d6efd !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .report-sidebar {
+    display: none;
+  }
+
+  .col-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .card-float {
+    box-shadow: none !important;
+    border: 1px solid #dee2e6 !important;
+  }
+
+  .badge {
+    border: 1px solid currentColor;
+  }
+}
+
+/* ============================================================================
+   Responsive Adjustments
+   ============================================================================ */
+@media (max-width: 991.98px) {
+  .report-sidebar {
+    position: static !important;
+    margin-top: 2rem;
+  }
+
+  .report-header {
+    .company-badge {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .report-header {
+    .display-5 {
+      font-size: 1.5rem;
+    }
+
+    .report-meta {
+      flex-direction: column;
+      gap: 0.5rem !important;
+    }
+  }
+
+  .block--conclusion {
+    .row.text-center > div {
+      border-right: 0 !important;
+      border-bottom: 1px solid #dee2e6;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

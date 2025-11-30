@@ -1,0 +1,119 @@
+{% comment %}
+============================================================================
+Schema: Inspection Report (TechArticle + Report)
+============================================================================
+
+@file        schema--report.html
+@path        _includes/schema/node--inspection-report/schema--report.html
+@type        Schema
+@description Combined schema for inspection report pages (TechArticle + Report)
+@author      arisciwek
+@created     2025-11-30
+
+Combines:
+- TechArticle: For technical documentation aspect
+- Report: For formal inspection report aspect
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "{{ page.url | absolute_url }}#tech-article",
+      "headline": "{{ page.title | escape }}",
+      "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+      "url": "{{ page.url | absolute_url }}",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ site.business.name }}",
+        "url": "{{ site.url }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.business.name }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.logo | absolute_url }}"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "{{ page.object.type | default: 'Industrial Equipment' }} Inspection",
+        "description": "Technical inspection and testing of {{ page.object.name | default: 'industrial equipment' }}"
+      },
+      "articleSection": "Inspection Report",
+      "proficiencyLevel": "Expert"
+      {% if page.image %},
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ page.image | absolute_url }}"
+      }
+      {% endif %}
+    },
+    {
+      "@type": "Report",
+      "@id": "{{ page.url | absolute_url }}#report",
+      "name": "{{ page.title | escape }}",
+      "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+      "url": "{{ page.url | absolute_url }}",
+      {% if page.report_number %}
+      "reportNumber": "{{ page.report_number }}",
+      {% endif %}
+      "dateCreated": "{{ page.date | date_to_xmlschema }}",
+      {% if page.inspection_date %}
+      "temporalCoverage": "{{ page.inspection_date | date: '%Y-%m-%d' }}",
+      {% endif %}
+      "author": {
+        "@type": "Organization",
+        "name": "{{ site.business.name }}",
+        "url": "{{ site.url }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.business.name }}"
+      },
+      "about": {
+        "@type": "Product",
+        "name": "{{ page.object.name | default: page.title }}",
+        {% if page.object.brand %}
+        "brand": {
+          "@type": "Brand",
+          "name": "{{ page.object.brand }}"
+        },
+        {% endif %}
+        {% if page.object.model %}
+        "model": "{{ page.object.model }}",
+        {% endif %}
+        {% if page.object.serial %}
+        "serialNumber": "{{ page.object.serial }}",
+        {% endif %}
+        {% if page.object.type %}
+        "category": "{{ page.object.type }}"
+        {% endif %}
+      }
+    }
+    {% if page.inspector %},
+    {
+      "@type": "Person",
+      "@id": "{{ page.url | absolute_url }}#inspector",
+      "name": "{{ page.inspector }}",
+      "jobTitle": "Technical Inspector",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "{{ site.business.name }}"
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>
