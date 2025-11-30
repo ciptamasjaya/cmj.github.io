@@ -53,27 +53,27 @@ Schema includes (conditional):
   {% unless page.skip_page_schema %}
     {% include schema/schema--page.html %}
   {% endunless %}
-  {% include schema/post/schema--techarticle.html %}
+  {% include schema/node--riksa-uji/schema--techarticle.html %}
   {% if page.section_importance %}
-    {% include schema/post/schema--importance.html %}
+    {% include schema/node--riksa-uji/schema--importance.html %}
   {% endif %}
   {% if page.section_process and page.section_process.steps.size > 0 %}
-    {% include schema/post/schema--process.html %}
+    {% include schema/node--riksa-uji/schema--process.html %}
   {% endif %}
   {% if page.section_regulation and page.section_regulation.subsections.size > 0 %}
-    {% include schema/post/schema--regulation.html %}
+    {% include schema/node--riksa-uji/schema--regulation.html %}
   {% endif %}
   {% if page.section_training and page.section_training.cards.size > 0 %}
-    {% include schema/post/schema--training.html %}
+    {% include schema/node--riksa-uji/schema--training.html %}
   {% endif %}
   {% if page.section_specs and page.section_specs.specs.size > 0 %}
-    {% include schema/post/schema--specs.html %}
+    {% include schema/node--riksa-uji/schema--specs.html %}
   {% endif %}
   {% if page.section_permit %}
-    {% include schema/post/schema--permit.html %}
+    {% include schema/node--riksa-uji/schema--permit.html %}
   {% endif %}
   {% if page.section_certification %}
-    {% include schema/post/schema--certification.html %}
+    {% include schema/node--riksa-uji/schema--certification.html %}
   {% endif %}
 
   <!-- HowTo Schema (reusable with isPartOf) -->
