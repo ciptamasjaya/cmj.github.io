@@ -1,103 +1,126 @@
-# Frontmatter Measurement Rotation
+# Content Freshness Robots
 
 ## Overview
 
-Script `rotate-frontmatter.rb` melakukan variasi kecil pada **angka pengukuran** di frontmatter untuk trigger lastmod / content freshness signal.
+Sistem multi-robot untuk trigger lastmod / content freshness signal. Setiap run, satu robot dipilih secara random untuk beraksi.
 
-## Strategy
+## Available Robots
 
-Mengubah nilai numerik hasil pengukuran dengan variasi kecil yang natural:
-- **Desimal**: ±0.1 sampai ±0.3 (e.g., 10.5 → 10.4 atau 10.7)
-- **Integer**: ±1 sampai ±2 (e.g., 375 → 374 atau 376)
+### 🤖 Robot Measurement (`rotate-frontmatter.rb`)
+Variasi kecil pada angka pengukuran:
+- NDT thickness: 10.5 → 10.4, 10.8 → 10.6
+- Operational: 10.8 Bar → 10.7 Bar, 375°C → 374°C
+- Technical: 11.2 mm → 11.1 mm, 88% → 87%
+- Hydrotest: 15.75 Bar → 15.65 Bar, 30 Menit → 29 Menit
 
-## Target Fields
+### 🤖 Robot Sinonim (`rotate-synonyms.rb`)
+Ganti kata dengan sinonim:
+- "dilakukan" ↔ "dilaksanakan" ↔ "dijalankan"
+- "memiliki" ↔ "mempunyai"
+- "dan" ↔ "serta"
+- "untuk" ↔ "guna" ↔ "bagi"
+- "dengan" ↔ "secara"
+- "sangat" ↔ "amat" ↔ "sungguh"
+- 50+ synonym groups lainnya
 
-### section_ndt.items[].result
-Hasil pengukuran thickness (mm)
-```yaml
-- component: "Dinding Ruang Pembakaran"
-  result: "10.5"  # → 10.4, 10.6, 10.7, dll
-```
+## Robot Scheduler
 
-### section_operational.items[].result
-Parameter operasional dengan angka
-```yaml
-- parameter: "Tekanan Operasional"
-  result: "10.8 Bar"  # → 10.7 Bar, 10.9 Bar, dll
-- parameter: "Suhu Operasional"
-  result: "375°C"     # → 374°C, 376°C, dll
-```
+Script `run-random-robot.rb` memilih robot berdasarkan **weighted random**:
+- Robot yang lama tidak dijalankan punya probabilitas lebih tinggi
+- Mencegah satu robot dominan
 
-### section_technical.items[].result
-Hasil pengujian teknis dengan angka
-```yaml
-- component: "Ketebalan Dinding"
-  result: "11.2 mm"   # → 11.1 mm, 11.3 mm, dll
-```
+### Weight Table
 
-### section_hydrotest
-Tekanan dan durasi uji
-```yaml
-test_pressure: "15.75 Bar"  # → 15.65 Bar, 15.85 Bar, dll
-duration: "30 Menit"        # → 29 Menit, 31 Menit, dll
-```
+| Days Since Last Run | Weight |
+|---------------------|--------|
+| 0 (hari ini)        | 1      |
+| 1-2 hari            | 3      |
+| 3-6 hari            | 5      |
+| 7-13 hari           | 8      |
+| > 14 hari           | 10     |
 
-## Probability Table
+## Probability System (Per Robot)
+
+Setiap robot juga punya internal probability untuk per-post:
 
 | Days Since Last Rotation | Probability |
 |--------------------------|-------------|
-| 0-6 hari (minggu ini)    | 5%          |
-| 7-13 hari (1-2 minggu)   | 15%         |
-| 14-20 hari (2-3 minggu)  | 30%         |
-| 21-27 hari (3-4 minggu)  | 50%         |
-| 28-34 hari (4-5 minggu)  | 70%         |
-| > 35 hari (5+ minggu)    | 90%         |
+| 0-6 hari                 | 5%          |
+| 7-13 hari                | 15%         |
+| 14-20 hari               | 30%         |
+| 21-27 hari               | 50%         |
+| 28-34 hari               | 70%         |
+| > 35 hari                | 90%         |
 
-## Log File
+## Log Files
 
-Setiap rotasi dicatat di `_data/frontmatter-rotation-log.json`:
+Setiap komponen punya log terpisah:
 
-```json
-{
-  "2024-10-16-riksa-uji-boiler-john-thompson-74910.md": {
-    "date": "2025-12-01",
-    "changes": 15,
-    "sections": ["ndt(7)", "operational(4)", "technical(2)", "hydrotest(2)"]
-  }
-}
+```
+_data/
+├── robot-scheduler-log.json      # Which robot ran when
+├── frontmatter-rotation-log.json # Measurement changes per post
+└── synonym-rotation-log.json     # Synonym changes per post
 ```
 
 ## Usage
 
 ### Manual Run
-```bash
-# Dry run (preview tanpa perubahan)
-ruby scripts/rotate-frontmatter.rb --dry-run --verbose
 
-# Live run
+```bash
+# Random robot (recommended)
+ruby scripts/run-random-robot.rb
+
+# Specific robot
 ruby scripts/rotate-frontmatter.rb
+ruby scripts/rotate-synonyms.rb
+
+# Dry run (preview)
+ruby scripts/run-random-robot.rb --dry-run --verbose
 ```
 
 ### GitHub Actions
-Lihat `.github/workflows/rotate-frontmatter.yml` untuk scheduled daily runs.
+
+Workflow: `.github/workflows/rotate-frontmatter.yml`
+
+**Scheduled:** Daily at 3 AM UTC (10 AM WIB)
+
+**Manual trigger dengan pilihan:**
+- `robot: random` - Pilih robot random (default)
+- `robot: measurement` - Jalankan Robot Measurement
+- `robot: synonym` - Jalankan Robot Sinonim
 
 ## SEO Purpose
 
 1. **File modified** → lastmod di sitemap berubah
 2. **Content freshness signal** → Google sees "updated" content
-3. **Natural variation** → Angka pengukuran memang bervariasi di dunia nyata
-4. **Safe changes** → Tidak mengubah title, description, atau konten bermakna
+3. **Natural variation** → Perubahan terlihat natural
+4. **Rotating robots** → Variasi jenis perubahan
 
-## What's NOT Changed
+## What's Safe
 
-- Title dan description (SEO-sensitive)
-- Section titles dan intro text
-- Qualitative results ("Baik", "Normal", "Tidak ada cacat")
+✅ **Changed:**
+- Angka pengukuran (dalam range wajar)
+- Kata-kata umum (diganti sinonim)
+- Text dalam paragraphs, intro, summary
+
+❌ **NOT Changed:**
+- Title dan URL
+- Struktur data (keys, arrays)
+- Status fields ("lulus", "baik")
 - Standard/threshold values
-- Status fields ("lulus", "perlu_perhatian")
+- Links dan HTML tags
 
-## Notes
+## Adding New Robots
 
-- Script hanya memproses layout `inspection-report` atau `riksa-uji`
-- Posts tanpa data numerik akan di-skip
-- Rating/review rotation terpisah di `block--rating--*.html`
+1. Create new script in `scripts/` folder
+2. Add robot config to `ROBOTS` array in `run-random-robot.rb`:
+   ```ruby
+   {
+     id: 'new-robot',
+     name: 'Robot Baru',
+     script: 'rotate-new.rb',
+     description: 'Deskripsi robot'
+   }
+   ```
+3. Script harus support `--dry-run` dan `--verbose` flags
