@@ -1,0 +1,54 @@
+{% comment %}
+============================================================================
+Schema: Glossary (DefinedTermSet)
+============================================================================
+
+@file        schema--glossary.html
+@path        _includes/schema/node--inspection-report/schema--glossary.html
+@type        Schema
+@description DefinedTermSet schema for glossary/terms section
+@author      arisciwek
+@created     2025-11-30
+
+Generates DefinedTermSet with DefinedTerm entries from glossary data.
+
+Usage:
+------
+{% include schema/node--inspection-report/schema--glossary.html %}
+
+Data from frontmatter:
+----------------------
+section_glossary:
+  title: "Istilah dan Definisi"
+  terms:
+    - term: "PJK3"
+      definition: "Perusahaan Jasa K3..."
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_glossary and page.section_glossary.terms.size > 0 %}
+{% assign section = page.section_glossary %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "{{ page.url | absolute_url }}#glossary",
+  "name": "{{ section.title | default: 'Istilah dan Definisi' | escape }}",
+  {% if section.intro %}
+  "description": "{{ section.intro | strip_html | truncate: 200 | escape }}",
+  {% endif %}
+  "hasDefinedTerm": [
+    {% for item in section.terms %}
+    {
+      "@type": "DefinedTerm",
+      "@id": "{{ page.url | absolute_url }}#term-{{ forloop.index }}",
+      "name": "{{ item.term | escape }}",
+      "description": "{{ item.definition | strip_html | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
