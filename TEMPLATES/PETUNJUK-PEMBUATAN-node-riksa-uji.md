@@ -5,47 +5,119 @@
 # Lokasi: /TEMPLATES/TEMPLATE-node-riksa-uji.md
 # ============================================================================
 
-## CARA KERJA (BATCH SYSTEM)
+## CARA KERJA (BATCH SYSTEM + TODO)
 
 Konten template ini sangat panjang. JANGAN mengisi sekali jalan.
-Gunakan sistem batch untuk menghindari error dan memudahkan review.
+Gunakan sistem batch dengan TodoWrite untuk menjaga kualitas konten.
 
-### Alur Kerja:
+### WAJIB: Gunakan TodoWrite untuk Setiap Batch
+
+```
+SEBELUM MULAI, buat todo list dengan 6 batch:
+┌─────────────────────────────────────────────────────────────┐
+│ TodoWrite:                                                  │
+│ 1. [pending] BATCH 1: Front Matter + Copy template          │
+│ 2. [pending] BATCH 2: Schema Data (howto, itemlist, faq)    │
+│ 3. [pending] BATCH 3: Section 1-2 (importance, process)     │
+│ 4. [pending] BATCH 4: Section 3-4 (regulation, training)    │
+│ 5. [pending] BATCH 5: Section 5-6 (specs, certification)    │
+│ 6. [pending] BATCH 6: Section 7-8 (permit, conclusion)      │
+└─────────────────────────────────────────────────────────────┘
+
+UNTUK SETIAP BATCH:
+1. Mark todo as [in_progress]
+2. Baca section terkait dari file sumber
+3. Tulis konten ke file tujuan (Edit tool)
+4. Mark todo as [completed]
+5. JANGAN lanjut ke batch berikutnya sebelum completed
+```
+
+### Alur Kerja Detail:
 
 ```
 BATCH 1: Salin template + Front Matter
+         STATUS: [in_progress] saat dikerjakan
          - Copy TEMPLATE-node-riksa-uji.md ke file tujuan
          - Isi: title, description, content_intro, announce
          - Isi: permalink, date, author, categories, tags
          - Isi: image, images
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 2: Schema Data
+         STATUS: [in_progress] saat dikerjakan
          - Isi: howto_post
          - Isi: itemlist_post
          - Isi: faq_post
          - Isi: video_post (jika ada)
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 3: Section 1-2
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_importance
          - Isi: section_process
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 4: Section 3-4
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_regulation
          - Isi: section_training
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 5: Section 5-6
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_specs
          - Isi: section_certification
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 6: Section 7-8
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_permit
          - Isi: section_conclusion
-         - SIMPAN & REVIEW
+         - SIMPAN → Mark [completed]
+         - REVIEW & REBUILD
+```
+
+### Mengapa Batch + Todo Penting?
+
+1. **Memory Management**: Setiap batch fokus pada 2-3 section saja
+2. **Quality Control**: Konten lebih detail karena tidak terburu-buru
+3. **Checkpoint**: Jika ada error, bisa lanjut dari batch terakhir
+4. **Review**: User bisa review setiap batch sebelum lanjut
+5. **Traceability**: Todo list menunjukkan progress yang jelas
+
+### Contoh Penggunaan Todo:
+
+```
+User: "Konversi riksa-uji-crane.md ke template baru"
+
+Assistant Response:
+┌─────────────────────────────────────────────────────────────┐
+│ [TodoWrite] Membuat todo list untuk konversi:               │
+│                                                             │
+│ 1. [pending] BATCH 1: Front Matter + Copy template          │
+│ 2. [pending] BATCH 2: Schema Data (howto, itemlist, faq)    │
+│ 3. [pending] BATCH 3: Section 1-2 (importance, process)     │
+│ 4. [pending] BATCH 4: Section 3-4 (regulation, training)    │
+│ 5. [pending] BATCH 5: Section 5-6 (specs, certification)    │
+│ 6. [pending] BATCH 6: Section 7-8 (permit, conclusion)      │
+└─────────────────────────────────────────────────────────────┘
+
+[TodoWrite] Mark BATCH 1 as [in_progress]
+[Read] Baca file sumber: riksa-uji-crane.md
+[Read] Baca template: TEMPLATE-node-riksa-uji.md
+[Write] Copy template ke _posts/2024-08-26-jasa-riksa-uji-crane.md
+[Edit] Isi front matter dari data sumber
+[TodoWrite] Mark BATCH 1 as [completed]
+
+[TodoWrite] Mark BATCH 2 as [in_progress]
+[Read] Baca konten untuk schema data dari sumber
+[Edit] Isi howto_post, itemlist_post, faq_post
+[TodoWrite] Mark BATCH 2 as [completed]
+
+... (lanjut sampai BATCH 6)
+
+[TodoWrite] Semua batch completed
+[Bash] ./rebuild.sh
 ```
 
 ---

@@ -5,56 +5,135 @@
 # Lokasi: /TEMPLATES/TEMPLATE-node-pjk3-city.md
 # ============================================================================
 
-## CARA KERJA (BATCH SYSTEM)
+## CARA KERJA (BATCH SYSTEM + TODO)
 
 Konten template ini sangat panjang. JANGAN mengisi sekali jalan.
-Gunakan sistem batch untuk menghindari error dan memudahkan review.
+Gunakan sistem batch dengan TodoWrite untuk menjaga kualitas konten.
 
-### Alur Kerja:
+### WAJIB: Gunakan TodoWrite untuk Setiap Batch
+
+```
+SEBELUM MULAI, buat todo list dengan 8 batch:
+┌─────────────────────────────────────────────────────────────┐
+│ TodoWrite:                                                  │
+│ 1. [pending] BATCH 1: Front Matter + Copy template          │
+│ 2. [pending] BATCH 2: Hero + Company Intro                  │
+│ 3. [pending] BATCH 3: Services + Area                       │
+│ 4. [pending] BATCH 4: Risks + Role + Business               │
+│ 5. [pending] BATCH 5: City + Coverage                       │
+│ 6. [pending] BATCH 6: Order + Testimonials                  │
+│ 7. [pending] BATCH 7: Tips + FAQ                            │
+│ 8. [pending] BATCH 8: About City + Conclusion               │
+└─────────────────────────────────────────────────────────────┘
+
+UNTUK SETIAP BATCH:
+1. Mark todo as [in_progress]
+2. Baca section terkait dari file sumber
+3. Tulis konten ke file tujuan (Edit tool)
+4. Mark todo as [completed]
+5. JANGAN lanjut ke batch berikutnya sebelum completed
+```
+
+### Alur Kerja Detail:
 
 ```
 BATCH 1: Salin template + Front Matter
+         STATUS: [in_progress] saat dikerjakan
          - Copy TEMPLATE-node-pjk3-city.md ke file tujuan
          - Isi: title, date, author, description, area_served
          - Isi: categories, tags
          - Isi: images, section_gallery, video, section_video
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 2: Hero + Company Intro
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_hero
          - Isi: section_company_intro
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 3: Services + Area
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_services
          - Isi: section_area
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 4: Risks + Role + Business
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_risks
          - Isi: section_role
          - Isi: section_business
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 5: City + Coverage
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_city
          - Isi: section_coverage
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 6: Order + Testimonials
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_order
          - Isi: section_testimonials
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 7: Tips + FAQ
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_tips
          - Isi: section_faq
-         - SIMPAN
+         - SIMPAN → Mark [completed]
 
 BATCH 8: About City + Conclusion
+         STATUS: [in_progress] saat dikerjakan
          - Isi: section_about_city
          - Isi: section_conclusion
-         - SIMPAN & REVIEW
+         - SIMPAN → Mark [completed]
+         - REVIEW & REBUILD
+```
+
+### Mengapa Batch + Todo Penting?
+
+1. **Memory Management**: Setiap batch fokus pada 2-3 section saja
+2. **Quality Control**: Konten lebih detail karena tidak terburu-buru
+3. **Checkpoint**: Jika ada error, bisa lanjut dari batch terakhir
+4. **Review**: User bisa review setiap batch sebelum lanjut
+5. **Traceability**: Todo list menunjukkan progress yang jelas
+
+### Contoh Penggunaan Todo:
+
+```
+User: "Konversi pjk3-bandung.md ke template baru"
+
+Assistant Response:
+┌─────────────────────────────────────────────────────────────┐
+│ [TodoWrite] Membuat todo list untuk konversi:               │
+│                                                             │
+│ 1. [pending] BATCH 1: Front Matter + Copy template          │
+│ 2. [pending] BATCH 2: Hero + Company Intro                  │
+│ 3. [pending] BATCH 3: Services + Area                       │
+│ 4. [pending] BATCH 4: Risks + Role + Business               │
+│ 5. [pending] BATCH 5: City + Coverage                       │
+│ 6. [pending] BATCH 6: Order + Testimonials                  │
+│ 7. [pending] BATCH 7: Tips + FAQ                            │
+│ 8. [pending] BATCH 8: About City + Conclusion               │
+└─────────────────────────────────────────────────────────────┘
+
+[TodoWrite] Mark BATCH 1 as [in_progress]
+[Read] Baca file sumber: pjk3-bandung.md
+[Read] Baca template: TEMPLATE-node-pjk3-city.md
+[Write] Copy template ke _posts/2025-05-24-pjk3-bandung.md
+[Edit] Isi front matter dari data sumber
+[TodoWrite] Mark BATCH 1 as [completed]
+
+[TodoWrite] Mark BATCH 2 as [in_progress]
+[Read] Baca section hero dan company intro dari sumber
+[Edit] Isi section_hero
+[Edit] Isi section_company_intro
+[TodoWrite] Mark BATCH 2 as [completed]
+
+... (lanjut sampai BATCH 8)
+
+[TodoWrite] Semua batch completed
+[Bash] ./rebuild.sh
 ```
 
 ---
