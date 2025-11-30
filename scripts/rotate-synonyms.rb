@@ -27,6 +27,14 @@ LOG_FILE = File.expand_path('../../_data/synonym-rotation-log.json', __FILE__)
 DRY_RUN = ARGV.include?('--dry-run')
 VERBOSE = ARGV.include?('--verbose') || ARGV.include?('-v')
 
+# Layouts filter from environment (passed by run-random-robot.rb)
+# Empty array = process ALL layouts (no filter)
+ALLOWED_LAYOUTS = if ENV['ROBOT_LAYOUTS']
+                    ENV['ROBOT_LAYOUTS'].split(',').map(&:strip).reject(&:empty?)
+                  else
+                    []  # Default: all layouts
+                  end
+
 # ============================================================================
 # SYNONYM GROUPS
 # ============================================================================
@@ -345,6 +353,11 @@ end
 # MAIN ROTATION LOGIC
 # ============================================================================
 
+def layout_allowed?(layout)
+  return true if ALLOWED_LAYOUTS.empty?
+  ALLOWED_LAYOUTS.any? { |allowed| layout.include?(allowed) || allowed.include?(layout) }
+end
+
 def rotate_post(file_path, rotation_log)
   filename = File.basename(file_path)
   content = File.read(file_path)
@@ -352,8 +365,12 @@ def rotate_post(file_path, rotation_log)
   frontmatter, body = extract_frontmatter(content)
   return nil unless frontmatter
 
-  # Robot Sinonim works on ALL layouts (no filter)
-  # Unlike Robot Measurement which only works on inspection-report
+  # Check layout against allowed layouts from config
+  layout = frontmatter['layout'].to_s
+  unless layout_allowed?(layout)
+    puts "  Skipping #{filename} (layout: #{layout})" if VERBOSE
+    return nil
+  end
 
   # Check rotation probability
   last_rotation = rotation_log[filename] ? Date.parse(rotation_log[filename]['date']) : nil

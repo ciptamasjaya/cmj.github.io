@@ -50,7 +50,8 @@ def load_robots_config
       script: r['script'],
       description: r['description'],
       enabled: r['enabled'] != false,  # default true
-      weight_multiplier: r['weight_multiplier'] || 1.0
+      weight_multiplier: r['weight_multiplier'] || 1.0,
+      layouts: r['layouts'] || []      # empty = all layouts
     }
   end
 
@@ -68,7 +69,8 @@ def default_robots
       script: 'rotate-frontmatter.rb',
       description: 'Variasi angka pengukuran',
       enabled: true,
-      weight_multiplier: 1.0
+      weight_multiplier: 1.0,
+      layouts: ['node/node--inspection-report', 'node/node--riksa-uji']
     },
     {
       id: 'synonym',
@@ -76,7 +78,8 @@ def default_robots
       script: 'rotate-synonyms.rb',
       description: 'Ganti kata dengan sinonim',
       enabled: true,
-      weight_multiplier: 1.0
+      weight_multiplier: 1.0,
+      layouts: []  # all layouts
     }
   ]
 end
@@ -161,10 +164,12 @@ def list_robots(scheduler_log)
     days = days_since_last_run(robot[:id], scheduler_log)
     days_str = days == 999 ? "never" : "#{days} days ago"
     multiplier = robot[:weight_multiplier] != 1.0 ? " (×#{robot[:weight_multiplier]})" : ""
+    layouts = robot[:layouts].empty? ? "ALL layouts" : robot[:layouts].join(', ')
 
     puts "  [#{robot[:id]}] #{robot[:name]}"
     puts "      Status: #{status}#{multiplier}"
     puts "      Script: #{robot[:script]}"
+    puts "      Layouts: #{layouts}"
     puts "      Last run: #{days_str}"
     puts "      #{robot[:description]}"
     puts ""
@@ -247,11 +252,21 @@ cmd = "ruby #{script_path}"
 cmd += " --dry-run" if DRY_RUN
 cmd += " --verbose" if VERBOSE
 
-# Execute
+# Pass layouts via environment variable
+layouts = selected_robot[:layouts] || []
+if layouts.empty?
+  puts "Layouts: ALL (no filter)"
+else
+  puts "Layouts: #{layouts.join(', ')}"
+end
+puts ""
+
+# Execute with ROBOT_LAYOUTS env var
+env = { 'ROBOT_LAYOUTS' => layouts.join(',') }
 puts "Executing: #{cmd}"
 puts ""
 
-system(cmd)
+system(env, cmd)
 exit_status = $?.exitstatus
 
 puts ""

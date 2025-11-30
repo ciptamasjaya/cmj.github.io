@@ -28,6 +28,15 @@ LOG_FILE = File.expand_path('../../_data/frontmatter-rotation-log.json', __FILE_
 DRY_RUN = ARGV.include?('--dry-run')
 VERBOSE = ARGV.include?('--verbose') || ARGV.include?('-v')
 
+# Layouts filter from environment (passed by run-random-robot.rb)
+# Empty = process layouts defined in script, or use ROBOT_LAYOUTS env
+ALLOWED_LAYOUTS = if ENV['ROBOT_LAYOUTS'] && !ENV['ROBOT_LAYOUTS'].empty?
+                    ENV['ROBOT_LAYOUTS'].split(',').map(&:strip)
+                  else
+                    # Default: inspection-report layouts only
+                    ['node/node--inspection-report', 'node/node--riksa-uji']
+                  end
+
 # ============================================================================
 # ESCALATING PROBABILITY SYSTEM
 # ============================================================================
@@ -229,6 +238,11 @@ end
 # MAIN ROTATION LOGIC
 # ============================================================================
 
+def layout_allowed?(layout)
+  return true if ALLOWED_LAYOUTS.empty?
+  ALLOWED_LAYOUTS.any? { |allowed| layout.include?(allowed) || allowed.include?(layout) }
+end
+
 def rotate_post(file_path, rotation_log)
   filename = File.basename(file_path)
   content = File.read(file_path)
@@ -236,9 +250,9 @@ def rotate_post(file_path, rotation_log)
   frontmatter, body, _original_yaml = extract_frontmatter(content)
   return nil unless frontmatter
 
-  # Check layout - only process inspection reports
+  # Check layout against allowed layouts from config
   layout = frontmatter['layout'].to_s
-  unless layout.include?('inspection-report') || layout.include?('riksa-uji')
+  unless layout_allowed?(layout)
     puts "  Skipping #{filename} (layout: #{layout})" if VERBOSE
     return nil
   end
