@@ -71,7 +71,7 @@ numbers: []     → <ol><li>      (ordered list)
   <div class="card border-0 shadow-lg mb-4">
     <div class="card-body text-white text-center py-4 px-3 header-gradient">
       <i class="bi {{ section.icon | default: 'bi-shield-check' }} mb-2 display-4"></i>
-      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      <h2 class="h3 mb-0 fw-bold text-white">{{ section.title }}</h2>
       {% if section.subtitle %}
       <p class="mb-0 mt-2 small subtitle-text">
         <i class="bi bi-star-fill me-1"></i>
@@ -150,7 +150,7 @@ numbers: []     → <ol><li>      (ordered list)
                   <i class="bi bi-check-lg"></i>
                 </div>
                 <div class="flex-grow-1">
-                  <h4 class="h6 fw-bold mb-2 bullet-key">{{ bullet.key }}</h4>
+                  <h4 class="h5 fw-bold mb-2 bullet-key">{{ bullet.key }}</h4>
                   <p class="small text-muted mb-0 bullet-value">{{ bullet.value }}</p>
                 </div>
               </div>

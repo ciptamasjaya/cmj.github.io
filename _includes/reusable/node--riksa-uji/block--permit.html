@@ -63,7 +63,7 @@ Usage:
   <div class="card border-0 shadow-lg mb-4">
     <div class="card-body text-white text-center py-4 px-3 header-gradient permit-header">
       <i class="bi {{ section.icon | default: 'bi-file-earmark-medical' }} mb-2 display-4"></i>
-      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      <h2 class="h3 mb-0 fw-bold text-white">{{ section.title }}</h2>
       {% if section.subtitle %}
       <p class="mb-0 mt-2 small subtitle-text">
         <i class="bi bi-patch-check-fill me-1"></i>
@@ -121,7 +121,7 @@ Usage:
                     <i class="bi bi-check-circle-fill"></i>
                   </div>
                   <div class="permit-bullet-content">
-                    <h4 class="h6 fw-bold mb-1 permit-bullet-key">{{ bullet.key }}</h4>
+                    <h4 class="h5 fw-bold mb-1 permit-bullet-key">{{ bullet.key }}</h4>
                     <p class="mb-0 permit-bullet-value">{{ bullet.value }}</p>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ Usage:
                 {{ number_index }}
               </div>
               <div class="permit-number-content">
-                <h4 class="h6 fw-bold mb-1 permit-number-title">{{ number.title }}</h4>
+                <h4 class="h5 fw-bold mb-1 permit-number-title">{{ number.title }}</h4>
                 <p class="mb-0 permit-number-text">{{ number.content }}</p>
               </div>
             </div>

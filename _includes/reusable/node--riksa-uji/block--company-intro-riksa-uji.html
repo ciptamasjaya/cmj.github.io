@@ -42,7 +42,7 @@ Usage:
   <div class="card border-0 shadow-lg mb-4">
     <div class="card-body text-white text-center py-4 px-3 header-gradient">
       <i class="bi {{ section.icon | default: 'bi-building' }} mb-2 display-4"></i>
-      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title | default: "Tentang Perusahaan" }}</h2>
+      <h2 class="h3 mb-0 fw-bold text-white">{{ section.title | default: "Tentang Perusahaan" }}</h2>
       {% if section.intro %}
       <p class="mb-0 mt-2 small subtitle-text">
         <i class="bi bi-star-fill me-1"></i>
@@ -62,7 +62,7 @@ Usage:
           <i class="bi bi-shield-check"></i>
         </div>
         <div class="flex-grow-1">
-          <h3 class="h5 fw-bold mb-1">{{ section.company_name }}</h3>
+          <h3 class="h4 fw-bold mb-1">{{ section.company_name }}</h3>
           <p class="mb-0 text-muted small">
             PJK3 Riksa Uji Resmi Berlisensi Kemenaker
           </p>
@@ -87,7 +87,7 @@ Usage:
       <!-- H3: Subsection Header Strip -->
       <div class="d-flex align-items-center mb-3">
         <div class="subsection-strip subsection-strip-{{ sub_index }} px-3 py-2 rounded-3 flex-grow-1">
-          <h3 class="h5 mb-0 fw-bold subsection-title">
+          <h3 class="h4 mb-0 fw-bold subsection-title">
             <span class="subsection-number me-2">{{ sub_index }}</span>
             {% if subsection.icon %}
             <i class="bi {{ subsection.icon }} me-2 subsection-icon"></i>

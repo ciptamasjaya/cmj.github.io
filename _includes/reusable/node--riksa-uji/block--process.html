@@ -58,7 +58,7 @@ Usage:
   <div class="card border-0 shadow-lg mb-4">
     <div class="card-body text-white text-center py-4 px-3 header-gradient">
       <i class="bi {{ section.icon | default: 'bi-gear' }} mb-2 display-4"></i>
-      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      <h2 class="h3 mb-0 fw-bold text-white">{{ section.title }}</h2>
       {% if section.subtitle %}
       <p class="mb-0 mt-2 small subtitle-text">
         <i class="bi bi-arrow-right me-1"></i>
@@ -142,7 +142,7 @@ Usage:
           <!-- H4: Substep Title Card -->
           <div class="card border-0 substep-card substep-card-{{ step_index }} mb-3">
             <div class="card-body py-3">
-              <h4 class="h6 fw-bold mb-0 substep-title">
+              <h4 class="h5 fw-bold mb-0 substep-title">
                 <span class="substep-icon-circle substep-icon-{{ step_index }} me-2">
                   <i class="bi bi-check-lg"></i>
                 </span>

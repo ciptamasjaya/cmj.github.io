@@ -59,7 +59,7 @@ Usage:
   <div class="card border-0 shadow-lg mb-4">
     <div class="card-body text-white text-center py-4 px-3 header-gradient training-header">
       <i class="bi {{ section.icon | default: 'bi-mortarboard' }} mb-2 display-4"></i>
-      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      <h2 class="h3 mb-0 fw-bold text-white">{{ section.title }}</h2>
       {% if section.subtitle %}
       <p class="mb-0 mt-2 small subtitle-text">
         <i class="bi bi-mortarboard-fill me-1"></i>
@@ -125,7 +125,7 @@ Usage:
             <div class="training-card-icon training-card-icon-{{ card_index }}">
               <i class="bi {{ card.icon | default: 'bi-bookmark-check' }}"></i>
             </div>
-            <h4 class="h6 fw-bold mb-0 training-card-title">{{ card.title }}</h4>
+            <h4 class="h5 fw-bold mb-0 training-card-title">{{ card.title }}</h4>
           </div>
           <!-- Card Content -->
           <p class="training-card-content mb-0">{{ card.content }}</p>

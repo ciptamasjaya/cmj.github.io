@@ -58,7 +58,7 @@ Usage:
   <div class="card border-0 shadow-lg mb-4">
     <div class="card-body text-white text-center py-4 px-3 header-gradient regulation-header">
       <i class="bi {{ section.icon | default: 'bi-bank' }} mb-2 display-4"></i>
-      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      <h2 class="h3 mb-0 fw-bold text-white">{{ section.title }}</h2>
       {% if section.subtitle %}
       <p class="mb-0 mt-2 small subtitle-text">
         <i class="bi bi-scales me-1"></i>
@@ -97,7 +97,7 @@ Usage:
           <div class="subsection-number-circle subsection-number-{{ subsec_index }}">
             <i class="bi {{ subsection.icon | default: 'bi-file-text' }}"></i>
           </div>
-          <h3 class="h5 mb-0 fw-bold subsection-title">{{ subsection.title }}</h3>
+          <h3 class="h4 mb-0 fw-bold subsection-title">{{ subsection.title }}</h3>
         </div>
 
         <div class="card-body pt-3 d-flex flex-column">

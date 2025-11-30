@@ -57,7 +57,7 @@ Usage:
   <div class="card border-0 shadow-lg mb-4">
     <div class="card-body text-white text-center py-4 px-3 header-gradient certification-header">
       <i class="bi {{ section.icon | default: 'bi-file-earmark-check' }} mb-2 display-4"></i>
-      <h2 class="h2 mb-0 fw-bold text-white">{{ section.title }}</h2>
+      <h2 class="h3 mb-0 fw-bold text-white">{{ section.title }}</h2>
       {% if section.subtitle %}
       <p class="mb-0 mt-2 small subtitle-text">
         <i class="bi bi-award-fill me-1"></i>
@@ -118,7 +118,7 @@ Usage:
                     <i class="bi {{ item.icon | default: 'bi-check-lg' }}"></i>
                   </div>
                   <div class="certification-item-content">
-                    <h4 class="h6 fw-bold mb-2 certification-item-title">{{ item.title }}</h4>
+                    <h4 class="h5 fw-bold mb-2 certification-item-title">{{ item.title }}</h4>
                     {% if item.content %}
                     <p class="mb-0 certification-item-text">{{ item.content }}</p>
                     {% endif %}
@@ -148,7 +148,7 @@ Usage:
                   {% if bullet.key %}
                   <!-- Key-value format -->
                   <div class="certification-bullet-content">
-                    <h4 class="h6 fw-bold mb-1 certification-bullet-key">{{ bullet.key }}</h4>
+                    <h4 class="h5 fw-bold mb-1 certification-bullet-key">{{ bullet.key }}</h4>
                     <p class="mb-0 certification-bullet-value">{{ bullet.value }}</p>
                   </div>
                   {% else %}

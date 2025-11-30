@@ -9,6 +9,19 @@
 // ============================================================================
 
 // ----------------------------------------------------------------------------
+// Card Float - Floating card effect for headers
+// ----------------------------------------------------------------------------
+// Usage: <div class="card card-float">
+// Combines: border-0 + shadow-lg + border-radius
+
+.card.card-float {
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); // Bootstrap shadow-lg equivalent
+  overflow: hidden;
+}
+
+// ----------------------------------------------------------------------------
 // Header & Navigation
 // ----------------------------------------------------------------------------
 
