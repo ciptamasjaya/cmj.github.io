@@ -1,0 +1,54 @@
+{% comment %}
+============================================================================
+Block: Rating Data - Forklift Caterpillar EP20 / 5SS25AM
+============================================================================
+
+@file        block--rating--5ss25am.html
+@path        _includes/reusable/node--inspection-report/block--rating--5ss25am.html
+@type        Block (data per post)
+@description Rating data for inspection report - sets Liquid vars + outputs JSON
+@author      arisciwek
+@created     2025-11-30
+
+Output:
+1. Liquid variables for schema (rating_average, rating_count, etc.)
+2. <script type="application/json"> with rating data for JS consumption
+
+Usage:
+------
+Included via schema--rating.html using page.rating_id or URL slug
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA (edit values here) === {% endcomment %}
+{% assign rating_average = 4.9 %}
+{% assign rating_count = 8 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 7 %}
+{% assign rating_dist_4 = 1 %}
+{% assign rating_dist_3 = 0 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "2025-11-30T15:00:00Z" %}
+
+{% comment %} === JSON OUTPUT (for JS/API simulation) === {% endcomment %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "riksa-uji-forklift-caterpillar-ep20-5ss25am",
+  "title": "{{ page.title | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}"
+}
+</script>
