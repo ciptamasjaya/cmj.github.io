@@ -98,4 +98,9 @@
   {% if layout_extra_css %}
   <link rel="stylesheet" href="{{ layout_extra_css | relative_url }}">
   {% endif %}
+
+  <!-- Gallery Slider CSS (shared component) -->
+  {% if page.layout contains 'inspection-report' or page.layout contains 'riksa-uji' %}
+  <link rel="stylesheet" href="{{ '/assets/css/components/gallery-slider.css' | relative_url }}">
+  {% endif %}
 </head>

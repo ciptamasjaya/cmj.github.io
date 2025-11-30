@@ -25,6 +25,26 @@ tags:
 skip_page_schema: false
 show_breadcrumb_schema: true
 
+# Images
+# images[0] = featured image untuk og:image, schema, thumbnail
+# images[1-3] = gallery images (optional)
+# Jika kosong, fallback ke default i1-i4.svg
+images:
+  - ""
+  - ""
+  - ""
+  - ""
+
+# Video Section
+# video: path to video file or YouTube URL
+# Jika kosong, fallback ke default riksa-uji-forklift.webm
+video:
+  name: "Video Proses Riksa Uji Boiler"
+  description: "Dokumentasi proses inspeksi dan pengujian boiler oleh tim PT. Cipta Mas Jaya"
+  src: ""
+  thumbnail: ""
+  duration: ""
+
 paragraphs:
   - "<strong><a href=\"/2024/08/26/jasa-riksa-uji-boiler/\">Riksa Uji Boiler</a></strong> adalah proses pemeriksaan dan pengujian menyeluruh terhadap <strong>boiler</strong> untuk memastikan bahwa alat tersebut berfungsi dengan aman dan sesuai standar keselamatan kerja yang berlaku. Proses ini meliputi berbagai tahapan, seperti pemeriksaan visual, pengujian teknis, dan pengujian non-destruktif untuk mendeteksi kerusakan internal yang tidak terlihat. Riksa uji ini sangat penting dilakukan secara berkala untuk menjaga keselamatan operator dan efisiensi operasional boiler, khususnya di sektor industri dan pembangkit listrik."
   - "<strong>Riksa Uji Boiler merupakan</strong> proses pemeriksaan dan pengujian komprehensif yang bertujuan untuk memastikan bahwa boiler berfungsi sesuai dengan standar keselamatan dan operasional yang ditetapkan. Pengujian ini meliputi evaluasi terhadap berbagai aspek penting, seperti ketebalan material, kondisi sambungan pipa, efisiensi pembakaran, serta fungsi sistem pengaman dan kontrol otomatis. Seluruh aspek ini diuji untuk mendeteksi potensi masalah seperti korosi, erosi, atau keausan yang dapat mempengaruhi kinerja dan keamanan operasional boiler."

@@ -17,6 +17,14 @@ Combines:
 ============================================================================
 {% endcomment %}
 
+{% comment %} Determine primary image - from images[0] or fallback {% endcomment %}
+{% assign primary_image = '/assets/images/posts/default/i1.svg' %}
+{% if page.images and page.images[0] and page.images[0] != '' %}
+  {% assign primary_image = page.images[0] %}
+{% elsif page.image and page.image != '' %}
+  {% assign primary_image = page.image %}
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -52,13 +60,11 @@ Combines:
         "description": "Technical inspection and testing of {{ page.object.name | default: 'industrial equipment' }}"
       },
       "articleSection": "Inspection Report",
-      "proficiencyLevel": "Expert"
-      {% if page.image %},
+      "proficiencyLevel": "Expert",
       "image": {
         "@type": "ImageObject",
-        "url": "{{ page.image | absolute_url }}"
+        "url": "{{ primary_image | absolute_url }}"
       }
-      {% endif %}
     },
     {
       "@type": "Report",

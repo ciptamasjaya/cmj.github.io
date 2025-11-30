@@ -40,6 +40,9 @@ In frontmatter: layout: node/node--inspection-report
       <!-- Main Content -->
       <div class="col-lg-8 col-main">
 
+        <!-- Gallery -->
+        {% include reusable/node--inspection-report/block--gallery.html images=page.images %}
+
         <!-- Marketing Introduction Paragraphs -->
         {% if page.paragraphs %}
           {% include reusable/node--inspection-report/block--marketing-intro.html paragraphs=page.paragraphs %}
@@ -104,6 +107,9 @@ In frontmatter: layout: node/node--inspection-report
         {% if page.section_conclusion %}
           {% include reusable/node--inspection-report/block--conclusion.html section=page.section_conclusion %}
         {% endif %}
+
+        <!-- Video -->
+        {% include reusable/node--inspection-report/block--video.html video=page.video %}
 
         <!-- Additional Content (from markdown body) -->
         {% if content and content != '' %}

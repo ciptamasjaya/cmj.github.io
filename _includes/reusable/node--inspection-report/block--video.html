@@ -1,0 +1,120 @@
+{% comment %}
+============================================================================
+Block: Video - Inspection Report
+============================================================================
+
+@file        block--video.html
+@path        _includes/reusable/node--inspection-report/block--video.html
+@type        Block (reusable)
+@description Displays video embed for inspection report pages
+@author      arisciwek
+@created     2025-11-30
+
+Parameters:
+-----------
+- video: Video object from frontmatter with:
+  - name: Video title
+  - description: Brief description
+  - thumbnail: Thumbnail image URL
+  - src: Video source URL (YouTube, local, etc.)
+  - duration: Video duration (ISO 8601 format)
+
+Usage:
+------
+{% include reusable/node--inspection-report/block--video.html video=page.video %}
+
+============================================================================
+{% endcomment %}
+
+{% assign video = include.video %}
+
+{% comment %} Fallback to default video if not provided {% endcomment %}
+{% unless video and video.src and video.src != '' %}
+  {% assign video = nil %}
+  {% assign default_video = true %}
+  {% assign video_src = "/assets/videos/service-page/riksa-uji-forklift.webm" %}
+  {% assign video_name = "Video Proses Riksa Uji" %}
+  {% assign video_description = "Dokumentasi proses inspeksi dan pengujian oleh tim PT. Cipta Mas Jaya" %}
+{% else %}
+  {% assign default_video = false %}
+  {% assign video_src = video.src %}
+  {% assign video_name = video.name %}
+  {% assign video_description = video.description %}
+{% endunless %}
+
+<section class="block--video py-4" id="video">
+  <!-- Section Header -->
+  <div class="card card-float mb-4">
+    <div class="card-body bg-danger text-white text-center py-3">
+      <i class="bi bi-play-circle-fill fs-3 mb-2"></i>
+      <h2 class="h4 mb-0 fw-bold">{{ video_name }}</h2>
+    </div>
+  </div>
+
+  {% if video_description %}
+  <p class="lead text-muted mb-4 text-center">{{ video_description }}</p>
+  {% endif %}
+
+  <!-- Video Container -->
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-0">
+      <div class="video-container">
+        {% if video_src contains 'youtube' %}
+          {% assign youtube_id = video_src | split: 'v=' | last | split: '&' | first %}
+          <div class="ratio ratio-16x9">
+            <iframe
+              src="https://www.youtube.com/embed/{{ youtube_id }}"
+              title="{{ video_name }}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        {% elsif video_src contains 'youtu.be' %}
+          {% assign youtube_id = video_src | split: 'youtu.be/' | last | split: '?' | first %}
+          <div class="ratio ratio-16x9">
+            <iframe
+              src="https://www.youtube.com/embed/{{ youtube_id }}"
+              title="{{ video_name }}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        {% else %}
+          <video controls class="w-100" {% if video.thumbnail %}poster="{{ video.thumbnail | relative_url }}"{% endif %}>
+            <source src="{{ video_src | relative_url }}" type="video/webm">
+            <source src="{{ video_src | replace: '.webm', '.mp4' | relative_url }}" type="video/mp4">
+            Browser Anda tidak mendukung video tag.
+          </video>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Duration Badge -->
+  {% if video.duration %}
+  <div class="text-center mt-3">
+    <span class="badge bg-secondary">
+      <i class="bi bi-clock-fill me-1"></i>
+      Durasi:
+      {% assign duration = video.duration | remove: "PT" %}
+      {% if duration contains 'H' %}
+        {% assign hours = duration | split: 'H' | first %}
+        {% assign rest = duration | split: 'H' | last %}
+        {{ hours }} jam
+        {% if rest contains 'M' %}
+          {% assign minutes = rest | split: 'M' | first %}
+          {{ minutes }} menit
+        {% endif %}
+      {% elsif duration contains 'M' %}
+        {% assign minutes = duration | split: 'M' | first %}
+        {% assign seconds = duration | split: 'M' | last | remove: 'S' %}
+        {{ minutes }}:{% if seconds.size == 1 %}0{% endif %}{{ seconds }}
+      {% else %}
+        {{ duration | remove: 'S' }} detik
+      {% endif %}
+    </span>
+  </div>
+  {% endif %}
+</section>

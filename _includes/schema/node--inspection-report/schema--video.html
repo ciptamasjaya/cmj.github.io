@@ -1,0 +1,59 @@
+{% comment %}
+============================================================================
+Schema: VideoObject
+============================================================================
+
+@file        schema--video.html
+@path        _includes/schema/node--inspection-report/schema--video.html
+@type        Schema (VideoObject)
+@description VideoObject schema for inspection report video
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Determine video source - from frontmatter or fallback {% endcomment %}
+{% assign has_video = false %}
+{% assign video_src = "/assets/videos/service-page/riksa-uji-forklift.webm" %}
+{% assign video_name = "Video Proses Riksa Uji" %}
+{% assign video_description = "Dokumentasi proses inspeksi dan pengujian oleh tim PT. Cipta Mas Jaya" %}
+{% assign video_thumbnail = "/assets/images/posts/default/i1.svg" %}
+{% assign video_duration = "PT2M30S" %}
+
+{% if page.video and page.video.src and page.video.src != '' %}
+  {% assign has_video = true %}
+  {% assign video_src = page.video.src %}
+  {% if page.video.name %}{% assign video_name = page.video.name %}{% endif %}
+  {% if page.video.description %}{% assign video_description = page.video.description %}{% endif %}
+  {% if page.video.thumbnail %}{% assign video_thumbnail = page.video.thumbnail %}{% endif %}
+  {% if page.video.duration %}{% assign video_duration = page.video.duration %}{% endif %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "{{ page.url | absolute_url }}#video",
+  "name": "{{ video_name | escape }}",
+  "description": "{{ video_description | escape }}",
+  "thumbnailUrl": "{{ video_thumbnail | absolute_url }}",
+  "uploadDate": "{{ page.date | date_to_xmlschema }}",
+  {% if video_duration and video_duration != '' %}
+  "duration": "{{ video_duration }}",
+  {% endif %}
+  {% if video_src contains 'youtube' or video_src contains 'youtu.be' %}
+  "embedUrl": "{% if video_src contains 'youtube' %}https://www.youtube.com/embed/{{ video_src | split: 'v=' | last | split: '&' | first }}{% else %}https://www.youtube.com/embed/{{ video_src | split: 'youtu.be/' | last | split: '?' | first }}{% endif %}",
+  {% else %}
+  "contentUrl": "{{ video_src | absolute_url }}",
+  {% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.business.name }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo | absolute_url }}"
+    }
+  }
+}
+</script>

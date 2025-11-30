@@ -1,0 +1,89 @@
+{% comment %}
+============================================================================
+Block: Gallery (Image Slider)
+============================================================================
+
+@file        block--gallery.html
+@path        _includes/reusable/node--inspection-report/block--gallery.html
+@type        Block (reusable)
+@description Displays image gallery with slider/carousel functionality
+@author      arisciwek
+@created     2025-11-27
+
+Parameters:
+-----------
+- images: Array of image paths from frontmatter (page.images)
+
+Fallback:
+---------
+If images empty or not provided, fallback to default i1-i4.svg
+
+Usage:
+------
+{% include reusable/node--inspection-report/block--gallery.html images=page.images %}
+
+Frontmatter example:
+--------------------
+images:
+  - "/assets/images/posts/example1.jpg"
+  - "/assets/images/posts/example2.jpg"
+  - "/assets/images/posts/example3.jpg"
+  - "/assets/images/posts/example4.jpg"
+
+Requires:
+---------
+- assets/js/gallery-slider.js
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Default fallback images {% endcomment %}
+{% assign default_images = "/assets/images/posts/default/i1.svg,/assets/images/posts/default/i2.svg,/assets/images/posts/default/i3.svg,/assets/images/posts/default/i4.svg" | split: "," %}
+
+{% comment %} Check if images provided and has content {% endcomment %}
+{% assign images = include.images %}
+{% assign has_images = false %}
+{% if images and images.size > 0 %}
+  {% for img in images %}
+    {% if img and img != '' %}
+      {% assign has_images = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% comment %} Use default if no valid images {% endcomment %}
+{% unless has_images %}
+  {% assign images = default_images %}
+{% endunless %}
+
+<section id="block--gallery" class="block--gallery mb-4" tabindex="0">
+  <div class="gallery-container">
+
+    <!-- Slides Track -->
+    <div class="gallery-track">
+      {% for i in (0..3) %}
+      {% if images[i] and images[i] != '' %}
+        {% assign img_src = images[i] %}
+      {% else %}
+        {% assign img_src = default_images[i] %}
+      {% endif %}
+      <div class="gallery-slide">
+        <img src="{{ img_src | relative_url }}" alt="{{ page.title }} - Image {{ forloop.index }}" class="gallery-image">
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="gallery-nav gallery-prev" aria-label="Previous slide">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="gallery-nav gallery-next" aria-label="Next slide">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <!-- Dots Indicator -->
+    <div class="gallery-dots"></div>
+
+  </div>
+</section>
