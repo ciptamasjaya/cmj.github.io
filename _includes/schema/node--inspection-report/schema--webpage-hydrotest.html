@@ -22,7 +22,12 @@ Schema: Hydrotest Section - WebPageElement
   "@type": "WebPageElement",
   "@id": "{{ page.url | absolute_url }}#hydrotest",
   "name": "{{ section.title | default: 'Pengujian Hidrostatik' | escape }}",
-  "description": "Hasil pengujian hidrostatik (tekanan)"
+  "description": "Hasil pengujian hidrostatik (tekanan)"{% if section.steps and section.steps.size > 0 %},
+  "hasPart": {
+    "@type": "HowTo",
+    "@id": "{{ page.url | absolute_url }}#hydrotest-howto",
+    "name": "Prosedur Pengujian Hidrostatik"
+  }{% endif %}
 }
 </script>
 {% endif %}

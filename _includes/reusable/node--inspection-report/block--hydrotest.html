@@ -6,7 +6,7 @@ Block: Hydrostatic Test Results
 @file        block--hydrotest.html
 @path        _includes/reusable/node--inspection-report/block--hydrotest.html
 @type        Block (reusable)
-@description Displays hydrostatic test results for pressure equipment
+@description Displays hydrostatic test procedure and results
 @author      arisciwek
 @created     2025-11-30
 
@@ -19,6 +19,9 @@ Parameters:
   - test_pressure: Test pressure value
   - working_pressure: Working pressure value
   - duration: Test duration
+  - steps: Array of procedure steps (for HowTo)
+    - name: Step name
+    - text: Step description
   - items: Array of test items
     - component: Component name
     - pressure: Applied pressure
@@ -104,6 +107,29 @@ Parameters:
     </div>
     <div class="card-body">
       <p class="mb-0">{{ section.method }}</p>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Procedure Steps (HowTo) -->
+  {% if section.steps and section.steps.size > 0 %}
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-light">
+      <h3 class="h5 mb-0 fw-bold">
+        <i class="bi bi-list-ol me-2"></i>Prosedur Pengujian
+      </h3>
+    </div>
+    <div class="card-body p-0">
+      <ol class="list-group list-group-numbered list-group-flush">
+        {% for step in section.steps %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{ step.name }}</div>
+            <span class="text-muted">{{ step.text }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
     </div>
   </div>
   {% endif %}
