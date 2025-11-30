@@ -32,10 +32,11 @@ robots:
   - id: synonym
     name: Robot Sinonim
     script: rotate-synonyms.rb
-    description: Ganti kata dengan sinonim (53 grup sinonim)
+    description: Ganti kata dengan sinonim - ALL layouts (_posts + _services)
     enabled: true
     weight_multiplier: 1.0
     # Empty layouts = process ALL layouts
+    # Scans: _posts/, _services/ (recursive)
     layouts: []
 
   # ============================================================================

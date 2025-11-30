@@ -21,7 +21,11 @@ require 'json'
 # CONFIGURATION
 # ============================================================================
 
-POSTS_DIR = File.expand_path('../../_posts', __FILE__)
+# Content directories to scan
+CONTENT_DIRS = [
+  File.expand_path('../../_posts', __FILE__),
+  File.expand_path('../../_services', __FILE__)
+]
 LOG_FILE = File.expand_path('../../_data/synonym-rotation-log.json', __FILE__)
 
 DRY_RUN = ARGV.include?('--dry-run')
@@ -215,9 +219,10 @@ def rotate_text_fields(frontmatter)
   total_changes = 0
   all_words_changed = []
 
-  # Fields to rotate (text content)
+  # Fields to rotate (top-level text content)
   text_fields = [
     'description',
+    'para_1',  # service pages
   ]
 
   text_fields.each do |field|
@@ -263,6 +268,16 @@ def rotate_text_fields(frontmatter)
     ['section_coverage', 'intro'],
     ['section_faq', 'intro'],
     ['section_cta', 'description'],
+    # service pages (node--service, page--subcategory)
+    ['intro', 'para'],
+    ['intro', 'para_1'],
+    ['intro', 'para_2'],
+    ['mengapa_penting', 'para'],
+    ['proses', 'para'],
+    ['layanan_pesawat_uap', 'para'],
+    ['jenis_forklift', 'description'],
+    ['jenis_forklift', 'footer'],
+    ['komponen_inspeksi', 'description'],
   ]
 
   section_fields.each do |section_key, field_key|
@@ -297,7 +312,7 @@ def rotate_text_fields(frontmatter)
     end
   end
 
-  # Glossary definitions
+  # Glossary definitions (inspection-report)
   if frontmatter['section_glossary'].is_a?(Hash) &&
      frontmatter['section_glossary']['terms'].is_a?(Array)
 
@@ -312,6 +327,100 @@ def rotate_text_fields(frontmatter)
         total_changes += changes
         all_words_changed += words
         puts "    glossary[#{idx}]: #{words.join(', ')}" if VERBOSE
+      end
+    end
+  end
+
+  # Service page: jenis_forklift.items[].description
+  if frontmatter['jenis_forklift'].is_a?(Hash) &&
+     frontmatter['jenis_forklift']['items'].is_a?(Array)
+
+    frontmatter['jenis_forklift']['items'].each_with_index do |item, idx|
+      next unless item['description'].is_a?(String)
+
+      old_val = item['description']
+      new_val, changes, words = rotate_string(old_val, 1)
+
+      if changes > 0
+        item['description'] = new_val
+        total_changes += changes
+        all_words_changed += words
+        puts "    jenis_forklift.items[#{idx}]: #{words.join(', ')}" if VERBOSE
+      end
+    end
+  end
+
+  # Service page: komponen_inspeksi.items[].description
+  if frontmatter['komponen_inspeksi'].is_a?(Hash) &&
+     frontmatter['komponen_inspeksi']['items'].is_a?(Array)
+
+    frontmatter['komponen_inspeksi']['items'].each_with_index do |item, idx|
+      next unless item['description'].is_a?(String)
+
+      old_val = item['description']
+      new_val, changes, words = rotate_string(old_val, 1)
+
+      if changes > 0
+        item['description'] = new_val
+        total_changes += changes
+        all_words_changed += words
+        puts "    komponen_inspeksi.items[#{idx}]: #{words.join(', ')}" if VERBOSE
+      end
+    end
+  end
+
+  # Service page: intro.subsections[].para and nested subsections
+  if frontmatter['intro'].is_a?(Hash) &&
+     frontmatter['intro']['subsections'].is_a?(Array)
+
+    frontmatter['intro']['subsections'].each_with_index do |subsec, idx|
+      # Rotate subsection para
+      if subsec['para'].is_a?(String)
+        old_val = subsec['para']
+        new_val, changes, words = rotate_string(old_val, 1)
+
+        if changes > 0
+          subsec['para'] = new_val
+          total_changes += changes
+          all_words_changed += words
+          puts "    intro.subsections[#{idx}].para: #{words.join(', ')}" if VERBOSE
+        end
+      end
+
+      # Rotate nested h4 subsections
+      if subsec['subsections'].is_a?(Array)
+        subsec['subsections'].each_with_index do |nested, nidx|
+          next unless nested['para'].is_a?(String)
+
+          old_val = nested['para']
+          new_val, changes, words = rotate_string(old_val, 1)
+
+          if changes > 0
+            nested['para'] = new_val
+            total_changes += changes
+            all_words_changed += words
+            puts "    intro.subsections[#{idx}].subsections[#{nidx}].para: #{words.join(', ')}" if VERBOSE
+          end
+        end
+      end
+    end
+  end
+
+  # Service page: layanan_pesawat_uap.sub_categories[].description
+  if frontmatter['layanan_pesawat_uap'].is_a?(Hash) &&
+     frontmatter['layanan_pesawat_uap']['sub_categories'].is_a?(Array)
+
+    frontmatter['layanan_pesawat_uap']['sub_categories'].each_with_index do |cat, idx|
+      next unless cat['description'].is_a?(String)
+
+      old_val = cat['description']
+      new_val, changes, words = rotate_string(old_val, 1)
+
+      if changes > 0
+        cat['description'] = new_val
+        total_changes += changes
+        all_words_changed += words
+        puts "    layanan_pesawat_uap.sub_categories[#{idx}]: #{words.join(', ')}" if VERBOSE
       end
     end
   end
@@ -415,14 +524,22 @@ puts ""
 rotation_log = load_rotation_log
 rotated_files = []
 
-posts = Dir.glob(File.join(POSTS_DIR, '*.md')).sort
+# Collect all content files from multiple directories
+all_files = []
+CONTENT_DIRS.each do |dir|
+  next unless Dir.exist?(dir)
+  # Recursively find all .md files
+  files = Dir.glob(File.join(dir, '**', '*.md')).sort
+  all_files.concat(files)
+  puts "Found #{files.length} files in #{File.basename(dir)}/"
+end
 
-puts "Found #{posts.length} posts"
+puts "Total: #{all_files.length} files"
 puts "Synonym groups: #{SYNONYM_GROUPS.length}"
 puts ""
 
-posts.each do |post_path|
-  result = rotate_post(post_path, rotation_log)
+all_files.each do |file_path|
+  result = rotate_post(file_path, rotation_log)
   if result
     rotated_files << result
     rotation_log[result[:file]] = {
