@@ -5,6 +5,7 @@ date: 2024-10-16
 description: "Laporan hasil riksa uji boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910 meliputi pemeriksaan visual, pengujian operasional, teknis, dan NDT."
 
 # Report Metadata
+header_bg: "#1a5276"
 report_number: "CMJ/RU/2024/1016-001"
 inspection_date: 2024-10-16
 inspector: "Tim Inspeksi PT. Cipta Mas Jaya"
