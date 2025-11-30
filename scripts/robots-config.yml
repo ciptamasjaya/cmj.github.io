@@ -39,6 +39,15 @@ robots:
     # Scans: _posts/, _services/ (recursive)
     layouts: []
 
+  - id: propagate
+    name: Robot Propagator
+    script: propagate-timestamp.rb
+    description: Propagasi timestamp ke parent/listing pages (index, blog, layanan, categories)
+    enabled: true
+    weight_multiplier: 0.5  # Jarang dipilih, hanya perlu setelah robot lain jalan
+    # No layout filter - checks content mtime and updates listing pages
+    layouts: []
+
   # ============================================================================
   # CONTOH: Menambah robot baru
   # ============================================================================
