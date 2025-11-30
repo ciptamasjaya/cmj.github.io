@@ -31,12 +31,15 @@ Page Wrapper: Inspection Report Pages (page--inspection-report.html)
 
   {% include components/cta-whatsapp.html style="floating" %}
 
+  <!-- Rating Data (sets Liquid vars + JSON output) -->
+  {% include schema/node--inspection-report/schema--rating.html %}
+
   <!-- Page Schema -->
   {% unless page.skip_page_schema %}
     {% include schema/schema--page.html %}
   {% endunless %}
 
-  <!-- Report Schema (TechArticle + Report) -->
+  <!-- Report Schema (TechArticle + Report + AggregateRating) -->
   {% include schema/node--inspection-report/schema--report.html %}
 
   <!-- WebPageElement Schemas for Report Sections -->

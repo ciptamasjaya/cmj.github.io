@@ -14,6 +14,8 @@ Combines:
 - TechArticle: For technical documentation aspect
 - Report: For formal inspection report aspect
 
+Note: AggregateRating is in separate Product schema (schema--rating.html)
+
 ============================================================================
 {% endcomment %}
 
@@ -89,19 +91,10 @@ Combines:
         "name": "{{ site.business.name }}"
       },
       "about": {
-        "@type": "Product",
+        "@type": "Thing",
         "name": "{{ page.object.name | default: page.title }}",
-        {% if page.object.brand %}
-        "brand": {
-          "@type": "Brand",
-          "name": "{{ page.object.brand }}"
-        },
-        {% endif %}
-        {% if page.object.model %}
-        "model": "{{ page.object.model }}",
-        {% endif %}
         {% if page.object.type %}
-        "category": "{{ page.object.type }}",
+        "additionalType": "{{ page.object.type }}",
         {% endif %}
         "description": "{% if page.object.type %}{{ page.object.type }}{% endif %}{% if page.object.brand %} {{ page.object.brand }}{% endif %}{% if page.object.model %} {{ page.object.model }}{% endif %}{% if page.object.serial_number %} SN: {{ page.object.serial_number }}{% endif %}"
       }
