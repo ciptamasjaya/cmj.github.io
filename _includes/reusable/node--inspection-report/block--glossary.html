@@ -1,0 +1,57 @@
+{% comment %}
+============================================================================
+Block: Glossary / Terms and Definitions
+============================================================================
+
+@file        block--glossary.html
+@path        _includes/reusable/node--inspection-report/block--glossary.html
+@type        Block (reusable)
+@description Displays terms and definitions for inspection report
+@author      arisciwek
+@created     2025-11-30
+
+Parameters:
+-----------
+- section: Section data from frontmatter
+  - title: Section title
+  - intro: Introduction text
+  - terms: Array of term objects
+    - term: Term name
+    - definition: Term definition (HTML)
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="block--glossary py-4" id="glossary">
+  <!-- Section Header -->
+  <div class="card card-float mb-4">
+    <div class="card-body bg-secondary text-white text-center py-3">
+      <i class="bi bi-book fs-3 mb-2"></i>
+      <h2 class="h4 mb-0 fw-bold">{{ section.title | default: "Istilah dan Definisi" }}</h2>
+    </div>
+  </div>
+
+  {% if section.intro %}
+  <p class="lead text-muted mb-4">{{ section.intro }}</p>
+  {% endif %}
+
+  <!-- Terms List -->
+  {% if section.terms %}
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-4">
+      {% for item in section.terms %}
+      <div class="glossary-item {% unless forloop.last %}mb-4 pb-4 border-bottom{% endunless %}">
+        <h3 class="h5 fw-bold text-primary mb-2">
+          <span class="badge bg-primary me-2">{{ forloop.index }}</span>{{ item.term }}
+        </h3>
+        <p class="mb-0 text-muted">{{ item.definition }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+</section>
+{% endif %}

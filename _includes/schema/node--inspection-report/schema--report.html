@@ -94,12 +94,10 @@ Combines:
         {% if page.object.model %}
         "model": "{{ page.object.model }}",
         {% endif %}
-        {% if page.object.serial %}
-        "serialNumber": "{{ page.object.serial }}",
-        {% endif %}
         {% if page.object.type %}
-        "category": "{{ page.object.type }}"
+        "category": "{{ page.object.type }}",
         {% endif %}
+        "description": "{% if page.object.type %}{{ page.object.type }}{% endif %}{% if page.object.brand %} {{ page.object.brand }}{% endif %}{% if page.object.model %} {{ page.object.model }}{% endif %}{% if page.object.serial_number %} SN: {{ page.object.serial_number }}{% endif %}"
       }
     }
     {% if page.inspector %},

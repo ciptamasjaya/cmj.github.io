@@ -1,0 +1,28 @@
+{% comment %}
+============================================================================
+Schema: Operational Test Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-operational.html
+@path        _includes/schema/node--inspection-report/schema--webpage-operational.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for operational test results
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_operational %}
+{% assign section = page.section_operational %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#operational-test",
+  "name": "{{ section.title | default: 'Pengujian Operasional' | escape }}",
+  "description": "Hasil pengujian fungsi operasional peralatan"
+}
+</script>
+{% endif %}

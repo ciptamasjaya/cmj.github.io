@@ -1,0 +1,34 @@
+{% comment %}
+============================================================================
+Schema: Conclusion Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-conclusion.html
+@path        _includes/schema/node--inspection-report/schema--webpage-conclusion.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for conclusion and recommendations
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_conclusion %}
+{% assign section = page.section_conclusion %}
+{% capture text_content %}
+{{ section.verdict_text | strip_html }}
+{% for conclusion in section.conclusions %}{{ conclusion | strip_html }} {% endfor %}
+{% for rec in section.recommendations %}{{ rec | strip_html }} {% endfor %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#conclusion",
+  "name": "{{ section.title | default: 'Kesimpulan dan Rekomendasi' | escape }}",
+  "description": "Kesimpulan akhir dan rekomendasi inspeksi",
+  "text": "{{ text_content | strip | normalize_whitespace | truncate: 500 | escape }}"
+}
+</script>
+{% endif %}

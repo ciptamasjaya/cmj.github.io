@@ -1,0 +1,132 @@
+{% comment %}
+============================================================================
+Block: Data Umum (General Information)
+============================================================================
+
+@file        block--data-umum.html
+@path        _includes/reusable/node--inspection-report/block--data-umum.html
+@type        Block (reusable)
+@description Displays company and installer general information
+@author      arisciwek
+@created     2025-11-30
+
+Parameters:
+-----------
+- data: Data object from frontmatter (data_umum)
+  - perusahaan:
+    - nama: Company name
+    - alamat: Company address
+    - telepon: Phone number
+    - email: Email address
+  - instalatir:
+    - nama: Installer name
+    - alamat: Installer address
+    - telepon: Phone number
+    - sertifikat: Certificate number
+
+============================================================================
+{% endcomment %}
+
+{% assign data = include.data %}
+
+{% if data %}
+<section class="block--data-umum py-4" id="data-umum">
+  <!-- Section Header -->
+  <div class="card card-float mb-4">
+    <div class="card-body bg-dark text-white text-center py-3">
+      <i class="bi bi-building fs-3 mb-2"></i>
+      <h2 class="h4 mb-0 fw-bold">Data Umum</h2>
+    </div>
+  </div>
+
+  <!-- Privacy Notice -->
+  <div class="alert alert-warning mb-4">
+    <i class="bi bi-shield-lock me-2"></i>
+    <small><strong>Catatan:</strong> Nama perusahaan dan data kontak telah disamarkan untuk menjaga privasi klien.</small>
+  </div>
+
+  <div class="row g-4">
+    <!-- Data Perusahaan -->
+    {% if data.perusahaan %}
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header bg-primary text-white">
+          <h3 class="h6 mb-0 fw-bold">
+            <i class="bi bi-building me-2"></i>Data Perusahaan
+          </h3>
+        </div>
+        <div class="card-body">
+          <table class="table table-borderless table-sm mb-0">
+            {% if data.perusahaan.nama %}
+            <tr>
+              <td class="text-muted" style="width: 35%;">Nama</td>
+              <td class="fw-semibold">{{ data.perusahaan.nama }}</td>
+            </tr>
+            {% endif %}
+            {% if data.perusahaan.alamat %}
+            <tr>
+              <td class="text-muted">Alamat</td>
+              <td>{{ data.perusahaan.alamat }}</td>
+            </tr>
+            {% endif %}
+            {% if data.perusahaan.telepon %}
+            <tr>
+              <td class="text-muted">Telepon</td>
+              <td>{{ data.perusahaan.telepon }}</td>
+            </tr>
+            {% endif %}
+            {% if data.perusahaan.email %}
+            <tr>
+              <td class="text-muted">Email</td>
+              <td>{{ data.perusahaan.email }}</td>
+            </tr>
+            {% endif %}
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Data Instalatir -->
+    {% if data.instalatir %}
+    <div class="col-md-6">
+      <div class="card border-0 shadow-sm h-100">
+        <div class="card-header bg-success text-white">
+          <h3 class="h6 mb-0 fw-bold">
+            <i class="bi bi-person-badge me-2"></i>Data Instalatir
+          </h3>
+        </div>
+        <div class="card-body">
+          <table class="table table-borderless table-sm mb-0">
+            {% if data.instalatir.nama %}
+            <tr>
+              <td class="text-muted" style="width: 35%;">Nama</td>
+              <td class="fw-semibold">{{ data.instalatir.nama }}</td>
+            </tr>
+            {% endif %}
+            {% if data.instalatir.alamat %}
+            <tr>
+              <td class="text-muted">Alamat</td>
+              <td>{{ data.instalatir.alamat }}</td>
+            </tr>
+            {% endif %}
+            {% if data.instalatir.telepon %}
+            <tr>
+              <td class="text-muted">Telepon</td>
+              <td>{{ data.instalatir.telepon }}</td>
+            </tr>
+            {% endif %}
+            {% if data.instalatir.sertifikat %}
+            <tr>
+              <td class="text-muted">Sertifikat</td>
+              <td><span class="badge bg-success">{{ data.instalatir.sertifikat }}</span></td>
+            </tr>
+            {% endif %}
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

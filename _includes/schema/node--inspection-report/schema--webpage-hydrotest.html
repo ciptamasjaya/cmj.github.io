@@ -1,0 +1,28 @@
+{% comment %}
+============================================================================
+Schema: Hydrotest Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-hydrotest.html
+@path        _includes/schema/node--inspection-report/schema--webpage-hydrotest.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for hydrostatic test results
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_hydrotest %}
+{% assign section = page.section_hydrotest %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#hydrotest",
+  "name": "{{ section.title | default: 'Pengujian Hidrostatik' | escape }}",
+  "description": "Hasil pengujian hidrostatik (tekanan)"
+}
+</script>
+{% endif %}

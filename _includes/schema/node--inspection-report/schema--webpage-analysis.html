@@ -1,0 +1,32 @@
+{% comment %}
+============================================================================
+Schema: Analysis Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-analysis.html
+@path        _includes/schema/node--inspection-report/schema--webpage-analysis.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for analysis and discussion section
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_analysis %}
+{% assign section = page.section_analysis %}
+{% capture text_content %}
+{% for analysis in section.analyses %}{{ analysis.title }}: {{ analysis.interpretation | strip_html }} {% endfor %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#analysis",
+  "name": "{{ section.title | default: 'Analisis dan Pembahasan' | escape }}",
+  "description": "Analisis data dan pembahasan hasil inspeksi",
+  "text": "{{ text_content | strip | normalize_whitespace | truncate: 1000 | escape }}"
+}
+</script>
+{% endif %}

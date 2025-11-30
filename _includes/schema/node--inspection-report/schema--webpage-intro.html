@@ -1,0 +1,33 @@
+{% comment %}
+============================================================================
+Schema: Intro Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-intro.html
+@path        _includes/schema/node--inspection-report/schema--webpage-intro.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for introduction section
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_intro %}
+{% assign section = page.section_intro %}
+{% capture text_content %}
+{% if section.paragraphs %}{% for p in section.paragraphs %}{{ p | strip_html }} {% endfor %}{% endif %}
+{{ section.background | strip_html }}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#intro",
+  "name": "{{ section.title | default: 'Pendahuluan' | escape }}",
+  "description": "Latar belakang dan tujuan pemeriksaan",
+  "text": "{{ text_content | strip | normalize_whitespace | truncate: 500 | escape }}"
+}
+</script>
+{% endif %}

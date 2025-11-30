@@ -39,6 +39,20 @@ Page Wrapper: Inspection Report Pages (page--inspection-report.html)
   <!-- Report Schema (TechArticle + Report) -->
   {% include schema/node--inspection-report/schema--report.html %}
 
+  <!-- WebPageElement Schemas for Report Sections -->
+  {% include schema/node--inspection-report/schema--webpage-intro.html %}
+  {% include schema/node--inspection-report/schema--webpage-glossary.html %}
+  {% include schema/node--inspection-report/schema--webpage-data-umum.html %}
+  {% include schema/node--inspection-report/schema--webpage-object.html %}
+  {% include schema/node--inspection-report/schema--webpage-visual.html %}
+  {% include schema/node--inspection-report/schema--webpage-operational.html %}
+  {% include schema/node--inspection-report/schema--webpage-technical.html %}
+  {% include schema/node--inspection-report/schema--webpage-ndt.html %}
+  {% include schema/node--inspection-report/schema--webpage-hydrotest.html %}
+  {% include schema/node--inspection-report/schema--webpage-safety-valve.html %}
+  {% include schema/node--inspection-report/schema--webpage-analysis.html %}
+  {% include schema/node--inspection-report/schema--webpage-conclusion.html %}
+
   <!-- Breadcrumb Schema -->
   {% if page.show_breadcrumb_schema %}
     {% include schema/schema--breadcrumb.html current_title=page.title %}

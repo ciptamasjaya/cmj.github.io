@@ -14,7 +14,7 @@ Parameters:
 -----------
 - section: Section data from frontmatter
   - title: Section title
-  - content: Introduction content (can be markdown/HTML)
+  - paragraphs: Array of introduction paragraphs (HTML)
   - background: Background information
   - objectives: Array of inspection objectives
 
@@ -36,9 +36,11 @@ Parameters:
   <!-- Content Card -->
   <div class="card border-0 shadow-sm">
     <div class="card-body p-4">
-      {% if section.content %}
+      {% if section.paragraphs %}
       <div class="intro-content mb-4">
-        {{ section.content | markdownify }}
+        {% for paragraph in section.paragraphs %}
+        <p class="{% if forloop.last %}mb-0{% else %}mb-3{% endif %}">{{ paragraph }}</p>
+        {% endfor %}
       </div>
       {% endif %}
 

@@ -1,0 +1,28 @@
+{% comment %}
+============================================================================
+Schema: Visual Inspection Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-visual.html
+@path        _includes/schema/node--inspection-report/schema--webpage-visual.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for visual inspection results
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_visual %}
+{% assign section = page.section_visual %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#visual-inspection",
+  "name": "{{ section.title | default: 'Pemeriksaan Visual' | escape }}",
+  "description": "Hasil pemeriksaan visual kondisi fisik peralatan"
+}
+</script>
+{% endif %}

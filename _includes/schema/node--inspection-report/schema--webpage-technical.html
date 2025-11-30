@@ -1,0 +1,28 @@
+{% comment %}
+============================================================================
+Schema: Technical Test Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-technical.html
+@path        _includes/schema/node--inspection-report/schema--webpage-technical.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for technical test results
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_technical %}
+{% assign section = page.section_technical %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#technical-test",
+  "name": "{{ section.title | default: 'Pengujian Teknis' | escape }}",
+  "description": "Hasil pengujian parameter teknis peralatan"
+}
+</script>
+{% endif %}

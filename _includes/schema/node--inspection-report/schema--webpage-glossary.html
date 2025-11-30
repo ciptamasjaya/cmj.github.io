@@ -1,0 +1,33 @@
+{% comment %}
+============================================================================
+Schema: Glossary Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-glossary.html
+@path        _includes/schema/node--inspection-report/schema--webpage-glossary.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for glossary/terms section
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_glossary %}
+{% assign section = page.section_glossary %}
+{% capture text_content %}
+{{ section.intro | strip_html }}
+{% for term in section.terms %}{{ term.term }}: {{ term.definition | strip_html }} {% endfor %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#glossary",
+  "name": "{{ section.title | default: 'Istilah dan Definisi' | escape }}",
+  "description": "Daftar istilah teknis dan definisi",
+  "text": "{{ text_content | strip | normalize_whitespace | truncate: 500 | escape }}"
+}
+</script>
+{% endif %}

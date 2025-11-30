@@ -1,0 +1,35 @@
+{% comment %}
+============================================================================
+Schema: Object Info Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-object.html
+@path        _includes/schema/node--inspection-report/schema--webpage-object.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for object/equipment information
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.object %}
+{% assign obj = page.object %}
+{% capture text_content %}
+{{ obj.type }} {{ obj.brand }} {{ obj.model }}
+Serial: {{ obj.serial_number }}
+Tahun: {{ obj.year }}
+Kapasitas: {{ obj.capacity }}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#object-info",
+  "name": "Data Objek Inspeksi",
+  "description": "Spesifikasi teknis {{ obj.type | escape }}",
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

@@ -1,0 +1,28 @@
+{% comment %}
+============================================================================
+Schema: Safety Valve Test Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-safety-valve.html
+@path        _includes/schema/node--inspection-report/schema--webpage-safety-valve.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for safety valve test results
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_safety_valve %}
+{% assign section = page.section_safety_valve %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#safety-valve",
+  "name": "{{ section.title | default: 'Pengujian Safety Valve' | escape }}",
+  "description": "Hasil pengujian katup pengaman (safety valve)"
+}
+</script>
+{% endif %}

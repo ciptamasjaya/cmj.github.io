@@ -40,14 +40,29 @@ In frontmatter: layout: node/node--inspection-report
       <!-- Main Content -->
       <div class="col-lg-8 col-main">
 
-        <!-- Object Information -->
-        {% if page.object %}
-          {% include reusable/node--inspection-report/block--object-info.html object=page.object %}
+        <!-- Marketing Introduction Paragraphs -->
+        {% if page.paragraphs %}
+          {% include reusable/node--inspection-report/block--marketing-intro.html paragraphs=page.paragraphs %}
         {% endif %}
 
         <!-- Introduction/Background -->
         {% if page.section_intro %}
           {% include reusable/node--inspection-report/block--intro.html section=page.section_intro %}
+        {% endif %}
+
+        <!-- Glossary / Terms and Definitions -->
+        {% if page.section_glossary %}
+          {% include reusable/node--inspection-report/block--glossary.html section=page.section_glossary %}
+        {% endif %}
+
+        <!-- Data Umum -->
+        {% if page.data_umum %}
+          {% include reusable/node--inspection-report/block--data-umum.html data=page.data_umum %}
+        {% endif %}
+
+        <!-- Object Information -->
+        {% if page.object %}
+          {% include reusable/node--inspection-report/block--object-info.html object=page.object %}
         {% endif %}
 
         <!-- Visual Inspection -->
@@ -68,6 +83,16 @@ In frontmatter: layout: node/node--inspection-report
         <!-- NDT Test (Thickness) -->
         {% if page.section_ndt %}
           {% include reusable/node--inspection-report/block--ndt-test.html section=page.section_ndt %}
+        {% endif %}
+
+        <!-- Hydrostatic Test -->
+        {% if page.section_hydrotest %}
+          {% include reusable/node--inspection-report/block--hydrotest.html section=page.section_hydrotest %}
+        {% endif %}
+
+        <!-- Safety Valve Test -->
+        {% if page.section_safety_valve %}
+          {% include reusable/node--inspection-report/block--safety-valve.html section=page.section_safety_valve %}
         {% endif %}
 
         <!-- Analysis -->

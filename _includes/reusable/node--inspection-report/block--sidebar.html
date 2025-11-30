@@ -76,14 +76,24 @@ Block: Report Sidebar
     </div>
     <div class="card-body p-0">
       <nav class="nav flex-column">
-        {% if page.object %}
-        <a class="nav-link py-2 px-3 border-bottom" href="#object-info">
-          <i class="bi bi-gear-wide-connected me-2 text-info"></i>Data Objek
-        </a>
-        {% endif %}
         {% if page.section_intro %}
         <a class="nav-link py-2 px-3 border-bottom" href="#intro">
           <i class="bi bi-journal-text me-2 text-secondary"></i>Pendahuluan
+        </a>
+        {% endif %}
+        {% if page.section_glossary %}
+        <a class="nav-link py-2 px-3 border-bottom" href="#glossary">
+          <i class="bi bi-book me-2 text-secondary"></i>Istilah dan Definisi
+        </a>
+        {% endif %}
+        {% if page.data_umum %}
+        <a class="nav-link py-2 px-3 border-bottom" href="#data-umum">
+          <i class="bi bi-building me-2 text-dark"></i>Data Umum
+        </a>
+        {% endif %}
+        {% if page.object %}
+        <a class="nav-link py-2 px-3 border-bottom" href="#object-info">
+          <i class="bi bi-gear-wide-connected me-2 text-info"></i>Data Objek
         </a>
         {% endif %}
         {% if page.section_visual %}
@@ -104,6 +114,16 @@ Block: Report Sidebar
         {% if page.section_ndt %}
         <a class="nav-link py-2 px-3 border-bottom" href="#ndt-test">
           <i class="bi bi-rulers me-2 text-danger"></i>Pengujian NDT
+        </a>
+        {% endif %}
+        {% if page.section_hydrotest %}
+        <a class="nav-link py-2 px-3 border-bottom" href="#hydrotest">
+          <i class="bi bi-droplet-fill me-2 text-info"></i>Pengujian Hidrostatik
+        </a>
+        {% endif %}
+        {% if page.section_safety_valve %}
+        <a class="nav-link py-2 px-3 border-bottom" href="#safety-valve">
+          <i class="bi bi-shield-check me-2 text-danger"></i>Pengujian Safety Valve
         </a>
         {% endif %}
         {% if page.section_analysis %}

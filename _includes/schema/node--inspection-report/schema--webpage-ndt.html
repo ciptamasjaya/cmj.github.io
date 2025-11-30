@@ -1,0 +1,28 @@
+{% comment %}
+============================================================================
+Schema: NDT Test Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-ndt.html
+@path        _includes/schema/node--inspection-report/schema--webpage-ndt.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for NDT (thickness) test results
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_ndt %}
+{% assign section = page.section_ndt %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#ndt-test",
+  "name": "{{ section.title | default: 'Pengujian NDT' | escape }}",
+  "description": "Hasil pengujian Non-Destructive Testing (ketebalan material)"
+}
+</script>
+{% endif %}

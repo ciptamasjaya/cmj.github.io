@@ -1,0 +1,32 @@
+{% comment %}
+============================================================================
+Block: Marketing Introduction Paragraphs
+============================================================================
+
+@file        block--marketing-intro.html
+@path        _includes/reusable/node--inspection-report/block--marketing-intro.html
+@type        Block (reusable)
+@description Displays marketing paragraphs before technical report content
+@author      arisciwek
+@created     2025-11-30
+
+Parameters:
+-----------
+- paragraphs: Array of paragraph strings from frontmatter
+
+============================================================================
+{% endcomment %}
+
+{% assign paragraphs = include.paragraphs %}
+
+{% if paragraphs and paragraphs.size > 0 %}
+<section class="block--marketing-intro py-4" id="marketing-intro">
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-4">
+      {% for paragraph in paragraphs %}
+      <p class="{% if forloop.last %}mb-0{% else %}mb-3{% endif %}">{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

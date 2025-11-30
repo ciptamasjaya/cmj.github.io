@@ -9,6 +9,63 @@ report_number: "CMJ/RU/2024/1016-001"
 inspection_date: 2024-10-16
 inspector: "Tim Inspeksi PT. Cipta Mas Jaya"
 
+# SEO & Taxonomy
+categories:
+  - Layanan
+  - Riksa Uji Pesawat Uap dan Bejana Tekan
+tags:
+  - Inspeksi
+  - Inspeksi K3
+  - Jasa Riksa Uji
+  - PJK3
+  - Riksa Uji Boiler
+  - Boiler
+
+# Schema flags
+skip_page_schema: false
+show_breadcrumb_schema: true
+
+paragraphs:
+  - "<strong><a href=\"/2024/08/26/jasa-riksa-uji-boiler/\">Riksa Uji Boiler</a></strong> adalah proses pemeriksaan dan pengujian menyeluruh terhadap <strong>boiler</strong> untuk memastikan bahwa alat tersebut berfungsi dengan aman dan sesuai standar keselamatan kerja yang berlaku. Proses ini meliputi berbagai tahapan, seperti pemeriksaan visual, pengujian teknis, dan pengujian non-destruktif untuk mendeteksi kerusakan internal yang tidak terlihat. Riksa uji ini sangat penting dilakukan secara berkala untuk menjaga keselamatan operator dan efisiensi operasional boiler, khususnya di sektor industri dan pembangkit listrik."
+  - "<strong>Riksa Uji Boiler merupakan</strong> proses pemeriksaan dan pengujian komprehensif yang bertujuan untuk memastikan bahwa boiler berfungsi sesuai dengan standar keselamatan dan operasional yang ditetapkan. Pengujian ini meliputi evaluasi terhadap berbagai aspek penting, seperti ketebalan material, kondisi sambungan pipa, efisiensi pembakaran, serta fungsi sistem pengaman dan kontrol otomatis. Seluruh aspek ini diuji untuk mendeteksi potensi masalah seperti korosi, erosi, atau keausan yang dapat mempengaruhi kinerja dan keamanan operasional boiler."
+  - "Proses ini juga mencakup pengujian non-destruktif (NDT), seperti <strong>thickness test</strong>, untuk memeriksa ketebalan dinding dan pipa tanpa merusak komponen boiler. Selain itu, dilakukan juga pengujian operasional untuk melihat apakah boiler dapat berfungsi optimal dalam kondisi beban penuh. Seluruh hasil pengujian ini kemudian dianalisis untuk memberikan penilaian akhir mengenai kelayakan boiler untuk digunakan."
+  - "Riksa Uji Boiler juga termasuk dalam <strong><a href=\"/layanan/riksa-uji-pesawat-uap-dan-bejana-tekan/\">Riksa Uji Pesawat Uap dan Bejana Tekan</a></strong>, yang merupakan kategori alat-alat bertekanan tinggi yang harus diawasi ketat. Alat-alat ini, seperti <strong>boiler</strong> yang digunakan oleh <strong>John Thompson - ACTOM (Pty) Ltd</strong> dengan nomor seri 74910, memerlukan perhatian khusus agar tidak terjadi kegagalan fungsi yang bisa membahayakan operasional dan keselamatan kerja."
+
+# Glossary Section
+section_glossary:
+  title: "Istilah dan Definisi"
+  intro: "Sebelum membahas lebih lanjut mengenai Riksa Uji Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910, penting untuk memahami beberapa istilah yang sering digunakan dalam konteks keselamatan kerja dan proses inspeksi ini."
+  terms:
+    - term: "PJK3"
+      definition: "<strong><a href=\"/about/pjk3/\">PJK3 adalah</a></strong> singkatan dari <strong>Perusahaan Jasa Keselamatan dan Kesehatan Kerja</strong>, yaitu perusahaan yang berwenang untuk menyediakan layanan pengujian, inspeksi, pelatihan, dan konsultasi terkait keselamatan dan kesehatan kerja (K3). Perusahaan ini, seperti <strong>PT. Cipta Mas Jaya</strong>, dilisensikan oleh pemerintah untuk melakukan riksa uji terhadap peralatan teknis, termasuk boiler, dan memastikan peralatan tersebut memenuhi standar keselamatan yang berlaku."
+    - term: "Riksa Uji"
+      definition: "<strong><a href=\"/about/riksa-uji/\">Riksa Uji</a></strong> adalah proses pemeriksaan teknis secara menyeluruh terhadap peralatan industri yang melibatkan pengujian operasional, teknis, dan visual guna memastikan peralatan tersebut dalam kondisi baik dan aman untuk digunakan. Proses ini penting untuk mencegah kegagalan fungsi dan menjaga efisiensi alat dalam mendukung operasional sehari-hari. <strong>PT. Cipta Mas Jaya</strong> adalah salah satu penyedia jasa yang menawarkan layanan riksa uji untuk berbagai peralatan, termasuk <strong>boiler</strong>."
+    - term: "PJK3 Riksa Uji"
+      definition: "<strong><a href=\"/about/pjk3-riksa-uji/\">PJK3 Riksa Uji</a></strong> adalah perusahaan yang tersertifikasi oleh pemerintah untuk melakukan pemeriksaan dan pengujian teknis terhadap berbagai jenis peralatan industri, seperti <strong>boiler</strong>. <strong>PT. Cipta Mas Jaya</strong> sebagai <strong>PJK3 Riksa Uji</strong> memiliki kewenangan untuk melakukan pengujian terhadap alat-alat seperti <strong>boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>, guna memastikan alat tersebut sesuai dengan standar keselamatan yang ditetapkan dan siap digunakan dalam operasional industri."
+    - term: "PT. Cipta Mas Jaya sebagai PJK3 Riksa Uji"
+      definition: "<strong>PT. Cipta Mas Jaya</strong> adalah perusahaan yang tersertifikasi sebagai <strong><a href=\"/\">PJK3 Riksa Uji</a></strong>, yang memiliki otoritas untuk melakukan pemeriksaan dan pengujian teknis pada berbagai peralatan industri, termasuk <strong>boiler</strong>. Dengan sertifikasi resmi dari pemerintah, PT. Cipta Mas Jaya bertanggung jawab memastikan bahwa setiap alat yang diuji, seperti <strong>boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>, memenuhi semua persyaratan keselamatan dan kesehatan kerja (K3). Layanan yang diberikan oleh PT. Cipta Mas Jaya mencakup pemeriksaan visual, pengujian operasional, serta pengujian teknis yang menyeluruh untuk menjamin alat dapat berfungsi dengan baik dan aman."
+    - term: "Inspeksi"
+      definition: "<strong>Inspeksi adalah</strong> proses pemeriksaan yang dilakukan pada peralatan industri guna memastikan bahwa setiap komponen berfungsi sesuai dengan standar keselamatan dan tidak menimbulkan risiko bagi lingkungan kerja. Dalam konteks <strong>boiler</strong>, inspeksi bertujuan untuk mendeteksi adanya potensi kerusakan fisik, keausan, atau masalah operasional yang dapat mempengaruhi performa alat. Proses inspeksi melibatkan pemeriksaan visual dan pengujian teknis yang lebih mendalam, yang hasilnya dapat digunakan untuk menentukan langkah-langkah pemeliharaan atau perbaikan yang diperlukan."
+    - term: "Inspeksi K3"
+      definition: "<strong>Inspeksi K3 adalah</strong> pemeriksaan yang dilakukan dalam kerangka <strong>Keselamatan dan Kesehatan Kerja (K3)</strong> untuk memastikan bahwa setiap peralatan, termasuk <strong>boiler</strong>, memenuhi persyaratan keselamatan yang ditetapkan oleh peraturan pemerintah. Tujuan dari inspeksi K3 adalah untuk mengidentifikasi dan memitigasi potensi bahaya yang mungkin muncul selama operasional peralatan, sehingga dapat mencegah terjadinya kecelakaan kerja dan kerugian operasional. Inspeksi ini meliputi pengecekan fisik peralatan, kondisi lingkungan kerja, dan analisis performa teknis."
+    - term: "Jasa Inspeksi K3"
+      definition: "<strong><a href=\"/\">Jasa Inspeksi K3</a></strong> layanan yang diberikan oleh perusahaan tersertifikasi seperti <strong>PT. Cipta Mas Jaya</strong> untuk memastikan bahwa peralatan industri memenuhi standar keselamatan yang ditetapkan. Dalam konteks <strong>boiler</strong>, jasa inspeksi K3 mencakup pengecekan menyeluruh terhadap sistem pemanas, tekanan, serta komponen struktural boiler, guna memastikan alat tersebut dapat berfungsi dengan aman dan efisien. PT. Cipta Mas Jaya menyediakan layanan inspeksi ini untuk mendukung industri dalam memelihara keselamatan kerja dan mematuhi regulasi pemerintah."
+    - term: "Deskripsi Lokasi Penelitian"
+      definition: "Lokasi di mana <strong>Riksa Uji Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> dilaksanakan merupakan area industri yang memiliki peralatan boiler sebagai salah satu elemen penting dalam proses produksinya. Kondisi lingkungan kerja di lokasi ini memungkinkan dilakukannya pengujian yang menyeluruh, termasuk pengujian teknis dan pengujian non-destruktif. Setiap detail mengenai lokasi, kondisi lapangan, dan jenis operasi yang dilakukan di lokasi tersebut akan menjadi faktor penting dalam proses <strong>Riksa Uji</strong>, untuk memastikan bahwa <strong>boiler</strong> ini siap digunakan dengan aman dan efektif."
+
+# Data Umum
+data_umum:
+  perusahaan:
+    nama: "PT. Sentosa Abadi Makmur"
+    alamat: "Jl. Raya Industri No. 123, Kawasan Industri Jababeka, Cikarang, Bekasi 17530"
+    telepon: "(021) 8912-XXXX"
+    email: "info@sentosaabadi.co.id"
+  instalatir:
+    nama: "CV. Teknik Mandiri Sejahtera"
+    alamat: "Jl. Teknologi Blok B-15, Kawasan Industri MM2100, Cibitung, Bekasi 17520"
+    telepon: "(021) 8934-XXXX"
+    sertifikat: "SIUJK No. 1234/SIUJK/2020"
+
 # Object/Equipment Data
 object:
   name: "Boiler"
@@ -38,10 +95,9 @@ object:
 # Introduction Section
 section_intro:
   title: "Pendahuluan"
-  content: |
-    Boiler merupakan salah satu komponen vital dalam industri, khususnya di sektor yang memanfaatkan tenaga uap untuk operasionalnya. **Riksa Uji Boiler** bertujuan untuk memastikan bahwa perangkat tersebut beroperasi dengan aman, efisien, dan sesuai dengan standar keselamatan kerja yang berlaku.
-
-    Pemeriksaan dan pengujian kali ini dilakukan pada **Boiler John Thompson – ACTOM (Pty) Ltd nomor seri 74910** dengan melibatkan pengujian terhadap berbagai aspek teknis, seperti ketebalan plat, tekanan operasi, serta kondisi keseluruhan boiler.
+  paragraphs:
+    - "Boiler merupakan salah satu komponen vital dalam industri, khususnya di sektor yang memanfaatkan tenaga uap untuk operasionalnya. <strong>Riksa Uji Boiler</strong> bertujuan untuk memastikan bahwa perangkat tersebut beroperasi dengan aman, efisien, dan sesuai dengan standar keselamatan kerja yang berlaku."
+    - "Pemeriksaan dan pengujian kali ini dilakukan pada <strong>Boiler John Thompson – ACTOM (Pty) Ltd nomor seri 74910</strong> dengan melibatkan pengujian terhadap berbagai aspek teknis, seperti ketebalan plat, tekanan operasi, serta kondisi keseluruhan boiler."
   background: "Riksa Uji dilakukan sebagai bagian dari kewajiban pemeliharaan berkala dan kepatuhan terhadap Peraturan Menteri Tenaga Kerja tentang Keselamatan Kerja pada Pesawat Uap dan Bejana Tekan."
   objectives:
     - "Memastikan boiler beroperasi dengan aman dan efisien"
@@ -207,35 +263,103 @@ section_ndt:
       status: "lulus"
   summary: "Seluruh hasil pengukuran ketebalan berada di atas standar minimum. Tidak ditemukan tanda-tanda penipisan material yang signifikan."
 
+# Hydrostatic Test Section
+section_hydrotest:
+  title: "Pengujian Hidrostatik (Hydrotest)"
+  intro: "Pengujian hidrostatik dilakukan untuk memverifikasi integritas struktural dan kekuatan bejana tekan dengan memberikan tekanan uji yang lebih tinggi dari tekanan kerja normal."
+  working_pressure: "10.5 Bar"
+  test_pressure: "15.75 Bar (1.5x)"
+  duration: "30 Menit"
+  method: "Pengujian hidrostatik dilakukan dengan mengisi boiler dengan air hingga penuh, kemudian memberikan tekanan secara bertahap hingga mencapai tekanan uji 1.5 kali tekanan kerja. Tekanan dipertahankan selama 30 menit sambil dilakukan pemeriksaan visual terhadap kebocoran atau deformasi pada seluruh komponen."
+  items:
+    - component: "Drum Uap"
+      pressure: "15.75 Bar"
+      duration: "30 menit"
+      result: "Tidak ada kebocoran atau deformasi"
+      status: "lulus"
+    - component: "Pipa Header"
+      pressure: "15.75 Bar"
+      duration: "30 menit"
+      result: "Tidak ada kebocoran pada sambungan"
+      status: "lulus"
+    - component: "Tube Bundle"
+      pressure: "15.75 Bar"
+      duration: "30 menit"
+      result: "Kondisi baik, tidak ada rembesan"
+      status: "lulus"
+    - component: "Sambungan Flange"
+      pressure: "15.75 Bar"
+      duration: "30 menit"
+      result: "Seal gasket dalam kondisi baik"
+      status: "lulus"
+    - component: "Katup dan Fitting"
+      pressure: "15.75 Bar"
+      duration: "30 menit"
+      result: "Tidak ditemukan kebocoran"
+      status: "lulus"
+  summary: "Pengujian hidrostatik pada tekanan 15.75 Bar selama 30 menit menunjukkan bahwa seluruh komponen boiler mampu menahan tekanan uji tanpa kebocoran atau deformasi. Boiler dinyatakan lulus uji hidrostatik."
+
+# Safety Valve Test Section
+section_safety_valve:
+  title: "Pengujian Safety Valve"
+  intro: "Pengujian safety valve dilakukan untuk memastikan katup pengaman berfungsi dengan baik dan dapat melepaskan tekanan berlebih pada set pressure yang telah ditentukan."
+  total_units: 2
+  items:
+    - unit: "1"
+      brand: "Consolidated"
+      size: "2 inch"
+      set_pressure: "11.0 Bar"
+      test_pressure: "11.2 Bar"
+      result: "Valve terbuka dan menutup dengan baik"
+      status: "lulus"
+    - unit: "2"
+      brand: "Consolidated"
+      size: "2 inch"
+      set_pressure: "11.5 Bar"
+      test_pressure: "11.6 Bar"
+      result: "Valve terbuka dan menutup dengan baik"
+      status: "lulus"
+  summary: "Seluruh safety valve (2 unit) berfungsi dengan baik dan terbuka pada set pressure yang telah ditentukan. Tidak ditemukan kebocoran atau kerusakan pada katup pengaman."
+
 # Analysis Section
 section_analysis:
   title: "Analisis Data dan Pembahasan"
-  intro: "Setelah melakukan berbagai pengujian, tahap analisis dilakukan untuk mengevaluasi data yang terkumpul dan memberikan wawasan mengenai kondisi boiler."
+  intro: "Setelah melakukan berbagai pengujian pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>, tahap analisis dilakukan untuk mengevaluasi data yang terkumpul. Analisis ini bertujuan untuk memberikan wawasan lebih dalam mengenai kondisi boiler, performa operasional, serta identifikasi potensi masalah atau area yang membutuhkan pemeliharaan lebih lanjut. Analisis data dilakukan pada hasil dari pemeriksaan visual, pengujian operasional, pengujian teknis, pengujian non-destruktif, dan pengujian beban."
   analyses:
     - title: "Analisis Hasil Pemeriksaan Visual"
-      findings: "Sebagian besar komponen boiler berada dalam kondisi baik. Pipa uap utama dan pelapis insulasi menunjukkan tanda-tanda awal keausan yang memerlukan perhatian."
-      interpretation: "Kondisi fisik boiler memadai untuk operasi. Diperlukan perawatan preventif pada area yang menunjukkan keausan untuk mencegah kerusakan lebih lanjut."
+      intro: "Pemeriksaan visual adalah langkah pertama dalam proses <strong>Riksa Uji</strong> untuk mengidentifikasi kerusakan yang dapat dilihat secara langsung. Data yang dihasilkan dari pemeriksaan visual ini memberikan gambaran umum tentang kondisi fisik boiler sebelum pengujian lebih mendalam dilakukan. Melalui pemeriksaan ini, potensi masalah seperti korosi, retakan, atau deformasi dapat dideteksi lebih awal."
+      findings: "Hasil pemeriksaan visual pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> menunjukkan bahwa sebagian besar komponen boiler berada dalam kondisi baik. Beberapa area, seperti <strong>pipa uap utama</strong> dan <strong>pelapis insulasi</strong>, menunjukkan tanda-tanda awal keausan atau korosi ringan, yang dapat menjadi potensi masalah jika tidak ditangani. Namun, tidak ada kerusakan besar yang terdeteksi pada komponen utama, seperti <strong>dinding boiler</strong> atau <strong>ruang pembakaran</strong>, yang merupakan indikator bahwa secara umum boiler masih dalam kondisi fisik yang baik."
+      interpretation: "Berdasarkan hasil pemeriksaan visual, dapat disimpulkan bahwa <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> dalam kondisi fisik yang memadai untuk digunakan, dengan catatan bahwa perawatan rutin harus dilakukan pada area yang menunjukkan tanda-tanda awal korosi dan keausan. Area-area ini, meskipun tidak kritis, harus dipantau dan dilakukan perawatan preventif untuk mencegah kerusakan lebih lanjut yang dapat mempengaruhi operasional boiler di masa depan."
     - title: "Analisis Hasil Pengujian Operasional"
-      findings: "Boiler mampu menjaga tekanan (10.8 Bar) dan suhu (375°C) dalam rentang yang diharapkan. Efisiensi pembakaran mencapai 88%."
-      interpretation: "Performa operasional sangat baik. Sistem kontrol otomatis dan katup pengaman berfungsi optimal tanpa anomali."
+      intro: "Pengujian operasional dilakukan untuk mengevaluasi bagaimana <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> beroperasi di bawah berbagai kondisi beban. Tujuan dari pengujian ini adalah untuk melihat apakah boiler mampu menjaga performa yang stabil dalam hal suhu, tekanan, dan efisiensi pembakaran, serta untuk memverifikasi fungsi dari sistem kontrol otomatis dan katup pengaman. Pengujian operasional memberikan gambaran tentang kemampuan boiler dalam beroperasi pada kapasitas penuh dan memastikan tidak ada masalah besar dalam sistem."
+      findings: "Berdasarkan hasil pengujian operasional, boiler mampu menjaga tekanan dan suhu pada rentang yang diharapkan selama pengoperasian. Suhu operasional yang dicatat stabil pada kisaran <strong>375°C</strong>, dan tekanan operasional berada pada <strong>10.8 Bar</strong>, yang keduanya berada dalam batas standar yang diperlukan untuk boiler tipe ini. Efisiensi pembakaran juga berada pada tingkat yang baik yaitu <strong>88%</strong>, yang menunjukkan bahwa boiler beroperasi dengan efisiensi tinggi dan memaksimalkan penggunaan bahan bakar. Selain itu, sistem kontrol otomatis yang mengatur tekanan dan suhu bekerja dengan baik, tanpa menunjukkan tanda-tanda kegagalan sistem atau anomali dalam operasi. Fungsi katup pengaman juga berfungsi normal, dengan respon cepat dalam kondisi pengujian di bawah beban maksimal. Keseluruhan pengujian operasional menunjukkan bahwa boiler dapat beroperasi dengan aman dan efisien pada berbagai kondisi."
+      interpretation: "Dari hasil pengujian operasional, dapat disimpulkan bahwa <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> berada dalam kondisi yang sangat baik untuk dioperasikan. Tidak ada anomali signifikan yang ditemukan selama pengujian. Boiler mampu mempertahankan tekanan dan suhu sesuai dengan spesifikasi teknis, dengan efisiensi pembakaran yang lebih dari memadai. Sistem pengaman dan kontrol otomatis juga berfungsi dengan baik, memastikan boiler dapat digunakan dalam jangka panjang tanpa risiko kegagalan operasional. Keseluruhan hasil menunjukkan bahwa boiler ini memenuhi standar operasional yang diharapkan."
     - title: "Analisis Hasil Pengujian Teknis"
-      findings: "Semua komponen teknis memenuhi standar. Ketebalan dinding 11.2 mm masih jauh di atas minimum 9.0 mm."
-      interpretation: "Kondisi struktural dan mekanis boiler dalam keadaan sangat baik, mendukung operasi jangka panjang."
-    - title: "Analisis Hasil Pengujian NDT"
-      findings: "Ketebalan material di semua titik pengukuran berada di atas standar minimum. Kisaran ketebalan 8.2-12.0 mm."
-      interpretation: "Tidak ada indikasi korosi atau erosi signifikan. Boiler aman untuk operasi lanjutan."
+      intro: "Pengujian teknis pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> melibatkan pemeriksaan secara mendalam terhadap kondisi mekanis dan struktural boiler. Tujuan dari pengujian ini adalah untuk memastikan bahwa komponen-komponen utama, seperti dinding boiler, pipa-pipa, dan sistem keselamatan, masih dalam kondisi baik dan sesuai dengan standar teknis yang telah ditetapkan. Pengujian teknis juga mencakup pengukuran efisiensi operasional dan penilaian kinerja sistem pengaman untuk menjamin keselamatan operasional."
+      findings: "Berdasarkan hasil pengujian teknis, ketebalan dinding boiler dan pipa-pipa utama berada dalam rentang aman dan sesuai dengan spesifikasi yang diharapkan. Pengukuran ketebalan dinding di beberapa titik kritis, seperti pada ruang pembakaran dan pipa uap utama, menunjukkan bahwa material masih memenuhi standar minimum ketebalan yang diperlukan untuk operasi jangka panjang. Selain itu, efisiensi pembakaran yang dicapai selama pengujian adalah <strong>88%</strong>, yang menunjukkan bahwa boiler bekerja dengan tingkat efisiensi yang optimal. Sistem keselamatan, termasuk katup pengaman dan sistem kontrol otomatis, juga diuji dan dinyatakan berfungsi dengan baik. Tidak ada tanda-tanda penurunan kinerja atau masalah teknis yang dapat mempengaruhi operasi boiler. Kondisi teknis boiler ini secara keseluruhan menunjukkan bahwa boiler masih dapat beroperasi dengan aman dan efisien."
+      interpretation: "Hasil pengujian teknis menyimpulkan bahwa <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> dalam kondisi teknis yang sangat baik. Tidak ditemukan masalah struktural atau teknis yang signifikan, dan semua pengukuran menunjukkan bahwa boiler berada dalam spesifikasi yang diharapkan. Sistem keselamatan bekerja sesuai fungsinya, dan boiler mampu beroperasi dengan efisiensi tinggi. Kesimpulan akhir dari pengujian ini adalah bahwa boiler siap untuk digunakan dengan aman dan dapat diandalkan dalam operasional jangka panjang."
+    - title: "Analisis Pengujian Non-Destruktif (Thickness)"
+      intro: "Pengujian non-destruktif, atau pengukuran ketebalan (thickness), bertujuan untuk memeriksa kondisi dinding dan pipa-pipa boiler tanpa merusak struktur boiler. Pengujian ini menggunakan teknologi ultrasonik untuk mendeteksi tanda-tanda penipisan material akibat korosi atau erosi. Hasil dari pengujian ini memberikan gambaran kondisi internal boiler yang tidak dapat dilihat dari luar, sehingga sangat penting untuk menilai kelayakan operasional jangka panjang."
+      findings: "Berdasarkan hasil pengujian non-destruktif pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>, tidak ditemukan tanda-tanda signifikan dari penipisan material. Ketebalan dinding di ruang pembakaran, pipa uap utama, dan penukar panas masih berada di atas standar minimum yang diperlukan untuk operasi yang aman. Ini menunjukkan bahwa meskipun boiler telah digunakan dalam jangka waktu yang lama, kondisi struktural material masih baik dan tidak memerlukan penggantian dalam waktu dekat. Ketebalan yang diukur di beberapa titik kritis seperti dinding boiler dan pipa utama berada di kisaran <strong>10.2 mm</strong> hingga <strong>12 mm</strong>, yang masih di atas standar minimum <strong>9 mm</strong>. Hasil ini menunjukkan bahwa boiler tidak mengalami korosi yang signifikan dan masih aman untuk digunakan."
+      interpretation: "Dari hasil pengujian non-destruktif, dapat disimpulkan bahwa <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> masih dalam kondisi yang sangat baik dari segi ketebalan material. Tidak ada tanda-tanda korosi atau penipisan material yang signifikan yang dapat mempengaruhi operasi boiler. Semua komponen yang diuji memenuhi standar minimum yang telah ditetapkan, sehingga boiler ini dapat terus digunakan dengan aman. Namun, tetap disarankan untuk melakukan pengujian berkala untuk memantau kondisi material secara berkelanjutan."
+    - title: "Analisis Pengujian Hidrostatik"
+      intro: "Pengujian hidrostatik merupakan metode pengujian tekanan yang dilakukan untuk memverifikasi integritas struktural boiler dengan memberikan tekanan uji yang lebih tinggi dari tekanan kerja normal. Pengujian ini penting untuk memastikan bahwa boiler mampu menahan tekanan operasional dengan margin keamanan yang memadai."
+      findings: "Pengujian hidrostatik pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> dilakukan dengan tekanan uji <strong>15.75 Bar</strong> (1.5 kali tekanan kerja 10.5 Bar) selama 30 menit. Selama pengujian, tidak ditemukan kebocoran atau deformasi pada komponen utama seperti drum uap, pipa header, tube bundle, sambungan flange, serta katup dan fitting. Tekanan tetap stabil selama periode pengujian tanpa ada penurunan yang mengindikasikan kebocoran."
+      interpretation: "Hasil pengujian hidrostatik menyimpulkan bahwa <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> memiliki integritas struktural yang sangat baik. Boiler mampu menahan tekanan uji 1.5 kali tekanan kerja tanpa menunjukkan tanda-tanda kelemahan atau kegagalan. Hal ini mengonfirmasi bahwa boiler aman untuk dioperasikan pada tekanan kerja normal dan memiliki margin keamanan yang memadai."
+    - title: "Analisis Pengujian Safety Valve"
+      intro: "Safety valve atau katup pengaman merupakan komponen kritis dalam sistem keselamatan boiler yang berfungsi untuk melepaskan tekanan berlebih dan mencegah terjadinya ledakan. Pengujian safety valve dilakukan untuk memastikan katup dapat terbuka pada set pressure yang telah ditentukan dan menutup kembali dengan baik."
+      findings: "Pengujian dilakukan pada <strong>2 unit safety valve</strong> yang terpasang pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>. Safety valve unit 1 dengan set pressure <strong>11.0 Bar</strong> terbuka pada tekanan uji <strong>11.2 Bar</strong> dan menutup kembali dengan baik. Safety valve unit 2 dengan set pressure <strong>11.5 Bar</strong> terbuka pada tekanan uji <strong>11.6 Bar</strong> dan juga menutup dengan baik. Kedua safety valve merek Consolidated ukuran 2 inch berfungsi sesuai spesifikasi tanpa kebocoran."
+      interpretation: "Hasil pengujian safety valve menyimpulkan bahwa seluruh katup pengaman (2 unit) pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> berfungsi dengan baik dan sesuai dengan set pressure yang telah ditentukan. Toleransi tekanan pembukaan berada dalam batas yang dapat diterima. Sistem pengaman boiler dapat diandalkan untuk melindungi dari kondisi tekanan berlebih."
   key_findings:
     - "Kondisi visual dan struktural boiler dalam keadaan baik secara keseluruhan"
     - "Performa operasional memenuhi spesifikasi teknis dengan efisiensi 88%"
     - "Semua sistem keselamatan dan kontrol berfungsi dengan baik"
     - "Ketebalan material masih jauh di atas batas minimum yang diperlukan"
     - "Diperlukan perawatan preventif pada pelapis insulasi dan pipa uap"
-  discussion: |
-    Secara keseluruhan, hasil **Riksa Uji** pada **Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910** menunjukkan bahwa boiler dalam kondisi operasional yang sangat baik.
-
-    Dari hasil pemeriksaan visual hingga pengujian non-destruktif, boiler ini menunjukkan kinerja dan kondisi yang memadai untuk melanjutkan operasinya. Namun, beberapa temuan mengindikasikan adanya kebutuhan untuk perawatan preventif, khususnya pada pelapis insulasi dan sambungan pipa yang mulai menunjukkan tanda-tanda awal korosi dan keausan.
-
-    Temuan ini meskipun tidak kritis, menunjukkan pentingnya perawatan rutin untuk memastikan bahwa boiler tetap berada dalam kondisi optimal dan aman untuk operasi jangka panjang.
+  discussion_title: "Pembahasan Temuan Penelitian"
+  discussion_intro: "Setelah dilakukan berbagai pengujian pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>, ditemukan bahwa boiler tersebut dalam kondisi operasional yang baik, dengan sebagian besar hasil pengujian memenuhi standar yang telah ditetapkan. Dari hasil pemeriksaan visual hingga pengujian non-destruktif (thickness), boiler ini menunjukkan kinerja dan kondisi yang memadai untuk melanjutkan operasinya. Namun, beberapa temuan dari pengujian mengindikasikan adanya kebutuhan untuk perawatan preventif di beberapa area, seperti pada pelapis insulasi dan sambungan pipa yang mulai menunjukkan tanda-tanda awal korosi dan keausan. Temuan ini meskipun tidak signifikan, menunjukkan pentingnya perawatan rutin untuk memastikan bahwa boiler tetap berada dalam kondisi optimal."
+  discussion_findings: "Dari hasil pengujian, boiler ini terbukti memiliki ketebalan material yang memadai, efisiensi pembakaran yang optimal, serta kondisi komponen mekanis dan struktural yang memenuhi standar keselamatan dan operasional. Tekanan operasional, suhu, serta kinerja katup pengaman dan sistem kontrol otomatis menunjukkan bahwa boiler dapat beroperasi dengan aman di bawah berbagai skenario beban. Hal ini menegaskan bahwa <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> masih layak digunakan untuk operasi jangka panjang, asalkan dilakukan perawatan rutin yang tepat."
+  discussion_result: "Secara keseluruhan, hasil pengujian mengonfirmasi bahwa <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong> berada dalam kondisi yang baik dan memenuhi semua standar teknis yang diperlukan. Perawatan yang lebih intensif pada area tertentu seperti pelapis insulasi dan sambungan pipa dapat membantu mencegah masalah yang lebih serius di masa depan. Boiler ini siap untuk digunakan dalam operasi normal dengan kondisi aman dan efisien, namun pemantauan lebih lanjut secara berkala tetap diperlukan."
 
 # Conclusion Section
 section_conclusion:
@@ -256,24 +380,8 @@ section_conclusion:
     - "Lakukan riksa uji berkala sesuai ketentuan peraturan yang berlaku"
   validity_period: "1 Tahun"
   next_inspection: "Oktober 2025"
+  paragraphs:
+    - "Data yang disajikan dalam laporan ini adalah data contoh untuk penyusunan laporan <strong>Riksa Uji Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>, bukan data hasil pengukuran sebenarnya."
+    - "Untuk informasi lebih lanjut mengenai layanan riksa uji boiler dan peralatan industri lainnya, silakan <a href=\"/contact/\">hubungi kami</a>."
 
-# SEO & Taxonomy
-categories:
-  - Layanan
-  - Riksa Uji Pesawat Uap dan Bejana Tekan
-tags:
-  - Inspeksi
-  - Inspeksi K3
-  - Jasa Riksa Uji
-  - PJK3
-  - Riksa Uji Boiler
-  - Boiler
-
-# Schema flags
-skip_page_schema: false
-show_breadcrumb_schema: true
 ---
-
-Data yang disajikan dalam laporan ini adalah data contoh untuk penyusunan laporan **Riksa Uji Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910**, bukan data hasil pengukuran sebenarnya.
-
-Untuk informasi lebih lanjut mengenai layanan riksa uji boiler dan peralatan industri lainnya, silakan [hubungi kami](/contact/).

@@ -1,0 +1,28 @@
+{% comment %}
+============================================================================
+Schema: Data Umum Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-data-umum.html
+@path        _includes/schema/node--inspection-report/schema--webpage-data-umum.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for general data section
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.data_umum %}
+{% assign data = page.data_umum %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#data-umum",
+  "name": "Data Umum",
+  "description": "Informasi umum perusahaan dan instalatir"
+}
+</script>
+{% endif %}

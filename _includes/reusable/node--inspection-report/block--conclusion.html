@@ -20,6 +20,7 @@ Parameters:
   - recommendations: Array of recommendations
   - next_inspection: Recommended next inspection date
   - validity_period: Certificate validity period
+  - paragraphs: Array of additional paragraphs (HTML)
 
 ============================================================================
 {% endcomment %}
@@ -67,7 +68,7 @@ Parameters:
     {% if section.conclusions %}
     <div class="col-lg-6">
       <div class="card border-0 shadow-sm h-100">
-        <div class="card-header bg-primary text-white">
+        <div class="card-header bg-primary text-white py-3">
           <h3 class="h5 mb-0 fw-bold">
             <i class="bi bi-clipboard-check me-2"></i>Kesimpulan
           </h3>
@@ -90,7 +91,7 @@ Parameters:
     {% if section.recommendations %}
     <div class="col-lg-6">
       <div class="card border-0 shadow-sm h-100">
-        <div class="card-header bg-warning text-dark">
+        <div class="card-header bg-warning text-dark py-3">
           <h3 class="h5 mb-0 fw-bold">
             <i class="bi bi-lightbulb me-2"></i>Rekomendasi
           </h3>
@@ -134,6 +135,17 @@ Parameters:
         </div>
         {% endif %}
       </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Additional Paragraphs -->
+  {% if section.paragraphs %}
+  <div class="card border-0 shadow-sm mt-4">
+    <div class="card-body">
+      {% for paragraph in section.paragraphs %}
+      <p class="{% if forloop.last %}mb-0{% else %}mb-3{% endif %}">{{ paragraph }}</p>
+      {% endfor %}
     </div>
   </div>
   {% endif %}
