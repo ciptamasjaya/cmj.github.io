@@ -50,6 +50,21 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
   {% if page.section_certification %}
     {% include schema/node--riksa-uji/schema--certification.html %}
   {% endif %}
+  {% if page.section_testimonials and page.section_testimonials.testimonials.size > 0 %}
+    {% include schema/node--riksa-uji/schema--testimonials.html %}
+  {% endif %}
+  {% if page.section_order %}
+    {% include schema/node--riksa-uji/schema--order.html %}
+  {% endif %}
+  {% if page.section_services and page.section_services.services.size > 0 %}
+    {% include schema/node--riksa-uji/schema--services.html %}
+  {% endif %}
+  {% if page.section_tips and page.section_tips.tips.size > 0 %}
+    {% include schema/node--riksa-uji/schema--tips.html %}
+  {% endif %}
+  {% if page.section_company_intro %}
+    {% include schema/node--riksa-uji/schema--company-intro.html %}
+  {% endif %}
 
   <!-- WebPageElement schemas (hasPart of TechArticle) -->
   {% if page.content_intro %}

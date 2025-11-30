@@ -1,0 +1,76 @@
+{% comment %}
+============================================================================
+Schema: Order Process Section (HowTo)
+============================================================================
+
+@file        schema--order.html
+@path        _includes/schema/node--riksa-uji/schema--order.html
+@type        Schema (HowTo)
+@description HowTo schema for order/booking process section
+@author      arisciwek
+@created     2025-11-30
+
+Generates HowTo schema for service ordering process.
+Combines initial_steps and final_steps into single HowTo.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--order.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_order %}
+{% assign section = page.section_order %}
+{% assign all_steps = "" | split: "" %}
+
+{% comment %} Combine initial and final steps {% endcomment %}
+{% if section.initial_steps %}
+  {% for step in section.initial_steps %}
+    {% assign all_steps = all_steps | push: step %}
+  {% endfor %}
+{% endif %}
+{% if section.final_steps %}
+  {% for step in section.final_steps %}
+    {% assign all_steps = all_steps | push: step %}
+  {% endfor %}
+{% endif %}
+
+{% if all_steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "{{ page.url | absolute_url }}#order-howto",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "totalTime": "PT{{ all_steps.size | times: 30 }}M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": "0"
+  },
+  "tool": {
+    "@type": "HowToTool",
+    "name": "WhatsApp atau Telepon"
+  },
+  "step": [
+    {% for step in all_steps %}
+    {
+      "@type": "HowToStep",
+      "@id": "{{ page.url | absolute_url }}#order-step-{{ forloop.index }}",
+      "position": {{ forloop.index }},
+      "name": "{{ step.title | escape }}",
+      "text": "{{ step.description | escape }}",
+      "url": "{{ page.url | absolute_url }}#block--order"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "isPartOf": {
+    "@type": "TechArticle",
+    "@id": "{{ page.url | absolute_url }}#techarticle"
+  }
+}
+</script>
+{% endif %}
+{% endif %}

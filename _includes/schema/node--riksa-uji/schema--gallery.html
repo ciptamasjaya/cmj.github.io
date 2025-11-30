@@ -55,10 +55,6 @@ Usage:
       "representativeOfPage": {% if forloop.first %}true{% else %}false{% endif %}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
-  ],
-  "isPartOf": {
-    "@type": "BlogPosting",
-    "@id": "{{ page.url | absolute_url }}#blogposting"
-  }
+  ]
 }
 </script>

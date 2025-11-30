@@ -1,0 +1,46 @@
+{% comment %}
+============================================================================
+Schema: Tips Section (ItemList)
+============================================================================
+
+@file        schema--tips.html
+@path        _includes/schema/node--riksa-uji/schema--tips.html
+@type        Schema (ItemList)
+@description ItemList schema for tips section
+@author      arisciwek
+@created     2025-11-30
+
+Generates ItemList schema for tips/guide section.
+Each tip includes kategori and kriteria as nested list.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--tips.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_tips and page.section_tips.tips.size > 0 %}
+{% assign section = page.section_tips %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#tips-list",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "numberOfItems": {{ section.tips.size }},
+  "itemListElement": [
+    {% for tip in section.tips %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ tip.kategori | escape }}",
+      "description": "{{ tip.deskripsi | escape }}{% if tip.kriteria %}: {{ tip.kriteria | join: '; ' | escape }}{% endif %}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

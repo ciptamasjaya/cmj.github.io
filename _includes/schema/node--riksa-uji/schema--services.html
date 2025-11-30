@@ -1,0 +1,45 @@
+{% comment %}
+============================================================================
+Schema: Services/Advantages Section (ItemList)
+============================================================================
+
+@file        schema--services.html
+@path        _includes/schema/node--riksa-uji/schema--services.html
+@type        Schema (ItemList)
+@description ItemList schema for services/advantages section
+@author      arisciwek
+@created     2025-11-30
+
+Generates ItemList schema for company services/advantages.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--services.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_services and page.section_services.services.size > 0 %}
+{% assign section = page.section_services %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#services-list",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "numberOfItems": {{ section.services.size }},
+  "itemListElement": [
+    {% for item in section.services %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ item.title | escape }}",
+      "description": "{{ item.description | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

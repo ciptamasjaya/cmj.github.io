@@ -66,12 +66,14 @@ Usage:
   "author": {
     "@type": "Organization",
     "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
-    "name": "{{ site.business.name }}"
+    "name": "{{ site.business.name }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/"
   },
   "publisher": {
     "@type": "Organization",
     "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
     "name": "{{ site.business.name }}",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ '/assets/images/logo.svg' | absolute_url }}",
@@ -83,6 +85,8 @@ Usage:
     "@type": "ImageObject",
     "@id": "{{ page.url | absolute_url }}#primaryimage",
     "url": "{{ primary_image | absolute_url }}",
+    "width": 1200,
+    "height": 630,
     "caption": "{{ page.title | escape }}"
   },
   {% if page.categories.size > 0 %}

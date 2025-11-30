@@ -1,0 +1,77 @@
+{% comment %}
+============================================================================
+Schema: Company Intro Section (Organization)
+============================================================================
+
+@file        schema--company-intro.html
+@path        _includes/schema/node--riksa-uji/schema--company-intro.html
+@type        Schema (Organization/AboutPage)
+@description Organization schema for company intro section
+@author      arisciwek
+@created     2025-11-30
+
+Generates Organization schema with service description.
+References the main organization @id.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--company-intro.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_company_intro %}
+{% assign section = page.section_company_intro %}
+
+{% comment %} Build description from subsections {% endcomment %}
+{% capture full_description %}
+{{ section.intro }}
+{% if section.subsections %}
+{% for subsection in section.subsections %}
+{{ subsection.title }}: {{ subsection.paragraphs | join: ' ' }}
+{% endfor %}
+{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+  "name": "{{ section.company_name | default: site.business.name | escape }}",
+  "description": "{{ full_description | strip | normalize_whitespace | truncate: 500 | escape }}",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ '/assets/images/logo.svg' | absolute_url }}",
+    "width": 200,
+    "height": 60
+  },
+  {% if site.business.phone %}
+  "telephone": "{{ site.business.phone }}",
+  {% endif %}
+  {% if site.business.email %}
+  "email": "{{ site.business.email }}",
+  {% endif %}
+  "knowsAbout": [
+    "{{ page.title | escape }}",
+    "Riksa Uji K3",
+    "Inspeksi Keselamatan Kerja",
+    "PJK3"
+  ],
+  "makesOffer": {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "@id": "{{ page.url | absolute_url }}#service",
+      "name": "{{ page.title | escape }}",
+      "description": "{{ page.description | escape }}",
+      "provider": {
+        "@type": "Organization",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+      }
+    }
+  }
+}
+</script>
+{% endif %}
