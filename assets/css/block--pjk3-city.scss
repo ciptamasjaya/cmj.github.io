@@ -551,10 +551,14 @@ section.block--tips-choosing-pjk3 {
       .tip__kriteria-list {
         /* tip.kriteria item */
         .tip__kriteria-item {
+          display: flex;
+          align-items: flex-start;
           line-height: 1.5;
 
           i {
             color: var(--bs-primary);
+            flex-shrink: 0;
+            margin-top: 0.2em;
           }
         }
       }
@@ -575,8 +579,13 @@ section.block--tips-choosing-pjk3 {
 
     .cta__list {
       .cta__list-item {
+        display: flex;
+        align-items: flex-start;
+
         i {
           color: var(--bs-success);
+          flex-shrink: 0;
+          margin-top: 0.2em;
         }
       }
     }

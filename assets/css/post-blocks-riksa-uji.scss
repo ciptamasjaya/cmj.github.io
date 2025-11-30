@@ -920,10 +920,14 @@ $order-process-colors: (
   // Tip Kriteria List
   .tip__kriteria-list {
     .tip__kriteria-item {
+      display: flex;
+      align-items: flex-start;
       line-height: 1.5;
 
       .bi-check-circle-fill {
         font-size: 0.75rem;
+        flex-shrink: 0;
+        margin-top: 0.2em;
       }
     }
   }
@@ -939,10 +943,14 @@ $order-process-colors: (
 
     .cta__list {
       li {
+        display: flex;
+        align-items: flex-start;
         line-height: 1.5;
 
         .bi-check-circle-fill {
           font-size: 0.65rem;
+          flex-shrink: 0;
+          margin-top: 0.2em;
         }
       }
     }
