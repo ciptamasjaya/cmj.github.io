@@ -203,7 +203,7 @@ $services-colors: (
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(25, 135, 84, 0.2) !important;
+      box-shadow: 0 8px 25px rgba(25, 135, 84, 0.2);
     }
   }
 
@@ -238,7 +238,7 @@ $services-colors: (
       }
 
       &:hover {
-        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2) !important;
+        box-shadow: 0 8px 25px rgba(nth($colors, 1), 0.2);
       }
 
       .service-icon {
@@ -346,7 +346,7 @@ $order-process-colors: (
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(13, 110, 253, 0.15) !important;
+      box-shadow: 0 8px 25px rgba(13, 110, 253, 0.15);
     }
   }
 
@@ -390,7 +390,7 @@ $order-process-colors: (
       }
 
       &:hover {
-        box-shadow: 0 8px 25px rgba(25, 135, 84, 0.15) !important;
+        box-shadow: 0 8px 25px rgba(25, 135, 84, 0.15);
       }
     }
   }
@@ -603,7 +603,7 @@ $order-process-colors: (
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15) !important;
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.15);
     }
   }
 
@@ -766,7 +766,7 @@ $order-process-colors: (
 
     &:hover {
       transform: translateX(5px);
-      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.12) !important;
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.12);
     }
   }
 
@@ -891,7 +891,7 @@ $order-process-colors: (
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15) !important;
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
     }
   }
 

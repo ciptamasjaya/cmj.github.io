@@ -75,6 +75,15 @@ $text-lighter-opacity: 0.9;
   max-width: 800px;
 }
 
+@mixin card-hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+}
+
 /* ----------------------------------------------------------------------------
    HIGH SPECIFICITY SELECTORS
    ----------------------------------------------------------------------------
@@ -178,12 +187,7 @@ $text-lighter-opacity: 0.9;
 section[class*="block--"] {
   .block-header {
     .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-      }
+      @include card-hover-lift;
     }
   }
 }
@@ -240,12 +244,7 @@ section.block--about-city {
   /* Paragraphs cards */
   .paragraphs {
     .card.card--paragraph {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-      }
+      @include card-hover-lift;
 
       .paragraph__header {
         background: var(--bs-primary);
@@ -367,12 +366,7 @@ section.block--city-profile {
 
   /* CTA K3 needs hover effect */
   .cta--k3-needs {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 }
 
@@ -390,12 +384,7 @@ section.block--area-characteristics {
 
   /* Card hover effects */
   .card--characteristic {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 }
 
@@ -413,22 +402,12 @@ section.block--risk-analysis {
 
   /* Card hover effects */
   .card--risk {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 
   /* CTA hover effect */
   .cta--mitigation {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 }
 
@@ -446,12 +425,7 @@ section.block--services-excellence {
 
   /* Card hover effects */
   .card--service {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 }
 
@@ -538,12 +512,7 @@ section.block--tips-choosing-pjk3 {
 
   /* Tip cards - from section.tips array */
   .card.card--tip {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
 
     /* tip header container */
     .tip__header {
@@ -695,19 +664,14 @@ section.block--business-potential {
 
   /* Card hover effects */
   .card--potential {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 
   /* Value proposition hover effect */
   .value-proposition {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 1.5rem;
     border-radius: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);
@@ -718,12 +682,7 @@ section.block--business-potential {
 
   /* CTA box hover effect */
   .cta--start {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 }
 
@@ -812,22 +771,12 @@ section.block--faq-riksa-uji {
 
   /* Card hover effects */
   .card--faq {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 
   /* CTA hover effect */
   .cta--contact {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 }
 
@@ -853,19 +802,14 @@ section.block--testimonials {
 
   /* Card hover effects */
   .card--testimoni {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 
   /* CTA hover effect */
   .cta--contact {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding: 1.5rem;
     border-radius: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);
@@ -900,11 +844,6 @@ section.block--service-coverage {
   .card--wilayah,
   .card--kecamatan-lainnya,
   .card--landmark {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    }
+    @include card-hover-lift;
   }
 }
