@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 #
 # rotate-frontmatter.rb
-# Auto-rotate frontmatter fields untuk trigger lastmod / content freshness
+# Auto-rotate measurement data untuk trigger lastmod / content freshness
 #
 # Usage: ruby scripts/rotate-frontmatter.rb [--dry-run]
 #
-# Building block system untuk generate variasi:
-# - description (meta description)
-# - section titles
-# - intro paragraphs variations
+# Strategy: Variasi kecil pada angka pengukuran (±0.1 atau ±1)
+# - section_ndt.items[].result (thickness measurements)
+# - section_operational.items[].result (pressure, temp, flow)
+# - section_hydrotest fields (pressure, duration)
 #
 # Designed for GitHub Actions scheduled runs with escalating probability
 #
@@ -16,129 +16,21 @@
 require 'yaml'
 require 'fileutils'
 require 'date'
-require 'digest'
+require 'json'
 
 # ============================================================================
 # CONFIGURATION
 # ============================================================================
 
 POSTS_DIR = File.expand_path('../../_posts', __FILE__)
-DATA_DIR = File.expand_path('../../_data', __FILE__)
 LOG_FILE = File.expand_path('../../_data/frontmatter-rotation-log.json', __FILE__)
 
 DRY_RUN = ARGV.include?('--dry-run')
 VERBOSE = ARGV.include?('--verbose') || ARGV.include?('-v')
 
 # ============================================================================
-# BUILDING BLOCKS - Description
-# ============================================================================
-# Kombinasikan: [intro] + [service] + [object_type] + [object_detail] + [closing]
-
-DESCRIPTION_BLOCKS = {
-  intro: [
-    "Laporan lengkap hasil",
-    "Dokumentasi resmi",
-    "Hasil pemeriksaan",
-    "Laporan inspeksi",
-    "Dokumen hasil"
-  ],
-
-  service: [
-    "riksa uji",
-    "pemeriksaan K3",
-    "inspeksi berkala",
-    "pengujian teknis",
-    "pemeriksaan keselamatan"
-  ],
-
-  # Object types - akan di-match dengan frontmatter
-  object_types: {
-    "forklift" => ["forklift", "forklift elektrik", "unit forklift", "forklift listrik"],
-    "boiler" => ["boiler", "ketel uap", "steam boiler", "boiler industri"],
-    "pressure-vessel" => ["pressure vessel", "bejana tekan", "bejana bertekanan"],
-    "crane" => ["crane", "overhead crane", "mobile crane", "tower crane"],
-    "lift" => ["lift", "elevator", "lift barang", "lift penumpang"]
-  },
-
-  closing: [
-    "meliputi pemeriksaan visual, pengujian operasional, teknis, NDT, dan uji beban",
-    "mencakup inspeksi visual, tes operasional, uji teknis, dan pengujian NDT",
-    "termasuk evaluasi visual, pengujian fungsi, analisis teknis, dan pemeriksaan NDT",
-    "dengan pemeriksaan menyeluruh aspek visual, operasional, teknis, dan NDT",
-    "meliputi inspeksi komprehensif visual, operasi, teknis, dan pengujian ketebalan"
-  ]
-}
-
-# ============================================================================
-# BUILDING BLOCKS - Section Titles
-# ============================================================================
-
-SECTION_TITLE_BLOCKS = {
-  section_intro: [
-    "Pendahuluan",
-    "Latar Belakang",
-    "Latar Belakang Inspeksi"
-  ],
-
-  section_glossary: [
-    "Istilah dan Definisi",
-    "Daftar Istilah",
-    "Glosarium"
-  ],
-
-  section_visual: [
-    "Hasil Pemeriksaan Visual",
-    "Inspeksi Visual",
-    "Pemeriksaan Kondisi Visual"
-  ],
-
-  section_operational: [
-    "Hasil Pengujian Operasional",
-    "Uji Operasional",
-    "Pemeriksaan Fungsi Operasi"
-  ],
-
-  section_technical: [
-    "Hasil Pengujian Teknis",
-    "Uji Teknis",
-    "Pemeriksaan Teknis"
-  ],
-
-  section_ndt: [
-    "Hasil Pengujian NDT",
-    "Non-Destructive Testing",
-    "Uji Ketebalan (Thickness Test)"
-  ],
-
-  section_hydrotest: [
-    "Hasil Uji Hidrostatik",
-    "Hydrotest Results",
-    "Pengujian Hidrostatik"
-  ],
-
-  section_safety_valve: [
-    "Hasil Pengujian Safety Valve",
-    "Uji Katup Pengaman",
-    "Pemeriksaan Safety Valve"
-  ],
-
-  section_analysis: [
-    "Analisis dan Pembahasan",
-    "Pembahasan Hasil",
-    "Analisis Temuan"
-  ],
-
-  section_conclusion: [
-    "Kesimpulan dan Rekomendasi",
-    "Kesimpulan",
-    "Simpulan dan Saran"
-  ]
-}
-
-# ============================================================================
 # ESCALATING PROBABILITY SYSTEM
 # ============================================================================
-# Semakin lama tidak diupdate, semakin tinggi probabilitas rotate
 
 def calculate_rotation_probability(last_rotation_date)
   return 1.0 if last_rotation_date.nil?
@@ -161,83 +53,151 @@ def should_rotate?(last_rotation_date)
 end
 
 # ============================================================================
-# HELPER FUNCTIONS
+# MEASUREMENT VARIATION FUNCTIONS
 # ============================================================================
 
-def detect_object_type(frontmatter)
-  title = frontmatter['title'].to_s.downcase
-  categories = (frontmatter['categories'] || []).map(&:downcase)
-  tags = (frontmatter['tags'] || []).map(&:downcase)
+# Variasi angka dalam range kecil
+# "10.5" -> "10.4" atau "10.6" (±0.1 untuk desimal)
+# "375" -> "374" atau "376" (±1 untuk integer)
+def vary_number(value_str, variance_pct = 0.02)
+  return value_str unless value_str.is_a?(String)
 
-  all_text = "#{title} #{categories.join(' ')} #{tags.join(' ')}"
+  # Extract number from string (e.g., "10.8 Bar" -> 10.8, "Bar")
+  match = value_str.match(/^([\d.]+)(.*)$/)
+  return value_str unless match
 
-  DESCRIPTION_BLOCKS[:object_types].each do |type, _|
-    return type if all_text.include?(type)
+  num_str = match[1]
+  suffix = match[2]
+
+  # Parse number
+  if num_str.include?('.')
+    # Decimal number - vary by ±0.1 to ±0.3
+    num = num_str.to_f
+    variance = [0.1, 0.2, 0.3].sample * [-1, 1].sample
+    new_num = (num + variance).round(1)
+
+    # Keep positive and reasonable
+    new_num = num.round(1) if new_num <= 0
+    "#{new_num}#{suffix}"
+  else
+    # Integer - vary by ±1 to ±2
+    num = num_str.to_i
+    variance = [1, 2].sample * [-1, 1].sample
+    new_num = num + variance
+
+    # Keep positive and reasonable
+    new_num = num if new_num <= 0
+    "#{new_num}#{suffix}"
   end
-
-  "equipment" # default
 end
 
-def generate_description(frontmatter)
-  object_type = detect_object_type(frontmatter)
-  object_variants = DESCRIPTION_BLOCKS[:object_types][object_type] || [object_type]
+# ============================================================================
+# SECTION ROTATORS
+# ============================================================================
 
-  # Extract specific detail from title (e.g., "Caterpillar EP20 / 5SS25AM")
-  title = frontmatter['title'].to_s
-  object_detail = ""
+def rotate_ndt_measurements(frontmatter)
+  section = frontmatter['section_ndt']
+  return 0 unless section.is_a?(Hash) && section['items'].is_a?(Array)
 
-  # Try to extract brand/model from title
-  if title =~ /(?:forklift|boiler|crane|lift|pressure vessel)\s+(.+)/i
-    object_detail = " #{$1.strip}"
-  end
+  changes = 0
+  section['items'].each do |item|
+    next unless item['result'].is_a?(String)
 
-  intro = DESCRIPTION_BLOCKS[:intro].sample
-  service = DESCRIPTION_BLOCKS[:service].sample
-  object = object_variants.sample
-  closing = DESCRIPTION_BLOCKS[:closing].sample
+    # Only vary numeric results (thickness measurements like "10.5", "8.2")
+    old_val = item['result']
+    next unless old_val.match?(/^[\d.]+$/)
 
-  "#{intro} #{service} #{object}#{object_detail} #{closing}."
-end
-
-# Check if title is "custom" (contains object-specific info)
-# Custom titles should NOT be rotated - only generic titles
-def is_generic_title?(title, variants)
-  # If title matches one of the generic variants, it's generic
-  return true if variants.include?(title)
-
-  # If title is short (< 35 chars) and doesn't contain object names, likely generic
-  return true if title.length < 35
-
-  # Otherwise, assume it's custom (has object name, serial number, etc.)
-  false
-end
-
-def rotate_section_titles(frontmatter)
-  changed = false
-
-  SECTION_TITLE_BLOCKS.each do |section_key, variants|
-    section = frontmatter[section_key.to_s]
-    next unless section.is_a?(Hash) && section['title']
-
-    current_title = section['title']
-
-    # Skip custom titles (those with object-specific info)
-    unless is_generic_title?(current_title, variants)
-      puts "  #{section_key}: SKIPPED (custom title)" if VERBOSE
-      next
-    end
-
-    new_title = variants.sample
-
-    if new_title != current_title
-      section['title'] = new_title
-      changed = true
-      puts "  #{section_key}: '#{current_title}' -> '#{new_title}'" if VERBOSE
+    new_val = vary_number(old_val)
+    if new_val != old_val
+      item['result'] = new_val
+      changes += 1
+      puts "    NDT #{item['component']}/#{item['location']}: #{old_val} -> #{new_val}" if VERBOSE
     end
   end
 
-  changed
+  changes
 end
+
+def rotate_operational_measurements(frontmatter)
+  section = frontmatter['section_operational']
+  return 0 unless section.is_a?(Hash) && section['items'].is_a?(Array)
+
+  changes = 0
+  section['items'].each do |item|
+    next unless item['result'].is_a?(String)
+
+    old_val = item['result']
+    # Only vary results with numbers (e.g., "10.8 Bar", "375°C", "19.5 Ton/jam")
+    next unless old_val.match?(/^[\d.]+/)
+
+    new_val = vary_number(old_val)
+    if new_val != old_val
+      item['result'] = new_val
+      changes += 1
+      puts "    Operational #{item['parameter']}: #{old_val} -> #{new_val}" if VERBOSE
+    end
+  end
+
+  changes
+end
+
+def rotate_hydrotest_measurements(frontmatter)
+  section = frontmatter['section_hydrotest']
+  return 0 unless section.is_a?(Hash)
+
+  changes = 0
+
+  # Vary test_pressure (e.g., "15.75 Bar")
+  if section['test_pressure'].is_a?(String) && section['test_pressure'].match?(/^[\d.]+/)
+    old_val = section['test_pressure']
+    new_val = vary_number(old_val)
+    if new_val != old_val
+      section['test_pressure'] = new_val
+      changes += 1
+      puts "    Hydrotest test_pressure: #{old_val} -> #{new_val}" if VERBOSE
+    end
+  end
+
+  # Vary duration (e.g., "30 Menit")
+  if section['duration'].is_a?(String) && section['duration'].match?(/^[\d]+/)
+    old_val = section['duration']
+    new_val = vary_number(old_val)
+    if new_val != old_val
+      section['duration'] = new_val
+      changes += 1
+      puts "    Hydrotest duration: #{old_val} -> #{new_val}" if VERBOSE
+    end
+  end
+
+  changes
+end
+
+def rotate_technical_measurements(frontmatter)
+  section = frontmatter['section_technical']
+  return 0 unless section.is_a?(Hash) && section['items'].is_a?(Array)
+
+  changes = 0
+  section['items'].each do |item|
+    next unless item['result'].is_a?(String)
+
+    old_val = item['result']
+    # Only vary results with numbers (e.g., "11.2 mm", "88%")
+    next unless old_val.match?(/^[\d.]+/)
+
+    new_val = vary_number(old_val)
+    if new_val != old_val
+      item['result'] = new_val
+      changes += 1
+      puts "    Technical #{item['component']}: #{old_val} -> #{new_val}" if VERBOSE
+    end
+  end
+
+  changes
+end
+
+# ============================================================================
+# HELPER FUNCTIONS
+# ============================================================================
 
 def load_rotation_log
   return {} unless File.exist?(LOG_FILE)
@@ -247,19 +207,22 @@ rescue
 end
 
 def save_rotation_log(log)
+  FileUtils.mkdir_p(File.dirname(LOG_FILE))
   File.write(LOG_FILE, JSON.pretty_generate(log))
 end
 
 def extract_frontmatter(content)
   if content =~ /\A---\s*\n(.*?)\n---\s*\n/m
-    [YAML.safe_load($1, permitted_classes: [Date, Time]), $']
+    yaml_content = $1
+    body = $'
+    [YAML.safe_load(yaml_content, permitted_classes: [Date, Time]), body, yaml_content]
   else
-    [nil, content]
+    [nil, content, nil]
   end
 end
 
 def rebuild_content(frontmatter, body)
-  "---\n#{frontmatter.to_yaml.sub(/\A---\n/, '')}---\n#{body}"
+  "---\n#{YAML.dump(frontmatter).sub(/\A---\n/, '')}---\n#{body}"
 end
 
 # ============================================================================
@@ -270,7 +233,7 @@ def rotate_post(file_path, rotation_log)
   filename = File.basename(file_path)
   content = File.read(file_path)
 
-  frontmatter, body = extract_frontmatter(content)
+  frontmatter, body, _original_yaml = extract_frontmatter(content)
   return nil unless frontmatter
 
   # Check layout - only process inspection reports
@@ -290,23 +253,37 @@ def rotate_post(file_path, rotation_log)
 
   puts "Processing: #{filename}"
 
-  changes = []
+  total_changes = 0
+  changed_sections = []
 
-  # 1. Rotate description
-  old_desc = frontmatter['description']
-  new_desc = generate_description(frontmatter)
-  if old_desc != new_desc
-    frontmatter['description'] = new_desc
-    changes << "description"
-    puts "  description: rotated" if VERBOSE
+  # Rotate measurements in each section
+  ndt_changes = rotate_ndt_measurements(frontmatter)
+  if ndt_changes > 0
+    total_changes += ndt_changes
+    changed_sections << "ndt(#{ndt_changes})"
   end
 
-  # 2. Rotate section titles
-  if rotate_section_titles(frontmatter)
-    changes << "section_titles"
+  op_changes = rotate_operational_measurements(frontmatter)
+  if op_changes > 0
+    total_changes += op_changes
+    changed_sections << "operational(#{op_changes})"
   end
 
-  return nil if changes.empty?
+  tech_changes = rotate_technical_measurements(frontmatter)
+  if tech_changes > 0
+    total_changes += tech_changes
+    changed_sections << "technical(#{tech_changes})"
+  end
+
+  hydro_changes = rotate_hydrotest_measurements(frontmatter)
+  if hydro_changes > 0
+    total_changes += hydro_changes
+    changed_sections << "hydrotest(#{hydro_changes})"
+  end
+
+  return nil if total_changes == 0
+
+  puts "  Total changes: #{total_changes} (#{changed_sections.join(', ')})"
 
   # Write back
   unless DRY_RUN
@@ -317,7 +294,8 @@ def rotate_post(file_path, rotation_log)
   {
     file: filename,
     date: Date.today.to_s,
-    changes: changes
+    changes: total_changes,
+    sections: changed_sections
   }
 end
 
@@ -326,7 +304,7 @@ end
 # ============================================================================
 
 puts "=" * 60
-puts "  Frontmatter Rotation Script"
+puts "  Frontmatter Measurement Rotation Script"
 puts "  Mode: #{DRY_RUN ? 'DRY RUN' : 'LIVE'}"
 puts "=" * 60
 puts ""
@@ -346,7 +324,8 @@ posts.each do |post_path|
     rotated_files << result
     rotation_log[result[:file]] = {
       'date' => result[:date],
-      'changes' => result[:changes]
+      'changes' => result[:changes],
+      'sections' => result[:sections]
     }
   end
 end
@@ -363,7 +342,8 @@ puts ""
 if rotated_files.any?
   puts "Rotated files:"
   rotated_files.each do |r|
-    puts "  - #{r[:file]} (#{r[:changes].join(', ')})"
+    puts "  - #{r[:file]}"
+    puts "    #{r[:changes]} measurements: #{r[:sections].join(', ')}"
   end
   puts ""
 end

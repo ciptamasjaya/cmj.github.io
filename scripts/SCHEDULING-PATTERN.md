@@ -1,8 +1,46 @@
-# Frontmatter Rotation Scheduling Pattern
+# Frontmatter Measurement Rotation
 
 ## Overview
 
-Script `rotate-frontmatter.rb` menggunakan **escalating probability system** untuk menentukan apakah sebuah post akan dirotasi. Semakin lama tidak diupdate, semakin tinggi probabilitasnya.
+Script `rotate-frontmatter.rb` melakukan variasi kecil pada **angka pengukuran** di frontmatter untuk trigger lastmod / content freshness signal.
+
+## Strategy
+
+Mengubah nilai numerik hasil pengukuran dengan variasi kecil yang natural:
+- **Desimal**: ±0.1 sampai ±0.3 (e.g., 10.5 → 10.4 atau 10.7)
+- **Integer**: ±1 sampai ±2 (e.g., 375 → 374 atau 376)
+
+## Target Fields
+
+### section_ndt.items[].result
+Hasil pengukuran thickness (mm)
+```yaml
+- component: "Dinding Ruang Pembakaran"
+  result: "10.5"  # → 10.4, 10.6, 10.7, dll
+```
+
+### section_operational.items[].result
+Parameter operasional dengan angka
+```yaml
+- parameter: "Tekanan Operasional"
+  result: "10.8 Bar"  # → 10.7 Bar, 10.9 Bar, dll
+- parameter: "Suhu Operasional"
+  result: "375°C"     # → 374°C, 376°C, dll
+```
+
+### section_technical.items[].result
+Hasil pengujian teknis dengan angka
+```yaml
+- component: "Ketebalan Dinding"
+  result: "11.2 mm"   # → 11.1 mm, 11.3 mm, dll
+```
+
+### section_hydrotest
+Tekanan dan durasi uji
+```yaml
+test_pressure: "15.75 Bar"  # → 15.65 Bar, 15.85 Bar, dll
+duration: "30 Menit"        # → 29 Menit, 31 Menit, dll
+```
 
 ## Probability Table
 
@@ -15,35 +53,16 @@ Script `rotate-frontmatter.rb` menggunakan **escalating probability system** unt
 | 28-34 hari (4-5 minggu)  | 70%         |
 | > 35 hari (5+ minggu)    | 90%         |
 
-## What Gets Rotated
-
-### 1. Description (Meta Description)
-Building blocks kombinasi:
-- **Intro**: "Laporan lengkap hasil", "Dokumentasi resmi", "Hasil pemeriksaan"
-- **Service**: "riksa uji", "pemeriksaan K3", "inspeksi berkala"
-- **Object**: auto-detect dari title (forklift, boiler, crane, etc.)
-- **Closing**: variasi kalimat penutup
-
-### 2. Section Titles (Generic Only)
-Hanya section titles yang **generic** (pendek, tanpa nama objek spesifik) yang dirotasi.
-
-Contoh yang DIROTASI:
-- "Pendahuluan" → "Latar Belakang"
-- "Kesimpulan" → "Simpulan dan Saran"
-
-Contoh yang TIDAK DIROTASI (custom/spesifik):
-- "Pemeriksaan Visual Forklift Caterpillar EP20 Seri E2B00501"
-- "Analisis Data dan Pembahasan Laporan Riksa Uji Boiler John Thompson"
-
 ## Log File
 
 Setiap rotasi dicatat di `_data/frontmatter-rotation-log.json`:
 
 ```json
 {
-  "2024-12-16-riksa-uji-forklift-caterpillar-ep20-5ss25am.md": {
+  "2024-10-16-riksa-uji-boiler-john-thompson-74910.md": {
     "date": "2025-12-01",
-    "changes": ["description", "section_titles"]
+    "changes": 15,
+    "sections": ["ndt(7)", "operational(4)", "technical(2)", "hydrotest(2)"]
   }
 }
 ```
@@ -60,18 +79,25 @@ ruby scripts/rotate-frontmatter.rb
 ```
 
 ### GitHub Actions
-Lihat `.github/workflows/rotate-frontmatter.yml` untuk scheduled runs.
+Lihat `.github/workflows/rotate-frontmatter.yml` untuk scheduled daily runs.
 
 ## SEO Purpose
 
-Rotasi ini bertujuan untuk:
-1. **Trigger lastmod** - Perubahan konten membuat lastmod berubah
-2. **Content freshness signal** - Google melihat konten "fresh"
-3. **Re-crawl trigger** - Sitemap update → Googlebot re-crawl
-4. **Natural variation** - Tidak semua post update bersamaan (probability system)
+1. **File modified** → lastmod di sitemap berubah
+2. **Content freshness signal** → Google sees "updated" content
+3. **Natural variation** → Angka pengukuran memang bervariasi di dunia nyata
+4. **Safe changes** → Tidak mengubah title, description, atau konten bermakna
+
+## What's NOT Changed
+
+- Title dan description (SEO-sensitive)
+- Section titles dan intro text
+- Qualitative results ("Baik", "Normal", "Tidak ada cacat")
+- Standard/threshold values
+- Status fields ("lulus", "perlu_perhatian")
 
 ## Notes
 
 - Script hanya memproses layout `inspection-report` atau `riksa-uji`
-- Tidak mengubah konten utama (body markdown)
+- Posts tanpa data numerik akan di-skip
 - Rating/review rotation terpisah di `block--rating--*.html`
