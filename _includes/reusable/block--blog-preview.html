@@ -73,7 +73,7 @@ Archive page:
       {% if variant == "archive" %}
         {% assign loop_posts = blog_posts %}
       {% else %}
-        {% assign loop_posts = blog_posts | limit: post_limit %}
+        {% assign loop_posts = blog_posts | slice: 0, post_limit %}
       {% endif %}
       {% for post in loop_posts %}
       {% assign post_index = forloop.index %}
