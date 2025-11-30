@@ -27,7 +27,7 @@ images:
 section_gallery:
   title: Galeri Layanan
   area: Semarang
-  description: Dokumentasi kegiatan riksa uji di wilayah Semarang dan sekitarnya
+  description: Dokumentasi kegiatan riksa uji K3 di wilayah Semarang dan sekitarnya
   caption: Foto dokumentasi layanan PT. Cipta Mas Jaya
 video: ''
 section_video:
