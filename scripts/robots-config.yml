@@ -21,14 +21,14 @@ robots:
   - id: measurement
     name: Robot Measurement
     script: rotate-frontmatter.rb
-    description: Variasi angka pengukuran (NDT, operational, technical, hydrotest)
+    description: Variasi angka pengukuran - HANYA inspection-report layout
     enabled: true
     weight_multiplier: 1.0
 
   - id: synonym
     name: Robot Sinonim
     script: rotate-synonyms.rb
-    description: Ganti kata dengan sinonim (dilakukan→dilaksanakan, dan→serta, dll)
+    description: Ganti kata dengan sinonim - SEMUA layout (53 grup sinonim)
     enabled: true
     weight_multiplier: 1.0
 

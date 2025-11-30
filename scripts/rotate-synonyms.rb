@@ -226,7 +226,7 @@ def rotate_text_fields(frontmatter)
     end
   end
 
-  # Nested fields in sections
+  # Nested fields in sections (inspection-report layout)
   section_fields = [
     ['section_intro', 'intro'],
     ['section_glossary', 'intro'],
@@ -245,6 +245,16 @@ def rotate_text_fields(frontmatter)
     ['section_analysis', 'summary'],
     ['section_conclusion', 'intro'],
     ['section_conclusion', 'summary'],
+    # pjk3-city layout
+    ['section_hero', 'description'],
+    ['section_gallery', 'description'],
+    ['section_video', 'description'],
+    ['section_company_intro', 'description'],
+    ['section_company_intro', 'intro'],
+    ['section_services', 'intro'],
+    ['section_coverage', 'intro'],
+    ['section_faq', 'intro'],
+    ['section_cta', 'description'],
   ]
 
   section_fields.each do |section_key, field_key|
@@ -342,12 +352,8 @@ def rotate_post(file_path, rotation_log)
   frontmatter, body = extract_frontmatter(content)
   return nil unless frontmatter
 
-  # Check layout
-  layout = frontmatter['layout'].to_s
-  unless layout.include?('inspection-report') || layout.include?('riksa-uji')
-    puts "  Skipping #{filename} (layout: #{layout})" if VERBOSE
-    return nil
-  end
+  # Robot Sinonim works on ALL layouts (no filter)
+  # Unlike Robot Measurement which only works on inspection-report
 
   # Check rotation probability
   last_rotation = rotation_log[filename] ? Date.parse(rotation_log[filename]['date']) : nil
