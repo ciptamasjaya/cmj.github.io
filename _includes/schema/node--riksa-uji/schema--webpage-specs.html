@@ -1,0 +1,40 @@
+{% comment %}
+============================================================================
+Schema: Specs Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-specs.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-specs.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for specs/specifications section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for technical specifications section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-specs.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_specs and page.section_specs.specs.size > 0 %}
+{% assign section = page.section_specs %}
+{% assign text_content = "" %}
+{% for spec in section.specs %}
+  {% assign text_content = text_content | append: spec.label | append: ": " | append: spec.value | append: " " %}
+{% endfor %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#specs-section",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ text_content | strip | escape }}"
+}
+</script>
+{% endif %}

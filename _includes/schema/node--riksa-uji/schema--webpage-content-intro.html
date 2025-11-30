@@ -1,0 +1,41 @@
+{% comment %}
+============================================================================
+Schema: Content Intro Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-content-intro.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-content-intro.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for content intro section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for content introduction section.
+Combines content_intro and announce paragraphs.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-content-intro.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.content_intro %}
+{% assign section = page.content_intro %}
+{% capture text_content %}
+{% if section.paragraphs %}{{ section.paragraphs | join: " " | strip_html }}{% endif %}
+{% if page.announce.paragraphs %}{{ page.announce.paragraphs | join: " " | strip_html }}{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#content-intro-section",
+  "name": "Pengantar {{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

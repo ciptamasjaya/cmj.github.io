@@ -1,0 +1,42 @@
+{% comment %}
+============================================================================
+Schema: Company Intro Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-company-intro.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-company-intro.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for company intro section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for company introduction section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-company-intro.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_company_intro %}
+{% assign section = page.section_company_intro %}
+{% capture text_content %}
+{{ section.intro }}
+{% if section.subsections %}
+{% for subsection in section.subsections %}{{ subsection.title }}: {{ subsection.paragraphs | join: " " }} {% endfor %}
+{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#company-intro-section",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

@@ -1,0 +1,48 @@
+{% comment %}
+============================================================================
+Schema: FAQ Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-faq.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-faq.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for FAQ section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for FAQ section.
+Referenced by TechArticle via hasPart.
+Note: This is separate from FAQPage schema - this marks the section as webpage element.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-faq.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_faq %}
+{% assign section = page.section_faq %}
+{% capture text_content %}
+{% if section.faq_layanan %}
+{{ section.judul_layanan }}: {% for item in section.faq_layanan %}{{ item.pertanyaan }} {{ item.jawaban }} {% endfor %}
+{% endif %}
+{% if section.faq_sertifikasi %}
+{{ section.judul_sertifikasi }}: {% for item in section.faq_sertifikasi %}{{ item.pertanyaan }} {{ item.jawaban }} {% endfor %}
+{% endif %}
+{% if section.faq_biaya %}
+{{ section.judul_biaya }}: {% for item in section.faq_biaya %}{{ item.pertanyaan }} {{ item.jawaban }} {% endfor %}
+{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#faq-section",
+  "name": "{{ section.title | escape }}",
+  {% if section.subtitle %}"description": "{{ section.subtitle | escape }}",{% endif %}
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

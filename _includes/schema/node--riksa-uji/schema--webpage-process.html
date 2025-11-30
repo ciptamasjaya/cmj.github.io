@@ -1,0 +1,40 @@
+{% comment %}
+============================================================================
+Schema: Process Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-process.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-process.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for process section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for process/steps section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-process.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_process and page.section_process.steps.size > 0 %}
+{% assign section = page.section_process %}
+{% assign text_content = "" %}
+{% for step in section.steps %}
+  {% assign text_content = text_content | append: step.title | append: ": " | append: step.description | append: " " %}
+{% endfor %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#process-section",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ text_content | strip | escape }}"
+}
+</script>
+{% endif %}

@@ -1,0 +1,45 @@
+{% comment %}
+============================================================================
+Schema: Order Process Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-order.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-order.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for order process section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for order/booking process section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-order.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_order %}
+{% assign section = page.section_order %}
+{% capture text_content %}
+{{ section.intro }}
+{% if section.initial_steps %}
+{% for step in section.initial_steps %}{{ step.title }}: {{ step.description }} {% endfor %}
+{% endif %}
+{% if section.final_steps %}
+{% for step in section.final_steps %}{{ step.title }}: {{ step.description }} {% endfor %}
+{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#order-section",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

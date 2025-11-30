@@ -1,0 +1,40 @@
+{% comment %}
+============================================================================
+Schema: Hero Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-hero.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-hero.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for hero section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for marketing hero section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-hero.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_hero %}
+{% assign section = page.section_hero %}
+{% capture text_content %}
+{{ section.description }}
+{% if section.wilayah_layanan %}Melayani: {{ section.wilayah_layanan | join: ", " }}{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#hero-section",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.description | escape }}",
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

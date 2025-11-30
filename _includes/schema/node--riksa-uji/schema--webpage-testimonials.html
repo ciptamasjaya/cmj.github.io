@@ -1,0 +1,42 @@
+{% comment %}
+============================================================================
+Schema: Testimonials Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-testimonials.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-testimonials.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for testimonials section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for customer testimonials section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-testimonials.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_testimonials %}
+{% assign section = page.section_testimonials %}
+{% capture text_content %}
+{{ section.intro }}
+{% if section.testimonials %}
+{% for item in section.testimonials %}{{ item.nama }} ({{ item.jabatan }}, {{ item.jenis_usaha }}): {{ item.komentar }} {% endfor %}
+{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#testimonials-section",
+  "name": "{{ section.title | escape }}",
+  {% if section.subtitle %}"description": "{{ section.subtitle | escape }}",{% endif %}
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

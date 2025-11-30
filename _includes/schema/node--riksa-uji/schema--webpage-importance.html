@@ -1,0 +1,45 @@
+{% comment %}
+============================================================================
+Schema: Importance Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-importance.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-importance.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for importance section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for importance section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-importance.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_importance %}
+{% assign section = page.section_importance %}
+{% assign text_content = "" %}
+{% for subsection in section.subsections %}
+  {% assign text_content = text_content | append: subsection.title | append: ": " %}
+  {% if subsection.paragraphs %}
+    {% assign text_content = text_content | append: subsection.paragraphs | join: " " | append: " " %}
+  {% endif %}
+{% endfor %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#importance-section",
+  "name": "{{ section.title | escape }}",
+  {% if section.paragraphs and section.paragraphs.size > 0 %}
+  "description": "{{ section.paragraphs | first | escape }}",
+  {% endif %}
+  "text": "{{ text_content | strip | escape }}"
+}
+</script>
+{% endif %}

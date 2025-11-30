@@ -1,0 +1,42 @@
+{% comment %}
+============================================================================
+Schema: Services Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-services.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-services.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for services/advantages section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for services/advantages section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-services.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_services %}
+{% assign section = page.section_services %}
+{% capture text_content %}
+{{ section.intro }}
+{% if section.services %}
+{% for item in section.services %}{{ item.title }}: {{ item.description }} {% endfor %}
+{% endif %}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#services-section",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}

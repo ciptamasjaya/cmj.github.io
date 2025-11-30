@@ -1,0 +1,45 @@
+{% comment %}
+============================================================================
+Schema: Certification Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-certification.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-certification.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for certification section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for certification section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-certification.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_certification %}
+{% assign section = page.section_certification %}
+{% assign text_content = "" %}
+{% if section.subsections %}
+  {% for subsection in section.subsections %}
+    {% assign text_content = text_content | append: subsection.title | append: ": " %}
+    {% if subsection.paragraphs %}
+      {% assign text_content = text_content | append: subsection.paragraphs | join: " " | append: " " %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#certification-section",
+  "name": "{{ section.title | escape }}",
+  "description": "{{ section.intro | escape }}",
+  "text": "{{ text_content | strip | escape }}"
+}
+</script>
+{% endif %}

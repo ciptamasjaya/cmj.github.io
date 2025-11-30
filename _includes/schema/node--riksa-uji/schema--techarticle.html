@@ -26,10 +26,25 @@ Usage:
 ============================================================================
 {% endcomment %}
 
-{% comment %} Build articleBody from content {% endcomment %}
-{% capture article_body %}{{ page.content | strip_html | strip | truncate: 5000 | escape }}{% endcapture %}
+{% comment %} Build articleBody from frontmatter sections {% endcomment %}
+{% capture article_body %}
+{% if page.description %}{{ page.description }} {% endif %}
+{% if page.section_importance.paragraphs %}{{ page.section_importance.paragraphs | join: ' ' }} {% endif %}
+{% if page.section_process.intro %}{{ page.section_process.intro }} {% endif %}
+{% if page.section_regulation.intro %}{{ page.section_regulation.intro }} {% endif %}
+{% if page.section_training.intro %}{{ page.section_training.intro }} {% endif %}
+{% if page.section_specs.intro %}{{ page.section_specs.intro }} {% endif %}
+{% endcapture %}
+{% assign article_body = article_body | strip | truncate: 5000 | escape %}
+
 {% assign primary_image = '/assets/images/posts/default/i1.svg' %}
 {% if page.image and page.image != '' %}{% assign primary_image = page.image %}{% endif %}
+
+{% comment %} Check which sections exist for hasPart {% endcomment %}
+{% assign has_parts = false %}
+{% if page.content_intro or page.section_hero or page.section_order or page.section_company_intro or page.section_services or page.section_importance or page.section_process.steps or page.section_regulation.subsections or page.section_training.cards or page.section_specs.specs or page.section_permit or page.section_certification or page.section_tips or page.section_testimonials or page.section_faq or page.section_conclusion %}
+  {% assign has_parts = true %}
+{% endif %}
 
 <script type="application/ld+json">
 {
@@ -45,7 +60,6 @@ Usage:
   "proficiencyLevel": "expert",
   "dependencies": "Peraturan K3, Standar Keselamatan Kerja, Riksa Uji Berkala",
   "articleBody": "{{ article_body }}",
-  "wordCount": {{ page.content | strip_html | number_of_words }},
   "inLanguage": "id",
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
@@ -84,6 +98,25 @@ Usage:
   "isPartOf": {
     "@type": "WebSite",
     "@id": "{{ site.url }}{{ site.baseurl }}/#website"
-  }
+  }{% if has_parts %},
+  "hasPart": [
+    {% assign need_comma = false %}
+    {% if page.content_intro %}{ "@id": "{{ page.url | absolute_url }}#content-intro-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_hero %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#hero-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_order %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#order-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_company_intro %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#company-intro-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_services %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#services-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_importance %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#importance-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_process.steps %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#process-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_regulation.subsections %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#regulation-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_training.cards %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#training-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_specs.specs %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#specs-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_permit %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#permit-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_certification %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#certification-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_tips %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#tips-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_testimonials %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#testimonials-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_faq %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#faq-section" }{% assign need_comma = true %}{% endif %}
+    {% if page.section_conclusion %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#conclusion-section" }{% endif %}
+  ]{% endif %}
 }
 </script>

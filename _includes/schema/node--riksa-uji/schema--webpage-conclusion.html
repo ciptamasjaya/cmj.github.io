@@ -1,0 +1,42 @@
+{% comment %}
+============================================================================
+Schema: Conclusion Section - WebPageElement
+============================================================================
+
+@file        schema--webpage-conclusion.html
+@path        _includes/schema/node--riksa-uji/schema--webpage-conclusion.html
+@type        Schema (WebPageElement)
+@description WebPageElement schema for conclusion section (hasPart of TechArticle)
+@author      arisciwek
+@created     2025-11-30
+
+Generates WebPageElement for conclusion/summary section.
+Referenced by TechArticle via hasPart.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--webpage-conclusion.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_conclusion %}
+{% assign section = page.section_conclusion %}
+{% capture text_content %}
+{{ section.intro | strip_html }}
+{% if section.highlights %}
+{% for item in section.highlights %}{{ item.key }}: {{ item.value }} {% endfor %}
+{% endif %}
+{{ section.closing }}
+{% endcapture %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#conclusion-section",
+  "name": "{{ section.title | escape }}",
+  "text": "{{ text_content | strip | normalize_whitespace | escape }}"
+}
+</script>
+{% endif %}
