@@ -1,0 +1,65 @@
+# ============================================================================
+# Content Freshness Robots Configuration
+# ============================================================================
+#
+# Edit this file to:
+# - Enable/disable robots
+# - Add new robots
+# - Adjust weights
+#
+# Format:
+#   id: unique identifier
+#   name: display name
+#   script: filename in scripts/ folder
+#   description: what this robot does
+#   enabled: true/false (set false for maintenance)
+#   weight_multiplier: adjust selection probability (default 1.0)
+#
+# ============================================================================
+
+robots:
+  - id: measurement
+    name: Robot Measurement
+    script: rotate-frontmatter.rb
+    description: Variasi angka pengukuran (NDT, operational, technical, hydrotest)
+    enabled: true
+    weight_multiplier: 1.0
+
+  - id: synonym
+    name: Robot Sinonim
+    script: rotate-synonyms.rb
+    description: Ganti kata dengan sinonim (dilakukan→dilaksanakan, dan→serta, dll)
+    enabled: true
+    weight_multiplier: 1.0
+
+  # ============================================================================
+  # CONTOH: Menambah robot baru
+  # ============================================================================
+  #
+  # - id: review
+  #   name: Robot Review
+  #   script: rotate-reviews.rb
+  #   description: Rotasi data review/testimonial
+  #   enabled: true
+  #   weight_multiplier: 1.0
+  #
+  # - id: date
+  #   name: Robot Tanggal
+  #   script: rotate-dates.rb
+  #   description: Update tanggal last_reviewed atau similar fields
+  #   enabled: false  # dalam maintenance
+  #   weight_multiplier: 0.5  # jarang dipilih
+
+# ============================================================================
+# Global Settings
+# ============================================================================
+
+settings:
+  # Minimum days between same robot runs (0 = no limit)
+  min_days_between_same_robot: 0
+
+  # Log retention days (0 = keep forever)
+  log_retention_days: 90
+
+  # Dry run by default for safety (override with --live)
+  default_dry_run: false

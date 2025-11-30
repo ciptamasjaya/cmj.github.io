@@ -3,17 +3,20 @@
 # run-random-robot.rb
 # Random robot picker - pilih dan jalankan satu robot secara random
 #
-# Usage: ruby scripts/run-random-robot.rb [--dry-run]
+# Usage: ruby scripts/run-random-robot.rb [--dry-run] [--list] [--run=ID]
 #
-# Available robots:
-# - rotate-frontmatter.rb (measurement rotation)
-# - rotate-synonyms.rb (synonym rotation)
+# Options:
+#   --dry-run    Preview without changes
+#   --verbose    Show detailed output
+#   --list       List all robots and their status
+#   --run=ID     Run specific robot by ID
 #
-# Each run picks ONE robot randomly to execute
+# Robots configured in: scripts/robots-config.yml
 #
 
 require 'date'
 require 'json'
+require 'yaml'
 require 'fileutils'
 
 # ============================================================================
@@ -21,26 +24,64 @@ require 'fileutils'
 # ============================================================================
 
 SCRIPT_DIR = File.expand_path(__dir__)
+CONFIG_FILE = File.join(SCRIPT_DIR, 'robots-config.yml')
 LOG_FILE = File.expand_path('../_data/robot-scheduler-log.json', SCRIPT_DIR)
 
 DRY_RUN = ARGV.include?('--dry-run')
 VERBOSE = ARGV.include?('--verbose') || ARGV.include?('-v')
+LIST_MODE = ARGV.include?('--list')
+RUN_SPECIFIC = ARGV.find { |a| a.start_with?('--run=') }&.split('=')&.last
 
-# Available robots with their scripts and descriptions
-ROBOTS = [
-  {
-    id: 'measurement',
-    name: 'Robot Measurement',
-    script: 'rotate-frontmatter.rb',
-    description: 'Variasi angka pengukuran (NDT, operational, technical, hydrotest)'
-  },
-  {
-    id: 'synonym',
-    name: 'Robot Sinonim',
-    script: 'rotate-synonyms.rb',
-    description: 'Ganti kata dengan sinonim (dilakukan→dilaksanakan, dan→serta, dll)'
-  }
-]
+# ============================================================================
+# LOAD ROBOTS FROM CONFIG
+# ============================================================================
+
+def load_robots_config
+  unless File.exist?(CONFIG_FILE)
+    puts "Warning: #{CONFIG_FILE} not found, using defaults"
+    return default_robots
+  end
+
+  config = YAML.safe_load(File.read(CONFIG_FILE))
+  robots = config['robots'].map do |r|
+    {
+      id: r['id'],
+      name: r['name'],
+      script: r['script'],
+      description: r['description'],
+      enabled: r['enabled'] != false,  # default true
+      weight_multiplier: r['weight_multiplier'] || 1.0
+    }
+  end
+
+  robots
+rescue => e
+  puts "Error loading config: #{e.message}"
+  default_robots
+end
+
+def default_robots
+  [
+    {
+      id: 'measurement',
+      name: 'Robot Measurement',
+      script: 'rotate-frontmatter.rb',
+      description: 'Variasi angka pengukuran',
+      enabled: true,
+      weight_multiplier: 1.0
+    },
+    {
+      id: 'synonym',
+      name: 'Robot Sinonim',
+      script: 'rotate-synonyms.rb',
+      description: 'Ganti kata dengan sinonim',
+      enabled: true,
+      weight_multiplier: 1.0
+    }
+  ]
+end
+
+ROBOTS = load_robots_config
 
 # ============================================================================
 # WEIGHTED RANDOM SELECTION
@@ -71,18 +112,22 @@ def calculate_robot_weights(log)
   weights = {}
 
   ROBOTS.each do |robot|
+    # Skip disabled robots
+    next unless robot[:enabled]
+
     days = days_since_last_run(robot[:id], log)
 
     # Weight increases with days since last run
-    weight = case days
-             when 0      then 1    # Baru dijalankan hari ini
-             when 1..2   then 3    # 1-2 hari lalu
-             when 3..6   then 5    # 3-6 hari lalu
-             when 7..13  then 8    # 1-2 minggu lalu
-             else             10   # > 2 minggu
-             end
+    base_weight = case days
+                  when 0      then 1    # Baru dijalankan hari ini
+                  when 1..2   then 3    # 1-2 hari lalu
+                  when 3..6   then 5    # 3-6 hari lalu
+                  when 7..13  then 8    # 1-2 minggu lalu
+                  else             10   # > 2 minggu
+                  end
 
-    weights[robot[:id]] = weight
+    # Apply weight multiplier from config
+    weights[robot[:id]] = (base_weight * robot[:weight_multiplier]).round(1)
   end
 
   weights
@@ -102,8 +147,46 @@ def weighted_random_select(weights)
 end
 
 # ============================================================================
+# LIST MODE
+# ============================================================================
+
+def list_robots(scheduler_log)
+  puts "=" * 60
+  puts "  Available Robots"
+  puts "=" * 60
+  puts ""
+
+  ROBOTS.each do |robot|
+    status = robot[:enabled] ? "✓ enabled" : "✗ DISABLED"
+    days = days_since_last_run(robot[:id], scheduler_log)
+    days_str = days == 999 ? "never" : "#{days} days ago"
+    multiplier = robot[:weight_multiplier] != 1.0 ? " (×#{robot[:weight_multiplier]})" : ""
+
+    puts "  [#{robot[:id]}] #{robot[:name]}"
+    puts "      Status: #{status}#{multiplier}"
+    puts "      Script: #{robot[:script]}"
+    puts "      Last run: #{days_str}"
+    puts "      #{robot[:description]}"
+    puts ""
+  end
+
+  puts "Config file: #{CONFIG_FILE}"
+  puts ""
+  puts "To disable a robot, set 'enabled: false' in config"
+  puts "To run specific robot: ruby scripts/run-random-robot.rb --run=ID"
+end
+
+# ============================================================================
 # MAIN EXECUTION
 # ============================================================================
+
+scheduler_log = load_scheduler_log
+
+# List mode
+if LIST_MODE
+  list_robots(scheduler_log)
+  exit 0
+end
 
 puts "=" * 60
 puts "  Robot Scheduler"
@@ -111,23 +194,46 @@ puts "  Mode: #{DRY_RUN ? 'DRY RUN' : 'LIVE'}"
 puts "=" * 60
 puts ""
 
-scheduler_log = load_scheduler_log
-
 # Calculate weights
 weights = calculate_robot_weights(scheduler_log)
+
+# Check if any robots enabled
+if weights.empty?
+  puts "ERROR: No robots enabled!"
+  puts "Edit #{CONFIG_FILE} to enable at least one robot."
+  exit 1
+end
 
 puts "Available robots:"
 ROBOTS.each do |robot|
   days = days_since_last_run(robot[:id], scheduler_log)
   weight = weights[robot[:id]]
   days_str = days == 999 ? "never" : "#{days} days ago"
-  puts "  [#{robot[:id]}] #{robot[:name]} (last run: #{days_str}, weight: #{weight})"
+
+  if robot[:enabled]
+    puts "  [#{robot[:id]}] #{robot[:name]} (last run: #{days_str}, weight: #{weight})"
+  else
+    puts "  [#{robot[:id]}] #{robot[:name]} (DISABLED - maintenance)"
+  end
 end
 puts ""
 
 # Select robot
-selected_id = weighted_random_select(weights)
-selected_robot = ROBOTS.find { |r| r[:id] == selected_id }
+if RUN_SPECIFIC
+  selected_robot = ROBOTS.find { |r| r[:id] == RUN_SPECIFIC }
+  if selected_robot.nil?
+    puts "ERROR: Robot '#{RUN_SPECIFIC}' not found!"
+    puts "Available: #{ROBOTS.map { |r| r[:id] }.join(', ')}"
+    exit 1
+  end
+  if !selected_robot[:enabled]
+    puts "WARNING: Robot '#{RUN_SPECIFIC}' is disabled, but running anyway (forced)"
+  end
+  selected_id = RUN_SPECIFIC
+else
+  selected_id = weighted_random_select(weights)
+  selected_robot = ROBOTS.find { |r| r[:id] == selected_id }
+end
 
 puts "Selected: #{selected_robot[:name]}"
 puts "Description: #{selected_robot[:description]}"
