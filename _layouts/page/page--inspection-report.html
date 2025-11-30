@@ -68,6 +68,21 @@ Page Wrapper: Inspection Report Pages (page--inspection-report.html)
   <!-- Visual Inspection Schema (Table) -->
   {% include schema/node--inspection-report/schema--visual-inspection.html %}
 
+  <!-- Operational Test Schema (Table) -->
+  {% include schema/node--inspection-report/schema--operational-test.html %}
+
+  <!-- Technical Test Schema (Table) -->
+  {% include schema/node--inspection-report/schema--technical-test.html %}
+
+  <!-- NDT Test Schema (Table) -->
+  {% include schema/node--inspection-report/schema--ndt-test.html %}
+
+  <!-- Hydrotest Schema (Table) -->
+  {% include schema/node--inspection-report/schema--hydrotest.html %}
+
+  <!-- Safety Valve Schema (Table) -->
+  {% include schema/node--inspection-report/schema--safety-valve.html %}
+
   <!-- Breadcrumb Schema -->
   {% if page.show_breadcrumb_schema %}
     {% include schema/schema--breadcrumb.html current_title=page.title %}

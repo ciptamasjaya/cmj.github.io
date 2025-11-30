@@ -1,0 +1,47 @@
+{% comment %}
+============================================================================
+Schema: Safety Valve Test (Table)
+============================================================================
+
+@file        schema--safety-valve.html
+@path        _includes/schema/node--inspection-report/schema--safety-valve.html
+@type        Schema
+@description Table schema for safety valve test results
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_safety_valve and page.section_safety_valve.items.size > 0 %}
+{% assign section = page.section_safety_valve %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Table",
+  "@id": "{{ page.url | absolute_url }}#safety-valve-table",
+  "name": "{{ section.title | default: 'Hasil Pengujian Safety Valve' | escape }}",
+  "about": {
+    "@type": "Thing",
+    "name": "Safety Valve Test Results",
+    "description": "Hasil pengujian safety valve {{ page.object.name | default: page.title | escape }}"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "Hasil Pengujian Safety Valve",
+    "numberOfItems": {{ section.items.size }},
+    "itemListElement": [
+      {% for item in section.items %}
+      {
+        "@type": "ListItem",
+        "position": {{ forloop.index }},
+        "name": "Safety Valve {{ item.unit | escape }} - {{ item.brand | escape }}",
+        "description": "Set Pressure: {{ item.set_pressure | escape }}, Tekanan Uji: {{ item.test_pressure | escape }}, Hasil: {{ item.result | escape }}"
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  }
+}
+</script>
+{% endif %}
