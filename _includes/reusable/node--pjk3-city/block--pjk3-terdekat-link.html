@@ -1,0 +1,125 @@
+{% comment %}
+============================================================================
+Block: PJK3 Terdekat Link Card Component
+============================================================================
+
+@file        block--pjk3-terdekat-link.html
+@path        _includes/reusable/node--pjk3-city/block--pjk3-terdekat-link.html
+@type        Block (reusable)
+@description Internal link card from city-specific pages to PJK3 Terdekat page
+@author      arisciwek
+@created     2025-11-30
+
+Adopted from: block--jual-kayu-dolken-terdekat.html
+
+Purpose:
+--------
+Provides internal linking from city-specific PJK3 pages (pjk3-semarang,
+pjk3-jakarta-selatan, etc.) to the national "PJK3 Terdekat" page for SEO
+and user navigation benefits.
+
+Parameters:
+-----------
+- area: City/area name to personalize the description (optional, uses page.area_served)
+- url: Target article URL (default: /2025/05/20/pjk3-terdekat-08568258841/)
+- title: Card title (default: "PJK3 Terdekat di Seluruh Indonesia")
+- gradient: Gradient color - blue, green, purple, orange, cyan, red (default: cyan)
+- icon: Bootstrap icon name (default: geo-alt-fill)
+- cta_text: Button text (default: "Lihat Jangkauan Nasional")
+
+Usage:
+------
+{% include reusable/node--pjk3-city/block--pjk3-terdekat-link.html area="Semarang" %}
+
+Or with custom options:
+{% include reusable/node--pjk3-city/block--pjk3-terdekat-link.html
+   area="Jakarta Selatan"
+   gradient="blue"
+   cta_text="Cari PJK3 Terdekat"
+%}
+
+============================================================================
+{% endcomment %}
+
+{% assign area = include.area | default: page.area_served %}
+{% assign url = include.url | default: "/2025/05/20/pjk3-terdekat-08568258841/" %}
+{% assign title = include.title | default: "PJK3 Terdekat di Seluruh Indonesia" %}
+{% assign gradient = include.gradient | default: "cyan" %}
+{% assign icon = include.icon | default: "geo-alt-fill" %}
+{% assign cta_text = include.cta_text | default: "PJK3 Terdekat" %}
+
+{% comment %} Build description based on area parameter {% endcomment %}
+{% if area and area != "Indonesia" %}
+  {% assign final_description = "Selain " | append: area | append: ", PT. Cipta Mas Jaya juga melayani kebutuhan riksa uji K3 di berbagai kota lain di Indonesia. Temukan PJK3 terdekat dari lokasi Anda dengan layanan profesional dan harga kompetitif!" %}
+{% elsif include.description %}
+  {% assign final_description = include.description %}
+{% else %}
+  {% assign final_description = "Cari PJK3 terdekat dari lokasi Anda? PT. Cipta Mas Jaya melayani kebutuhan riksa uji K3 di seluruh Indonesia dengan jaringan teknisi di berbagai kota besar!" %}
+{% endif %}
+
+{% comment %} Define gradient colors {% endcomment %}
+{% case gradient %}
+  {% when "blue" %}
+    {% assign gradient_start = "#3b82f6" %}
+    {% assign gradient_mid = "#2563eb" %}
+    {% assign gradient_end = "#1d4ed8" %}
+  {% when "green" %}
+    {% assign gradient_start = "#10b981" %}
+    {% assign gradient_mid = "#059669" %}
+    {% assign gradient_end = "#047857" %}
+  {% when "purple" %}
+    {% assign gradient_start = "#8b5cf6" %}
+    {% assign gradient_mid = "#7c3aed" %}
+    {% assign gradient_end = "#6d28d9" %}
+  {% when "orange" %}
+    {% assign gradient_start = "#f59e0b" %}
+    {% assign gradient_mid = "#d97706" %}
+    {% assign gradient_end = "#b45309" %}
+  {% when "pink" %}
+    {% assign gradient_start = "#ec4899" %}
+    {% assign gradient_mid = "#db2777" %}
+    {% assign gradient_end = "#be185d" %}
+  {% when "cyan" %}
+    {% assign gradient_start = "#06b6d4" %}
+    {% assign gradient_mid = "#0891b2" %}
+    {% assign gradient_end = "#0e7490" %}
+  {% when "red" %}
+    {% assign gradient_start = "#ef4444" %}
+    {% assign gradient_mid = "#dc2626" %}
+    {% assign gradient_end = "#b91c1c" %}
+  {% when "indigo" %}
+    {% assign gradient_start = "#6366f1" %}
+    {% assign gradient_mid = "#4f46e5" %}
+    {% assign gradient_end = "#4338ca" %}
+  {% else %}
+    {% assign gradient_start = "#06b6d4" %}
+    {% assign gradient_mid = "#0891b2" %}
+    {% assign gradient_end = "#0e7490" %}
+{% endcase %}
+
+<div class="block--pjk3-terdekat-link">
+  <div class="card border-0 shadow-lg my-4 hover-lift">
+    <div class="card-body text-white py-4 px-4" style="background: linear-gradient(135deg, {{ gradient_start }} 0%, {{ gradient_mid }} 50%, {{ gradient_end }} 100%);">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <div class="d-flex align-items-start">
+            <div class="me-3">
+              <i class="bi bi-{{ icon }}" style="font-size: 3rem;"></i>
+            </div>
+            <div>
+              <h4 class="h5 mb-2 fw-bold text-white">{{ title }}</h4>
+              {% if final_description %}
+              <p class="mb-0 small" style="opacity: 0.9;">{{ final_description }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <a href="{{ url | relative_url }}" class="btn btn-light btn-lg px-4">
+            <i class="bi bi-arrow-right-circle me-2"></i>{{ cta_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

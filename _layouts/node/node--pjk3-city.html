@@ -82,7 +82,11 @@ Schema: Article (not BlogPosting)
 
     <!-- Section 0: Hero PJK3 -->
     {% if page.section_hero %}
-      {% include reusable/node--pjk3-city/block--hero-pjk3.html section=page.section_hero %}
+      {% if page.hero_type == "terdekat" %}
+        {% include reusable/node--pjk3-city/block--hero-pjk3-terdekat.html section=page.section_hero %}
+      {% else %}
+        {% include reusable/node--pjk3-city/block--hero-pjk3.html section=page.section_hero %}
+      {% endif %}
     {% endif %}
 
     <!-- Gallery Section (uses page.images with fallback) -->
@@ -91,6 +95,11 @@ Schema: Article (not BlogPosting)
     <!-- Section 1: Company Intro -->
     {% if page.section_company_intro %}
       {% include reusable/node--pjk3-city/block--company-intro.html section=page.section_company_intro %}
+    {% endif %}
+
+    <!-- Section 1b: PJK3 Info (Educational Content - optional, for "terdekat" pages) -->
+    {% if page.section_pjk3_info %}
+      {% include reusable/node--pjk3-city/block--pjk3-info.html section=page.section_pjk3_info %}
     {% endif %}
 
     <!-- Section 2: Services Excellence -->
@@ -155,6 +164,13 @@ Schema: Article (not BlogPosting)
 
     <!-- Video Section (uses page.video with fallback) -->
     {% include reusable/node--pjk3-city/block--video.html section=page.section_video %}
+
+    <!-- Internal Link to PJK3 Terdekat (only for city-specific pages, not "terdekat" page itself) -->
+    {% unless page.hero_type == "terdekat" %}
+      <div class="container">
+        {% include reusable/node--pjk3-city/block--pjk3-terdekat-link.html area=page.area_served %}
+      </div>
+    {% endunless %}
 
     <!-- Section 14: Conclusion -->
     {% if page.section_conclusion %}

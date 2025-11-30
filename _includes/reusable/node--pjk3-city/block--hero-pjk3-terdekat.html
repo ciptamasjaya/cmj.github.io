@@ -1,0 +1,126 @@
+{% comment %}
+============================================================================
+Block: Hero PJK3 Terdekat - Article Section
+============================================================================
+
+@file        block--hero-pjk3-terdekat.html
+@path        _includes/reusable/node--pjk3-city/block--hero-pjk3-terdekat.html
+@type        Block (reusable)
+@description Hero section for "PJK3 Terdekat" page - national/multi-region
+@author      arisciwek
+@created     2025-11-30
+
+Adopted from: block--hero-jual-kayu-dolken-terdekat.html
+
+Perbedaan dengan block--hero-pjk3.html:
+----------------------------------------
+- Heading fokus keyword "terdekat" tanpa "di {{ area }}"
+- Tidak bergantung pada variable area untuk heading
+- Wilayah layanan sebagai list pendukung
+- SEO optimized untuk keyword "PJK3 terdekat"
+
+Features:
+---------
+- H2 heading dengan keyword "terdekat" untuk SEO
+- Blue gradient background untuk tampilan profesional
+- Two-column layout (info + CTA)
+- Service area display sebagai list wilayah jangkauan
+- Badge features (Jangkauan Nasional, Izin Resmi, Tenaga Ahli)
+- WhatsApp CTA button dengan pesan generik
+- Phone number display dengan 24/7 notice
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title (default: "Cari PJK3 Terdekat")
+  - description: Hero description paragraph
+  - wilayah_layanan: Array of service areas/regions
+  - badges: Array of badge objects
+    - text: Badge text
+    - icon: Bootstrap icon class
+  - cta_title: CTA card title
+  - cta_button: CTA button text
+  - cta_notice: Small notice below CTA
+
+Schema:
+-------
+Uses: _includes/schema/node--pjk3-city/schema--hero-pjk3.html (WebPageElement)
+Referenced by Article via hasPart in schema--article.html
+
+Usage:
+------
+{% include reusable/node--pjk3-city/block--hero-pjk3-terdekat.html section=page.section_hero %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign hero_theme = section.theme | default: "blue" %}
+
+{% if section %}
+<section class="article-section block--hero block--hero-pjk3-terdekat hero-theme--{{ hero_theme }}" id="block--hero-pjk3-terdekat">
+  <div class="container py-4">
+    <div class="card hero-card shadow-lg">
+      <div class="card-body text-white py-4">
+        <div class="row align-items-center">
+          <div class="col-lg-8 hero-content">
+            <h2 class="h2 fw-bold mb-3 hero__title">
+              <i class="bi bi-geo-alt-fill me-2 hero__icon"></i>{{ section.title | default: "Cari PJK3 Terdekat" }}?
+            </h2>
+            <p class="hero-description mb-3 hero__description">
+              {{ section.description | default: "Sedang mencari PJK3 terdekat dari lokasi Anda? PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker dengan jaringan teknisi di berbagai kota besar Indonesia, siap melayani kebutuhan riksa uji K3 Anda." }}
+            </p>
+            <div class="bg-white bg-opacity-10 p-3 rounded mb-3 hero__wilayah">
+              <p class="hero-text-main mb-2 hero__wilayah-label">
+                <i class="bi bi-building me-2"></i>
+                <strong>{{ section.label_wilayah | default: "Jangkauan Layanan Kami:" }}</strong>
+              </p>
+              <p class="hero-text-sub mb-0 small hero__wilayah-list">
+                {% if section.wilayah_layanan %}
+                  {{ section.wilayah_layanan | join: ', ' }}
+                {% else %}
+                  Jakarta, Bekasi, Cikarang, Semarang, Surabaya, Bandung, dan kota-kota besar lainnya di Indonesia
+                {% endif %}
+              </p>
+            </div>
+            <div class="d-flex flex-wrap gap-2 align-items-center hero__badges">
+              {% if section.badges %}
+                {% for badge in section.badges %}
+                <span class="badge bg-white text-primary px-3 py-2 hero__badge">
+                  <i class="bi {{ badge.icon | default: 'bi-check-circle-fill' }} me-1"></i>{{ badge.text }}
+                </span>
+                {% endfor %}
+              {% else %}
+                <span class="badge bg-white text-primary px-3 py-2 hero__badge">
+                  <i class="bi bi-globe me-1"></i>Jangkauan Nasional
+                </span>
+                <span class="badge bg-white text-primary px-3 py-2 hero__badge">
+                  <i class="bi bi-shield-check me-1"></i>Izin Resmi Kemenaker
+                </span>
+                <span class="badge bg-white text-primary px-3 py-2 hero__badge">
+                  <i class="bi bi-person-badge me-1"></i>Tenaga Ahli Bersertifikat
+                </span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-lg-4 text-center mt-4 mt-lg-0 hero-cta">
+            <div class="bg-white p-4 rounded shadow-lg cta__card">
+              <i class="bi bi-telephone-fill text-primary contact-icon mb-3 cta__icon"></i>
+              <h3 class="h5 fw-bold text-primary mb-2 cta__title">{{ section.cta_title | default: "Hubungi PJK3 Terdekat!" }}</h3>
+              <p class="h3 fw-bold text-dark mb-3 cta__phone">{{ site.business.phone }}</p>
+              <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20riksa%20uji%20K3%20di%20lokasi%20saya"
+                 class="btn btn-success btn-lg w-100 shadow-sm cta__button"
+                 target="_blank">
+                <i class="bi bi-whatsapp me-2"></i>{{ section.cta_button | default: "Chat WhatsApp" }}
+              </a>
+              <p class="small text-muted mt-2 mb-0 cta__notice">
+                <i class="bi bi-clock-fill me-1"></i>{{ section.cta_notice | default: "Respon cepat 24/7" }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,136 @@
+{% comment %}
+============================================================================
+Block: PJK3 Info - Educational Content Section
+============================================================================
+
+@file        block--pjk3-info.html
+@path        _includes/reusable/node--pjk3-city/block--pjk3-info.html
+@type        Block (reusable)
+@description Educational content about PJK3 (definition, certification, regulations)
+@author      arisciwek
+@created     2025-11-30
+
+Adopted from WordPress content yang sudah terindeks Google.
+
+Features:
+---------
+- Collapsible accordion untuk konten panjang
+- SEO-friendly dengan heading hierarchy (H2, H3)
+- Konten edukatif tentang PJK3
+- Internal links ke halaman terkait
+
+Parameters:
+-----------
+- section: Section data object from front matter (required)
+  - title: Section title
+  - intro: Introduction paragraph
+  - topics: Array of topic objects
+    - id: Unique ID for accordion
+    - judul: Topic title (H2)
+    - icon: Bootstrap icon class
+    - content: Array of content blocks
+      - subjudul: Subtitle (H3) - optional
+      - paragraphs: Array of paragraphs
+      - list_items: Array of list items - optional
+      - link: Internal link - optional
+        - url: Link URL
+        - text: Link text
+
+Usage:
+------
+{% include reusable/node--pjk3-city/block--pjk3-info.html section=page.section_pjk3_info %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section %}
+<section class="article-section block--pjk3-info py-5" id="block--pjk3-info">
+  <div class="container">
+
+    <!-- Header Section -->
+    <div class="block-header mb-5">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body header-gradient text-white text-center py-4 px-3">
+          <i class="bi bi-book fs-1 mb-2 block-icon"></i>
+          <h2 class="h2 mb-0 fw-bold text-white block-title">{{ section.title | default: "Informasi Lengkap Tentang PJK3" }}</h2>
+          <p class="header-subtitle mb-0 mt-2 small">
+            {{ section.intro | default: "Pengertian, Dasar Hukum, dan Regulasi Terkait PJK3 di Indonesia" }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {% if section.topics %}
+    <!-- Accordion Content -->
+    <div class="accordion accordion-flush" id="accordionPjk3Info">
+      {% for topic in section.topics %}
+      <div class="accordion-item border mb-3 rounded shadow-sm">
+        <h2 class="accordion-header" id="heading-{{ topic.id }}">
+          <button class="accordion-button {% if forloop.first %}{% else %}collapsed{% endif %} fw-bold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-{{ topic.id }}"
+                  aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-controls="collapse-{{ topic.id }}">
+            <i class="bi {{ topic.icon | default: 'bi-info-circle' }} me-2 text-primary"></i>
+            {{ topic.judul }}
+          </button>
+        </h2>
+        <div id="collapse-{{ topic.id }}"
+             class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+             aria-labelledby="heading-{{ topic.id }}"
+             data-bs-parent="#accordionPjk3Info">
+          <div class="accordion-body">
+            {% for content in topic.content %}
+              {% if content.subjudul %}
+              <h3 class="h5 fw-bold mt-3 mb-2">
+                <i class="bi bi-chevron-right text-primary me-1"></i>{{ content.subjudul }}
+              </h3>
+              {% endif %}
+
+              {% for paragraph in content.paragraphs %}
+              <p class="mb-3">{{ paragraph }}</p>
+              {% endfor %}
+
+              {% if content.list_items %}
+              <ul class="mb-3">
+                {% for item in content.list_items %}
+                <li class="mb-1">{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if content.link %}
+              <p class="mb-3">
+                <a href="{{ content.link.url }}" class="text-primary fw-semibold">
+                  <i class="bi bi-arrow-right-circle me-1"></i>{{ content.link.text }}
+                </a>
+              </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- CTA Box -->
+    <div class="card border-0 shadow-sm mt-4 bg-light">
+      <div class="card-body text-center py-4">
+        <i class="bi bi-telephone-fill text-primary fs-2 mb-2"></i>
+        <h3 class="h5 fw-bold mb-2">Butuh Layanan PJK3 Terpercaya?</h3>
+        <p class="mb-3 small">PT. Cipta Mas Jaya siap melayani kebutuhan riksa uji K3 Anda di seluruh Indonesia</p>
+        <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20ingin%20konsultasi%20layanan%20PJK3"
+           class="btn btn-success px-4"
+           target="_blank">
+          <i class="bi bi-whatsapp me-2"></i>Hubungi Kami
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}
