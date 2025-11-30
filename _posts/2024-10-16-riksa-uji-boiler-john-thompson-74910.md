@@ -385,6 +385,19 @@ section_safety_valve:
       result: "Valve terbuka dan menutup dengan baik"
       status: "lulus"
   summary: "Seluruh safety valve (2 unit) berfungsi dengan baik dan terbuka pada set pressure yang telah ditentukan. Tidak ditemukan kebocoran atau kerusakan pada katup pengaman."
+  faq:
+    - question: "Apa itu safety valve pada boiler?"
+      answer: "Safety valve adalah katup pengaman yang berfungsi untuk melepaskan tekanan berlebih secara otomatis ketika tekanan dalam boiler melebihi batas aman (set pressure), sehingga mencegah terjadinya ledakan."
+    - question: "Mengapa pengujian safety valve penting?"
+      answer: "Pengujian safety valve penting untuk memastikan katup dapat terbuka pada set pressure yang ditentukan dan menutup kembali dengan sempurna, sehingga sistem pengaman boiler berfungsi dengan baik."
+    - question: "Berapa jumlah safety valve yang diuji pada boiler ini?"
+      answer: "Pada boiler John Thompson seri 74910 ini terdapat 2 unit safety valve yang diuji, keduanya merek Consolidated dengan ukuran 2 inch."
+    - question: "Apa yang dimaksud dengan set pressure pada safety valve?"
+      answer: "Set pressure adalah tekanan yang telah ditentukan di mana safety valve akan terbuka secara otomatis untuk melepaskan tekanan berlebih. Pada boiler ini, set pressure adalah 11.0 Bar dan 11.5 Bar."
+    - question: "Bagaimana cara mengetahui safety valve berfungsi dengan baik?"
+      answer: "Safety valve berfungsi dengan baik jika terbuka pada atau mendekati set pressure yang ditentukan, menutup kembali dengan sempurna setelah tekanan turun, dan tidak ada kebocoran saat kondisi normal."
+    - question: "Kapan safety valve perlu diganti atau dikalibrasi ulang?"
+      answer: "Safety valve perlu dikalibrasi ulang secara berkala sesuai rekomendasi pabrikan atau jika hasil pengujian menunjukkan deviasi dari set pressure yang ditentukan. Penggantian diperlukan jika valve rusak atau tidak berfungsi normal."
 
 # Analysis Section
 section_analysis:

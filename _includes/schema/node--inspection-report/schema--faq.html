@@ -1,0 +1,64 @@
+{% comment %}
+============================================================================
+Schema: FAQ Combined (FAQPage)
+============================================================================
+
+@file        schema--faq.html
+@path        _includes/schema/node--inspection-report/schema--faq.html
+@type        Schema
+@description Combined FAQPage schema for all FAQ sections
+@author      arisciwek
+@created     2025-11-30
+
+============================================================================
+{% endcomment %}
+
+{% assign has_faq = false %}
+{% if page.section_hydrotest.faq and page.section_hydrotest.faq.size > 0 %}
+  {% assign has_faq = true %}
+{% endif %}
+{% if page.section_safety_valve.faq and page.section_safety_valve.faq.size > 0 %}
+  {% assign has_faq = true %}
+{% endif %}
+
+{% if has_faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% assign first_item = true %}
+    {% if page.section_hydrotest.faq %}
+    {% for item in page.section_hydrotest.faq %}
+    {% unless first_item %},{% endunless %}
+    {
+      "@type": "Question",
+      "@id": "{{ page.url | absolute_url }}#faq-hydrotest-{{ forloop.index }}",
+      "name": "{{ item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | escape }}"
+      }
+    }
+    {% assign first_item = false %}
+    {% endfor %}
+    {% endif %}
+    {% if page.section_safety_valve.faq %}
+    {% for item in page.section_safety_valve.faq %}
+    {% unless first_item %},{% endunless %}
+    {
+      "@type": "Question",
+      "@id": "{{ page.url | absolute_url }}#faq-safety-valve-{{ forloop.index }}",
+      "name": "{{ item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | escape }}"
+      }
+    }
+    {% assign first_item = false %}
+    {% endfor %}
+    {% endif %}
+  ]
+}
+</script>
+{% endif %}
