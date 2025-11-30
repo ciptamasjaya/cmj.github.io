@@ -73,3 +73,12 @@ settings:
 
   # Dry run by default for safety (override with --live)
   default_dry_run: false
+
+# ============================================================================
+# Git Hook Settings
+# ============================================================================
+
+hooks:
+  # Enable/disable propagator on git commit
+  # Set to false during development, true for production
+  propagate_on_commit: false

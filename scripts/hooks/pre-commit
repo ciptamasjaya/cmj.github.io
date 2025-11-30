@@ -1,0 +1,56 @@
+#!/bin/bash
+#
+# Git pre-commit hook
+# Trigger propagator jika ada perubahan konten
+#
+# Setting ON/OFF di: scripts/robots-config.yml
+#   hooks.propagate_on_commit: true/false
+#
+
+SCRIPT_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+CONFIG_FILE="$SCRIPT_DIR/scripts/robots-config.yml"
+PROPAGATOR="$SCRIPT_DIR/scripts/propagate-timestamp.rb"
+
+# Check if config exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    exit 0
+fi
+
+# Check if propagate_on_commit is enabled
+ENABLED=$(grep "propagate_on_commit:" "$CONFIG_FILE" | grep -o "true\|false")
+
+if [ "$ENABLED" != "true" ]; then
+    # Hook disabled, skip
+    exit 0
+fi
+
+# Check if there are content changes staged
+CONTENT_CHANGED=$(git diff --cached --name-only | grep -E "^(_posts/|_services/).*\.md$")
+
+if [ -z "$CONTENT_CHANGED" ]; then
+    # No content changes, skip
+    exit 0
+fi
+
+# Count changed files
+FILE_COUNT=$(echo "$CONTENT_CHANGED" | wc -l)
+
+echo ""
+echo "============================================================"
+echo "  Git Hook: Content changes detected ($FILE_COUNT files)"
+echo "============================================================"
+echo ""
+
+# Run propagator
+if [ -f "$PROPAGATOR" ]; then
+    ruby "$PROPAGATOR" --reason="Git commit: $FILE_COUNT content files"
+
+    # Stage the propagated files
+    git add index.html blog.html layanan.html 2>/dev/null
+    git add _services/*/bejana-tekan/bejana-tekan.md 2>/dev/null
+    git add _services/*/pesawat-uap/pesawat-uap.md 2>/dev/null
+    git add _services/*/tangki-timbun/tangki-timbun.md 2>/dev/null
+    git add _data/propagate-timestamp-log.json 2>/dev/null
+fi
+
+exit 0
