@@ -127,7 +127,7 @@ section_intro:
 
 # Visual Inspection Section
 section_visual:
-  title: "Pemeriksaan Visual"
+  title: "Pemeriksaan Visual Boiler John Thompson Seri 74910"
   intro: "Pemeriksaan visual dilakukan pada berbagai komponen boiler untuk mendeteksi kerusakan atau keausan yang terlihat secara langsung."
   items:
     - component: "Dinding luar boiler"
@@ -158,7 +158,7 @@ section_visual:
 
 # Operational Test Section
 section_operational:
-  title: "Pengujian Operasional"
+  title: "Pengujian Operasional Boiler John Thompson Seri 74910"
   intro: "Pengujian operasional dilakukan untuk memastikan bahwa boiler berfungsi sesuai dengan spesifikasi teknis dan mampu mempertahankan suhu serta tekanan yang tepat selama operasional."
   procedure:
     - "Mengoperasikan boiler pada kapasitas rendah hingga maksimal untuk mengevaluasi kestabilan suhu dan tekanan"
@@ -200,7 +200,7 @@ section_operational:
 
 # Technical Test Section
 section_technical:
-  title: "Pengujian Teknis"
+  title: "Pengujian Teknis Boiler John Thompson Seri 74910"
   intro: "Pengujian teknis dilakukan untuk mengevaluasi kondisi struktural dan mekanis dari boiler, termasuk pengukuran ketebalan dinding, kondisi sambungan pipa, dan sistem kontrol."
   procedure:
     - "Pengukuran ketebalan dinding boiler menggunakan alat pengukur ultrasonik"
@@ -242,7 +242,7 @@ section_technical:
 
 # NDT Test Section
 section_ndt:
-  title: "Pengujian Non-Destruktif (Thickness Test)"
+  title: "Pengujian Non-Destruktif (Thickness Test) Boiler John Thompson Seri 74910"
   intro: "Pengujian non-destruktif menggunakan teknologi ultrasonik untuk memeriksa ketebalan dinding dan komponen tanpa merusak struktur boiler."
   method: "Pengukuran ketebalan menggunakan alat Ultrasonic Thickness Gauge pada titik-titik kritis yang sering terkena panas dan tekanan tinggi."
   items:
@@ -285,7 +285,7 @@ section_ndt:
 
 # Hydrostatic Test Section
 section_hydrotest:
-  title: "Pengujian Hidrostatik (Hydrotest)"
+  title: "Pengujian Hidrostatik (Hydrotest) Boiler John Thompson Seri 74910"
   intro: "Pengujian hidrostatik dilakukan untuk memverifikasi integritas struktural dan kekuatan bejana tekan dengan memberikan tekanan uji yang lebih tinggi dari tekanan kerja normal."
   working_pressure: "10.5 Bar"
   test_pressure: "15.75 Bar (1.5x)"
@@ -321,7 +321,7 @@ section_hydrotest:
 
 # Safety Valve Test Section
 section_safety_valve:
-  title: "Pengujian Safety Valve"
+  title: "Pengujian Safety Valve Boiler John Thompson Seri 74910"
   intro: "Pengujian safety valve dilakukan untuk memastikan katup pengaman berfungsi dengan baik dan dapat melepaskan tekanan berlebih pada set pressure yang telah ditentukan."
   total_units: 2
   items:
@@ -343,7 +343,7 @@ section_safety_valve:
 
 # Analysis Section
 section_analysis:
-  title: "Analisis Data dan Pembahasan"
+  title: "Analisis Data dan Pembahasan Laporan Riksa Uji Boiler John Thompson Seri 74910"
   intro: "Setelah melakukan berbagai pengujian pada <strong>Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910</strong>, tahap analisis dilakukan untuk mengevaluasi data yang terkumpul. Analisis ini bertujuan untuk memberikan wawasan lebih dalam mengenai kondisi boiler, performa operasional, serta identifikasi potensi masalah atau area yang membutuhkan pemeliharaan lebih lanjut. Analisis data dilakukan pada hasil dari pemeriksaan visual, pengujian operasional, pengujian teknis, pengujian non-destruktif, dan pengujian beban."
   analyses:
     - title: "Analisis Hasil Pemeriksaan Visual"
@@ -383,7 +383,7 @@ section_analysis:
 
 # Conclusion Section
 section_conclusion:
-  title: "Kesimpulan dan Rekomendasi"
+  title: "Kesimpulan dan Rekomendasi Laporan Riksa Uji Boiler John Thompson Seri 74910"
   verdict: "layak"
   verdict_text: "Boiler John Thompson - ACTOM (Pty) Ltd nomor seri 74910 dinyatakan LAYAK OPERASI berdasarkan hasil pemeriksaan dan pengujian yang telah dilakukan."
   conclusions:
