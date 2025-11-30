@@ -43,10 +43,12 @@ Archive page:
 
 {% comment %} Determine posts source based on variant {% endcomment %}
 {% if variant == "archive" %}
-  {% assign blog_posts = include.posts %}
+  {% comment %} Sort by lastmod for freshness signal {% endcomment %}
+  {% assign blog_posts = include.posts | sort: "lastmod" | reverse %}
   {% assign block_class = "block--blog-archive" %}
 {% else %}
-  {% assign blog_posts = site.posts %}
+  {% comment %} Sort by lastmod for freshness signal {% endcomment %}
+  {% assign blog_posts = site.posts | sort: "lastmod" | reverse %}
   {% assign block_class = "block--blog-preview" %}
 {% endif %}
 

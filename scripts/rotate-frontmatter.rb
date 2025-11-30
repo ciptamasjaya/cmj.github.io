@@ -300,6 +300,9 @@ def rotate_post(file_path, rotation_log)
 
   puts "  Total changes: #{total_changes} (#{changed_sections.join(', ')})"
 
+  # Update lastmod untuk sorting di blog preview
+  frontmatter['lastmod'] = Time.now.strftime('%Y-%m-%dT%H:%M:%S%z')
+
   # Write back
   unless DRY_RUN
     new_content = rebuild_content(frontmatter, body)
