@@ -83,6 +83,95 @@ $text-lighter-opacity: 0.9;
    styles win over Bootstrap's single class selectors.
    ---------------------------------------------------------------------------- */
 
+/* ============================================================================
+   ARTICLE HEADER - Clean Modern Style
+   ============================================================================ */
+.article-header {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border-bottom: 3px solid #0d6efd;
+  position: relative;
+
+  // Subtle accent line at top
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd 0%, #6366f1 50%, #8b5cf6 100%);
+  }
+
+  // Breadcrumb styling
+  .breadcrumb {
+    background: rgba(13, 110, 253, 0.08);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-flex;
+
+    .breadcrumb-item {
+      a {
+        color: #0d6efd;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &.active {
+        color: #64748b;
+      }
+
+      + .breadcrumb-item::before {
+        color: #94a3b8;
+      }
+    }
+  }
+
+  // Title styling
+  .article-title {
+    color: #1e293b;
+    position: relative;
+    display: inline-block;
+
+    // Subtle underline accent
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #0d6efd, #6366f1);
+      border-radius: 2px;
+    }
+  }
+
+  // Description/lead text
+  .lead {
+    color: #475569;
+    max-width: 800px;
+  }
+
+  // Meta info styling
+  .article-meta {
+    span {
+      background: #f1f5f9;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+
+      i {
+        color: #0d6efd;
+      }
+    }
+  }
+}
+
 /* ----------------------------------------------------------------------------
    SHARED: BLOCK HEADER HOVER EFFECT
    ---------------------------------------------------------------------------- */

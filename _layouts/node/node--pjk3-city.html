@@ -30,14 +30,14 @@ Schema: Article (not BlogPosting)
 <article class="article-content">
 
   <!-- Article Header -->
-  <header class="article-header py-5 bg-primary bg-opacity-10">
+  <header class="article-header py-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
 
           <!-- Breadcrumb -->
-          <nav aria-label="breadcrumb" class="mb-3">
-            <ol class="breadcrumb small">
+          <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb small mb-0">
               <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Home</a></li>
               <li class="breadcrumb-item"><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
               {% if page.categories and page.categories.size > 0 %}
@@ -47,13 +47,13 @@ Schema: Article (not BlogPosting)
             </ol>
           </nav>
 
-          <h1 class="article-title display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+          <h1 class="article-title display-5 fw-bold mb-4">{{ page.title }}</h1>
 
           {% if page.description %}
-          <p class="lead text-muted mb-4">{{ page.description }}</p>
+          <p class="lead mb-4">{{ page.description }}</p>
           {% endif %}
 
-          <div class="article-meta d-flex flex-wrap gap-3 text-muted mb-4">
+          <div class="article-meta d-flex flex-wrap gap-2">
             <span>
               <i class="bi bi-calendar3 me-1"></i>
               <time datetime="{{ page.date | date_to_xmlschema }}">
