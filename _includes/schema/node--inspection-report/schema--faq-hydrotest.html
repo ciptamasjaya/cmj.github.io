@@ -20,8 +20,7 @@ Schema: FAQ Hydrotest (FAQPage)
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "{{ page.url | absolute_url }}#faq-hydrotest",
-  "name": "FAQ Pengujian Hidrostatik {{ page.object.name | default: 'Boiler' | escape }}",
+  "name": "FAQ Pengujian Hidrostatik",
   "mainEntity": [
     {% for item in faq %}
     {

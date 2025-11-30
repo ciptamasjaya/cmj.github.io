@@ -354,6 +354,21 @@ section_safety_valve:
   title: "Pengujian Safety Valve Boiler John Thompson Seri 74910"
   intro: "Pengujian safety valve dilakukan untuk memastikan katup pengaman berfungsi dengan baik dan dapat melepaskan tekanan berlebih pada set pressure yang telah ditentukan."
   total_units: 2
+  steps:
+    - name: "Persiapan dan Pemeriksaan Visual"
+      text: "Periksa kondisi fisik safety valve, pastikan tidak ada kerusakan, korosi, atau kebocoran pada body valve dan koneksi pipa."
+    - name: "Verifikasi Data Nameplate"
+      text: "Catat data nameplate safety valve meliputi merek, ukuran, set pressure, dan kapasitas discharge."
+    - name: "Pemasangan Alat Ukur"
+      text: "Pasang pressure gauge terkalibrasi pada sistem untuk memantau tekanan selama pengujian."
+    - name: "Aplikasi Tekanan Bertahap"
+      text: "Naikkan tekanan sistem secara bertahap hingga mendekati set pressure yang tertera pada nameplate."
+    - name: "Pengujian Pop Test"
+      text: "Lanjutkan menaikkan tekanan hingga safety valve terbuka (pop). Catat tekanan aktual saat valve terbuka."
+    - name: "Verifikasi Reseat"
+      text: "Setelah valve terbuka, turunkan tekanan dan verifikasi bahwa valve menutup kembali dengan sempurna tanpa kebocoran."
+    - name: "Dokumentasi Hasil"
+      text: "Catat semua hasil pengujian termasuk tekanan pop, tekanan reseat, dan kondisi valve setelah pengujian."
   items:
     - unit: "1"
       brand: "Consolidated"

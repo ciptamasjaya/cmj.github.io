@@ -60,6 +60,29 @@ Parameters:
   </div>
   {% endif %}
 
+  <!-- Procedure Steps (HowTo) -->
+  {% if section.steps and section.steps.size > 0 %}
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-light">
+      <h3 class="h5 mb-0 fw-bold">
+        <i class="bi bi-list-ol me-2"></i>Prosedur Pengujian Safety Valve
+      </h3>
+    </div>
+    <div class="card-body p-0">
+      <ol class="list-group list-group-numbered list-group-flush">
+        {% for step in section.steps %}
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{ step.name }}</div>
+            <span class="text-muted">{{ step.text }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+  {% endif %}
+
   <!-- Test Results Table -->
   {% if section.items %}
   <div class="card border-0 shadow-sm mb-4">
