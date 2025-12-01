@@ -176,6 +176,14 @@ lastmod: '2025-12-01T16:40:00+0700'
 - `permalink`: Format /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 - `rating_id`: ID untuk menghubungkan dengan file rating (lowercase, dash-separated)
 - `lastmod`: Auto-updated oleh propagate-timestamp plugin
+- `image` & `images`: Jika tidak ada gambar khusus, gunakan fallback default:
+  ```yaml
+  image: "/assets/images/services/1.svg"
+  images:
+    - "/assets/images/services/2.svg"
+    - "/assets/images/services/3.svg"
+    - "/assets/images/services/4.svg"
+  ```
 
 ```
 TodoWrite: Mark "Section 1: Front Matter" as [completed]
@@ -541,6 +549,13 @@ TodoWrite: Mark "Section 10: faq_riksa_uji" as [completed]
 TodoWrite: Mark "Section 11: Rating File" as [in_progress]
 ```
 
+### Mengapa Rating File Penting?
+
+Rating file diperlukan untuk menghasilkan **schema Product dengan AggregateRating dan Review** yang valid. Tanpa rating file:
+- Google akan menampilkan warning "Kolom 'review' tidak ada"
+- Google akan menampilkan warning "Kolom 'aggregateRating' tidak ada"
+- Halaman tidak eligible untuk Review Snippets di hasil pencarian
+
 ### Lokasi File Rating
 ```
 _includes/reusable/services/ratings/block--rating--riksa-uji-[nama-alat].html
@@ -561,8 +576,10 @@ _includes/reusable/services/ratings/block--rating--riksa-uji-[nama-alat].html
 3. **Isi data rating**:
    ```liquid
    {% assign rating_average = 4.8 %}
-   {% assign rating_count = 5 %}
-   {% assign rating_dist_5 = 4 %}
+   {% assign rating_count = 3 %}
+   {% assign rating_best = 5 %}
+   {% assign rating_worst = 1 %}
+   {% assign rating_dist_5 = 2 %}
    {% assign rating_dist_4 = 1 %}
    {% assign rating_dist_3 = 0 %}
    {% assign rating_dist_2 = 0 %}
@@ -570,25 +587,80 @@ _includes/reusable/services/ratings/block--rating--riksa-uji-[nama-alat].html
    {% assign rating_updated = "2025-12-01" %}
    ```
 
-4. **Isi data review** (2-3 review):
+4. **Isi data review** (minimal 2-3 review):
    ```liquid
+   {% comment %} Review 1 {% endcomment %}
    {% assign review_1_nama = "Hendra Kusuma" %}
    {% assign review_1_usaha = "Pabrik Tekstil di Bandung" %}
    {% assign review_1_rating = 5 %}
    {% assign review_1_judul = "Inspeksi yang Sangat Teliti" %}
    {% assign review_1_komentar = "Tim PT. Cipta Mas Jaya sangat detail dalam melakukan inspeksi boiler kami. Laporan yang diberikan sangat komprehensif." %}
    {% assign review_1_tanggal = "2025-11-25" %}
+   {% assign review_1_verified = true %}
+   {% assign review_1_helpful = 12 %}
    {% assign review_1_featured = true %}
+
+   {% comment %} Review 2 {% endcomment %}
+   {% assign review_2_nama = "Siti Rahayu" %}
+   {% assign review_2_usaha = "Hotel di Jakarta" %}
+   {% assign review_2_rating = 5 %}
+   {% assign review_2_judul = "Pelayanan Cepat dan Profesional" %}
+   {% assign review_2_komentar = "Proses riksa uji boiler hotel kami berjalan lancar. Sertifikat terbit tepat waktu." %}
+   {% assign review_2_tanggal = "2025-11-28" %}
+   {% assign review_2_verified = true %}
+   {% assign review_2_helpful = 8 %}
+   {% assign review_2_featured = true %}
+
+   {% comment %} Review 3 {% endcomment %}
+   {% assign review_3_nama = "Ahmad Wijaya" %}
+   {% assign review_3_usaha = "Rumah Sakit di Surabaya" %}
+   {% assign review_3_rating = 4 %}
+   {% assign review_3_judul = "Hasil Inspeksi Memuaskan" %}
+   {% assign review_3_komentar = "Inspector sangat kompeten dan memberikan penjelasan detail tentang kondisi boiler kami." %}
+   {% assign review_3_tanggal = "2025-12-01" %}
+   {% assign review_3_verified = true %}
+   {% assign review_3_helpful = 5 %}
+   {% assign review_3_featured = false %}
    ```
 
 5. **Pastikan rating_id cocok**:
    - Front matter: `rating_id: riksa-uji-boiler`
    - File rating: `block--rating--riksa-uji-boiler.html`
 
+### Schema yang Dihasilkan
+
+Dengan rating file yang lengkap, schema Product akan otomatis memiliki:
+
+```json
+{
+  "@type": "Product",
+  "@id": "...#product",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "3",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Hendra Kusuma" },
+      "datePublished": "2025-11-25",
+      "name": "Inspeksi yang Sangat Teliti",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "reviewBody": "Tim PT. Cipta Mas Jaya sangat detail..."
+    }
+  ]
+}
+```
+
 ### Review Guidelines
 - Review adalah testimoni tentang **LAYANAN**, bukan artikel
-- Isi: nama pelanggan, jenis usaha, rating (1-5), judul, komentar
-- 2-3 review dengan `featured: true`
+- Isi: nama pelanggan, jenis usaha, rating (1-5), judul, komentar, tanggal
+- Minimal 2-3 review (maksimal 4 review)
+- `rating_count` harus sama dengan jumlah review
+- `rating_average` harus dihitung dari rating semua review
 - Review harus realistis dan spesifik
 
 ```
@@ -727,11 +799,12 @@ bi-box              : Package
 ### Rating File
 - [ ] File rating dibuat di _includes/reusable/services/ratings/
 - [ ] Nama file: block--rating--[rating_id].html
-- [ ] rating_average, rating_count terisi
-- [ ] rating_dist_1 sampai rating_dist_5 terisi
+- [ ] rating_average, rating_count, rating_best, rating_worst terisi
+- [ ] rating_dist_1 sampai rating_dist_5 terisi (jumlah harus = rating_count)
 - [ ] rating_updated format YYYY-MM-DD
-- [ ] Minimal 2 review dengan data lengkap
-- [ ] Minimal 1 review dengan featured: true
+- [ ] Minimal 2-3 review dengan data lengkap (nama, usaha, rating, judul, komentar, tanggal)
+- [ ] Setiap review: verified, helpful, featured terisi
+- [ ] rating_average harus sesuai dengan rata-rata rating review
 
 ### Final Check
 - [ ] Semua field terisi (tidak ada yang kosong "")
