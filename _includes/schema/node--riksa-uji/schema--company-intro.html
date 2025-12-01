@@ -47,12 +47,21 @@ Usage:
     "width": 200,
     "height": 60
   },
+  "image": "{{ '/assets/images/logo.svg' | absolute_url }}",
   {% if site.business.phone %}
   "telephone": "{{ site.business.phone }}",
   {% endif %}
   {% if site.business.email %}
   "email": "{{ site.business.email }}",
   {% endif %}
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.business.address.street }}",
+    "addressLocality": "{{ site.business.address.city }}",
+    "addressRegion": "{{ site.business.address.province }}",
+    "postalCode": "{{ site.business.address.postalCode }}",
+    "addressCountry": "ID"
+  },
   "knowsAbout": [
     "{{ page.title | escape }}",
     "Riksa Uji K3",
