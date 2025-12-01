@@ -5,6 +5,50 @@
 # Lokasi: /TEMPLATES/TEMPLATE-node-service.md
 # ============================================================================
 
+## CARA KERJA (PER-SECTION + TODOWRITE)
+
+Konten template ini sangat panjang. JANGAN mengisi sekali jalan.
+Gunakan sistem per-section dengan TodoWrite untuk menjaga kualitas konten.
+
+### WAJIB: Gunakan TodoWrite untuk Setiap Section
+
+```
+SEBELUM MULAI, buat todo list dengan 12 section:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TodoWrite:                                                                  │
+│  1. [pending] Section 1: Front Matter                                       │
+│  2. [pending] Section 2: intro                                              │
+│  3. [pending] Section 3: jenis_alat (ItemList Schema)                       │
+│  4. [pending] Section 4: komponen_inspeksi (ItemList Schema)                │
+│  5. [pending] Section 5: proses_inspeksi (HowTo Schema)                     │
+│  6. [pending] Section 6: cara_pemesanan (HowTo Schema)                      │
+│  7. [pending] Section 7: video_riksa_uji (VideoObject Schema)               │
+│  8. [pending] Section 8: offer_riksa_uji (Offer Schema)                     │
+│  9. [pending] Section 9: schedule_riksa_uji (Event Schema)                  │
+│ 10. [pending] Section 10: faq_riksa_uji (FAQPage Schema)                    │
+│ 11. [pending] Section 11: Rating File                                       │
+│ 12. [pending] Section 12: Final verification                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+UNTUK SETIAP SECTION:
+1. Mark todo as [in_progress]
+2. Baca petunjuk section dari file ini
+3. Tulis konten ke file tujuan (Edit tool)
+4. Verifikasi dengan checklist section
+5. Mark todo as [completed]
+6. JANGAN lanjut ke section berikutnya sebelum completed
+```
+
+### Mengapa Per-Section + TodoWrite Penting?
+
+1. **Memory Management**: Setiap section fokus pada 1 bagian saja
+2. **Quality Control**: Konten lebih detail karena tidak terburu-buru
+3. **Checkpoint**: Jika ada error, bisa lanjut dari section terakhir
+4. **Review**: User bisa review setiap section sebelum lanjut
+5. **Traceability**: Todo list menunjukkan progress yang jelas
+
+---
+
 ## DAFTAR SECTION
 
 Template ini memiliki **8 Section** + **1 Bagian Pendukung**:
@@ -94,6 +138,10 @@ PT1M30S = 1 menit 30 detik
 
 ## SECTION 1: FRONT MATTER
 
+```
+TodoWrite: Mark "Section 1: Front Matter" as [in_progress]
+```
+
 ```yaml
 layout: node/node--service
 title: "Riksa Uji Boiler"
@@ -129,9 +177,17 @@ lastmod: '2025-12-01T16:40:00+0700'
 - `rating_id`: ID untuk menghubungkan dengan file rating (lowercase, dash-separated)
 - `lastmod`: Auto-updated oleh propagate-timestamp plugin
 
+```
+TodoWrite: Mark "Section 1: Front Matter" as [completed]
+```
+
 ---
 
 ## SECTION 2: intro
+
+```
+TodoWrite: Mark "Section 2: intro" as [in_progress]
+```
 
 ```yaml
 intro:
@@ -157,9 +213,17 @@ intro:
 - `subsections`: 3 subsection (Dasar Hukum, Tim Inspector, Cakupan Layanan)
 - Subsection pertama memiliki nested subsections untuk detail peraturan (h4)
 
+```
+TodoWrite: Mark "Section 2: intro" as [completed]
+```
+
 ---
 
 ## SECTION 3: jenis_alat (ItemList Schema)
+
+```
+TodoWrite: Mark "Section 3: jenis_alat" as [in_progress]
+```
 
 ```yaml
 jenis_boiler:  # Ganti dengan jenis_[nama-alat]
@@ -192,9 +256,17 @@ jenis_boiler:  # Ganti dengan jenis_[nama-alat]
 - `items`: 6 jenis alat yang dilayani
 - Setiap item: name, description, icon (Bootstrap icon)
 
+```
+TodoWrite: Mark "Section 3: jenis_alat" as [completed]
+```
+
 ---
 
 ## SECTION 4: komponen_inspeksi (ItemList Schema)
+
+```
+TodoWrite: Mark "Section 4: komponen_inspeksi" as [in_progress]
+```
 
 ```yaml
 komponen_inspeksi:
@@ -225,9 +297,17 @@ komponen_inspeksi:
 - `items`: 6 komponen utama yang diperiksa
 - Sesuaikan dengan jenis alat yang diinspeksi
 
+```
+TodoWrite: Mark "Section 4: komponen_inspeksi" as [completed]
+```
+
 ---
 
 ## SECTION 5: proses_inspeksi (HowTo Schema)
+
+```
+TodoWrite: Mark "Section 5: proses_inspeksi" as [in_progress]
+```
 
 ```yaml
 proses_inspeksi:
@@ -254,9 +334,17 @@ proses_inspeksi:
 - `steps`: 6 langkah proses inspeksi
 - Digunakan untuk Google HowTo rich snippet
 
+```
+TodoWrite: Mark "Section 5: proses_inspeksi" as [completed]
+```
+
 ---
 
 ## SECTION 6: cara_pemesanan (HowTo Schema)
+
+```
+TodoWrite: Mark "Section 6: cara_pemesanan" as [in_progress]
+```
 
 ```yaml
 cara_pemesanan:
@@ -278,9 +366,17 @@ cara_pemesanan:
 - `totalTime`: Estimasi waktu total proses (P7D = 7 hari)
 - `steps`: 4 langkah standar pemesanan
 
+```
+TodoWrite: Mark "Section 6: cara_pemesanan" as [completed]
+```
+
 ---
 
 ## SECTION 7: video_riksa_uji (VideoObject Schema)
+
+```
+TodoWrite: Mark "Section 7: video_riksa_uji" as [in_progress]
+```
 
 ```yaml
 video_riksa_uji:
@@ -297,9 +393,17 @@ video_riksa_uji:
 - Kosongkan `src` dan `duration` jika belum ada video
 - Digunakan untuk Google Video rich snippet
 
+```
+TodoWrite: Mark "Section 7: video_riksa_uji" as [completed]
+```
+
 ---
 
 ## SECTION 8: offer_riksa_uji (Offer Schema)
+
+```
+TodoWrite: Mark "Section 8: offer_riksa_uji" as [in_progress]
+```
 
 ```yaml
 offer_riksa_uji:
@@ -359,9 +463,17 @@ offer_riksa_uji:
 - `is_featured: true`: Untuk paket yang di-highlight
 - `availability`: InStock, OutOfStock, atau PreOrder
 
+```
+TodoWrite: Mark "Section 8: offer_riksa_uji" as [completed]
+```
+
 ---
 
 ## SECTION 9: schedule_riksa_uji (Event Schema)
+
+```
+TodoWrite: Mark "Section 9: schedule_riksa_uji" as [in_progress]
+```
 
 ```yaml
 schedule_riksa_uji:
@@ -382,9 +494,17 @@ schedule_riksa_uji:
 - `count`: Jumlah slot jadwal yang ditampilkan
 - `exclude_weekend`: true untuk tidak menampilkan Sabtu-Minggu
 
+```
+TodoWrite: Mark "Section 9: schedule_riksa_uji" as [completed]
+```
+
 ---
 
 ## SECTION 10: faq_riksa_uji (FAQPage Schema)
+
+```
+TodoWrite: Mark "Section 10: faq_riksa_uji" as [in_progress]
+```
 
 ```yaml
 faq_riksa_uji:
@@ -409,9 +529,17 @@ faq_riksa_uji:
 - `faqs`: 6 FAQ standar
 - Digunakan untuk Google FAQ rich snippet
 
+```
+TodoWrite: Mark "Section 10: faq_riksa_uji" as [completed]
+```
+
 ---
 
 ## RATING FILE (Bagian Pendukung)
+
+```
+TodoWrite: Mark "Section 11: Rating File" as [in_progress]
+```
 
 ### Lokasi File Rating
 ```
@@ -462,6 +590,11 @@ _includes/reusable/services/ratings/block--rating--riksa-uji-[nama-alat].html
 - Isi: nama pelanggan, jenis usaha, rating (1-5), judul, komentar
 - 2-3 review dengan `featured: true`
 - Review harus realistis dan spesifik
+
+```
+TodoWrite: Mark "Section 11: Rating File" as [completed]
+TodoWrite: Mark "Section 12: Final verification" as [in_progress]
+```
 
 ---
 
@@ -614,3 +747,13 @@ bi-box              : Package
 ## CONTOH FILE LENGKAP
 
 Lihat: `_services/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/riksa-uji-boiler.md`
+
+```
+TodoWrite: Mark "Section 12: Final verification" as [completed]
+```
+
+### Build & Preview
+```bash
+./rebuild.sh
+# Buka browser: http://localhost:4000/[path-to-service]
+```

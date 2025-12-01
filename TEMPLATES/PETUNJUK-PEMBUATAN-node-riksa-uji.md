@@ -5,306 +5,205 @@
 # Lokasi: /TEMPLATES/TEMPLATE-node-riksa-uji.md
 # ============================================================================
 
-## CARA KERJA (BATCH SYSTEM + TODO)
+## CARA KERJA (PER-SECTION + TODOWRITE)
 
 Konten template ini sangat panjang. JANGAN mengisi sekali jalan.
-Gunakan sistem batch dengan TodoWrite untuk menjaga kualitas konten.
+Gunakan sistem per-section dengan TodoWrite untuk menjaga kualitas konten.
 
-### WAJIB: Gunakan TodoWrite untuk Setiap Batch
+### WAJIB: Gunakan TodoWrite untuk Setiap Section
 
 ```
-SEBELUM MULAI, buat todo list dengan 6 batch:
-┌─────────────────────────────────────────────────────────────┐
-│ TodoWrite:                                                  │
-│ 1. [pending] BATCH 1: Front Matter + Copy template          │
-│ 2. [pending] BATCH 2: Schema Data (howto, itemlist, faq)    │
-│ 3. [pending] BATCH 3: Section 1-2 (importance, process)     │
-│ 4. [pending] BATCH 4: Section 3-4 (regulation, training)    │
-│ 5. [pending] BATCH 5: Section 5-6 (specs, certification)    │
-│ 6. [pending] BATCH 6: Section 7-8 (permit, conclusion)      │
-└─────────────────────────────────────────────────────────────┘
+SEBELUM MULAI, buat todo list dengan 17 section:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TodoWrite:                                                                  │
+│  1. [pending] Section 1: Front Matter                                       │
+│  2. [pending] Section 2: content_intro + announce                           │
+│  3. [pending] Section 3: section_hero                                       │
+│  4. [pending] Section 4: section_order                                      │
+│  5. [pending] Section 5: section_faq                                        │
+│  6. [pending] Section 6: section_company_intro                              │
+│  7. [pending] Section 7: section_services                                   │
+│  8. [pending] Section 8: section_tips                                       │
+│  9. [pending] Section 9: section_importance                                 │
+│ 10. [pending] Section 10: section_process                                   │
+│ 11. [pending] Section 11: section_regulation                                │
+│ 12. [pending] Section 12: section_training                                  │
+│ 13. [pending] Section 13: section_specs                                     │
+│ 14. [pending] Section 14: section_certification                             │
+│ 15. [pending] Section 15: section_permit                                    │
+│ 16. [pending] Section 16: section_conclusion                                │
+│ 17. [pending] Section 17: Schema Data (howto, itemlist, video)              │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-UNTUK SETIAP BATCH:
+UNTUK SETIAP SECTION:
 1. Mark todo as [in_progress]
-2. Baca section terkait dari file sumber
+2. Baca petunjuk section dari file ini
 3. Tulis konten ke file tujuan (Edit tool)
-4. Mark todo as [completed]
-5. JANGAN lanjut ke batch berikutnya sebelum completed
+4. Verifikasi dengan checklist section
+5. Mark todo as [completed]
+6. JANGAN lanjut ke section berikutnya sebelum completed
 ```
 
-### Alur Kerja Detail:
+### Mengapa Per-Section + TodoWrite Penting?
 
-```
-BATCH 1: Salin template + Front Matter
-         STATUS: [in_progress] saat dikerjakan
-         - Copy TEMPLATE-node-riksa-uji.md ke file tujuan
-         - Isi: title, description, content_intro, announce
-         - Isi: permalink, date, author, categories, tags
-         - Isi: image, images
-         - SIMPAN → Mark [completed]
-
-BATCH 2: Schema Data
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: howto_post
-         - Isi: itemlist_post
-         - Isi: faq_post
-         - Isi: video_post (jika ada)
-         - SIMPAN → Mark [completed]
-
-BATCH 3: Section 1-2
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_importance
-         - Isi: section_process
-         - SIMPAN → Mark [completed]
-
-BATCH 4: Section 3-4
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_regulation
-         - Isi: section_training
-         - SIMPAN → Mark [completed]
-
-BATCH 5: Section 5-6
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_specs
-         - Isi: section_certification
-         - SIMPAN → Mark [completed]
-
-BATCH 6: Section 7-8
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_permit
-         - Isi: section_conclusion
-         - SIMPAN → Mark [completed]
-         - REVIEW & REBUILD
-```
-
-### Mengapa Batch + Todo Penting?
-
-1. **Memory Management**: Setiap batch fokus pada 2-3 section saja
+1. **Memory Management**: Setiap section fokus pada 1 bagian saja
 2. **Quality Control**: Konten lebih detail karena tidak terburu-buru
-3. **Checkpoint**: Jika ada error, bisa lanjut dari batch terakhir
-4. **Review**: User bisa review setiap batch sebelum lanjut
+3. **Checkpoint**: Jika ada error, bisa lanjut dari section terakhir
+4. **Review**: User bisa review setiap section sebelum lanjut
 5. **Traceability**: Todo list menunjukkan progress yang jelas
-
-### Contoh Penggunaan Todo:
-
-```
-User: "Konversi riksa-uji-crane.md ke template baru"
-
-Assistant Response:
-┌─────────────────────────────────────────────────────────────┐
-│ [TodoWrite] Membuat todo list untuk konversi:               │
-│                                                             │
-│ 1. [pending] BATCH 1: Front Matter + Copy template          │
-│ 2. [pending] BATCH 2: Schema Data (howto, itemlist, faq)    │
-│ 3. [pending] BATCH 3: Section 1-2 (importance, process)     │
-│ 4. [pending] BATCH 4: Section 3-4 (regulation, training)    │
-│ 5. [pending] BATCH 5: Section 5-6 (specs, certification)    │
-│ 6. [pending] BATCH 6: Section 7-8 (permit, conclusion)      │
-└─────────────────────────────────────────────────────────────┘
-
-[TodoWrite] Mark BATCH 1 as [in_progress]
-[Read] Baca file sumber: riksa-uji-crane.md
-[Read] Baca template: TEMPLATE-node-riksa-uji.md
-[Write] Copy template ke _posts/2024-08-26-jasa-riksa-uji-crane.md
-[Edit] Isi front matter dari data sumber
-[TodoWrite] Mark BATCH 1 as [completed]
-
-[TodoWrite] Mark BATCH 2 as [in_progress]
-[Read] Baca konten untuk schema data dari sumber
-[Edit] Isi howto_post, itemlist_post, faq_post
-[TodoWrite] Mark BATCH 2 as [completed]
-
-... (lanjut sampai BATCH 6)
-
-[TodoWrite] Semua batch completed
-[Bash] ./rebuild.sh
-```
 
 ---
 
-## BATCH 1: FRONT MATTER
+## DAFTAR SECTION
 
-### title
+Template ini memiliki **14 section** utama + **3 bagian pendukung**:
+
+| No | Section                 | Deskripsi                                              |
+|----|-------------------------|--------------------------------------------------------|
+| 1  | Front Matter            | Metadata artikel (title, description, dll)             |
+| 2  | `content_intro` + `announce` | Paragraf intro dan CTA                            |
+| 3  | `section_hero`          | Hero banner dengan title, badges, wilayah layanan, CTA |
+| 4  | `section_order`         | Cara pemesanan layanan (6 langkah)                     |
+| 5  | `section_faq`           | FAQ layanan, sertifikasi, dan biaya                    |
+| 6  | `section_company_intro` | Perkenalan perusahaan dengan subsections               |
+| 7  | `section_services`      | 6 keunggulan/layanan dengan icon                       |
+| 8  | `section_tips`          | 3 tips memilih PJK3                                    |
+| 9  | `section_importance`    | Pentingnya riksa uji (3 subsections)                   |
+| 10 | `section_process`       | Proses riksa uji (4 tahapan dengan substeps)           |
+| 11 | `section_regulation`    | Sanksi hukum dan regulasi (3 subsections)              |
+| 12 | `section_training`      | Pelatihan dan sertifikasi operator (6 cards)           |
+| 13 | `section_specs`         | Standar spesifikasi teknis (6 specs)                   |
+| 14 | `section_certification` | Pengesahan gambar (5 topics)                           |
+| 15 | `section_permit`        | Izin pemakaian pesawat (2 topics)                      |
+| 16 | `section_conclusion`    | Kesimpulan dengan highlights dan CTA                   |
+| 17 | Schema Data             | howto_post, itemlist_post, video_post                  |
+
+---
+
+## Section 1: Front Matter
+
+```
+TodoWrite: Mark "Section 1: Front Matter" as [in_progress]
+```
+
+Metadata dasar artikel.
+
 ```yaml
+layout: node/node--riksa-uji
 title: "Riksa Uji [Nama Alat]"
-```
-- Format: "Riksa Uji" + nama alat
-- Tanpa kata "Jasa" di depan
-- Contoh: "Riksa Uji Boiler", "Riksa Uji Forklift", "Riksa Uji Overhead Crane"
-
-### description
-```yaml
 description: "[150-160 karakter untuk SEO meta description]"
-```
-- Jelaskan singkat apa itu riksa uji alat tersebut
-- Sertakan kata kunci utama
-- Contoh: "Riksa uji boiler adalah proses pemeriksaan dan pengujian keselamatan ketel uap untuk memastikan operasional aman sesuai standar K3."
-
-### content_intro
-```yaml
-content_intro:
-  paragraphs:
-    - "[Paragraf 1: Definisi + link ke kategori induk]"
-    - "[Paragraf 2: Kewajiban riksa uji + link ke PJK3]"
-    - "[Paragraf 3: Penjelasan umum tentang alat + link Wikipedia]"
-```
-- 3 paragraf pembuka setelah H1
-- Sertakan internal link ke kategori induk (misal: /layanan/riksa-uji-pesawat-uap-bejana-tekan/)
-- Sertakan link ke halaman PJK3: /about/pjk3/
-- Boleh sertakan link eksternal ke Wikipedia untuk definisi alat
-- Format link: `<a href="/url/">anchor text</a>`
-
-### announce
-```yaml
-announce:
-  paragraphs:
-    - "[Paragraf penutup tentang PT. Cipta Mas Jaya sebagai PJK3]"
-```
-- Paragraf promosi/CTA di akhir artikel
-- Sebutkan PT. Cipta Mas Jaya sebagai PJK3 Riksa Uji
-- Sertakan link ke halaman layanan terkait
-
-### permalink
-```yaml
 permalink: /2024/08/26/jasa-riksa-uji-[nama-alat]/
-```
-- Format: /YYYY/MM/DD/jasa-riksa-uji-[nama-alat]/
-- Gunakan slug lowercase dengan dash
-
-### redirect_from
-```yaml
 redirect_from:
   - /blog/2024/08/26/jasa-riksa-uji-[nama-alat]/
-```
-- URL lama yang perlu di-redirect (jika migrasi dari WordPress)
-- Bisa lebih dari satu
-
-### date & last_modified_at
-```yaml
 date: 2024-08-26
 last_modified_at: 2025-11-28
-```
-- date: Tanggal publikasi pertama
-- last_modified_at: Tanggal update terakhir
-
-### author
-```yaml
 author: "Editor"
-```
-- Nama penulis/editor
-
-### categories
-```yaml
 categories:
   - Layanan
   - [Kategori Induk]
-```
-- Kategori 1: Selalu "Layanan"
-- Kategori 2: Nama kategori induk
-- Contoh: "Riksa Uji Pesawat Uap dan Bejana Tekan", "Riksa Uji Pesawat Angkat dan Angkut"
-
-### tags
-```yaml
 tags:
   - Inspeksi K3
   - Jasa Riksa Uji
   - [Kategori Alat]
   - Riksa Uji
   - [Nama Alat]
-```
-- 5 tags relevan
-- Selalu sertakan: "Inspeksi K3", "Jasa Riksa Uji", "Riksa Uji"
-- Tambahkan kategori alat dan nama alat spesifik
-
-### image & images
-```yaml
 image: "/path/to/featured-image.jpg"
 images:
   - "/path/to/image-1.jpg"
   - "/path/to/image-2.jpg"
   - "/path/to/image-3.jpg"
   - "/path/to/image-4.jpg"
-```
-- image: Featured image untuk og:image, schema, thumbnail
-- images: 4 gambar untuk gallery slider
-- Jika kosong, akan fallback ke default SVG (i1.svg - i4.svg)
-
-### rating_id
-```yaml
-rating_id: riksa-uji-boiler
-```
-- ID untuk menghubungkan artikel dengan file rating/review
-- Format: `riksa-uji-[nama-alat]` (lowercase, dash-separated)
-- File rating harus dibuat di: `_includes/reusable/node--riksa-uji/ratings/block--rating--[rating_id].html`
-- Berisi data review pembaca (bukan testimoni layanan)
-- **Template**: Copy dari `TEMPLATES/TEMPLATE-block-rating-riksa-uji.html`
-- **Cara buat**:
-  1. Copy template ke `_includes/reusable/node--riksa-uji/ratings/`
-  2. Rename: `block--rating--riksa-uji-[nama-alat].html`
-  3. Isi data rating (average, count, distribution)
-  4. Isi data review (3-4 review pembaca tentang artikel)
-
-### related_service
-```yaml
-related_service: /layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/
-```
-- Path ke halaman layanan terkait
-- Digunakan untuk menampilkan blok "Related Service" di artikel
-- Harus sesuai dengan URL halaman layanan di `_services/`
-
-### lastmod
-```yaml
+rating_id: riksa-uji-[nama-alat]
+related_service: /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 lastmod: '2025-12-01T16:40:00+0700'
 ```
-- Timestamp terakhir artikel dimodifikasi
-- Format: ISO 8601 dengan timezone
-- Auto-updated oleh propagate-timestamp plugin saat build
-- Digunakan untuk sorting artikel terbaru di homepage
+
+### Referensi Nilai
+
+#### title:
+- Format: "Riksa Uji" + nama alat
+- Tanpa kata "Jasa" di depan
+- Contoh: "Riksa Uji Boiler", "Riksa Uji Forklift", "Riksa Uji Overhead Crane"
+
+#### categories:
+- Kategori 1: Selalu "Layanan"
+- Kategori 2: Nama kategori induk
+- Contoh: "Riksa Uji Pesawat Uap dan Bejana Tekan", "Riksa Uji Pesawat Angkat dan Angkut"
+
+#### rating_id:
+- ID untuk menghubungkan artikel dengan file rating/review
+- Format: `riksa-uji-[nama-alat]` (lowercase, dash-separated)
+- File rating di: `_includes/reusable/node--riksa-uji/ratings/block--rating--[rating_id].html`
+
+### Checklist Section 1
+- [ ] `title` - Format: "Riksa Uji [Nama Alat]"
+- [ ] `description` - 150-160 karakter
+- [ ] `permalink` - Format /YYYY/MM/DD/jasa-riksa-uji-[nama]/
+- [ ] `redirect_from` - URL lama jika migrasi
+- [ ] `date` & `last_modified_at` - Format YYYY-MM-DD
+- [ ] `author` - Nama penulis
+- [ ] `categories` - 2 kategori (Layanan + Kategori Induk)
+- [ ] `tags` - 5 tags relevan
+- [ ] `image` - Featured image path
+- [ ] `images` - 4 gambar untuk gallery
+- [ ] `rating_id` - ID untuk rating system
+- [ ] `related_service` - Path ke halaman layanan
+
+```
+TodoWrite: Mark "Section 1: Front Matter" as [completed]
+```
 
 ---
 
-## Section
+## Section 2: content_intro + announce
 
-Berdasarkan template, ada **14 section** utama:
+```
+TodoWrite: Mark "Section 2: content_intro + announce" as [in_progress]
+```
 
-| No | Section                 | Deskripsi                                              |
-|----|-------------------------|--------------------------------------------------------|
-| 1  | `section_hero`          | Hero banner dengan title, badges, wilayah layanan, CTA |
-| 2  | `section_order`         | Cara pemesanan layanan (6 langkah)                     |
-| 3  | `section_faq`           | FAQ layanan, sertifikasi, dan biaya                    |
-| 4  | `section_company_intro` | Perkenalan perusahaan dengan subsections               |
-| 5  | `section_services`      | 6 keunggulan/layanan dengan icon                       |
-| 6  | `section_tips`          | 3 tips memilih PJK3                                    |
-| 7  | `section_importance`    | Pentingnya riksa uji (3 subsections)                   |
-| 8  | `section_process`       | Proses riksa uji (4 tahapan dengan substeps)           |
-| 9  | `section_regulation`    | Sanksi hukum dan regulasi (3 subsections)              |
-| 10 | `section_training`      | Pelatihan dan sertifikasi operator (6 cards)           |
-| 11 | `section_specs`         | Standar spesifikasi teknis (6 specs)                   |
-| 12 | `section_certification` | Pengesahan gambar (5 topics)                           |
-| 13 | `section_permit`        | Izin pemakaian pesawat (2 topics)                      |
-| 14 | `section_conclusion`    | Kesimpulan dengan highlights dan CTA                   |
+Paragraf pembuka dan penutup artikel.
 
-**Plus 6 bagian pendukung:**
+```yaml
+content_intro:
+  paragraphs:
+    - "[Paragraf 1: Definisi + link ke kategori induk]"
+    - "[Paragraf 2: Kewajiban riksa uji + link ke PJK3]"
+    - "[Paragraf 3: Penjelasan umum tentang alat + link Wikipedia]"
 
-| Bagian          | Deskripsi                    |
-|-----------------|------------------------------|
-| `content_intro` | Paragraf intro               |
-| `announce`      | Pengumuman                   |
-| `howto_post`    | Schema HowTo (6 steps)       |
-| `itemlist_post` | Schema ItemList (5 items)    |
-| `video_post`    | Schema Video                 |
-| `related_service` | Link ke halaman layanan terkait |
+announce:
+  paragraphs:
+    - "[Paragraf tentang PT. Cipta Mas Jaya sebagai PJK3]"
+```
+
+### Catatan
+- `content_intro`: 3 paragraf pembuka setelah H1
+- Sertakan internal link ke kategori induk (misal: /layanan/riksa-uji-pesawat-uap-bejana-tekan/)
+- Sertakan link ke halaman PJK3: /about/pjk3/
+- `announce`: 1 paragraf promosi/CTA di akhir artikel
+- Format link: `<a href="/url/">anchor text</a>`
+
+### Checklist Section 2
+- [ ] `content_intro.paragraphs` - 3 paragraf dengan internal link
+- [ ] `announce.paragraphs` - 1 paragraf CTA
+
+```
+TodoWrite: Mark "Section 2: content_intro + announce" as [completed]
+```
 
 ---
 
-## Section 1: section_hero
+## Section 3: section_hero
+
+```
+TodoWrite: Mark "Section 3: section_hero" as [in_progress]
+```
 
 Hero banner di bagian atas halaman.
 
 ```yaml
 section_hero:
   title: "Butuh Layanan Riksa Uji [Nama Alat]"
-  theme: "red"                    # Warna tema: red, blue, green, orange
+  theme: "red"
   area: "Seluruh Indonesia"
   description: "[Deskripsi singkat layanan dan PJK3]"
   label_wilayah: "Melayani Wilayah:"
@@ -329,14 +228,35 @@ section_hero:
   cta_notice: "Respon cepat 24/7"
 ```
 
-**Catatan:**
-- `theme`: Menentukan warna aksen hero (red untuk alat berbahaya, blue untuk umum)
-- `wilayah_layanan`: Maksimal 8 wilayah
-- `badges`: 3 badge keunggulan utama
+### Referensi theme:
+| Theme | Penggunaan |
+|-------|------------|
+| `red` | Alat berbahaya (boiler, bejana tekan) |
+| `blue` | Alat umum |
+| `green` | Alat ramah lingkungan |
+| `orange` | Alat angkat angkut |
+
+### Checklist Section 3
+- [ ] `title` - Judul hero
+- [ ] `theme` - Warna tema (red/blue/green/orange)
+- [ ] `area` - Area layanan
+- [ ] `description` - Deskripsi singkat
+- [ ] `label_wilayah` - Label wilayah
+- [ ] `wilayah_layanan` - 8 wilayah
+- [ ] `badges` - 3 badge dengan text dan icon
+- [ ] `cta_title`, `cta_button`, `cta_notice` - CTA
+
+```
+TodoWrite: Mark "Section 3: section_hero" as [completed]
+```
 
 ---
 
-## Section 2: section_order
+## Section 4: section_order
+
+```
+TodoWrite: Mark "Section 4: section_order" as [in_progress]
+```
 
 Cara pemesanan layanan riksa uji.
 
@@ -374,14 +294,32 @@ section_order:
       color: "success"
 ```
 
-**Catatan:**
-- `initial_steps`: 3 langkah awal (kontak, identifikasi, penawaran)
-- `final_steps`: 3 langkah akhir (inspeksi, laporan, sertifikat)
-- `color`: primary, info, warning, success, danger
+### Referensi color:
+- `primary` - Biru
+- `info` - Cyan
+- `warning` - Kuning
+- `success` - Hijau
+- `danger` - Merah
+
+### Checklist Section 4
+- [ ] `title` - Judul cara pemesanan
+- [ ] `area` - Area layanan
+- [ ] `phone` - Nomor telepon
+- [ ] `intro` - Pengantar
+- [ ] `initial_steps` - 3 langkah awal (title, description, icon, color)
+- [ ] `final_steps` - 3 langkah akhir (title, description, icon, color)
+
+```
+TodoWrite: Mark "Section 4: section_order" as [completed]
+```
 
 ---
 
-## Section 3: section_faq
+## Section 5: section_faq
+
+```
+TodoWrite: Mark "Section 5: section_faq" as [in_progress]
+```
 
 FAQ dengan 3 kategori: layanan, sertifikasi, biaya.
 
@@ -427,13 +365,26 @@ section_faq:
   deskripsi_biaya: "[Deskripsi kategori]"
 ```
 
-**Catatan:**
-- 3 FAQ per kategori (total 9 FAQ)
-- Setiap kategori memiliki judul dan deskripsi
+### Checklist Section 5
+- [ ] `title` & `subtitle` - Judul FAQ
+- [ ] `faq_layanan` - 3 FAQ dengan pertanyaan, jawaban, icon
+- [ ] `judul_layanan` & `deskripsi_layanan`
+- [ ] `faq_sertifikasi` - 3 FAQ dengan pertanyaan, jawaban, icon
+- [ ] `judul_sertifikasi` & `deskripsi_sertifikasi`
+- [ ] `faq_biaya` - 3 FAQ dengan pertanyaan, jawaban, icon
+- [ ] `judul_biaya` & `deskripsi_biaya`
+
+```
+TodoWrite: Mark "Section 5: section_faq" as [completed]
+```
 
 ---
 
-## Section 4: section_company_intro
+## Section 6: section_company_intro
+
+```
+TodoWrite: Mark "Section 6: section_company_intro" as [in_progress]
+```
 
 Perkenalan perusahaan PT. Cipta Mas Jaya.
 
@@ -452,13 +403,23 @@ section_company_intro:
         - "[Paragraf tentang komitmen perusahaan]"
 ```
 
-**Catatan:**
-- 2 subsections: Tentang Layanan dan Komitmen
-- Setiap subsection memiliki 1-2 paragraf
+### Checklist Section 6
+- [ ] `title` - Judul perkenalan
+- [ ] `company_name` - Nama perusahaan
+- [ ] `intro` - Tagline
+- [ ] `subsections` - 2 subsection dengan title dan paragraphs
+
+```
+TodoWrite: Mark "Section 6: section_company_intro" as [completed]
+```
 
 ---
 
-## Section 5: section_services
+## Section 7: section_services
+
+```
+TodoWrite: Mark "Section 7: section_services" as [in_progress]
+```
 
 6 keunggulan/layanan PT. Cipta Mas Jaya.
 
@@ -487,13 +448,22 @@ section_services:
       icon: "bi-geo-alt"
 ```
 
-**Catatan:**
-- 6 keunggulan dengan icon Bootstrap Icons
-- Keunggulan standar: izin, SDM, peralatan, laporan, harga, jangkauan
+### Checklist Section 7
+- [ ] `title` - Judul keunggulan
+- [ ] `intro` - Pengantar
+- [ ] `services` - 6 layanan dengan title, description, icon
+
+```
+TodoWrite: Mark "Section 7: section_services" as [completed]
+```
 
 ---
 
-## Section 6: section_tips
+## Section 8: section_tips
+
+```
+TodoWrite: Mark "Section 8: section_tips" as [in_progress]
+```
 
 3 tips memilih PJK3 yang tepat.
 
@@ -529,14 +499,22 @@ section_tips:
       icon: "bi-tools"
 ```
 
-**Catatan:**
-- 3 tips: Legalitas, Kompetensi, Peralatan
-- Setiap tips memiliki 3 kriteria
-- `warna`: primary, success, info, warning, danger
+### Checklist Section 8
+- [ ] `title` & `subtitle` - Judul tips
+- [ ] `intro` - Pengantar
+- [ ] `tips` - 3 tips dengan kategori, deskripsi, kriteria (3), warna, icon
+
+```
+TodoWrite: Mark "Section 8: section_tips" as [completed]
+```
 
 ---
 
-## Section 7: section_importance
+## Section 9: section_importance
+
+```
+TodoWrite: Mark "Section 9: section_importance" as [in_progress]
+```
 
 Pentingnya riksa uji dengan 3 subsection.
 
@@ -577,13 +555,23 @@ section_importance:
           value: "[Detail]"
 ```
 
-**Catatan:**
-- 3 subsections dengan masing-masing 2 bullets
-- Topik: Keselamatan, Efisiensi, Pemeliharaan
+### Checklist Section 9
+- [ ] `title` & `subtitle` - Judul pentingnya
+- [ ] `icon` - Icon utama
+- [ ] `paragraphs` - 1 paragraf pembuka
+- [ ] `subsections` - 3 subsection dengan title, icon, paragraphs, bullets (2)
+
+```
+TodoWrite: Mark "Section 9: section_importance" as [completed]
+```
 
 ---
 
-## Section 8: section_process
+## Section 10: section_process
+
+```
+TodoWrite: Mark "Section 10: section_process" as [in_progress]
+```
 
 Proses riksa uji dengan 4 tahapan dan substeps.
 
@@ -685,14 +673,29 @@ section_process:
   summary: "[Ringkasan proses riksa uji]"
 ```
 
-**Catatan:**
+### Catatan
 - 4 tahapan utama: Persiapan, Visual, Uji Fungsi, Keselamatan
 - Setiap tahapan memiliki 2-4 substeps
 - Setiap substep memiliki 2-4 bullets
 
+### Checklist Section 10
+- [ ] `title`, `icon`, `subtitle` - Header
+- [ ] `description` - Deskripsi umum
+- [ ] `steps_heading` & `steps_intro` - Pengantar langkah
+- [ ] `steps` - 4 langkah dengan substeps dan bullets
+- [ ] `summary` - Ringkasan proses
+
+```
+TodoWrite: Mark "Section 10: section_process" as [completed]
+```
+
 ---
 
-## Section 9: section_regulation
+## Section 11: section_regulation
+
+```
+TodoWrite: Mark "Section 11: section_regulation" as [in_progress]
+```
 
 Sanksi hukum dan regulasi K3.
 
@@ -736,16 +739,28 @@ section_regulation:
           value: "[Deskripsi standar]"
 ```
 
-**Catatan:**
-- 3 subsections: Kepatuhan, Sanksi, Dasar Hukum
-- Permenaker sesuai jenis alat:
-  - Boiler/Bejana Tekan: Permenaker No. 37 Tahun 2016
-  - Pesawat Angkat: Permenaker No. 8 Tahun 2020
-  - Elevator: Permenaker No. 6 Tahun 2017
+### Referensi Permenaker per Jenis Alat:
+- **Boiler/Bejana Tekan**: Permenaker No. 37 Tahun 2016
+- **Pesawat Angkat**: Permenaker No. 8 Tahun 2020
+- **Elevator**: Permenaker No. 6 Tahun 2017
+
+### Checklist Section 11
+- [ ] `title`, `icon`, `subtitle` - Header
+- [ ] `description` - Pengantar
+- [ ] `summary` - Ringkasan
+- [ ] `subsections` - 3 subsection (Kepatuhan, Sanksi, Dasar Hukum) masing-masing 3 bullets
+
+```
+TodoWrite: Mark "Section 11: section_regulation" as [completed]
+```
 
 ---
 
-## Section 10: section_training
+## Section 12: section_training
+
+```
+TodoWrite: Mark "Section 12: section_training" as [in_progress]
+```
 
 Pelatihan dan sertifikasi operator.
 
@@ -790,13 +805,26 @@ section_training:
       value: "[Detail]"
 ```
 
-**Catatan:**
-- 6 cards tentang program pelatihan
-- 4 bullets tentang manfaat
+### Checklist Section 12
+- [ ] `title`, `icon`, `subtitle` - Header
+- [ ] `description` - Pengantar
+- [ ] `cards_heading` & `cards_intro` - Pengantar cards
+- [ ] `bullets_heading` & `bullets_intro` - Pengantar bullets
+- [ ] `summary` - Ringkasan
+- [ ] `cards` - 6 cards dengan title, icon, content
+- [ ] `bullets` - 4 bullets dengan key-value
+
+```
+TodoWrite: Mark "Section 12: section_training" as [completed]
+```
 
 ---
 
-## Section 11: section_specs
+## Section 13: section_specs
+
+```
+TodoWrite: Mark "Section 13: section_specs" as [in_progress]
+```
 
 Standar spesifikasi teknis alat.
 
@@ -820,39 +848,32 @@ section_specs:
       value: "[Nilai/Range]"
       paragraphs:
         - "[Penjelasan parameter]"
-    - title: "[Parameter 3]"
-      icon: "bi-thermometer-half"
-      value: "[Nilai/Range]"
-      paragraphs:
-        - "[Penjelasan parameter]"
-    - title: "[Parameter 4]"
-      icon: "bi-fire"
-      value: "[Nilai/Range]"
-      paragraphs:
-        - "[Penjelasan parameter]"
-    - title: "[Parameter 5]"
-      icon: "bi-graph-up-arrow"
-      value: "[Nilai/Range]"
-      paragraphs:
-        - "[Penjelasan parameter]"
-        - "[Detail tambahan]"
-    - title: "[Parameter 6]"
-      icon: "bi-grid-3x3"
-      value: "[Nilai/Range]"
-      paragraphs:
-        - "[Penjelasan parameter]"
-        - "[Detail tambahan]"
+    # ... dst (6 specs)
 ```
 
-**Catatan:**
-- 6 parameter teknis sesuai jenis alat:
-  - **Boiler**: Kapasitas uap, Tekanan kerja, Temperatur, Bahan bakar, Efisiensi, Surface area
-  - **Forklift**: Kapasitas angkat, Tinggi angkat, Kecepatan, Radius putar, Sistem rem, Power
-  - **Crane**: SWL, Span, Lifting height, Speed, Rail gauge, Power supply
+### Referensi Parameter per Jenis Alat:
+- **Boiler**: Kapasitas uap, Tekanan kerja, Temperatur, Bahan bakar, Efisiensi, Surface area
+- **Forklift**: Kapasitas angkat, Tinggi angkat, Kecepatan, Radius putar, Sistem rem, Power
+- **Crane**: SWL, Span, Lifting height, Speed, Rail gauge, Power supply
+
+### Checklist Section 13
+- [ ] `title` & `subtitle` - Header
+- [ ] `icon` - Icon utama
+- [ ] `description` - Pengantar
+- [ ] `specs_heading` & `specs_intro` - Pengantar specs
+- [ ] `specs` - 6 specs dengan title, icon, value, paragraphs
+
+```
+TodoWrite: Mark "Section 13: section_specs" as [completed]
+```
 
 ---
 
-## Section 12: section_certification
+## Section 14: section_certification
+
+```
+TodoWrite: Mark "Section 14: section_certification" as [in_progress]
+```
 
 Pengesahan gambar/desain teknis.
 
@@ -923,15 +944,28 @@ section_certification:
           value: "[Detail]"
 ```
 
-**Catatan:**
-- 5 topics dengan struktur berbeda (items atau bullets)
+### Catatan
 - Topic 1-2: menggunakan `items` dengan icon
 - Topic 3: menggunakan `bullets` array sederhana
 - Topic 4-5: menggunakan `bullets` dengan key-value
 
+### Checklist Section 14
+- [ ] `title` & `subtitle` - Header
+- [ ] `icon` - Icon utama
+- [ ] `paragraphs` - 2 paragraf
+- [ ] `topics` - 5 topics dengan struktur berbeda
+
+```
+TodoWrite: Mark "Section 14: section_certification" as [completed]
+```
+
 ---
 
-## Section 13: section_permit
+## Section 15: section_permit
+
+```
+TodoWrite: Mark "Section 15: section_permit" as [in_progress]
+```
 
 Izin pemakaian/SLO alat.
 
@@ -963,16 +997,30 @@ section_permit:
   summary: "[Ringkasan pentingnya izin operasi]"
 ```
 
-**Catatan:**
-- Istilah sesuai jenis alat:
-  - **Forklift/Crane**: SLO (Surat Izin Layak Operasi)
-  - **Boiler**: Izin Pemakaian Pesawat Uap
-  - **Bejana Tekan**: Izin Pemakaian Bejana Tekan
-  - **Elevator**: Izin Penggunaan Lift
+### Referensi Istilah per Jenis Alat:
+- **Forklift/Crane**: SLO (Surat Izin Layak Operasi)
+- **Boiler**: Izin Pemakaian Pesawat Uap
+- **Bejana Tekan**: Izin Pemakaian Bejana Tekan
+- **Elevator**: Izin Penggunaan Lift
+
+### Checklist Section 15
+- [ ] `title` & `subtitle` - Header
+- [ ] `icon` - Icon utama
+- [ ] `intro` - Definisi izin
+- [ ] `topics` - 2 topics (Pentingnya: 4 bullets, Perbedaan: 2 bullets)
+- [ ] `summary` - Ringkasan
+
+```
+TodoWrite: Mark "Section 15: section_permit" as [completed]
+```
 
 ---
 
-## Section 14: section_conclusion
+## Section 16: section_conclusion
+
+```
+TodoWrite: Mark "Section 16: section_conclusion" as [in_progress]
+```
 
 Kesimpulan dengan CTA.
 
@@ -996,36 +1044,27 @@ section_conclusion:
     icon: "bi-telephone"
 ```
 
-**Catatan:**
-- `intro`: Bisa sertakan link Google Maps
-- `highlights`: 3 poin utama manfaat
-- `cta`: Call-to-action dengan link ke halaman layanan
+### Checklist Section 16
+- [ ] `title` - Judul kesimpulan
+- [ ] `icon` - Icon
+- [ ] `intro` - Ringkasan dengan link Google Maps (opsional)
+- [ ] `highlights` - 3 highlights key-value
+- [ ] `closing` - Paragraf penutup
+- [ ] `cta` - CTA dengan text, link, label, icon
+
+```
+TodoWrite: Mark "Section 16: section_conclusion" as [completed]
+```
 
 ---
 
-## Bagian Pendukung
+## Section 17: Schema Data
 
-### content_intro
-
-Paragraf intro setelah H1.
-
-```yaml
-content_intro:
-  paragraphs:
-    - "[Paragraf 1: Definisi + link ke kategori induk]"
-    - "[Paragraf 2: Kewajiban riksa uji + link ke PJK3]"
-    - "[Paragraf 3: Penjelasan umum tentang alat + link Wikipedia]"
+```
+TodoWrite: Mark "Section 17: Schema Data" as [in_progress]
 ```
 
-### announce
-
-Paragraf promosi/CTA di akhir artikel.
-
-```yaml
-announce:
-  paragraphs:
-    - "[Paragraf tentang PT. Cipta Mas Jaya sebagai PJK3]"
-```
+Schema data untuk SEO.
 
 ### howto_post (Schema HowTo)
 
@@ -1061,7 +1100,7 @@ itemlist_post:
 
 - 5 komponen utama yang diperiksa
 
-### video_post (Schema Video)
+### video_post (Schema Video) - Opsional
 
 ```yaml
 video_post:
@@ -1075,13 +1114,14 @@ video_post:
 
 - Kosongkan jika tidak ada video
 
-### related_service
+### Checklist Section 17
+- [ ] `howto_post` - name, description, totalTime, 6 steps
+- [ ] `itemlist_post` - name, description, 5 items
+- [ ] `video_post` - Lengkap jika ada video, kosong jika tidak
 
-```yaml
-related_service: /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 ```
-
-- Path ke halaman layanan terkait
+TodoWrite: Mark "Section 17: Schema Data" as [completed]
+```
 
 ---
 
@@ -1118,9 +1158,10 @@ related_service: /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 
 ---
 
-## CHECKLIST SEBELUM PUBLISH
+## CHECKLIST FINAL SEBELUM PUBLISH
 
 ### Checklist Umum
+- [ ] Semua 17 section sudah [completed] di TodoWrite
 - [ ] Semua field terisi (tidak ada yang kosong "")
 - [ ] Internal link valid (cek URL)
 - [ ] External link menggunakan target="_blank"
@@ -1132,138 +1173,8 @@ related_service: /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 - [ ] Gambar tersedia atau gunakan fallback
 - [ ] Preview di localhost sebelum deploy
 
-### Checklist Per Section
-
-#### Front Matter & Bagian Pendukung
-- [ ] `title` - Judul artikel (Riksa Uji [Nama Alat])
-- [ ] `rating_id` - ID untuk rating system
-- [ ] `description` - Meta description (150-160 karakter)
-- [ ] `content_intro` - 3 paragraf intro dengan link
-- [ ] `announce` - 1 paragraf CTA
-- [ ] `permalink` - Format /YYYY/MM/DD/jasa-riksa-uji-[nama]/
-- [ ] `redirect_from` - URL lama jika migrasi
-- [ ] `date` & `last_modified_at` - Format YYYY-MM-DD
-- [ ] `author` - Nama penulis
-- [ ] `categories` - 2 kategori (Layanan + Kategori Induk)
-- [ ] `tags` - 5 tags relevan
-- [ ] `images` - 4 gambar (featured + gallery)
-- [ ] `related_service` - Path ke halaman layanan
-
-#### Section 1: section_hero
-- [ ] `title` - Judul hero
-- [ ] `theme` - Warna tema (red/blue/green/orange)
-- [ ] `area` - Area layanan
-- [ ] `description` - Deskripsi singkat
-- [ ] `label_wilayah` - Label wilayah
-- [ ] `wilayah_layanan` - 8 wilayah
-- [ ] `badges` - 3 badge dengan icon
-- [ ] `cta_title`, `cta_button`, `cta_notice` - CTA
-
-#### Section 2: section_order
-- [ ] `title` - Judul cara pemesanan
-- [ ] `area` - Area layanan
-- [ ] `phone` - Nomor telepon
-- [ ] `intro` - Pengantar
-- [ ] `initial_steps` - 3 langkah awal (title, description, icon, color)
-- [ ] `final_steps` - 3 langkah akhir (title, description, icon, color)
-
-#### Section 3: section_faq
-- [ ] `title` & `subtitle` - Judul FAQ
-- [ ] `faq_layanan` - 3 FAQ dengan pertanyaan, jawaban, icon
-- [ ] `judul_layanan` & `deskripsi_layanan`
-- [ ] `faq_sertifikasi` - 3 FAQ dengan pertanyaan, jawaban, icon
-- [ ] `judul_sertifikasi` & `deskripsi_sertifikasi`
-- [ ] `faq_biaya` - 3 FAQ dengan pertanyaan, jawaban, icon
-- [ ] `judul_biaya` & `deskripsi_biaya`
-
-#### Section 4: section_company_intro
-- [ ] `title` - Judul perkenalan
-- [ ] `company_name` - Nama perusahaan
-- [ ] `intro` - Tagline
-- [ ] `subsections` - 2 subsection dengan title dan paragraphs
-
-#### Section 5: section_services
-- [ ] `title` - Judul keunggulan
-- [ ] `intro` - Pengantar
-- [ ] `services` - 6 layanan dengan title, description, icon
-
-#### Section 6: section_tips
-- [ ] `title` & `subtitle` - Judul tips
-- [ ] `intro` - Pengantar
-- [ ] `tips` - 3 tips dengan kategori, deskripsi, kriteria (3), warna, icon
-
-#### Section 7: section_importance
-- [ ] `title` & `subtitle` - Judul pentingnya
-- [ ] `icon` - Icon utama
-- [ ] `paragraphs` - 1 paragraf pembuka
-- [ ] `subsections` - 3 subsection dengan title, icon, paragraphs, bullets (2)
-
-#### Section 8: section_process
-- [ ] `title`, `icon`, `subtitle` - Header
-- [ ] `description` - Deskripsi umum
-- [ ] `steps_heading` & `steps_intro` - Pengantar langkah
-- [ ] `steps` - 4 langkah dengan:
-  - [ ] Step 1: Persiapan (2 substeps, masing-masing 2 bullets)
-  - [ ] Step 2: Pemeriksaan Visual (2 substeps, masing-masing 4 bullets)
-  - [ ] Step 3: Uji Fungsi (4 substeps, masing-masing 2 bullets)
-  - [ ] Step 4: Pemeriksaan Keselamatan (2 substeps, masing-masing 2 bullets)
-- [ ] `summary` - Ringkasan proses
-
-#### Section 9: section_regulation
-- [ ] `title`, `icon`, `subtitle` - Header
-- [ ] `description` - Pengantar
-- [ ] `summary` - Ringkasan
-- [ ] `subsections` - 3 subsection:
-  - [ ] Kepatuhan (3 bullets)
-  - [ ] Sanksi Pelanggaran (3 bullets)
-  - [ ] Dasar Hukum (3 bullets)
-
-#### Section 10: section_training
-- [ ] `title`, `icon`, `subtitle` - Header
-- [ ] `description` - Pengantar
-- [ ] `cards_heading` & `cards_intro` - Pengantar cards
-- [ ] `bullets_heading` & `bullets_intro` - Pengantar bullets
-- [ ] `summary` - Ringkasan
-- [ ] `cards` - 6 cards dengan title, icon, content
-- [ ] `bullets` - 4 bullets dengan key-value
-
-#### Section 11: section_specs
-- [ ] `title` & `subtitle` - Header
-- [ ] `icon` - Icon utama
-- [ ] `description` - Pengantar
-- [ ] `specs_heading` & `specs_intro` - Pengantar specs
-- [ ] `specs` - 6 specs dengan title, icon, value, paragraphs
-
-#### Section 12: section_certification
-- [ ] `title` & `subtitle` - Header
-- [ ] `icon` - Icon utama
-- [ ] `intro` - Intro (bisa kosong)
-- [ ] `paragraphs` - 2 paragraf
-- [ ] `topics` - 5 topics:
-  - [ ] Topic 1: Proses (4 items dengan title, icon, content)
-  - [ ] Topic 2: Pentingnya (2 items dengan title, icon, content)
-  - [ ] Topic 3: Siapa (2 bullets simple)
-  - [ ] Topic 4: Dokumen (6 bullets key-value)
-  - [ ] Topic 5: Manfaat (4 bullets key-value)
-
-#### Section 13: section_permit
-- [ ] `title` & `subtitle` - Header
-- [ ] `icon` - Icon utama
-- [ ] `intro` - Definisi izin
-- [ ] `topics` - 2 topics:
-  - [ ] Topic 1: Pentingnya (4 bullets key-value)
-  - [ ] Topic 2: Perbedaan (2 bullets key-value)
-- [ ] `summary` - Ringkasan
-
-#### Section 14: section_conclusion
-- [ ] `title` - Judul kesimpulan
-- [ ] `icon` - Icon
-- [ ] `intro` - Ringkasan dengan link Google Maps
-- [ ] `highlights` - 3 highlights key-value
-- [ ] `closing` - Paragraf penutup
-- [ ] `cta` - CTA dengan text, link, label, icon
-
-#### Schema Data
-- [ ] `howto_post` - name, description, totalTime, 6 steps
-- [ ] `itemlist_post` - name, description, 5 items
-- [ ] `video_post` - Lengkap jika ada video, kosong jika tidak
+### Build & Preview
+```bash
+./rebuild.sh
+# Buka browser: http://localhost:4000/[path-to-article]
+```

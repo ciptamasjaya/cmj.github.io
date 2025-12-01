@@ -5,130 +5,78 @@
 # Lokasi: /TEMPLATES/TEMPLATE-node-inspection-report.md
 # ============================================================================
 
-## CARA KERJA (BATCH SYSTEM + TODO)
+## CARA KERJA (PER-SECTION + TODOWRITE)
 
 Konten template ini sangat panjang. JANGAN mengisi sekali jalan.
-Gunakan sistem batch dengan TodoWrite untuk menjaga kualitas konten.
+Gunakan sistem per-section dengan TodoWrite untuk menjaga kualitas konten.
 
-### WAJIB: Gunakan TodoWrite untuk Setiap Batch
+### WAJIB: Gunakan TodoWrite untuk Setiap Section
 
 ```
-SEBELUM MULAI, buat todo list dengan 8 batch:
-┌─────────────────────────────────────────────────────────────┐
-│ TodoWrite:                                                  │
-│ 1. [pending] BATCH 1: Front Matter + Copy template          │
-│ 2. [pending] BATCH 2: Glossary + Data Umum + Object         │
-│ 3. [pending] BATCH 3: Section Intro + Visual                │
-│ 4. [pending] BATCH 4: Section Operational + Technical       │
-│ 5. [pending] BATCH 5: Section NDT                           │
-│ 6. [pending] BATCH 6: Section Hydrotest + Safety Valve      │
-│ 7. [pending] BATCH 7: Section Analysis                      │
-│ 8. [pending] BATCH 8: Section Conclusion                    │
-└─────────────────────────────────────────────────────────────┘
+SEBELUM MULAI, buat todo list dengan 13 section:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TodoWrite:                                                                  │
+│  1. [pending] Section 1: Front Matter + paragraphs + images + video         │
+│  2. [pending] Section 2: section_glossary                                   │
+│  3. [pending] Section 3: data_umum                                          │
+│  4. [pending] Section 4: object                                             │
+│  5. [pending] Section 5: section_intro                                      │
+│  6. [pending] Section 6: section_visual                                     │
+│  7. [pending] Section 7: section_operational                                │
+│  8. [pending] Section 8: section_technical                                  │
+│  9. [pending] Section 9: section_ndt                                        │
+│ 10. [pending] Section 10: section_hydrotest                                 │
+│ 11. [pending] Section 11: section_safety_valve                              │
+│ 12. [pending] Section 12: section_analysis                                  │
+│ 13. [pending] Section 13: section_conclusion                                │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-UNTUK SETIAP BATCH:
+UNTUK SETIAP SECTION:
 1. Mark todo as [in_progress]
-2. Baca section terkait dari file sumber
+2. Baca petunjuk section dari file ini
 3. Tulis konten ke file tujuan (Edit tool)
-4. Mark todo as [completed]
-5. JANGAN lanjut ke batch berikutnya sebelum completed
+4. Verifikasi dengan checklist section
+5. Mark todo as [completed]
+6. JANGAN lanjut ke section berikutnya sebelum completed
 ```
 
-### Alur Kerja Detail:
+### Mengapa Per-Section + TodoWrite Penting?
 
-```
-BATCH 1: Salin template + Front Matter
-         STATUS: [in_progress] saat dikerjakan
-         - Copy TEMPLATE-node-inspection-report.md ke file tujuan
-         - Isi: title, date, description
-         - Isi: header_bg, report_number, inspection_date, inspector
-         - Isi: categories, tags, images, video
-         - Isi: paragraphs (4 paragraf pembuka)
-         - SIMPAN → Mark [completed]
-
-BATCH 2: Glossary + Data Umum + Object
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_glossary (title, intro, 7 terms)
-         - Isi: data_umum (perusahaan, instalatir)
-         - Isi: object (semua field + 6 specifications)
-         - SIMPAN → Mark [completed]
-
-BATCH 3: Section Intro + Visual
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_intro (title, paragraphs, background, objectives)
-         - Isi: section_visual (title, intro, 6 items, summary)
-         - SIMPAN → Mark [completed]
-
-BATCH 4: Section Operational + Technical
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_operational (title, intro, procedure, 6 items, summary)
-         - Isi: section_technical (title, intro, procedure, 6 items, summary)
-         - SIMPAN → Mark [completed]
-
-BATCH 5: Section NDT
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_ndt (title, intro, method, 7 items, summary)
-         - SIMPAN → Mark [completed]
-
-BATCH 6: Section Hydrotest + Safety Valve
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_hydrotest (semua field + 8 steps + 5 items + 6 faq)
-         - Isi: section_safety_valve (semua field + 7 steps + items + 6 faq)
-         - SIMPAN → Mark [completed]
-
-BATCH 7: Section Analysis
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_analysis (intro, 6 analyses, key_findings, discussion)
-         - SIMPAN → Mark [completed]
-
-BATCH 8: Section Conclusion
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_conclusion (verdict, conclusions, recommendations, dll)
-         - SIMPAN → Mark [completed]
-         - REVIEW & REBUILD
-```
-
-### Mengapa Batch + Todo Penting?
-
-1. **Memory Management**: Setiap batch fokus pada 1-2 section saja
+1. **Memory Management**: Setiap section fokus pada 1 bagian saja
 2. **Quality Control**: Konten lebih detail karena tidak terburu-buru
-3. **Checkpoint**: Jika ada error, bisa lanjut dari batch terakhir
-4. **Review**: User bisa review setiap batch sebelum lanjut
+3. **Checkpoint**: Jika ada error, bisa lanjut dari section terakhir
+4. **Review**: User bisa review setiap section sebelum lanjut
 5. **Traceability**: Todo list menunjukkan progress yang jelas
 
 ---
 
-## Section
+## DAFTAR SECTION
 
-Berdasarkan template, ada **10 section** utama:
+Template ini memiliki **13 section** utama:
 
 | No | Section               | Deskripsi                                              |
 |----|-----------------------|--------------------------------------------------------|
-| 1  | `section_glossary`    | Istilah dan definisi (7 terms)                         |
-| 2  | `data_umum`           | Data perusahaan dan instalatir                         |
-| 3  | `object`              | Data alat yang diuji (6 specifications)                |
-| 4  | `section_intro`       | Pendahuluan (paragraphs, background, objectives)       |
-| 5  | `section_visual`      | Pemeriksaan visual (6 items)                           |
-| 6  | `section_operational` | Pengujian operasional (procedure, 6 items)             |
-| 7  | `section_technical`   | Pengujian teknis (procedure, 6 items)                  |
-| 8  | `section_ndt`         | Pengujian NDT/thickness (7 items)                      |
-| 9  | `section_hydrotest`   | Pengujian hidrostatik (8 steps, 5 items, 6 faq)        |
-| 10 | `section_safety_valve`| Pengujian safety valve (7 steps, items, 6 faq)         |
-| 11 | `section_analysis`    | Analisis data dan pembahasan (6 analyses, key_findings)|
-| 12 | `section_conclusion`  | Kesimpulan dan rekomendasi (verdict, 5+5 items)        |
-
-**Plus 4 bagian pendukung:**
-
-| Bagian       | Deskripsi                           |
-|--------------|-------------------------------------|
-| `paragraphs` | 4 paragraf pembuka setelah H1       |
-| `video`      | Video dokumentasi proses inspeksi   |
-| `images`     | 4 gambar (featured + gallery)       |
-| `categories` & `tags` | SEO taxonomy               |
+| 1  | Front Matter          | Metadata, paragraphs, images, video                    |
+| 2  | `section_glossary`    | Istilah dan definisi (7 terms)                         |
+| 3  | `data_umum`           | Data perusahaan dan instalatir                         |
+| 4  | `object`              | Data alat yang diuji (6 specifications)                |
+| 5  | `section_intro`       | Pendahuluan (paragraphs, background, objectives)       |
+| 6  | `section_visual`      | Pemeriksaan visual (6 items)                           |
+| 7  | `section_operational` | Pengujian operasional (procedure, 6 items)             |
+| 8  | `section_technical`   | Pengujian teknis (procedure, 6 items)                  |
+| 9  | `section_ndt`         | Pengujian NDT/thickness (7 items)                      |
+| 10 | `section_hydrotest`   | Pengujian hidrostatik (8 steps, 5 items, 6 faq)        |
+| 11 | `section_safety_valve`| Pengujian safety valve (7 steps, items, 6 faq)         |
+| 12 | `section_analysis`    | Analisis data dan pembahasan (6 analyses, key_findings)|
+| 13 | `section_conclusion`  | Kesimpulan dan rekomendasi (verdict, 5+5 items)        |
 
 ---
 
 ## Section 1: Front Matter
+
+```
+TodoWrite: Mark "Section 1: Front Matter" as [in_progress]
+```
 
 Metadata dasar artikel.
 
@@ -183,12 +131,9 @@ paragraphs:
   - "[Paragraf 4: Link ke kategori induk + penjelasan spesifik alat]"
 ```
 
-**Catatan:**
-- `header_bg`: Custom hex color (#1a5276, #e67e22, #28a745, #dc3545, #17a2b8)
-- `report_number`: Format CMJ/RU/YYYY/MMDD-XXX
-- `duration`: Format ISO 8601 (PT5M30S = 5 menit 30 detik)
+### Referensi Nilai
 
-#### Contoh header_bg per Jenis Alat:
+#### header_bg per Jenis Alat:
 | Jenis Alat | Warna | Hex Code |
 |------------|-------|----------|
 | Boiler / Pesawat Uap | Biru tua | `#1a5276` |
@@ -198,9 +143,35 @@ paragraphs:
 | Instalasi Listrik | Cyan | `#17a2b8` |
 | Tangki Timbun | Ungu | `#8e44ad` |
 
+#### Format Penting:
+- `report_number`: Format CMJ/RU/YYYY/MMDD-XXX
+- `duration`: Format ISO 8601 (PT5M30S = 5 menit 30 detik)
+- `date` & `inspection_date`: Format YYYY-MM-DD
+
+### Checklist Section 1
+- [ ] `title` - Format: "Riksa Uji [Nama Alat] [Merek] Nomor Seri [Serial]"
+- [ ] `date` & `inspection_date` - Format YYYY-MM-DD
+- [ ] `description` - 150-160 karakter
+- [ ] `header_bg` - Custom hex color valid
+- [ ] `report_number` - Format CMJ/RU/YYYY/MMDD-XXX
+- [ ] `inspector` - Nama tim inspektur
+- [ ] `categories` - 2 kategori (Layanan + Kategori Induk)
+- [ ] `tags` - 6 tags relevan
+- [ ] `images` - 4 gambar
+- [ ] `video` - Lengkap jika ada, kosong jika tidak
+- [ ] `paragraphs` - 4 paragraf pembuka
+
+```
+TodoWrite: Mark "Section 1: Front Matter" as [completed]
+```
+
 ---
 
 ## Section 2: section_glossary
+
+```
+TodoWrite: Mark "Section 2: section_glossary" as [in_progress]
+```
 
 Istilah dan definisi yang digunakan dalam laporan.
 
@@ -225,14 +196,27 @@ section_glossary:
       definition: "<strong><a href=\"/\">Jasa Inspeksi K3</a></strong> layanan..."
 ```
 
-**Catatan:**
+### Catatan
 - 7 istilah standar yang harus ada
 - Sertakan internal link ke halaman terkait
 - Sebutkan nama alat dan nomor seri di setiap definisi
 
+### Checklist Section 2
+- [ ] `title` - Judul section
+- [ ] `intro` - Pengantar dengan nama alat dan serial
+- [ ] `terms` - 7 istilah dengan definisi dan link
+
+```
+TodoWrite: Mark "Section 2: section_glossary" as [completed]
+```
+
 ---
 
 ## Section 3: data_umum
+
+```
+TodoWrite: Mark "Section 3: data_umum" as [in_progress]
+```
 
 Data perusahaan pemilik alat dan instalatir.
 
@@ -250,14 +234,26 @@ data_umum:
     sertifikat: "SIUJK No. XXXX/SIUJK/YYYY"
 ```
 
-**Catatan:**
+### Catatan
 - `perusahaan`: Data pemilik alat
 - `instalatir`: Data perusahaan yang memasang/merawat alat
 - Gunakan data dummy jika tidak tersedia
 
+### Checklist Section 3
+- [ ] `perusahaan` - nama, alamat, telepon, email
+- [ ] `instalatir` - nama, alamat, telepon, sertifikat
+
+```
+TodoWrite: Mark "Section 3: data_umum" as [completed]
+```
+
 ---
 
 ## Section 4: object
+
+```
+TodoWrite: Mark "Section 4: object" as [in_progress]
+```
 
 Data alat yang diuji.
 
@@ -288,15 +284,13 @@ object:
       value: "[Nilai]"
 ```
 
-**Catatan:**
-- `type`: Jenis pesawat sesuai kategori K3:
-  - "Pesawat Uap" (untuk boiler)
-  - "Bejana Tekan" (untuk pressure vessel)
-  - "Pesawat Angkat" (untuk crane, hoist)
-  - "Pesawat Angkut" (untuk forklift, conveyor)
-- `specifications`: 6 parameter teknis utama
+### Referensi type (Jenis Pesawat K3)
+- "Pesawat Uap" (untuk boiler)
+- "Bejana Tekan" (untuk pressure vessel)
+- "Pesawat Angkat" (untuk crane, hoist)
+- "Pesawat Angkut" (untuk forklift, conveyor)
 
-#### Contoh Specifications per Jenis Alat:
+### Contoh Specifications per Jenis Alat
 
 **Boiler:**
 ```yaml
@@ -349,9 +343,25 @@ specifications:
     value: "380V/50Hz"
 ```
 
+### Checklist Section 4
+- [ ] `name`, `brand`, `model`, `serial` - Data identifikasi
+- [ ] `type` - Jenis pesawat K3
+- [ ] `year` - Tahun pembuatan (integer)
+- [ ] `capacity`, `pressure` - Dengan satuan
+- [ ] `location`, `owner` - Lokasi dan pemilik
+- [ ] `specifications` - 6 parameter dengan label dan value
+
+```
+TodoWrite: Mark "Section 4: object" as [completed]
+```
+
 ---
 
 ## Section 5: section_intro
+
+```
+TodoWrite: Mark "Section 5: section_intro" as [in_progress]
+```
 
 Pendahuluan laporan.
 
@@ -369,14 +379,28 @@ section_intro:
     - "[Tujuan 4: Memberikan rekomendasi pemeliharaan dan perbaikan]"
 ```
 
-**Catatan:**
+### Catatan
 - `paragraphs`: 2 paragraf pengantar
 - `background`: Latar belakang pelaksanaan riksa uji
 - `objectives`: 4 tujuan utama inspeksi
 
+### Checklist Section 5
+- [ ] `title` - Judul pendahuluan
+- [ ] `paragraphs` - 2 paragraf pengantar
+- [ ] `background` - Latar belakang
+- [ ] `objectives` - 4 tujuan inspeksi
+
+```
+TodoWrite: Mark "Section 5: section_intro" as [completed]
+```
+
 ---
 
 ## Section 6: section_visual
+
+```
+TodoWrite: Mark "Section 6: section_visual" as [in_progress]
+```
 
 Pemeriksaan visual komponen alat.
 
@@ -397,15 +421,14 @@ section_visual:
   summary: "[Ringkasan hasil pemeriksaan visual]"
 ```
 
-**Catatan:**
-- `items`: 6 komponen yang diperiksa
-- `condition`: Gunakan nilai:
-  - `baik` - kondisi normal
-  - `perlu_perhatian` - ada masalah ringan
-  - `tidak_layak` - kondisi kritis
+### Nilai condition
+| Value | Deskripsi |
+|-------|-----------|
+| `baik` | Kondisi normal, tidak ada masalah |
+| `perlu_perhatian` | Ada masalah ringan, perlu perawatan preventif |
+| `tidak_layak` | Kondisi kritis, harus diperbaiki sebelum operasi |
 
-#### Contoh Komponen per Jenis Alat:
-
+### Contoh Komponen per Jenis Alat
 | Boiler | Forklift | Overhead Crane |
 |--------|----------|----------------|
 | Dinding luar boiler | Body/rangka forklift | Struktur utama (girder) |
@@ -415,9 +438,23 @@ section_visual:
 | Katup pengaman | Roda dan ban | End carriage |
 | Pelapis insulasi | Cabin operator | Panel kontrol |
 
+### Checklist Section 6
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pemeriksaan
+- [ ] `items` - 6 komponen dengan component, result, condition, notes
+- [ ] `summary` - Ringkasan hasil
+
+```
+TodoWrite: Mark "Section 6: section_visual" as [completed]
+```
+
 ---
 
 ## Section 7: section_operational
+
+```
+TodoWrite: Mark "Section 7: section_operational" as [in_progress]
+```
 
 Pengujian operasional alat.
 
@@ -440,13 +477,13 @@ section_operational:
   summary: "[Ringkasan hasil pengujian operasional]"
 ```
 
-**Catatan:**
-- `procedure`: 4 langkah prosedur pengujian
-- `items`: 6 parameter yang diuji
-- `status`: `lulus` atau `tidak_lulus`
+### Nilai status
+| Value | Deskripsi |
+|-------|-----------|
+| `lulus` | Memenuhi standar |
+| `tidak_lulus` | Tidak memenuhi standar |
 
-#### Contoh Parameter per Jenis Alat:
-
+### Contoh Parameter per Jenis Alat
 | Boiler | Forklift | Overhead Crane |
 |--------|----------|----------------|
 | Tekanan Operasional | Fungsi Pengangkatan | Fungsi Hoisting |
@@ -456,9 +493,24 @@ section_operational:
 | Fungsi Kontrol Otomatis | Fungsi Hidrolik | Limit Switch |
 | Kinerja Katup Pengaman | Indikator dan Alarm | Emergency Stop |
 
+### Checklist Section 7
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pengujian
+- [ ] `procedure` - 4 langkah prosedur
+- [ ] `items` - 6 parameter dengan parameter, result, standard, status, notes
+- [ ] `summary` - Ringkasan hasil
+
+```
+TodoWrite: Mark "Section 7: section_operational" as [completed]
+```
+
 ---
 
 ## Section 8: section_technical
+
+```
+TodoWrite: Mark "Section 8: section_technical" as [in_progress]
+```
 
 Pengujian teknis alat.
 
@@ -481,13 +533,24 @@ section_technical:
   summary: "[Ringkasan hasil pengujian teknis]"
 ```
 
-**Catatan:**
-- `procedure`: 4 langkah prosedur
-- `items`: 6 komponen/parameter yang diuji
+### Checklist Section 8
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pengujian
+- [ ] `procedure` - 4 langkah prosedur
+- [ ] `items` - 6 komponen dengan component, result, standard, status, notes
+- [ ] `summary` - Ringkasan hasil
+
+```
+TodoWrite: Mark "Section 8: section_technical" as [completed]
+```
 
 ---
 
 ## Section 9: section_ndt
+
+```
+TodoWrite: Mark "Section 9: section_ndt" as [in_progress]
+```
 
 Pengujian Non-Destruktif (Thickness Test).
 
@@ -506,12 +569,7 @@ section_ndt:
   summary: "[Ringkasan hasil pengujian NDT]"
 ```
 
-**Catatan:**
-- `items`: 7 titik pengukuran ketebalan
-- `result` dan `standard`: Dalam satuan mm
-
-#### Contoh Titik Pengukuran:
-
+### Contoh Titik Pengukuran
 | Boiler | Pressure Vessel |
 |--------|-----------------|
 | Dinding Ruang Pembakaran (bawah) | Shell (atas) |
@@ -522,9 +580,24 @@ section_ndt:
 | Penukar Panas | Nozzle |
 | Tangki Air | Manhole |
 
+### Checklist Section 9
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar NDT
+- [ ] `method` - Metode pengujian
+- [ ] `items` - 7 titik dengan component, location, result, standard, status
+- [ ] `summary` - Ringkasan hasil
+
+```
+TodoWrite: Mark "Section 9: section_ndt" as [completed]
+```
+
 ---
 
 ## Section 10: section_hydrotest
+
+```
+TodoWrite: Mark "Section 10: section_hydrotest" as [in_progress]
+```
 
 Pengujian Hidrostatik.
 
@@ -576,15 +649,33 @@ section_hydrotest:
       answer: "[Jawaban]"
 ```
 
-**Catatan:**
+### Catatan
 - `test_pressure`: Biasanya 1.5x tekanan kerja
 - `steps`: 8 langkah standar hydrotest
 - `items`: 5 komponen yang diuji
 - `faq`: 6 FAQ tentang hydrotest
 
+### Checklist Section 10
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar hydrotest
+- [ ] `working_pressure`, `test_pressure`, `duration` - Parameter uji
+- [ ] `method` - Metode pengujian
+- [ ] `steps` - 8 langkah dengan name dan text
+- [ ] `items` - 5 komponen dengan component, pressure, duration, result, status
+- [ ] `summary` - Ringkasan hasil
+- [ ] `faq` - 6 FAQ dengan question dan answer
+
+```
+TodoWrite: Mark "Section 10: section_hydrotest" as [completed]
+```
+
 ---
 
 ## Section 11: section_safety_valve
+
+```
+TodoWrite: Mark "Section 11: section_safety_valve" as [in_progress]
+```
 
 Pengujian Safety Valve.
 
@@ -639,15 +730,32 @@ section_safety_valve:
       answer: "[Jawaban]"
 ```
 
-**Catatan:**
+### Catatan
 - `total_units`: Jumlah safety valve yang diuji (integer)
 - `steps`: 7 langkah standar pengujian
 - `items`: Sesuai jumlah unit (minimal 2)
 - `faq`: 6 FAQ tentang safety valve
 
+### Checklist Section 11
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pengujian
+- [ ] `total_units` - Jumlah unit (integer)
+- [ ] `steps` - 7 langkah dengan name dan text
+- [ ] `items` - Minimal 2 unit dengan unit, brand, size, set_pressure, test_pressure, result, status
+- [ ] `summary` - Ringkasan hasil
+- [ ] `faq` - 6 FAQ dengan question dan answer
+
+```
+TodoWrite: Mark "Section 11: section_safety_valve" as [completed]
+```
+
 ---
 
 ## Section 12: section_analysis
+
+```
+TodoWrite: Mark "Section 12: section_analysis" as [in_progress]
+```
 
 Analisis Data dan Pembahasan.
 
@@ -692,14 +800,29 @@ section_analysis:
   discussion_result: "[Paragraf hasil pembahasan]"
 ```
 
-**Catatan:**
+### Catatan
 - `analyses`: 6 analisis sesuai jumlah pengujian
 - `key_findings`: 5 temuan utama
 - `discussion`: 3 paragraf pembahasan
 
+### Checklist Section 12
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar analisis
+- [ ] `analyses` - 6 analisis dengan title, intro, findings, interpretation
+- [ ] `key_findings` - 5 temuan utama
+- [ ] `discussion_title`, `discussion_intro`, `discussion_findings`, `discussion_result` - Pembahasan
+
+```
+TodoWrite: Mark "Section 12: section_analysis" as [completed]
+```
+
 ---
 
 ## Section 13: section_conclusion
+
+```
+TodoWrite: Mark "Section 13: section_conclusion" as [in_progress]
+```
 
 Kesimpulan dan Rekomendasi.
 
@@ -727,14 +850,31 @@ section_conclusion:
     - "[Paragraf CTA - hubungi kami]"
 ```
 
-**Catatan:**
-- `verdict`: Gunakan nilai:
-  - `layak` - alat layak operasi
-  - `tidak_layak` - alat tidak layak operasi
-  - `layak_bersyarat` - layak dengan syarat perbaikan
+### Nilai verdict
+| Value | Deskripsi |
+|-------|-----------|
+| `layak` | Alat layak operasi tanpa syarat |
+| `tidak_layak` | Alat tidak layak operasi |
+| `layak_bersyarat` | Alat layak operasi dengan syarat perbaikan tertentu |
+
+### Catatan
 - `conclusions`: 5 kesimpulan
 - `recommendations`: 5 rekomendasi
 - `validity_period`: Biasanya "1 Tahun"
+
+### Checklist Section 13
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `verdict` - layak/tidak_layak/layak_bersyarat
+- [ ] `verdict_text` - Kalimat verdict lengkap
+- [ ] `conclusions` - 5 kesimpulan
+- [ ] `recommendations` - 5 rekomendasi
+- [ ] `validity_period` - Periode berlaku
+- [ ] `next_inspection` - Tanggal inspeksi berikutnya
+- [ ] `paragraphs` - 2 paragraf (disclaimer, CTA)
+
+```
+TodoWrite: Mark "Section 13: section_conclusion" as [completed]
+```
 
 ---
 
@@ -762,9 +902,10 @@ section_conclusion:
 
 ---
 
-## CHECKLIST SEBELUM PUBLISH
+## CHECKLIST FINAL SEBELUM PUBLISH
 
 ### Checklist Umum
+- [ ] Semua 13 section sudah [completed] di TodoWrite
 - [ ] Semua field terisi (tidak ada yang kosong "")
 - [ ] Nama alat, merek, dan nomor seri konsisten di seluruh dokumen
 - [ ] Internal link valid (cek URL)
@@ -777,103 +918,8 @@ section_conclusion:
 - [ ] Gambar tersedia atau gunakan fallback
 - [ ] Preview di localhost sebelum deploy
 
-### Checklist Per Section
-
-#### Front Matter
-- [ ] `title` - Format: "Riksa Uji [Nama Alat] [Merek] Nomor Seri [Serial]"
-- [ ] `date` & `inspection_date` - Format YYYY-MM-DD
-- [ ] `description` - 150-160 karakter
-- [ ] `header_bg` - Custom hex color valid
-- [ ] `report_number` - Format CMJ/RU/YYYY/MMDD-XXX
-- [ ] `inspector` - Nama tim inspektur
-- [ ] `categories` - 2 kategori (Layanan + Kategori Induk)
-- [ ] `tags` - 6 tags relevan
-- [ ] `images` - 4 gambar
-- [ ] `video` - Lengkap jika ada, kosong jika tidak
-- [ ] `paragraphs` - 4 paragraf pembuka
-
-#### Section 2: section_glossary
-- [ ] `title` - Judul section
-- [ ] `intro` - Pengantar dengan nama alat dan serial
-- [ ] `terms` - 7 istilah dengan definisi dan link
-
-#### Section 3: data_umum
-- [ ] `perusahaan` - nama, alamat, telepon, email
-- [ ] `instalatir` - nama, alamat, telepon, sertifikat
-
-#### Section 4: object
-- [ ] `name`, `brand`, `model`, `serial` - Data identifikasi
-- [ ] `type` - Jenis pesawat K3
-- [ ] `year` - Tahun pembuatan (integer)
-- [ ] `capacity`, `pressure` - Dengan satuan
-- [ ] `location`, `owner` - Lokasi dan pemilik
-- [ ] `specifications` - 6 parameter dengan label dan value
-
-#### Section 5: section_intro
-- [ ] `title` - Judul pendahuluan
-- [ ] `paragraphs` - 2 paragraf pengantar
-- [ ] `background` - Latar belakang
-- [ ] `objectives` - 4 tujuan inspeksi
-
-#### Section 6: section_visual
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `intro` - Pengantar pemeriksaan
-- [ ] `items` - 6 komponen dengan component, result, condition, notes
-- [ ] `summary` - Ringkasan hasil
-
-#### Section 7: section_operational
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `intro` - Pengantar pengujian
-- [ ] `procedure` - 4 langkah prosedur
-- [ ] `items` - 6 parameter dengan parameter, result, standard, status, notes
-- [ ] `summary` - Ringkasan hasil
-
-#### Section 8: section_technical
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `intro` - Pengantar pengujian
-- [ ] `procedure` - 4 langkah prosedur
-- [ ] `items` - 6 komponen dengan component, result, standard, status, notes
-- [ ] `summary` - Ringkasan hasil
-
-#### Section 9: section_ndt
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `intro` - Pengantar NDT
-- [ ] `method` - Metode pengujian
-- [ ] `items` - 7 titik dengan component, location, result, standard, status
-- [ ] `summary` - Ringkasan hasil
-
-#### Section 10: section_hydrotest
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `intro` - Pengantar hydrotest
-- [ ] `working_pressure`, `test_pressure`, `duration` - Parameter uji
-- [ ] `method` - Metode pengujian
-- [ ] `steps` - 8 langkah dengan name dan text
-- [ ] `items` - 5 komponen dengan component, pressure, duration, result, status
-- [ ] `summary` - Ringkasan hasil
-- [ ] `faq` - 6 FAQ dengan question dan answer
-
-#### Section 11: section_safety_valve
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `intro` - Pengantar pengujian
-- [ ] `total_units` - Jumlah unit (integer)
-- [ ] `steps` - 7 langkah dengan name dan text
-- [ ] `items` - Minimal 2 unit dengan unit, brand, size, set_pressure, test_pressure, result, status
-- [ ] `summary` - Ringkasan hasil
-- [ ] `faq` - 6 FAQ dengan question dan answer
-
-#### Section 12: section_analysis
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `intro` - Pengantar analisis
-- [ ] `analyses` - 6 analisis dengan title, intro, findings, interpretation
-- [ ] `key_findings` - 5 temuan utama
-- [ ] `discussion_title`, `discussion_intro`, `discussion_findings`, `discussion_result` - Pembahasan
-
-#### Section 13: section_conclusion
-- [ ] `title` - Dengan nama alat, merek, serial
-- [ ] `verdict` - layak/tidak_layak/layak_bersyarat
-- [ ] `verdict_text` - Kalimat verdict lengkap
-- [ ] `conclusions` - 5 kesimpulan
-- [ ] `recommendations` - 5 rekomendasi
-- [ ] `validity_period` - Periode berlaku
-- [ ] `next_inspection` - Tanggal inspeksi berikutnya
-- [ ] `paragraphs` - 2 paragraf (disclaimer, CTA)
+### Build & Preview
+```bash
+./rebuild.sh
+# Buka browser: http://localhost:4000/[path-to-article]
+```

@@ -5,6 +5,57 @@
 # Lokasi: /TEMPLATES/TEMPLATE-node-pjk3-city.md
 # ============================================================================
 
+## CARA KERJA (PER-SECTION + TODOWRITE)
+
+Konten template ini sangat panjang. JANGAN mengisi sekali jalan.
+Gunakan sistem per-section dengan TodoWrite untuk menjaga kualitas konten.
+
+### WAJIB: Gunakan TodoWrite untuk Setiap Section
+
+```
+SEBELUM MULAI, buat todo list dengan 19 section:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TodoWrite:                                                                  │
+│  1. [pending] Section 1: Front Matter                                       │
+│  2. [pending] Section 2: Images + section_gallery                           │
+│  3. [pending] Section 3: video + section_video                              │
+│  4. [pending] Section 4: section_hero                                       │
+│  5. [pending] Section 5: section_company_intro                              │
+│  6. [pending] Section 6: section_services                                   │
+│  7. [pending] Section 7: section_area                                       │
+│  8. [pending] Section 8: section_risks                                      │
+│  9. [pending] Section 9: section_role                                       │
+│ 10. [pending] Section 10: section_business                                  │
+│ 11. [pending] Section 11: section_city                                      │
+│ 12. [pending] Section 12: section_coverage                                  │
+│ 13. [pending] Section 13: section_order                                     │
+│ 14. [pending] Section 14: section_testimonials                              │
+│ 15. [pending] Section 15: section_tips                                      │
+│ 16. [pending] Section 16: section_faq                                       │
+│ 17. [pending] Section 17: section_about_city                                │
+│ 18. [pending] Section 18: section_conclusion                                │
+│ 19. [pending] Section 19: Final verification                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+UNTUK SETIAP SECTION:
+1. Mark todo as [in_progress]
+2. Baca petunjuk section dari file ini
+3. Tulis konten ke file tujuan (Edit tool)
+4. Verifikasi dengan checklist section
+5. Mark todo as [completed]
+6. JANGAN lanjut ke section berikutnya sebelum completed
+```
+
+### Mengapa Per-Section + TodoWrite Penting?
+
+1. **Memory Management**: Setiap section fokus pada 1 bagian saja
+2. **Quality Control**: Konten lebih detail karena tidak terburu-buru
+3. **Checkpoint**: Jika ada error, bisa lanjut dari section terakhir
+4. **Review**: User bisa review setiap section sebelum lanjut
+5. **Traceability**: Todo list menunjukkan progress yang jelas
+
+---
+
 ## DAFTAR SECTION
 
 Template ini memiliki **15 Section** + **4 Bagian Pendukung**:
@@ -61,6 +112,10 @@ high, medium, low
 
 ## FRONT MATTER
 
+```
+TodoWrite: Mark "Section 1: Front Matter" as [in_progress]
+```
+
 ```yaml
 layout: node/node--pjk3-city
 title: "PJK3 [Nama Kota]"
@@ -88,9 +143,17 @@ tags:
 - `description`: 150-160 karakter untuk SEO, sertakan nama kota dan nomor telepon
 - `area_served`: Nama kota (digunakan sebagai fallback di berbagai section)
 
+```
+TodoWrite: Mark "Section 1: Front Matter" as [completed]
+```
+
 ---
 
 ## IMAGES
+
+```
+TodoWrite: Mark "Section 2: Images + section_gallery" as [in_progress]
+```
 
 ```yaml
 images:
@@ -117,9 +180,17 @@ section_gallery:
   caption: "Foto dokumentasi layanan PT. Cipta Mas Jaya"
 ```
 
+```
+TodoWrite: Mark "Section 2: Images + section_gallery" as [completed]
+```
+
 ---
 
 ## VIDEO & SECTION VIDEO
+
+```
+TodoWrite: Mark "Section 3: video + section_video" as [in_progress]
+```
 
 ```yaml
 video: "/assets/videos/service-page/riksa-uji-forklift.webm"
@@ -135,9 +206,17 @@ section_video:
 **Catatan:**
 - `video`: Path ke file video (kosong = fallback ke default)
 
+```
+TodoWrite: Mark "Section 3: video + section_video" as [completed]
+```
+
 ---
 
 ## SECTION 1: section_hero
+
+```
+TodoWrite: Mark "Section 4: section_hero" as [in_progress]
+```
 
 ```yaml
 section_hero:
@@ -173,9 +252,17 @@ section_hero:
 - `wilayah_layanan`: 6-10 wilayah/kecamatan utama
 - `badges`: 3 badge keunggulan dengan icon Bootstrap
 
+```
+TodoWrite: Mark "Section 4: section_hero" as [completed]
+```
+
 ---
 
 ## SECTION 2: section_company_intro
+
+```
+TodoWrite: Mark "Section 5: section_company_intro" as [in_progress]
+```
 
 ```yaml
 section_company_intro:
@@ -200,9 +287,17 @@ section_company_intro:
 - 2 subsections dengan 2-3 paragraf masing-masing
 - Sesuaikan dengan karakteristik kota
 
+```
+TodoWrite: Mark "Section 5: section_company_intro" as [completed]
+```
+
 ---
 
 ## SECTION 3: section_services
+
+```
+TodoWrite: Mark "Section 6: section_services" as [in_progress]
+```
 
 ```yaml
 section_services:
@@ -238,9 +333,17 @@ section_services:
 - 6 layanan standar PJK3
 - Sesuaikan deskripsi dengan kebutuhan industri di kota tersebut
 
+```
+TodoWrite: Mark "Section 6: section_services" as [completed]
+```
+
 ---
 
 ## SECTION 4: section_area
+
+```
+TodoWrite: Mark "Section 7: section_area" as [in_progress]
+```
 
 ```yaml
 section_area:
@@ -268,9 +371,17 @@ section_area:
 - 4 karakteristik utama wilayah
 - Sesuaikan dengan kondisi geografis dan ekonomi kota
 
+```
+TodoWrite: Mark "Section 7: section_area" as [completed]
+```
+
 ---
 
 ## SECTION 5: section_risks
+
+```
+TodoWrite: Mark "Section 8: section_risks" as [in_progress]
+```
 
 ```yaml
 section_risks:
@@ -302,9 +413,17 @@ section_risks:
 - 4 risiko K3 utama
 - `severity`: high, medium, atau low
 
+```
+TodoWrite: Mark "Section 8: section_risks" as [completed]
+```
+
 ---
 
 ## SECTION 6: section_role
+
+```
+TodoWrite: Mark "Section 9: section_role" as [in_progress]
+```
 
 ```yaml
 section_role:
@@ -331,9 +450,17 @@ section_role:
 **Catatan:**
 - 4 peran strategis PJK3
 
+```
+TodoWrite: Mark "Section 9: section_role" as [completed]
+```
+
 ---
 
 ## SECTION 7: section_business
+
+```
+TodoWrite: Mark "Section 10: section_business" as [in_progress]
+```
 
 ```yaml
 section_business:
@@ -360,9 +487,17 @@ section_business:
 **Catatan:**
 - 4 potensi bisnis/investasi
 
+```
+TodoWrite: Mark "Section 10: section_business" as [completed]
+```
+
 ---
 
 ## SECTION 8: section_city
+
+```
+TodoWrite: Mark "Section 11: section_city" as [in_progress]
+```
 
 ```yaml
 section_city:
@@ -390,9 +525,17 @@ section_city:
 **Catatan:**
 - 4 highlights tentang kota
 
+```
+TodoWrite: Mark "Section 11: section_city" as [completed]
+```
+
 ---
 
 ## SECTION 9: section_coverage
+
+```
+TodoWrite: Mark "Section 12: section_coverage" as [in_progress]
+```
 
 ```yaml
 section_coverage:
@@ -521,9 +664,17 @@ section_coverage:
 - 8 kecamatan_lainnya
 - 3 landmark_industri, 4 landmark_komersial
 
+```
+TodoWrite: Mark "Section 12: section_coverage" as [completed]
+```
+
 ---
 
 ## SECTION 10: section_order
+
+```
+TodoWrite: Mark "Section 13: section_order" as [in_progress]
+```
 
 ```yaml
 section_order:
@@ -568,9 +719,17 @@ section_order:
 - 3 initial_steps + 3 final_steps = 6 langkah total
 - `color`: primary, success, info, warning, danger
 
+```
+TodoWrite: Mark "Section 13: section_order" as [completed]
+```
+
 ---
 
 ## SECTION 11: section_testimonials
+
+```
+TodoWrite: Mark "Section 14: section_testimonials" as [in_progress]
+```
 
 ```yaml
 section_testimonials:
@@ -623,9 +782,17 @@ section_testimonials:
 - `rating`: integer 1-5
 - `warna`: primary, success, info, warning, danger
 
+```
+TodoWrite: Mark "Section 14: section_testimonials" as [completed]
+```
+
 ---
 
 ## SECTION 12: section_tips
+
+```
+TodoWrite: Mark "Section 15: section_tips" as [in_progress]
+```
 
 ```yaml
 section_tips:
@@ -665,9 +832,17 @@ section_tips:
 **Catatan:**
 - 3 kategori tips dengan 3 kriteria masing-masing
 
+```
+TodoWrite: Mark "Section 15: section_tips" as [completed]
+```
+
 ---
 
 ## SECTION 13: section_faq
+
+```
+TodoWrite: Mark "Section 16: section_faq" as [in_progress]
+```
 
 ```yaml
 section_faq:
@@ -722,9 +897,17 @@ section_faq:
 **Catatan:**
 - 3 kategori FAQ: layanan (3), sertifikasi (2), biaya (3)
 
+```
+TodoWrite: Mark "Section 16: section_faq" as [completed]
+```
+
 ---
 
 ## SECTION 14: section_about_city
+
+```
+TodoWrite: Mark "Section 17: section_about_city" as [in_progress]
+```
 
 ```yaml
 section_about_city:
@@ -782,9 +965,17 @@ section_about_city:
   - Paragraf 1-2: menggunakan `fakta` (array string)
   - Paragraf 3-4: menggunakan `list_item` dan `info_tambahan`
 
+```
+TodoWrite: Mark "Section 17: section_about_city" as [completed]
+```
+
 ---
 
 ## SECTION 15: section_conclusion
+
+```
+TodoWrite: Mark "Section 18: section_conclusion" as [in_progress]
+```
 
 ```yaml
 section_conclusion:
@@ -795,6 +986,11 @@ section_conclusion:
 
 **Catatan:**
 - 1 paragraf kesimpulan dengan CTA
+
+```
+TodoWrite: Mark "Section 18: section_conclusion" as [completed]
+TodoWrite: Mark "Section 19: Final verification" as [in_progress]
+```
 
 ---
 
@@ -980,3 +1176,13 @@ bi-credit-card      : Pembayaran
 ## CONTOH FILE LENGKAP
 
 Lihat: `_posts/2025-05-24-pjk3-bekasi.md`
+
+```
+TodoWrite: Mark "Section 19: Final verification" as [completed]
+```
+
+### Build & Preview
+```bash
+./rebuild.sh
+# Buka browser: http://localhost:4000/[path-to-article]
+```
