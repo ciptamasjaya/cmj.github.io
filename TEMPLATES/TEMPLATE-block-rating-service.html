@@ -1,0 +1,126 @@
+{% comment %}
+============================================================================
+Block: Rating Data - Riksa Uji [Nama Alat] Service
+============================================================================
+
+@file        block--rating--riksa-uji-[nama-alat].html
+@path        _includes/reusable/services/ratings/block--rating--riksa-uji-[nama-alat].html
+@type        Block (data per service)
+@description Rating data + reviews for riksa uji [nama alat] service
+@author      arisciwek
+@created     [YYYY-MM-DD]
+
+Output:
+1. Liquid variables for schema (rating_average, rating_count, etc.)
+2. <script type="application/json"> with rating + reviews data for JS
+
+Usage:
+------
+Included via schema using service slug or rating_id
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA (edit values here) === {% endcomment %}
+{% assign rating_average = 0.0 %}
+{% assign rating_count = 0 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 0 %}
+{% assign rating_dist_4 = 0 %}
+{% assign rating_dist_3 = 0 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "" %}
+
+{% comment %} === REVIEW DATA (single source) === {% endcomment %}
+{% comment %} Review 1 {% endcomment %}
+{% assign review_1_nama = "" %}
+{% assign review_1_usaha = "" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "" %}
+{% assign review_1_komentar = "" %}
+{% assign review_1_tanggal = "" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 0 %}
+{% assign review_1_featured = true %}
+
+{% comment %} Review 2 {% endcomment %}
+{% assign review_2_nama = "" %}
+{% assign review_2_usaha = "" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "" %}
+{% assign review_2_komentar = "" %}
+{% assign review_2_tanggal = "" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 0 %}
+{% assign review_2_featured = true %}
+
+{% comment %} Review 3 (optional) {% endcomment %}
+{% assign review_3_nama = "" %}
+{% assign review_3_usaha = "" %}
+{% assign review_3_rating = 5 %}
+{% assign review_3_judul = "" %}
+{% assign review_3_komentar = "" %}
+{% assign review_3_tanggal = "" %}
+{% assign review_3_verified = true %}
+{% assign review_3_helpful = 0 %}
+{% assign review_3_featured = false %}
+
+{% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "riksa-uji-[nama-alat]",
+  "title": "{{ page.title | default: 'Riksa Uji [Nama Alat]' | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
+    },
+    {
+      "id": 2,
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
+    },
+    {
+      "id": 3,
+      "nama": "{{ review_3_nama }}",
+      "jenis_usaha": "{{ review_3_usaha }}",
+      "rating": {{ review_3_rating }},
+      "judul": "{{ review_3_judul }}",
+      "komentar": "{{ review_3_komentar }}",
+      "tanggal": "{{ review_3_tanggal }}",
+      "verified": {{ review_3_verified }},
+      "helpful_count": {{ review_3_helpful }},
+      "featured": {{ review_3_featured }}
+    }
+  ]
+}
+</script>
