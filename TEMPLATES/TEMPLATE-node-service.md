@@ -22,6 +22,7 @@ show_breadcrumb_schema: true
 rating_id: ""
 custom_schema:
   - schema/schema--service-reviews.html
+lastmod: ""
 
 # ============================================================================
 # INTRO SECTION
@@ -233,9 +234,4 @@ faq_riksa_uji:
       answer: ""
     - question: ""
       answer: ""
-
-# ============================================================================
-# LASTMOD (Auto-updated by propagate-timestamp plugin)
-# ============================================================================
-lastmod: ""
 ---
