@@ -5,192 +5,73 @@
 # Lokasi: /TEMPLATES/TEMPLATE-node-pjk3-city.md
 # ============================================================================
 
-## CARA KERJA (BATCH SYSTEM + TODO)
+## DAFTAR SECTION
 
-Konten template ini sangat panjang. JANGAN mengisi sekali jalan.
-Gunakan sistem batch dengan TodoWrite untuk menjaga kualitas konten.
+Template ini memiliki **15 Section** + **4 Bagian Pendukung**:
 
-### WAJIB: Gunakan TodoWrite untuk Setiap Batch
+| No | Section | Deskripsi |
+|----|---------|-----------|
+| 1 | section_hero | Hero banner dengan CTA dan wilayah layanan |
+| 2 | section_company_intro | Pengenalan perusahaan dan layanan PJK3 |
+| 3 | section_services | 6 layanan utama riksa uji K3 |
+| 4 | section_area | 4 karakteristik wilayah dan industri |
+| 5 | section_risks | 4 risiko K3 dengan severity level |
+| 6 | section_role | 4 peran strategis PJK3 |
+| 7 | section_business | 4 potensi bisnis dan investasi |
+| 8 | section_city | 4 highlights tentang kota |
+| 9 | section_coverage | Area pelayanan lengkap (zona, kecamatan, landmark) |
+| 10 | section_order | 6 langkah pemesanan layanan |
+| 11 | section_testimonials | 4 testimoni (2 industri + 2 komersial) |
+| 12 | section_tips | 3 tips memilih PJK3 |
+| 13 | section_faq | FAQ (3 layanan + 2 sertifikasi + 3 biaya) |
+| 14 | section_about_city | Informasi lengkap tentang kota (untuk SEO) |
+| 15 | section_conclusion | Kesimpulan dan CTA |
 
+**Bagian Pendukung:**
+- Front Matter (title, date, description, categories, tags)
+- images (4 gambar)
+- section_gallery (judul dan deskripsi gallery)
+- video & section_video (video dan metadata)
+
+---
+
+## REFERENSI NILAI
+
+### Theme Hero
 ```
-SEBELUM MULAI, buat todo list dengan 8 batch:
-┌─────────────────────────────────────────────────────────────┐
-│ TodoWrite:                                                  │
-│ 1. [pending] BATCH 1: Front Matter + Copy template          │
-│ 2. [pending] BATCH 2: Hero + Company Intro                  │
-│ 3. [pending] BATCH 3: Services + Area                       │
-│ 4. [pending] BATCH 4: Risks + Role + Business               │
-│ 5. [pending] BATCH 5: City + Coverage                       │
-│ 6. [pending] BATCH 6: Order + Testimonials                  │
-│ 7. [pending] BATCH 7: Tips + FAQ                            │
-│ 8. [pending] BATCH 8: About City + Conclusion               │
-└─────────────────────────────────────────────────────────────┘
-
-UNTUK SETIAP BATCH:
-1. Mark todo as [in_progress]
-2. Baca section terkait dari file sumber
-3. Tulis konten ke file tujuan (Edit tool)
-4. Mark todo as [completed]
-5. JANGAN lanjut ke batch berikutnya sebelum completed
-```
-
-### Alur Kerja Detail:
-
-```
-BATCH 1: Salin template + Front Matter
-         STATUS: [in_progress] saat dikerjakan
-         - Copy TEMPLATE-node-pjk3-city.md ke file tujuan
-         - Isi: title, date, author, description, area_served
-         - Isi: categories, tags
-         - Isi: images, section_gallery, video, section_video
-         - SIMPAN → Mark [completed]
-
-BATCH 2: Hero + Company Intro
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_hero
-         - Isi: section_company_intro
-         - SIMPAN → Mark [completed]
-
-BATCH 3: Services + Area
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_services
-         - Isi: section_area
-         - SIMPAN → Mark [completed]
-
-BATCH 4: Risks + Role + Business
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_risks
-         - Isi: section_role
-         - Isi: section_business
-         - SIMPAN → Mark [completed]
-
-BATCH 5: City + Coverage
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_city
-         - Isi: section_coverage
-         - SIMPAN → Mark [completed]
-
-BATCH 6: Order + Testimonials
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_order
-         - Isi: section_testimonials
-         - SIMPAN → Mark [completed]
-
-BATCH 7: Tips + FAQ
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_tips
-         - Isi: section_faq
-         - SIMPAN → Mark [completed]
-
-BATCH 8: About City + Conclusion
-         STATUS: [in_progress] saat dikerjakan
-         - Isi: section_about_city
-         - Isi: section_conclusion
-         - SIMPAN → Mark [completed]
-         - REVIEW & REBUILD
+blue, orange, red, green, purple, teal, amber, indigo
 ```
 
-### Mengapa Batch + Todo Penting?
-
-1. **Memory Management**: Setiap batch fokus pada 2-3 section saja
-2. **Quality Control**: Konten lebih detail karena tidak terburu-buru
-3. **Checkpoint**: Jika ada error, bisa lanjut dari batch terakhir
-4. **Review**: User bisa review setiap batch sebelum lanjut
-5. **Traceability**: Todo list menunjukkan progress yang jelas
-
-### Contoh Penggunaan Todo:
-
+### Warna Bootstrap
 ```
-User: "Konversi pjk3-bandung.md ke template baru"
+primary (biru), success (hijau), info (cyan), warning (kuning), danger (merah), secondary (abu-abu)
+```
 
-Assistant Response:
-┌─────────────────────────────────────────────────────────────┐
-│ [TodoWrite] Membuat todo list untuk konversi:               │
-│                                                             │
-│ 1. [pending] BATCH 1: Front Matter + Copy template          │
-│ 2. [pending] BATCH 2: Hero + Company Intro                  │
-│ 3. [pending] BATCH 3: Services + Area                       │
-│ 4. [pending] BATCH 4: Risks + Role + Business               │
-│ 5. [pending] BATCH 5: City + Coverage                       │
-│ 6. [pending] BATCH 6: Order + Testimonials                  │
-│ 7. [pending] BATCH 7: Tips + FAQ                            │
-│ 8. [pending] BATCH 8: About City + Conclusion               │
-└─────────────────────────────────────────────────────────────┘
+### Severity Level
+```
+high, medium, low
+```
 
-[TodoWrite] Mark BATCH 1 as [in_progress]
-[Read] Baca file sumber: pjk3-bandung.md
-[Read] Baca template: TEMPLATE-node-pjk3-city.md
-[Write] Copy template ke _posts/2025-05-24-pjk3-bandung.md
-[Edit] Isi front matter dari data sumber
-[TodoWrite] Mark BATCH 1 as [completed]
-
-[TodoWrite] Mark BATCH 2 as [in_progress]
-[Read] Baca section hero dan company intro dari sumber
-[Edit] Isi section_hero
-[Edit] Isi section_company_intro
-[TodoWrite] Mark BATCH 2 as [completed]
-
-... (lanjut sampai BATCH 8)
-
-[TodoWrite] Semua batch completed
-[Bash] ./rebuild.sh
+### Rating Testimoni
+```
+1, 2, 3, 4, 5 (integer)
 ```
 
 ---
 
-## BATCH 1: FRONT MATTER
+## FRONT MATTER
 
-### title
 ```yaml
+layout: node/node--pjk3-city
 title: "PJK3 [Nama Kota]"
-```
-- Format: "PJK3" + nama kota
-- Contoh: "PJK3 Bekasi", "PJK3 Jakarta", "PJK3 Surabaya"
-
-### date
-```yaml
 date: 2025-05-24 18:21:24
-```
-- Format: YYYY-MM-DD HH:MM:SS
-- Tanggal publikasi pertama
-
-### author
-```yaml
 author: admin
-```
-- Nama penulis/editor
-
-### description
-```yaml
 description: "PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 di wilayah [Nama Kota]. Hubungi 08568258841 untuk semua kebutuhan riksa uji Anda."
-```
-- 150-160 karakter untuk SEO meta description
-- Sertakan nama kota dan nomor telepon
-
-### area_served
-```yaml
-area_served: "Bekasi"
-```
-- Nama kota/wilayah yang dilayani
-- Digunakan di berbagai section sebagai fallback
-
-### extra_js
-```yaml
+area_served: "[Nama Kota]"
 extra_js:
   - /assets/js/gallery-modal.js
-```
-- JavaScript tambahan untuk halaman
-- Untuk gallery modal, selalu sertakan gallery-modal.js
-
-### categories
-```yaml
 categories:
   - Artikel
-```
-- Kategori utama: "Artikel"
-
-### tags
-```yaml
 tags:
   - Jasa Inspeksi
   - Jasa Riksa Uji
@@ -200,22 +81,34 @@ tags:
   - Riksa Uji
   - Riksa Uji K3
 ```
-- 7 tags standar untuk halaman PJK3 city
-- Bisa ditambahkan tag spesifik kota jika perlu
 
-### images
+**Catatan:**
+- `title`: Format "PJK3" + nama kota
+- `date`: Format YYYY-MM-DD HH:MM:SS
+- `description`: 150-160 karakter untuk SEO, sertakan nama kota dan nomor telepon
+- `area_served`: Nama kota (digunakan sebagai fallback di berbagai section)
+
+---
+
+## IMAGES
+
 ```yaml
 images:
-  - ""
-  - ""
-  - ""
-  - ""
+  - "/assets/images/pjk3-city/featured.webp"
+  - "/assets/images/pjk3-city/gallery-1.webp"
+  - "/assets/images/pjk3-city/gallery-2.webp"
+  - "/assets/images/pjk3-city/gallery-3.webp"
 ```
-- images[0]: Featured image untuk og:image, schema, thumbnail
-- images[1-3]: Gallery images
+
+**Catatan:**
+- `images[0]`: Featured image untuk og:image, schema, thumbnail
+- `images[1-3]`: Gallery images
 - Jika kosong, fallback ke default i1-i4.svg
 
-### section_gallery
+---
+
+## SECTION GALLERY
+
 ```yaml
 section_gallery:
   title: "Galeri Layanan"
@@ -223,14 +116,13 @@ section_gallery:
   description: "Dokumentasi kegiatan riksa uji K3 di wilayah Bekasi dan sekitarnya"
   caption: "Foto dokumentasi layanan PT. Cipta Mas Jaya"
 ```
-- title: Judul section gallery
-- area: Nama kota (untuk display)
-- description: Deskripsi singkat gallery
-- caption: Caption untuk gambar
 
-### video & section_video
+---
+
+## VIDEO & SECTION VIDEO
+
 ```yaml
-video: ""
+video: "/assets/videos/service-page/riksa-uji-forklift.webm"
 section_video:
   title: "Video Layanan"
   area: "Bekasi"
@@ -239,30 +131,31 @@ section_video:
   cta_text: "Ingin melihat langsung proses inspeksi K3 di lokasi Anda?"
   cta_button: "Hubungi Kami"
 ```
-- video: Path ke file video (kosong = fallback ke default)
-- title: Judul section video
-- area: Nama kota
-- description: Deskripsi video
-- caption: Caption video
-- cta_text: Teks ajakan di bawah video
-- cta_button: Label tombol CTA
+
+**Catatan:**
+- `video`: Path ke file video (kosong = fallback ke default)
 
 ---
 
-## BATCH 2: HERO + COMPANY INTRO
+## SECTION 1: section_hero
 
-### section_hero
 ```yaml
 section_hero:
   title: "Butuh Layanan Riksa Uji K3"
   theme: "blue"
   area: "Bekasi"
-  description: "Sedang mencari jasa riksa uji K3 terpercaya di [Kota]? PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian peralatan K3 dengan standar profesional untuk seluruh wilayah [Kota] dan sekitarnya."
+  description: "Sedang mencari jasa riksa uji K3 terpercaya di Bekasi? PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi dan pengujian peralatan K3 dengan standar profesional untuk seluruh wilayah Bekasi dan sekitarnya."
   label_wilayah: "Melayani Wilayah:"
   wilayah_layanan:
-    - [Wilayah 1]
-    - [Wilayah 2]
-    - ...
+    - Bekasi Utara
+    - Bekasi Selatan
+    - Bekasi Barat
+    - Bekasi Timur
+    - Cikarang
+    - Tambun
+    - Cibitung
+    - Karawang
+    - Cileungsi
   badges:
     - text: "Izin Resmi Kemenaker"
       icon: "bi-shield-check"
@@ -275,47 +168,42 @@ section_hero:
   cta_notice: "Respon cepat 24/7"
 ```
 
-**Theme options:**
-- `blue` - Default, professional
-- `orange` - Industrial, warehouse
-- `red` - Heat, danger (boiler)
-- `green` - Safety, compliance
-- `purple` - Premium, specialized
-- `teal` - Technical, precision
-- `amber` - Warning, caution
-- `indigo` - Corporate
+**Catatan:**
+- `theme`: blue, orange, red, green, purple, teal, amber, indigo
+- `wilayah_layanan`: 6-10 wilayah/kecamatan utama
+- `badges`: 3 badge keunggulan dengan icon Bootstrap
 
-**wilayah_layanan:**
-- Daftar 6-10 wilayah/kecamatan utama yang dilayani
-- Prioritaskan kawasan industri dan area strategis
+---
 
-### section_company_intro
+## SECTION 2: section_company_intro
+
 ```yaml
 section_company_intro:
-  title: "PT. Cipta Mas Jaya: sebagai PJK3 Riksa Uji di [Kota]"
+  title: "PT. Cipta Mas Jaya: sebagai PJK3 Riksa Uji di Bekasi"
   company_name: "PT. Cipta Mas Jaya"
   area: "Bekasi"
-  intro: "PT. Cipta Mas Jaya adalah Perusahaan Jasa Keselamatan dan Kesehatan Kerja Riksa Uji (PJK3 Riksa Uji) resmi yang melayani kebutuhan riksa uji peralatan kerja di wilayah [Kota]."
+  intro: "PT. Cipta Mas Jaya adalah Perusahaan Jasa Keselamatan dan Kesehatan Kerja Riksa Uji (PJK3 Riksa Uji) resmi yang melayani kebutuhan riksa uji peralatan kerja di wilayah Bekasi."
   subsections:
     - title: "Apa Itu PJK3 dan Perannya dalam Keselamatan Kerja"
       paragraphs:
-        - "[Paragraf 1: Definisi PJK3]"
-        - "[Paragraf 2: Pentingnya PJK3 di wilayah tersebut]"
-        - "[Paragraf 3: Peran edukatif dan konsultatif]"
+        - "Paragraf 1: Definisi PJK3..."
+        - "Paragraf 2: Pentingnya PJK3 di wilayah tersebut..."
+        - "Paragraf 3: Peran edukatif dan konsultatif..."
 
-    - title: "Layanan Riksa Uji K3 dari PT. Cipta Mas Jaya di [Kota]"
+    - title: "Layanan Riksa Uji K3 dari PT. Cipta Mas Jaya di Bekasi"
       paragraphs:
-        - "[Paragraf 1: Jenis layanan yang tersedia]"
-        - "[Paragraf 2: Keunggulan dan jangkauan layanan]"
+        - "Paragraf 1: Jenis layanan yang tersedia..."
+        - "Paragraf 2: Keunggulan dan jangkauan layanan..."
 ```
+
+**Catatan:**
 - 2 subsections dengan 2-3 paragraf masing-masing
 - Sesuaikan dengan karakteristik kota
 
 ---
 
-## BATCH 3: SERVICES + AREA
+## SECTION 3: section_services
 
-### section_services
 ```yaml
 section_services:
   title: "Keunggulan PT. Cipta Mas Jaya sebagai PJK3 Terdekat dan Profesional"
@@ -345,212 +233,264 @@ section_services:
       description: "Pemeriksaan perangkat pemadam kebakaran, hydrant..."
       icon: "bi-fire"
 ```
-- 6 layanan utama (standar)
+
+**Catatan:**
+- 6 layanan standar PJK3
 - Sesuaikan deskripsi dengan kebutuhan industri di kota tersebut
 
-### section_area
+---
+
+## SECTION 4: section_area
+
 ```yaml
 section_area:
-  title: "Karakteristik Wilayah dan Industri di [Kota]"
-  intro: "[Pengantar tentang karakteristik wilayah]"
+  title: "Karakteristik Wilayah dan Industri di Bekasi"
+  intro: "Bekasi adalah salah satu kota industri terbesar di Indonesia..."
   characteristics:
-    - title: "[Karakteristik 1 - misal: Zona Industri]"
-      description: "[Deskripsi]"
+    - title: "Zona Industri Terpadu"
+      description: "Kawasan industri MM2100, EJIP, Jababeka..."
       icon: "bi-building"
 
-    - title: "[Karakteristik 2 - misal: Permukiman]"
-      description: "[Deskripsi]"
+    - title: "Permukiman Padat"
+      description: "Area perumahan dan apartemen yang berkembang pesat..."
       icon: "bi-house"
 
-    - title: "[Karakteristik 3 - misal: Infrastruktur]"
-      description: "[Deskripsi]"
+    - title: "Infrastruktur Modern"
+      description: "Akses tol Jakarta-Cikampek, stasiun kereta..."
       icon: "bi-signpost-2"
 
-    - title: "[Karakteristik 4 - misal: Pusat Komersial]"
-      description: "[Deskripsi]"
+    - title: "Pusat Komersial"
+      description: "Mall, ruko, dan kawasan perdagangan..."
       icon: "bi-shop"
 ```
+
+**Catatan:**
 - 4 karakteristik utama wilayah
 - Sesuaikan dengan kondisi geografis dan ekonomi kota
 
 ---
 
-## BATCH 4: RISKS + ROLE + BUSINESS
+## SECTION 5: section_risks
 
-### section_risks
 ```yaml
 section_risks:
-  title: "Risiko K3 di Kawasan Industri dan Hunian [Kota]"
-  intro: "[Pengantar tentang risiko K3 di wilayah tersebut]"
+  title: "Risiko K3 di Kawasan Industri dan Hunian Bekasi"
+  intro: "Sebagai kawasan industri dan permukiman padat, Bekasi memiliki berbagai risiko K3..."
   risks:
-    - title: "[Risiko 1]"
-      description: "[Deskripsi risiko]"
+    - title: "Kecelakaan Alat Angkat"
+      description: "Risiko kecelakaan crane dan forklift di kawasan industri..."
       severity: "high"
       icon: "bi-exclamation-octagon"
 
-    - title: "[Risiko 2]"
-      description: "[Deskripsi risiko]"
+    - title: "Bahaya Listrik"
+      description: "Risiko korsleting dan kebakaran akibat instalasi tidak layak..."
       severity: "high"
       icon: "bi-lightning-charge"
 
-    - title: "[Risiko 3]"
-      description: "[Deskripsi risiko]"
+    - title: "Kebakaran"
+      description: "Risiko kebakaran di pabrik dan gedung bertingkat..."
       severity: "medium"
       icon: "bi-fire"
 
-    - title: "[Risiko 4]"
-      description: "[Deskripsi risiko]"
+    - title: "Kecelakaan Konstruksi"
+      description: "Risiko di proyek pembangunan gedung dan infrastruktur..."
       severity: "medium"
       icon: "bi-cone-striped"
 ```
-- 4 risiko K3 utama
-- severity: "high", "medium", atau "low"
 
-### section_role
+**Catatan:**
+- 4 risiko K3 utama
+- `severity`: high, medium, atau low
+
+---
+
+## SECTION 6: section_role
+
 ```yaml
 section_role:
-  title: "Peran Strategis PJK3 dalam Pembangunan Kota [Kota]"
-  intro: "[Pengantar tentang peran PJK3]"
+  title: "Peran Strategis PJK3 dalam Pembangunan Kota Bekasi"
+  intro: "PJK3 memiliki peran penting dalam mendukung pembangunan dan keselamatan kerja..."
   roles:
-    - title: "[Peran 1 - misal: Mendukung Proyek Konstruksi]"
-      description: "[Deskripsi]"
+    - title: "Mendukung Proyek Konstruksi"
+      description: "Memastikan keselamatan peralatan di proyek pembangunan..."
       icon: "bi-building-add"
 
-    - title: "[Peran 2 - misal: Kepatuhan K3 Sektor Swasta]"
-      description: "[Deskripsi]"
+    - title: "Kepatuhan K3 Sektor Swasta"
+      description: "Membantu perusahaan memenuhi regulasi K3..."
       icon: "bi-clipboard-check"
 
-    - title: "[Peran 3 - misal: Edukasi UMKM]"
-      description: "[Deskripsi]"
+    - title: "Edukasi UMKM"
+      description: "Memberikan pemahaman K3 kepada pelaku usaha kecil..."
       icon: "bi-mortarboard"
 
-    - title: "[Peran 4 - misal: Keselamatan Transportasi]"
-      description: "[Deskripsi]"
+    - title: "Keselamatan Transportasi"
+      description: "Inspeksi peralatan di sektor transportasi dan logistik..."
       icon: "bi-train-front"
 ```
+
+**Catatan:**
 - 4 peran strategis PJK3
 
-### section_business
+---
+
+## SECTION 7: section_business
+
 ```yaml
 section_business:
-  title: "Potensi Bisnis dan Investasi di Wilayah [Kota]"
-  intro: "[Pengantar tentang potensi bisnis]"
+  title: "Potensi Bisnis dan Investasi di Wilayah Bekasi"
+  intro: "Bekasi menawarkan berbagai peluang bisnis dan investasi..."
   potentials:
-    - title: "[Potensi 1 - misal: Kawasan Industri Terpadu]"
-      description: "[Deskripsi]"
+    - title: "Kawasan Industri Terpadu"
+      description: "Investasi di kawasan industri dengan infrastruktur lengkap..."
       icon: "bi-buildings"
 
-    - title: "[Potensi 2 - misal: Startup dan Teknologi]"
-      description: "[Deskripsi]"
+    - title: "Startup dan Teknologi"
+      description: "Perkembangan ekosistem startup dan digital..."
       icon: "bi-rocket-takeoff"
 
-    - title: "[Potensi 3 - misal: Kelancaran Operasional]"
-      description: "[Deskripsi]"
+    - title: "Kelancaran Operasional"
+      description: "Peralatan yang terawat menjamin kelancaran produksi..."
       icon: "bi-graph-up"
 
-    - title: "[Potensi 4 - misal: Minimalkan Downtime]"
-      description: "[Deskripsi]"
+    - title: "Minimalkan Downtime"
+      description: "Inspeksi berkala mencegah kerusakan mendadak..."
       icon: "bi-clock-history"
 ```
+
+**Catatan:**
 - 4 potensi bisnis/investasi
 
 ---
 
-## BATCH 5: CITY + COVERAGE
+## SECTION 8: section_city
 
-### section_city
 ```yaml
 section_city:
-  title: "Tentang Kota [Kota]"
-  city_name: "[Kota]"
-  intro: "[Pengantar singkat tentang kota]"
+  title: "Tentang Kota Bekasi"
+  city_name: "Bekasi"
+  intro: "Kota Bekasi adalah kota metropolitan yang berkembang pesat..."
   highlights:
-    - title: "[Highlight 1 - misal: Posisi Strategis]"
-      description: "[Deskripsi]"
+    - title: "Posisi Strategis"
+      description: "Berbatasan langsung dengan Jakarta..."
       icon: "bi-geo-alt"
 
-    - title: "[Highlight 2 - misal: Pertumbuhan Ekonomi]"
-      description: "[Deskripsi]"
+    - title: "Pertumbuhan Ekonomi"
+      description: "Salah satu kota dengan PDRB tertinggi..."
       icon: "bi-graph-up-arrow"
 
-    - title: "[Highlight 3 - misal: Komitmen Pemerintah]"
-      description: "[Deskripsi]"
+    - title: "Komitmen Pemerintah"
+      description: "Pemerintah kota aktif mendukung standar K3..."
       icon: "bi-shield-check"
 
-    - title: "[Highlight 4 - misal: Layanan Terintegrasi]"
-      description: "[Deskripsi]"
+    - title: "Layanan Terintegrasi"
+      description: "Kemudahan akses layanan publik dan perizinan..."
       icon: "bi-cpu"
 ```
+
+**Catatan:**
 - 4 highlights tentang kota
 
-### section_coverage
+---
+
+## SECTION 9: section_coverage
+
 ```yaml
 section_coverage:
   title: "Area Pelayanan Riksa Uji"
-  area: "[Kota]"
-  intro: "PT. Cipta Mas Jaya melayani inspeksi dan riksa uji K3 ke seluruh wilayah [Kota] dan sekitarnya..."
+  area: "Bekasi"
+  intro: "PT. Cipta Mas Jaya melayani inspeksi dan riksa uji K3 ke seluruh wilayah Bekasi dan sekitarnya..."
 
   zona_industri:
-    - nama: "[Kawasan Industri 1]"
+    - nama: "Kawasan MM2100"
       kawasan:
-        - "[Sub-kawasan 1]"
-        - "[Sub-kawasan 2]"
-        - "[Sub-kawasan 3]"
+        - "Blok A-D"
+        - "Blok E-H"
+        - "Blok I-L"
       warna: "primary"
 
-    - nama: "[Kawasan Industri 2]"
+    - nama: "Kawasan EJIP"
       kawasan:
-        - "[Sub-kawasan 1]"
-        - "[Sub-kawasan 2]"
-        - "[Sub-kawasan 3]"
+        - "Plot 1-5"
+        - "Plot 6-10"
+        - "Plot 11-15"
       warna: "success"
 
-    - nama: "[Kawasan Industri 3]"
+    - nama: "Kawasan Jababeka"
       kawasan:
-        - "[Sub-kawasan 1]"
-        - "[Sub-kawasan 2]"
-        - "[Sub-kawasan 3]"
+        - "Jababeka 1"
+        - "Jababeka 2"
+        - "Jababeka 3"
       warna: "info"
 
   judul_industri: "Kawasan Industri Utama"
   deskripsi_industri: "Kawasan industri strategis dengan kebutuhan inspeksi K3 tinggi..."
 
   wilayah_kota:
-    - nama: "[Kecamatan 1]"
+    - nama: "Bekasi Utara"
       kelurahan:
-        - "[Kelurahan 1, Kelurahan 2]"
-        - "[Kelurahan 3, Kelurahan 4]"
-        - "[Kelurahan 5]"
+        - "Harapan Jaya, Kaliabang Tengah"
+        - "Teluk Pucung, Perwira"
+        - "Harapan Baru"
       warna: "primary"
-    # ... (4 wilayah kota)
 
-  judul_kota: "Wilayah Kota [Kota]"
-  deskripsi_kota: "Kecamatan dan kelurahan di pusat Kota [Kota]..."
+    - nama: "Bekasi Selatan"
+      kelurahan:
+        - "Jaka Mulya, Jaka Setia"
+        - "Pekayon Jaya, Marga Jaya"
+        - "Kayuringin Jaya"
+      warna: "success"
+
+    - nama: "Bekasi Barat"
+      kelurahan:
+        - "Bintara, Bintara Jaya"
+        - "Jakasampurna, Kranji"
+        - "Kota Baru"
+      warna: "info"
+
+    - nama: "Bekasi Timur"
+      kelurahan:
+        - "Aren Jaya, Bekasi Jaya"
+        - "Duren Jaya, Margahayu"
+        - "Cimuning"
+      warna: "warning"
+
+  judul_kota: "Wilayah Kota Bekasi"
+  deskripsi_kota: "Kecamatan dan kelurahan di pusat Kota Bekasi..."
 
   wilayah_pinggiran:
-    - nama: "[Kecamatan Pinggiran 1]"
+    - nama: "Cikarang"
       kelurahan:
-        - "[Kelurahan 1, Kelurahan 2]"
-        - "[Kelurahan 3, Kelurahan 4]"
+        - "Cikarang Utara, Cikarang Selatan"
+        - "Cikarang Barat, Cikarang Timur"
       warna: "info"
-    # ... (2 wilayah pinggiran)
 
-  judul_pinggiran: "Wilayah [Nama Area] & Sekitarnya"
+    - nama: "Tambun & Cibitung"
+      kelurahan:
+        - "Tambun Utara, Tambun Selatan"
+        - "Cibitung, Cikarang Pusat"
+      warna: "success"
+
+  judul_pinggiran: "Wilayah Cikarang & Sekitarnya"
   deskripsi_pinggiran: "Area industri dan pengembangan..."
 
   kecamatan_lainnya:
-    - "[Kecamatan 1]"
-    - "[Kecamatan 2]"
-    # ... (8 kecamatan)
+    - "Pondok Gede"
+    - "Jatiasih"
+    - "Jatisampurna"
+    - "Bantargebang"
+    - "Mustikajaya"
+    - "Rawalumbu"
+    - "Medansatria"
+    - "Pondok Melati"
 
   landmark_industri:
-    - nama: "[Landmark 1]"
+    - nama: "Pelabuhan Marunda"
       icon: "bi-water"
       warna: "primary"
-    - nama: "[Landmark 2]"
+    - nama: "Dry Port Cikarang"
       icon: "bi-box-seam"
       warna: "info"
-    - nama: "[Landmark 3]"
+    - nama: "Gudang Logistik"
       icon: "bi-building"
       warna: "success"
 
@@ -558,16 +498,16 @@ section_coverage:
   deskripsi_landmark_industri: "Area logistik strategis..."
 
   landmark_komersial:
-    - nama: "[Mall 1]"
+    - nama: "Summarecon Mall Bekasi"
       icon: "bi-shop"
       warna: "warning"
-    - nama: "[Mall 2]"
+    - nama: "Metropolitan Mall"
       icon: "bi-shop-window"
       warna: "info"
-    - nama: "[Mall 3]"
+    - nama: "Grand Galaxy Park"
       icon: "bi-building"
       warna: "danger"
-    - nama: "[Mall 4]"
+    - nama: "Mega Bekasi"
       icon: "bi-buildings"
       warna: "success"
 
@@ -575,25 +515,22 @@ section_coverage:
   deskripsi_landmark_komersial: "Mall dan gedung komersial..."
 ```
 
-**Warna Bootstrap:**
-- primary (biru)
-- success (hijau)
-- info (cyan)
-- warning (kuning)
-- danger (merah)
-- secondary (abu-abu)
+**Catatan:**
+- `warna`: primary, success, info, warning, danger, secondary
+- 3 zona_industri, 4 wilayah_kota, 2 wilayah_pinggiran
+- 8 kecamatan_lainnya
+- 3 landmark_industri, 4 landmark_komersial
 
 ---
 
-## BATCH 6: ORDER + TESTIMONIALS
+## SECTION 10: section_order
 
-### section_order
 ```yaml
 section_order:
   title: "Cara Pemesanan Layanan Riksa Uji"
-  area: "[Kota]"
+  area: "Bekasi"
   phone: "08568258841"
-  intro: "Proses pemesanan layanan riksa uji K3 di [Kota] sangat mudah dan praktis..."
+  intro: "Proses pemesanan layanan riksa uji K3 di Bekasi sangat mudah dan praktis..."
   initial_steps:
     - title: "Identifikasi Kebutuhan"
       description: "Tentukan jenis peralatan yang perlu diinspeksi..."
@@ -626,58 +563,74 @@ section_order:
       icon: "bi-award"
       color: "success"
 ```
-- 3 initial_steps + 3 final_steps = 6 langkah total
 
-### section_testimonials
+**Catatan:**
+- 3 initial_steps + 3 final_steps = 6 langkah total
+- `color`: primary, success, info, warning, danger
+
+---
+
+## SECTION 11: section_testimonials
+
 ```yaml
 section_testimonials:
   title: "Testimoni Pelanggan"
-  area: "[Kota]"
+  area: "Bekasi"
 
   testimoni_industri:
-    - nama: "[Nama Pelanggan]"
-      jenis_usaha: "[Jenis Usaha di Lokasi]"
-      jabatan: "[Jabatan]"
+    - nama: "Budi Santoso"
+      jenis_usaha: "Pabrik Manufaktur di MM2100"
+      jabatan: "Plant Manager"
       rating: 5
-      judul: "[Judul Singkat Testimoni]"
-      komentar: "[Komentar lengkap]"
+      judul: "Pelayanan Profesional"
+      komentar: "Tim CMJ sangat profesional dan detail dalam melakukan inspeksi..."
       warna: "primary"
 
-    - nama: "[Nama Pelanggan 2]"
-      # ... (sama)
+    - nama: "Agus Wijaya"
+      jenis_usaha: "Gudang Logistik di EJIP"
+      jabatan: "HSE Manager"
+      rating: 5
+      judul: "Cepat dan Tepat"
+      komentar: "Proses inspeksi cepat tanpa mengganggu operasional..."
       warna: "info"
 
   judul_industri: "Testimoni Klien Industri"
-  deskripsi_industri: "Review dari klien pabrik dan kawasan industri di [Kota]"
+  deskripsi_industri: "Review dari klien pabrik dan kawasan industri di Bekasi"
 
   testimoni_komersial:
-    - nama: "[Nama Pelanggan]"
-      jenis_usaha: "[Jenis Usaha]"
-      jabatan: "[Jabatan]"
+    - nama: "Dewi Lestari"
+      jenis_usaha: "Mall Summarecon Bekasi"
+      jabatan: "Building Manager"
       rating: 5
-      judul: "[Judul Singkat]"
-      komentar: "[Komentar]"
+      judul: "Terpercaya dan Bersertifikat"
+      komentar: "Kami percayakan inspeksi elevator dan eskalator ke CMJ..."
       warna: "success"
 
-    - nama: "[Nama Pelanggan 2]"
-      # ... (sama)
+    - nama: "Rudi Hartono"
+      jenis_usaha: "Apartemen Grand Kamala"
+      jabatan: "Facility Manager"
+      rating: 5
+      judul: "Harga Kompetitif"
+      komentar: "Harga bersaing dengan kualitas layanan prima..."
       warna: "warning"
 
   judul_komersial: "Testimoni Klien Komersial"
   deskripsi_komersial: "Review dari klien gedung perkantoran, mall, dan fasilitas publik"
 ```
+
+**Catatan:**
 - 2 testimoni industri + 2 testimoni komersial
-- rating: 1-5 (integer)
+- `rating`: integer 1-5
+- `warna`: primary, success, info, warning, danger
 
 ---
 
-## BATCH 7: TIPS + FAQ
+## SECTION 12: section_tips
 
-### section_tips
 ```yaml
 section_tips:
   title: "Tips Memilih PJK3"
-  area: "[Kota]"
+  area: "Bekasi"
   intro: "Pastikan Anda memilih PJK3 yang memenuhi kriteria berikut..."
 
   tips:
@@ -708,37 +661,42 @@ section_tips:
       warna: "warning"
       icon: "bi-cash-coin"
 ```
+
+**Catatan:**
 - 3 kategori tips dengan 3 kriteria masing-masing
 
-### section_faq
+---
+
+## SECTION 13: section_faq
+
 ```yaml
 section_faq:
   title: "FAQ Riksa Uji K3"
-  area: "[Kota]"
+  area: "Bekasi"
 
   faq_layanan:
-    - pertanyaan: "Apa saja jenis peralatan yang bisa diinspeksi...?"
-      jawaban: "[Jawaban lengkap]"
+    - pertanyaan: "Apa saja jenis peralatan yang bisa diinspeksi oleh PT. Cipta Mas Jaya?"
+      jawaban: "Kami melayani inspeksi untuk crane, forklift, boiler, pressure vessel, elevator, eskalator, instalasi listrik, penyalur petir, dan alat pemadam kebakaran."
       icon: "bi-tools"
 
-    - pertanyaan: "Berapa lama proses inspeksi...?"
-      jawaban: "[Jawaban lengkap]"
+    - pertanyaan: "Berapa lama proses inspeksi dilakukan?"
+      jawaban: "Durasi inspeksi tergantung jenis dan jumlah peralatan. Umumnya 1-3 hari kerja untuk inspeksi standar."
       icon: "bi-clock"
 
-    - pertanyaan: "Apakah inspeksi dilakukan di lokasi...?"
-      jawaban: "[Jawaban lengkap]"
+    - pertanyaan: "Apakah inspeksi dilakukan di lokasi klien?"
+      jawaban: "Ya, tim kami akan datang ke lokasi Anda untuk melakukan inspeksi secara langsung."
       icon: "bi-geo-alt"
 
   judul_layanan: "Layanan & Proses Inspeksi"
   deskripsi_layanan: "Informasi seputar jenis layanan dan proses inspeksi K3 kami"
 
   faq_sertifikasi:
-    - pertanyaan: "Apakah sertifikat dari PT. Cipta Mas Jaya diakui...?"
-      jawaban: "[Jawaban lengkap]"
+    - pertanyaan: "Apakah sertifikat dari PT. Cipta Mas Jaya diakui secara resmi?"
+      jawaban: "Ya, kami adalah PJK3 resmi berlisensi Kemenaker RI, sehingga sertifikat yang kami terbitkan diakui secara nasional."
       icon: "bi-award"
 
-    - pertanyaan: "Berapa lama masa berlaku sertifikat...?"
-      jawaban: "[Jawaban lengkap]"
+    - pertanyaan: "Berapa lama masa berlaku sertifikat riksa uji?"
+      jawaban: "Masa berlaku sertifikat bervariasi sesuai jenis peralatan, umumnya 1-2 tahun tergantung regulasi yang berlaku."
       icon: "bi-calendar-check"
 
   judul_sertifikasi: "Sertifikasi & Legalitas"
@@ -746,88 +704,96 @@ section_faq:
 
   faq_biaya:
     - pertanyaan: "Berapa biaya inspeksi riksa uji K3?"
-      jawaban: "[Jawaban lengkap]"
+      jawaban: "Biaya disesuaikan dengan jenis dan jumlah peralatan. Hubungi kami untuk penawaran harga yang kompetitif."
       icon: "bi-cash-coin"
 
     - pertanyaan: "Apakah ada diskon untuk inspeksi dalam jumlah banyak?"
-      jawaban: "[Jawaban lengkap]"
+      jawaban: "Ya, kami memberikan harga khusus untuk inspeksi dalam jumlah besar atau kontrak tahunan."
       icon: "bi-percent"
 
     - pertanyaan: "Bagaimana sistem pembayarannya?"
-      jawaban: "[Jawaban lengkap]"
+      jawaban: "Pembayaran dapat dilakukan via transfer bank setelah inspeksi selesai dan laporan diterbitkan."
       icon: "bi-credit-card"
 
   judul_biaya: "Biaya & Pembayaran"
   deskripsi_biaya: "Informasi seputar biaya inspeksi dan metode pembayaran"
 ```
+
+**Catatan:**
 - 3 kategori FAQ: layanan (3), sertifikasi (2), biaya (3)
 
 ---
 
-## BATCH 8: ABOUT CITY + CONCLUSION
+## SECTION 14: section_about_city
 
-### section_about_city
 ```yaml
 section_about_city:
   title: "Tentang"
-  area: "[Kota]"
-  tagline: "[Tagline Kota - misal: Kota Industri & Perdagangan]"
-  deskripsi_singkat: "[Deskripsi singkat 10-15 kata]"
-  overview: "[Paragraf overview 100-150 kata tentang kota dan pentingnya layanan K3]"
+  area: "Bekasi"
+  tagline: "Kota Industri & Perdagangan"
+  deskripsi_singkat: "Pusat industri manufaktur terbesar di Indonesia"
+  overview: "Kota Bekasi adalah kota metropolitan yang terletak di sebelah timur Jakarta. Sebagai salah satu kota industri terbesar di Indonesia, Bekasi memiliki kebutuhan tinggi akan layanan inspeksi K3..."
 
   paragraphs:
-    - judul: "Sejarah & Perkembangan [Kota]"
+    - judul: "Sejarah & Perkembangan Bekasi"
       icon: "bi-clock-history"
-      subjudul: "[Subjudul - misal: Dari Desa Agraris ke Kota Metropolitan]"
-      deskripsi: "[Deskripsi singkat 2-3 kalimat]"
+      subjudul: "Dari Desa Agraris ke Kota Metropolitan"
+      deskripsi: "Bekasi telah berkembang pesat dari desa agraris menjadi kota industri modern..."
       fakta:
-        - "[Fakta menarik 1]"
-        - "[Fakta menarik 2]"
-        - "[Fakta menarik 3]"
+        - "Bekasi resmi menjadi kotamadya pada tahun 1997"
+        - "Luas wilayah mencapai 210,49 km²"
+        - "Populasi lebih dari 2,5 juta jiwa"
 
-    - judul: "Ekonomi & Industri [Kota]"
+    - judul: "Ekonomi & Industri Bekasi"
       icon: "bi-graph-up-arrow"
-      subjudul: "[Subjudul - misal: Kontribusi terhadap Perekonomian]"
-      deskripsi: "[Deskripsi singkat]"
+      subjudul: "Kontribusi terhadap Perekonomian Nasional"
+      deskripsi: "Bekasi menyumbang kontribusi signifikan terhadap PDRB Jawa Barat..."
       fakta:
-        - "[Fakta ekonomi 1]"
-        - "[Fakta ekonomi 2]"
-        - "[Fakta ekonomi 3 - hubungkan dengan kebutuhan PJK3]"
+        - "Lebih dari 1.000 pabrik beroperasi di Bekasi"
+        - "Sektor industri menyerap 60% tenaga kerja"
+        - "Kebutuhan inspeksi K3 meningkat setiap tahun"
 
-    - judul: "Kawasan Industri di [Kota]"
+    - judul: "Kawasan Industri di Bekasi"
       icon: "bi-building"
-      subjudul: "[Subjudul - misal: Pusat Manufaktur]"
-      deskripsi: "[Deskripsi singkat]"
+      subjudul: "Pusat Manufaktur Terbesar"
+      deskripsi: "Bekasi memiliki beberapa kawasan industri terbesar di Indonesia..."
       list_item:
-        - "[Kawasan industri 1 - dengan deskripsi singkat]"
-        - "[Kawasan industri 2]"
-        - "[Kawasan industri 3]"
-        - "[Kawasan industri 4]"
-        - "[Kawasan industri 5]"
-      info_tambahan: "[Kalimat penutup tentang kebutuhan riksa uji K3]"
+        - "MM2100 - Kawasan industri multinasional terbesar"
+        - "EJIP - East Jakarta Industrial Park"
+        - "Jababeka - Kawasan industri terintegrasi"
+        - "Delta Silicon - Pusat industri elektronik"
+        - "Hyundai Industrial Park - Kawasan otomotif"
+      info_tambahan: "Seluruh kawasan ini membutuhkan layanan inspeksi K3 berkala."
 
     - judul: "Infrastruktur & Aksesibilitas"
       icon: "bi-signpost-split"
-      subjudul: "[Subjudul - misal: Konektivitas yang Memudahkan]"
-      deskripsi: "[Deskripsi singkat]"
+      subjudul: "Konektivitas yang Memudahkan"
+      deskripsi: "Bekasi memiliki infrastruktur transportasi yang lengkap..."
       list_item:
-        - "[Infrastruktur 1 - jalan tol, stasiun, dll]"
-        - "[Infrastruktur 2]"
-        - "[Infrastruktur 3]"
-        - "[Infrastruktur 4]"
-      info_tambahan: "[Kalimat tentang kemudahan akses tim CMJ]"
+        - "Tol Jakarta-Cikampek dengan 5 gerbang tol"
+        - "Stasiun Bekasi dan Bekasi Timur"
+        - "LRT Jabodebek"
+        - "Akses ke Bandara Soekarno-Hatta"
+      info_tambahan: "Akses mudah memungkinkan tim CMJ menjangkau seluruh wilayah Bekasi dengan cepat."
 ```
+
+**Catatan:**
 - 4 paragraphs dengan struktur berbeda:
   - Paragraf 1-2: menggunakan `fakta` (array string)
   - Paragraf 3-4: menggunakan `list_item` dan `info_tambahan`
 
-### section_conclusion
+---
+
+## SECTION 15: section_conclusion
+
 ```yaml
 section_conclusion:
   title: "Kesimpulan"
   paragraphs:
-    - "PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 di wilayah [Kota]. Hubungi 08568258841 untuk semua kebutuhan riksa uji Anda."
+    - "PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 di wilayah Bekasi. Hubungi 08568258841 untuk semua kebutuhan riksa uji Anda."
 ```
+
+**Catatan:**
 - 1 paragraf kesimpulan dengan CTA
 
 ---
@@ -835,60 +801,178 @@ section_conclusion:
 ## ICON REFERENCE (Bootstrap Icons)
 
 ### Umum
-- bi-shield-check : Keselamatan, Izin
-- bi-person-badge : Tenaga Ahli, Sertifikasi
-- bi-cash-coin : Harga, Biaya
-- bi-building : Gedung, Industri
-- bi-buildings : Kawasan, Multiple buildings
-- bi-building-add : Konstruksi Baru
-- bi-geo-alt : Lokasi
-- bi-graph-up-arrow : Pertumbuhan, Ekonomi
-- bi-clock-history : Sejarah, Waktu
-- bi-signpost-split : Infrastruktur
+```
+bi-shield-check     : Keselamatan, Izin
+bi-person-badge     : Tenaga Ahli, Sertifikasi
+bi-cash-coin        : Harga, Biaya
+bi-building         : Gedung, Industri
+bi-buildings        : Kawasan, Multiple buildings
+bi-building-add     : Konstruksi Baru
+bi-geo-alt          : Lokasi
+bi-graph-up-arrow   : Pertumbuhan, Ekonomi
+bi-clock-history    : Sejarah, Waktu
+bi-signpost-split   : Infrastruktur
+```
 
 ### Layanan
-- bi-box-seam : Angkat Angkut
-- bi-thermometer-half : Bejana Tekan, Boiler
-- bi-gear : Mesin, Produksi
-- bi-arrow-up-square : Elevator
-- bi-lightning : Listrik
-- bi-fire : Kebakaran
+```
+bi-box-seam         : Angkat Angkut
+bi-thermometer-half : Bejana Tekan, Boiler
+bi-gear             : Mesin, Produksi
+bi-arrow-up-square  : Elevator
+bi-lightning        : Listrik
+bi-fire             : Kebakaran
+```
 
 ### Risiko
-- bi-exclamation-octagon : Bahaya Tinggi
-- bi-lightning-charge : Risiko Listrik
-- bi-cone-striped : Konstruksi
+```
+bi-exclamation-octagon : Bahaya Tinggi
+bi-lightning-charge    : Risiko Listrik
+bi-cone-striped        : Konstruksi
+```
 
 ### Proses
-- bi-search : Identifikasi
-- bi-telephone-fill : Kontak
-- bi-chat-dots-fill : Konsultasi
-- bi-clipboard-check : Inspeksi
-- bi-file-earmark-text : Laporan
-- bi-award : Sertifikat
+```
+bi-search           : Identifikasi
+bi-telephone-fill   : Kontak
+bi-chat-dots-fill   : Konsultasi
+bi-clipboard-check  : Inspeksi
+bi-file-earmark-text: Laporan
+bi-award            : Sertifikat
+```
 
 ### FAQ
-- bi-tools : Layanan
-- bi-clock : Waktu
-- bi-calendar-check : Jadwal
-- bi-percent : Diskon
-- bi-credit-card : Pembayaran
+```
+bi-tools            : Layanan
+bi-clock            : Waktu
+bi-calendar-check   : Jadwal
+bi-percent          : Diskon
+bi-credit-card      : Pembayaran
+```
 
 ---
 
-## CHECKLIST SEBELUM PUBLISH
+## CHECKLIST VERIFIKASI
 
-- [ ] Semua field terisi (tidak ada yang kosong "")
+### Front Matter
+- [ ] layout: `node/node--pjk3-city`
+- [ ] title terisi dengan format "PJK3 [Nama Kota]"
+- [ ] date format YYYY-MM-DD HH:MM:SS
+- [ ] description 150-160 karakter, sertakan nama kota dan telepon
+- [ ] area_served terisi nama kota
+- [ ] extra_js terisi `/assets/js/gallery-modal.js`
+- [ ] categories terisi
+- [ ] tags terisi (7 tags standar)
+
+### Images & Gallery
+- [ ] images[0-3] terisi atau kosong untuk fallback
+- [ ] section_gallery: title, area, description, caption terisi
+
+### Video
+- [ ] video terisi path atau kosong untuk fallback
+- [ ] section_video: title, area, description, caption, cta_text, cta_button terisi
+
+### Section 1: section_hero
+- [ ] title terisi
+- [ ] theme valid (blue/orange/red/green/purple/teal/amber/indigo)
+- [ ] area terisi nama kota
+- [ ] description terisi
+- [ ] label_wilayah terisi
+- [ ] wilayah_layanan: 6-10 wilayah
+- [ ] badges: 3 item dengan text dan icon valid
+- [ ] cta_title, cta_button, cta_notice terisi
+
+### Section 2: section_company_intro
+- [ ] title, company_name, area, intro terisi
+- [ ] subsections: 2 item
+- [ ] Setiap subsection: title dan 2-3 paragraphs
+
+### Section 3: section_services
+- [ ] title, intro terisi
+- [ ] services: 6 layanan
+- [ ] Setiap service: title, description, icon valid
+
+### Section 4: section_area
+- [ ] title, intro terisi
+- [ ] characteristics: 4 item
+- [ ] Setiap characteristic: title, description, icon valid
+
+### Section 5: section_risks
+- [ ] title, intro terisi
+- [ ] risks: 4 item
+- [ ] Setiap risk: title, description, severity (high/medium/low), icon valid
+
+### Section 6: section_role
+- [ ] title, intro terisi
+- [ ] roles: 4 item
+- [ ] Setiap role: title, description, icon valid
+
+### Section 7: section_business
+- [ ] title, intro terisi
+- [ ] potentials: 4 item
+- [ ] Setiap potential: title, description, icon valid
+
+### Section 8: section_city
+- [ ] title, city_name, intro terisi
+- [ ] highlights: 4 item
+- [ ] Setiap highlight: title, description, icon valid
+
+### Section 9: section_coverage
+- [ ] title, area, intro terisi
+- [ ] zona_industri: 3 item dengan nama, kawasan (3), warna valid
+- [ ] judul_industri, deskripsi_industri terisi
+- [ ] wilayah_kota: 4 item dengan nama, kelurahan (3), warna valid
+- [ ] judul_kota, deskripsi_kota terisi
+- [ ] wilayah_pinggiran: 2 item dengan nama, kelurahan (2), warna valid
+- [ ] judul_pinggiran, deskripsi_pinggiran terisi
+- [ ] kecamatan_lainnya: 8 item
+- [ ] landmark_industri: 3 item dengan nama, icon, warna valid
+- [ ] judul_landmark_industri, deskripsi_landmark_industri terisi
+- [ ] landmark_komersial: 4 item dengan nama, icon, warna valid
+- [ ] judul_landmark_komersial, deskripsi_landmark_komersial terisi
+
+### Section 10: section_order
+- [ ] title, area, phone, intro terisi
+- [ ] initial_steps: 3 item dengan title, description, icon, color valid
+- [ ] final_steps: 3 item dengan title, description, icon, color valid
+
+### Section 11: section_testimonials
+- [ ] title, area terisi
+- [ ] testimoni_industri: 2 item
+- [ ] Setiap testimoni: nama, jenis_usaha, jabatan, rating (1-5), judul, komentar, warna valid
+- [ ] judul_industri, deskripsi_industri terisi
+- [ ] testimoni_komersial: 2 item
+- [ ] judul_komersial, deskripsi_komersial terisi
+
+### Section 12: section_tips
+- [ ] title, area, intro terisi
+- [ ] tips: 3 item
+- [ ] Setiap tip: kategori, deskripsi, kriteria (3), warna valid, icon valid
+
+### Section 13: section_faq
+- [ ] title, area terisi
+- [ ] faq_layanan: 3 item dengan pertanyaan, jawaban, icon valid
+- [ ] judul_layanan, deskripsi_layanan terisi
+- [ ] faq_sertifikasi: 2 item dengan pertanyaan, jawaban, icon valid
+- [ ] judul_sertifikasi, deskripsi_sertifikasi terisi
+- [ ] faq_biaya: 3 item dengan pertanyaan, jawaban, icon valid
+- [ ] judul_biaya, deskripsi_biaya terisi
+
+### Section 14: section_about_city
+- [ ] title, area, tagline, deskripsi_singkat, overview terisi
+- [ ] paragraphs: 4 item
+- [ ] Paragraf 1-2: judul, icon, subjudul, deskripsi, fakta (3) terisi
+- [ ] Paragraf 3-4: judul, icon, subjudul, deskripsi, list_item (4-5), info_tambahan terisi
+
+### Section 15: section_conclusion
+- [ ] title terisi
+- [ ] paragraphs: 1 item dengan CTA dan nomor telepon
+
+### Final Check
 - [ ] area_served konsisten di semua section
 - [ ] Nomor telepon benar (08568258841)
-- [ ] Icon Bootstrap valid (bi-xxx)
-- [ ] Warna Bootstrap valid (primary, success, info, warning, danger, secondary)
-- [ ] Rating testimoni adalah integer (1-5)
-- [ ] Severity risiko valid (high, medium, low)
-- [ ] Theme hero valid (blue, orange, red, green, purple, teal, amber, indigo)
-- [ ] Tanggal format YYYY-MM-DD HH:MM:SS
-- [ ] Categories dan tags lengkap
-- [ ] Gambar tersedia atau gunakan fallback
+- [ ] Semua icon Bootstrap valid (bi-xxx)
+- [ ] Semua warna Bootstrap valid (primary, success, info, warning, danger, secondary)
 - [ ] Preview di localhost sebelum deploy
 
 ---
