@@ -1,6 +1,7 @@
 ---
-layout: node--riksa-uji
+layout: node/node--riksa-uji
 title: ""
+rating_id: ""
 description: ""
 # Content Intro - Paragraf pembuka setelah H1
 content_intro:
@@ -37,6 +38,12 @@ images:
   - ""
   - ""
   - ""
+
+# Related Service - Link ke halaman layanan terkait
+related_service: ""
+
+# Lastmod - Auto-updated by propagate-timestamp plugin
+lastmod: ""
 
 # ============================================================================
 # SCHEMA DATA - Optional data for structured markup

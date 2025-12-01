@@ -229,6 +229,38 @@ images:
 - images: 4 gambar untuk gallery slider
 - Jika kosong, akan fallback ke default SVG (i1.svg - i4.svg)
 
+### rating_id
+```yaml
+rating_id: riksa-uji-boiler
+```
+- ID untuk menghubungkan artikel dengan file rating/review
+- Format: `riksa-uji-[nama-alat]` (lowercase, dash-separated)
+- File rating harus dibuat di: `_includes/reusable/node--riksa-uji/ratings/block--rating--[rating_id].html`
+- Berisi data review pembaca (bukan testimoni layanan)
+- **Template**: Copy dari `TEMPLATES/TEMPLATE-block-rating-riksa-uji.html`
+- **Cara buat**:
+  1. Copy template ke `_includes/reusable/node--riksa-uji/ratings/`
+  2. Rename: `block--rating--riksa-uji-[nama-alat].html`
+  3. Isi data rating (average, count, distribution)
+  4. Isi data review (3-4 review pembaca tentang artikel)
+
+### related_service
+```yaml
+related_service: /layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/
+```
+- Path ke halaman layanan terkait
+- Digunakan untuk menampilkan blok "Related Service" di artikel
+- Harus sesuai dengan URL halaman layanan di `_services/`
+
+### lastmod
+```yaml
+lastmod: '2025-12-01T16:40:00+0700'
+```
+- Timestamp terakhir artikel dimodifikasi
+- Format: ISO 8601 dengan timezone
+- Auto-updated oleh propagate-timestamp plugin saat build
+- Digunakan untuk sorting artikel terbaru di homepage
+
 ---
 
 ## BATCH 2: SCHEMA DATA
