@@ -78,5 +78,15 @@ Usage:
 
     <!-- Rating: field--rating -->
     {% include components/rating-stars.html rating=rating count=rating_count wrapper_class="field field--rating" %}
+
+    <!-- Last Modified: field--lastmod -->
+    {% if post.lastmod %}
+    <div class="field field--lastmod small text-muted mt-2">
+      <i class="bi bi-clock-history me-1"></i>
+      <time datetime="{{ post.lastmod | date_to_xmlschema }}">
+        {{ post.lastmod | date: "%d %b %Y" }}
+      </time>
+    </div>
+    {% endif %}
   </div>
 </article>

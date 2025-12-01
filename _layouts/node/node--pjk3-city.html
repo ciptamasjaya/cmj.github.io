@@ -30,52 +30,7 @@ Schema: Article (not BlogPosting)
 <article class="article-content">
 
   <!-- Article Header -->
-  <header class="article-header py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-
-          <!-- Breadcrumb -->
-          <nav aria-label="breadcrumb" class="mb-4">
-            <ol class="breadcrumb small mb-0">
-              <li class="breadcrumb-item"><a href="{{ '/' | relative_url }}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-              {% if page.categories and page.categories.size > 0 %}
-              <li class="breadcrumb-item">{{ page.categories | first }}</li>
-              {% endif %}
-              <li class="breadcrumb-item active" aria-current="page">{{ page.title | truncate: 30 }}</li>
-            </ol>
-          </nav>
-
-          <h1 class="article-title display-5 fw-bold mb-4">{{ page.title }}</h1>
-
-          {% if page.description %}
-          <p class="lead mb-4">{{ page.description }}</p>
-          {% endif %}
-
-          <div class="article-meta d-flex flex-wrap gap-2">
-            <span>
-              <i class="bi bi-calendar3 me-1"></i>
-              <time datetime="{{ page.date | date_to_xmlschema }}">
-                {{ page.date | date: "%d %B %Y" }}
-              </time>
-            </span>
-            {% if page.area_served %}
-            <span>
-              <i class="bi bi-geo-alt me-1"></i>{{ page.area_served }}
-            </span>
-            {% endif %}
-            {% if page.author %}
-            <span>
-              <i class="bi bi-person me-1"></i>{{ page.author }}
-            </span>
-            {% endif %}
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </header>
+  {% include block/block--content-header.html variant="pjk3-city" %}
 
   <!-- Article Content from Front Matter Sections -->
   <div class="article-sections">
