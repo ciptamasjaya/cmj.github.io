@@ -52,6 +52,76 @@ related_service: /layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-u
 lastmod: '2025-12-01T17:00:00+0700'
 
 # ============================================================================
+# HERO & ORDER SECTIONS
+# ============================================================================
+
+section_hero:
+  title: Butuh Layanan Riksa Uji Overhead Crane
+  theme: orange
+  area: Seluruh Indonesia
+  description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
+    inspeksi dan tes overhead crane secara profesional. Dapatkan sertifikat kelayakan
+    operasi untuk crane jembatan Anda.
+  label_wilayah: 'Melayani Wilayah:'
+  wilayah_layanan:
+    - Jabodetabek
+    - Jawa Barat
+    - Jawa Tengah
+    - Jawa Timur
+    - Sumatera
+    - Kalimantan
+    - Sulawesi
+    - Bali & NTB
+  badges:
+    - text: Izin Resmi Kemenaker
+      icon: bi-shield-check
+    - text: Tenaga Ahli Bersertifikat
+      icon: bi-person-badge
+    - text: Harga Kompetitif
+      icon: bi-cash-coin
+  cta_title: Hubungi Kami Sekarang!
+  cta_button: Chat WhatsApp
+  cta_notice: Respon cepat 24/7
+
+section_order:
+  title: Cara Pemesanan Layanan Riksa Uji Overhead Crane
+  area: Seluruh Indonesia
+  phone: '08568258841'
+  intro: Proses pemesanan layanan riksa uji overhead crane sangat mudah. Ikuti 6 langkah
+    sederhana berikut untuk mendapatkan sertifikat kelayakan operasi crane Anda.
+  initial_steps:
+    - title: Hubungi Kami
+      description: Kontak via WhatsApp atau telepon untuk konsultasi awal kebutuhan
+        riksa uji overhead crane Anda.
+      icon: bi-telephone
+      color: primary
+    - title: Identifikasi Kebutuhan
+      description: Tim kami akan mengidentifikasi jenis crane, kapasitas, span, dan lokasi
+        inspeksi.
+      icon: bi-clipboard-data
+      color: info
+    - title: Penawaran Harga
+      description: Dapatkan penawaran harga kompetitif sesuai kebutuhan dan jadwal yang
+        diinginkan.
+      icon: bi-receipt
+      color: warning
+  final_steps:
+    - title: Pelaksanaan Inspeksi
+      description: Tim inspector bersertifikat datang ke lokasi untuk melakukan riksa
+        uji overhead crane.
+      icon: bi-search
+      color: success
+    - title: Pembuatan Laporan
+      description: Laporan hasil inspeksi lengkap dengan dokumentasi foto dan rekomendasi.
+      icon: bi-file-earmark-text
+      color: primary
+    - title: Penerbitan Sertifikat
+      description: Sertifikat kelayakan operasi diterbitkan untuk crane yang lulus
+        uji.
+      icon: bi-award
+      color: success
+
+# ============================================================================
 # SCHEMA DATA
 # ============================================================================
 

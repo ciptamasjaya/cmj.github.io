@@ -3,102 +3,223 @@ layout: node/node--riksa-uji
 title: ""
 rating_id: ""
 description: ""
-# Content Intro - Paragraf pembuka setelah H1
 content_intro:
   paragraphs:
-    - ""
-    - ""
-    - ""
-
-# Announce - Paragraf penutup tanpa heading
+  - ""
+  - ""
+  - ""
 announce:
   paragraphs:
-    - ""
-permalink:
+  - ""
+permalink: ""
 redirect_from:
-  -
+- ""
 date:
 last_modified_at:
-author: ""
+author:
 categories:
-  -
-  -
+- ""
+- ""
 tags:
-  -
-  -
-  -
-  -
-  -
-# Images
-# image: featured image untuk og:image, schema, thumbnail (fallback: i1.svg)
-# images: gallery slider (fallback: i1-i4.svg)
-image: ""
+- ""
+- ""
+- ""
+- ""
+- ""
 images:
+- ""
+- ""
+- ""
+- ""
+section_hero:
+  title: ""
+  theme: ""
+  area: ""
+  description: ""
+  label_wilayah: ""
+  wilayah_layanan:
   - ""
   - ""
   - ""
   - ""
-
-# Related Service - Link ke halaman layanan terkait
-related_service: ""
-
-# Lastmod - Auto-updated by propagate-timestamp plugin
-lastmod: ""
-
-# ============================================================================
-# SCHEMA DATA - Optional data for structured markup
-# ============================================================================
-
-# HowTo Schema - Proses Riksa Uji (jika artikel berisi tutorial)
+  - ""
+  - ""
+  - ""
+  - ""
+  badges:
+  - text: ""
+    icon: ""
+  - text: ""
+    icon: ""
+  - text: ""
+    icon: ""
+  cta_title: ""
+  cta_button: ""
+  cta_notice: ""
+section_order:
+  title: ""
+  area: ""
+  phone: ""
+  intro: ""
+  initial_steps:
+  - title: ""
+    description: ""
+    icon: ""
+    color: ""
+  - title: ""
+    description: ""
+    icon: ""
+    color: ""
+  - title: ""
+    description: ""
+    icon: ""
+    color: ""
+  final_steps:
+  - title: ""
+    description: ""
+    icon: ""
+    color: ""
+  - title: ""
+    description: ""
+    icon: ""
+    color: ""
+  - title: ""
+    description: ""
+    icon: ""
+    color: ""
+section_faq:
+  title: ""
+  subtitle: ""
+  faq_layanan:
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  judul_layanan: ""
+  deskripsi_layanan: ""
+  faq_sertifikasi:
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  judul_sertifikasi: ""
+  deskripsi_sertifikasi: ""
+  faq_biaya:
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  - pertanyaan: ""
+    jawaban: ""
+    icon: ""
+  judul_biaya: ""
+  deskripsi_biaya: ""
+section_company_intro:
+  title: ""
+  company_name: ""
+  intro: ""
+  subsections:
+  - title: ""
+    paragraphs:
+    - ""
+    - ""
+  - title: ""
+    paragraphs:
+    - ""
+section_services:
+  title: ""
+  intro: ""
+  services:
+  - title: ""
+    description: ""
+    icon: ""
+  - title: ""
+    description: ""
+    icon: ""
+  - title: ""
+    description: ""
+    icon: ""
+  - title: ""
+    description: ""
+    icon: ""
+  - title: ""
+    description: ""
+    icon: ""
+  - title: ""
+    description: ""
+    icon: ""
+section_tips:
+  title: ""
+  subtitle: ""
+  intro: ""
+  tips:
+  - kategori: ""
+    deskripsi: ""
+    kriteria:
+    - ""
+    - ""
+    - ""
+    warna: ""
+    icon: ""
+  - kategori: ""
+    deskripsi: ""
+    kriteria:
+    - ""
+    - ""
+    - ""
+    warna: ""
+    icon: ""
+  - kategori: ""
+    deskripsi: ""
+    kriteria:
+    - ""
+    - ""
+    - ""
+    warna: ""
+    icon: ""
 howto_post:
   name: ""
   description: ""
   totalTime: ""
   steps:
-    - name: ""
-      text: ""
-    - name: ""
-      text: ""
-    - name: ""
-      text: ""
-    - name: ""
-      text: ""
-    - name: ""
-      text: ""
-    - name: ""
-      text: ""
-
-# ItemList Schema - Daftar items (jika artikel berisi daftar)
+  - name: ""
+    text: ""
+  - name: ""
+    text: ""
+  - name: ""
+    text: ""
+  - name: ""
+    text: ""
+  - name: ""
+    text: ""
+  - name: ""
+    text: ""
 itemlist_post:
   name: ""
   description: ""
   items:
-    - name: ""
-      description: ""
-    - name: ""
-      description: ""
-    - name: ""
-      description: ""
-    - name: ""
-      description: ""
-    - name: ""
-      description: ""
-
-# FAQ Schema (jika artikel berisi FAQ)
-faq_post:
-  name: ""
-  description: ""
-  faqs:
-    - question: ""
-      answer: ""
-    - question: ""
-      answer: ""
-    - question: ""
-      answer: ""
-    - question: ""
-      answer: ""
-
-# Video Schema (jika artikel berisi video)
+  - name: ""
+    description: ""
+  - name: ""
+    description: ""
+  - name: ""
+    description: ""
+  - name: ""
+    description: ""
+  - name: ""
+    description: ""
 video_post:
   name: ""
   description: ""
@@ -106,49 +227,40 @@ video_post:
   src: ""
   duration: ""
   upload_date: ""
-
-# ============================================================================
-# CONTENT SECTIONS - H2 sections converted from markdown body
-# ============================================================================
-
-# Section 1: Pentingnya Riksa Uji
-# Block: block--section-importance.html
 section_importance:
   title: ""
+  subtitle: ""
   icon: ""
   paragraphs:
-    - ""
+  - ""
   subsections:
-    - title: ""
-      icon: ""
-      paragraphs:
-        - ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-    - title: ""
-      icon: ""
-      paragraphs:
-        - ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-    - title: ""
-      icon: ""
-      paragraphs:
-        - ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-
-# Section 2: Proses Riksa Uji
-# Block: block--section-process.html
+  - title: ""
+    icon: ""
+    paragraphs:
+    - ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+  - title: ""
+    icon: ""
+    paragraphs:
+    - ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+  - title: ""
+    icon: ""
+    paragraphs:
+    - ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
 section_process:
   title: ""
   icon: ""
@@ -157,96 +269,93 @@ section_process:
   steps_heading: ""
   steps_intro: ""
   steps:
+  - title: ""
+    icon: ""
+    description: ""
+    substeps:
     - title: ""
-      icon: ""
-      description: ""
-      substeps:
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
     - title: ""
-      icon: ""
-      description: ""
-      substeps:
-        - title: ""
-          desc: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-        - title: ""
-          desc: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+  - title: ""
+    icon: ""
+    description: ""
+    substeps:
     - title: ""
-      icon: ""
-      description: ""
-      substeps:
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
+      desc: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
     - title: ""
-      icon: ""
-      description: ""
-      substeps:
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
-        - title: ""
-          bullets:
-            - key: ""
-              value: ""
-            - key: ""
-              value: ""
+      desc: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+  - title: ""
+    icon: ""
+    description: ""
+    substeps:
+    - title: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+    - title: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+    - title: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+    - title: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+  - title: ""
+    icon: ""
+    description: ""
+    substeps:
+    - title: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
+    - title: ""
+      bullets:
+      - key: ""
+        value: ""
+      - key: ""
+        value: ""
   summary: ""
-
-# Section 3: Sanksi Hukum dan Regulasi
-# Block: block--section-regulation.html
 section_regulation:
   title: ""
   icon: ""
@@ -254,39 +363,36 @@ section_regulation:
   description: ""
   summary: ""
   subsections:
-    - title: ""
-      icon: ""
-      description: ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-    - title: ""
-      icon: ""
-      description: ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-    - title: ""
-      icon: ""
-      description: ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-
-# Section 4: Pelatihan dan Sertifikasi Operator
-# Block: block--section-training.html
+  - title: ""
+    icon: ""
+    description: ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+  - title: ""
+    icon: ""
+    description: ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+  - title: ""
+    icon: ""
+    description: ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
 section_training:
   title: ""
   icon: ""
@@ -298,188 +404,181 @@ section_training:
   bullets_intro: ""
   summary: ""
   cards:
-    - title: ""
-      icon: ""
-      content: ""
-    - title: ""
-      icon: ""
-      content: ""
-    - title: ""
-      icon: ""
-      content: ""
-    - title: ""
-      icon: ""
-      content: ""
-    - title: ""
-      icon: ""
-      content: ""
-    - title: ""
-      icon: ""
-      content: ""
+  - title: ""
+    icon: ""
+    content: ""
+  - title: ""
+    icon: ""
+    content: ""
+  - title: ""
+    icon: ""
+    content: ""
+  - title: ""
+    icon: ""
+    content: ""
+  - title: ""
+    icon: ""
+    content: ""
+  - title: ""
+    icon: ""
+    content: ""
   bullets:
-    - key: ""
-      value: ""
-    - key: ""
-      value: ""
-    - key: ""
-      value: ""
-    - key: ""
-      value: ""
-
-# Section 5: Standar Spesifikasi
-# Block: block--section-specs.html
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
 section_specs:
   title: ""
+  subtitle: ""
   icon: ""
   description: ""
   specs_heading: ""
   specs_intro: ""
   specs:
-    - title: ""
-      icon: ""
-      value: ""
-      paragraphs:
-        - ""
-        - ""
-    - title: ""
-      icon: ""
-      value: ""
-      paragraphs:
-        - ""
-    - title: ""
-      icon: ""
-      value: ""
-      paragraphs:
-        - ""
-    - title: ""
-      icon: ""
-      value: ""
-      paragraphs:
-        - ""
-    - title: ""
-      icon: ""
-      value: ""
-      paragraphs:
-        - ""
-        - ""
-    - title: ""
-      icon: ""
-      value: ""
-      paragraphs:
-        - ""
-        - ""
-
-# Section 6: Pengesahan Gambar
-# Block: block--section-certification.html
+  - title: ""
+    icon: ""
+    value: ""
+    paragraphs:
+    - ""
+    - ""
+  - title: ""
+    icon: ""
+    value: ""
+    paragraphs:
+    - ""
+  - title: ""
+    icon: ""
+    value: ""
+    paragraphs:
+    - ""
+  - title: ""
+    icon: ""
+    value: ""
+    paragraphs:
+    - ""
+  - title: ""
+    icon: ""
+    value: ""
+    paragraphs:
+    - ""
+    - ""
+  - title: ""
+    icon: ""
+    value: ""
+    paragraphs:
+    - ""
+    - ""
 section_certification:
   title: ""
+  subtitle: ""
   icon: ""
-  intro:
+  intro: ""
   paragraphs:
-    - ""
-    - ""
+  - ""
+  - ""
   topics:
+  - title: ""
+    icon: ""
+    items:
     - title: ""
       icon: ""
-      items:
-        - title: ""
-          icon: ""
-          content: ""
-        - title: ""
-          icon: ""
-          content: ""
-        - title: ""
-          icon: ""
-          content: ""
-        - title: ""
-          icon: ""
-          content: ""
+      content: ""
     - title: ""
       icon: ""
-      items:
-        - title: ""
-          icon: ""
-          content: ""
-        - title: ""
-          icon: ""
-          content: ""
+      content: ""
     - title: ""
       icon: ""
-      bullets:
-        - ""
-        - ""
+      content: ""
     - title: ""
       icon: ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
+      content: ""
+  - title: ""
+    icon: ""
+    items:
     - title: ""
       icon: ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-
-# Section 7: SLO
-# Block: block--section-permit.html
+      content: ""
+    - title: ""
+      icon: ""
+      content: ""
+  - title: ""
+    icon: ""
+    bullets:
+    - ""
+    - ""
+  - title: ""
+    icon: ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+  - title: ""
+    icon: ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
 section_permit:
   title: ""
+  subtitle: ""
   icon: ""
   intro: ""
   topics:
-    - title: ""
-      icon: ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
-    - title: ""
-      icon: ""
-      bullets:
-        - key: ""
-          value: ""
-        - key: ""
-          value: ""
+  - title: ""
+    icon: ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
+  - title: ""
+    icon: ""
+    bullets:
+    - key: ""
+      value: ""
+    - key: ""
+      value: ""
   summary: ""
-
-# Section 8: Kesimpulan
-# Block: block--section-conclusion.html
 section_conclusion:
   title: ""
   icon: ""
   intro: ""
   highlights:
-    - key: ""
-      value: ""
-    - key: ""
-      value: ""
-    - key: ""
-      value: ""
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
+  - key: ""
+    value: ""
   closing: ""
   cta:
     text: ""
     link: ""
     label: ""
     icon: ""
-
+related_service: ""
+lastmod: ""
 ---
+
