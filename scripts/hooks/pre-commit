@@ -35,15 +35,48 @@ fi
 # Count changed files
 FILE_COUNT=$(echo "$CONTENT_CHANGED" | wc -l)
 
+# Get filenames for log
+FILE_NAMES=$(echo "$CONTENT_CHANGED" | xargs -I{} basename {} .md | tr '\n' ', ' | sed 's/,$//')
+
 echo ""
 echo "============================================================"
 echo "  Git Hook: Content changes detected ($FILE_COUNT files)"
 echo "============================================================"
 echo ""
+echo "Files: $FILE_NAMES"
+echo ""
 
-# Run propagator
+# Update lastmod in each changed content file
+TIMESTAMP=$(date '+%Y-%m-%dT%H:%M:%S%z')
+echo "Updating lastmod to: $TIMESTAMP"
+echo ""
+
+for FILE in $CONTENT_CHANGED; do
+    FILEPATH="$SCRIPT_DIR/$FILE"
+    if [ -f "$FILEPATH" ]; then
+        # Check if lastmod exists
+        if grep -q "^lastmod:" "$FILEPATH"; then
+            # Update existing lastmod
+            sed -i "s/^lastmod:.*$/lastmod: '$TIMESTAMP'/" "$FILEPATH"
+        else
+            # Add lastmod after date field or at end of frontmatter
+            if grep -q "^date:" "$FILEPATH"; then
+                sed -i "/^date:/a lastmod: '$TIMESTAMP'" "$FILEPATH"
+            else
+                # Add before closing ---
+                sed -i "0,/^---$/!{0,/^---$/s/^---$/lastmod: '$TIMESTAMP'\n---/}" "$FILEPATH"
+            fi
+        fi
+        echo "  Updated: $(basename $FILE)"
+        git add "$FILEPATH"
+    fi
+done
+
+echo ""
+
+# Run propagator with file names in reason
 if [ -f "$PROPAGATOR" ]; then
-    ruby "$PROPAGATOR" --reason="Git commit: $FILE_COUNT content files"
+    ruby "$PROPAGATOR" --reason="Git commit: $FILE_NAMES"
 
     # Stage the propagated files
     git add index.html blog.html layanan.html 2>/dev/null
@@ -51,6 +84,13 @@ if [ -f "$PROPAGATOR" ]; then
     git add _services/*/pesawat-uap/pesawat-uap.md 2>/dev/null
     git add _services/*/tangki-timbun/tangki-timbun.md 2>/dev/null
     git add _data/propagate-timestamp-log.json 2>/dev/null
+fi
+
+# Rebuild Jekyll
+echo ""
+echo "Rebuilding Jekyll..."
+if [ -f "$SCRIPT_DIR/rebuild.sh" ]; then
+    cd "$SCRIPT_DIR" && ./rebuild.sh 2>&1 | tail -3
 fi
 
 exit 0
