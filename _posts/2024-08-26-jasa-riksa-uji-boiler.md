@@ -1,7 +1,7 @@
 ---
 layout: node/node--riksa-uji
 title: Riksa Uji Boiler
-description: Riksa uji boiler adalah pemeriksaan serta pengujian keselamatan ketel uap
+description: Riksa uji boiler adalah pemeriksaan dan pengujian keselamatan ketel uap
   untuk memastikan operasional aman sesuai acuan K3 serta Permenaker.
 content_intro:
   paragraphs:
@@ -795,5 +795,5 @@ section_conclusion:
     link: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/riksa-uji-boiler/"
     label: Hubungi Kami
     icon: bi-telephone
-lastmod: '2025-12-01T02:15:00+0700'
+lastmod: '2025-12-01T07:02:28+0700'
 ---
