@@ -132,8 +132,7 @@ Usage:
           "applicableCountry": "ID",
           "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
         }
-      }{% capture reviews_output %}{% include schema/schema--service-reviews.html %}{% endcapture %}{% assign reviews_trimmed = reviews_output | strip %}{% if reviews_trimmed != "" %},
-      {{ reviews_trimmed }}{% endif %}
+      }
     }
   ]
 }

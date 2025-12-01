@@ -28,11 +28,10 @@ Usage:
     <div class="col-lg-4 mb-4">
       {% include reusable/services/block--service-carousel.html max_height="400px" %}
 
-      {% assign carousel_slug = page.url | split: "/" | compact | last %}
-      {% assign carousel_rating = site.data.rating--service.ratings | where: "slug", carousel_slug | first %}
-      {% if carousel_rating and carousel_rating.total_reviews > 0 %}
+      {% comment %} Rating stars from block variables {% endcomment %}
+      {% if rating_average and rating_count > 0 %}
       <div class="mt-3 text-center">
-        {% include components/rating-stars.html rating=carousel_rating size="md" %}
+        {% include components/rating-stars-from-block.html size="md" %}
       </div>
       {% endif %}
     </div>
@@ -46,9 +45,9 @@ Usage:
         <span class="badge bg-primary">{{ page.category }}</span>
         {% endif %}
 
-        {% if carousel_rating and carousel_rating.total_reviews > 0 %}
+        {% if rating_average and rating_count > 0 %}
         <span class="text-muted">•</span>
-        {% include components/rating-stars.html rating=carousel_rating size="sm" %}
+        {% include components/rating-stars-from-block.html size="sm" %}
         {% endif %}
       </div>
 

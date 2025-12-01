@@ -1,18 +1,19 @@
 {% comment %}
 ============================================================================
-Schema: Related Service (Offer with itemOffered)
+Schema: Related Service (Offer referencing Product)
 ============================================================================
 
 @file        schema--related-service.html
 @path        _includes/schema/node--riksa-uji/schema--related-service.html
-@type        Schema (Offer/Service)
-@description Schema.org Offer markup linking article to actual service page
+@type        Schema (Offer)
+@description Schema.org Offer markup linking article to service Product
 @author      arisciwek
 @created     2025-12-01
+@updated     2025-12-01
 
-This schema creates an Offer that references the actual Service page,
-establishing a proper relationship between article content and the
-service being offered.
+This schema creates an Offer that REFERENCES the Product from the service page
+using @id. This way there's only 1 Product entity (defined in service page),
+and the article just offers it.
 
 Usage:
 ------
@@ -28,11 +29,6 @@ Requires frontmatter:
 {% assign service = site.services | where: "url", page.related_service | first %}
 
 {% if service %}
-{% comment %} Load rating from block rating file if service has rating_id {% endcomment %}
-{% if service.rating_id %}
-  {% capture svc_rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
-  {% include {{ svc_rating_file }} %}
-{% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,65 +51,7 @@ Requires frontmatter:
     "name": "{{ site.business.name }}"
   },
   "itemOffered": {
-    "@type": "Product",
-    "@id": "{{ service.url | absolute_url }}#product",
-    "name": "{{ service.title | escape }}",
-    "description": "{{ service.description | escape }}",
-    "url": "{{ service.url | absolute_url }}",
-    "image": "{{ service.image | default: '/assets/images/logo.svg' | absolute_url }}",
-    "brand": {
-      "@type": "Brand",
-      "name": "{{ site.business.name }}"
-    }{% if service.category %},
-    "category": "{{ service.category | escape }}"{% endif %},
-    {% if rating_average %}"aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "{{ rating_average }}",
-      "reviewCount": "{{ rating_count }}",
-      "bestRating": "{{ rating_best }}",
-      "worstRating": "{{ rating_worst }}"
-    },{% endif %}
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceCurrency": "IDR",
-      {% if service.offer_riksa_uji.offers.first.price %}"price": "{{ service.offer_riksa_uji.offers.first.price }}",
-      {% elsif service.price %}"price": "{{ service.price }}",
-      {% endif %}"priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
-      "shippingDetails": {
-        "@type": "OfferShippingDetails",
-        "shippingRate": {
-          "@type": "MonetaryAmount",
-          "value": "0",
-          "currency": "IDR"
-        },
-        "shippingDestination": {
-          "@type": "DefinedRegion",
-          "addressCountry": "ID"
-        },
-        "deliveryTime": {
-          "@type": "ShippingDeliveryTime",
-          "handlingTime": {
-            "@type": "QuantitativeValue",
-            "minValue": "1",
-            "maxValue": "7",
-            "unitCode": "d"
-          },
-          "transitTime": {
-            "@type": "QuantitativeValue",
-            "minValue": "0",
-            "maxValue": "1",
-            "unitCode": "d"
-          }
-        }
-      },
-      "hasMerchantReturnPolicy": {
-        "@type": "MerchantReturnPolicy",
-        "applicableCountry": "ID",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-        "merchantReturnDays": "0"
-      }
-    }
+    "@id": "{{ service.url | absolute_url }}#product"
   }
 }
 </script>

@@ -50,8 +50,9 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
   {% if page.section_certification %}
     {% include schema/node--riksa-uji/schema--certification.html %}
   {% endif %}
-  {% if page.section_testimonials and page.section_testimonials.testimonials.size > 0 %}
-    {% include schema/node--riksa-uji/schema--testimonials.html %}
+  <!-- Product with AggregateRating + Reviews (from rating_id) -->
+  {% if page.rating_id %}
+    {% include schema/node--riksa-uji/schema--rating.html %}
   {% endif %}
   {% if page.section_order %}
     {% include schema/node--riksa-uji/schema--order.html %}

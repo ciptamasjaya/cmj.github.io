@@ -37,27 +37,8 @@ Schema is generated inline in that JSON for better performance.
 This file generates the Review schema from Liquid if needed.
 {% endcomment %}
 
-{% if rating_count and rating_count > 0 %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "@id": "{{ page.url | absolute_url }}#service-reviews",
-  "name": "Layanan Riksa Uji - {{ page.title | escape }}",
-  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
-  "brand": {
-    "@type": "Organization",
-    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
-    "name": "{{ site.business.name }}"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "@id": "{{ page.url | absolute_url }}#aggregate-rating",
-    "ratingValue": "{{ rating_average }}",
-    "reviewCount": "{{ rating_count }}",
-    "bestRating": "{{ rating_best | default: 5 }}",
-    "worstRating": "{{ rating_worst | default: 1 }}"
-  }
-}
-</script>
-{% endif %}
+{% comment %}
+Reviews are rendered via JavaScript from JSON data in block--rating--{id}.html.
+AggregateRating is already in schema--rating.html as part of Product.
+No separate schema needed here to avoid duplicate Product entities.
+{% endcomment %}

@@ -1,6 +1,7 @@
 ---
 layout: node/node--riksa-uji
 title: Riksa Uji Boiler
+rating_id: riksa-uji-boiler
 description: Riksa uji boiler adalah pemeriksaan dan pengujian keselamatan ketel uap
   untuk memastikan operasional aman sesuai acuan K3 serta Permenaker.
 content_intro:
@@ -110,36 +111,6 @@ section_order:
       uji.
     icon: bi-award
     color: success
-section_testimonials:
-  title: Testimoni Pelanggan Riksa Uji Boiler
-  subtitle: Kepuasan Klien adalah Prioritas Kami
-  intro: Berikut testimoni dari klien yang telah menggunakan layanan riksa uji boiler
-    PT. Cipta Mas Jaya.
-  testimonials:
-  - nama: Hendra Kusuma
-    jenis_usaha: Pabrik Tekstil di Bandung
-    jabatan: Plant Manager
-    rating: 5
-    judul: Inspeksi Boiler yang Sangat Teliti
-    komentar: Tim PT. Cipta Mas Jaya sangat detail dalam melakukan pemeriksaan boiler
-      kami. Laporan NDT dan hidrostatik test sangat komprehensif.
-    warna: primary
-  - nama: Dewi Anggraeni
-    jenis_usaha: Pabrik Makanan di Tangerang
-    jabatan: HSE Supervisor
-    rating: 5
-    judul: Proses Cepat dan Profesional
-    komentar: Perpanjangan izin pemakaian boiler kami berjalan lancar berkat bantuan
-      CMJ. Dokumen lengkap dan sertifikat terbit tepat waktu.
-    warna: success
-  - nama: Bambang Setiawan
-    jenis_usaha: Rumah Sakit di Semarang
-    jabatan: Facility Manager
-    rating: 5
-    judul: Partner Terpercaya untuk Inspeksi Boiler
-    komentar: Sudah 5 tahun menggunakan jasa CMJ untuk riksa uji boiler rumah sakit.
-      Selalu puas dengan hasil kerja yang profesional dan sesuai standar K3.
-    warna: info
 section_faq:
   title: FAQ Riksa Uji Boiler
   subtitle: Jawaban untuk Pertanyaan Umum
@@ -795,5 +766,6 @@ section_conclusion:
     link: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/riksa-uji-boiler/"
     label: Hubungi Kami
     icon: bi-telephone
+related_service: /layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/
 lastmod: '2025-12-01T07:02:28+0700'
 ---

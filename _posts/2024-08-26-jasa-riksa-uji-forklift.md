@@ -1,6 +1,7 @@
 ---
 layout: node/node--riksa-uji
 title: Riksa Uji Forklift
+rating_id: riksa-uji-forklift
 description: Riksa uji forklift adalah proses pemeriksaan dan pengujian terhadap keadaan
   teknis dan operasional forklift mencakup inspeksi bagian mekanis, sistem hidraulik,
   rem, ban, dan sistem pengangkutan beban, Tujuannya adalah dalam rangka mengidentifikasi

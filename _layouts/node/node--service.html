@@ -53,6 +53,13 @@ by page--service.html wrapper, NOT in this node template.
 ============================================================================
 {%- endcomment -%}
 
+{% comment %} Load rating data BEFORE content (sets Liquid vars for use throughout) {% endcomment %}
+{% assign rating_id = page.rating_id %}
+{% if rating_id %}
+  {% capture rating_file %}reusable/services/ratings/block--rating--{{ rating_id }}.html{% endcapture %}
+  {% include {{ rating_file }} %}
+{% endif %}
+
 <!-- Breadcrumb Navigation -->
 {% include reusable/block--breadcrumb.html %}
 
@@ -109,11 +116,10 @@ by page--service.html wrapper, NOT in this node template.
 {% include reusable/services/block--service-area.html %}
 {% endif %}
 
-<!-- Reviews Section -->
-{% assign page_slug = page.url | split: "/" | compact | last %}
-{% assign reviews = site.data.review--service.reviews | where: "slug", page_slug %}
-{% assign rating = site.data.rating--service.ratings | where: "slug", page_slug | first %}
-{% include reusable/services/block--reviews.html rating=rating reviews=reviews %}
+<!-- Testimonials Section -->
+{% if rating_id %}
+{% include reusable/services/block--testimonials.html %}
+{% endif %}
 
 <!-- Q&A Section -->
 {% assign comments = site.data.comment--service.comments | where: "slug", page_slug %}

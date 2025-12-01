@@ -1,0 +1,125 @@
+{% comment %}
+============================================================================
+Block: Rating Data - Riksa Uji Boiler Article
+============================================================================
+
+@file        block--rating--riksa-uji-boiler.html
+@path        _includes/reusable/node--riksa-uji/ratings/block--rating--riksa-uji-boiler.html
+@type        Block (data per article)
+@description Rating data + reviews for riksa uji boiler article
+@author      arisciwek
+@created     2025-12-01
+
+Output:
+1. Liquid variables for schema (rating_average, rating_count, etc.)
+2. <script type="application/json"> with rating + reviews data for JS
+3. <script type="application/ld+json"> schema from same data
+
+Usage:
+------
+Included via rating_id from frontmatter
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA === {% endcomment %}
+{% assign rating_average = 5.0 %}
+{% assign rating_count = 3 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 3 %}
+{% assign rating_dist_4 = 0 %}
+{% assign rating_dist_3 = 0 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "2025-12-01T10:00:00Z" %}
+
+{% comment %} === REVIEW DATA (single source) === {% endcomment %}
+{% assign review_1_nama = "Hendra Kusuma" %}
+{% assign review_1_usaha = "Teknisi Boiler di Bandung" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Artikel Sangat Informatif" %}
+{% assign review_1_komentar = "Penjelasan tentang prosedur riksa uji boiler sangat lengkap dan mudah dipahami. Referensi peraturan K3 juga up-to-date. Sangat membantu saya mempersiapkan inspeksi tahunan." %}
+{% assign review_1_tanggal = "2025-11-25" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 12 %}
+{% assign review_1_featured = true %}
+
+{% assign review_2_nama = "Dewi Anggraeni" %}
+{% assign review_2_usaha = "HSE Manager Pabrik Makanan" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "Referensi Lengkap untuk Persiapan Inspeksi" %}
+{% assign review_2_komentar = "Artikel ini menjadi panduan kami dalam mempersiapkan dokumen sebelum riksa uji. Checklist dan tahapan prosesnya sangat jelas. Bookmark!" %}
+{% assign review_2_tanggal = "2025-11-20" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 9 %}
+{% assign review_2_featured = true %}
+
+{% assign review_3_nama = "Bambang Setiawan" %}
+{% assign review_3_usaha = "Rumah Sakit di Semarang" %}
+{% assign review_3_rating = 5 %}
+{% assign review_3_judul = "Partner Terpercaya untuk Inspeksi Boiler" %}
+{% assign review_3_komentar = "Sudah 5 tahun menggunakan jasa CMJ untuk riksa uji boiler rumah sakit. Selalu puas dengan hasil kerja yang profesional dan sesuai standar K3." %}
+{% assign review_3_tanggal = "2025-11-15" %}
+{% assign review_3_verified = true %}
+{% assign review_3_helpful = 8 %}
+{% assign review_3_featured = false %}
+
+{% comment %} === JSON OUTPUT (for JavaScript) === {% endcomment %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "jasa-riksa-uji-boiler",
+  "title": "{{ page.title | default: 'Riksa Uji Boiler' | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
+    },
+    {
+      "id": 2,
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
+    },
+    {
+      "id": 3,
+      "nama": "{{ review_3_nama }}",
+      "jenis_usaha": "{{ review_3_usaha }}",
+      "rating": {{ review_3_rating }},
+      "judul": "{{ review_3_judul }}",
+      "komentar": "{{ review_3_komentar }}",
+      "tanggal": "{{ review_3_tanggal }}",
+      "verified": {{ review_3_verified }},
+      "helpful_count": {{ review_3_helpful }},
+      "featured": {{ review_3_featured }}
+    }
+  ]
+}
+</script>
+

@@ -1,0 +1,145 @@
+{% comment %}
+============================================================================
+Block: Rating Data - Riksa Uji Forklift Article
+============================================================================
+
+@file        block--rating--riksa-uji-forklift.html
+@path        _includes/reusable/node--riksa-uji/ratings/block--rating--riksa-uji-forklift.html
+@type        Block (data per article)
+@description Rating data + reviews for riksa uji forklift article
+@author      arisciwek
+@created     2025-12-01
+
+Output:
+1. Liquid variables for schema (rating_average, rating_count, etc.)
+2. <script type="application/json"> with rating + reviews data for JS
+
+Usage:
+------
+Included via rating_id from frontmatter
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA === {% endcomment %}
+{% assign rating_average = 4.8 %}
+{% assign rating_count = 4 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 3 %}
+{% assign rating_dist_4 = 1 %}
+{% assign rating_dist_3 = 0 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "2025-12-01T10:00:00Z" %}
+
+{% comment %} === REVIEW DATA (single source) === {% endcomment %}
+{% assign review_1_nama = "Agus Prasetyo" %}
+{% assign review_1_usaha = "Supervisor Gudang di Jakarta" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Panduan Lengkap Riksa Uji Forklift" %}
+{% assign review_1_komentar = "Artikel ini sangat membantu kami memahami proses riksa uji forklift. Penjelasan tentang komponen yang diperiksa dan standar K3 sangat detail dan mudah dipahami." %}
+{% assign review_1_tanggal = "2025-11-28" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 15 %}
+{% assign review_1_featured = true %}
+
+{% assign review_2_nama = "Ratna Sari" %}
+{% assign review_2_usaha = "HSE Officer Pabrik Elektronik" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "Referensi Bagus untuk Persiapan Inspeksi" %}
+{% assign review_2_komentar = "Setelah membaca artikel ini, kami jadi lebih siap menghadapi jadwal riksa uji forklift. Informasi tentang dokumen yang diperlukan sangat berguna." %}
+{% assign review_2_tanggal = "2025-11-22" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 11 %}
+{% assign review_2_featured = true %}
+
+{% assign review_3_nama = "Dedi Kurniawan" %}
+{% assign review_3_usaha = "Operator Forklift di Cikarang" %}
+{% assign review_3_rating = 4 %}
+{% assign review_3_judul = "Informasi Teknis yang Bermanfaat" %}
+{% assign review_3_komentar = "Sebagai operator, artikel ini membantu saya memahami apa saja yang diperiksa saat riksa uji. Jadi lebih aware dengan kondisi forklift yang saya operasikan." %}
+{% assign review_3_tanggal = "2025-11-18" %}
+{% assign review_3_verified = true %}
+{% assign review_3_helpful = 8 %}
+{% assign review_3_featured = false %}
+
+{% assign review_4_nama = "Wawan Setiadi" %}
+{% assign review_4_usaha = "Logistik Manager di Surabaya" %}
+{% assign review_4_rating = 5 %}
+{% assign review_4_judul = "Artikel Wajib Baca untuk Pengelola Gudang" %}
+{% assign review_4_komentar = "Sangat informatif! Kami jadi paham pentingnya riksa uji berkala untuk forklift. Sekarang sudah rutin menjadwalkan inspeksi sesuai panduan di artikel ini." %}
+{% assign review_4_tanggal = "2025-11-12" %}
+{% assign review_4_verified = true %}
+{% assign review_4_helpful = 7 %}
+{% assign review_4_featured = false %}
+
+{% comment %} === JSON OUTPUT (for JavaScript) === {% endcomment %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "jasa-riksa-uji-forklift",
+  "title": "{{ page.title | default: 'Riksa Uji Forklift' | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
+    },
+    {
+      "id": 2,
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
+    },
+    {
+      "id": 3,
+      "nama": "{{ review_3_nama }}",
+      "jenis_usaha": "{{ review_3_usaha }}",
+      "rating": {{ review_3_rating }},
+      "judul": "{{ review_3_judul }}",
+      "komentar": "{{ review_3_komentar }}",
+      "tanggal": "{{ review_3_tanggal }}",
+      "verified": {{ review_3_verified }},
+      "helpful_count": {{ review_3_helpful }},
+      "featured": {{ review_3_featured }}
+    },
+    {
+      "id": 4,
+      "nama": "{{ review_4_nama }}",
+      "jenis_usaha": "{{ review_4_usaha }}",
+      "rating": {{ review_4_rating }},
+      "judul": "{{ review_4_judul }}",
+      "komentar": "{{ review_4_komentar }}",
+      "tanggal": "{{ review_4_tanggal }}",
+      "verified": {{ review_4_verified }},
+      "helpful_count": {{ review_4_helpful }},
+      "featured": {{ review_4_featured }}
+    }
+  ]
+}
+</script>
