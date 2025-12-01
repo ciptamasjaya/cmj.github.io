@@ -177,9 +177,9 @@ video_riksa_uji:
     tim inspector bersertifikat PT. Cipta Mas Jaya. Meliputi pemeriksaan visual, pengujian
     hoist, load test, dan penerbitan sertifikat resmi.
   thumbnail: "/assets/images/services/default-pesawat-angkat-angkut.svg"
-  src: ""
-  duration: ""
-  upload_date: ""
+  src: "/assets/videos/service-page/default-riksa-uji.webm"
+  duration: PT2M00S
+  upload_date: '2025-12-01'
 
 # ============================================================================
 # OFFER SECTION (Offer Schema)
