@@ -3,9 +3,8 @@ layout: node/node--pjk3-city
 title: PJK3 Jakarta Selatan
 date: 2025-05-23 02:11:49.000000000 +07:00
 author: admin
-description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa pengujian K3
-  terhadap wilayah Jakarta Selatan. Hubungi 08568258841 untuk segenap kebutuhan riksa
-  pengujian Anda.
+description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa tes K3 terhadap
+  wilayah Jakarta Selatan. Hubungi 08568258841 untuk seluruh kebutuhan riksa tes Anda.
 area_served: Jakarta Selatan
 extra_js:
 - "/assets/js/gallery-modal.js"
@@ -27,14 +26,14 @@ images:
 section_gallery:
   title: Galeri Layanan
   area: Jakarta Selatan
-  description: Dokumentasi kegiatan riksa tes K3 terhadap wilayah Jakarta Selatan
-    dan sekitarnya
+  description: Dokumentasi kegiatan riksa uji K3 terhadap wilayah Jakarta Selatan
+    serta sekitarnya
   caption: Foto dokumentasi layanan PT. Cipta Mas Jaya
 video: ''
 section_video:
   title: Video Layanan
   area: Jakarta Selatan
-  description: Lihat tahapan pengecekan dan pengujian K3 oleh tim profesional kami
+  description: Lihat prosedur pengecekan serta pengujian K3 oleh tim profesional kami
   caption: Dokumentasi video layanan PT. Cipta Mas Jaya
   cta_text: Ingin melihat langsung proses inspeksi K3 di lokasi Anda?
   cta_button: Hubungi Kami
@@ -42,10 +41,10 @@ section_hero:
   title: Butuh Layanan Riksa Uji K3
   theme: indigo
   area: Jakarta Selatan
-  description: Sedang mencari jasa riksa pengujian K3 terpercaya pada Jakarta Selatan?
-    PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi
-    serta pengujian peralatan K3 dengan kriteria profesional untuk seluruh wilayah
-    Jakarta Selatan serta sekitarnya.
+  description: Sedang mencari jasa riksa pengujian K3 terpercaya terhadap Jakarta
+    Selatan? PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
+    inspeksi serta pengujian peralatan K3 secara kriteria profesional untuk seluruh
+    wilayah Jakarta Selatan serta sekitarnya.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
   - Kebayoran Baru
@@ -72,10 +71,10 @@ section_company_intro:
   company_name: PT. Cipta Mas Jaya
   area: Jakarta Selatan
   intro: PT. Cipta Mas Jaya merupakan PJK3 resmi yang siap melayani kebutuhan riksa
-    uji alat kerja pada wilayah Jakarta Selatan. Secara dukungan tenaga ahli bersertifikat
-    dan pengalaman lapangan yang luas, perusahaan ini hadir sebagai mitra andal untuk
-    industri, perkantoran, properti komersial, sampai fasilitas publik pada kawasan
-    urban Jakarta Selatan yang padat aktivitas.
+    uji alat kerja pada wilayah Jakarta Selatan. Dengan cara dukungan tenaga ahli
+    bersertifikat dan pengalaman lapangan yang luas, perusahaan ini hadir sebagai
+    mitra andal dalam rangka industri, perkantoran, properti komersial, sampai fasilitas
+    publik pada kawasan urban Jakarta Selatan yang padat aktivitas.
   subsections:
   - title: Apa Itu PJK3 dan Perannya dalam Keselamatan Kerja
     paragraphs:
@@ -106,9 +105,9 @@ section_company_intro:
 section_services:
   title: Keunggulan PT. Cipta Mas Jaya sebagai PJK3 Terdekat dan Profesional
   intro: Sebagai PJK3 yang melayani langsung wilayah Jakarta Selatan, PT. Cipta Mas
-    Jaya menawarkan keunggulan daripada sisi geografis atau operasional. Kedekatan
+    Jaya menawarkan keunggulan daripada sisi geografis maupun operasional. Kedekatan
     lokasi memungkinkan tim teknis bergerak cepat ke lokasi klien, mengurangi waktu
-    tunggu dan biaya mobilisasi.
+    tunggu serta biaya mobilisasi.
   services:
   - title: Riksa Uji Pesawat Angkat Angkut
     description: Pemeriksaan menyeluruh terhadap forklift, crane, hoist, dan sejenisnya
@@ -288,9 +287,9 @@ section_city:
 section_coverage:
   title: Area Pelayanan Riksa Uji
   area: Jakarta Selatan
-  intro: PT. Cipta Mas Jaya melayani inspeksi serta riksa uji K3 ke seluruh wilayah
-    Jakarta Selatan serta sekitarnya. Secara tim yang responsif serta berpengalaman,
-    kami siap menjangkau bermacam-macam lokasi strategis.
+  intro: PT. Cipta Mas Jaya melayani pengecekan dan riksa uji K3 ke seluruh wilayah
+    Jakarta Selatan dan sekitarnya. Secara tim yang responsif dan berpengalaman, kami
+    siap menjangkau bermacam-macam lokasi strategis.
   zona_industri:
   - nama: Kawasan Bisnis Sudirman-Kuningan
     kawasan:
@@ -638,5 +637,5 @@ section_conclusion:
     kami siap menjadi mitra keselamatan kerja Anda. Hubungi 08568258841 untuk konsultasi
     gratis dan penjadwalan inspeksi. Bersama PT. Cipta Mas Jaya, bangun budaya keselamatan
     kerja sejak hari ini!
-lastmod: '2025-12-01T02:07:50+0700'
+lastmod: '2025-12-01T04:07:31+0000'
 ---
