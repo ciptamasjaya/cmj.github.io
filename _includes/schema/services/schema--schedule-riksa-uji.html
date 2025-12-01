@@ -66,7 +66,8 @@ Notes:
     "reviewCount": "{{ page.review_count | default: 25 }}",
     "bestRating": "5",
     "worstRating": "1"
-  }
+  },
+  "whatsappNumber": "{{ site.business.whatsapp | default: '628568258841' }}"
 }
 </script>
 
@@ -169,6 +170,26 @@ Notes:
           "priceCurrency": config.priceCurrency,
           "availability": "https://schema.org/InStock",
           "validFrom": formatISODate(new Date())
+        },
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://wa.me/" + config.whatsappNumber + "?text=" + encodeURIComponent("Halo, saya ingin booking " + config.serviceName + " untuk tanggal " + dateStr),
+            "inLanguage": "id",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          },
+          "result": {
+            "@type": "Reservation",
+            "reservationStatus": "https://schema.org/ReservationPending",
+            "reservationFor": {
+              "@type": "Service",
+              "name": config.serviceName
+            }
+          }
         },
         "aggregateRating": {
           "@type": "AggregateRating",

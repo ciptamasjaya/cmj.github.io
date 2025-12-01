@@ -1,16 +1,17 @@
 {% comment %}
 ============================================================================
-Schema: Rating (Product with AggregateRating for Service)
+Schema: Rating (Product with AggregateRating + Reviews for Service)
 ============================================================================
 
 @file        schema--rating.html
 @path        _includes/schema/services/schema--rating.html
 @type        Schema
-@description Extends Product schema with AggregateRating for service pages
+@description Extends Product schema with AggregateRating + Reviews for service pages
 @author      arisciwek
 @created     2025-12-01
+@updated     2025-12-02
 
-This adds AggregateRating to the Product defined in schema--service.html.
+This adds AggregateRating and Reviews to the Product defined in schema--service.html.
 Uses same @id to extend the existing Product entity.
 
 Usage in page--service.html:
@@ -21,13 +22,16 @@ Requires:
 ---------
 Rating block loaded in node--service.html sets Liquid vars:
 rating_average, rating_count, rating_best, rating_worst
+review_1_nama, review_1_rating, review_1_judul, review_1_komentar, review_1_tanggal
+review_2_nama, review_2_rating, review_2_judul, review_2_komentar, review_2_tanggal
+review_3_nama, review_3_rating, review_3_judul, review_3_komentar, review_3_tanggal
 
 ============================================================================
 {% endcomment %}
 
 {% comment %} Rating data already loaded from node--service.html {% endcomment %}
 
-{% if rating_average %}
+{% if rating_average and rating_count > 0 %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,6 +45,68 @@ rating_average, rating_count, rating_best, rating_worst
     "bestRating": "{{ rating_best | default: 5 }}",
     "worstRating": "{{ rating_worst | default: 1 }}"
   }
+  {% if review_1_nama %},
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_1_nama }}" },
+      "datePublished": "{{ review_1_tanggal }}",
+      "name": "{{ review_1_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_1_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_1_komentar }}"
+    }
+    {% if review_2_nama %},
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_2_nama }}" },
+      "datePublished": "{{ review_2_tanggal }}",
+      "name": "{{ review_2_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_2_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_2_komentar }}"
+    }
+    {% endif %}
+    {% if review_3_nama %},
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_3_nama }}" },
+      "datePublished": "{{ review_3_tanggal }}",
+      "name": "{{ review_3_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_3_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_3_komentar }}"
+    }
+    {% endif %}
+    {% if review_4_nama %},
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_4_nama }}" },
+      "datePublished": "{{ review_4_tanggal }}",
+      "name": "{{ review_4_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_4_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_4_komentar }}"
+    }
+    {% endif %}
+  ]
+  {% endif %}
 }
 </script>
 {% endif %}
