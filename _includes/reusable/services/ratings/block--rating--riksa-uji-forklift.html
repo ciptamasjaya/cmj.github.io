@@ -1,0 +1,92 @@
+{% comment %}
+============================================================================
+Block: Rating Data - Riksa Uji Forklift Service
+============================================================================
+
+@file        block--rating--riksa-uji-forklift.html
+@path        _includes/reusable/services/ratings/block--rating--riksa-uji-forklift.html
+@type        Block (data per service)
+@description Rating data + reviews for riksa uji forklift service
+@author      arisciwek
+@created     2025-12-01
+
+Output:
+1. Liquid variables for schema (rating_average, rating_count, etc.)
+2. <script type="application/json"> with rating + reviews data for JS
+
+Usage:
+------
+Included via schema using service slug or rating_id
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA (edit values here) === {% endcomment %}
+{% assign rating_average = 4.6 %}
+{% assign rating_count = 3 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 2 %}
+{% assign rating_dist_4 = 0 %}
+{% assign rating_dist_3 = 1 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "2025-12-01T10:00:00Z" %}
+
+{% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "riksa-uji-forklift",
+  "title": "{{ page.title | default: 'Riksa Uji Forklift' | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "Hendra Wijaya",
+      "jenis_usaha": "Pergudangan di Tangerang",
+      "rating": 5,
+      "judul": "Inspeksi forklift sangat profesional",
+      "komentar": "Tim PT. Cipta Mas Jaya sangat kompeten dalam melakukan riksa uji forklift warehouse kami. Semua unit lulus inspeksi dan sertifikat diterbitkan tepat waktu.",
+      "tanggal": "2025-11-25",
+      "verified": true,
+      "helpful_count": 8,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "nama": "Rina Susanti",
+      "jenis_usaha": "Manufaktur di Karawang",
+      "rating": 5,
+      "judul": "Pelayanan cepat dan detail",
+      "komentar": "Proses riksa uji 5 unit forklift kami selesai dalam 1 hari. Inspektur sangat teliti memeriksa sistem hidrolik dan rem. Laporan lengkap dan mudah dipahami.",
+      "tanggal": "2025-11-20",
+      "verified": true,
+      "helpful_count": 6,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "nama": "Agus Prasetyo",
+      "jenis_usaha": "Logistik di Cirebon",
+      "rating": 3,
+      "judul": "Cukup baik tapi jadwal mundur",
+      "komentar": "Kualitas inspeksi bagus dan inspektur berpengalaman. Sayangnya jadwal inspeksi mundur 2 hari dari yang dijanjikan karena inspektur sedang di luar kota.",
+      "tanggal": "2025-11-15",
+      "verified": true,
+      "helpful_count": 4,
+      "featured": false
+    }
+  ]
+}
+</script>

@@ -1,0 +1,98 @@
+{% comment %}
+============================================================================
+Schema: Rating (Product with AggregateRating for Service)
+============================================================================
+
+@file        schema--rating.html
+@path        _includes/schema/services/schema--rating.html
+@type        Schema
+@description Product schema with AggregateRating for service pages
+@author      arisciwek
+@created     2025-12-01
+
+Flow:
+1. Include rating block (per service) → sets Liquid vars + outputs JSON for JS
+2. Generate Product schema with AggregateRating (valid for Google)
+
+Product represents the inspection SERVICE.
+
+Usage in page--service.html:
+----------------------------
+{% include schema/services/schema--rating.html %}
+
+Requires:
+---------
+Rating block at: _includes/reusable/services/ratings/block--rating--{{ rating_id }}.html
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Get rating ID from page.rating_id {% endcomment %}
+{% assign rating_id = page.rating_id %}
+
+{% if rating_id %}
+{% comment %} Include rating block - sets Liquid vars + outputs JSON {% endcomment %}
+{% capture rating_file %}reusable/services/ratings/block--rating--{{ rating_id }}.html{% endcapture %}
+{% include {{ rating_file }} %}
+
+{% comment %} Generate Product schema with AggregateRating {% endcomment %}
+{% if rating_average %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "{{ page.url | absolute_url }}#product",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | strip_html | truncate: 160 | escape }}",
+  "image": "{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ site.business.name }}"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "@id": "{{ page.url | absolute_url }}#aggregate-rating",
+    "ratingValue": "{{ rating_average }}",
+    "ratingCount": "{{ rating_count }}",
+    "bestRating": "{{ rating_best }}",
+    "worstRating": "{{ rating_worst }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "IDR",
+    "price": "0",
+    "priceValidUntil": "{{ 'now' | date: '%Y-12-31' }}",
+    "url": "{{ page.url | absolute_url }}",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "ID"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 7,
+          "unitCode": "d"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "d"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "ID",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
+  }
+}
+</script>
+{% endif %}
+{% endif %}

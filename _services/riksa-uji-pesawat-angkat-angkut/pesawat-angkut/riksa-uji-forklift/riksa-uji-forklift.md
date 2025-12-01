@@ -24,8 +24,7 @@ content_structure: 1xh1, 2xpara, h2(para+3xh3@2xh4), h2(para+h3@h4), h2(para), h
 date: 2025-11-24
 last_modified_at: 2025-11-24
 show_breadcrumb_schema: true
-rating: 4.6
-review_count: 3
+rating_id: riksa-uji-forklift
 custom_schema:
 - schema/schema--service-reviews.html
 intro:

@@ -28,6 +28,11 @@ Requires frontmatter:
 {% assign service = site.services | where: "url", page.related_service | first %}
 
 {% if service %}
+{% comment %} Load rating from block rating file if service has rating_id {% endcomment %}
+{% if service.rating_id %}
+  {% capture svc_rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
+  {% include {{ svc_rating_file }} %}
+{% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,12 +66,12 @@ Requires frontmatter:
       "name": "{{ site.business.name }}"
     }{% if service.category %},
     "category": "{{ service.category | escape }}"{% endif %},
-    {% if service.rating %}"aggregateRating": {
+    {% if rating_average %}"aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "{{ service.rating }}",
-      "reviewCount": "{{ service.review_count | default: 1 }}",
-      "bestRating": "5",
-      "worstRating": "1"
+      "ratingValue": "{{ rating_average }}",
+      "reviewCount": "{{ rating_count }}",
+      "bestRating": "{{ rating_best }}",
+      "worstRating": "{{ rating_worst }}"
     },{% endif %}
     "offers": {
       "@type": "Offer",
