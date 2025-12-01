@@ -121,36 +121,6 @@ section_order:
       uji.
     icon: bi-award
     color: success
-section_testimonials:
-  title: Testimoni Pelanggan Riksa Uji Forklift
-  subtitle: Kepuasan Klien adalah Prioritas Kami
-  intro: Berikut testimoni dari klien yang telah menggunakan layanan riksa uji forklift
-    PT. Cipta Mas Jaya.
-  testimonials:
-  - nama: Budi Santoso
-    jenis_usaha: Perusahaan Logistik di Jabodetabek
-    jabatan: HSE Manager
-    rating: 5
-    judul: Pelayanan Profesional dan Tepat Waktu
-    komentar: Tim inspector sangat profesional dan teliti dalam melakukan pemeriksaan
-      forklift kami. Sertifikat terbit tepat waktu sesuai jadwal yang dijanjikan.
-    warna: primary
-  - nama: Rina Wijaya
-    jenis_usaha: Perusahaan Warehouse di Bekasi
-    jabatan: Operational Manager
-    rating: 5
-    judul: Harga Kompetitif dengan Kualitas Terbaik
-    komentar: Sudah 3 tahun menggunakan jasa PT. Cipta Mas Jaya untuk riksa uji 12
-      unit forklift kami. Harga bersaing dan pelayanan sangat memuaskan.
-    warna: success
-  - nama: Ahmad Hidayat
-    jenis_usaha: Perusahaan Manufaktur di Cikarang
-    jabatan: Plant Manager
-    rating: 5
-    judul: Rekomendasi Perbaikan yang Sangat Membantu
-    komentar: Selain inspeksi, tim juga memberikan rekomendasi perbaikan yang detail
-      sehingga forklift kami selalu dalam kondisi prima dan aman dioperasikan.
-    warna: info
 section_faq:
   title: FAQ Riksa Uji Forklift
   subtitle: Jawaban untuk Pertanyaan Umum
