@@ -98,77 +98,56 @@ BATCH 8: Section Conclusion
 
 ---
 
-## BATCH 1: FRONT MATTER
+## Section
 
-### title
+Berdasarkan template, ada **10 section** utama:
+
+| No | Section               | Deskripsi                                              |
+|----|-----------------------|--------------------------------------------------------|
+| 1  | `section_glossary`    | Istilah dan definisi (7 terms)                         |
+| 2  | `data_umum`           | Data perusahaan dan instalatir                         |
+| 3  | `object`              | Data alat yang diuji (6 specifications)                |
+| 4  | `section_intro`       | Pendahuluan (paragraphs, background, objectives)       |
+| 5  | `section_visual`      | Pemeriksaan visual (6 items)                           |
+| 6  | `section_operational` | Pengujian operasional (procedure, 6 items)             |
+| 7  | `section_technical`   | Pengujian teknis (procedure, 6 items)                  |
+| 8  | `section_ndt`         | Pengujian NDT/thickness (7 items)                      |
+| 9  | `section_hydrotest`   | Pengujian hidrostatik (8 steps, 5 items, 6 faq)        |
+| 10 | `section_safety_valve`| Pengujian safety valve (7 steps, items, 6 faq)         |
+| 11 | `section_analysis`    | Analisis data dan pembahasan (6 analyses, key_findings)|
+| 12 | `section_conclusion`  | Kesimpulan dan rekomendasi (verdict, 5+5 items)        |
+
+**Plus 4 bagian pendukung:**
+
+| Bagian       | Deskripsi                           |
+|--------------|-------------------------------------|
+| `paragraphs` | 4 paragraf pembuka setelah H1       |
+| `video`      | Video dokumentasi proses inspeksi   |
+| `images`     | 4 gambar (featured + gallery)       |
+| `categories` & `tags` | SEO taxonomy               |
+
+---
+
+## Section 1: Front Matter
+
+Metadata dasar artikel.
+
 ```yaml
+layout: node/node--inspection-report
 title: "Riksa Uji [Nama Alat] [Merek] Nomor Seri [Serial]"
-```
-- Format: "Riksa Uji" + nama alat + merek + nomor seri
-- Contoh: "Riksa Uji Boiler John Thompson - ACTOM (Pty) Ltd Nomor Seri 74910"
-
-### date & inspection_date
-```yaml
 date: 2024-10-16
-inspection_date: 2024-10-16
-```
-- date: Tanggal publikasi artikel
-- inspection_date: Tanggal pelaksanaan inspeksi
-- Format: YYYY-MM-DD
-
-### description
-```yaml
 description: "Laporan hasil riksa uji [nama alat] [merek] nomor seri [serial] meliputi pemeriksaan visual, pengujian operasional, teknis, dan NDT."
-```
-- 150-160 karakter untuk SEO meta description
-- Sebutkan jenis pengujian yang dilakukan
 
-### Report Metadata
-```yaml
+# Report Metadata
 header_bg: "#1a5276"
 report_number: "CMJ/RU/2024/1016-001"
+inspection_date: 2024-10-16
 inspector: "Tim Inspeksi PT. Cipta Mas Jaya"
-```
-- header_bg: Warna background header menggunakan **custom hex color** (format: `#xxxxxx`)
-- report_number: Format CMJ/RU/YYYY/MMDD-XXX
-- inspector: Nama tim/inspektur
 
-#### Contoh header_bg per Jenis Alat:
-```yaml
-# Boiler / Pesawat Uap (Biru tua)
-header_bg: "#1a5276"
-
-# Forklift / Pesawat Angkut (Oranye)
-header_bg: "#e67e22"
-
-# Crane / Pesawat Angkat (Hijau)
-header_bg: "#28a745"
-
-# Bejana Tekan (Merah)
-header_bg: "#dc3545"
-
-# Instalasi Listrik (Cyan)
-header_bg: "#17a2b8"
-
-# Tangki Timbun (Ungu)
-header_bg: "#8e44ad"
-```
-
-### categories
-```yaml
+# SEO & Taxonomy
 categories:
   - Layanan
   - [Kategori Induk]
-```
-- Kategori 1: Selalu "Layanan"
-- Kategori 2: Nama kategori induk
-- Contoh kategori induk:
-  - "Riksa Uji Pesawat Uap dan Bejana Tekan" (untuk boiler, bejana tekan)
-  - "Riksa Uji Pesawat Angkat dan Angkut" (untuk crane, forklift)
-  - "Riksa Uji Instalasi Listrik" (untuk panel listrik, grounding)
-
-### tags
-```yaml
 tags:
   - Inspeksi
   - Inspeksi K3
@@ -176,53 +155,55 @@ tags:
   - PJK3
   - Riksa Uji [Nama Alat]
   - [Nama Alat]
-```
-- 6 tags relevan
-- Selalu sertakan: "Inspeksi", "Inspeksi K3", "Jasa Riksa Uji", "PJK3"
-- Tambahkan tag spesifik alat
 
-### images
-```yaml
+# Schema flags
+skip_page_schema: false
+show_breadcrumb_schema: true
+
+# Images
 images:
   - "/path/to/featured-image.jpg"
   - "/path/to/image-2.jpg"
   - "/path/to/image-3.jpg"
   - "/path/to/image-4.jpg"
-```
-- images[0]: Featured image untuk og:image, schema, thumbnail
-- images[1-3]: Gallery images (optional)
-- Jika kosong, fallback ke default i1-i4.svg
 
-### video
-```yaml
+# Video Section
 video:
   name: "Video Proses Riksa Uji [Nama Alat]"
-  description: "Dokumentasi proses inspeksi dan pengujian [nama alat] oleh tim PT. Cipta Mas Jaya"
+  description: "Dokumentasi proses inspeksi"
   src: "https://www.youtube.com/watch?v=XXXXX"
   thumbnail: "/path/to/thumbnail.jpg"
   duration: "PT5M30S"
-```
-- duration: Format ISO 8601 (PT5M30S = 5 menit 30 detik)
-- Kosongkan jika tidak ada video
 
-### paragraphs
-```yaml
+# Paragraphs - Paragraf pembuka setelah H1
 paragraphs:
   - "[Paragraf 1: Definisi riksa uji + link ke halaman layanan]"
   - "[Paragraf 2: Penjelasan proses riksa uji secara umum]"
   - "[Paragraf 3: Penjelasan tentang NDT/thickness test]"
   - "[Paragraf 4: Link ke kategori induk + penjelasan spesifik alat]"
 ```
-- 4 paragraf pembuka setelah H1
-- Sertakan internal link ke halaman layanan terkait
-- Format link: `<a href="/url/">anchor text</a>`
-- Gunakan `<strong>` untuk penekanan kata kunci
+
+**Catatan:**
+- `header_bg`: Custom hex color (#1a5276, #e67e22, #28a745, #dc3545, #17a2b8)
+- `report_number`: Format CMJ/RU/YYYY/MMDD-XXX
+- `duration`: Format ISO 8601 (PT5M30S = 5 menit 30 detik)
+
+#### Contoh header_bg per Jenis Alat:
+| Jenis Alat | Warna | Hex Code |
+|------------|-------|----------|
+| Boiler / Pesawat Uap | Biru tua | `#1a5276` |
+| Forklift / Pesawat Angkut | Oranye | `#e67e22` |
+| Crane / Pesawat Angkat | Hijau | `#28a745` |
+| Bejana Tekan | Merah | `#dc3545` |
+| Instalasi Listrik | Cyan | `#17a2b8` |
+| Tangki Timbun | Ungu | `#8e44ad` |
 
 ---
 
-## BATCH 2: GLOSSARY + DATA UMUM + OBJECT
+## Section 2: section_glossary
 
-### section_glossary
+Istilah dan definisi yang digunakan dalam laporan.
+
 ```yaml
 section_glossary:
   title: "Istilah dan Definisi"
@@ -243,11 +224,18 @@ section_glossary:
     - term: "Jasa Inspeksi K3"
       definition: "<strong><a href=\"/\">Jasa Inspeksi K3</a></strong> layanan..."
 ```
-- 7 istilah standar yang harus ada
-- Setiap definisi menyebutkan nama alat dan nomor seri yang sedang diinspeksi
-- Sertakan internal link ke halaman terkait
 
-### data_umum
+**Catatan:**
+- 7 istilah standar yang harus ada
+- Sertakan internal link ke halaman terkait
+- Sebutkan nama alat dan nomor seri di setiap definisi
+
+---
+
+## Section 3: data_umum
+
+Data perusahaan pemilik alat dan instalatir.
+
 ```yaml
 data_umum:
   perusahaan:
@@ -261,11 +249,18 @@ data_umum:
     telepon: "(021) XXXX-XXXX"
     sertifikat: "SIUJK No. XXXX/SIUJK/YYYY"
 ```
-- perusahaan: Data pemilik alat
-- instalatir: Data perusahaan yang memasang/merawat alat
+
+**Catatan:**
+- `perusahaan`: Data pemilik alat
+- `instalatir`: Data perusahaan yang memasang/merawat alat
 - Gunakan data dummy jika tidak tersedia
 
-### object
+---
+
+## Section 4: object
+
+Data alat yang diuji.
+
 ```yaml
 object:
   name: "[Nama Alat]"
@@ -283,14 +278,23 @@ object:
       value: "[Nilai]"
     - label: "[Parameter 2]"
       value: "[Nilai]"
-    # ... dst (6 spesifikasi)
+    - label: "[Parameter 3]"
+      value: "[Nilai]"
+    - label: "[Parameter 4]"
+      value: "[Nilai]"
+    - label: "[Parameter 5]"
+      value: "[Nilai]"
+    - label: "[Parameter 6]"
+      value: "[Nilai]"
 ```
-- type: Jenis pesawat sesuai kategori K3
+
+**Catatan:**
+- `type`: Jenis pesawat sesuai kategori K3:
   - "Pesawat Uap" (untuk boiler)
   - "Bejana Tekan" (untuk pressure vessel)
   - "Pesawat Angkat" (untuk crane, hoist)
   - "Pesawat Angkut" (untuk forklift, conveyor)
-- specifications: 6 parameter teknis utama sesuai jenis alat
+- `specifications`: 6 parameter teknis utama
 
 #### Contoh Specifications per Jenis Alat:
 
@@ -347,9 +351,10 @@ specifications:
 
 ---
 
-## BATCH 3: SECTION INTRO + VISUAL
+## Section 5: section_intro
 
-### section_intro
+Pendahuluan laporan.
+
 ```yaml
 section_intro:
   title: "Pendahuluan"
@@ -363,11 +368,18 @@ section_intro:
     - "[Tujuan 3: Memverifikasi kepatuhan terhadap standar keselamatan]"
     - "[Tujuan 4: Memberikan rekomendasi pemeliharaan dan perbaikan]"
 ```
-- paragraphs: 2 paragraf pengantar
-- background: Latar belakang pelaksanaan riksa uji
-- objectives: 4 tujuan utama inspeksi
 
-### section_visual
+**Catatan:**
+- `paragraphs`: 2 paragraf pengantar
+- `background`: Latar belakang pelaksanaan riksa uji
+- `objectives`: 4 tujuan utama inspeksi
+
+---
+
+## Section 6: section_visual
+
+Pemeriksaan visual komponen alat.
+
 ```yaml
 section_visual:
   title: "Pemeriksaan Visual [Nama Alat] [Merek] Seri [Serial]"
@@ -377,46 +389,38 @@ section_visual:
       result: "[Hasil pemeriksaan]"
       condition: "[baik/perlu_perhatian/tidak_layak]"
       notes: "[Catatan tambahan]"
+    - component: "[Nama Komponen 2]"
+      result: "[Hasil pemeriksaan]"
+      condition: "[baik/perlu_perhatian/tidak_layak]"
+      notes: "[Catatan tambahan]"
     # ... dst (6 items)
   summary: "[Ringkasan hasil pemeriksaan visual]"
 ```
-- items: 6 komponen yang diperiksa
-- condition: Gunakan nilai:
+
+**Catatan:**
+- `items`: 6 komponen yang diperiksa
+- `condition`: Gunakan nilai:
   - `baik` - kondisi normal
-  - `perlu_perhatian` - ada masalah ringan yang perlu ditangani
-  - `tidak_layak` - kondisi kritis, harus diperbaiki
+  - `perlu_perhatian` - ada masalah ringan
+  - `tidak_layak` - kondisi kritis
 
 #### Contoh Komponen per Jenis Alat:
 
-**Boiler:**
-- Dinding luar boiler
-- Pipa uap utama
-- Ruang pembakaran
-- Penukar panas (Heat Exchanger)
-- Katup pengaman
-- Pelapis insulasi
-
-**Forklift:**
-- Body/rangka forklift
-- Fork/garpu angkat
-- Mast/tiang angkat
-- Sistem hidrolik
-- Roda dan ban
-- Cabin operator
-
-**Overhead Crane:**
-- Struktur utama (girder)
-- Hoist dan trolley
-- Wire rope/kawat baja
-- Hook/kait pengangkat
-- End carriage
-- Panel kontrol
+| Boiler | Forklift | Overhead Crane |
+|--------|----------|----------------|
+| Dinding luar boiler | Body/rangka forklift | Struktur utama (girder) |
+| Pipa uap utama | Fork/garpu angkat | Hoist dan trolley |
+| Ruang pembakaran | Mast/tiang angkat | Wire rope/kawat baja |
+| Penukar panas | Sistem hidrolik | Hook/kait pengangkat |
+| Katup pengaman | Roda dan ban | End carriage |
+| Pelapis insulasi | Cabin operator | Panel kontrol |
 
 ---
 
-## BATCH 4: SECTION OPERATIONAL + TECHNICAL
+## Section 7: section_operational
 
-### section_operational
+Pengujian operasional alat.
+
 ```yaml
 section_operational:
   title: "Pengujian Operasional [Nama Alat] [Merek] Seri [Serial]"
@@ -435,37 +439,29 @@ section_operational:
     # ... dst (6 items)
   summary: "[Ringkasan hasil pengujian operasional]"
 ```
-- procedure: 4 langkah prosedur pengujian
-- items: 6 parameter yang diuji
-- status: `lulus` atau `tidak_lulus`
+
+**Catatan:**
+- `procedure`: 4 langkah prosedur pengujian
+- `items`: 6 parameter yang diuji
+- `status`: `lulus` atau `tidak_lulus`
 
 #### Contoh Parameter per Jenis Alat:
 
-**Boiler:**
-- Tekanan Operasional
-- Suhu Operasional
-- Aliran Uap
-- Efisiensi Pembakaran
-- Fungsi Kontrol Otomatis
-- Kinerja Katup Pengaman
+| Boiler | Forklift | Overhead Crane |
+|--------|----------|----------------|
+| Tekanan Operasional | Fungsi Pengangkatan | Fungsi Hoisting |
+| Suhu Operasional | Kecepatan Travel | Fungsi Travel |
+| Aliran Uap | Sistem Pengereman | Sistem Pengereman |
+| Efisiensi Pembakaran | Sistem Kemudi | Load Indicator |
+| Fungsi Kontrol Otomatis | Fungsi Hidrolik | Limit Switch |
+| Kinerja Katup Pengaman | Indikator dan Alarm | Emergency Stop |
 
-**Forklift:**
-- Fungsi Pengangkatan
-- Kecepatan Travel
-- Sistem Pengereman
-- Sistem Kemudi
-- Fungsi Hidrolik
-- Indikator dan Alarm
+---
 
-**Overhead Crane:**
-- Fungsi Hoisting
-- Fungsi Travel (Long/Cross)
-- Sistem Pengereman
-- Load Indicator
-- Limit Switch
-- Emergency Stop
+## Section 8: section_technical
 
-### section_technical
+Pengujian teknis alat.
+
 ```yaml
 section_technical:
   title: "Pengujian Teknis [Nama Alat] [Merek] Seri [Serial]"
@@ -485,11 +481,16 @@ section_technical:
   summary: "[Ringkasan hasil pengujian teknis]"
 ```
 
+**Catatan:**
+- `procedure`: 4 langkah prosedur
+- `items`: 6 komponen/parameter yang diuji
+
 ---
 
-## BATCH 5: SECTION NDT
+## Section 9: section_ndt
 
-### section_ndt
+Pengujian Non-Destruktif (Thickness Test).
+
 ```yaml
 section_ndt:
   title: "Pengujian Non-Destruktif (Thickness Test) [Nama Alat] [Merek] Seri [Serial]"
@@ -504,28 +505,29 @@ section_ndt:
     # ... dst (7 items)
   summary: "[Ringkasan hasil pengujian NDT]"
 ```
-- items: 7 titik pengukuran ketebalan
-- result dan standard: Dalam satuan mm (tanpa unit)
 
-#### Contoh Titik Pengukuran per Jenis Alat:
+**Catatan:**
+- `items`: 7 titik pengukuran ketebalan
+- `result` dan `standard`: Dalam satuan mm
 
-**Boiler:**
-- Dinding Ruang Pembakaran (bagian bawah, tengah, atas)
-- Pipa Uap Utama (inlet, outlet)
-- Penukar Panas (tube bundle)
-- Tangki Air (dinding samping)
+#### Contoh Titik Pengukuran:
 
-**Pressure Vessel:**
-- Shell (bagian atas, tengah, bawah)
-- Head/Dish End (atas, bawah)
-- Nozzle
-- Manhole
+| Boiler | Pressure Vessel |
+|--------|-----------------|
+| Dinding Ruang Pembakaran (bawah) | Shell (atas) |
+| Dinding Ruang Pembakaran (tengah) | Shell (tengah) |
+| Dinding Ruang Pembakaran (atas) | Shell (bawah) |
+| Pipa Uap Utama (inlet) | Head/Dish End (atas) |
+| Pipa Uap Utama (outlet) | Head/Dish End (bawah) |
+| Penukar Panas | Nozzle |
+| Tangki Air | Manhole |
 
 ---
 
-## BATCH 6: SECTION HYDROTEST + SAFETY VALVE
+## Section 10: section_hydrotest
 
-### section_hydrotest
+Pengujian Hidrostatik.
+
 ```yaml
 section_hydrotest:
   title: "Pengujian Hidrostatik (Hydrotest) [Nama Alat] [Merek] Seri [Serial]"
@@ -573,12 +575,19 @@ section_hydrotest:
     - question: "Apakah hydrotest wajib dilakukan pada setiap riksa uji [nama alat]?"
       answer: "[Jawaban]"
 ```
-- test_pressure: Biasanya 1.5x tekanan kerja
-- steps: 8 langkah standar hydrotest
-- items: 5 komponen yang diuji
-- faq: 6 FAQ tentang hydrotest
 
-### section_safety_valve
+**Catatan:**
+- `test_pressure`: Biasanya 1.5x tekanan kerja
+- `steps`: 8 langkah standar hydrotest
+- `items`: 5 komponen yang diuji
+- `faq`: 6 FAQ tentang hydrotest
+
+---
+
+## Section 11: section_safety_valve
+
+Pengujian Safety Valve.
+
 ```yaml
 section_safety_valve:
   title: "Pengujian Safety Valve [Nama Alat] [Merek] Seri [Serial]"
@@ -608,7 +617,12 @@ section_safety_valve:
       result: "[Hasil]"
       status: "[lulus/tidak_lulus]"
     - unit: "2"
-      # ... dst sesuai jumlah unit
+      brand: "[Merek]"
+      size: "[Ukuran]"
+      set_pressure: "[Set Pressure]"
+      test_pressure: "[Tekanan Uji Aktual]"
+      result: "[Hasil]"
+      status: "[lulus/tidak_lulus]"
   summary: "[Ringkasan hasil pengujian safety valve]"
   faq:
     - question: "Apa itu safety valve pada [nama alat]?"
@@ -624,16 +638,19 @@ section_safety_valve:
     - question: "Kapan safety valve perlu diganti atau dikalibrasi ulang?"
       answer: "[Jawaban]"
 ```
-- total_units: Jumlah safety valve yang diuji (integer)
-- steps: 7 langkah standar pengujian safety valve
-- items: Sesuai jumlah unit (minimal 2)
-- faq: 6 FAQ tentang safety valve
+
+**Catatan:**
+- `total_units`: Jumlah safety valve yang diuji (integer)
+- `steps`: 7 langkah standar pengujian
+- `items`: Sesuai jumlah unit (minimal 2)
+- `faq`: 6 FAQ tentang safety valve
 
 ---
 
-## BATCH 7: SECTION ANALYSIS
+## Section 12: section_analysis
 
-### section_analysis
+Analisis Data dan Pembahasan.
+
 ```yaml
 section_analysis:
   title: "Analisis Data dan Pembahasan Laporan Riksa Uji [Nama Alat] [Merek] Seri [Serial]"
@@ -674,15 +691,18 @@ section_analysis:
   discussion_findings: "[Paragraf pembahasan temuan]"
   discussion_result: "[Paragraf hasil pembahasan]"
 ```
-- analyses: 6 analisis sesuai jumlah pengujian
-- key_findings: 5 temuan utama
-- discussion: 3 paragraf pembahasan
+
+**Catatan:**
+- `analyses`: 6 analisis sesuai jumlah pengujian
+- `key_findings`: 5 temuan utama
+- `discussion`: 3 paragraf pembahasan
 
 ---
 
-## BATCH 8: SECTION CONCLUSION
+## Section 13: section_conclusion
 
-### section_conclusion
+Kesimpulan dan Rekomendasi.
+
 ```yaml
 section_conclusion:
   title: "Kesimpulan dan Rekomendasi Laporan Riksa Uji [Nama Alat] [Merek] Seri [Serial]"
@@ -706,37 +726,45 @@ section_conclusion:
     - "[Paragraf disclaimer - data contoh]"
     - "[Paragraf CTA - hubungi kami]"
 ```
-- verdict: Gunakan nilai:
+
+**Catatan:**
+- `verdict`: Gunakan nilai:
   - `layak` - alat layak operasi
   - `tidak_layak` - alat tidak layak operasi
   - `layak_bersyarat` - layak dengan syarat perbaikan
-- conclusions: 5 kesimpulan
-- recommendations: 5 rekomendasi
-- validity_period: Biasanya "1 Tahun"
-- next_inspection: Tanggal inspeksi berikutnya
+- `conclusions`: 5 kesimpulan
+- `recommendations`: 5 rekomendasi
+- `validity_period`: Biasanya "1 Tahun"
 
 ---
 
 ## STATUS VALUES REFERENCE
 
 ### condition (section_visual)
-- `baik` - Kondisi normal, tidak ada masalah
-- `perlu_perhatian` - Ada masalah ringan, perlu perawatan preventif
-- `tidak_layak` - Kondisi kritis, harus diperbaiki sebelum operasi
+| Value | Deskripsi |
+|-------|-----------|
+| `baik` | Kondisi normal, tidak ada masalah |
+| `perlu_perhatian` | Ada masalah ringan, perlu perawatan preventif |
+| `tidak_layak` | Kondisi kritis, harus diperbaiki sebelum operasi |
 
 ### status (section_operational, section_technical, section_ndt, section_hydrotest, section_safety_valve)
-- `lulus` - Memenuhi standar
-- `tidak_lulus` - Tidak memenuhi standar
+| Value | Deskripsi |
+|-------|-----------|
+| `lulus` | Memenuhi standar |
+| `tidak_lulus` | Tidak memenuhi standar |
 
 ### verdict (section_conclusion)
-- `layak` - Alat layak operasi tanpa syarat
-- `tidak_layak` - Alat tidak layak operasi
-- `layak_bersyarat` - Alat layak operasi dengan syarat perbaikan tertentu
+| Value | Deskripsi |
+|-------|-----------|
+| `layak` | Alat layak operasi tanpa syarat |
+| `tidak_layak` | Alat tidak layak operasi |
+| `layak_bersyarat` | Alat layak operasi dengan syarat perbaikan tertentu |
 
 ---
 
 ## CHECKLIST SEBELUM PUBLISH
 
+### Checklist Umum
 - [ ] Semua field terisi (tidak ada yang kosong "")
 - [ ] Nama alat, merek, dan nomor seri konsisten di seluruh dokumen
 - [ ] Internal link valid (cek URL)
@@ -748,3 +776,104 @@ section_conclusion:
 - [ ] FAQ questions diakhiri tanda tanya (?)
 - [ ] Gambar tersedia atau gunakan fallback
 - [ ] Preview di localhost sebelum deploy
+
+### Checklist Per Section
+
+#### Front Matter
+- [ ] `title` - Format: "Riksa Uji [Nama Alat] [Merek] Nomor Seri [Serial]"
+- [ ] `date` & `inspection_date` - Format YYYY-MM-DD
+- [ ] `description` - 150-160 karakter
+- [ ] `header_bg` - Custom hex color valid
+- [ ] `report_number` - Format CMJ/RU/YYYY/MMDD-XXX
+- [ ] `inspector` - Nama tim inspektur
+- [ ] `categories` - 2 kategori (Layanan + Kategori Induk)
+- [ ] `tags` - 6 tags relevan
+- [ ] `images` - 4 gambar
+- [ ] `video` - Lengkap jika ada, kosong jika tidak
+- [ ] `paragraphs` - 4 paragraf pembuka
+
+#### Section 2: section_glossary
+- [ ] `title` - Judul section
+- [ ] `intro` - Pengantar dengan nama alat dan serial
+- [ ] `terms` - 7 istilah dengan definisi dan link
+
+#### Section 3: data_umum
+- [ ] `perusahaan` - nama, alamat, telepon, email
+- [ ] `instalatir` - nama, alamat, telepon, sertifikat
+
+#### Section 4: object
+- [ ] `name`, `brand`, `model`, `serial` - Data identifikasi
+- [ ] `type` - Jenis pesawat K3
+- [ ] `year` - Tahun pembuatan (integer)
+- [ ] `capacity`, `pressure` - Dengan satuan
+- [ ] `location`, `owner` - Lokasi dan pemilik
+- [ ] `specifications` - 6 parameter dengan label dan value
+
+#### Section 5: section_intro
+- [ ] `title` - Judul pendahuluan
+- [ ] `paragraphs` - 2 paragraf pengantar
+- [ ] `background` - Latar belakang
+- [ ] `objectives` - 4 tujuan inspeksi
+
+#### Section 6: section_visual
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pemeriksaan
+- [ ] `items` - 6 komponen dengan component, result, condition, notes
+- [ ] `summary` - Ringkasan hasil
+
+#### Section 7: section_operational
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pengujian
+- [ ] `procedure` - 4 langkah prosedur
+- [ ] `items` - 6 parameter dengan parameter, result, standard, status, notes
+- [ ] `summary` - Ringkasan hasil
+
+#### Section 8: section_technical
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pengujian
+- [ ] `procedure` - 4 langkah prosedur
+- [ ] `items` - 6 komponen dengan component, result, standard, status, notes
+- [ ] `summary` - Ringkasan hasil
+
+#### Section 9: section_ndt
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar NDT
+- [ ] `method` - Metode pengujian
+- [ ] `items` - 7 titik dengan component, location, result, standard, status
+- [ ] `summary` - Ringkasan hasil
+
+#### Section 10: section_hydrotest
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar hydrotest
+- [ ] `working_pressure`, `test_pressure`, `duration` - Parameter uji
+- [ ] `method` - Metode pengujian
+- [ ] `steps` - 8 langkah dengan name dan text
+- [ ] `items` - 5 komponen dengan component, pressure, duration, result, status
+- [ ] `summary` - Ringkasan hasil
+- [ ] `faq` - 6 FAQ dengan question dan answer
+
+#### Section 11: section_safety_valve
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar pengujian
+- [ ] `total_units` - Jumlah unit (integer)
+- [ ] `steps` - 7 langkah dengan name dan text
+- [ ] `items` - Minimal 2 unit dengan unit, brand, size, set_pressure, test_pressure, result, status
+- [ ] `summary` - Ringkasan hasil
+- [ ] `faq` - 6 FAQ dengan question dan answer
+
+#### Section 12: section_analysis
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `intro` - Pengantar analisis
+- [ ] `analyses` - 6 analisis dengan title, intro, findings, interpretation
+- [ ] `key_findings` - 5 temuan utama
+- [ ] `discussion_title`, `discussion_intro`, `discussion_findings`, `discussion_result` - Pembahasan
+
+#### Section 13: section_conclusion
+- [ ] `title` - Dengan nama alat, merek, serial
+- [ ] `verdict` - layak/tidak_layak/layak_bersyarat
+- [ ] `verdict_text` - Kalimat verdict lengkap
+- [ ] `conclusions` - 5 kesimpulan
+- [ ] `recommendations` - 5 rekomendasi
+- [ ] `validity_period` - Periode berlaku
+- [ ] `next_inspection` - Tanggal inspeksi berikutnya
+- [ ] `paragraphs` - 2 paragraf (disclaimer, CTA)
