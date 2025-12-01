@@ -66,6 +66,11 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
     {% include schema/node--riksa-uji/schema--company-intro.html %}
   {% endif %}
 
+  <!-- Related Service Schema (Offer with itemOffered) -->
+  {% if page.related_service %}
+    {% include schema/node--riksa-uji/schema--related-service.html %}
+  {% endif %}
+
   <!-- WebPageElement schemas (hasPart of TechArticle) -->
   {% if page.content_intro %}
     {% include schema/node--riksa-uji/schema--webpage-content-intro.html %}
@@ -151,10 +156,10 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
       description=page.video_post.description %}
   {% endif %}
 
-  <!-- Breadcrumb Schema -->
-  {% if page.show_breadcrumb_schema %}
+  <!-- Breadcrumb Schema (default: aktif, set show_breadcrumb_schema: false to disable) -->
+  {% unless page.show_breadcrumb_schema == false %}
     {% include schema/schema--breadcrumb.html current_title=page.title %}
-  {% endif %}
+  {% endunless %}
 
   <!-- Gallery Slider JS -->
   {% if page.images and page.images.size > 0 %}

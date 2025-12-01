@@ -36,7 +36,7 @@ structure with specialized sections (importance, process, regulation, etc).
             {% if page.section_hero %}
               {% include reusable/node--riksa-uji/block--hero-riksa-uji.html section=page.section_hero %}
             {% endif %}
-            
+
           </div>
 
           <div class="col-lg-8">
@@ -61,6 +61,11 @@ structure with specialized sections (importance, process, regulation, etc).
 
               {% if page.section_services %}
                 {% include reusable/node--riksa-uji/block--services-riksa-uji.html section=page.section_services %}
+              {% endif %}
+
+              <!-- Related Service -->
+              {% if page.related_service %}
+                {% include reusable/node--riksa-uji/block--related-service.html path=page.related_service %}
               {% endif %}
 
               {{ content }}
@@ -132,12 +137,6 @@ structure with specialized sections (importance, process, regulation, etc).
               {% include reusable/node--riksa-uji/block--related-post.html limit=3 %}
 
               {% include reusable/node--riksa-uji/block--reviews.html %}
-
-              {% comment %}
-              
-              {% include reusable/node--riksa-uji/block--comments.html %}
-
-              {% endcomment %}
 
             </div>
 

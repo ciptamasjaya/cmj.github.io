@@ -70,16 +70,50 @@ Usage:
   ],
   "makesOffer": {
     "@type": "Offer",
+    {% if page.related_service %}
+    {% assign related_svc = site.services | where: "url", page.related_service | first %}
+    {% if related_svc %}
     "itemOffered": {
-      "@type": "Service",
-      "@id": "{{ page.url | absolute_url }}#service",
+      "@id": "{{ related_svc.url | absolute_url }}#product"
+    }
+    {% else %}
+    "itemOffered": {
+      "@type": "Product",
+      "@id": "{{ page.url | absolute_url }}#product",
       "name": "{{ page.title | escape }}",
       "description": "{{ page.description | escape }}",
-      "provider": {
-        "@type": "Organization",
-        "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+      "image": "{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ site.business.name }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "IDR",
+        "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31"
       }
     }
+    {% endif %}
+    {% else %}
+    "itemOffered": {
+      "@type": "Product",
+      "@id": "{{ page.url | absolute_url }}#product",
+      "name": "{{ page.title | escape }}",
+      "description": "{{ page.description | escape }}",
+      "image": "{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ site.business.name }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "IDR",
+        "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31"
+      }
+    }
+    {% endif %}
   }
 }
 </script>

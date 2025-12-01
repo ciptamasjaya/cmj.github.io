@@ -104,10 +104,6 @@ Usage:
   {% if page.tags.size > 0 %}
   "keywords": "{{ page.tags | join: ', ' | escape }}",
   {% endif %}
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [".post-header .post-title", ".block--post-description .post-description__text", ".block--content-intro .paragraph-text:first-of-type"]
-  },
   "isPartOf": {
     "@type": "WebSite",
     "@id": "{{ site.url }}{{ site.baseurl }}/#website"

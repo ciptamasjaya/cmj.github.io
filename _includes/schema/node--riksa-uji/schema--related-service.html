@@ -1,0 +1,129 @@
+{% comment %}
+============================================================================
+Schema: Related Service (Offer with itemOffered)
+============================================================================
+
+@file        schema--related-service.html
+@path        _includes/schema/node--riksa-uji/schema--related-service.html
+@type        Schema (Offer/Service)
+@description Schema.org Offer markup linking article to actual service page
+@author      arisciwek
+@created     2025-12-01
+
+This schema creates an Offer that references the actual Service page,
+establishing a proper relationship between article content and the
+service being offered.
+
+Usage:
+------
+{% include schema/node--riksa-uji/schema--related-service.html %}
+
+Requires frontmatter:
+- related_service: /layanan/.../riksa-uji-forklift/
+
+============================================================================
+{% endcomment %}
+
+{% if page.related_service %}
+{% assign service = site.services | where: "url", page.related_service | first %}
+
+{% if service %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "{{ page.url | absolute_url }}#offer",
+  "name": "Penawaran {{ service.title }}",
+  "description": "{{ service.description | escape }}",
+  "url": "{{ page.url | absolute_url }}",
+  "availability": "https://schema.org/InStock",
+  "priceCurrency": "IDR",
+  "priceSpecification": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "IDR",
+    "valueAddedTaxIncluded": true,
+    "description": "Hubungi kami untuk penawaran harga"
+  },
+  "seller": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name }}"
+  },
+  "itemOffered": {
+    "@type": "Product",
+    "@id": "{{ service.url | absolute_url }}#product",
+    "name": "{{ service.title | escape }}",
+    "description": "{{ service.description | escape }}",
+    "url": "{{ service.url | absolute_url }}",
+    "image": "{{ service.image | default: '/assets/images/logo.svg' | absolute_url }}",
+    "brand": {
+      "@type": "Brand",
+      "name": "{{ site.business.name }}"
+    }{% if service.category %},
+    "category": "{{ service.category | escape }}"{% endif %},
+    {% if service.rating %}"aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "{{ service.rating }}",
+      "reviewCount": "{{ service.review_count | default: 1 }}",
+      "bestRating": "5",
+      "worstRating": "1"
+    },{% endif %}
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "IDR",
+      {% if service.offer_riksa_uji.offers.first.price %}"price": "{{ service.offer_riksa_uji.offers.first.price }}",
+      {% elsif service.price %}"price": "{{ service.price }}",
+      {% endif %}"priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "IDR"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "ID"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "1",
+            "maxValue": "7",
+            "unitCode": "d"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "0",
+            "maxValue": "1",
+            "unitCode": "d"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "ID",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnDays": "0"
+      }
+    }
+  }
+}
+</script>
+
+<!-- WebPageElement for Related Service Section -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "@id": "{{ page.url | absolute_url }}#related-service-section",
+  "name": "Layanan Terkait",
+  "description": "Lihat detail layanan dan penawaran harga untuk {{ service.title }}",
+  "text": "{{ service.title }}: {{ service.description | truncate: 200 | escape }}",
+  "url": "{{ page.url | absolute_url }}#block--related-service"
+}
+</script>
+{% endif %}
+{% endif %}
