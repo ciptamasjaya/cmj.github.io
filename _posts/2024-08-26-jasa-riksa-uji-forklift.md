@@ -847,5 +847,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: /layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/
-lastmod: '2025-12-01T02:07:50+0700'
+lastmod: '2025-12-01T16:40:00+0700'
 ---
