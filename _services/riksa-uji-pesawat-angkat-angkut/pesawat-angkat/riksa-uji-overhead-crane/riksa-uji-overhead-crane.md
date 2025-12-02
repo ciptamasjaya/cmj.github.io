@@ -58,7 +58,7 @@ intro:
     para: Kami melayani berbagai jenis overhead crane termasuk single girder, double
       girder, gantry crane, dan semi-gantry crane pada seluruh Indonesia. Dengan jaringan
       inspector yang luas, kami siap melakukan inspeksi on-site pada lokasi Anda.
-jenis_overhead_crane:
+jenis_alat:
   name: Jenis Overhead Crane yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis overhead crane dan crane
     jembatan

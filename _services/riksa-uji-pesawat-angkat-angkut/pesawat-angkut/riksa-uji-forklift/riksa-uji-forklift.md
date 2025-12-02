@@ -57,7 +57,7 @@ intro:
     para: Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck,
       dan stacker pada semua Indonesia. Dengan jaringan inspector yang luas, kami
       siap melakukan inspeksi on-site pada lokasi Anda.
-jenis_forklift:
+jenis_alat:
   name: Jenis Forklift yang Kami Layani
   description: Kami melayani riksa pengujian dalam rangka bermacam-macam jenis forklift
   items:

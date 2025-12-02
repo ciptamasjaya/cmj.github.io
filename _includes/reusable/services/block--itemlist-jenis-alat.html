@@ -1,14 +1,15 @@
 {% comment %}
 ============================================================================
-Block: ItemList Jenis Forklift
+Block: ItemList Jenis Alat
 ============================================================================
 
-@file        block--itemlist-jenis-forklift.html
-@path        _includes/reusable/services/block--itemlist-jenis-forklift.html
+@file        block--itemlist-jenis-alat.html
+@path        _includes/reusable/services/block--itemlist-jenis-alat.html
 @type        Block (reusable)
-@description Displays item list grid for jenis forklift - icon besar di tengah
+@description Displays item list grid for jenis alat - icon besar di tengah
 @author      arisciwek
 @created     2025-11-26
+@updated     2025-12-02
 
 Parameters:
 -----------
@@ -20,7 +21,7 @@ Parameters:
 
 Usage:
 ------
-{% include reusable/services/block--itemlist-jenis-forklift.html list=page.jenis_forklift %}
+{% include reusable/services/block--itemlist-jenis-alat.html list=page.jenis_alat %}
 
 ============================================================================
 {% endcomment %}
@@ -28,13 +29,13 @@ Usage:
 {% assign list = include.list %}
 
 {% if list and list.items.size > 0 %}
-<section id="list-{{ list.name | slugify }}" class="itemlist-jenis-forklift-section py-5 bg-light">
+<section id="list-{{ list.name | slugify }}" class="block--itemlist-jenis-alat py-5 bg-light">
   <div class="container">
 
     <!-- Section Header -->
     <div class="text-center mb-5">
       <h2 class="mb-3">
-        <i class="bi bi-truck text-primary me-2"></i>
+        <i class="bi bi-grid-3x3-gap text-primary me-2"></i>
         {{ list.name }}
       </h2>
       {% if list.description %}
@@ -46,13 +47,13 @@ Usage:
     <div class="row">
       {% for item in list.items %}
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="jenis-forklift-card card h-100 border-0 shadow-sm">
+        <div class="jenis-alat__card card h-100 border-0 shadow-sm">
           <div class="card-body text-center p-4">
-            <div class="jenis-forklift-icon mb-3">
+            <div class="jenis-alat__icon mb-3">
               <i class="bi {{ item.icon }} text-primary"></i>
             </div>
-            <h3 class="jenis-forklift-name h5 fw-bold mb-2">{{ item.name }}</h3>
-            <p class="jenis-forklift-desc text-muted small mb-0">{{ item.description }}</p>
+            <h3 class="jenis-alat__name h5 fw-bold mb-2">{{ item.name }}</h3>
+            <p class="jenis-alat__desc text-muted small mb-0">{{ item.description }}</p>
           </div>
         </div>
       </div>

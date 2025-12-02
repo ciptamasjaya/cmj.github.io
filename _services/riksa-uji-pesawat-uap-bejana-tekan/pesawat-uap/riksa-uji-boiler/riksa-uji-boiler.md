@@ -58,7 +58,7 @@ intro:
       boiler, steam generator, dan thermal oil heater di seluruh Indonesia. Secara
       jaringan inspector yang luas, kami siap melakukan inspeksi on-site di lokasi
       Anda.
-jenis_boiler:
+jenis_alat:
   name: Jenis Boiler yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis boiler dan pesawat uap
   items:

@@ -9,10 +9,11 @@ Schema: ItemList Riksa Uji (schema--itemlist-riksa-uji.html)
 @description JSON-LD ItemList schema for riksa uji service pages
 @author      arisciwek
 @created     2025-11-26
+@updated     2025-12-02
 
 Data Source:
 ------------
-Data from page frontmatter: page.jenis_forklift, page.komponen_inspeksi
+Data from page frontmatter: page.jenis_alat, page.komponen_inspeksi
 
 Usage:
 ------
@@ -21,17 +22,17 @@ Usage:
 ============================================================================
 {% endcomment %}
 
-{% if page.jenis_forklift and page.jenis_forklift.items.size > 0 %}
+{% if page.jenis_alat and page.jenis_alat.items.size > 0 %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": "{{ page.url | absolute_url }}#jenis-forklift",
-  "name": "{{ page.jenis_forklift.name | escape }}",
-  "description": "{{ page.jenis_forklift.description | escape }}",
-  "numberOfItems": {{ page.jenis_forklift.items.size }},
+  "@id": "{{ page.url | absolute_url }}#jenis-alat",
+  "name": "{{ page.jenis_alat.name | escape }}",
+  "description": "{{ page.jenis_alat.description | escape }}",
+  "numberOfItems": {{ page.jenis_alat.items.size }},
   "itemListElement": [
-    {% for item in page.jenis_forklift.items %}
+    {% for item in page.jenis_alat.items %}
     {
       "@type": "ListItem",
       "position": {{ forloop.index }},

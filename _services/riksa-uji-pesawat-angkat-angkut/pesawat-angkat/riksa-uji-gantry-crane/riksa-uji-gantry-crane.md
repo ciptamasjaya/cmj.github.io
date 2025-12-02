@@ -52,7 +52,7 @@ intro:
     para: Kami melayani riksa uji gantry crane di semua Indonesia, dari pelabuhan,
       galangan kapal, hingga kawasan industri. Tim kami siap datang ke lokasi Anda
       kapanpun dibutuhkan.
-jenis_gantry_crane:
+jenis_alat:
   name: Jenis Gantry Crane yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis gantry crane industri
   items:
