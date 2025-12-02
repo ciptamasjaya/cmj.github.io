@@ -41,7 +41,7 @@ cara_pemesanan:
 {% assign howto = include.howto %}
 
 {% if howto and howto.steps.size > 0 %}
-<section id="block--howto-cara-pemesanan" class="howto-section py-5">
+<section id="block--howto-cara-pemesanan" class="block--howto-cara-pemesanan py-5">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -64,20 +64,20 @@ cara_pemesanan:
         </div>
         {% endif %}
 
-        <div class="howto-steps">
+        <div class="step-list">
           {% for step in howto.steps %}
-          <div class="howto-step card mb-3 border-start border-primary border-4">
-            <div class="card-body">
+          <div class="card card--step mb-3 border-start border-primary border-4">
+            <div class="card-body step__body">
               <div class="d-flex align-items-start">
-                <div class="howto-step__number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 40px; height: 40px;">
+                <div class="step__number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 40px; height: 40px;">
                   <span class="fw-bold">{{ forloop.index }}</span>
                 </div>
-                <div class="howto-step__content flex-grow-1">
-                  <h5 class="howto-step__name fw-bold mb-2">{{ step.name }}</h5>
-                  <p class="howto-step__text text-muted mb-0">{{ step.text }}</p>
+                <div class="step__content flex-grow-1">
+                  <h5 class="step__title fw-bold mb-2">{{ step.name }}</h5>
+                  <p class="step__description text-muted mb-0">{{ step.text }}</p>
                 </div>
                 {% if step.image %}
-                <div class="howto-step__image ms-3 d-none d-md-block">
+                <div class="step__image ms-3 d-none d-md-block">
                   <img src="{{ step.image | relative_url }}" alt="{{ step.name }}" class="rounded" style="max-width: 80px; max-height: 80px;">
                 </div>
                 {% endif %}

@@ -28,7 +28,7 @@ Usage:
 {% assign howto = include.howto %}
 
 {% if howto and howto.steps.size > 0 %}
-<section id="block--howto-proses-inspeksi" class="howto-section bg-light py-5">
+<section id="block--howto-proses-inspeksi" class="block--howto-proses-inspeksi bg-light py-5">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -51,18 +51,18 @@ Usage:
         </div>
         {% endif %}
 
-        <div class="row">
+        <div class="row step-list">
           {% for step in howto.steps %}
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="howto-step card h-100 shadow-sm">
-              <div class="card-body">
+            <div class="card card--step h-100 shadow-sm">
+              <div class="card-body step__body">
                 <div class="d-flex align-items-center mb-3">
-                  <div class="howto-step__number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 36px; height: 36px;">
+                  <div class="step__number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 36px; height: 36px;">
                     <span class="fw-bold small">{{ forloop.index }}</span>
                   </div>
-                  <h3 class="howto-step__name fw-bold mb-0 h5">{{ step.name }}</h3>
+                  <h3 class="step__title fw-bold mb-0 h5">{{ step.name }}</h3>
                 </div>
-                <p class="howto-step__text text-muted small mb-0">{{ step.text }}</p>
+                <p class="step__description text-muted small mb-0">{{ step.text }}</p>
               </div>
             </div>
           </div>

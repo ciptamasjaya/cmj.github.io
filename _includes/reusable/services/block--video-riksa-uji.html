@@ -30,7 +30,7 @@ Usage:
 {% assign video = include.video %}
 
 {% if video and video.src %}
-<section id="block--video-riksa-uji" class="video-riksa-uji-section py-5 bg-light">
+<section id="block--video-riksa-uji" class="block--video-riksa-uji py-5 bg-light">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -47,11 +47,11 @@ Usage:
         </div>
 
         <!-- Video Player -->
-        <div class="video-wrapper card border-0 shadow-lg overflow-hidden">
+        <div class="card card--video border-0 shadow-lg overflow-hidden">
           <div class="ratio ratio-16x9">
             <video
               id="videoPlayer"
-              class="video-player"
+              class="video__player"
               controls
               preload="metadata"
               {% if video.thumbnail %}poster="{{ video.thumbnail | relative_url }}"{% endif %}
@@ -63,8 +63,8 @@ Usage:
         </div>
 
         <!-- Video Info -->
-        <div class="video-info mt-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
-          <div class="video-meta text-muted small">
+        <div class="video__info mt-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div class="video__meta text-muted small">
             {% if video.duration %}
             {% assign duration = video.duration | remove: "PT" | remove: "S" %}
             {% assign minutes = duration | split: "M" | first %}
@@ -81,8 +81,8 @@ Usage:
             </span>
             {% endif %}
           </div>
-          <div class="video-actions">
-            <button class="btn btn-sm btn-outline-primary" onclick="document.getElementById('videoPlayer').requestFullscreen()">
+          <div class="video__actions">
+            <button class="btn btn-sm btn-outline-primary video__fullscreen-btn" onclick="document.getElementById('videoPlayer').requestFullscreen()">
               <i class="bi bi-fullscreen me-1"></i>Fullscreen
             </button>
           </div>

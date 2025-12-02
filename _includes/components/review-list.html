@@ -50,17 +50,17 @@ Usage:
 {% if display_reviews.size > 0 %}
 <div class="review-list">
   {% for review in display_reviews %}
-    <div class="review-card card shadow-sm mb-3">
-      <div class="card-body">
+    <div class="card card--review shadow-sm mb-3">
+      <div class="card-body review__body">
         {% comment %} Header: Author + Rating {% endcomment %}
-        <div class="review-card__header d-flex justify-content-between align-items-start mb-3">
-          <div class="review-card__author d-flex align-items-center">
-            <div class="review-card__avatar rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
+        <div class="review__header d-flex justify-content-between align-items-start mb-3">
+          <div class="review__author d-flex align-items-center">
+            <div class="review__avatar rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 48px; height: 48px;">
               <span class="fw-bold">{{ review.author | slice: 0, 1 | upcase }}</span>
             </div>
             <div>
               <div class="d-flex align-items-center gap-2">
-                <h5 class="review-card__name mb-0">{{ review.author }}</h5>
+                <h5 class="review__name mb-0">{{ review.author }}</h5>
                 {% if review.verified %}
                   <span class="badge bg-success-subtle text-success small">
                     <i class="bi bi-patch-check-fill"></i> Verified
@@ -72,8 +72,8 @@ Usage:
               {% endif %}
             </div>
           </div>
-          <div class="review-card__rating text-end">
-            <div class="stars mb-1">
+          <div class="review__rating text-end">
+            <div class="review__stars mb-1">
               {% for i in (1..5) %}
                 {% if i <= review.rating %}
                   <i class="bi bi-star-fill text-warning"></i>
@@ -91,15 +91,15 @@ Usage:
 
         {% comment %} Review title {% endcomment %}
         {% if review.title %}
-          <h6 class="review-card__title fw-bold mb-2">{{ review.title }}</h6>
+          <h6 class="review__title fw-bold mb-2">{{ review.title }}</h6>
         {% endif %}
 
         {% comment %} Review content {% endcomment %}
-        <p class="review-card__content mb-3">{{ review.content }}</p>
+        <p class="review__content mb-3">{{ review.content }}</p>
 
         {% comment %} Footer: Helpful count {% endcomment %}
         {% if show_helpful %}
-          <div class="review-card__footer d-flex align-items-center text-muted small">
+          <div class="review__footer d-flex align-items-center text-muted small">
             <span class="me-3">
               <i class="bi bi-hand-thumbs-up me-1"></i>{{ review.helpful_count | default: 0 }} orang terbantu
             </span>

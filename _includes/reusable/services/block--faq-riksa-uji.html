@@ -27,7 +27,7 @@ Usage:
 {% assign faq = include.faq %}
 
 {% if faq and faq.faqs.size > 0 %}
-<section id="block--faq-riksa-uji" class="faq-riksa-uji-section py-5">
+<section id="block--faq-riksa-uji" class="block--faq-riksa-uji py-5">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto">
@@ -46,21 +46,21 @@ Usage:
         <!-- FAQ Accordion -->
         <div class="accordion" id="faqRiksaUjiAccordion">
           {% for item in faq.faqs %}
-          <div class="accordion-item border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %} faq-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button{% unless forloop.first %} collapsed{% endunless %} fw-semibold"
+          <div class="accordion-item accordion-item--faq border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %}">
+            <h3 class="accordion-header faq__header">
+              <button class="accordion-button faq__button{% unless forloop.first %} collapsed{% endunless %} fw-semibold"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#faq-{{ forloop.index }}"
                       {% if forloop.first %}aria-expanded="true"{% endif %}>
                 <i class="bi bi-patch-question text-primary me-2"></i>
-                {{ item.question }}
+                <span class="faq__question">{{ item.question }}</span>
               </button>
             </h3>
             <div id="faq-{{ forloop.index }}"
                  class="accordion-collapse collapse{% if forloop.first %} show{% endif %}"
                  data-bs-parent="#faqRiksaUjiAccordion">
-              <div class="accordion-body text-muted">
+              <div class="accordion-body faq__answer text-muted">
                 {{ item.answer }}
               </div>
             </div>

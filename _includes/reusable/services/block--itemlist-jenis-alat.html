@@ -47,13 +47,13 @@ Usage:
     <div class="row">
       {% for item in list.items %}
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="jenis-alat__card card h-100 border-0 shadow-sm">
-          <div class="card-body text-center p-4">
-            <div class="jenis-alat__icon mb-3">
+        <div class="card card--item h-100 border-0 shadow-sm">
+          <div class="card-body item__body text-center p-4">
+            <div class="item__icon mb-3">
               <i class="bi {{ item.icon }} text-primary"></i>
             </div>
-            <h3 class="jenis-alat__name h5 fw-bold mb-2">{{ item.name }}</h3>
-            <p class="jenis-alat__desc text-muted small mb-0">{{ item.description }}</p>
+            <h3 class="item__title h5 fw-bold mb-2">{{ item.name }}</h3>
+            <p class="item__description text-muted small mb-0">{{ item.description }}</p>
           </div>
         </div>
       </div>
