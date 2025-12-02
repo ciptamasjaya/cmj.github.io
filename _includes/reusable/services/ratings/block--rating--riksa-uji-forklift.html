@@ -9,6 +9,7 @@ Block: Rating Data - Riksa Uji Forklift Service
 @description Rating data + reviews for riksa uji forklift service
 @author      arisciwek
 @created     2025-12-01
+@updated     2025-12-02
 
 Output:
 1. Liquid variables for schema (rating_average, rating_count, etc.)
@@ -31,7 +32,41 @@ Included via schema using service slug or rating_id
 {% assign rating_dist_3 = 1 %}
 {% assign rating_dist_2 = 0 %}
 {% assign rating_dist_1 = 0 %}
-{% assign rating_updated = "2025-12-01T10:00:00Z" %}
+{% assign rating_updated = "2025-12-01" %}
+
+{% comment %} === REVIEW DATA (single source) === {% endcomment %}
+{% comment %} Review 1 {% endcomment %}
+{% assign review_1_nama = "Hendra Wijaya" %}
+{% assign review_1_usaha = "Pergudangan di Tangerang" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Inspeksi forklift sangat profesional" %}
+{% assign review_1_komentar = "Tim PT. Cipta Mas Jaya sangat kompeten dalam melakukan riksa uji forklift warehouse kami. Semua unit lulus inspeksi dan sertifikat diterbitkan tepat waktu." %}
+{% assign review_1_tanggal = "2025-11-25" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 8 %}
+{% assign review_1_featured = true %}
+
+{% comment %} Review 2 {% endcomment %}
+{% assign review_2_nama = "Rina Susanti" %}
+{% assign review_2_usaha = "Manufaktur di Karawang" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "Pelayanan cepat dan detail" %}
+{% assign review_2_komentar = "Proses riksa uji 5 unit forklift kami selesai dalam 1 hari. Inspektur sangat teliti memeriksa sistem hidrolik dan rem. Laporan lengkap dan mudah dipahami." %}
+{% assign review_2_tanggal = "2025-11-20" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 6 %}
+{% assign review_2_featured = true %}
+
+{% comment %} Review 3 {% endcomment %}
+{% assign review_3_nama = "Agus Prasetyo" %}
+{% assign review_3_usaha = "Logistik di Cirebon" %}
+{% assign review_3_rating = 3 %}
+{% assign review_3_judul = "Cukup baik tapi jadwal mundur" %}
+{% assign review_3_komentar = "Kualitas inspeksi bagus dan inspektur berpengalaman. Sayangnya jadwal inspeksi mundur 2 hari dari yang dijanjikan karena inspektur sedang di luar kota." %}
+{% assign review_3_tanggal = "2025-11-15" %}
+{% assign review_3_verified = true %}
+{% assign review_3_helpful = 4 %}
+{% assign review_3_featured = false %}
 
 {% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
 <script id="rating-data" type="application/json">
@@ -53,39 +88,39 @@ Included via schema using service slug or rating_id
   "reviews": [
     {
       "id": 1,
-      "nama": "Hendra Wijaya",
-      "jenis_usaha": "Pergudangan di Tangerang",
-      "rating": 5,
-      "judul": "Inspeksi forklift sangat profesional",
-      "komentar": "Tim PT. Cipta Mas Jaya sangat kompeten dalam melakukan riksa uji forklift warehouse kami. Semua unit lulus inspeksi dan sertifikat diterbitkan tepat waktu.",
-      "tanggal": "2025-11-25",
-      "verified": true,
-      "helpful_count": 8,
-      "featured": true
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
     },
     {
       "id": 2,
-      "nama": "Rina Susanti",
-      "jenis_usaha": "Manufaktur di Karawang",
-      "rating": 5,
-      "judul": "Pelayanan cepat dan detail",
-      "komentar": "Proses riksa uji 5 unit forklift kami selesai dalam 1 hari. Inspektur sangat teliti memeriksa sistem hidrolik dan rem. Laporan lengkap dan mudah dipahami.",
-      "tanggal": "2025-11-20",
-      "verified": true,
-      "helpful_count": 6,
-      "featured": true
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
     },
     {
       "id": 3,
-      "nama": "Agus Prasetyo",
-      "jenis_usaha": "Logistik di Cirebon",
-      "rating": 3,
-      "judul": "Cukup baik tapi jadwal mundur",
-      "komentar": "Kualitas inspeksi bagus dan inspektur berpengalaman. Sayangnya jadwal inspeksi mundur 2 hari dari yang dijanjikan karena inspektur sedang di luar kota.",
-      "tanggal": "2025-11-15",
-      "verified": true,
-      "helpful_count": 4,
-      "featured": false
+      "nama": "{{ review_3_nama }}",
+      "jenis_usaha": "{{ review_3_usaha }}",
+      "rating": {{ review_3_rating }},
+      "judul": "{{ review_3_judul }}",
+      "komentar": "{{ review_3_komentar }}",
+      "tanggal": "{{ review_3_tanggal }}",
+      "verified": {{ review_3_verified }},
+      "helpful_count": {{ review_3_helpful }},
+      "featured": {{ review_3_featured }}
     }
   ]
 }

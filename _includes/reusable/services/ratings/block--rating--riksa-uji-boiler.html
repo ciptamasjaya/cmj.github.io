@@ -9,6 +9,7 @@ Block: Rating Data - Riksa Uji Boiler Service
 @description Rating data + reviews for riksa uji boiler service
 @author      arisciwek
 @created     2025-12-01
+@updated     2025-12-02
 
 Output:
 1. Liquid variables for schema (rating_average, rating_count, etc.)
@@ -31,7 +32,30 @@ Included via schema using service slug or rating_id
 {% assign rating_dist_3 = 0 %}
 {% assign rating_dist_2 = 0 %}
 {% assign rating_dist_1 = 0 %}
-{% assign rating_updated = "2025-11-25T17:11:25Z" %}
+{% assign rating_updated = "2025-11-25" %}
+
+{% comment %} === REVIEW DATA (single source) === {% endcomment %}
+{% comment %} Review 1 {% endcomment %}
+{% assign review_1_nama = "Hendra Kusuma" %}
+{% assign review_1_usaha = "Pabrik Tekstil di Bandung" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Inspeksi Boiler yang Sangat Teliti" %}
+{% assign review_1_komentar = "Tim PT. Cipta Mas Jaya sangat detail dalam melakukan pemeriksaan boiler kami. Laporan NDT dan hidrostatik test sangat komprehensif." %}
+{% assign review_1_tanggal = "2025-11-25" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 12 %}
+{% assign review_1_featured = true %}
+
+{% comment %} Review 2 {% endcomment %}
+{% assign review_2_nama = "Dewi Anggraeni" %}
+{% assign review_2_usaha = "Pabrik Makanan di Tangerang" %}
+{% assign review_2_rating = 4 %}
+{% assign review_2_judul = "Proses Cepat dan Profesional" %}
+{% assign review_2_komentar = "Perpanjangan izin pemakaian boiler kami berjalan lancar berkat bantuan CMJ. Dokumen lengkap dan sertifikat terbit tepat waktu." %}
+{% assign review_2_tanggal = "2025-11-20" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 9 %}
+{% assign review_2_featured = true %}
 
 {% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
 <script id="rating-data" type="application/json">
@@ -53,27 +77,27 @@ Included via schema using service slug or rating_id
   "reviews": [
     {
       "id": 1,
-      "nama": "Hendra Kusuma",
-      "jenis_usaha": "Pabrik Tekstil di Bandung",
-      "rating": 5,
-      "judul": "Inspeksi Boiler yang Sangat Teliti",
-      "komentar": "Tim PT. Cipta Mas Jaya sangat detail dalam melakukan pemeriksaan boiler kami. Laporan NDT dan hidrostatik test sangat komprehensif.",
-      "tanggal": "2025-11-25",
-      "verified": true,
-      "helpful_count": 12,
-      "featured": true
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
     },
     {
       "id": 2,
-      "nama": "Dewi Anggraeni",
-      "jenis_usaha": "Pabrik Makanan di Tangerang",
-      "rating": 4,
-      "judul": "Proses Cepat dan Profesional",
-      "komentar": "Perpanjangan izin pemakaian boiler kami berjalan lancar berkat bantuan CMJ. Dokumen lengkap dan sertifikat terbit tepat waktu.",
-      "tanggal": "2025-11-20",
-      "verified": true,
-      "helpful_count": 9,
-      "featured": true
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
     }
   ]
 }
