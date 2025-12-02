@@ -1,0 +1,38 @@
+{% comment %}
+============================================================================
+Schema: VideoObject (Video)
+============================================================================
+
+@file        schema--video.html
+@path        _includes/schema/node--alat-k3/schema--video.html
+@type        Schema (JSON-LD)
+@description Standalone VideoObject schema for video content
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Usage:
+{% include schema/node--alat-k3/schema--video.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_video.src %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "@id": "{{ page.url | absolute_url }}#video",
+  "name": {{ page.section_video.name | default: page.title | jsonify }},
+  {% if page.section_video.description %}"description": {{ page.section_video.description | jsonify }},{% endif %}
+  "contentUrl": "{{ page.section_video.src | absolute_url }}",
+  {% if page.section_video.thumbnail %}"thumbnailUrl": "{{ page.section_video.thumbnail | absolute_url }}",{% endif %}
+  {% if page.section_video.duration %}"duration": "{{ page.section_video.duration }}",{% endif %}
+  {% if page.section_video.upload_date %}"uploadDate": "{{ page.section_video.upload_date | date_to_xmlschema }}",{% endif %}
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.company.name | default: 'PT. Cipta Mas Jaya' }}"
+  }
+}
+</script>
+{% endif %}

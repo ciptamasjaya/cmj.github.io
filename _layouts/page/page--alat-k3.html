@@ -44,20 +44,28 @@ Schemas included:
   {% include components/cta-whatsapp.html style="floating" %}
 
   {% comment %} ============================================================
-  SCHEMA MARKUP (Pendekatan A: TechArticle sebagai wrapper utama)
+  SCHEMA MARKUP (Pendekatan: Schema terpisah per block)
   ============================================================
 
-  Schema TechArticle sudah mencakup semua section sebagai hasPart:
-  - DefinedTermSet (section_definition)
-  - ItemList (functions, types, components, risks, applications)
-  - PropertyValue (specifications)
-  - Legislation (regulations)
-  - HowTo (section_howto)
-  - FAQ as Questions (section_faq)
-  - ImageGallery (section_gallery)
-  - VideoObject (section_video)
+  Schema terpisah untuk setiap block:
+  - schema--techarticle.html         → TechArticle (main article)
+  - schema--definedtermset.html      → DefinedTermSet (definitions)
+  - schema--itemlist-functions.html  → ItemList (functions/keunggulan)
+  - schema--itemlist-types.html      → ItemList (types/jenis)
+  - schema--itemlist-components.html → ItemList (components/komponen)
+  - schema--itemlist-risks.html      → ItemList (risks/risiko)
+  - schema--itemlist-applications.html → ItemList (applications/aplikasi)
+  - schema--dataset.html             → Dataset (specifications)
+  - schema--faqpage.html             → FAQPage (FAQ rich results)
+  - schema--howto.html               → HowTo (How-to rich results)
+  - schema--imagegallery.html        → ImageGallery
+  - schema--video.html               → VideoObject
 
-  Lihat schema--techarticle.html untuk pendekatan alternatif (@graph)
+  TechArticle juga mencakup (duplikasi untuk kelengkapan):
+  - about: functions, types, components, risks, applications
+  - additionalProperty: specifications
+  - mentions: regulations
+
   ============================================================ {% endcomment %}
 
   {% comment %} Page Schema (WebPage) {% endcomment %}
@@ -65,8 +73,33 @@ Schemas included:
     {% include schema/schema--page.html %}
   {% endunless %}
 
-  {% comment %} Main TechArticle Schema (mencakup semua section) {% endcomment %}
+  {% comment %} Main TechArticle Schema {% endcomment %}
   {% include schema/node--alat-k3/schema--techarticle.html %}
+
+  {% comment %} DefinedTermSet Schema (definitions) {% endcomment %}
+  {% include schema/node--alat-k3/schema--definedtermset.html %}
+
+  {% comment %} ItemList Schemas (carousel eligible) {% endcomment %}
+  {% include schema/node--alat-k3/schema--itemlist-functions.html %}
+  {% include schema/node--alat-k3/schema--itemlist-types.html %}
+  {% include schema/node--alat-k3/schema--itemlist-components.html %}
+  {% include schema/node--alat-k3/schema--itemlist-risks.html %}
+  {% include schema/node--alat-k3/schema--itemlist-applications.html %}
+
+  {% comment %} Dataset Schema (specifications) {% endcomment %}
+  {% include schema/node--alat-k3/schema--dataset.html %}
+
+  {% comment %} FAQPage Schema (for FAQ rich results) {% endcomment %}
+  {% include schema/node--alat-k3/schema--faqpage.html %}
+
+  {% comment %} HowTo Schema (for How-to rich results) {% endcomment %}
+  {% include schema/node--alat-k3/schema--howto.html %}
+
+  {% comment %} ImageGallery Schema {% endcomment %}
+  {% include schema/node--alat-k3/schema--imagegallery.html %}
+
+  {% comment %} VideoObject Schema {% endcomment %}
+  {% include schema/node--alat-k3/schema--video.html %}
 
   {% comment %} Breadcrumb Schema {% endcomment %}
   {% unless page.show_breadcrumb_schema == false %}

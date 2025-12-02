@@ -1,0 +1,44 @@
+{% comment %}
+============================================================================
+Schema: ItemList - Applications (Aplikasi/Penggunaan)
+============================================================================
+
+@file        schema--itemlist-applications.html
+@path        _includes/schema/node--alat-k3/schema--itemlist-applications.html
+@type        Schema (JSON-LD)
+@description ItemList schema for applications/use cases (carousel eligible)
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Usage:
+{% include schema/node--alat-k3/schema--itemlist-applications.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_applications.applications.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#applications",
+  "name": {{ page.section_applications.title | default: "Aplikasi dan Penggunaan" | jsonify }},
+  {% if page.section_applications.intro %}"description": {{ page.section_applications.intro | strip_html | jsonify }},{% endif %}
+  "numberOfItems": {{ page.section_applications.applications.size }},
+  "itemListElement": [
+    {% for app in page.section_applications.applications %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "Thing",
+        "name": {{ app.name | jsonify }},
+        "description": {{ app.description | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

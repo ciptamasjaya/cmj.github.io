@@ -1,0 +1,39 @@
+{% comment %}
+============================================================================
+Schema: ImageGallery (Image Gallery)
+============================================================================
+
+@file        schema--imagegallery.html
+@path        _includes/schema/node--alat-k3/schema--imagegallery.html
+@type        Schema (JSON-LD)
+@description Standalone ImageGallery schema for image collections
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Usage:
+{% include schema/node--alat-k3/schema--imagegallery.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_gallery.images.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "{{ page.url | absolute_url }}#gallery",
+  "name": {{ page.section_gallery.title | default: "Galeri Gambar" | jsonify }},
+  "image": [
+    {% for img in page.section_gallery.images %}
+    {
+      "@type": "ImageObject",
+      "url": "{{ img.src | absolute_url }}",
+      "name": {{ img.alt | jsonify }},
+      "caption": {{ img.caption | default: img.alt | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

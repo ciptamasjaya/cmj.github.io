@@ -1,0 +1,44 @@
+{% comment %}
+============================================================================
+Schema: ItemList - Types (Jenis-jenis)
+============================================================================
+
+@file        schema--itemlist-types.html
+@path        _includes/schema/node--alat-k3/schema--itemlist-types.html
+@type        Schema (JSON-LD)
+@description ItemList schema for types/variants list (carousel eligible)
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Usage:
+{% include schema/node--alat-k3/schema--itemlist-types.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_types.types.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#types",
+  "name": {{ page.section_types.title | default: "Jenis-jenis" | jsonify }},
+  {% if page.section_types.intro %}"description": {{ page.section_types.intro | strip_html | jsonify }},{% endif %}
+  "numberOfItems": {{ page.section_types.types.size }},
+  "itemListElement": [
+    {% for type in page.section_types.types %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "Thing",
+        "name": {{ type.name | jsonify }},
+        "description": {{ type.description | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

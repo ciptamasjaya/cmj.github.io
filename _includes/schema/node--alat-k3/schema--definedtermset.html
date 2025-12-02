@@ -1,0 +1,38 @@
+{% comment %}
+============================================================================
+Schema: DefinedTermSet (Definitions/Glossary)
+============================================================================
+
+@file        schema--definedtermset.html
+@path        _includes/schema/node--alat-k3/schema--definedtermset.html
+@type        Schema (JSON-LD)
+@description Standalone DefinedTermSet schema for definitions/glossary
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Usage:
+{% include schema/node--alat-k3/schema--definedtermset.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_definition.terms.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "{{ page.url | absolute_url }}#definitions",
+  "name": {{ page.section_definition.title | default: "Pengertian dan Istilah" | jsonify }},
+  "hasDefinedTerm": [
+    {% for term in page.section_definition.terms %}
+    {
+      "@type": "DefinedTerm",
+      "name": {{ term.name | jsonify }},
+      "description": {{ term.definition | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
