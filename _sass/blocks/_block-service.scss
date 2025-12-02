@@ -273,44 +273,44 @@
 /* ============================================================================
    SERVICE AREA BLOCK (Area Pelayanan)
    ============================================================================ */
-#area-pelayanan .row.g-3 {
+#block--service-area .row.g-3 {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
 }
 
-#area-pelayanan .row.g-3 > [class*="col-"] {
+#block--service-area .row.g-3 > [class*="col-"] {
   display: flex;
   flex-direction: column;
 }
 
-#area-pelayanan .row.g-3 .card {
+#block--service-area .row.g-3 .card {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
-#area-pelayanan .row.g-3 .card-body {
+#block--service-area .row.g-3 .card-body {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
 }
 
-#area-pelayanan .row.g-3 .card-body ul {
+#block--service-area .row.g-3 .card-body ul {
   flex: 1;
 }
 
-#area-pelayanan .card {
+#block--service-area .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#area-pelayanan .card:hover {
+#block--service-area .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-#area-pelayanan .card-header {
+#block--service-area .card-header {
   padding: 0.75rem 1rem;
 }
 
