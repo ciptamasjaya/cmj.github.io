@@ -1,0 +1,122 @@
+{% comment %}
+============================================================================
+Schema: Rating (Product with AggregateRating + Reviews)
+============================================================================
+
+@file        schema--rating.html
+@path        _includes/schema/node--alat-k3/schema--rating.html
+@type        Schema
+@description Product schema with AggregateRating and Reviews for alat-k3 article
+@author      arisciwek
+@created     2025-12-02
+
+Flow:
+1. Rating block included in node layout → sets Liquid vars + outputs JSON
+2. Generate Product schema with AggregateRating + Reviews
+
+Usage in page--alat-k3.html:
+--------------------------------------
+{% include schema/node--alat-k3/schema--rating.html %}
+
+Requires:
+---------
+Rating block loaded before this schema (in node layout)
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Get rating ID from page.rating_id {% endcomment %}
+{% assign rating_id = page.rating_id %}
+
+{% comment %} Include rating block - sets Liquid vars {% endcomment %}
+{% if rating_id %}
+{% capture rating_file %}reusable/node--alat-k3/ratings/block--rating--{{ rating_id }}.html{% endcapture %}
+{% include {{ rating_file }} %}
+{% endif %}
+
+{% if rating_average and rating_count > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "{{ page.url | absolute_url }}#article-product",
+  "name": "{{ page.title | escape }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+  "brand": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+    "name": "{{ site.business.name | default: site.company.name | default: 'PT. Cipta Mas Jaya' }}"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "@id": "{{ page.url | absolute_url }}#aggregate-rating",
+    "ratingValue": "{{ rating_average }}",
+    "ratingCount": "{{ rating_count }}",
+    "bestRating": "{{ rating_best }}",
+    "worstRating": "{{ rating_worst }}"
+  }
+  {% if review_1_nama %},
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_1_nama }}" },
+      "datePublished": "{{ review_1_tanggal }}",
+      "name": "{{ review_1_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_1_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_1_komentar }}"
+    }
+    {% if review_2_nama %},
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_2_nama }}" },
+      "datePublished": "{{ review_2_tanggal }}",
+      "name": "{{ review_2_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_2_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_2_komentar }}"
+    }
+    {% endif %}
+    {% if review_3_nama %},
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_3_nama }}" },
+      "datePublished": "{{ review_3_tanggal }}",
+      "name": "{{ review_3_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_3_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_3_komentar }}"
+    }
+    {% endif %}
+    {% if review_4_nama %},
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "{{ review_4_nama }}" },
+      "datePublished": "{{ review_4_tanggal }}",
+      "name": "{{ review_4_judul }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_4_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ review_4_komentar }}"
+    }
+    {% endif %}
+  ]
+  {% endif %}
+}
+</script>
+{% endif %}

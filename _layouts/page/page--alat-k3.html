@@ -26,6 +26,7 @@ Schemas included:
 - FAQPage (section_faq)
 - ImageGallery (section_gallery)
 - VideoObject (section_video)
+- Product + AggregateRating + Reviews (rating_id)
 - BreadcrumbList
 
 ============================================================================
@@ -106,6 +107,11 @@ Schemas included:
 
   {% comment %} VideoObject Schema {% endcomment %}
   {% include schema/node--alat-k3/schema--video.html %}
+
+  {% comment %} Product with AggregateRating + Reviews (from rating_id) {% endcomment %}
+  {% if page.rating_id %}
+    {% include schema/node--alat-k3/schema--rating.html %}
+  {% endif %}
 
   {% comment %} Breadcrumb Schema {% endcomment %}
   {% unless page.show_breadcrumb_schema == false %}

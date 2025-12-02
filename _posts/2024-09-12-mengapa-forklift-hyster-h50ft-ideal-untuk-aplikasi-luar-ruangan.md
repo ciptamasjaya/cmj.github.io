@@ -18,6 +18,9 @@ tags:
   - K3
 image: /assets/images/posts/forklift-hyster-h50ft.jpg
 
+# Rating system - references block--rating--hyster-h50ft.html
+rating_id: "hyster-h50ft"
+
 # ============================================================================
 # SECTION: Definition (DefinedTermSet)
 # ============================================================================

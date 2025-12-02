@@ -40,6 +40,12 @@ Blocks:
 ============================================================================
 {%- endcomment -%}
 
+{% comment %} Load rating data BEFORE header (sets Liquid vars for use in header) {% endcomment %}
+{% if page.rating_id %}
+  {% capture rating_file %}reusable/node--alat-k3/ratings/block--rating--{{ page.rating_id }}.html{% endcapture %}
+  {% include {{ rating_file }} %}
+{% endif %}
+
 <article class="post-content py-5">
 
   <div class="container-fluid">
@@ -141,6 +147,11 @@ Blocks:
 
               {% comment %} Related Posts {% endcomment %}
               {% include reusable/node--alat-k3/block--related-post.html limit=3 %}
+
+              {% comment %} Testimonials/Reviews (from rating_id) {% endcomment %}
+              {% if page.rating_id %}
+                {% include reusable/node--alat-k3/block--testimonials.html %}
+              {% endif %}
 
             </div>
 
