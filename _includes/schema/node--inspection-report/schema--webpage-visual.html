@@ -15,14 +15,19 @@ Schema: Visual Inspection Section - WebPageElement
 
 {% if page.section_visual %}
 {% assign section = page.section_visual %}
+{% capture text_content %}
+{{ section.intro | strip_html }}
+{% if section.items %}{% for item in section.items %}{{ item.label }}: {{ item.value }} {% endfor %}{% endif %}
+{% endcapture %}
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPageElement",
-  "@id": "{{ page.url | absolute_url }}#visual-inspection",
+  "@id": "{{ page.url | absolute_url }}#visual-section",
   "name": "{{ section.title | default: 'Pemeriksaan Visual' | escape }}",
-  "description": "Hasil pemeriksaan visual kondisi fisik peralatan"
+  "description": "{{ section.intro | default: 'Hasil pemeriksaan visual kondisi fisik peralatan' | strip_html | truncate: 160 | escape }}",
+  "text": "{{ text_content | strip_newlines | strip | normalize_whitespace | escape }}"
 }
 </script>
 {% endif %}

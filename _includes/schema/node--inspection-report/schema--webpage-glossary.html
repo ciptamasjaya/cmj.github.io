@@ -24,7 +24,7 @@ Schema: Glossary Section - WebPageElement
 {
   "@context": "https://schema.org",
   "@type": "WebPageElement",
-  "@id": "{{ page.url | absolute_url }}#glossary",
+  "@id": "{{ page.url | absolute_url }}#glossary-section",
   "name": "{{ section.title | default: 'Istilah dan Definisi' | escape }}",
   "description": "Daftar istilah teknis dan definisi",
   "text": "{{ text_content | strip | normalize_whitespace | truncate: 500 | escape }}"

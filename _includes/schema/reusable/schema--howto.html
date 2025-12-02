@@ -58,7 +58,14 @@ Usage:
   ]{% if is_part_of %},
   "isPartOf": {
     "@type": "{{ is_part_of }}",
-    "@id": "{{ page.url | absolute_url }}#{{ is_part_of | downcase }}"
+    "@id": "{{ page.url | absolute_url }}#{{ is_part_of | downcase }}",
+    "headline": "{{ page.title | escape }}",
+    "author": {
+      "@type": "Organization",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+      "name": "{{ site.business.name }}"
+    },
+    "image": "{{ page.image | default: '/assets/images/posts/default/i1.svg' | absolute_url }}"
   }{% endif %}
 }
 </script>

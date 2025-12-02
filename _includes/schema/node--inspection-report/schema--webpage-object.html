@@ -26,7 +26,7 @@ Kapasitas: {{ obj.capacity }}
 {
   "@context": "https://schema.org",
   "@type": "WebPageElement",
-  "@id": "{{ page.url | absolute_url }}#object-info",
+  "@id": "{{ page.url | absolute_url }}#object-section",
   "name": "Data Objek Inspeksi",
   "description": "Spesifikasi teknis {{ obj.type | escape }}",
   "text": "{{ text_content | strip | normalize_whitespace | escape }}"

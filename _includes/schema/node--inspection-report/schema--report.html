@@ -27,6 +27,23 @@ Note: AggregateRating is in separate Product schema (schema--rating.html)
   {% assign primary_image = page.image %}
 {% endif %}
 
+{% comment %} Build articleBody from key frontmatter sections (same pattern as node--riksa-uji) {% endcomment %}
+{% capture article_body %}
+{% if page.description %}{{ page.description | strip_html }} {% endif %}
+{% if page.section_visual.intro %}{{ page.section_visual.intro | strip_html }} {% endif %}
+{% if page.section_operational.intro %}{{ page.section_operational.intro | strip_html }} {% endif %}
+{% if page.section_technical.intro %}{{ page.section_technical.intro | strip_html }} {% endif %}
+{% if page.section_analysis.intro %}{{ page.section_analysis.intro | strip_html }} {% endif %}
+{% if page.section_conclusion.intro %}{{ page.section_conclusion.intro | strip_html }} {% endif %}
+{% endcapture %}
+{% assign article_body = article_body | strip_newlines | strip | truncate: 5000 | escape %}
+
+{% comment %} Check which sections exist for hasPart {% endcomment %}
+{% assign has_parts = false %}
+{% if page.section_intro or page.section_glossary or page.data_umum or page.object or page.section_visual or page.section_operational or page.section_technical or page.section_ndt or page.section_hydrotest or page.section_safety_valve or page.section_analysis or page.section_conclusion %}
+  {% assign has_parts = true %}
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,20 +53,27 @@ Note: AggregateRating is in separate Product schema (schema--rating.html)
       "@id": "{{ page.url | absolute_url }}#tech-article",
       "headline": "{{ page.title | escape }}",
       "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 | escape }}",
+      "articleBody": "{{ article_body }}",
       "url": "{{ page.url | absolute_url }}",
+      "inLanguage": "id",
       "datePublished": "{{ page.date | date_to_xmlschema }}",
       "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
       "author": {
         "@type": "Organization",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
         "name": "{{ site.business.name }}",
-        "url": "{{ site.url }}"
+        "url": "{{ site.url }}{{ site.baseurl }}/"
       },
       "publisher": {
         "@type": "Organization",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
         "name": "{{ site.business.name }}",
+        "url": "{{ site.url }}{{ site.baseurl }}/",
         "logo": {
           "@type": "ImageObject",
-          "url": "{{ site.logo | absolute_url }}"
+          "url": "{{ '/assets/images/logo.svg' | absolute_url }}",
+          "width": 200,
+          "height": 60
         }
       },
       "mainEntityOfPage": {
@@ -61,12 +85,39 @@ Note: AggregateRating is in separate Product schema (schema--rating.html)
         "name": "{{ page.object.type | default: 'Industrial Equipment' }} Inspection",
         "description": "Technical inspection and testing of {{ page.object.name | default: 'industrial equipment' }}"
       },
+      "dependencies": "Peraturan K3, Standar Keselamatan Kerja, Riksa Uji Berkala",
       "articleSection": "Inspection Report",
       "proficiencyLevel": "Expert",
+      {% if page.tags.size > 0 %}
+      "keywords": "{{ page.tags | join: ', ' | escape }}",
+      {% endif %}
       "image": {
         "@type": "ImageObject",
-        "url": "{{ primary_image | absolute_url }}"
-      }
+        "@id": "{{ page.url | absolute_url }}#primaryimage",
+        "url": "{{ primary_image | absolute_url }}",
+        "width": 1200,
+        "height": 630,
+        "caption": "{{ page.title | escape }}"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#website"
+      }{% if has_parts %},
+      "hasPart": [
+        {% assign need_comma = false %}
+        {% if page.section_intro %}{ "@id": "{{ page.url | absolute_url }}#intro-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_glossary %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#glossary-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.data_umum %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#data-umum-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.object %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#object-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_visual %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#visual-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_operational %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#operational-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_technical %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#technical-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_ndt %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#ndt-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_hydrotest %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#hydrotest-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_safety_valve %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#safety-valve-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_analysis %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#analysis-section" }{% assign need_comma = true %}{% endif %}
+        {% if page.section_conclusion %}{% if need_comma %},{% endif %}{ "@id": "{{ page.url | absolute_url }}#conclusion-section" }{% endif %}
+      ]{% endif %}
     },
     {
       "@type": "Report",

@@ -15,14 +15,20 @@ Schema: Data Umum Section - WebPageElement
 
 {% if page.data_umum %}
 {% assign data = page.data_umum %}
+{% capture text_content %}
+{% if data.perusahaan %}Perusahaan: {{ data.perusahaan }} {% endif %}
+{% if data.alamat %}Alamat: {{ data.alamat }} {% endif %}
+{% if data.instalatir %}Instalatir: {{ data.instalatir }} {% endif %}
+{% endcapture %}
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPageElement",
-  "@id": "{{ page.url | absolute_url }}#data-umum",
+  "@id": "{{ page.url | absolute_url }}#data-umum-section",
   "name": "Data Umum",
-  "description": "Informasi umum perusahaan dan instalatir"
+  "description": "Informasi umum perusahaan dan instalatir",
+  "text": "{{ text_content | strip_newlines | strip | normalize_whitespace | escape }}"
 }
 </script>
 {% endif %}

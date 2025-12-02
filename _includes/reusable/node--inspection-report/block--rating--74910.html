@@ -33,6 +33,28 @@ Included via schema--rating.html using page.rating_id or URL slug
 {% assign rating_dist_1 = 0 %}
 {% assign rating_updated = "2025-11-30T10:00:00Z" %}
 
+{% comment %} === REVIEW DATA (for Product schema) === {% endcomment %}
+{% assign review_1_nama = "Ir. Suryadi Putra" %}
+{% assign review_1_usaha = "Pabrik Tekstil di Bandung" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Inspeksi boiler sangat profesional" %}
+{% assign review_1_komentar = "Tim inspeksi PT. Cipta Mas Jaya sangat kompeten dalam melakukan riksa uji boiler kami. Pemeriksaan hidrostatik dan thickness test dilakukan dengan teliti." %}
+{% assign review_1_tanggal = "2025-11-28" %}
+
+{% assign review_2_nama = "Herman Wijaya" %}
+{% assign review_2_usaha = "Industri Makanan di Semarang" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "Laporan lengkap dan detail" %}
+{% assign review_2_komentar = "Laporan riksa uji yang diberikan sangat lengkap, mencakup hasil hydrotest, safety valve test, dan analisis ketebalan. Sangat membantu untuk dokumentasi K3." %}
+{% assign review_2_tanggal = "2025-11-25" %}
+
+{% assign review_3_nama = "Kartini Susanti" %}
+{% assign review_3_usaha = "Pabrik Kertas di Surabaya" %}
+{% assign review_3_rating = 5 %}
+{% assign review_3_judul = "Pelayanan cepat dan tepat" %}
+{% assign review_3_komentar = "Proses riksa uji boiler selesai tepat waktu. Inspektur sangat berpengalaman dan memberikan rekomendasi yang berguna untuk pemeliharaan boiler." %}
+{% assign review_3_tanggal = "2025-11-22" %}
+
 {% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
 <script id="rating-data" type="application/json">
 {

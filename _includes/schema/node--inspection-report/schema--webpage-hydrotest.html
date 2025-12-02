@@ -15,14 +15,19 @@ Schema: Hydrotest Section - WebPageElement
 
 {% if page.section_hydrotest %}
 {% assign section = page.section_hydrotest %}
+{% capture text_content %}
+{{ section.intro | strip_html }}
+{% if section.items %}{% for item in section.items %}{{ item.label }}: {{ item.value }} {% endfor %}{% endif %}
+{% endcapture %}
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPageElement",
-  "@id": "{{ page.url | absolute_url }}#hydrotest",
+  "@id": "{{ page.url | absolute_url }}#hydrotest-section",
   "name": "{{ section.title | default: 'Pengujian Hidrostatik' | escape }}",
-  "description": "Hasil pengujian hidrostatik (tekanan)"
+  "description": "{{ section.intro | default: 'Hasil pengujian hidrostatik (tekanan)' | strip_html | truncate: 160 | escape }}",
+  "text": "{{ text_content | strip_newlines | strip | normalize_whitespace | escape }}"
 }
 </script>
 {% endif %}

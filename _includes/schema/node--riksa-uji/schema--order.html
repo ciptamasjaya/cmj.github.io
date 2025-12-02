@@ -68,7 +68,14 @@ Usage:
   ],
   "isPartOf": {
     "@type": "TechArticle",
-    "@id": "{{ page.url | absolute_url }}#techarticle"
+    "@id": "{{ page.url | absolute_url }}#techarticle",
+    "headline": "{{ page.title | escape }}",
+    "author": {
+      "@type": "Organization",
+      "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+      "name": "{{ site.business.name }}"
+    },
+    "image": "{{ page.image | default: '/assets/images/posts/default/i1.svg' | absolute_url }}"
   }
 }
 </script>

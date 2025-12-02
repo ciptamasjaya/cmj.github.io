@@ -23,7 +23,7 @@ Schema: Analysis Section - WebPageElement
 {
   "@context": "https://schema.org",
   "@type": "WebPageElement",
-  "@id": "{{ page.url | absolute_url }}#analysis",
+  "@id": "{{ page.url | absolute_url }}#analysis-section",
   "name": "{{ section.title | default: 'Analisis dan Pembahasan' | escape }}",
   "description": "Analisis data dan pembahasan hasil inspeksi",
   "text": "{{ text_content | strip | normalize_whitespace | truncate: 1000 | escape }}"
