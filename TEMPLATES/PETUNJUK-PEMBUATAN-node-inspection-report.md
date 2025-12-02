@@ -108,6 +108,9 @@ tags:
 skip_page_schema: false
 show_breadcrumb_schema: true
 
+# SEO Keywords (spesifik per halaman)
+keywords: "riksa uji [nama alat], inspeksi [nama alat], laporan riksa uji, [merek], hydrotest, thickness test, PJK3, inspeksi K3"
+
 # Images
 images:
   - "/path/to/featured-image.jpg"

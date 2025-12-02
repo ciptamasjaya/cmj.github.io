@@ -123,6 +123,7 @@ date: 2025-05-24 18:21:24
 author: admin
 description: "PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 di wilayah [Nama Kota]. Hubungi 08568258841 untuk semua kebutuhan riksa uji Anda."
 area_served: "[Nama Kota]"
+keywords: "PJK3 [Nama Kota], jasa riksa uji [Nama Kota], inspeksi K3 [Nama Kota], sertifikasi K3, riksa pengujian [Nama Kota]"
 extra_js:
   - /assets/js/gallery-modal.js
 categories:

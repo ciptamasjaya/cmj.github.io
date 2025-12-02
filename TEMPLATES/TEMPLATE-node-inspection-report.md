@@ -27,6 +27,10 @@ tags:
 skip_page_schema: false
 show_breadcrumb_schema: true
 
+# SEO Keywords (spesifik per halaman, pisahkan dengan koma)
+# Contoh: riksa uji boiler, inspeksi boiler, laporan riksa uji, hydrotest, PJK3
+keywords: ""
+
 # Images
 # images[0] = featured image untuk og:image, schema, thumbnail
 # images[1-3] = gallery images (optional)

@@ -92,6 +92,7 @@ Metadata dasar artikel.
 layout: node/node--riksa-uji
 title: "Riksa Uji [Nama Alat]"
 description: "[150-160 karakter untuk SEO meta description]"
+keywords: "riksa uji [nama alat], jasa riksa uji [nama alat], inspeksi [nama alat], [kategori alat], PJK3, sertifikasi K3"
 permalink: /2024/08/26/jasa-riksa-uji-[nama-alat]/
 redirect_from:
   - /blog/2024/08/26/jasa-riksa-uji-[nama-alat]/

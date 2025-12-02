@@ -3,6 +3,9 @@ layout: node/node--riksa-uji
 title: ""
 rating_id: ""
 description: ""
+# SEO Keywords (spesifik per halaman, pisahkan dengan koma)
+# Contoh: riksa uji forklift, jasa riksa uji forklift, inspeksi forklift, PJK3
+keywords: ""
 content_intro:
   paragraphs:
   - ""

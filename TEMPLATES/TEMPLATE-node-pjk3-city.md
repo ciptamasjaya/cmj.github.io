@@ -5,6 +5,9 @@ date:
 author:
 description: ""
 area_served: ""
+# SEO Keywords (spesifik per halaman, pisahkan dengan koma)
+# Contoh: PJK3 Jakarta, jasa riksa uji Jakarta, inspeksi K3 Jakarta
+keywords: ""
 extra_js:
   - /assets/js/gallery-modal.js
 categories:
