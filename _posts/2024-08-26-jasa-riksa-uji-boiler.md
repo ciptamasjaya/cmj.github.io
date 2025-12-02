@@ -4,6 +4,7 @@ title: Riksa Uji Boiler
 rating_id: riksa-uji-boiler
 description: Riksa uji boiler adalah pemeriksaan dan pengujian keselamatan ketel uap
   untuk memastikan operasional aman sesuai acuan K3 serta Permenaker.
+keywords: riksa uji boiler, jasa riksa uji boiler, inspeksi boiler, ketel uap, hydrotest boiler, PJK3, sertifikasi K3, pesawat uap, bejana tekan, safety valve
 content_intro:
   paragraphs:
   - <strong>Riksa uji boiler</strong> adalah proses pemeriksaan dan pengujian komprehensif

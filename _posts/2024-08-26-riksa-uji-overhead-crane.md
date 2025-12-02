@@ -4,6 +4,7 @@ title: Riksa Uji Overhead Crane
 rating_id: riksa-uji-overhead-crane
 description: Riksa pengujian overhead crane adalah pemeriksaan dan pengujian keselamatan
   crane jembatan untuk memastikan operasional aman sesuai kriteria K3 dan Permenaker.
+keywords: riksa uji overhead crane, jasa riksa uji crane, inspeksi crane, crane jembatan, pesawat angkat, PJK3, sertifikasi K3, uji beban crane
 content_intro:
   paragraphs:
   - Riksa uji overhead crane yang merupakan bagian dari <a href="/layanan/riksa-uji-pesawat-angkat-dan-angkut/">riksa

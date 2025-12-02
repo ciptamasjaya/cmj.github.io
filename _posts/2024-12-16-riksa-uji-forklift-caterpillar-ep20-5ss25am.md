@@ -21,6 +21,7 @@ tags:
 - Riksa Uji Forklift
 skip_page_schema: false
 show_breadcrumb_schema: true
+keywords: riksa uji forklift, inspeksi forklift, laporan riksa uji, caterpillar ep20, forklift elektrik, uji beban forklift, PJK3, inspeksi K3, pesawat angkat
 images:
 - ''
 - ''

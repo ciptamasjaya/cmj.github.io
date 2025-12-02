@@ -8,6 +8,7 @@ description: Riksa uji forklift adalah proses pemeriksaan dan pengujian terhadap
   potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, memastikan
   bahwa alat tersebut berfungsi dengan baik dan aman digunakan dan memastikan forklift
   memenuhi standar keselamatan yang berlaku.
+keywords: riksa uji forklift, jasa riksa uji forklift, inspeksi forklift, pesawat angkat angkut, PJK3, sertifikasi K3, uji beban forklift, inspeksi K3
 content_intro:
   paragraphs:
   - Riksa uji forklift yang merupakan bagian dari <a href="/layanan/riksa-uji-pesawat-angkat-dan-angkut/">riksa
