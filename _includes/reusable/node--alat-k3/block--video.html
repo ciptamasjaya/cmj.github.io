@@ -57,7 +57,7 @@ Usage:
         <div class="text-center mb-4">
           <h3 class="video__title h4 mb-2">{{ section.name }}</h3>
           {% if section.description %}
-          <p class="video__description lead text-muted">{{ section.description }}</p>
+          <p class="video__description lead text-muted">{{ section.description | raw }}</p>
           {% endif %}
         </div>
         {% endif %}

@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="specifications__intro lead text-muted">{{ section.intro }}</p>
+      <p class="specifications__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}
@@ -71,7 +71,7 @@ Usage:
                   <span class="spec__unit text-muted">{{ spec.unit }}</span>
                   {% endif %}
                 </td>
-                <td class="spec__description text-muted small d-none d-md-table-cell">{{ spec.description }}</td>
+                <td class="spec__description text-muted small d-none d-md-table-cell">{{ spec.description | raw }}</td>
               </tr>
               {% endfor %}
             </tbody>

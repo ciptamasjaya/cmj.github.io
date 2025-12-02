@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="functions__intro lead text-muted">{{ section.intro }}</p>
+      <p class="functions__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}
@@ -61,7 +61,7 @@ Usage:
             </div>
             {% endif %}
             <h3 class="function__name h5 fw-bold mb-2">{{ function.name }}</h3>
-            <p class="function__description text-muted small mb-0">{{ function.description }}</p>
+            <p class="function__description text-muted small mb-0">{{ function.description | raw }}</p>
           </div>
         </div>
       </div>

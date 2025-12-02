@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="gallery__intro lead text-muted">{{ section.intro }}</p>
+      <p class="gallery__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}

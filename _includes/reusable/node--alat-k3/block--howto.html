@@ -46,7 +46,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.description %}
-      <p class="howto__description lead text-muted">{{ section.description }}</p>
+      <p class="howto__description lead text-muted">{{ section.description | raw }}</p>
       {% endif %}
       {% if section.totalTime %}
       <div class="howto__time mb-3">
@@ -77,7 +77,7 @@ Usage:
             </div>
             <div class="step__content flex-grow-1">
               <h3 class="step__name h5 fw-bold mb-2">{{ step.name }}</h3>
-              <p class="step__text text-muted mb-0">{{ step.text }}</p>
+              <p class="step__text text-muted mb-0">{{ step.text | raw }}</p>
             </div>
             {% if step.image %}
             <div class="step__image ms-3 d-none d-md-block">

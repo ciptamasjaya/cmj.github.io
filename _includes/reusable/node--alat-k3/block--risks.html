@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="risks__intro lead text-muted">{{ section.intro }}</p>
+      <p class="risks__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}
@@ -77,13 +77,13 @@ Usage:
                 {% endif %}
               </div>
             </div>
-            <p class="risk__description text-muted mb-3">{{ risk.description }}</p>
+            <p class="risk__description text-muted mb-3">{{ risk.description | raw }}</p>
             {% if risk.prevention %}
             <div class="risk__prevention">
               <span class="small fw-semibold text-success">
                 <i class="bi bi-shield-check me-1"></i>Pencegahan:
               </span>
-              <span class="small text-muted">{{ risk.prevention }}</span>
+              <span class="small text-muted">{{ risk.prevention | raw }}</span>
             </div>
             {% endif %}
           </div>

@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="regulations__intro lead text-muted">{{ section.intro }}</p>
+      <p class="regulations__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}
@@ -70,7 +70,7 @@ Usage:
                 <span class="regulation__year badge bg-secondary">{{ regulation.year }}</span>
                 {% endif %}
               </div>
-              <p class="regulation__description text-muted mb-2">{{ regulation.description }}</p>
+              <p class="regulation__description text-muted mb-2">{{ regulation.description | raw }}</p>
               {% if regulation.issuer %}
               <div class="regulation__issuer small text-muted">
                 <i class="bi bi-building me-1"></i>{{ regulation.issuer }}

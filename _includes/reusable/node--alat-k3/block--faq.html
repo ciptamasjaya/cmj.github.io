@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="faq__intro lead text-muted">{{ section.intro }}</p>
+      <p class="faq__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}
@@ -67,7 +67,7 @@ Usage:
              class="accordion-collapse collapse{% if forloop.first %} show{% endif %}"
              data-bs-parent="#faqAccordion">
           <div class="accordion-body faq__answer text-muted">
-            {{ faq.answer }}
+            {{ faq.answer | raw }}
           </div>
         </div>
       </div>

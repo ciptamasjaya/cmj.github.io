@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="applications__intro lead text-muted">{{ section.intro }}</p>
+      <p class="applications__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}
@@ -61,7 +61,7 @@ Usage:
             </div>
             {% endif %}
             <h3 class="application__name h5 fw-bold text-center mb-2">{{ application.name }}</h3>
-            <p class="application__description text-muted small text-center mb-3">{{ application.description }}</p>
+            <p class="application__description text-muted small text-center mb-3">{{ application.description | raw }}</p>
             {% if application.industry %}
             <div class="application__industry text-center">
               <span class="badge bg-primary-subtle text-primary">

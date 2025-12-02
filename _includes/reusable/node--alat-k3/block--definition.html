@@ -45,7 +45,7 @@ Usage:
         {{ section.title }}
       </h2>
       {% if section.intro %}
-      <p class="definition__intro lead text-muted">{{ section.intro }}</p>
+      <p class="definition__intro lead text-muted">{{ section.intro | raw }}</p>
       {% endif %}
     </div>
     {% endif %}
@@ -55,7 +55,7 @@ Usage:
       <div class="card card--term mb-3 border-start border-primary border-4">
         <div class="card-body term__body">
           <h3 class="term__name h5 fw-bold text-primary mb-2">{{ term.name }}</h3>
-          <p class="term__definition text-muted mb-0">{{ term.definition }}</p>
+          <p class="term__definition text-muted mb-0">{{ term.definition | raw }}</p>
         </div>
       </div>
       {% endfor %}
