@@ -68,7 +68,7 @@ Usage:
   },
   {% endif %}
 
-  {% comment %} About: Functions, Types, Components, Risks, Applications as Thing {% endcomment %}
+  {% comment %} About: Functions, Types, Components, Risks, Applications, HowTo as Thing {% endcomment %}
   {%- assign about_items = "" | split: "" -%}
   {%- for func in page.section_functions.functions -%}
     {%- capture item %}{"@type": "Thing", "name": {{ func.name | jsonify }}, "description": {{ func.description | jsonify }}}{% endcapture -%}
@@ -88,6 +88,21 @@ Usage:
   {%- endfor -%}
   {%- for app in page.section_applications.applications -%}
     {%- capture item %}{"@type": "Thing", "name": {{ app.name | jsonify }}, "description": {{ app.description | jsonify }}}{% endcapture -%}
+    {%- assign about_items = about_items | push: item -%}
+  {%- endfor -%}
+  {% comment %} HowTo Penggunaan steps as Thing {% endcomment %}
+  {%- for step in page.section_howto_penggunaan.steps -%}
+    {%- capture item %}{"@type": "Thing", "name": {{ step.name | jsonify }}, "description": {{ step.text | strip_html | jsonify }}}{% endcapture -%}
+    {%- assign about_items = about_items | push: item -%}
+  {%- endfor -%}
+  {% comment %} HowTo Perawatan steps as Thing {% endcomment %}
+  {%- for step in page.section_howto_perawatan.steps -%}
+    {%- capture item %}{"@type": "Thing", "name": {{ step.name | jsonify }}, "description": {{ step.text | strip_html | jsonify }}}{% endcapture -%}
+    {%- assign about_items = about_items | push: item -%}
+  {%- endfor -%}
+  {% comment %} HowTo Inspeksi steps as Thing {% endcomment %}
+  {%- for step in page.section_howto_inspeksi.steps -%}
+    {%- capture item %}{"@type": "Thing", "name": {{ step.name | jsonify }}, "description": {{ step.text | strip_html | jsonify }}}{% endcapture -%}
     {%- assign about_items = about_items | push: item -%}
   {%- endfor -%}
   {%- if about_items.size > 0 %}
