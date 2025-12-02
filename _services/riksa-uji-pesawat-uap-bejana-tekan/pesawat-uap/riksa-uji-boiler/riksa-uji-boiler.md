@@ -166,7 +166,7 @@ offer_riksa_uji:
     Hubungi kami untuk penawaran khusus.
   offers:
   - name: Riksa Uji Boiler Kapasitas Kecil
-    description: Inspeksi lengkap untuk 1 unit boiler kapasitas hingga 2 ton/jam
+    description: Inspeksi lengkap untuk 1 unit boiler kapasitas hingga 5 ton/jam
     price: 4500000
     price_currency: IDR
     price_label: per unit
@@ -181,7 +181,7 @@ offer_riksa_uji:
     valid_from: '2025-01-01'
     valid_through: '2025-12-31'
   - name: Riksa Uji Boiler Kapasitas Besar
-    description: Inspeksi lengkap untuk 1 unit boiler kapasitas di atas 2 ton/jam
+    description: Inspeksi lengkap untuk 1 unit boiler kapasitas di atas 5 ton/jam
     price: 7500000
     price_currency: IDR
     price_label: per unit
