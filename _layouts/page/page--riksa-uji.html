@@ -122,23 +122,21 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
     {% include schema/node--riksa-uji/schema--webpage-conclusion.html %}
   {% endif %}
 
-  <!-- HowTo Schema (reusable with isPartOf) -->
+  <!-- HowTo Schema (standalone for Google Rich Results) -->
   {% if page.howto_post and page.howto_post.steps.size > 0 %}
     {% include schema/reusable/schema--howto.html
       steps=page.howto_post.steps
       title=page.howto_post.name
       description=page.howto_post.description
-      total_time=page.howto_post.totalTime
-      is_part_of="TechArticle" %}
+      total_time=page.howto_post.totalTime %}
   {% endif %}
 
-  <!-- FAQ Schema (reusable with isPartOf) -->
+  <!-- FAQ Schema (standalone for Google Rich Results) -->
   {% if page.faq_post and page.faq_post.faqs.size > 0 %}
     {% include schema/reusable/schema--faq.html
       faqs=page.faq_post.faqs
       name=page.faq_post.name
-      description=page.faq_post.description
-      is_part_of="TechArticle" %}
+      description=page.faq_post.description %}
   {% endif %}
 
   <!-- ItemList Schema (reusable) -->
