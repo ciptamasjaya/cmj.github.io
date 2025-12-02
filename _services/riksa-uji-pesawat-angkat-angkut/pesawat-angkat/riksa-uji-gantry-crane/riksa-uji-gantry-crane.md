@@ -22,6 +22,7 @@ content_structure: ''
 date: 2025-12-02
 last_modified_at: 2025-12-02
 show_breadcrumb_schema: true
+keywords: riksa uji gantry crane, jasa riksa uji crane, inspeksi gantry crane, portal crane, uji beban crane, PJK3, sertifikasi K3
 rating_id: riksa-uji-gantry-crane
 custom_schema:
 - schema/schema--service-reviews.html

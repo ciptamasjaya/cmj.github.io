@@ -16,6 +16,7 @@ content_structure: 1xh1, 2xpara, h2(list-subcategories), h2(para), h2(para)
 date: 2025-11-28
 last_modified_at: 2025-11-28
 show_breadcrumb_schema: true
+keywords: riksa uji pesawat uap, riksa uji bejana tekan, inspeksi boiler, inspeksi pressure vessel, inspeksi tangki timbun, PJK3, sertifikasi K3, jasa riksa uji
 intro:
   h1: Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun - Inspeksi K3 Profesional
   para_1: Apa yang dimaksud dengan riksa uji pesawat uap bejana tekan dan tangki timbun?

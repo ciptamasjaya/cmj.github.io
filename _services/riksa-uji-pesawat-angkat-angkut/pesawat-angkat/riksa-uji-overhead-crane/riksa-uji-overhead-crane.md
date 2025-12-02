@@ -25,6 +25,7 @@ content_structure: 1xh1, 2xpara, h2(para+3xh3@2xh4), h2(para+h3@h4), h2(para), h
 date: 2025-12-01
 last_modified_at: 2025-12-01
 show_breadcrumb_schema: true
+keywords: riksa uji overhead crane, jasa riksa uji crane, inspeksi overhead crane, crane jembatan, uji beban crane, PJK3, sertifikasi K3
 rating_id: riksa-uji-overhead-crane-service
 custom_schema:
 - schema/schema--service-reviews.html

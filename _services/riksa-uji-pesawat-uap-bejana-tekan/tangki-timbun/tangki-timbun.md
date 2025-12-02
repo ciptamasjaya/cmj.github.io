@@ -16,6 +16,7 @@ content_structure: 1xh1, 2xpara, h2(list-services)
 date: 2025-11-28
 last_modified_at: 2025-11-28
 show_breadcrumb_schema: true
+keywords: riksa uji tangki timbun, inspeksi storage tank, inspeksi LPG tank, inspeksi fuel tank, tangki penyimpanan, PJK3, sertifikasi K3
 intro:
   h1: Tangki Timbun - Riksa Uji Tangki Penyimpanan Bertekanan
   para_1: Tangki timbun adalah alat yang dipakai untuk menyimpan bahan cair atau gas

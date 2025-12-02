@@ -16,6 +16,7 @@ content_structure: 1xh1, 2xpara, h2(list-services)
 date: 2025-11-27
 last_modified_at: 2025-11-27
 show_breadcrumb_schema: true
+keywords: riksa uji pesawat angkut, inspeksi forklift, inspeksi excavator, inspeksi wheel loader, inspeksi bulldozer, conveyor, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Angkut - Riksa Uji Peralatan Pemindah Beban Horizontal
   para_1: Pesawat angkut adalah alat yang digunakan untuk memindahkan beban secara

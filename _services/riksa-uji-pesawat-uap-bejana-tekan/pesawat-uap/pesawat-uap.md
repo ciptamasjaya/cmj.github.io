@@ -16,6 +16,7 @@ content_structure: 1xh1, 2xpara, h2(list-services)
 date: 2025-11-28
 last_modified_at: 2025-11-28
 show_breadcrumb_schema: true
+keywords: riksa uji pesawat uap, inspeksi boiler, inspeksi ketel uap, steam generator, thermal oil heater, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Uap - Riksa Uji Ketel Uap dan Pemanas Bertekanan
   para_1: Pesawat uap adalah peralatan yang digunakan dalam rangka menghasilkan uap

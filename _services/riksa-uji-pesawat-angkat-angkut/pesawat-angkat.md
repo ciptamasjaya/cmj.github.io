@@ -16,6 +16,7 @@ content_structure: 1xh1, 2xpara, h2(list-services)
 date: 2025-11-27
 last_modified_at: 2025-11-27
 show_breadcrumb_schema: true
+keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gondola, inspeksi manlift, scissor lift, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Angkat - Riksa Uji Peralatan Pengangkat Beban Vertikal
   para_1: Pesawat angkat adalah peralatan yang digunakan dalam rangka mengangkat serta

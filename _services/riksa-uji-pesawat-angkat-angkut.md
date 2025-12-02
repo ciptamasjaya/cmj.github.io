@@ -15,6 +15,7 @@ content_structure: 1xh1, 2xpara, h2(list-subcategories), h2(para), h2(para)
 date: 2025-11-24
 last_modified_at: 2025-11-24
 show_breadcrumb_schema: true
+keywords: riksa uji pesawat angkat angkut, inspeksi forklift, inspeksi crane, inspeksi hoist, inspeksi conveyor, PJK3, sertifikasi K3, jasa riksa uji
 intro:
   h1: Riksa Uji Pesawat Angkat Angkut - Inspeksi K3 Profesional
   para_1: Apa yang dimaksud secara riksa uji pesawat angkat angkut? Riksa uji pesawat
