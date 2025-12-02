@@ -398,8 +398,17 @@ video_riksa_uji:
 
 **Catatan:**
 - `duration`: Format ISO 8601 (PT2M30S = 2 menit 30 detik)
-- Kosongkan `src` dan `duration` jika belum ada video
 - Digunakan untuk Google Video rich snippet
+- Jika tidak ada video khusus, gunakan default video:
+  ```yaml
+  video_riksa_uji:
+    name: "Proses Riksa Uji [Nama Alat] - PT. Cipta Mas Jaya"
+    description: "Video dokumentasi proses riksa uji [nama alat] oleh tim inspector bersertifikat PT. Cipta Mas Jaya."
+    thumbnail: "/assets/images/videos/default-riksa-uji-thumb.jpg"
+    src: "/assets/videos/service-page/riksa-uji-forklift.webm"
+    duration: "PT1M30S"
+    upload_date: "2025-11-26"
+  ```
 
 ```
 TodoWrite: Mark "Section 7: video_riksa_uji" as [completed]
