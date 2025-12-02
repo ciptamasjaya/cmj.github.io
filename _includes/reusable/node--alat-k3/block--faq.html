@@ -1,0 +1,79 @@
+{% comment %}
+============================================================================
+Block: FAQ (Pertanyaan yang Sering Diajukan)
+============================================================================
+
+@file        block--faq.html
+@path        _includes/reusable/node--alat-k3/block--faq.html
+@type        Block (reusable)
+@description Displays FAQ accordion for K3 equipment
+@schema      FAQPage
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: FAQ object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - faqs: Array of faq objects (question, answer)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--faq
+- Accordion: accordion-item--faq
+- Elements: faq__header, faq__button, faq__question, faq__answer
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--faq.html section=page.section_faq %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.faqs.size > 0 %}
+<section id="block--faq" class="block--faq py-5 bg-light">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="faq__header mb-4">
+      <h2 class="faq__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="faq__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="accordion faq__accordion" id="faqAccordion">
+      {% for faq in section.faqs %}
+      <div class="accordion-item accordion-item--faq border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %}">
+        <h3 class="accordion-header faq__item-header">
+          <button class="accordion-button faq__button{% unless forloop.first %} collapsed{% endunless %} fw-semibold"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq-{{ forloop.index }}"
+                  {% if forloop.first %}aria-expanded="true"{% endif %}>
+            <i class="bi bi-patch-question text-primary me-2"></i>
+            <span class="faq__question">{{ faq.question }}</span>
+          </button>
+        </h3>
+        <div id="faq-{{ forloop.index }}"
+             class="accordion-collapse collapse{% if forloop.first %} show{% endif %}"
+             data-bs-parent="#faqAccordion">
+          <div class="accordion-body faq__answer text-muted">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

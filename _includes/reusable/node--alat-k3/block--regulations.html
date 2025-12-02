@@ -1,0 +1,88 @@
+{% comment %}
+============================================================================
+Block: Regulations (Standar dan Regulasi)
+============================================================================
+
+@file        block--regulations.html
+@path        _includes/reusable/node--alat-k3/block--regulations.html
+@type        Block (reusable)
+@description Displays regulations and standards for K3 equipment
+@schema      GovernmentService
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Regulations object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - regulations: Array of regulation objects (name, number, year, description, issuer, icon)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--regulations
+- Card: card--regulation
+- Elements: regulation__icon, regulation__name, regulation__number, regulation__year, regulation__description, regulation__issuer
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--regulations.html section=page.section_regulations %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.regulations.size > 0 %}
+<section id="block--regulations" class="block--regulations py-5 bg-light">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="regulations__header mb-4">
+      <h2 class="regulations__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="regulations__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="regulations__list">
+      {% for regulation in section.regulations %}
+      <div class="card card--regulation mb-3 border-0 shadow-sm">
+        <div class="card-body regulation__body">
+          <div class="d-flex align-items-start">
+            <div class="regulation__icon me-3 flex-shrink-0">
+              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                <i class="bi {{ regulation.icon | default: 'bi-file-earmark-text' }} fs-5"></i>
+              </div>
+            </div>
+            <div class="regulation__content flex-grow-1">
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                <h3 class="regulation__name h5 fw-bold mb-0">{{ regulation.name }}</h3>
+                {% if regulation.number %}
+                <span class="regulation__number badge bg-primary">{{ regulation.number }}</span>
+                {% endif %}
+                {% if regulation.year %}
+                <span class="regulation__year badge bg-secondary">{{ regulation.year }}</span>
+                {% endif %}
+              </div>
+              <p class="regulation__description text-muted mb-2">{{ regulation.description }}</p>
+              {% if regulation.issuer %}
+              <div class="regulation__issuer small text-muted">
+                <i class="bi bi-building me-1"></i>{{ regulation.issuer }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,76 @@
+{% comment %}
+============================================================================
+Block: Gallery (Galeri Gambar)
+============================================================================
+
+@file        block--gallery.html
+@path        _includes/reusable/node--alat-k3/block--gallery.html
+@type        Block (reusable)
+@description Displays image gallery for K3 equipment
+@schema      ImageGallery
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Gallery object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - images: Array of image objects (src, alt, caption)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--gallery
+- Card: card--image
+- Elements: image__thumbnail, image__caption
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--gallery.html section=page.section_gallery %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.images.size > 0 %}
+<section id="block--gallery" class="block--gallery py-5">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="gallery__header mb-4">
+      <h2 class="gallery__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="gallery__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row gallery__list">
+      {% for image in section.images %}
+      <div class="col-6 col-md-4 col-lg-3 mb-4">
+        <div class="card card--image h-100 border-0 shadow-sm overflow-hidden">
+          <a href="{{ image.src | relative_url }}" class="image__link" data-lightbox="gallery" data-title="{{ image.caption }}">
+            <img src="{{ image.src | relative_url }}"
+                 class="card-img-top image__thumbnail"
+                 alt="{{ image.alt }}"
+                 loading="lazy"
+                 style="height: 180px; object-fit: cover;">
+          </a>
+          {% if image.caption %}
+          <div class="card-body image__body p-2">
+            <p class="image__caption small text-muted text-center mb-0">{{ image.caption }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

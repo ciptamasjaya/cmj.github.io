@@ -1,0 +1,97 @@
+{% comment %}
+============================================================================
+Block: Risks (Risiko dan Keselamatan)
+============================================================================
+
+@file        block--risks.html
+@path        _includes/reusable/node--alat-k3/block--risks.html
+@type        Block (reusable)
+@description Displays risks and safety information for K3 equipment
+@schema      ItemList
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Risks object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - risks: Array of risk objects (name, description, severity, prevention, icon)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--risks
+- Card: card--risk
+- Elements: risk__icon, risk__name, risk__description, risk__severity, risk__prevention
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--risks.html section=page.section_risks %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.risks.size > 0 %}
+<section id="block--risks" class="block--risks py-5">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="risks__header mb-4">
+      <h2 class="risks__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-warning me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="risks__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row risks__list">
+      {% for risk in section.risks %}
+      {% assign severity_class = "border-warning" %}
+      {% assign severity_bg = "bg-warning-subtle" %}
+      {% if risk.severity == "tinggi" or risk.severity == "high" %}
+        {% assign severity_class = "border-danger" %}
+        {% assign severity_bg = "bg-danger-subtle text-danger" %}
+      {% elsif risk.severity == "rendah" or risk.severity == "low" %}
+        {% assign severity_class = "border-success" %}
+        {% assign severity_bg = "bg-success-subtle text-success" %}
+      {% endif %}
+      <div class="col-md-6 mb-4">
+        <div class="card card--risk h-100 border-start border-4 {{ severity_class }}">
+          <div class="card-body risk__body">
+            <div class="d-flex align-items-start mb-3">
+              <div class="risk__icon me-3 flex-shrink-0">
+                <i class="bi {{ risk.icon | default: 'bi-exclamation-triangle' }} text-warning fs-2"></i>
+              </div>
+              <div class="risk__header">
+                <h3 class="risk__name h5 fw-bold mb-1">{{ risk.name }}</h3>
+                {% if risk.severity %}
+                <span class="risk__severity badge {{ severity_bg }}">
+                  {{ risk.severity | capitalize }}
+                </span>
+                {% endif %}
+              </div>
+            </div>
+            <p class="risk__description text-muted mb-3">{{ risk.description }}</p>
+            {% if risk.prevention %}
+            <div class="risk__prevention">
+              <span class="small fw-semibold text-success">
+                <i class="bi bi-shield-check me-1"></i>Pencegahan:
+              </span>
+              <span class="small text-muted">{{ risk.prevention }}</span>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

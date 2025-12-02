@@ -1,0 +1,139 @@
+{% comment %}
+============================================================================
+Block: Related Service (Layanan Terkait)
+============================================================================
+
+@file        block--related-service.html
+@path        _includes/reusable/node--alat-k3/block--related-service.html
+@type        Block (reusable)
+@description Displays related service card for K3 equipment article
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Related service object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - path: Service URL path
+  - intro: Introduction text
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--related-service
+- Card: card--service
+- Elements: service__image, service__title, service__description, service__cta
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--related-service.html section=page.section_related_service %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+{% assign service_path = section.path %}
+
+{% if service_path %}
+  {% assign service = site.services | where: "url", service_path | first %}
+{% endif %}
+
+{% if service %}
+<section id="block--related-service" class="block--related-service py-5">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="related-service__header text-center mb-4">
+      <h2 class="related-service__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="related-service__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card card--service border-0 shadow-lg h-100 overflow-hidden">
+          <div class="row g-0">
+
+            <!-- Service Image -->
+            <div class="col-md-4">
+              {% if service.image %}
+              <img src="{{ service.image | relative_url }}"
+                   class="img-fluid rounded-start service__image h-100"
+                   alt="{{ service.title }}"
+                   style="object-fit: cover; min-height: 220px;">
+              {% else %}
+              <div class="bg-primary d-flex align-items-center justify-content-center h-100 rounded-start service__image-placeholder"
+                   style="min-height: 220px;">
+                <i class="bi bi-{{ service.icon | default: 'clipboard-check' }} text-white display-1"></i>
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- Service Info -->
+            <div class="col-md-8">
+              <div class="card-body service__body d-flex flex-column h-100 p-4">
+
+                <!-- Category Badge -->
+                {% if service.sub_category %}
+                <div class="mb-2">
+                  <span class="badge bg-primary-subtle text-primary">{{ service.sub_category }}</span>
+                </div>
+                {% endif %}
+
+                <!-- Title -->
+                <h3 class="service__title h5 fw-bold mb-2">{{ service.title }}</h3>
+
+                <!-- Description -->
+                <p class="service__description text-muted small mb-3 flex-grow-1">
+                  {{ service.description | truncate: 180 }}
+                </p>
+
+                <!-- Rating -->
+                {% if service.rating %}
+                <div class="service__rating mb-3">
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="text-warning">
+                      {% assign full_stars = service.rating | floor %}
+                      {% assign decimal = service.rating | minus: full_stars %}
+                      {% for i in (1..5) %}
+                        {% if i <= full_stars %}
+                          <i class="bi bi-star-fill"></i>
+                        {% elsif decimal >= 0.5 and i == full_stars | plus: 1 %}
+                          <i class="bi bi-star-half"></i>
+                        {% else %}
+                          <i class="bi bi-star"></i>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                    <span class="fw-bold">{{ service.rating }}</span>
+                    {% if service.review_count %}
+                    <span class="text-muted small">({{ service.review_count }} ulasan)</span>
+                    {% endif %}
+                  </div>
+                </div>
+                {% endif %}
+
+                <!-- CTA Button -->
+                <div class="service__cta mt-auto">
+                  <a href="{{ service.url | relative_url }}" class="btn btn-primary">
+                    <i class="bi bi-arrow-right-circle me-1"></i>
+                    Lihat Detail Layanan
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}

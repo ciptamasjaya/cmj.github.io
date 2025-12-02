@@ -1,0 +1,401 @@
+{% comment %}
+============================================================================
+Schema: TechArticle (Main Schema for Alat K3)
+============================================================================
+
+@file        schema--techarticle.html
+@path        _includes/schema/node--alat-k3/schema--techarticle.html
+@type        Schema (JSON-LD)
+@description Comprehensive TechArticle schema that wraps all content sections
+@author      arisciwek
+@created     2025-12-02
+
+PENDEKATAN: TechArticle sebagai wrapper utama
+- Semua section frontmatter terintegrasi ke dalam satu TechArticle
+- Google melihat artikel sebagai satu kesatuan lengkap
+- Menggunakan hasPart untuk menghubungkan sub-schemas
+
+Frontmatter sections yang diintegrasikan:
+- section_definition  → DefinedTermSet (hasPart)
+- section_functions   → ItemList (hasPart)
+- section_types       → ItemList (hasPart)
+- section_components  → ItemList (hasPart)
+- section_specifications → PropertyValue array
+- section_regulations → mentions (GovernmentService)
+- section_risks       → ItemList (hasPart)
+- section_applications → ItemList (hasPart)
+- section_howto       → HowTo (hasPart)
+- section_faq         → FAQPage (hasPart)
+- section_gallery     → ImageGallery (hasPart)
+- section_video       → VideoObject (video property)
+
+============================================================================
+PENDEKATAN-LAIN-YANG-BISA-DIPAKAI-UNTUK-TechArticle:
+============================================================================
+
+Pendekatan B: Menggunakan @graph dengan multiple top-level schemas
+----------------------------------------------------------------------
+Cocok untuk node type yang membutuhkan setiap schema berdiri sendiri
+(misal: FAQPage ingin muncul sebagai rich result terpisah)
+
+Contoh struktur:
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "{{ page.url | absolute_url }}#article",
+      "name": "{{ page.title }}",
+      "hasPart": [
+        { "@id": "#definedTermSet" },
+        { "@id": "#faqPage" },
+        { "@id": "#howTo" }
+      ]
+    },
+    {
+      "@type": "DefinedTermSet",
+      "@id": "{{ page.url | absolute_url }}#definedTermSet",
+      "isPartOf": { "@id": "#article" },
+      "hasDefinedTerm": [...]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ page.url | absolute_url }}#faqPage",
+      "isPartOf": { "@id": "#article" },
+      "mainEntity": [...]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "{{ page.url | absolute_url }}#howTo",
+      "isPartOf": { "@id": "#article" },
+      "step": [...]
+    }
+  ]
+}
+
+Keuntungan @graph:
+- Setiap schema bisa muncul sebagai rich result terpisah di Google
+- FAQPage bisa muncul sebagai FAQ rich snippet
+- HowTo bisa muncul sebagai How-to rich snippet
+- Lebih fleksibel untuk SEO advanced
+
+Kapan pakai @graph:
+- Jika ingin FAQ muncul sebagai accordion di SERP
+- Jika ingin HowTo muncul sebagai step-by-step di SERP
+- Untuk halaman dengan multiple rich result targets
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "{{ page.url | absolute_url }}#article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "headline": {{ page.title | jsonify }},
+  "name": {{ page.title | jsonify }},
+  {% if page.description %}"description": {{ page.description | jsonify }},{% endif %}
+  {% if page.keywords %}"keywords": {{ page.keywords | jsonify }},{% endif %}
+  "articleSection": "Alat K3",
+  "proficiencyLevel": "Beginner",
+
+  {% comment %} Author & Publisher {% endcomment %}
+  "author": {
+    "@type": "Organization",
+    "name": "{{ site.company.name | default: 'PT. Cipta Mas Jaya' }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.company.name | default: 'PT. Cipta Mas Jaya' }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.logo | default: '/assets/images/logo.png' | absolute_url }}"
+    }
+  },
+
+  {% comment %} Dates {% endcomment %}
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+
+  {% comment %} Featured Image {% endcomment %}
+  {% if page.image %}
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ page.image | absolute_url }}",
+    "width": 1200,
+    "height": 630
+  },
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Definition Terms (DefinedTermSet)
+  ================================================================ {% endcomment %}
+  {% if page.section_definition.terms.size > 0 %}
+  "hasPart": [
+    {
+      "@type": "DefinedTermSet",
+      "@id": "{{ page.url | absolute_url }}#definedTermSet",
+      "name": {{ page.section_definition.title | default: "Pengertian dan Istilah" | jsonify }},
+      "hasDefinedTerm": [
+        {% for term in page.section_definition.terms %}
+        {
+          "@type": "DefinedTerm",
+          "name": {{ term.name | jsonify }},
+          "description": {{ term.definition | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_functions.functions.size > 0 or page.section_types.types.size > 0 or page.section_components.components.size > 0 or page.section_risks.risks.size > 0 or page.section_applications.applications.size > 0 or page.section_howto.steps.size > 0 or page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Functions (ItemList)
+  ================================================================ {% endcomment %}
+  {% if page.section_functions.functions.size > 0 %}
+    {
+      "@type": "ItemList",
+      "@id": "{{ page.url | absolute_url }}#functions",
+      "name": {{ page.section_functions.title | default: "Fungsi" | jsonify }},
+      "numberOfItems": {{ page.section_functions.functions.size }},
+      "itemListElement": [
+        {% for func in page.section_functions.functions %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ func.name | jsonify }},
+          "description": {{ func.description | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_types.types.size > 0 or page.section_components.components.size > 0 or page.section_risks.risks.size > 0 or page.section_applications.applications.size > 0 or page.section_howto.steps.size > 0 or page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Types (ItemList)
+  ================================================================ {% endcomment %}
+  {% if page.section_types.types.size > 0 %}
+    {
+      "@type": "ItemList",
+      "@id": "{{ page.url | absolute_url }}#types",
+      "name": {{ page.section_types.title | default: "Jenis-jenis" | jsonify }},
+      "numberOfItems": {{ page.section_types.types.size }},
+      "itemListElement": [
+        {% for type in page.section_types.types %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ type.name | jsonify }},
+          "description": {{ type.description | jsonify }}{% if type.image %},
+          "image": "{{ type.image | absolute_url }}"{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_components.components.size > 0 or page.section_risks.risks.size > 0 or page.section_applications.applications.size > 0 or page.section_howto.steps.size > 0 or page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Components (ItemList)
+  ================================================================ {% endcomment %}
+  {% if page.section_components.components.size > 0 %}
+    {
+      "@type": "ItemList",
+      "@id": "{{ page.url | absolute_url }}#components",
+      "name": {{ page.section_components.title | default: "Komponen" | jsonify }},
+      "numberOfItems": {{ page.section_components.components.size }},
+      "itemListElement": [
+        {% for comp in page.section_components.components %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ comp.name | jsonify }},
+          "description": {{ comp.function | default: comp.description | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_risks.risks.size > 0 or page.section_applications.applications.size > 0 or page.section_howto.steps.size > 0 or page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Risks (ItemList)
+  ================================================================ {% endcomment %}
+  {% if page.section_risks.risks.size > 0 %}
+    {
+      "@type": "ItemList",
+      "@id": "{{ page.url | absolute_url }}#risks",
+      "name": {{ page.section_risks.title | default: "Risiko dan Bahaya" | jsonify }},
+      "numberOfItems": {{ page.section_risks.risks.size }},
+      "itemListElement": [
+        {% for risk in page.section_risks.risks %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ risk.name | jsonify }},
+          "description": {{ risk.description | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_applications.applications.size > 0 or page.section_howto.steps.size > 0 or page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Applications (ItemList)
+  ================================================================ {% endcomment %}
+  {% if page.section_applications.applications.size > 0 %}
+    {
+      "@type": "ItemList",
+      "@id": "{{ page.url | absolute_url }}#applications",
+      "name": {{ page.section_applications.title | default: "Aplikasi dan Penggunaan" | jsonify }},
+      "numberOfItems": {{ page.section_applications.applications.size }},
+      "itemListElement": [
+        {% for app in page.section_applications.applications %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "name": {{ app.name | jsonify }},
+          "description": {{ app.description | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_howto.steps.size > 0 or page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: HowTo
+  ================================================================ {% endcomment %}
+  {% if page.section_howto.steps.size > 0 %}
+    {
+      "@type": "HowTo",
+      "@id": "{{ page.url | absolute_url }}#howTo",
+      "name": {{ page.section_howto.title | default: "Cara Kerja" | jsonify }},
+      {% if page.section_howto.description %}"description": {{ page.section_howto.description | jsonify }},{% endif %}
+      {% if page.section_howto.totalTime %}"totalTime": "{{ page.section_howto.totalTime }}",{% endif %}
+      "step": [
+        {% for step in page.section_howto.steps %}
+        {
+          "@type": "HowToStep",
+          "position": {{ forloop.index }},
+          "name": {{ step.name | jsonify }},
+          "text": {{ step.text | jsonify }}{% if step.image %},
+          "image": "{{ step.image | absolute_url }}"{% endif %}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: FAQ (as part of article, not separate FAQPage)
+  ================================================================ {% endcomment %}
+  {% if page.section_faq.faqs.size > 0 %}
+    {
+      "@type": "ItemList",
+      "@id": "{{ page.url | absolute_url }}#faq",
+      "name": {{ page.section_faq.title | default: "FAQ" | jsonify }},
+      "numberOfItems": {{ page.section_faq.faqs.size }},
+      "itemListElement": [
+        {% for faq in page.section_faq.faqs %}
+        {
+          "@type": "Question",
+          "position": {{ forloop.index }},
+          "name": {{ faq.question | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ faq.answer | jsonify }}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% if page.section_gallery.images.size > 0 %},{% endif %}
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Gallery (ImageGallery)
+  ================================================================ {% endcomment %}
+  {% if page.section_gallery.images.size > 0 %}
+    {
+      "@type": "ImageGallery",
+      "@id": "{{ page.url | absolute_url }}#gallery",
+      "name": {{ page.section_gallery.title | default: "Galeri Gambar" | jsonify }},
+      "image": [
+        {% for img in page.section_gallery.images %}
+        {
+          "@type": "ImageObject",
+          "url": "{{ img.src | absolute_url }}",
+          "name": {{ img.alt | jsonify }},
+          "caption": {{ img.caption | default: img.alt | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  {% endif %}
+
+  {% comment %} Close hasPart array if any section exists {% endcomment %}
+  {% if page.section_definition.terms.size > 0 or page.section_functions.functions.size > 0 or page.section_types.types.size > 0 or page.section_components.components.size > 0 or page.section_risks.risks.size > 0 or page.section_applications.applications.size > 0 or page.section_howto.steps.size > 0 or page.section_faq.faqs.size > 0 or page.section_gallery.images.size > 0 %}
+  ],
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Specifications (as PropertyValue)
+  ================================================================ {% endcomment %}
+  {% if page.section_specifications.specs.size > 0 %}
+  "additionalProperty": [
+    {% for spec in page.section_specifications.specs %}
+    {
+      "@type": "PropertyValue",
+      "name": {{ spec.name | jsonify }},
+      "value": "{{ spec.value }}{% if spec.unit %} {{ spec.unit }}{% endif %}"{% if spec.description %},
+      "description": {{ spec.description | jsonify }}{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Regulations (as mentions)
+  ================================================================ {% endcomment %}
+  {% if page.section_regulations.regulations.size > 0 %}
+  "mentions": [
+    {% for reg in page.section_regulations.regulations %}
+    {
+      "@type": "Legislation",
+      "name": {{ reg.name | jsonify }},
+      "legislationIdentifier": "{{ reg.number }}{% if reg.year %} Tahun {{ reg.year }}{% endif %}",
+      {% if reg.description %}"description": {{ reg.description | jsonify }},{% endif %}
+      "legislationPassedBy": {
+        "@type": "GovernmentOrganization",
+        "name": {{ reg.issuer | default: "Pemerintah Indonesia" | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+
+  {% comment %} ================================================================
+  SECTION: Video
+  ================================================================ {% endcomment %}
+  {% if page.section_video.src %}
+  "video": {
+    "@type": "VideoObject",
+    "@id": "{{ page.url | absolute_url }}#video",
+    "name": {{ page.section_video.name | default: page.title | jsonify }},
+    {% if page.section_video.description %}"description": {{ page.section_video.description | jsonify }},{% endif %}
+    "contentUrl": "{{ page.section_video.src | absolute_url }}",
+    {% if page.section_video.thumbnail %}"thumbnailUrl": "{{ page.section_video.thumbnail | absolute_url }}",{% endif %}
+    {% if page.section_video.duration %}"duration": "{{ page.section_video.duration }}",{% endif %}
+    {% if page.section_video.upload_date %}"uploadDate": "{{ page.section_video.upload_date | date_to_xmlschema }}",{% endif %}
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.company.name | default: 'PT. Cipta Mas Jaya' }}"
+    }
+  },
+  {% endif %}
+
+  {% comment %} Article body from content {% endcomment %}
+  "articleBody": {{ content | strip_html | truncate: 5000 | jsonify }}
+}
+</script>

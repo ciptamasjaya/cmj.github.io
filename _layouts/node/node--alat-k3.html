@@ -1,0 +1,151 @@
+---
+layout: page/page--alat-k3
+---
+{%- comment -%}
+============================================================================
+Content Template: Alat K3 Article (node--alat-k3.html)
+============================================================================
+
+@file        node--alat-k3.html
+@path        _layouts/node/node--alat-k3.html
+@type        Node (content template - variant)
+@variant     alat-k3 (K3 equipment/tools articles)
+@description Content template for K3 equipment articles with structured sections
+@author      arisciwek
+@created     2025-12-02
+
+Drupal-style naming: node--alat-k3.html (variant of node.html)
+
+This template wraps in page--alat-k3.html and provides K3 equipment article
+structure with specialized sections (definition, types, components, etc).
+
+Blocks:
+- block--definition.html      → DefinedTermSet
+- block--functions.html       → ItemList
+- block--types.html           → ItemList
+- block--components.html      → ItemList
+- block--specifications.html  → Dataset
+- block--regulations.html     → GovernmentService
+- block--risks.html           → ItemList
+- block--applications.html    → ItemList
+- block--howto.html           → HowTo
+- block--faq.html             → FAQPage
+- block--gallery.html         → ImageGallery
+- block--video.html           → VideoObject
+- block--related-service.html
+- block--cta-pjk3.html
+
+============================================================================
+{%- endcomment -%}
+
+<article class="post-content py-5">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-1 d-none d-lg-block"></div>
+
+      <div class="col-lg-10">
+        <div class="row">
+
+          <div class="col-lg-12">
+            {% include block/block--content-header.html variant="alat-k3" %}
+          </div>
+
+          <div class="col-lg-8">
+
+            {% include reusable/block--breadcrumb.html %}
+
+            <div class="post-body mb-5">
+
+              {% comment %} Gallery - Featured images {% endcomment %}
+              {% if page.section_gallery.images %}
+                {% include reusable/node--alat-k3/block--gallery.html section=page.section_gallery %}
+              {% endif %}
+
+              {% comment %} Definition - Pengertian dan istilah {% endcomment %}
+              {% if page.section_definition.terms %}
+                {% include reusable/node--alat-k3/block--definition.html section=page.section_definition %}
+              {% endif %}
+
+              {% comment %} Functions - Fungsi dan kegunaan {% endcomment %}
+              {% if page.section_functions.functions %}
+                {% include reusable/node--alat-k3/block--functions.html section=page.section_functions %}
+              {% endif %}
+
+              {% comment %} Types - Jenis-jenis {% endcomment %}
+              {% if page.section_types.types %}
+                {% include reusable/node--alat-k3/block--types.html section=page.section_types %}
+              {% endif %}
+
+              {% comment %} Components - Komponen/bagian {% endcomment %}
+              {% if page.section_components.components %}
+                {% include reusable/node--alat-k3/block--components.html section=page.section_components %}
+              {% endif %}
+
+              {% comment %} Specifications - Spesifikasi teknis {% endcomment %}
+              {% if page.section_specifications.specs %}
+                {% include reusable/node--alat-k3/block--specifications.html section=page.section_specifications %}
+              {% endif %}
+
+              {% comment %} HowTo - Cara kerja/proses {% endcomment %}
+              {% if page.section_howto.steps %}
+                {% include reusable/node--alat-k3/block--howto.html section=page.section_howto %}
+              {% endif %}
+
+              {% comment %} Applications - Aplikasi/penggunaan {% endcomment %}
+              {% if page.section_applications.applications %}
+                {% include reusable/node--alat-k3/block--applications.html section=page.section_applications %}
+              {% endif %}
+
+              {% comment %} Regulations - Standar dan regulasi {% endcomment %}
+              {% if page.section_regulations.regulations %}
+                {% include reusable/node--alat-k3/block--regulations.html section=page.section_regulations %}
+              {% endif %}
+
+              {% comment %} Risks - Risiko dan keselamatan {% endcomment %}
+              {% if page.section_risks.risks %}
+                {% include reusable/node--alat-k3/block--risks.html section=page.section_risks %}
+              {% endif %}
+
+              {% comment %} Additional markdown content {% endcomment %}
+              {{ content }}
+
+              {% comment %} Video {% endcomment %}
+              {% if page.section_video.src %}
+                {% include reusable/node--alat-k3/block--video.html section=page.section_video %}
+              {% endif %}
+
+              {% comment %} FAQ {% endcomment %}
+              {% if page.section_faq.faqs %}
+                {% include reusable/node--alat-k3/block--faq.html section=page.section_faq %}
+              {% endif %}
+
+              {% comment %} Related Service - Link ke layanan riksa uji {% endcomment %}
+              {% if page.section_related_service.path %}
+                {% include reusable/node--alat-k3/block--related-service.html section=page.section_related_service %}
+              {% endif %}
+
+              {% comment %} CTA PJK3 - Call to action PT. Cipta Mas Jaya {% endcomment %}
+              {% if page.section_cta %}
+                {% include reusable/node--alat-k3/block--cta-pjk3.html section=page.section_cta %}
+              {% endif %}
+
+              {% comment %} Related Posts {% endcomment %}
+              {% include reusable/node--alat-k3/block--related-post.html limit=3 %}
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-4 side-bar">
+            {% include reusable/node--alat-k3/block--sidebar.html %}
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-1 d-none d-lg-block"></div>
+
+    </div>
+  </div>
+</article>

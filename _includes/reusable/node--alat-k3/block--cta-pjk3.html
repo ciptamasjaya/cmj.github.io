@@ -1,0 +1,125 @@
+{% comment %}
+============================================================================
+Block: CTA PJK3 (Call to Action untuk Layanan PJK3)
+============================================================================
+
+@file        block--cta-pjk3.html
+@path        _includes/reusable/node--alat-k3/block--cta-pjk3.html
+@type        Block (reusable)
+@description Displays CTA section for PJK3 services
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: CTA object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - headline: Main headline text
+  - description: Description text
+  - benefits: Array of benefit strings
+  - button_text: CTA button text
+  - button_url: CTA button URL
+  - phone: Phone number
+  - whatsapp: WhatsApp number
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--cta-pjk3
+- Card: card--cta
+- Elements: cta__headline, cta__description, cta__benefits, cta__button
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--cta-pjk3.html section=page.section_cta %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.headline %}
+<section id="block--cta-pjk3" class="block--cta-pjk3 py-5 bg-primary text-white">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- CTA Content -->
+      <div class="col-lg-8">
+        <div class="cta__content">
+
+          {% if section.icon %}
+          <div class="cta__icon mb-3">
+            <i class="bi {{ section.icon }} display-4"></i>
+          </div>
+          {% endif %}
+
+          <h2 class="cta__headline h2 fw-bold mb-3">{{ section.headline }}</h2>
+
+          {% if section.description %}
+          <p class="cta__description lead mb-4 opacity-90">{{ section.description }}</p>
+          {% endif %}
+
+          {% if section.benefits.size > 0 %}
+          <ul class="cta__benefits list-unstyled mb-4">
+            {% for benefit in section.benefits %}
+            <li class="d-flex align-items-start mb-2">
+              <i class="bi bi-check-circle-fill text-warning me-2 mt-1"></i>
+              <span>{{ benefit }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="col-lg-4">
+        <div class="card card--cta bg-white text-dark border-0 shadow-lg">
+          <div class="card-body cta__body p-4 text-center">
+
+            <div class="cta__icon-wrapper mb-3">
+              <i class="bi bi-shield-check text-primary display-4"></i>
+            </div>
+
+            <h3 class="cta__card-title h5 fw-bold mb-3">Konsultasi Gratis</h3>
+
+            <p class="cta__card-text text-muted small mb-4">
+              Tim ahli kami siap membantu kebutuhan K3 perusahaan Anda
+            </p>
+
+            {% if section.button_url %}
+            <a href="{{ section.button_url | relative_url }}" class="btn btn-primary btn-lg w-100 mb-3 cta__button">
+              <i class="bi bi-arrow-right-circle me-2"></i>
+              {{ section.button_text | default: "Hubungi Kami" }}
+            </a>
+            {% endif %}
+
+            {% if section.whatsapp %}
+            <a href="https://wa.me/{{ section.whatsapp | remove: '+' | remove: '-' | remove: ' ' }}?text=Halo,%20saya%20ingin%20konsultasi%20tentang%20{{ page.title | url_encode }}"
+               class="btn btn-success w-100 cta__whatsapp"
+               target="_blank"
+               rel="noopener">
+              <i class="bi bi-whatsapp me-2"></i>
+              WhatsApp Langsung
+            </a>
+            {% endif %}
+
+            {% if section.phone %}
+            <div class="cta__phone mt-3">
+              <small class="text-muted">atau hubungi:</small>
+              <div class="fw-bold">
+                <i class="bi bi-telephone me-1"></i>
+                <a href="tel:{{ section.phone }}" class="text-decoration-none">{{ section.phone }}</a>
+              </div>
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,117 @@
+{% comment %}
+============================================================================
+Block: Related Posts for Alat K3 Articles
+============================================================================
+
+@file        block--related-post.html
+@path        _includes/reusable/node--alat-k3/block--related-post.html
+@type        Block (reusable)
+@description Displays related posts for K3 equipment articles
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- limit: Number of posts to show (default: 3)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--related-post
+- Card: card--post
+- Elements: post__image, post__title, post__excerpt, post__meta
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--related-post.html limit=3 %}
+
+============================================================================
+{% endcomment %}
+
+{% assign limit = include.limit | default: 3 %}
+
+{% comment %} Find related posts by matching tags or categories {% endcomment %}
+{% assign related_posts = "" | split: "" %}
+
+{% for post in site.posts %}
+  {% if post.url != page.url %}
+    {% assign common_tags = post.tags | where_exp: "tag", "page.tags contains tag" %}
+    {% assign common_cats = post.categories | where_exp: "cat", "page.categories contains cat" %}
+
+    {% if common_tags.size > 0 or common_cats.size > 0 %}
+      {% assign related_posts = related_posts | push: post %}
+    {% endif %}
+  {% endif %}
+
+  {% if related_posts.size >= limit %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} If not enough related posts, fill with recent posts {% endcomment %}
+{% if related_posts.size < limit %}
+  {% assign remaining = limit | minus: related_posts.size %}
+  {% for post in site.posts limit: remaining %}
+    {% if post.url != page.url %}
+      {% unless related_posts contains post %}
+        {% assign related_posts = related_posts | push: post %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if related_posts.size > 0 %}
+<section id="block--related-post" class="block--related-post py-5 bg-light">
+  <div class="container">
+
+    <div class="related-post__header text-center mb-4">
+      <h2 class="related-post__title h3 fw-bold">
+        <i class="bi bi-journal-text text-primary me-2"></i>
+        Artikel Terkait
+      </h2>
+      <p class="related-post__intro lead text-muted">Baca juga artikel lainnya tentang alat K3</p>
+    </div>
+
+    <div class="row related-post__list">
+      {% for post in related_posts limit: limit %}
+      <div class="col-md-4 mb-4">
+        <div class="card card--post h-100 border-0 shadow-sm">
+          {% if post.image %}
+          <img src="{{ post.image | relative_url }}"
+               class="card-img-top post__image"
+               alt="{{ post.title }}"
+               style="height: 180px; object-fit: cover;">
+          {% else %}
+          <div class="bg-primary d-flex align-items-center justify-content-center post__image-placeholder"
+               style="height: 180px;">
+            <i class="bi bi-file-earmark-text text-white display-4"></i>
+          </div>
+          {% endif %}
+
+          <div class="card-body post__body">
+            <div class="post__meta small text-muted mb-2">
+              <span><i class="bi bi-calendar me-1"></i>{{ post.date | date: "%d %b %Y" }}</span>
+              {% if post.categories.size > 0 %}
+              <span class="ms-2"><i class="bi bi-folder me-1"></i>{{ post.categories | first }}</span>
+              {% endif %}
+            </div>
+
+            <h3 class="post__title h6 fw-bold mb-2">
+              <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark stretched-link">
+                {{ post.title | truncate: 60 }}
+              </a>
+            </h3>
+
+            {% if post.description %}
+            <p class="post__excerpt small text-muted mb-0">
+              {{ post.description | truncate: 100 }}
+            </p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

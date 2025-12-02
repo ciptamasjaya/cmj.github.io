@@ -1,0 +1,73 @@
+{% comment %}
+============================================================================
+Block: Functions (Fungsi dan Kegunaan)
+============================================================================
+
+@file        block--functions.html
+@path        _includes/reusable/node--alat-k3/block--functions.html
+@type        Block (reusable)
+@description Displays functions/uses of K3 equipment
+@schema      ItemList
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Functions object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - functions: Array of function objects (name, description, icon)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--functions
+- Card: card--function
+- Elements: function__icon, function__name, function__description
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--functions.html section=page.section_functions %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.functions.size > 0 %}
+<section id="block--functions" class="block--functions py-5 bg-light">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="functions__header mb-4">
+      <h2 class="functions__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="functions__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row functions__list">
+      {% for function in section.functions %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card card--function h-100 border-0 shadow-sm">
+          <div class="card-body function__body text-center">
+            {% if function.icon %}
+            <div class="function__icon mb-3">
+              <i class="bi {{ function.icon }} text-primary fs-1"></i>
+            </div>
+            {% endif %}
+            <h3 class="function__name h5 fw-bold mb-2">{{ function.name }}</h3>
+            <p class="function__description text-muted small mb-0">{{ function.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

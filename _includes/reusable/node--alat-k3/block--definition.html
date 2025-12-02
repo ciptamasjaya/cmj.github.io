@@ -1,0 +1,66 @@
+{% comment %}
+============================================================================
+Block: Definition (Pengertian/Istilah)
+============================================================================
+
+@file        block--definition.html
+@path        _includes/reusable/node--alat-k3/block--definition.html
+@type        Block (reusable)
+@description Displays definition terms for K3 equipment
+@schema      DefinedTermSet
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Definition object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - terms: Array of term objects (name, definition)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--definition
+- Card: card--term
+- Elements: term__name, term__definition
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--definition.html section=page.section_definition %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.terms.size > 0 %}
+<section id="block--definition" class="block--definition py-5">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="definition__header mb-4">
+      <h2 class="definition__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="definition__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="definition__list">
+      {% for term in section.terms %}
+      <div class="card card--term mb-3 border-start border-primary border-4">
+        <div class="card-body term__body">
+          <h3 class="term__name h5 fw-bold text-primary mb-2">{{ term.name }}</h3>
+          <p class="term__definition text-muted mb-0">{{ term.definition }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

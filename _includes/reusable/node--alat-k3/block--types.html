@@ -1,0 +1,76 @@
+{% comment %}
+============================================================================
+Block: Types (Jenis-jenis)
+============================================================================
+
+@file        block--types.html
+@path        _includes/reusable/node--alat-k3/block--types.html
+@type        Block (reusable)
+@description Displays types/variants of K3 equipment
+@schema      ItemList
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Types object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - types: Array of type objects (name, description, icon, image)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--types
+- Card: card--type
+- Elements: type__icon, type__image, type__name, type__description
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--types.html section=page.section_types %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.types.size > 0 %}
+<section id="block--types" class="block--types py-5">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="types__header mb-4">
+      <h2 class="types__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="types__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row types__list">
+      {% for type in section.types %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card card--type h-100 border-0 shadow-sm">
+          {% if type.image %}
+          <img src="{{ type.image | relative_url }}" class="card-img-top type__image" alt="{{ type.name }}">
+          {% endif %}
+          <div class="card-body type__body">
+            {% if type.icon and type.image == nil %}
+            <div class="type__icon mb-3 text-center">
+              <i class="bi {{ type.icon }} text-primary fs-1"></i>
+            </div>
+            {% endif %}
+            <h3 class="type__name h5 fw-bold mb-2">{{ type.name }}</h3>
+            <p class="type__description text-muted small mb-0">{{ type.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

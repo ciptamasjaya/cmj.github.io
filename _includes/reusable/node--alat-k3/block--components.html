@@ -1,0 +1,84 @@
+{% comment %}
+============================================================================
+Block: Components (Komponen/Bagian)
+============================================================================
+
+@file        block--components.html
+@path        _includes/reusable/node--alat-k3/block--components.html
+@type        Block (reusable)
+@description Displays components/parts of K3 equipment
+@schema      ItemList
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Components object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - components: Array of component objects (name, description, icon, function)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--components
+- Card: card--component
+- Elements: component__icon, component__name, component__description, component__function
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--components.html section=page.section_components %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.components.size > 0 %}
+<section id="block--components" class="block--components py-5 bg-light">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="components__header mb-4">
+      <h2 class="components__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="components__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row components__list">
+      {% for component in section.components %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card card--component h-100 border-0 shadow-sm">
+          <div class="card-body component__body">
+            <div class="d-flex align-items-start">
+              {% if component.icon %}
+              <div class="component__icon me-3 flex-shrink-0">
+                <i class="bi {{ component.icon }} text-primary fs-2"></i>
+              </div>
+              {% endif %}
+              <div class="component__content">
+                <h3 class="component__name h5 fw-bold mb-2">{{ component.name }}</h3>
+                <p class="component__description text-muted small mb-2">{{ component.description }}</p>
+                {% if component.function %}
+                <div class="component__function">
+                  <span class="badge bg-primary-subtle text-primary">
+                    <i class="bi bi-gear me-1"></i>{{ component.function }}
+                  </span>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

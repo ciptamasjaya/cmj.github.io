@@ -1,0 +1,95 @@
+{% comment %}
+============================================================================
+Block: HowTo (Cara Kerja/Proses)
+============================================================================
+
+@file        block--howto.html
+@path        _includes/reusable/node--alat-k3/block--howto.html
+@type        Block (reusable)
+@description Displays how-to steps for K3 equipment operation
+@schema      HowTo
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: HowTo object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - description: HowTo description
+  - totalTime: ISO 8601 duration (e.g., "PT2H")
+  - steps: Array of step objects (name, text, image)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--howto
+- Card: card--step
+- Elements: step__number, step__name, step__text, step__image
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--howto.html section=page.section_howto %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.steps.size > 0 %}
+<section id="block--howto" class="block--howto py-5">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="howto__header mb-4">
+      <h2 class="howto__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.description %}
+      <p class="howto__description lead text-muted">{{ section.description }}</p>
+      {% endif %}
+      {% if section.totalTime %}
+      <div class="howto__time mb-3">
+        <span class="badge bg-info">
+          <i class="bi bi-clock me-1"></i>
+          Estimasi waktu:
+          {% assign time = section.totalTime | remove: "PT" | remove: "H" | remove: "M" %}
+          {% if section.totalTime contains "H" %}
+            {{ time }} jam
+          {% elsif section.totalTime contains "M" %}
+            {{ time }} menit
+          {% else %}
+            {{ time }}
+          {% endif %}
+        </span>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="howto__steps">
+      {% for step in section.steps %}
+      <div class="card card--step mb-3 border-start border-primary border-4">
+        <div class="card-body step__body">
+          <div class="d-flex align-items-start">
+            <div class="step__number rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+              <span class="fw-bold">{{ forloop.index }}</span>
+            </div>
+            <div class="step__content flex-grow-1">
+              <h3 class="step__name h5 fw-bold mb-2">{{ step.name }}</h3>
+              <p class="step__text text-muted mb-0">{{ step.text }}</p>
+            </div>
+            {% if step.image %}
+            <div class="step__image ms-3 d-none d-md-block">
+              <img src="{{ step.image | relative_url }}" alt="{{ step.name }}" class="rounded" style="max-width: 120px; max-height: 80px; object-fit: cover;">
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

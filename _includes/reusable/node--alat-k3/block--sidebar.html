@@ -1,0 +1,185 @@
+{% comment %}
+============================================================================
+Block: Sidebar for Alat K3 Articles
+============================================================================
+
+@file        block--sidebar.html
+@path        _includes/reusable/node--alat-k3/block--sidebar.html
+@type        Block (reusable)
+@description Sidebar for K3 equipment articles
+@author      arisciwek
+@created     2025-12-02
+
+Structure:
+----------
+- Table of Contents (based on sections)
+- Categories
+- Tags
+- Related Service Link
+- CTA Contact
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--sidebar.html %}
+
+============================================================================
+{% endcomment %}
+
+<aside class="block--sidebar post-sidebar">
+
+  <!-- Table of Contents -->
+  <div class="sidebar-widget mb-4">
+    <div class="card border-0 shadow-sm">
+      <div class="card-body">
+        <h3 class="sidebar-widget__title h6 fw-bold mb-3">
+          <i class="bi bi-list-nested me-2 text-primary"></i>Daftar Isi
+        </h3>
+        <nav class="sidebar__toc">
+          <ul class="list-unstyled mb-0 small">
+            {% if page.section_definition.terms %}
+            <li class="mb-2">
+              <a href="#block--definition" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_definition.title | default: "Pengertian" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_functions.functions %}
+            <li class="mb-2">
+              <a href="#block--functions" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_functions.title | default: "Fungsi" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_types.types %}
+            <li class="mb-2">
+              <a href="#block--types" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_types.title | default: "Jenis" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_components.components %}
+            <li class="mb-2">
+              <a href="#block--components" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_components.title | default: "Komponen" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_specifications.specs %}
+            <li class="mb-2">
+              <a href="#block--specifications" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_specifications.title | default: "Spesifikasi" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_howto.steps %}
+            <li class="mb-2">
+              <a href="#block--howto" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_howto.title | default: "Cara Kerja" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_applications.applications %}
+            <li class="mb-2">
+              <a href="#block--applications" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_applications.title | default: "Aplikasi" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_regulations.regulations %}
+            <li class="mb-2">
+              <a href="#block--regulations" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_regulations.title | default: "Regulasi" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_risks.risks %}
+            <li class="mb-2">
+              <a href="#block--risks" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_risks.title | default: "Risiko" }}
+              </a>
+            </li>
+            {% endif %}
+            {% if page.section_faq.faqs %}
+            <li class="mb-2">
+              <a href="#block--faq" class="text-decoration-none text-muted">
+                <i class="bi bi-chevron-right me-1"></i>{{ page.section_faq.title | default: "FAQ" }}
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  {% if page.categories and page.categories.size > 0 %}
+  <div class="sidebar-widget mb-4">
+    <h3 class="sidebar-widget__title h6 fw-bold mb-3">
+      <i class="bi bi-folder me-2 text-primary"></i>Kategori
+    </h3>
+    <ul class="list-unstyled mb-0">
+      {% for category in page.categories %}
+      <li class="mb-2">
+        <a href="{{ '/kategori/' | append: category | slugify | relative_url }}" class="text-decoration-none text-muted d-flex align-items-center">
+          <i class="bi bi-chevron-right me-2 small"></i>
+          {{ category }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <!-- Tags -->
+  {% if page.tags and page.tags.size > 0 %}
+  <div class="sidebar-widget mb-4">
+    <h3 class="sidebar-widget__title h6 fw-bold mb-3">
+      <i class="bi bi-tags me-2 text-primary"></i>Tags
+    </h3>
+    <div class="d-flex flex-wrap gap-2">
+      {% for tag in page.tags %}
+      <a href="{{ '/tag/' | append: tag | slugify | relative_url }}" class="badge bg-light text-dark text-decoration-none border">
+        {{ tag }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Related Service Link -->
+  {% if page.section_related_service.path %}
+  {% assign service = site.services | where: "url", page.section_related_service.path | first %}
+  {% if service %}
+  <div class="sidebar-widget mb-4">
+    <h3 class="sidebar-widget__title h6 fw-bold mb-3">
+      <i class="bi bi-link-45deg me-2 text-primary"></i>Layanan Terkait
+    </h3>
+    <div class="card border-0 shadow-sm">
+      <div class="card-body p-3">
+        <h4 class="h6 fw-bold mb-2">{{ service.title }}</h4>
+        <p class="small text-muted mb-2">{{ service.description | truncate: 80 }}</p>
+        <a href="{{ service.url | relative_url }}" class="btn btn-outline-primary btn-sm w-100">
+          <i class="bi bi-arrow-right me-1"></i>Lihat Layanan
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  <!-- CTA Contact -->
+  <div class="sidebar-widget mb-4">
+    <div class="card bg-primary text-white border-0">
+      <div class="card-body text-center p-4">
+        <i class="bi bi-shield-check fs-2 mb-3 d-block"></i>
+        <h4 class="h5 fw-bold mb-2">Butuh Riksa Uji K3?</h4>
+        <p class="small mb-3 opacity-75">Tim PJK3 kami siap membantu inspeksi dan sertifikasi alat K3 Anda</p>
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-light btn-sm">
+          <i class="bi bi-telephone me-1"></i>Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </div>
+
+</aside>

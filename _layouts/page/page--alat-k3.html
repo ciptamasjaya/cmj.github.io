@@ -1,0 +1,86 @@
+---
+layout: compress
+---
+{%- assign layout_extra_css = "/assets/css/blocks-post.css" -%}
+{%- comment -%}
+============================================================================
+Page Wrapper: Alat K3 Article Pages (page--alat-k3.html)
+============================================================================
+
+@file        page--alat-k3.html
+@path        _layouts/page/page--alat-k3.html
+@type        Page (page wrapper)
+@description Page wrapper for K3 equipment/tools articles
+@author      arisciwek
+@created     2025-12-02
+
+Schemas included:
+- TechArticle (main)
+- DefinedTermSet (section_definition)
+- ItemList (functions, types, components, risks, applications)
+- Dataset (specifications)
+- GovernmentService (regulations)
+- HowTo (section_howto)
+- FAQPage (section_faq)
+- ImageGallery (section_gallery)
+- VideoObject (section_video)
+- BreadcrumbList
+
+============================================================================
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body>
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  {% include components/cta-whatsapp.html style="floating" %}
+
+  {% comment %} ============================================================
+  SCHEMA MARKUP (Pendekatan A: TechArticle sebagai wrapper utama)
+  ============================================================
+
+  Schema TechArticle sudah mencakup semua section sebagai hasPart:
+  - DefinedTermSet (section_definition)
+  - ItemList (functions, types, components, risks, applications)
+  - PropertyValue (specifications)
+  - Legislation (regulations)
+  - HowTo (section_howto)
+  - FAQ as Questions (section_faq)
+  - ImageGallery (section_gallery)
+  - VideoObject (section_video)
+
+  Lihat schema--techarticle.html untuk pendekatan alternatif (@graph)
+  ============================================================ {% endcomment %}
+
+  {% comment %} Page Schema (WebPage) {% endcomment %}
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  {% comment %} Main TechArticle Schema (mencakup semua section) {% endcomment %}
+  {% include schema/node--alat-k3/schema--techarticle.html %}
+
+  {% comment %} Breadcrumb Schema {% endcomment %}
+  {% unless page.show_breadcrumb_schema == false %}
+    {% include schema/schema--breadcrumb.html current_title=page.title %}
+  {% endunless %}
+
+  {% comment %} ============================================================
+  SCRIPTS
+  ============================================================ {% endcomment %}
+
+  {% comment %} Gallery Slider JS {% endcomment %}
+  {% if page.section_gallery.images.size > 0 %}
+    <script src="{{ '/assets/js/gallery-slider.js' | relative_url }}" defer></script>
+  {% endif %}
+
+</body>
+</html>

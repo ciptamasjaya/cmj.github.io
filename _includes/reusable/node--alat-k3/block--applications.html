@@ -1,0 +1,80 @@
+{% comment %}
+============================================================================
+Block: Applications (Aplikasi/Penggunaan)
+============================================================================
+
+@file        block--applications.html
+@path        _includes/reusable/node--alat-k3/block--applications.html
+@type        Block (reusable)
+@description Displays applications/use cases of K3 equipment
+@schema      ItemList
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Applications object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - applications: Array of application objects (name, description, industry, icon)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--applications
+- Card: card--application
+- Elements: application__icon, application__name, application__description, application__industry
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--applications.html section=page.section_applications %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.applications.size > 0 %}
+<section id="block--applications" class="block--applications py-5 bg-light">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="applications__header mb-4">
+      <h2 class="applications__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="applications__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="row applications__list">
+      {% for application in section.applications %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card card--application h-100 border-0 shadow-sm">
+          <div class="card-body application__body">
+            {% if application.icon %}
+            <div class="application__icon mb-3 text-center">
+              <i class="bi {{ application.icon }} text-primary fs-1"></i>
+            </div>
+            {% endif %}
+            <h3 class="application__name h5 fw-bold text-center mb-2">{{ application.name }}</h3>
+            <p class="application__description text-muted small text-center mb-3">{{ application.description }}</p>
+            {% if application.industry %}
+            <div class="application__industry text-center">
+              <span class="badge bg-primary-subtle text-primary">
+                <i class="bi bi-building me-1"></i>{{ application.industry }}
+              </span>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

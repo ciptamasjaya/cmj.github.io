@@ -1,0 +1,85 @@
+{% comment %}
+============================================================================
+Block: Specifications (Spesifikasi Teknis)
+============================================================================
+
+@file        block--specifications.html
+@path        _includes/reusable/node--alat-k3/block--specifications.html
+@type        Block (reusable)
+@description Displays technical specifications of K3 equipment
+@schema      Dataset
+@author      arisciwek
+@created     2025-12-02
+
+Parameters:
+-----------
+- section: Specifications object from frontmatter with:
+  - title: Section title
+  - icon: Bootstrap icon class
+  - intro: Introduction text
+  - specs: Array of spec objects (name, value, unit, description)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--specifications
+- Card: card--spec
+- Elements: spec__name, spec__value, spec__unit, spec__description
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--specifications.html section=page.section_specifications %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.specs.size > 0 %}
+<section id="block--specifications" class="block--specifications py-5">
+  <div class="container">
+
+    {% if section.title %}
+    <div class="specifications__header mb-4">
+      <h2 class="specifications__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-primary me-2"></i>{% endif %}
+        {{ section.title }}
+      </h2>
+      {% if section.intro %}
+      <p class="specifications__intro lead text-muted">{{ section.intro }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="card specifications__card border-0 shadow-sm">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-striped specifications__table mb-0">
+            <thead class="table-primary">
+              <tr>
+                <th class="spec__header-name">Parameter</th>
+                <th class="spec__header-value">Nilai</th>
+                <th class="spec__header-description d-none d-md-table-cell">Keterangan</th>
+              </tr>
+            </thead>
+            <tbody class="specifications__list">
+              {% for spec in section.specs %}
+              <tr class="spec__row">
+                <td class="spec__name fw-semibold">{{ spec.name }}</td>
+                <td class="spec__value">
+                  <span class="spec__value-number">{{ spec.value }}</span>
+                  {% if spec.unit %}
+                  <span class="spec__unit text-muted">{{ spec.unit }}</span>
+                  {% endif %}
+                </td>
+                <td class="spec__description text-muted small d-none d-md-table-cell">{{ spec.description }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}
