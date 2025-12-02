@@ -208,19 +208,58 @@ section_applications:
     icon: ""
 
 # ============================================================================
-# SECTION: HowTo (Cara Kerja/Proses)
-# Block: block--howto.html
-# Schema: schema--howto.html
+# SECTION: HowTo Penggunaan (Cara Penggunaan/Operasi)
+# Block: block--howto-penggunaan.html
+# Schema: schema--howto-penggunaan.html
 # ============================================================================
-section_howto:
-  title: ""
-  icon: "bi-list-ol"
+section_howto_penggunaan:
+  title: "Cara Penggunaan"
+  icon: "bi-play-circle"
   description: ""
   totalTime: ""
   steps:
   - name: ""
     text: ""
     image: ""
+  - name: ""
+    text: ""
+    image: ""
+  - name: ""
+    text: ""
+    image: ""
+
+# ============================================================================
+# SECTION: HowTo Perawatan (Cara Perawatan/Maintenance)
+# Block: block--howto-perawatan.html
+# Schema: schema--howto-perawatan.html
+# ============================================================================
+section_howto_perawatan:
+  title: "Cara Perawatan"
+  icon: "bi-tools"
+  description: ""
+  totalTime: ""
+  steps:
+  - name: ""
+    text: ""
+    image: ""
+  - name: ""
+    text: ""
+    image: ""
+  - name: ""
+    text: ""
+    image: ""
+
+# ============================================================================
+# SECTION: HowTo Inspeksi (Cara Inspeksi/Pemeriksaan K3)
+# Block: block--howto-inspeksi.html
+# Schema: schema--howto-inspeksi.html
+# ============================================================================
+section_howto_inspeksi:
+  title: "Cara Inspeksi K3"
+  icon: "bi-clipboard-check"
+  description: ""
+  totalTime: ""
+  steps:
   - name: ""
     text: ""
     image: ""

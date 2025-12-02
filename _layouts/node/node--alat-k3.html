@@ -20,18 +20,20 @@ This template wraps in page--alat-k3.html and provides K3 equipment article
 structure with specialized sections (definition, types, components, etc).
 
 Blocks:
-- block--definition.html      → DefinedTermSet
-- block--functions.html       → ItemList
-- block--types.html           → ItemList
-- block--components.html      → ItemList
-- block--specifications.html  → Dataset
-- block--regulations.html     → GovernmentService
-- block--risks.html           → ItemList
-- block--applications.html    → ItemList
-- block--howto.html           → HowTo
-- block--faq.html             → FAQPage
-- block--gallery.html         → ImageGallery
-- block--video.html           → VideoObject
+- block--definition.html         → DefinedTermSet
+- block--functions.html          → ItemList
+- block--types.html              → ItemList
+- block--components.html         → ItemList
+- block--specifications.html     → Dataset
+- block--regulations.html        → GovernmentService
+- block--risks.html              → ItemList
+- block--applications.html       → ItemList
+- block--howto-penggunaan.html   → HowTo (Cara Penggunaan)
+- block--howto-perawatan.html    → HowTo (Cara Perawatan)
+- block--howto-inspeksi.html     → HowTo (Cara Inspeksi K3)
+- block--faq.html                → FAQPage
+- block--gallery.html            → ImageGallery
+- block--video.html              → VideoObject
 - block--related-service.html
 - block--cta-pjk3.html
 
@@ -87,9 +89,19 @@ Blocks:
                 {% include reusable/node--alat-k3/block--specifications.html section=page.section_specifications %}
               {% endif %}
 
-              {% comment %} HowTo - Cara kerja/proses {% endcomment %}
-              {% if page.section_howto.steps %}
-                {% include reusable/node--alat-k3/block--howto.html section=page.section_howto %}
+              {% comment %} HowTo Penggunaan - Cara penggunaan/operasi {% endcomment %}
+              {% if page.section_howto_penggunaan.steps %}
+                {% include reusable/node--alat-k3/block--howto-penggunaan.html section=page.section_howto_penggunaan %}
+              {% endif %}
+
+              {% comment %} HowTo Perawatan - Cara perawatan/maintenance {% endcomment %}
+              {% if page.section_howto_perawatan.steps %}
+                {% include reusable/node--alat-k3/block--howto-perawatan.html section=page.section_howto_perawatan %}
+              {% endif %}
+
+              {% comment %} HowTo Inspeksi - Cara inspeksi/pemeriksaan K3 {% endcomment %}
+              {% if page.section_howto_inspeksi.steps %}
+                {% include reusable/node--alat-k3/block--howto-inspeksi.html section=page.section_howto_inspeksi %}
               {% endif %}
 
               {% comment %} Applications - Aplikasi/penggunaan {% endcomment %}
@@ -106,9 +118,6 @@ Blocks:
               {% if page.section_risks.risks %}
                 {% include reusable/node--alat-k3/block--risks.html section=page.section_risks %}
               {% endif %}
-
-              {% comment %} Additional markdown content {% endcomment %}
-              {{ content }}
 
               {% comment %} Video {% endcomment %}
               {% if page.section_video.src %}

@@ -136,6 +136,60 @@ section_specifications:
     description: "Untuk operasi angkat yang andal"
 
 # ============================================================================
+# SECTION: HowTo Penggunaan (Cara Penggunaan/Operasi)
+# ============================================================================
+section_howto_penggunaan:
+  title: "Cara Mengoperasikan Forklift Hyster H50FT"
+  icon: "bi-play-circle"
+  description: "Langkah-langkah dasar untuk mengoperasikan forklift dengan aman dan efisien."
+  totalTime: "PT15M"
+  steps:
+  - name: "Pemeriksaan Pra-Operasi"
+    text: "Periksa kondisi ban, level oli, bahan bakar, dan sistem hidrolik sebelum mengoperasikan forklift. Pastikan semua lampu dan alarm berfungsi dengan baik."
+  - name: "Masuk ke Kabin dengan Aman"
+    text: "Gunakan pegangan tangan dan injakan kaki saat naik ke kabin. Pastikan sabuk pengaman terpasang dengan benar sebelum menghidupkan mesin."
+  - name: "Hidupkan Mesin"
+    text: "Putar kunci kontak dan biarkan mesin idle selama 30 detik. Periksa indikator dashboard untuk memastikan tidak ada warning light yang menyala."
+  - name: "Operasikan dengan Hati-hati"
+    text: "Angkat garpu (fork) sekitar 15-20 cm dari tanah saat bergerak. Selalu perhatikan area sekitar dan gunakan klakson di tikungan atau area buta."
+
+# ============================================================================
+# SECTION: HowTo Perawatan (Cara Perawatan/Maintenance)
+# ============================================================================
+section_howto_perawatan:
+  title: "Cara Perawatan Rutin Forklift Hyster H50FT"
+  icon: "bi-tools"
+  description: "Prosedur perawatan berkala untuk menjaga performa dan umur pakai forklift."
+  totalTime: "PT1H"
+  steps:
+  - name: "Perawatan Harian"
+    text: "Bersihkan forklift dari debu dan kotoran. Periksa level oli mesin, oli hidrolik, dan cairan pendingin. Pastikan tidak ada kebocoran di bawah unit."
+  - name: "Perawatan Mingguan"
+    text: "Periksa tekanan ban dan kondisi tapak ban. Lumasi titik-titik pelumasan sesuai manual. Periksa kondisi rantai angkat dan sesuaikan jika perlu."
+  - name: "Perawatan Bulanan"
+    text: "Ganti filter udara jika kotor. Periksa kondisi selang hidrolik dan kabel elektrik. Bersihkan radiator dari kotoran yang menghambat sirkulasi udara."
+  - name: "Servis Berkala"
+    text: "Lakukan servis lengkap setiap 250 jam operasi atau sesuai rekomendasi pabrikan. Ganti oli mesin, filter oli, dan filter bahan bakar."
+
+# ============================================================================
+# SECTION: HowTo Inspeksi (Cara Inspeksi/Pemeriksaan K3)
+# ============================================================================
+section_howto_inspeksi:
+  title: "Cara Inspeksi K3 Forklift"
+  icon: "bi-clipboard-check"
+  description: "Prosedur pemeriksaan keselamatan kerja untuk memastikan forklift layak operasi."
+  totalTime: "PT30M"
+  steps:
+  - name: "Pemeriksaan Visual"
+    text: "Periksa kondisi fisik forklift termasuk kerangka, garpu, mast, dan kabin. Identifikasi keretakan, korosi, atau kerusakan yang terlihat."
+  - name: "Pemeriksaan Sistem Keamanan"
+    text: "Uji fungsi rem parkir dan rem operasi. Periksa alarm mundur, lampu peringatan, dan klakson. Pastikan sabuk pengaman dalam kondisi baik."
+  - name: "Pemeriksaan Sistem Hidrolik"
+    text: "Periksa kebocoran pada silinder hidrolik, selang, dan fitting. Uji fungsi angkat, turun, dan miring mast. Pastikan pergerakan halus tanpa bunyi abnormal."
+  - name: "Dokumentasi dan Pelaporan"
+    text: "Catat hasil inspeksi dalam checklist K3. Laporkan temuan kepada supervisor. Tandai forklift yang tidak layak operasi hingga diperbaiki."
+
+# ============================================================================
 # SECTION: Regulations (GovernmentService)
 # ============================================================================
 section_regulations:

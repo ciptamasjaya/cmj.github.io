@@ -1,0 +1,42 @@
+{% comment %}
+============================================================================
+Schema: HowTo Penggunaan (Cara Penggunaan/Operasi)
+============================================================================
+
+@file        schema--howto-penggunaan.html
+@path        _includes/schema/node--alat-k3/schema--howto-penggunaan.html
+@type        Schema (JSON-LD)
+@description HowTo schema for equipment usage/operation - Google rich results
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Usage:
+{% include schema/node--alat-k3/schema--howto-penggunaan.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_howto_penggunaan.steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "{{ page.url | absolute_url }}#howto-penggunaan",
+  "name": {{ page.section_howto_penggunaan.title | default: "Cara Penggunaan" | jsonify }},
+  {% if page.section_howto_penggunaan.description %}"description": {{ page.section_howto_penggunaan.description | strip_html | jsonify }},{% endif %}
+  {% if page.section_howto_penggunaan.totalTime %}"totalTime": "{{ page.section_howto_penggunaan.totalTime }}",{% endif %}
+  "step": [
+    {% for step in page.section_howto_penggunaan.steps %}
+    {
+      "@type": "HowToStep",
+      "position": {{ forloop.index }},
+      "name": {{ step.name | jsonify }},
+      "text": {{ step.text | strip_html | jsonify }}{% if step.image %},
+      "image": "{{ step.image | absolute_url }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

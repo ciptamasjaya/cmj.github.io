@@ -20,7 +20,9 @@ Schemas included:
 - ItemList (functions, types, components, risks, applications)
 - Dataset (specifications)
 - GovernmentService (regulations)
-- HowTo (section_howto)
+- HowTo Penggunaan (section_howto_penggunaan)
+- HowTo Perawatan (section_howto_perawatan)
+- HowTo Inspeksi (section_howto_inspeksi)
 - FAQPage (section_faq)
 - ImageGallery (section_gallery)
 - VideoObject (section_video)
@@ -57,7 +59,9 @@ Schemas included:
   - schema--itemlist-applications.html → ItemList (applications/aplikasi)
   - schema--dataset.html             → Dataset (specifications)
   - schema--faqpage.html             → FAQPage (FAQ rich results)
-  - schema--howto.html               → HowTo (How-to rich results)
+  - schema--howto-penggunaan.html    → HowTo (Cara Penggunaan)
+  - schema--howto-perawatan.html     → HowTo (Cara Perawatan)
+  - schema--howto-inspeksi.html      → HowTo (Cara Inspeksi K3)
   - schema--imagegallery.html        → ImageGallery
   - schema--video.html               → VideoObject
 
@@ -92,8 +96,10 @@ Schemas included:
   {% comment %} FAQPage Schema (for FAQ rich results) {% endcomment %}
   {% include schema/node--alat-k3/schema--faqpage.html %}
 
-  {% comment %} HowTo Schema (for How-to rich results) {% endcomment %}
-  {% include schema/node--alat-k3/schema--howto.html %}
+  {% comment %} HowTo Schemas (for How-to rich results) {% endcomment %}
+  {% include schema/node--alat-k3/schema--howto-penggunaan.html %}
+  {% include schema/node--alat-k3/schema--howto-perawatan.html %}
+  {% include schema/node--alat-k3/schema--howto-inspeksi.html %}
 
   {% comment %} ImageGallery Schema {% endcomment %}
   {% include schema/node--alat-k3/schema--imagegallery.html %}

@@ -1,0 +1,97 @@
+{% comment %}
+============================================================================
+Block: HowTo Inspeksi (Cara Inspeksi/Pemeriksaan K3)
+============================================================================
+
+@file        block--howto-inspeksi.html
+@path        _includes/reusable/node--alat-k3/block--howto-inspeksi.html
+@type        Block (reusable)
+@description Displays how-to steps for K3 inspection procedures
+@schema      HowTo
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Parameters:
+-----------
+- section: HowTo object from frontmatter (section_howto_inspeksi) with:
+  - title: Section title (default: "Cara Inspeksi K3")
+  - icon: Bootstrap icon class
+  - description: HowTo description
+  - totalTime: ISO 8601 duration (e.g., "PT30M", "PT1H")
+  - steps: Array of step objects (name, text, image)
+
+Semantic Classes (BEM):
+-----------------------
+- Block: block--howto-inspeksi
+- Card: card--step
+- Elements: step__number, step__name, step__text, step__image
+
+Usage:
+------
+{% include reusable/node--alat-k3/block--howto-inspeksi.html section=page.section_howto_inspeksi %}
+
+============================================================================
+{% endcomment %}
+
+{% assign section = include.section %}
+
+{% if section.steps.size > 0 %}
+<section id="block--howto-inspeksi" class="block--howto block--howto-inspeksi py-5">
+  <div class="container">
+
+    <div class="howto__header mb-4">
+      <h2 class="howto__title h3 fw-bold">
+        {% if section.icon %}<i class="bi {{ section.icon }} text-warning me-2"></i>{% endif %}
+        {{ section.title | default: "Cara Inspeksi K3" }}
+      </h2>
+      {% if section.description %}
+      <p class="howto__description lead text-muted">{{ section.description | raw }}</p>
+      {% endif %}
+      {% if section.totalTime %}
+      <div class="howto__time mb-3">
+        <span class="badge bg-warning text-dark">
+          <i class="bi bi-clock me-1"></i>
+          Estimasi waktu:
+          {% assign duration = section.totalTime | remove: "PT" %}
+          {% if duration contains "H" and duration contains "M" %}
+            {% assign parts = duration | split: "H" %}
+            {{ parts[0] }} jam {{ parts[1] | remove: "M" }} menit
+          {% elsif duration contains "H" %}
+            {{ duration | remove: "H" }} jam
+          {% elsif duration contains "M" %}
+            {{ duration | remove: "M" }} menit
+          {% else %}
+            {{ duration }}
+          {% endif %}
+        </span>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="howto__steps">
+      {% for step in section.steps %}
+      <div class="card card--step mb-3 border-start border-warning border-4">
+        <div class="card-body step__body">
+          <div class="d-flex align-items-start">
+            <div class="step__number rounded-circle bg-warning text-dark d-flex align-items-center justify-content-center me-3 flex-shrink-0" style="width: 48px; height: 48px;">
+              <span class="fw-bold">{{ forloop.index }}</span>
+            </div>
+            <div class="step__content flex-grow-1">
+              <h3 class="step__name h5 fw-bold mb-2">{{ step.name }}</h3>
+              <p class="step__text text-muted mb-0">{{ step.text | raw }}</p>
+            </div>
+            {% if step.image %}
+            <div class="step__image ms-3 d-none d-md-block">
+              <img src="{{ step.image | relative_url }}" alt="{{ step.name }}" class="rounded" style="max-width: 120px; max-height: 80px; object-fit: cover;">
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endif %}

@@ -1,0 +1,42 @@
+{% comment %}
+============================================================================
+Schema: HowTo Perawatan (Cara Perawatan/Maintenance)
+============================================================================
+
+@file        schema--howto-perawatan.html
+@path        _includes/schema/node--alat-k3/schema--howto-perawatan.html
+@type        Schema (JSON-LD)
+@description HowTo schema for equipment maintenance - Google rich results
+@author      arisciwek
+@created     2025-12-02
+@updated     2025-12-02
+
+Usage:
+{% include schema/node--alat-k3/schema--howto-perawatan.html %}
+
+============================================================================
+{% endcomment %}
+
+{% if page.section_howto_perawatan.steps.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "{{ page.url | absolute_url }}#howto-perawatan",
+  "name": {{ page.section_howto_perawatan.title | default: "Cara Perawatan" | jsonify }},
+  {% if page.section_howto_perawatan.description %}"description": {{ page.section_howto_perawatan.description | strip_html | jsonify }},{% endif %}
+  {% if page.section_howto_perawatan.totalTime %}"totalTime": "{{ page.section_howto_perawatan.totalTime }}",{% endif %}
+  "step": [
+    {% for step in page.section_howto_perawatan.steps %}
+    {
+      "@type": "HowToStep",
+      "position": {{ forloop.index }},
+      "name": {{ step.name | jsonify }},
+      "text": {{ step.text | strip_html | jsonify }}{% if step.image %},
+      "image": "{{ step.image | absolute_url }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
