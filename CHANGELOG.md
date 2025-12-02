@@ -1,5 +1,166 @@
 # Changelog
 
+## v1.0.5 - Multi Content Types & Robot System (2025-12-03)
+
+Three new content types (alat-k3, inspection-report, pjk3-city enhancements), automated robot system for content freshness, and comprehensive template documentation. **135 commits** since v1.0.4.
+
+### 🎯 Major Features
+
+#### 🔧 node--alat-k3 Content Type (New)
+Complete content type for K3 equipment articles:
+- **22 blocks**: Definition, Functions, Types, Components, Specifications, 3x HowTo, Risks, Applications, FAQ, Gallery, Video, Rating, etc.
+- **15 schema files**: TechArticle, DefinedTermSet, 5x ItemList, Dataset, 3x HowTo, FAQPage, ImageGallery, Video, Rating
+- **Rating system**: Product schema with AggregateRating and Review testimonials
+- **Theme variants**: 5 color themes (primary, success, info, warning, danger)
+- **Google Rich Results**: 10 valid items (Article, FAQ, HowTo, Dataset, Product, etc.)
+
+#### 📋 node--inspection-report Content Type (New)
+Technical inspection report layout for riksa uji results:
+- **19 blocks**: Header, Gallery, Definition, 6x Test Result Tables, HowTo, FAQ, Video, Rating, etc.
+- **Table schemas**: 6 separate schemas for inspection test results
+- **HowTo schemas**: Safety valve and hydrotest procedures
+- **Combined FAQPage**: Multiple FAQ sections merged
+- **Semantic CSS classes**: BEM naming convention throughout
+
+#### 🤖 Robot System (New)
+Automated content freshness maintenance:
+- **Multi-robot system**: Rotation scripts for measurements and frontmatter
+- **Robot Propagator**: Timestamp propagation across related files
+- **Robot Sinonim**: Synonym expansion for posts and services
+- **Config-driven**: Layout filter and maintenance mode
+- **Git pre-commit hook**: Auto lastmod update with ON/OFF setting
+
+#### 📝 Template Documentation Overhaul
+Per-section workflow with TodoWrite integration:
+- **PETUNJUK-PEMBUATAN files**: Restructured for all 4 node types
+- **TodoWrite workflow**: 16-section checklist for content creation
+- **YAML examples**: Complete frontmatter samples per section
+- **Verification checklists**: Schema and build validation steps
+
+### 📝 Detailed Changes
+
+#### node--alat-k3 System (11 commits)
+```
+674b529 - Rewrite PETUNJUK-PEMBUATAN-node-alat-k3.md with comprehensive format
+bd808ab - Improve alat-k3 grid layout and hover effects
+383b4d1 - Add comprehensive CSS styling for alat-k3 content type
+d93aa03 - Add rating system with testimonials UI for alat-k3 content type
+644e16d - Add alat-k3 variant to block--content-header.html
+c6b001e - Split generic HowTo into 3 specific types for node--alat-k3
+f12b136 - Add separate schema files for node--alat-k3 blocks
+dab16dc - Update blocks for HTML support and add migration example
+d9723b9 - Add node--alat-k3 content type for K3 equipment articles
+```
+
+#### node--inspection-report System (15 commits)
+```
+06a9e26 - Add testimonials block and rating display for inspection reports
+b8f2a55 - Add inspection report template and forklift riksa uji content
+547452e - Fix UI issues and add semantic classes to report header
+48c94be - Add semantic CSS classes to all inspection-report blocks
+30cd7c1 - Add HowTo schema for safety valve and FAQ for hydrotest
+06c5f25 - Add FAQ section for hydrotest with FAQPage schema
+95653e0 - Add HowTo schema for hydrotest procedure
+d09de5c - Add Table schemas for all inspection test results
+15de020 - Add Table schema for visual inspection and update section titles
+d15d414 - Add DefinedTermSet for inspection report
+c5d787f - Add Product schema with AggregateRating for inspection report rating
+ed3b5ac - Add shared gallery slider component and video block
+2c47085 - Add blocks and schemas for node--inspection-report
+7de9529 - Add node--inspection-report layout for technical inspection reports
+```
+
+#### Robot System (12 commits)
+```
+6e450e5 - Add git pre-commit hook for propagator with ON/OFF setting
+488c325 - Add lastmod sorting for blog preview and propagator hook
+a6c9df6 - Add propagator hook system for timestamp propagation
+fe0e87a - Add Robot Propagator and expand synonym support
+38b18e9 - Expand Robot Sinonim to support _services folder
+146574d - Add config-driven layout filter for robots
+def3416 - Expand Robot Sinonim to work on all layouts
+b941d97 - Add robot config file and maintenance mode
+7a7f500 - Add multi-robot system for content freshness
+9aba7da - Add measurement rotation script for content freshness
+dec8f51 - Add frontmatter rotation script for content freshness
+```
+
+#### node--riksa-uji Enhancements (20 commits)
+```
+d6bf4fc - Remove isPartOf from HowTo and FAQ schemas in page--riksa-uji
+72c7758 - Add HowTo steps to TechArticle.about as Thing
+05ecd5d - Complete overhead crane article with all content sections
+3ae2d19 - Add Riksa Uji Overhead Crane article and service
+03a0f5d - Add JSON-based rating system for riksa-uji articles
+1f4c576 - Implement block rating system for services
+0b12cb6 - Add related service feature and fix Product schema
+7011a69 - Add shared block--content-header.html with lastmod display
+44e4502 - Add CSS for riksa-uji blocks and fix subtitle styling
+a0b049e - Add marketing sections to riksa-uji-boiler frontmatter
+242ea7b - Add marketing blocks to riksa-uji layout
+c86b1ef - Add WebPageElement schemas and hasPart for riksa-uji TechArticle
+9b7b8e1 - Add specific schemas for riksa-uji sections
+```
+
+#### Code Quality & Refactoring (20 commits)
+```
+4758f18 - Apply BEM semantic classes based on frontmatter child arrays
+dcb4a7a - Standardize block IDs to block--[name] pattern
+5b10355 - Standardize jenis_alat field name across all services
+e46d4d0 - Refactor: Split blocks.scss into modular partials (v1.0.5)
+c82628c - Consolidate block cards into universal template (v1.0.5)
+401abbe - Reorganize layouts into subfolders and add semantic card classes
+72e4202 - Standardize heading hierarchy and add reusable CSS components
+49a4148 - Standardize heading hierarchy and add card-float class
+f206689 - Refactor: Move gallery inline styles and script to external files
+65eb05e - Fix whitespace: remove blank lines before DOCTYPE
+ec0637f - Refactor: Remove !important from hover box-shadow effects
+```
+
+#### SEO & Schema (15 commits)
+```
+da330c6 - Fix node--inspection-report schema to match node--riksa-uji pattern
+5afa606 - Fix TechArticle schema newline error in articleBody
+7261217 - Add Liquid variables for reviews in rating blocks
+8851cd1 - Add review to Product schema and ReserveAction to Event schema
+0ec8696 - Fix speakable cssSelector and add address/image to Organization
+3da24ce - Add keywords field to node-service templates
+a724859 - Add specific meta keywords to all service files
+39576d0 - Add specific meta keywords to all posts
+```
+
+#### Template Documentation (10 commits)
+```
+cf0607c - Add TodoWrite per-section workflow to all PETUNJUK template guides
+ea1f2db - Restructure PETUNJUK-PEMBUATAN-node-service.md with per-section format
+ef43207 - Restructure PETUNJUK-PEMBUATAN-node-pjk3-city.md with per-section format
+0b289c1 - Restructure node-inspection-report documentation with per-section format
+af882f3 - Restructure node-riksa-uji template and documentation
+d61f438 - Add templates for node-service pages
+58821d0 - Update templates for riksa-uji with rating system fields
+303a094 - Update PETUNJUK node-service with rating/review and default video docs
+2d725ed - Update PETUNJUK-PEMBUATAN-node-service with rating/review documentation
+```
+
+### 📊 Impact
+- **135 commits** since v1.0.4
+- **3 content types** added/enhanced (alat-k3, inspection-report, riksa-uji)
+- **56 new blocks** created across all content types
+- **30+ schema files** for Google Rich Results
+- **4 PETUNJUK files** restructured with per-section workflow
+- **5 robot scripts** for automated content maintenance
+- **BEM semantic classes** standardized across all blocks
+
+### 🔧 Technical Improvements
+- Modular SCSS partials (`_sass/blocks/` split)
+- Universal block card template
+- Config-driven robot system
+- Pre-commit hook with propagator
+- Standardized block IDs (`block--[name]`)
+- Keywords meta field for SEO
+
+---
+
 ## v1.0.4 - PJK3 City Pages & Code Quality (2025-11-29)
 
 Complete PJK3 city page system with 14 WebPageElement schemas, inline style extraction, and JS modularization. **66 commits** since v1.0.3.
