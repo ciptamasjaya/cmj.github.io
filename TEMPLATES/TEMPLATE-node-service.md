@@ -19,6 +19,9 @@ content_structure: ""
 date: ""
 last_modified_at: ""
 show_breadcrumb_schema: true
+# SEO Keywords (spesifik per halaman, pisahkan dengan koma)
+# Contoh: riksa uji boiler, jasa riksa uji boiler, inspeksi boiler, PJK3
+keywords: ""
 rating_id: ""
 custom_schema:
   - schema/schema--service-reviews.html
