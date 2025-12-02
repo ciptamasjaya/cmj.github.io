@@ -293,5 +293,76 @@
       "memastikan→menjamin",
       "Tiap→Masing-masing"
     ]
+  },
+  "2024-08-26-riksa-uji-overhead-crane.md": {
+    "date": "2025-12-02",
+    "changes": 6,
+    "words": [
+      "standar→kriteria",
+      "uji→pengujian",
+      "alat→perkakas",
+      "krusial→vital",
+      "dan→serta",
+      "tes→uji"
+    ]
+  },
+  "riksa-uji-gantry-crane.md": {
+    "date": "2025-12-02",
+    "changes": 19,
+    "words": [
+      "dan→serta",
+      "inspeksi→pengecekan",
+      "pemeriksaan→inspeksi",
+      "tentang→perihal",
+      "standar→kriteria",
+      "seluruh→semua",
+      "komponen→bagian",
+      "Pemeriksaan→Inspeksi",
+      "termasuk→mencakup",
+      "Pengujian→Tes",
+      "Inspeksi→Pengecekan",
+      "berdasarkan→sesuai",
+      "untuk→dalam rangka",
+      "serta→dan"
+    ]
+  },
+  "riksa-uji-overhead-crane.md": {
+    "date": "2025-12-02",
+    "changes": 19,
+    "words": [
+      "seluruh→semua",
+      "dengan→secara",
+      "secara→dengan cara",
+      "bertujuan→dimaksudkan",
+      "dari→daripada",
+      "uji→pengujian",
+      "Inspeksi→Pengecekan",
+      "utama→pokok",
+      "dan→serta",
+      "Pemeriksaan→Inspeksi",
+      "untuk→dalam rangka",
+      "memiliki→mempunyai",
+      "di→pada"
+    ]
+  },
+  "riksa-uji-boiler.md": {
+    "date": "2025-12-02",
+    "changes": 19,
+    "words": [
+      "seluruh→semua",
+      "dengan→secara",
+      "pengujian→tes",
+      "sesuai→berdasarkan",
+      "dan→serta",
+      "pada→terhadap",
+      "komponen→bagian",
+      "Pemeriksaan→Inspeksi",
+      "kondisi→keadaan",
+      "Pengujian→Tes",
+      "inspeksi→pengecekan",
+      "tentang→perihal",
+      "dilakukan→dilaksanakan",
+      "Dengan→Secara"
+    ]
   }
 }
