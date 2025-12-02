@@ -326,9 +326,25 @@ Ini bisa berisi:
 - `PT5M30S` = 5 menit 30 detik
 
 ### Severity Level untuk Risks
-- `high` - Merah (bahaya tinggi)
-- `medium` - Kuning (bahaya sedang)
-- `low` - Hijau (bahaya rendah)
+- `tinggi` atau `high` - Merah (bahaya tinggi)
+- `sedang` atau `medium` - Kuning (bahaya sedang)
+- `rendah` atau `low` - Hijau (bahaya rendah)
+
+### Jumlah Item untuk Grid Seimbang
+
+Agar tampilan card grid seimbang, perhatikan jumlah item berikut:
+
+| Section | Grid | Jumlah Ideal | Keterangan |
+|---------|------|--------------|------------|
+| **Types** | col-lg-6 (2 kolom) | 4 item | Grid 2x2 |
+| **Components** | col-lg-4 (3 kolom) | 6 item | Grid 2x3 |
+| **Functions** | col-lg-4 (3 kolom) | 6 item | Grid 2x3 |
+| **Risks** | col-lg-6 (2 kolom) | 4 item | Grid 2x2 |
+| **Applications** | col-lg-4 (3 kolom) | 6 item | Grid 2x3 |
+| **Specifications** | col-lg-6 (2 kolom) | 4 atau 6 item | Grid 2x2 atau 2x3 |
+| **Regulations** | Full width | Bebas | List vertikal |
+
+**Catatan:** Jumlah item bisa kelipatan dari kolom (misal 3, 6, 9 untuk 3 kolom).
 
 ### Icon Bootstrap
 Gunakan class icon dari Bootstrap Icons:

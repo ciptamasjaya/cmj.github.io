@@ -112,6 +112,10 @@ section_components:
     description: "Desain kabin dengan tempat duduk yang dapat disesuaikan untuk kenyamanan operator jangka panjang."
     icon: "bi-person-workspace"
     function: "Kenyamanan dan produktivitas operator"
+  - name: "Overhead Guard"
+    description: "Pelindung atas kabin yang melindungi operator dari benda jatuh saat operasi pengangkatan."
+    icon: "bi-shield-check"
+    function: "Perlindungan operator dari benda jatuh"
 
 # ============================================================================
 # SECTION: Specifications (Dataset)
@@ -235,6 +239,11 @@ section_risks:
     severity: "sedang"
     prevention: "Pastikan sistem penyaringan udara berfungsi baik dan lakukan servis berkala."
     icon: "bi-gear"
+  - name: "Tabrakan dengan Pekerja"
+    description: "Risiko tabrakan dengan pekerja di area kerja yang padat atau memiliki visibilitas terbatas."
+    severity: "tinggi"
+    prevention: "Gunakan klakson dan lampu peringatan. Pastikan jalur forklift terpisah dari jalur pejalan kaki."
+    icon: "bi-people"
 
 # ============================================================================
 # SECTION: FAQ (FAQPage)

@@ -64,6 +64,7 @@ section_functions:
 # SECTION: Types (ItemList)
 # Block: block--types.html
 # Schema: schema--itemlist-types.html
+# Grid: col-lg-6 (2 kolom), idealnya 4 item untuk grid 2x2 seimbang
 # ============================================================================
 section_types:
   title: ""
@@ -82,17 +83,34 @@ section_types:
     description: ""
     icon: ""
     image: ""
+  - name: ""
+    description: ""
+    icon: ""
+    image: ""
 
 # ============================================================================
 # SECTION: Components (ItemList)
 # Block: block--components.html
 # Schema: schema--itemlist-components.html
+# Grid: col-lg-4 (3 kolom), idealnya 6 item untuk grid 2x3 seimbang
 # ============================================================================
 section_components:
   title: ""
   icon: "bi-puzzle"
   intro: ""
   components:
+  - name: ""
+    description: ""
+    icon: ""
+    function: ""
+  - name: ""
+    description: ""
+    icon: ""
+    function: ""
+  - name: ""
+    description: ""
+    icon: ""
+    function: ""
   - name: ""
     description: ""
     icon: ""
@@ -162,12 +180,18 @@ section_regulations:
 # SECTION: Risks (ItemList)
 # Block: block--risks.html
 # Schema: schema--itemlist-risks.html
+# Grid: col-lg-6 (2 kolom), idealnya 4 item untuk grid 2x2 seimbang
 # ============================================================================
 section_risks:
   title: ""
   icon: "bi-exclamation-triangle"
   intro: ""
   risks:
+  - name: ""
+    description: ""
+    severity: ""
+    prevention: ""
+    icon: ""
   - name: ""
     description: ""
     severity: ""

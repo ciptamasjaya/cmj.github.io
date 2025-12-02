@@ -255,6 +255,7 @@
 
     .component__icon i {
       transition: all 0.3s ease;
+      color: var(--theme-color);
     }
 
     &:hover .component__icon {
@@ -274,6 +275,22 @@
     &:hover .component__name {
       color: var(--theme-color);
     }
+
+    // Badge with word-wrap for long function text
+    .component__function .badge {
+      white-space: normal;
+      word-wrap: break-word;
+      line-height: 1.4;
+      text-align: left;
+      position: relative;
+      padding-left: 1.5rem;
+
+      i {
+        position: absolute;
+        left: 0.5rem;
+        top: 0.35rem;
+      }
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -282,6 +299,40 @@
   .card--application {
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    .application__body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .application__description {
+      flex: 1;
+    }
+
+    // Badge with word-wrap for long text
+    .application__industry {
+      margin-top: auto;
+
+      .badge {
+        white-space: normal;
+        word-wrap: break-word;
+        line-height: 1.4;
+        max-width: 100%;
+        display: inline-block;
+        position: relative;
+        padding-left: 1.5rem;
+        text-align: left;
+
+        i {
+          position: absolute;
+          left: 0.5rem;
+          top: 0.45rem;
+        }
+      }
+    }
 
     &:hover {
       transform: translateY(-6px);
@@ -355,12 +406,21 @@
       box-shadow: 0 8px 16px rgba(var(--theme-color-rgb), 0.12);
     }
 
+    .regulation__icon > div {
+      transition: all 0.3s ease;
+    }
+
     .regulation__icon i {
       transition: all 0.3s ease;
     }
 
+    &:hover .regulation__icon > div {
+      background: var(--theme-color);
+      box-shadow: 0 4px 12px rgba(var(--theme-color-rgb), 0.4);
+    }
+
     &:hover .regulation__icon i {
-      color: var(--theme-color);
+      color: white;
       transform: scale(1.1);
     }
   }

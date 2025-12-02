@@ -52,7 +52,7 @@ Usage:
 
     <div class="row types__list">
       {% for type in section.types %}
-      <div class="col-md-6 col-lg-4 mb-4">
+      <div class="col-md-6 col-lg-6 mb-4">
         <div class="card card--type h-100 border-0 shadow-sm">
           {% if type.image %}
           <img src="{{ type.image | relative_url }}" class="card-img-top type__image" alt="{{ type.name }}">
