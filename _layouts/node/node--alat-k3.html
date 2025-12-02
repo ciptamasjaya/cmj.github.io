@@ -19,6 +19,10 @@ Drupal-style naming: node--alat-k3.html (variant of node.html)
 This template wraps in page--alat-k3.html and provides K3 equipment article
 structure with specialized sections (definition, types, components, etc).
 
+Frontmatter options:
+- theme_color: primary|success|info|warning|danger (default: success)
+- rating_id: slug for rating block file
+
 Blocks:
 - block--definition.html         → DefinedTermSet
 - block--functions.html          → ItemList
@@ -46,7 +50,10 @@ Blocks:
   {% include {{ rating_file }} %}
 {% endif %}
 
-<article class="post-content py-5">
+{% comment %} Theme color class from frontmatter {% endcomment %}
+{% assign theme_class = page.theme_color | default: "success" | prepend: "theme-" %}
+
+<article class="post-content alat-k3-article {{ theme_class }} py-5">
 
   <div class="container-fluid">
     <div class="row">
