@@ -173,10 +173,11 @@ offer_riksa_uji:
     features:
     - Inspeksi visual internal dan eksternal
     - Pengujian NDT (ultrasonic thickness)
-    - Uji hidrostatik
-    - Pengujian safety valve
     - Sertifikat resmi Disnaker setempat
     - Laporan inspeksi detail
+    optional_features:
+    - Uji hidrostatik
+    - Pengujian safety valve
     availability: InStock
     valid_from: '2025-01-01'
     valid_through: '2025-12-31'
@@ -188,10 +189,11 @@ offer_riksa_uji:
     features:
     - Inspeksi visual internal dan eksternal
     - Pengujian NDT komprehensif
-    - Uji hidrostatik tekanan tinggi
-    - Pengujian safety valve dan instrumentasi
     - Sertifikat resmi Disnaker setempat
     - Laporan inspeksi detail dengan rekomendasi
+    optional_features:
+    - Uji hidrostatik tekanan tinggi
+    - Pengujian safety valve dan instrumentasi
     availability: InStock
     valid_from: '2025-01-01'
     valid_through: '2025-12-31'

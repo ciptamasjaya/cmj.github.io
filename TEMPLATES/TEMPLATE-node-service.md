@@ -167,6 +167,7 @@ offer_riksa_uji:
         - ""
         - ""
         - ""
+      optional_features:
         - ""
         - ""
       availability: InStock
@@ -182,6 +183,7 @@ offer_riksa_uji:
         - ""
         - ""
         - ""
+      optional_features:
         - ""
         - ""
       availability: InStock

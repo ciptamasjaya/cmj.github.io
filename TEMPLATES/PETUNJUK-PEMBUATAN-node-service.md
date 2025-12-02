@@ -437,10 +437,11 @@ offer_riksa_uji:
       features:
         - "Inspeksi visual internal & eksternal"
         - "Thickness test (NDT)"
-        - "Pengujian safety valve"
         - "Sertifikat resmi Disnaker"
         - "Laporan inspeksi detail"
-        - "Garansi konsultasi 30 hari"
+      optional_features:
+        - "Uji hidrostatik"
+        - "Pengujian safety valve"
       availability: InStock
       valid_from: "2025-01-01"
       valid_through: "2025-12-31"
@@ -452,10 +453,11 @@ offer_riksa_uji:
       features:
         - "Inspeksi visual internal & eksternal"
         - "Thickness test multi-point"
-        - "Hydrotest"
-        - "Pengujian safety valve"
         - "Sertifikat resmi Disnaker"
         - "Laporan inspeksi komprehensif"
+      optional_features:
+        - "Uji hidrostatik tekanan tinggi"
+        - "Pengujian safety valve dan instrumentasi"
       availability: InStock
       valid_from: "2025-01-01"
       valid_through: "2025-12-31"
@@ -478,6 +480,8 @@ offer_riksa_uji:
 
 **Catatan:**
 - `offers`: 3 paket penawaran (Standar, Heavy Duty, Multi Unit)
+- `features`: Fitur yang selalu termasuk dalam paket
+- `optional_features`: Fitur opsional yang bisa dipilih (ditampilkan dengan style berbeda dan label "opsional")
 - `is_featured: true`: Untuk paket yang di-highlight
 - `availability`: InStock, OutOfStock, atau PreOrder
 

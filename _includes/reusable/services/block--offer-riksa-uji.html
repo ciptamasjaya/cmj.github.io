@@ -78,6 +78,14 @@ Usage:
                 {{ feature }}
               </li>
               {% endfor %}
+              {% if item.optional_features %}
+              {% for feature in item.optional_features %}
+              <li class="mb-2 text-muted">
+                <i class="bi bi-plus-circle text-secondary me-2"></i>
+                {{ feature }} <span class="small">(opsional)</span>
+              </li>
+              {% endfor %}
+              {% endif %}
             </ul>
           </div>
 
