@@ -1,0 +1,74 @@
+{% comment %}
+============================================================================
+Block: Homepage Hero Section
+============================================================================
+
+@file        block--hero.html
+@path        _includes/reusable/node--front/block--hero.html
+@type        Block (content component)
+@description Hero section for homepage with headline, CTA buttons, and stats
+@author      arisciwek
+
+Used by:
+- index.html (homepage)
+
+Data from:
+- site.business.foundingDate (from _config.yml)
+
+============================================================================
+{% endcomment %}
+
+<section class="hero-section bg-gradient-primary text-white py-5">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-7 mb-4 mb-lg-0">
+        <h1 class="display-3 fw-bold mb-4">
+          Jasa Riksa Uji K3 Terpercaya
+        </h1>
+        <p class="lead mb-4">
+          Penyedia jasa riksa uji dan inspeksi K3 profesional dengan sertifikat resmi
+          Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan tim inspector
+          bersertifikat dan peralatan terkalibrasi.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{{ '/contact' | relative_url }}" class="btn btn-light btn-lg">
+            <i class="bi bi-telephone-fill me-2"></i>
+            Hubungi Kami
+          </a>
+          <a href="{{ '/layanan' | relative_url }}" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-shield-check me-2"></i>
+            Lihat Layanan
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="row mt-5 pt-4">
+          <div class="col-4">
+            <div class="text-center">
+              <h3 class="display-6 fw-bold mb-0">100%</h3>
+              <small class="opacity-75">Sertifikat Resmi</small>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+              <h3 class="display-6 fw-bold mb-0">24/7</h3>
+              <small class="opacity-75">Fast Response</small>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+              <h3 class="display-6 fw-bold mb-0">{{ site.business.foundingDate | date: "%Y" }}</h3>
+              <small class="opacity-75">Sejak</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 text-center">
+        <div class="hero-image-placeholder">
+          <i class="bi bi-shield-check" style="font-size: 15rem; opacity: 0.3;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

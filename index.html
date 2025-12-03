@@ -11,85 +11,32 @@ custom_schema:
 _content_refreshed_at: '2025-12-02T03:48:34+0000'
 ---
 <!-- Hero Section -->
-<section class="hero-section bg-gradient-primary text-white py-5">
-  <div class="container py-5">
-    <div class="row align-items-center">
-      <div class="col-lg-7 mb-4 mb-lg-0">
-        <h1 class="display-3 fw-bold mb-4">
-          Jasa Riksa Uji K3 Terpercaya
-        </h1>
-        <p class="lead mb-4">
-          Penyedia jasa riksa uji dan inspeksi K3 profesional dengan sertifikat resmi
-          Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan tim inspector
-          bersertifikat dan peralatan terkalibrasi.
-        </p>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="{{ '/contact' | relative_url }}" class="btn btn-light btn-lg">
-            <i class="bi bi-telephone-fill me-2"></i>
-            Hubungi Kami
-          </a>
-          <a href="{{ '/layanan' | relative_url }}" class="btn btn-outline-light btn-lg">
-            <i class="bi bi-shield-check me-2"></i>
-            Lihat Layanan
-          </a>
-        </div>
-
-        <!-- Quick Stats -->
-        <div class="row mt-5 pt-4">
-          <div class="col-4">
-            <div class="text-center">
-              <h3 class="display-6 fw-bold mb-0">100%</h3>
-              <small class="opacity-75">Sertifikat Resmi</small>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="text-center">
-              <h3 class="display-6 fw-bold mb-0">24/7</h3>
-              <small class="opacity-75">Fast Response</small>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="text-center">
-              <h3 class="display-6 fw-bold mb-0">{{ site.business.foundingDate | date: "%Y" }}</h3>
-              <small class="opacity-75">Sejak</small>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-5 text-center">
-        <div class="hero-image-placeholder">
-          <i class="bi bi-shield-check" style="font-size: 15rem; opacity: 0.3;"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% include reusable/node--front/block--hero.html %}
 
 <!-- Services Grid Section -->
-{% include reusable/block--services-grid.html %}
+{% include reusable/node--front/block--services-grid.html %}
 
 <!-- Latest Service Updates Section -->
 {% include block-templates/block--latest-service-updates.html limit=6 %}
 
 <!-- Why Choose Us Section -->
-{% include reusable/block--why-choose-us.html %}
+{% include reusable/node--front/block--why-choose-us.html %}
 
 <!-- WordPress Legacy Content (SEO Preserved) -->
 <!-- Block 1: Mitra PJK3 Riksa Uji (WordPress H1 → H2) -->
-{% include reusable/block--mitra-riksa-uji.html %}
+{% include reusable/node--front/block--mitra-riksa-uji.html %}
 
 <!-- Block 2: Riksa Uji K3 Services (6 cards from WordPress) -->
-{% include reusable/block--riksa-uji-k3.html %}
+{% include reusable/node--front/block--riksa-uji-k3.html %}
 
 <!-- Block 3: Jasa Inspeksi K3 Featured Posts (8 cards from WordPress) -->
-{% include reusable/block--jasa-inspeksi-k3.html %}
+{% include reusable/node--front/block--jasa-inspeksi-k3.html %}
 
 <!-- Homepage Rating & Reviews Section -->
 {% include block-templates/block--rating-homepage.html limit=3 %}
 
 <!-- CTA Contact Section -->
-{% include reusable/block--cta-contact.html %}
+{% include reusable/node--front/block--cta-contact.html %}
 
 <!-- Latest Blog Posts -->
-{% include reusable/block--blog-preview.html %}
+{% include reusable/node--front/block--blog-preview.html %}
