@@ -124,21 +124,20 @@ Date Display Logic:
         </a>
       </h3>
 
-      <!-- Rating & Reviews (from JSON data or frontmatter) -->
-      {% assign card_slug = service.url | split: "/" | compact | last %}
-      {% assign json_rating = site.data.rating--service.ratings | where: "slug", card_slug | first %}
-
+      <!-- Rating & Reviews (from rating block) -->
       {% if show_rating %}
-        {% if json_rating and json_rating.total_reviews > 0 %}
-        <div class="mb-3">
-          {% include components/rating-stars.html rating=json_rating size="sm" %}
-        </div>
-        {% elsif service.rating %}
+        {% assign card_rating_id = service.rating_id %}
+        {% if card_rating_id %}
+          {% capture card_rating_file %}reusable/services/ratings/block--rating--{{ card_rating_id }}.html{% endcapture %}
+          {% include {{ card_rating_file }} %}
+        {% endif %}
+
+        {% if rating_average and rating_count > 0 %}
         <div class="mb-3">
           <div class="d-flex align-items-center gap-2">
             <div class="text-warning">
-              {% assign full_stars = service.rating | floor %}
-              {% assign decimal = service.rating | minus: full_stars %}
+              {% assign full_stars = rating_average | floor %}
+              {% assign decimal = rating_average | minus: full_stars %}
               {% for i in (1..5) %}
                 {% if i <= full_stars %}
                   <i class="bi bi-star-fill"></i>
@@ -149,10 +148,8 @@ Date Display Logic:
                 {% endif %}
               {% endfor %}
             </div>
-            <span class="fw-bold">{{ service.rating }}</span>
-            {% if service.review_count %}
-              <span class="text-muted small">({{ service.review_count }} ulasan)</span>
-            {% endif %}
+            <span class="fw-bold">{{ rating_average }}</span>
+            <span class="text-muted small">({{ rating_count }} ulasan)</span>
           </div>
         </div>
         {% endif %}

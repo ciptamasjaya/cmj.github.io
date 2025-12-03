@@ -5,14 +5,14 @@ Block: Featured Testimonials
 
 @file        block--testimonials-featured.html
 @path        _includes/block-templates/block--testimonials-featured.html
-@description Display featured reviews/testimonials from JSON data
-@version     1.0.0
-@date        2025-11-25
+@description Display featured reviews/testimonials from rating blocks
+@version     2.0.0
+@date        2025-12-03
+@updated     Migrated from JSON to include-based rating blocks
 
 Parameters:
 -----------
 - limit: Number of testimonials to show (default: 3)
-- random: Randomize selection (default: false)
 - bg_class: Background class (default: "bg-light")
 
 Usage:
@@ -23,20 +23,56 @@ Usage:
 {% endcomment %}
 
 {% assign limit = include.limit | default: 3 %}
-{% assign random = include.random | default: false %}
 {% assign bg_class = include.bg_class | default: "bg-light" %}
 
-{% comment %} Get featured reviews {% endcomment %}
-{% assign featured_reviews = site.data.review--service.reviews | where: "featured", true %}
+{% comment %}
+Collect reviews from rating blocks across all content types.
+Map layout to rating folder path.
+{% endcomment %}
+{% assign collected_reviews = "" | split: "" %}
 
-{% comment %} If not enough featured, get top-rated reviews {% endcomment %}
-{% if featured_reviews.size < limit %}
-  {% assign all_reviews = site.data.review--service.reviews | sort: "rating" | reverse %}
-  {% assign featured_reviews = all_reviews | slice: 0, limit %}
-{% endif %}
+{% comment %} Loop through services with rating_id {% endcomment %}
+{% for service in site.services %}
+  {% if service.rating_id and collected_reviews.size < limit %}
+    {% capture rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
+    {% include {{ rating_file }} %}
 
-{% comment %} Limit the results {% endcomment %}
-{% assign display_reviews = featured_reviews | slice: 0, limit %}
+    {% if review_1_nama %}
+      {% capture review_item %}{{ review_1_nama }}|{{ review_1_komentar }}|{{ review_1_rating }}|{{ review_1_judul }}{% endcapture %}
+      {% assign collected_reviews = collected_reviews | push: review_item %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Loop through posts with rating_id {% endcomment %}
+{% for post in site.posts %}
+  {% if post.rating_id and collected_reviews.size < limit %}
+    {% comment %} Determine rating folder from layout {% endcomment %}
+    {% if post.layout contains "pjk3-city" %}
+      {% assign rating_folder = "node--pjk3-city" %}
+    {% elsif post.layout contains "inspection-report" %}
+      {% assign rating_folder = "node--inspection-report" %}
+    {% elsif post.layout contains "alat-k3" %}
+      {% assign rating_folder = "node--alat-k3" %}
+    {% elsif post.layout contains "riksa-uji" %}
+      {% assign rating_folder = "node--riksa-uji" %}
+    {% else %}
+      {% assign rating_folder = "" %}
+    {% endif %}
+
+    {% if rating_folder != "" %}
+      {% capture rating_file %}reusable/{{ rating_folder }}/ratings/block--rating--{{ post.rating_id }}.html{% endcapture %}
+      {% include {{ rating_file }} %}
+
+      {% if review_1_nama %}
+        {% capture review_item %}{{ review_1_nama }}|{{ review_1_komentar }}|{{ review_1_rating }}|{{ review_1_judul }}{% endcapture %}
+        {% assign collected_reviews = collected_reviews | push: review_item %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign display_reviews = collected_reviews | slice: 0, limit %}
 
 {% if display_reviews.size > 0 %}
 <section class="block--featured-testimonials py-5 {{ bg_class }}">
@@ -50,14 +86,20 @@ Usage:
     </div>
 
     <div class="row g-4">
-      {% for review in display_reviews %}
+      {% for review_item in display_reviews %}
+        {% assign review_parts = review_item | split: "|" %}
+        {% assign r_nama = review_parts[0] %}
+        {% assign r_komentar = review_parts[1] %}
+        {% assign r_rating = review_parts[2] | plus: 0 %}
+        {% assign r_judul = review_parts[3] %}
+
         <div class="col-md-4">
           <div class="card h-100 border-0 shadow-sm">
             <div class="card-body d-flex flex-column">
               {% comment %} Stars {% endcomment %}
               <div class="mb-3 text-warning">
                 {% for i in (1..5) %}
-                  {% if i <= review.rating %}
+                  {% if i <= r_rating %}
                     <i class="bi bi-star-fill"></i>
                   {% else %}
                     <i class="bi bi-star"></i>
@@ -67,25 +109,23 @@ Usage:
 
               {% comment %} Quote {% endcomment %}
               <blockquote class="flex-grow-1 mb-3">
-                <p class="mb-0">"{{ review.content | truncate: 150 }}"</p>
+                <p class="mb-0">"{{ r_komentar | truncate: 150 }}"</p>
               </blockquote>
 
               {% comment %} Author {% endcomment %}
               <div class="d-flex align-items-center mt-auto pt-3 border-top">
                 <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
-                  <span class="fw-bold">{{ review.author | slice: 0, 1 | upcase }}</span>
+                  <span class="fw-bold">{{ r_nama | slice: 0, 1 | upcase }}</span>
                 </div>
                 <div>
-                  <strong class="d-block">{{ review.author }}</strong>
-                  {% if review.company %}
-                    <small class="text-muted">{{ review.company }}</small>
+                  <strong class="d-block">{{ r_nama }}</strong>
+                  {% if r_judul %}
+                    <small class="text-muted">{{ r_judul }}</small>
                   {% endif %}
                 </div>
-                {% if review.verified %}
-                  <span class="badge bg-success-subtle text-success ms-auto">
-                    <i class="bi bi-patch-check-fill"></i>
-                  </span>
-                {% endif %}
+                <span class="badge bg-success-subtle text-success ms-auto">
+                  <i class="bi bi-patch-check-fill"></i>
+                </span>
               </div>
             </div>
           </div>
@@ -93,32 +133,36 @@ Usage:
       {% endfor %}
     </div>
 
-    {% comment %} Overall stats {% endcomment %}
-    {% assign total_reviews = site.data.review--service.reviews.size %}
-    {% assign ratings = site.data.rating--service.ratings %}
-    {% assign total_avg = 0 %}
-    {% assign rating_count = 0 %}
-    {% for r in ratings %}
-      {% assign total_avg = total_avg | plus: r.average %}
-      {% assign rating_count = rating_count | plus: 1 %}
+    {% comment %} Calculate average rating from collected reviews {% endcomment %}
+    {% assign total_rating = 0 %}
+    {% for review_item in display_reviews %}
+      {% assign review_parts = review_item | split: "|" %}
+      {% assign item_rating = review_parts[2] | plus: 0 %}
+      {% assign total_rating = total_rating | plus: item_rating %}
     {% endfor %}
-    {% if rating_count > 0 %}
-      {% assign overall_avg = total_avg | divided_by: rating_count | round: 1 %}
+    {% if display_reviews.size > 0 %}
+      {% assign avg_rating = total_rating | divided_by: display_reviews.size | round: 1 %}
     {% else %}
-      {% assign overall_avg = 0 %}
+      {% assign avg_rating = 0 %}
     {% endif %}
 
     <div class="text-center mt-5">
       <div class="d-inline-flex align-items-center bg-white rounded-pill shadow-sm px-4 py-2">
         <div class="text-warning me-2">
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-fill"></i>
-          <i class="bi bi-star-half"></i>
+          {% assign full_stars = avg_rating | floor %}
+          {% assign decimal = avg_rating | minus: full_stars %}
+          {% for i in (1..5) %}
+            {% if i <= full_stars %}
+              <i class="bi bi-star-fill"></i>
+            {% elsif decimal >= 0.5 and i == full_stars | plus: 1 %}
+              <i class="bi bi-star-half"></i>
+            {% else %}
+              <i class="bi bi-star"></i>
+            {% endif %}
+          {% endfor %}
         </div>
-        <span class="fw-bold me-2">{{ overall_avg }}</span>
-        <span class="text-muted">dari {{ total_reviews }} ulasan</span>
+        <span class="fw-bold me-2">{{ avg_rating }}</span>
+        <span class="text-muted">dari {{ display_reviews.size }} ulasan</span>
       </div>
     </div>
   </div>

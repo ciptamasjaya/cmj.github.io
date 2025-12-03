@@ -1,27 +1,26 @@
 {% comment %}
 ============================================================================
-Schema: Service Reviews & Aggregate Rating from JSON Data
+Schema: Service Reviews & Aggregate Rating from Rating Block
 ============================================================================
 
 @file        schema--service-reviews.html
 @path        _includes/schema/schema--service-reviews.html
 @type        Schema component
 @description Schema.org Review + AggregateRating for service reviews
-@version     3.1.0
-@date        2025-11-26
+@version     4.0.0
+@date        2025-12-03
+@updated     Migrated from JSON to Liquid variables (include-based)
 
 This component generates aggregateRating and review properties for Service schema.
 Designed to be included within Service schema for Google Rich Results.
 
 Data Sources:
 -------------
-- _data/review--service.json (individual reviews)
-- _data/rating--service.json (aggregate ratings)
+- Liquid variables from rating block (loaded by node--service.html)
+- Variables: rating_average, rating_count, review_1_*, review_2_*, review_3_*
 
 Parameters:
 -----------
-- slug: Service slug (optional, defaults to page URL slug)
-- limit: Max reviews to include (optional, default: 5)
 - output_format: (optional) "combined" or "standalone" (default: "combined")
 
 Output Formats:
@@ -34,29 +33,17 @@ Usage in Service Schema:
 In schema--service.html, add before closing Service object:
 {% include schema/schema--service-reviews.html %}
 
-Output (combined):
-"aggregateRating": {...},
-"review": [...]
-
-Standalone Usage (testing):
----------------------------
-{% include schema/schema--service-reviews.html output_format="standalone" %}
+Requires:
+---------
+Rating block must be included BEFORE this schema in the layout.
+node--service.html already does this at line 56-61.
 
 ============================================================================
 {% endcomment %}
 
-{% assign slug = include.slug %}
-{% unless slug %}
-  {% assign slug = page.url | split: "/" | compact | last %}
-{% endunless %}
-
-{% assign limit = include.limit | default: 5 %}
 {% assign output_format = include.output_format | default: "combined" %}
 
-{% assign reviews = site.data.review--service.reviews | where: "slug", slug %}
-{% assign rating = site.data.rating--service.ratings | where: "slug", slug | first %}
-
-{% if rating and rating.total_reviews > 0 %}
+{% if rating_average and rating_count > 0 %}
 {% if output_format == "standalone" %}<script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,28 +51,60 @@ Standalone Usage (testing):
   "name": "{{ page.title | escape }}",
 {% endif %}"aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "{{ rating.average }}",
-    "reviewCount": "{{ rating.total_reviews }}",
-    "bestRating": "5",
-    "worstRating": "1"
-  }{% if reviews.size > 0 %},
-  "review": [{% assign limited_reviews = reviews | slice: 0, limit %}{% for review in limited_reviews %}{% if forloop.index > 1 %},{% endif %}
+    "ratingValue": "{{ rating_average }}",
+    "reviewCount": "{{ rating_count }}",
+    "bestRating": "{{ rating_best | default: 5 }}",
+    "worstRating": "{{ rating_worst | default: 1 }}"
+  }{% if review_1_nama %},
+  "review": [
     {
       "@type": "Review",
       "author": {
         "@type": "Person",
-        "name": "{{ review.author | escape }}"
+        "name": "{{ review_1_nama | escape }}"
       },
-      "datePublished": "{{ review.created_at | date: '%Y-%m-%d' }}",
-      "reviewBody": "{{ review.content | strip_html | escape }}"{% if review.title %},
-      "name": "{{ review.title | escape }}"{% endif %},
+      "datePublished": "{{ review_1_tanggal }}",
+      "reviewBody": "{{ review_1_komentar | escape }}",
+      "name": "{{ review_1_judul | escape }}",
       "reviewRating": {
         "@type": "Rating",
-        "ratingValue": "{{ review.rating }}",
+        "ratingValue": "{{ review_1_rating }}",
         "bestRating": "5",
         "worstRating": "1"
       }
-    }{% endfor %}
+    }{% if review_2_nama %},
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review_2_nama | escape }}"
+      },
+      "datePublished": "{{ review_2_tanggal }}",
+      "reviewBody": "{{ review_2_komentar | escape }}",
+      "name": "{{ review_2_judul | escape }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_2_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }{% endif %}{% if review_3_nama %},
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review_3_nama | escape }}"
+      },
+      "datePublished": "{{ review_3_tanggal }}",
+      "reviewBody": "{{ review_3_komentar | escape }}",
+      "name": "{{ review_3_judul | escape }}",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review_3_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }{% endif %}
   ]{% endif %}{% if output_format == "standalone" %}
 }
 </script>{% endif %}
