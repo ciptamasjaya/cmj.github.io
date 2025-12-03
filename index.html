@@ -7,7 +7,8 @@ keywords: riksa uji k3, jasa inspeksi k3, sertifikasi k3, pesawat angkat, crane 
 skip_page_schema: true
 custom_schema:
 - schema/schema--global.html
-- schema/schema--front.html
+- schema/node--front/schema--front.html
+- schema/node--front/schema--rating.html
 _content_refreshed_at: '2025-12-02T03:48:34+0000'
 ---
 <!-- Hero Section -->
@@ -33,7 +34,7 @@ _content_refreshed_at: '2025-12-02T03:48:34+0000'
 {% include reusable/node--front/block--jasa-inspeksi-k3.html %}
 
 <!-- Homepage Rating & Reviews Section -->
-{% include block-templates/block--rating-homepage.html limit=3 %}
+{% include reusable/node--front/block--rating.html limit=3 %}
 
 <!-- CTA Contact Section -->
 {% include reusable/node--front/block--cta-contact.html %}

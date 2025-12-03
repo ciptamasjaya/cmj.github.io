@@ -1,0 +1,156 @@
+{% comment %}
+============================================================================
+Schema: Homepage Aggregate Rating & Reviews
+============================================================================
+
+@file        schema--rating.html
+@path        _includes/schema/node--front/schema--rating.html
+@type        Schema (AggregateRating + Review)
+@description Schema for homepage rating block with aggregate and individual reviews
+@author      arisciwek
+
+Data Source:
+------------
+Collects rating data from:
+- site.services (with rating_id)
+- site.posts (with rating_id)
+
+Schema Output:
+--------------
+- LocalBusiness with aggregateRating
+- Individual Review items
+
+Usage:
+------
+Include in page--front.html layout (auto-included, no params needed)
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Collect reviews and calculate aggregate - same logic as block {% endcomment %}
+{% assign collected_reviews = "" | split: "" %}
+{% assign total_rating_sum = 0 %}
+{% assign total_review_count = 0 %}
+{% assign review_limit = 3 %}
+
+{% comment %} Loop through services with rating_id {% endcomment %}
+{% for service in site.services %}
+  {% if service.rating_id %}
+    {% capture rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
+    {% include {{ rating_file }} %}
+
+    {% if rating_average %}
+      {% assign weighted_rating = rating_average | times: rating_count %}
+      {% assign total_rating_sum = total_rating_sum | plus: weighted_rating %}
+      {% assign total_review_count = total_review_count | plus: rating_count %}
+    {% endif %}
+
+    {% if review_1_nama and review_1_featured and collected_reviews.size < review_limit %}
+      {% capture review_item %}{{ review_1_nama }}|{{ review_1_komentar }}|{{ review_1_rating }}|{{ review_1_judul }}|{{ review_1_usaha }}|{{ review_1_tanggal }}{% endcapture %}
+      {% assign collected_reviews = collected_reviews | push: review_item %}
+    {% endif %}
+    {% if review_2_nama and review_2_featured and collected_reviews.size < review_limit %}
+      {% capture review_item %}{{ review_2_nama }}|{{ review_2_komentar }}|{{ review_2_rating }}|{{ review_2_judul }}|{{ review_2_usaha }}|{{ review_2_tanggal }}{% endcapture %}
+      {% assign collected_reviews = collected_reviews | push: review_item %}
+    {% endif %}
+    {% if review_3_nama and review_3_featured and collected_reviews.size < review_limit %}
+      {% capture review_item %}{{ review_3_nama }}|{{ review_3_komentar }}|{{ review_3_rating }}|{{ review_3_judul }}|{{ review_3_usaha }}|{{ review_3_tanggal }}{% endcapture %}
+      {% assign collected_reviews = collected_reviews | push: review_item %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Loop through posts with rating_id {% endcomment %}
+{% for post in site.posts %}
+  {% if post.rating_id %}
+    {% if post.layout contains "pjk3-city" %}
+      {% assign rating_folder = "node--pjk3-city" %}
+    {% elsif post.layout contains "inspection-report" %}
+      {% assign rating_folder = "node--inspection-report" %}
+    {% elsif post.layout contains "alat-k3" %}
+      {% assign rating_folder = "node--alat-k3" %}
+    {% elsif post.layout contains "riksa-uji" %}
+      {% assign rating_folder = "node--riksa-uji" %}
+    {% else %}
+      {% assign rating_folder = "" %}
+    {% endif %}
+
+    {% if rating_folder != "" %}
+      {% capture rating_file %}reusable/{{ rating_folder }}/ratings/block--rating--{{ post.rating_id }}.html{% endcapture %}
+      {% include {{ rating_file }} %}
+
+      {% if rating_average %}
+        {% assign weighted_rating = rating_average | times: rating_count %}
+        {% assign total_rating_sum = total_rating_sum | plus: weighted_rating %}
+        {% assign total_review_count = total_review_count | plus: rating_count %}
+      {% endif %}
+
+      {% if review_1_nama and review_1_featured and collected_reviews.size < review_limit %}
+        {% capture review_item %}{{ review_1_nama }}|{{ review_1_komentar }}|{{ review_1_rating }}|{{ review_1_judul }}|{{ review_1_usaha }}|{{ review_1_tanggal }}{% endcapture %}
+        {% assign collected_reviews = collected_reviews | push: review_item %}
+      {% endif %}
+      {% if review_2_nama and review_2_featured and collected_reviews.size < review_limit %}
+        {% capture review_item %}{{ review_2_nama }}|{{ review_2_komentar }}|{{ review_2_rating }}|{{ review_2_judul }}|{{ review_2_usaha }}|{{ review_2_tanggal }}{% endcapture %}
+        {% assign collected_reviews = collected_reviews | push: review_item %}
+      {% endif %}
+      {% if review_3_nama and review_3_featured and collected_reviews.size < review_limit %}
+        {% capture review_item %}{{ review_3_nama }}|{{ review_3_komentar }}|{{ review_3_rating }}|{{ review_3_judul }}|{{ review_3_usaha }}|{{ review_3_tanggal }}{% endcapture %}
+        {% assign collected_reviews = collected_reviews | push: review_item %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Calculate overall average {% endcomment %}
+{% if total_review_count > 0 %}
+  {% assign overall_avg = total_rating_sum | divided_by: total_review_count | round: 1 %}
+{% else %}
+  {% assign overall_avg = 0 %}
+{% endif %}
+
+{% if total_review_count > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+  "name": "{{ site.business.name }}",
+  "image": "{{ '/assets/images/logo.svg' | absolute_url }}",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ overall_avg }}",
+    "reviewCount": "{{ total_review_count }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  }{% if collected_reviews.size > 0 %},
+  "review": [
+    {% for review_item in collected_reviews %}
+    {% assign review_parts = review_item | split: "|" %}
+    {% assign r_nama = review_parts[0] %}
+    {% assign r_komentar = review_parts[1] %}
+    {% assign r_rating = review_parts[2] %}
+    {% assign r_judul = review_parts[3] %}
+    {% assign r_usaha = review_parts[4] %}
+    {% assign r_tanggal = review_parts[5] %}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ r_nama | escape }}"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ r_rating }}",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "{{ r_komentar | escape | truncate: 300 }}"{% if r_judul != "" %},
+      "name": "{{ r_judul | escape }}"{% endif %}{% if r_tanggal != "" %},
+      "datePublished": "{{ r_tanggal }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]{% endif %}
+}
+</script>
+{% endif %}
