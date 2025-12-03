@@ -20,6 +20,7 @@ tags:
 - Boiler
 skip_page_schema: false
 show_breadcrumb_schema: true
+rating_id: "74910"
 keywords: riksa uji boiler, inspeksi boiler, laporan riksa uji, john thompson boiler, hydrotest boiler, thickness test, safety valve test, PJK3, inspeksi K3, pesawat uap
 images:
 - ''

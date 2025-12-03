@@ -22,7 +22,7 @@ Usage in page--inspection-report.html:
 
 Requires:
 ---------
-Rating block at: _includes/reusable/node--inspection-report/block--rating--{{ id }}.html
+Rating block at: _includes/reusable/node--inspection-report/ratings/block--rating--{{ id }}.html
 
 ============================================================================
 {% endcomment %}
@@ -37,7 +37,7 @@ Rating block at: _includes/reusable/node--inspection-report/block--rating--{{ id
 {% endunless %}
 
 {% comment %} Include rating block - sets Liquid vars + outputs JSON {% endcomment %}
-{% capture rating_file %}reusable/node--inspection-report/block--rating--{{ rating_id }}.html{% endcapture %}
+{% capture rating_file %}reusable/node--inspection-report/ratings/block--rating--{{ rating_id }}.html{% endcapture %}
 {% include {{ rating_file }} %}
 
 {% comment %} Generate Product schema with AggregateRating + Reviews {% endcomment %}

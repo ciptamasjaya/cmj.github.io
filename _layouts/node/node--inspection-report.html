@@ -37,7 +37,7 @@ In frontmatter: layout: node/node--inspection-report
   {% assign slug_parts = post_slug | split: "-" %}
   {% assign rating_id = slug_parts | last %}
 {% endunless %}
-{% capture rating_file %}reusable/node--inspection-report/block--rating--{{ rating_id }}.html{% endcapture %}
+{% capture rating_file %}reusable/node--inspection-report/ratings/block--rating--{{ rating_id }}.html{% endcapture %}
 {% include {{ rating_file }} %}
 
 <article class="inspection-report" itemscope itemtype="https://schema.org/Report">

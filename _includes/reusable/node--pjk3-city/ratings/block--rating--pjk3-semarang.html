@@ -1,0 +1,119 @@
+{% comment %}
+============================================================================
+Block: Rating Data - PJK3 Semarang
+============================================================================
+
+@file        block--rating--pjk3-semarang.html
+@path        _includes/reusable/node--pjk3-city/ratings/block--rating--pjk3-semarang.html
+@type        Block (data per article)
+@description Rating data + reviews for PJK3 Semarang article
+@author      arisciwek
+@created     2025-12-03
+
+Usage:
+------
+Included via rating_id from frontmatter: rating_id: "pjk3-semarang"
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA === {% endcomment %}
+{% assign rating_average = 4.7 %}
+{% assign rating_count = 3 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 2 %}
+{% assign rating_dist_4 = 1 %}
+{% assign rating_dist_3 = 0 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "2025-12-03T10:00:00Z" %}
+
+{% comment %} === REVIEW DATA === {% endcomment %}
+{% assign review_1_nama = "Bambang Sutrisno" %}
+{% assign review_1_usaha = "Plant Manager di Semarang" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Layanan PJK3 Terbaik di Jawa Tengah" %}
+{% assign review_1_komentar = "CMJ adalah mitra terpercaya untuk inspeksi K3 di pabrik kami. Tim sangat profesional dan memahami regulasi terkini. Sangat direkomendasikan!" %}
+{% assign review_1_tanggal = "2025-11-26" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 11 %}
+{% assign review_1_featured = true %}
+
+{% assign review_2_nama = "Wulan Sari" %}
+{% assign review_2_usaha = "HSE Manager di Ungaran" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "Inspeksi Komprehensif dan Tepat Waktu" %}
+{% assign review_2_komentar = "Proses riksa uji berjalan lancar tanpa mengganggu produksi. Laporan inspeksi sangat detail dan rekomendasi perbaikan sangat membantu." %}
+{% assign review_2_tanggal = "2025-11-19" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 8 %}
+{% assign review_2_featured = true %}
+
+{% assign review_3_nama = "Eko Widodo" %}
+{% assign review_3_usaha = "Safety Officer di Demak" %}
+{% assign review_3_rating = 4 %}
+{% assign review_3_judul = "Pelayanan Memuaskan" %}
+{% assign review_3_komentar = "Tim CMJ sangat kooperatif dan responsif. Jadwal inspeksi fleksibel dan bisa disesuaikan dengan operasional pabrik. Harga juga kompetitif." %}
+{% assign review_3_tanggal = "2025-11-08" %}
+{% assign review_3_verified = true %}
+{% assign review_3_helpful = 6 %}
+{% assign review_3_featured = false %}
+
+{% comment %} === JSON OUTPUT (for JavaScript) === {% endcomment %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "pjk3-semarang",
+  "title": "{{ page.title | default: 'PJK3 Semarang' | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
+    },
+    {
+      "id": 2,
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
+    },
+    {
+      "id": 3,
+      "nama": "{{ review_3_nama }}",
+      "jenis_usaha": "{{ review_3_usaha }}",
+      "rating": {{ review_3_rating }},
+      "judul": "{{ review_3_judul }}",
+      "komentar": "{{ review_3_komentar }}",
+      "tanggal": "{{ review_3_tanggal }}",
+      "verified": {{ review_3_verified }},
+      "helpful_count": {{ review_3_helpful }},
+      "featured": {{ review_3_featured }}
+    }
+  ]
+}
+</script>

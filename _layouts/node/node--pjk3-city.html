@@ -27,6 +27,12 @@ Schema: Article (not BlogPosting)
 ============================================================================
 {%- endcomment -%}
 
+{% comment %} Load rating data BEFORE content (sets Liquid vars for use in header) {% endcomment %}
+{% if page.rating_id %}
+  {% capture rating_file %}reusable/node--pjk3-city/ratings/block--rating--{{ page.rating_id }}.html{% endcapture %}
+  {% include {{ rating_file }} %}
+{% endif %}
+
 <article class="article-content">
 
   <!-- Article Header -->
