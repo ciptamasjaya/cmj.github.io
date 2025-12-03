@@ -4,7 +4,7 @@ Block Template: Latest Service Updates
 ============================================================================
 
 @file        block--latest-service-updates.html
-@path        _includes/block-templates/block--latest-service-updates.html
+@path        _includes/shared/block--latest-service-updates.html
 @description Display latest service updates from the same category/subcategory
 @version     1.0.1
 @date        2025-11-24
@@ -33,11 +33,11 @@ Parameters:
 
 Usage in Category Page:
 -----------------------
-{% include block-templates/block--latest-service-updates.html %}
+{% include shared/block--latest-service-updates.html %}
 
 Usage with custom limit:
 ------------------------
-{% include block-templates/block--latest-service-updates.html limit=5 %}
+{% include shared/block--latest-service-updates.html limit=5 %}
 
 SEO Benefits:
 -------------
@@ -55,7 +55,7 @@ SEO Benefits:
 {% assign filter_subcategory = include.subcategory | default: page.sub_category %}
 
 {% comment %} Get all services from collection {% endcomment %}
-{% assign all_services = site.services | where_exp: "service", "service.layout == 'node--service'" %}
+{% assign all_services = site.services | where_exp: "service", "service.layout == 'node/node--service'" %}
 
 {% comment %} Filter by category {% endcomment %}
 {% if filter_category %}
@@ -81,13 +81,13 @@ SEO Benefits:
 <section class="block--latest-service-updates my-5 py-4 bg-light rounded">
   <div class="container">
     <!-- Section Header -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <div>
-        <h2 class="h3 mb-2">
-          <i class="bi bi-clock-history text-primary"></i>
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h1 fw-bold mb-3">
+          <i class="bi bi-clock-history text-primary me-2"></i>
           Layanan Terbaru
         </h2>
-        <p class="text-muted mb-0 small">
+        <p class="lead text-muted">
           Update terkini dari
           {% if filter_subcategory %}{{ filter_subcategory }}{% elsif filter_category %}{{ filter_category }}{% else %}semua layanan{% endif %}
         </p>

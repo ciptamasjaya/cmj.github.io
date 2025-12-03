@@ -1,0 +1,84 @@
+{% comment %}
+============================================================================
+Schema: Blog Preview (Latest Posts)
+============================================================================
+
+@file        schema--blog-preview.html
+@path        _includes/schema/node--front/schema--blog-preview.html
+@type        Schema (ItemList + BlogPosting)
+@description Schema for latest blog posts preview on homepage
+@author      arisciwek
+
+Data Source:
+------------
+Uses site.posts sorted by lastmod
+
+Schema Output:
+--------------
+- ItemList with 3 latest BlogPosting items
+
+Usage:
+------
+Include in page--front.html layout via custom_schema
+
+============================================================================
+{% endcomment %}
+
+{% assign blog_posts = site.posts | sort: "lastmod" | reverse | slice: 0, 3 %}
+
+{% if blog_posts.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#blog-preview",
+  "name": "Artikel & Berita Terbaru",
+  "description": "Informasi terkini seputar K3, peraturan, dan tips keselamatan kerja dari {{ site.business.name }}",
+  "numberOfItems": {{ blog_posts.size }},
+  "itemListElement": [
+    {% for post in blog_posts %}
+    {% comment %} Determine image: images[0] > image > default {% endcomment %}
+    {% if post.images.first %}
+      {% assign post_image = post.images.first %}
+    {% elsif post.image and post.image != '' %}
+      {% assign post_image = post.image %}
+    {% else %}
+      {% assign post_image = '/assets/images/default-blog.svg' %}
+    {% endif %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "BlogPosting",
+        "@id": "{{ site.url }}{{ site.baseurl }}{{ post.url }}#article",
+        "headline": "{{ post.title | escape }}",
+        "description": "{{ post.description | default: post.excerpt | strip_html | truncate: 160 | escape }}",
+        "url": "{{ site.url }}{{ site.baseurl }}{{ post.url }}",
+        "image": "{{ site.url }}{{ site.baseurl }}{{ post_image }}",
+        "datePublished": "{{ post.date | date_to_xmlschema }}",
+        "dateModified": "{{ post.lastmod | default: post.date | date_to_xmlschema }}",
+        "author": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+          "name": "{{ site.business.name }}"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
+          "name": "{{ site.business.name }}",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ site.url }}{{ site.baseurl }}/assets/images/logo.svg"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{ site.url }}{{ site.baseurl }}{{ post.url }}"
+        }
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

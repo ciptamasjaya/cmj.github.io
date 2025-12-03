@@ -1,0 +1,41 @@
+{% comment %}
+============================================================================
+Schema: DefinedTerm - PJK3
+============================================================================
+
+@file        schema--defined-term-pjk3.html
+@path        _includes/schema/node--front/schema--defined-term-pjk3.html
+@type        Schema (DefinedTerm)
+@description Schema for PJK3 definition for glossary rich results
+@author      arisciwek
+
+Schema Output:
+--------------
+- DefinedTerm for "PJK3" with full definition
+- Reference to Permenaker as source
+
+Usage:
+------
+Include in page--front.html layout via custom_schema
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#pjk3-definition",
+  "name": "PJK3",
+  "alternateName": "Perusahaan Jasa Keselamatan dan Kesehatan Kerja",
+  "description": "PJK3 adalah Perusahaan Jasa Keselamatan dan Kesehatan Kerja yang melakukan inspeksi K3 di tempat kerja. Menurut Peraturan Menteri Tenaga Kerja RI No. 4 Tahun 1995, PJK3 adalah perusahaan yang usahanya di bidang jasa K3 untuk membantu pelaksanaan pemenuhan syarat-syarat K3 sesuai peraturan perundang-undangan yang berlaku.",
+  "inDefinedTermSet": {
+    "@type": "DefinedTermSet",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#k3-glossary",
+    "name": "Glosarium Keselamatan dan Kesehatan Kerja (K3)",
+    "description": "Kumpulan istilah dan definisi terkait Keselamatan dan Kesehatan Kerja di Indonesia"
+  },
+  "termCode": "PJK3",
+  "url": "{{ site.url }}{{ site.baseurl }}/#mitra-pjk3"
+}
+</script>

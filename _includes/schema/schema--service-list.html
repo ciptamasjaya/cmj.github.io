@@ -65,6 +65,17 @@ Benefits:
 {
   "@context": "https://schema.org",
   "@graph": [{% for service in services %}
+    {% comment %} Get price from offer_riksa_uji.offers.first or default {% endcomment %}
+    {% assign service_price = service.offer_riksa_uji.offers.first.price | default: 0 %}
+    {% assign service_currency = service.offer_riksa_uji.offers.first.price_currency | default: 'IDR' %}
+    {% comment %} Get image from service.image or images.first or default {% endcomment %}
+    {% if service.image and service.image != '' %}
+      {% assign service_image = service.image %}
+    {% elsif service.images.first and service.images.first != '' %}
+      {% assign service_image = service.images.first %}
+    {% else %}
+      {% assign service_image = '/assets/images/logo.svg' %}
+    {% endif %}
     {
       "@type": "Product",
       "@id": "{{ service.url | absolute_url }}#product",
@@ -76,18 +87,11 @@ Benefits:
         "name": "{{ site.business.name }}"
       },{% if service.category %}
       "category": "{{ service.category }}",{% endif %}
-      "image": "{% if service.image %}{{ service.image | absolute_url }}{% else %}{{ '/assets/images/logo.svg' | absolute_url }}{% endif %}",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "{{ service.rating | default: 5 }}",
-        "bestRating": "5",
-        "worstRating": "1",
-        "ratingCount": "{{ service.review_count | default: 10 }}"
-      },
+      "image": "{{ service_image | absolute_url }}",
       "offers": {
         "@type": "Offer",
-        "price": "{{ service.price | default: '0' }}",
-        "priceCurrency": "{{ service.price_currency | default: 'IDR' }}",
+        "price": "{{ service_price }}",
+        "priceCurrency": "{{ service_currency }}",
         "availability": "https://schema.org/InStock",
         "priceValidUntil": "{{ 'now' | date: '%Y' | plus: 1 }}-12-31",
         "url": "{{ service.url | absolute_url }}",

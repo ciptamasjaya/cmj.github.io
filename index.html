@@ -9,6 +9,11 @@ custom_schema:
 - schema/schema--global.html
 - schema/node--front/schema--front.html
 - schema/node--front/schema--rating.html
+- schema/node--front/schema--service-categories.html
+- schema/node--front/schema--why-choose-us.html
+- schema/node--front/schema--defined-term-pjk3.html
+- schema/node--front/schema--jasa-inspeksi-k3.html
+- schema/node--front/schema--blog-preview.html
 _content_refreshed_at: '2025-12-02T03:48:34+0000'
 ---
 <!-- Hero Section -->
@@ -16,9 +21,6 @@ _content_refreshed_at: '2025-12-02T03:48:34+0000'
 
 <!-- Services Grid Section -->
 {% include reusable/node--front/block--services-grid.html %}
-
-<!-- Latest Service Updates Section -->
-{% include block-templates/block--latest-service-updates.html limit=6 %}
 
 <!-- Why Choose Us Section -->
 {% include reusable/node--front/block--why-choose-us.html %}
@@ -38,6 +40,9 @@ _content_refreshed_at: '2025-12-02T03:48:34+0000'
 
 <!-- CTA Contact Section -->
 {% include reusable/node--front/block--cta-contact.html %}
+
+<!-- Latest Service Updates Section -->
+{% include shared/block--latest-service-updates.html limit=3 %}
 
 <!-- Latest Blog Posts -->
 {% include reusable/node--front/block--blog-preview.html %}

@@ -1,0 +1,52 @@
+{% comment %}
+============================================================================
+Schema: Why Choose Us Features
+============================================================================
+
+@file        schema--why-choose-us.html
+@path        _includes/schema/node--front/schema--why-choose-us.html
+@type        Schema (ItemList)
+@description Schema for why choose us features on homepage
+@author      arisciwek
+
+Data Source:
+------------
+Uses site.data.services.features from _data/services.yml
+
+Schema Output:
+--------------
+- ItemList with @id for reference from LocalBusiness.amenityFeature
+
+Usage:
+------
+Include in page--front.html layout via custom_schema
+
+============================================================================
+{% endcomment %}
+
+{% if site.data.services.features.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#features",
+  "name": "Keunggulan Layanan {{ site.business.name }}",
+  "description": "Alasan mengapa memilih {{ site.business.name }} untuk layanan riksa uji K3",
+  "numberOfItems": {{ site.data.services.features.size }},
+  "itemListElement": [
+    {% for feature in site.data.services.features %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "LocationFeatureSpecification",
+        "@id": "{{ site.url }}{{ site.baseurl }}/#feature-{{ forloop.index }}",
+        "name": "{{ feature.title | escape }}",
+        "value": "{{ feature.description | escape }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

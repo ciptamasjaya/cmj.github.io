@@ -67,9 +67,19 @@ Usage:
             </h3>
 
             <!-- Service Description -->
-            <p class="card-text text-muted small mb-3">
+            <p class="card-text text-muted small mb-2">
               {{ service.description }}
             </p>
+
+            <!-- Price Range -->
+            {% if service.price_min and service.price_max %}
+            <p class="card-text mb-3">
+              <small class="text-success fw-semibold">
+                <i class="bi bi-tag-fill me-1"></i>
+                Rp {{ service.price_min | divided_by: 1000000.0 | round: 1 }} - {{ service.price_max | divided_by: 1000000.0 | round: 1 }} Juta
+              </small>
+            </p>
+            {% endif %}
 
             <!-- Service Link -->
             {% if service.slug %}
