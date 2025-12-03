@@ -57,8 +57,12 @@ page.html (this file - site wrapper)
 
   {% include footer.html %}
 
-  <!-- Floating WhatsApp Button -->
-  {% include components/cta-whatsapp.html style="floating" %}
+  <!-- Floating Action Buttons -->
+  {% assign review_layouts = "node/node--alat-k3,node/node--riksa-uji,node/node--pjk3-city,node/node--inspection-report,node/node--service" | split: "," %}
+  {% if review_layouts contains page.layout %}
+    {% include components/cta-review.html %}
+  {% endif %}
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
 
   <!-- Page-specific scripts -->
   {% if page.custom_js %}

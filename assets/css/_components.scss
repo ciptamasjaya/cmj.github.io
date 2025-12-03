@@ -9,6 +9,11 @@
 // ============================================================================
 
 // ----------------------------------------------------------------------------
+// Import Component Partials
+// ----------------------------------------------------------------------------
+@import "components/floating-buttons";
+
+// ----------------------------------------------------------------------------
 // Card Float - Floating card effect for headers
 // ----------------------------------------------------------------------------
 // Usage: <div class="card card-float">
@@ -334,75 +339,7 @@
 // ----------------------------------------------------------------------------
 // WhatsApp CTA (_includes/components/cta-whatsapp.html)
 // ----------------------------------------------------------------------------
-
-// Floating WhatsApp Button
-.component-whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  z-index: $z-index-floating;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: white;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  font-weight: $font-weight-semibold;
-
-  // Position modifiers
-  &--right {
-    right: 20px;
-  }
-
-  &--left {
-    left: 20px;
-  }
-
-  // Icon only variant (circular)
-  &--icon-only {
-    width: 60px;
-    border-radius: $border-radius-circle;
-    padding: 0;
-  }
-
-  // With text variant (rounded rectangle)
-  &--with-text {
-    width: auto;
-    border-radius: 30px;
-    padding: 0 $spacing-lg;
-  }
-
-  // Hover state
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    color: white;
-  }
-
-  // Icon styling
-  i {
-    font-size: 1.8rem;
-  }
-
-  // Text label
-  &__text {
-    white-space: nowrap;
-  }
-
-  // Responsive
-  @include media-down(md) {
-    width: 60px;
-    border-radius: $border-radius-circle;
-    padding: 0;
-
-    &__text {
-      display: none;
-    }
-  }
-}
+// Note: Floating button styles moved to components/_floating-buttons.scss
 
 // WhatsApp Card CTA
 .component-whatsapp-card {

@@ -1,0 +1,136 @@
+{% comment %}
+============================================================================
+CTA Review Component - Floating Button + Modal
+============================================================================
+
+@file        _includes/components/cta-review.html
+@description Floating review button that opens a modal for submitting reviews
+@version     1.0.0
+@date        2025-12-03
+@author      arisciwek
+
+Features:
+---------
+- Floating button with pulse animation (gold/amber)
+- Bootstrap modal with custom styling
+- Interactive star rating (hover + click)
+- Auto-detect current page title and URL
+- Submit via WhatsApp (formatted message)
+- Responsive design
+
+Parameters:
+-----------
+- wa_phone: WhatsApp number (optional, uses site.business.whatsapp by default)
+
+Usage:
+------
+{% include components/cta-review.html %}
+
+============================================================================
+{% endcomment %}
+
+{% assign wa_phone = include.wa_phone | default: site.business.whatsapp %}
+
+<!-- Floating Review Button -->
+<button type="button"
+        class="floating-btn floating-btn--review"
+        data-bs-toggle="modal"
+        data-bs-target="#reviewModal"
+        aria-label="Berikan Review">
+  <i class="bi bi-star-fill"></i>
+</button>
+
+<!-- Review Modal -->
+<div class="modal fade review-modal" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="reviewModalLabel">
+          <i class="bi bi-star-fill me-2"></i>Berikan Review
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <!-- Page Info -->
+        <div class="review-page-info">
+          <p class="page-title">
+            <i class="bi bi-file-text me-1"></i>
+            <span id="reviewPageTitle">{{ page.title | default: site.title }}</span>
+          </p>
+        </div>
+
+        <!-- Star Rating -->
+        <div class="star-rating" id="starRating">
+          <input type="radio" name="rating" value="5" id="star5">
+          <label for="star5" title="5 bintang"><i class="bi bi-star-fill"></i></label>
+
+          <input type="radio" name="rating" value="4" id="star4">
+          <label for="star4" title="4 bintang"><i class="bi bi-star-fill"></i></label>
+
+          <input type="radio" name="rating" value="3" id="star3">
+          <label for="star3" title="3 bintang"><i class="bi bi-star-fill"></i></label>
+
+          <input type="radio" name="rating" value="2" id="star2">
+          <label for="star2" title="2 bintang"><i class="bi bi-star-fill"></i></label>
+
+          <input type="radio" name="rating" value="1" id="star1">
+          <label for="star1" title="1 bintang"><i class="bi bi-star-fill"></i></label>
+        </div>
+
+        <div class="rating-text" id="ratingText">Pilih rating</div>
+
+        <!-- Review Form -->
+        <form id="reviewForm">
+          <div class="mb-3">
+            <label for="reviewNama" class="form-label">Nama <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="reviewNama" placeholder="Nama lengkap Anda" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="reviewUsaha" class="form-label">Pekerjaan / Perusahaan</label>
+            <input type="text" class="form-control" id="reviewUsaha" placeholder="Contoh: HSE Manager di PT ABC">
+          </div>
+
+          <div class="mb-3">
+            <label for="reviewJudul" class="form-label">Judul Review <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="reviewJudul" placeholder="Ringkasan singkat review Anda" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="reviewKomentar" class="form-label">Komentar <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="reviewKomentar" rows="3" placeholder="Ceritakan pengalaman Anda..." required></textarea>
+          </div>
+
+          <!-- Hidden fields for page data -->
+          <input type="hidden" id="reviewPageUrl" value="{{ page.url | absolute_url }}">
+          <input type="hidden" id="reviewWaPhone" value="{{ wa_phone }}">
+
+          <!-- Honeypot field (anti-spam) - hidden from users, bots will fill it -->
+          <div class="review-hp" aria-hidden="true">
+            <label for="reviewWebsite">Website</label>
+            <input type="text" id="reviewWebsite" name="website" tabindex="-1" autocomplete="off">
+          </div>
+        </form>
+
+        <p class="modal-footer-note">
+          <i class="bi bi-whatsapp"></i>
+          Review akan dikirim via WhatsApp
+        </p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-review-submit" id="submitReview" disabled>
+          <i class="bi bi-send-fill"></i>Kirim Review
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Review Modal Script -->
+<script src="{{ '/assets/js/review-modal.js' | relative_url }}" defer></script>

@@ -52,8 +52,9 @@ Schema includes (using reusable schemas):
 
   {% include footer.html %}
 
-  <!-- Floating WhatsApp Button -->
-  {% include components/cta-whatsapp.html style="floating" %}
+  <!-- Floating Action Buttons -->
+  {% include components/cta-review.html %}
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
 
   <!-- Global Schema: WebSite + Organization + Navigation -->
   {% unless page.skip_page_schema %}

@@ -20,7 +20,9 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
 
   {% include footer.html %}
 
-  {% include components/cta-whatsapp.html style="floating" %}
+  <!-- Floating Action Buttons -->
+  {% include components/cta-review.html %}
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
 
   {% unless page.skip_page_schema %}
     {% include schema/schema--page.html %}

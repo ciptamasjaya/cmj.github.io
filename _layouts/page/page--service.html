@@ -84,8 +84,9 @@ Architecture Principle:
 
   {% include footer.html %}
 
-  <!-- Floating WhatsApp Button -->
-  {% include components/cta-whatsapp.html style="floating" %}
+  <!-- Floating Action Buttons -->
+  {% include components/cta-review.html %}
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
 
   {% comment %} Load rating data BEFORE schemas (sets Liquid vars for schema--rating.html) {% endcomment %}
   {% assign rating_id = page.rating_id %}

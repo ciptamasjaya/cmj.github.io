@@ -90,14 +90,11 @@ Inline style:
 {% if cta_style == "floating" %}
 <!-- Floating WhatsApp Button -->
 <a href="{{ wa_url }}"
-   class="component-whatsapp-float component-whatsapp-float--{{ position }} {% if icon_only %}component-whatsapp-float--icon-only{% else %}component-whatsapp-float--with-text{% endif %}"
+   class="floating-btn floating-btn--whatsapp"
    target="_blank"
    rel="noopener"
    aria-label="Hubungi via WhatsApp">
   <i class="bi bi-whatsapp"></i>
-  {% unless icon_only %}
-  <span class="component-whatsapp-float__text">Chat WhatsApp</span>
-  {% endunless %}
 </a>
 
 {% elsif cta_style == "button" %}

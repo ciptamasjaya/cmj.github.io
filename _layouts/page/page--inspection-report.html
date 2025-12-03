@@ -32,7 +32,9 @@ Page Wrapper: Inspection Report Pages (page--inspection-report.html)
 
   {% include footer.html %}
 
-  {% include components/cta-whatsapp.html style="floating" %}
+  <!-- Floating Action Buttons -->
+  {% include components/cta-review.html %}
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
 
   <!-- Page Schema -->
   {% unless page.skip_page_schema %}

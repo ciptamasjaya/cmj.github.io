@@ -1,0 +1,291 @@
+/* ==========================================================================
+   Floating Buttons Component (WhatsApp + Review)
+   ==========================================================================
+   @file        _floating-buttons.scss
+   @path        assets/css/components/_floating-buttons.scss
+   @description Shared styles for floating action buttons with gradient,
+                pulse animation, and glow effects
+   @author      arisciwek
+   @created     2025-12-03
+
+   Features:
+   - Gradient background
+   - Pulse animation with glow
+   - Hover scale effect
+   - Responsive mobile size
+   ========================================================================== */
+
+// ==========================================================================
+// Base Floating Button
+// ==========================================================================
+
+.floating-btn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  right: 30px;
+  border-radius: 50%;
+  border: none !important;
+  outline: none !important;
+  text-align: center;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  i {
+    line-height: 1;
+  }
+
+  &:hover {
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  &:focus,
+  &:active {
+    border: none !important;
+    outline: none !important;
+  }
+
+  // Responsive mobile
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    right: 20px;
+  }
+}
+
+// ==========================================================================
+// WhatsApp Floating Button
+// ==========================================================================
+
+.floating-btn--whatsapp {
+  bottom: 30px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  animation: pulse-whatsapp 2s infinite;
+
+  &:hover {
+    background: linear-gradient(135deg, #20ba5a 0%, #0e7a6b 100%);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  }
+
+  // Responsive mobile
+  @media (max-width: 768px) {
+    bottom: 20px;
+  }
+}
+
+// WhatsApp pulse animation
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+// ==========================================================================
+// Review Floating Button
+// ==========================================================================
+
+.floating-btn--review {
+  bottom: 100px; // Above WhatsApp button (30 + 60 + 10 spacing)
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  animation: pulse-review 2s infinite;
+  animation-delay: 1s; // Offset from WhatsApp pulse
+
+  &:hover {
+    background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+  }
+
+  // Responsive mobile
+  @media (max-width: 768px) {
+    bottom: 80px; // Above WhatsApp (20 + 50 + 10 spacing)
+  }
+}
+
+// Review pulse animation (gold/amber glow)
+@keyframes pulse-review {
+  0% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(245, 158, 11, 0.6);
+  }
+  70% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 15px rgba(245, 158, 11, 0);
+  }
+  100% {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(245, 158, 11, 0);
+  }
+}
+
+// ==========================================================================
+// Review Modal Styles
+// ==========================================================================
+
+.review-modal {
+  // Modal header with gradient
+  .modal-header {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+    border-bottom: none;
+
+    .modal-title {
+      font-weight: 600;
+    }
+
+    .btn-close {
+      filter: brightness(0) invert(1);
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Page info badge
+  .review-page-info {
+    background: rgba(245, 158, 11, 0.1);
+    border-left: 3px solid #f59e0b;
+    padding: 0.75rem 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin-bottom: 1.5rem;
+
+    .page-title {
+      font-weight: 600;
+      color: #92400e;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+
+  // Star rating container
+  .star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .star-rating input {
+    display: none;
+  }
+
+  .star-rating label {
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #d1d5db;
+    transition: all 0.2s ease;
+
+    &:hover,
+    &:hover ~ label {
+      color: #fbbf24;
+      transform: scale(1.1);
+    }
+  }
+
+  .star-rating input:checked ~ label {
+    color: #f59e0b;
+  }
+
+  .star-rating label:hover,
+  .star-rating input:checked ~ label:hover {
+    color: #fbbf24;
+  }
+
+  // Rating text feedback
+  .rating-text {
+    text-align: center;
+    font-weight: 500;
+    color: #6b7280;
+    min-height: 1.5rem;
+    margin-bottom: 1rem;
+
+    &.has-rating {
+      color: #d97706;
+    }
+  }
+
+  // Form styling
+  .form-label {
+    font-weight: 500;
+    color: #374151;
+  }
+
+  .form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+
+    &:focus {
+      border-color: #f59e0b;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+  }
+
+  // Submit button
+  .btn-review-submit {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  // Footer note
+  .modal-footer-note {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-align: center;
+    margin-top: 1rem;
+
+    i {
+      color: #f59e0b;
+      margin-right: 0.25rem;
+    }
+  }
+
+  // Honeypot field (hidden from users)
+  .review-hp {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+}
