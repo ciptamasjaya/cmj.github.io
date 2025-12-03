@@ -1,0 +1,221 @@
+{% comment %}
+============================================================================
+Block: Homepage Rating & Reviews
+============================================================================
+
+@file        block--rating-homepage.html
+@path        _includes/block-templates/block--rating-homepage.html
+@description Aggregate rating display with featured reviews for homepage
+@version     1.0.0
+@date        2025-12-03
+
+Parameters:
+-----------
+- limit: Number of reviews to show (default: 3)
+- bg_class: Background class (default: "bg-light")
+
+Usage:
+------
+{% include block-templates/block--rating-homepage.html limit=3 %}
+
+============================================================================
+{% endcomment %}
+
+{% assign limit = include.limit | default: 3 %}
+{% assign bg_class = include.bg_class | default: "bg-light" %}
+
+{% comment %}
+Collect reviews from rating blocks across all content types.
+Format: nama|komentar|rating|judul|usaha|tanggal
+{% endcomment %}
+{% assign collected_reviews = "" | split: "" %}
+{% assign total_rating_sum = 0 %}
+{% assign total_review_count = 0 %}
+
+{% comment %} Loop through services with rating_id {% endcomment %}
+{% for service in site.services %}
+  {% if service.rating_id %}
+    {% capture rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
+    {% include {{ rating_file }} %}
+
+    {% comment %} Accumulate rating stats {% endcomment %}
+    {% if rating_average %}
+      {% assign weighted_rating = rating_average | times: rating_count %}
+      {% assign total_rating_sum = total_rating_sum | plus: weighted_rating %}
+      {% assign total_review_count = total_review_count | plus: rating_count %}
+    {% endif %}
+
+    {% comment %} Collect featured reviews {% endcomment %}
+    {% if review_1_nama and review_1_featured and collected_reviews.size < limit %}
+      {% capture review_item %}{{ review_1_nama }}|{{ review_1_komentar }}|{{ review_1_rating }}|{{ review_1_judul }}|{{ review_1_usaha }}|{{ review_1_tanggal }}{% endcapture %}
+      {% assign collected_reviews = collected_reviews | push: review_item %}
+    {% endif %}
+    {% if review_2_nama and review_2_featured and collected_reviews.size < limit %}
+      {% capture review_item %}{{ review_2_nama }}|{{ review_2_komentar }}|{{ review_2_rating }}|{{ review_2_judul }}|{{ review_2_usaha }}|{{ review_2_tanggal }}{% endcapture %}
+      {% assign collected_reviews = collected_reviews | push: review_item %}
+    {% endif %}
+    {% if review_3_nama and review_3_featured and collected_reviews.size < limit %}
+      {% capture review_item %}{{ review_3_nama }}|{{ review_3_komentar }}|{{ review_3_rating }}|{{ review_3_judul }}|{{ review_3_usaha }}|{{ review_3_tanggal }}{% endcapture %}
+      {% assign collected_reviews = collected_reviews | push: review_item %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Loop through posts with rating_id {% endcomment %}
+{% for post in site.posts %}
+  {% if post.rating_id %}
+    {% comment %} Determine rating folder from layout {% endcomment %}
+    {% if post.layout contains "pjk3-city" %}
+      {% assign rating_folder = "node--pjk3-city" %}
+    {% elsif post.layout contains "inspection-report" %}
+      {% assign rating_folder = "node--inspection-report" %}
+    {% elsif post.layout contains "alat-k3" %}
+      {% assign rating_folder = "node--alat-k3" %}
+    {% elsif post.layout contains "riksa-uji" %}
+      {% assign rating_folder = "node--riksa-uji" %}
+    {% else %}
+      {% assign rating_folder = "" %}
+    {% endif %}
+
+    {% if rating_folder != "" %}
+      {% capture rating_file %}reusable/{{ rating_folder }}/ratings/block--rating--{{ post.rating_id }}.html{% endcapture %}
+      {% include {{ rating_file }} %}
+
+      {% comment %} Accumulate rating stats {% endcomment %}
+      {% if rating_average %}
+        {% assign weighted_rating = rating_average | times: rating_count %}
+        {% assign total_rating_sum = total_rating_sum | plus: weighted_rating %}
+        {% assign total_review_count = total_review_count | plus: rating_count %}
+      {% endif %}
+
+      {% comment %} Collect featured reviews {% endcomment %}
+      {% if review_1_nama and review_1_featured and collected_reviews.size < limit %}
+        {% capture review_item %}{{ review_1_nama }}|{{ review_1_komentar }}|{{ review_1_rating }}|{{ review_1_judul }}|{{ review_1_usaha }}|{{ review_1_tanggal }}{% endcapture %}
+        {% assign collected_reviews = collected_reviews | push: review_item %}
+      {% endif %}
+      {% if review_2_nama and review_2_featured and collected_reviews.size < limit %}
+        {% capture review_item %}{{ review_2_nama }}|{{ review_2_komentar }}|{{ review_2_rating }}|{{ review_2_judul }}|{{ review_2_usaha }}|{{ review_2_tanggal }}{% endcapture %}
+        {% assign collected_reviews = collected_reviews | push: review_item %}
+      {% endif %}
+      {% if review_3_nama and review_3_featured and collected_reviews.size < limit %}
+        {% capture review_item %}{{ review_3_nama }}|{{ review_3_komentar }}|{{ review_3_rating }}|{{ review_3_judul }}|{{ review_3_usaha }}|{{ review_3_tanggal }}{% endcapture %}
+        {% assign collected_reviews = collected_reviews | push: review_item %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign display_reviews = collected_reviews | slice: 0, limit %}
+
+{% comment %} Calculate overall average {% endcomment %}
+{% if total_review_count > 0 %}
+  {% assign overall_avg = total_rating_sum | divided_by: total_review_count | round: 1 %}
+{% else %}
+  {% assign overall_avg = 0 %}
+{% endif %}
+
+{% if display_reviews.size > 0 %}
+<section class="block--rating-homepage py-5 {{ bg_class }}">
+  <div class="container">
+
+    <!-- Header with Aggregate Rating -->
+    <div class="text-center mb-5">
+      <h2 class="display-6 fw-bold mb-3">
+        <i class="bi bi-star-fill text-warning me-2"></i>
+        Rating & Ulasan Klien
+      </h2>
+      <p class="text-muted mb-4">Kepuasan klien adalah prioritas utama kami</p>
+
+      <!-- Aggregate Rating Display -->
+      <div class="d-inline-flex align-items-center bg-white rounded-pill shadow px-4 py-3">
+        <div class="display-4 fw-bold text-primary me-3">{{ overall_avg }}</div>
+        <div class="text-start">
+          <div class="text-warning mb-1">
+            {% assign full_stars = overall_avg | floor %}
+            {% assign decimal = overall_avg | minus: full_stars %}
+            {% for i in (1..5) %}
+              {% if i <= full_stars %}
+                <i class="bi bi-star-fill"></i>
+              {% elsif decimal >= 0.5 and i == full_stars | plus: 1 %}
+                <i class="bi bi-star-half"></i>
+              {% else %}
+                <i class="bi bi-star"></i>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <small class="text-muted">dari {{ total_review_count }} ulasan</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Review Cards -->
+    <div class="row g-4">
+      {% for review_item in display_reviews %}
+        {% assign review_parts = review_item | split: "|" %}
+        {% assign r_nama = review_parts[0] %}
+        {% assign r_komentar = review_parts[1] %}
+        {% assign r_rating = review_parts[2] | plus: 0 %}
+        {% assign r_judul = review_parts[3] %}
+        {% assign r_usaha = review_parts[4] %}
+        {% assign r_tanggal = review_parts[5] %}
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body d-flex flex-column">
+
+              <!-- Rating Stars -->
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="text-warning">
+                  {% for i in (1..5) %}
+                    {% if i <= r_rating %}
+                      <i class="bi bi-star-fill"></i>
+                    {% else %}
+                      <i class="bi bi-star"></i>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <span class="badge bg-success-subtle text-success">
+                  <i class="bi bi-patch-check-fill me-1"></i>Verified
+                </span>
+              </div>
+
+              <!-- Review Title -->
+              {% if r_judul %}
+              <h5 class="card-title h6 fw-bold mb-2">{{ r_judul }}</h5>
+              {% endif %}
+
+              <!-- Review Content -->
+              <blockquote class="flex-grow-1 mb-3">
+                <p class="mb-0 text-muted">"{{ r_komentar | truncate: 150 }}"</p>
+              </blockquote>
+
+              <!-- Author Info -->
+              <div class="d-flex align-items-center mt-auto pt-3 border-top">
+                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
+                  <span class="fw-bold">{{ r_nama | slice: 0, 1 | upcase }}</span>
+                </div>
+                <div>
+                  <strong class="d-block">{{ r_nama }}</strong>
+                  {% if r_usaha %}
+                    <small class="text-muted">{{ r_usaha }}</small>
+                  {% endif %}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-5">
+      <p class="text-muted mb-3">Bergabunglah dengan ratusan klien yang telah mempercayai layanan kami</p>
+      <a href="{{ '/layanan/' | relative_url }}" class="btn btn-primary btn-lg">
+        <i class="bi bi-arrow-right-circle me-2"></i>Lihat Layanan Kami
+      </a>
+    </div>
+
+  </div>
+</section>
+{% endif %}
