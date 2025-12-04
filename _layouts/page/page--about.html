@@ -1,0 +1,153 @@
+---
+layout: compress
+---
+{%- comment -%}
+============================================================================
+Page Wrapper: About (page--about.html)
+============================================================================
+
+@file        page--about.html
+@path        _layouts/page/page--about.html
+@type        Page (wrapper - variant)
+@variant     about (about us page)
+@description About page wrapper with schema support for each block
+@author      arisciwek
+
+Drupal-style naming: page--about.html (variant of page.html)
+
+This is the about page wrapper, created to support block-specific schemas
+and special layout customization for the about/company profile page.
+
+Related templates:
+- page.html (base page wrapper)
+- page--front.html (homepage variant)
+- page--layanan.html (service catalog variant)
+
+Used by:
+- /about.html (about us page only)
+
+Block Components:
+- block--breadcrumb.html           -> schema--breadcrumb.html
+- block--about-hero.html           -> schema--hero-image.html
+- block--company-profile.html      -> (in schema--page.html Organization)
+- block--why-choose-us.html        -> (semantic HTML)
+- block--about-history.html        -> (semantic HTML)
+- block--service-coverage.html     -> schema--global.html (areaServed)
+- block--commitment.html           -> schema--commitment.html
+- block--about-header-pjk3.html    -> (semantic HTML)
+- block--about-definitions.html    -> schema--definitions.html
+- block--about-pjk3-text.html      -> (semantic HTML)
+- block--about-visi-ciptamasjaya.html -> schema--visi-misi.html
+- block--about-misi-ciptamasjaya.html -> schema--visi-misi.html
+- block--about-tamasya.html        -> schema--tamasya.html
+- block--about-jasa-inspeksi.html  -> schema--jasa-inspeksi.html
+- block--certifications.html       -> schema--certifications.html
+
+Schema Architecture:
+- schema--page.html                -> WebPage + Organization + Navigation
+- schema--breadcrumb.html          -> BreadcrumbList
+- schema--about-page.html          -> AboutPage
+- schema--hero-image.html          -> ImageObject
+- schema--commitment.html          -> ItemList (commitments)
+- schema--definitions.html         -> DefinedTermSet + DefinedTerm
+- schema--visi-misi.html           -> Organization (vision/mission)
+- schema--tamasya.html             -> Organization additionalProperty (values)
+- schema--jasa-inspeksi.html       -> Service + OfferCatalog
+- schema--certifications.html      -> Certification + EducationalOccupationalCredential
+
+Usage:
+Set in /about.html frontmatter:
+  ---
+  layout: page/page--about
+  title: Tentang Kami
+  ---
+
+Hierarchy:
+page--about.html (this file - about page wrapper)
+└── {{ content }} renders about.html content directly
+    ├── Breadcrumb navigation
+    ├── Company hero section
+    ├── Company profile
+    ├── Why choose us
+    ├── History timeline
+    ├── Service coverage
+    ├── Commitment section
+    ├── PJK3 definitions
+    ├── Visi & Misi
+    ├── Company values (TAMASYA)
+    ├── Jasa Inspeksi description
+    └── Certifications
+
+============================================================================
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body class="about-page">
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
+
+  <!-- Page-specific scripts -->
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="{{ js_file | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       SCHEMA SECTION
+       ============================================================ -->
+
+  <!-- Base Schema: WebPage + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Global Schema (if defined in frontmatter) -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       BLOCK-SPECIFIC SCHEMAS (order follows block sequence)
+       ============================================================ -->
+
+  <!-- About Page Schema -->
+  {% include schema/node--about/schema--about-page.html %}
+
+  <!-- Hero Image Schema -->
+  {% include schema/node--about/schema--hero-image.html %}
+
+  <!-- Commitment Schema -->
+  {% include schema/node--about/schema--commitment.html %}
+
+  <!-- K3 Definitions Schema (PJK3, Riksa Uji, PJK3 Riksa Uji) -->
+  {% include schema/node--about/schema--definitions.html %}
+
+  <!-- Visi Misi Schema -->
+  {% include schema/node--about/schema--visi-misi.html %}
+
+  <!-- Company Values TAMASYA Schema -->
+  {% include schema/node--about/schema--tamasya.html %}
+
+  <!-- Jasa Inspeksi K3 Schema -->
+  {% include schema/node--about/schema--jasa-inspeksi.html %}
+
+  <!-- Certifications Schema (PJK3 + Expert credentials) -->
+  {% if site.data.certifications.certifications.size > 0 %}
+    {% include schema/shared/schema--certifications.html %}
+  {% endif %}
+
+</body>
+</html>

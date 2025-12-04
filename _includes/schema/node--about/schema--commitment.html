@@ -1,0 +1,56 @@
+{% comment %}
+============================================================================
+Schema: Commitment (schema--commitment.html)
+============================================================================
+
+@file        schema--commitment.html
+@path        _includes/schema/node--about/schema--commitment.html
+@type        Schema (ItemList)
+@description Schema markup for company commitments
+@author      arisciwek
+@created     2025-12-04
+
+Data Source:
+------------
+Data from _data/commitments.yml
+
+Schema Types:
+-------------
+- ItemList: Collection of company commitments
+- ListItem: Individual commitment item
+
+Usage:
+------
+{% include schema/node--about/schema--commitment.html %}
+
+Reference:
+----------
+https://schema.org/ItemList
+https://schema.org/ListItem
+
+============================================================================
+{% endcomment %}
+
+{% if site.data.commitments.items.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ site.url }}{{ site.baseurl }}/about/#commitments",
+  "name": "{{ site.data.commitments.header.title }}",
+  "description": "{{ site.data.commitments.header.description }}",
+  "numberOfItems": {{ site.data.commitments.items.size }},
+  "itemListOrder": "https://schema.org/ItemListUnordered",
+  "itemListElement": [
+    {%- for item in site.data.commitments.items -%}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "name": "{{ item.title | escape }}",
+      "description": "{{ item.description | escape }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}

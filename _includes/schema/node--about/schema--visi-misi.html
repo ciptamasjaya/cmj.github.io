@@ -1,0 +1,75 @@
+{% comment %}
+============================================================================
+Schema: Visi Misi (schema--visi-misi.html)
+============================================================================
+
+@file        schema--visi-misi.html
+@path        _includes/schema/node--about/schema--visi-misi.html
+@type        Schema (Organization)
+@description Schema markup for company vision and mission statements
+@author      arisciwek
+@created     2025-12-04
+
+Schema Types:
+-------------
+- Organization: With mission/vision as knowsAbout and additionalProperty
+
+Usage:
+------
+{% include schema/node--about/schema--visi-misi.html %}
+
+Reference:
+----------
+https://schema.org/Organization
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#organization-vision-mission",
+  "name": "{{ site.business.legal_name }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "description": "Menjadi perusahaan terkemuka di bidang jasa inspeksi Keselamatan dan Kesehatan Kerja (K3) di Indonesia, yang berkomitmen untuk memberikan layanan berkualitas tinggi dan terpercaya guna memastikan lingkungan kerja yang aman dan produktif bagi semua sektor industri.",
+  "knowsAbout": [
+    "Keselamatan dan Kesehatan Kerja",
+    "Inspeksi K3",
+    "Riksa Uji",
+    "PJK3"
+  ],
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "vision",
+      "name": "Visi",
+      "value": "Menjadi perusahaan terkemuka di bidang jasa inspeksi Keselamatan dan Kesehatan Kerja (K3) di Indonesia, yang berkomitmen untuk memberikan layanan berkualitas tinggi dan terpercaya guna memastikan lingkungan kerja yang aman dan produktif bagi semua sektor industri."
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "mission",
+      "name": "Misi Penjualan",
+      "value": "Mencapai pertumbuhan penjualan yang berkelanjutan melalui peningkatan penawaran produk dan layanan, diversifikasi pasar, serta membangun hubungan jangka panjang dengan pelanggan melalui pendekatan konsultatif dan solusi yang sesuai dengan kebutuhan industri."
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "mission",
+      "name": "Misi Kepuasan Pelanggan",
+      "value": "Memberikan layanan yang responsif, transparan, dan profesional kepada setiap pelanggan dengan fokus pada pemenuhan kebutuhan spesifik mereka serta memastikan hasil inspeksi yang akurat dan dapat dipercaya."
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "mission",
+      "name": "Misi Bisnis",
+      "value": "Mengembangkan portofolio layanan inspeksi K3 yang komprehensif dan berkelanjutan, serta memperkuat posisi perusahaan sebagai pemimpin di industri jasa keselamatan kerja melalui efisiensi operasional dan inovasi berkelanjutan."
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "mission",
+      "name": "Misi Marketing",
+      "value": "Meningkatkan kesadaran pasar terhadap pentingnya keselamatan dan kesehatan kerja melalui strategi pemasaran yang proaktif, kampanye edukasi, serta kolaborasi dengan berbagai institusi dan perusahaan untuk memperluas jangkauan layanan."
+    }
+  ]
+}
+</script>

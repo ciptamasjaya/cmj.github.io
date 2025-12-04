@@ -1,0 +1,57 @@
+{% comment %}
+============================================================================
+Schema: Hero Image (schema--hero-image.html)
+============================================================================
+
+@file        schema--hero-image.html
+@path        _includes/schema/node--about/schema--hero-image.html
+@type        Schema (ImageObject)
+@description Schema markup for about page hero image
+@author      arisciwek
+@created     2025-12-04
+
+Schema Types:
+-------------
+- ImageObject: Primary hero image for about page
+
+Usage:
+------
+{% include schema/node--about/schema--hero-image.html %}
+
+Reference:
+----------
+https://schema.org/ImageObject
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "@id": "{{ site.url }}{{ site.baseurl }}/about/#hero-image",
+  "name": "Jasa Inspeksi K3 PJK3 Riksa Uji PT. Cipta Mas Jaya",
+  "description": "Tim profesional PT. Cipta Mas Jaya melakukan inspeksi keselamatan dan kesehatan kerja (K3) di lapangan",
+  "contentUrl": "{{ site.url }}{{ site.baseurl }}/wp-content/uploads/2024/09/jasa-inspeksi-k3-pjk3-riksa-uji-pt-cipta-mas-jaya-12.jpeg",
+  "url": "{{ site.url }}{{ site.baseurl }}/about",
+  "width": "1200",
+  "height": "800",
+  "encodingFormat": "image/jpeg",
+  "representativeOfPage": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "{{ site.business.name }}",
+    "url": "{{ site.url }}{{ site.baseurl }}"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "{{ site.business.name }}",
+    "url": "{{ site.url }}{{ site.baseurl }}"
+  },
+  "copyrightYear": "2019",
+  "creditText": "© {{ site.business.name }}",
+  "copyrightNotice": "© 2019 {{ site.business.name }}. All rights reserved.",
+  "license": "{{ site.url }}{{ site.baseurl }}/terms",
+  "acquireLicensePage": "{{ site.url }}{{ site.baseurl }}/contact"
+}
+</script>

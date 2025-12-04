@@ -1,0 +1,74 @@
+{% comment %}
+============================================================================
+Schema: TAMASYA Company Values (schema--tamasya.html)
+============================================================================
+
+@file        schema--tamasya.html
+@path        _includes/schema/node--about/schema--tamasya.html
+@type        Schema (Organization additionalProperty)
+@description Schema markup for company values "TAMASYA" philosophy
+@author      arisciwek
+@created     2025-12-04
+
+Data Source:
+------------
+Company values: Utama, Keberlanjutan, Kerjasama, Tanggung Jawab
+Philosophy: Tama, Masa, Sama, Saya
+
+Schema Types:
+-------------
+- Organization: With additionalProperty for company values
+- PropertyValue: For each core value
+
+Usage:
+------
+{% include schema/node--about/schema--tamasya.html %}
+
+Reference:
+----------
+https://schema.org/Organization
+https://schema.org/PropertyValue
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#organization-values",
+  "name": "{{ site.business.legal_name }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "slogan": "TAMASYA - Tama, Masa, Sama, Saya",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "companyValue",
+      "name": "Utama",
+      "value": "Menunjukkan komitmen untuk memberikan layanan terbaik",
+      "description": "Dari filosofi 'Tama' yang berarti utama atau terbaik"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "companyValue",
+      "name": "Keberlanjutan",
+      "value": "Mengedepankan praktik yang berkelanjutan untuk keselamatan dan kesehatan kerja",
+      "description": "Dari filosofi 'Masa' yang menunjukkan keberlanjutan atau masa depan"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "companyValue",
+      "name": "Kerjasama",
+      "value": "Membangun tim yang solid dan bekerja sama",
+      "description": "Dari filosofi 'Sama' yang menggambarkan kerjasama dan kesetaraan"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "companyValue",
+      "name": "Tanggung Jawab",
+      "value": "Mengutamakan tanggung jawab individu dalam keselamatan dan kesehatan kerja",
+      "description": "Dari filosofi 'Saya' yang menekankan pentingnya individualitas dan tanggung jawab pribadi"
+    }
+  ]
+}
+</script>

@@ -1,0 +1,81 @@
+{% comment %}
+============================================================================
+Schema: Definitions (schema--definitions.html)
+============================================================================
+
+@file        schema--definitions.html
+@path        _includes/schema/node--about/schema--definitions.html
+@type        Schema (DefinedTermSet + DefinedTerm)
+@description Schema markup for K3 terminology definitions (PJK3, Riksa Uji)
+@author      arisciwek
+@created     2025-12-04
+
+Data Source:
+------------
+Hardcoded definitions for PJK3, Riksa Uji, and PJK3 Riksa Uji
+
+Schema Types:
+-------------
+- DefinedTermSet: Collection of defined terms
+- DefinedTerm: Individual term with definition
+
+Usage:
+------
+{% include schema/node--about/schema--definitions.html %}
+
+Reference:
+----------
+https://schema.org/DefinedTermSet
+https://schema.org/DefinedTerm
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "{{ site.url }}{{ site.baseurl }}/about/#k3-definitions",
+  "name": "Istilah K3 Indonesia",
+  "description": "Kumpulan definisi istilah Keselamatan dan Kesehatan Kerja (K3) di Indonesia",
+  "inLanguage": "id",
+  "isPartOf": {
+    "@id": "{{ site.url }}{{ site.baseurl }}/about/#webpage"
+  },
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "@id": "{{ site.url }}{{ site.baseurl }}/about/pjk3/#term",
+      "name": "PJK3",
+      "termCode": "PJK3",
+      "description": "Perusahaan yang menyediakan layanan profesional dalam bidang keselamatan dan kesehatan kerja untuk membantu perusahaan lain memastikan operasionalnya sesuai dengan standar K3 yang berlaku. Layanan yang ditawarkan oleh PJK3 meliputi konsultasi, pelatihan, audit, pemeriksaan teknis, serta pemeriksaan kesehatan kerja.",
+      "url": "{{ site.url }}{{ site.baseurl }}/about/pjk3",
+      "inDefinedTermSet": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/about/#k3-definitions"
+      }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "{{ site.url }}{{ site.baseurl }}/about/riksa-uji/#term",
+      "name": "Riksa Uji",
+      "termCode": "riksa-uji",
+      "description": "Proses pemeriksaan dan pengujian berkala terhadap peralatan, instalasi, dan fasilitas di tempat kerja untuk memastikan keamanan, keandalan, dan kepatuhannya terhadap standar keselamatan yang berlaku. Proses ini melibatkan inspeksi visual, pengujian fungsional, serta analisis teknis guna mendeteksi potensi kerusakan atau kegagalan.",
+      "url": "{{ site.url }}{{ site.baseurl }}/about/riksa-uji",
+      "inDefinedTermSet": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/about/#k3-definitions"
+      }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "{{ site.url }}{{ site.baseurl }}/about/pjk3-riksa-uji/#term",
+      "name": "PJK3 Riksa Uji",
+      "termCode": "pjk3-riksa-uji",
+      "description": "Perusahaan yang bergerak di bidang jasa keselamatan dan kesehatan kerja yang menyediakan Jasa Inspeksi K3. Layanan ini mencakup pemeriksaan dan pengujian keselamatan kerja secara berkala untuk memastikan bahwa peralatan dan instalasi di tempat kerja beroperasi dengan aman, efisien, dan efektif.",
+      "url": "{{ site.url }}{{ site.baseurl }}/about/pjk3-riksa-uji",
+      "inDefinedTermSet": {
+        "@id": "{{ site.url }}{{ site.baseurl }}/about/#k3-definitions"
+      }
+    }
+  ]
+}
+</script>

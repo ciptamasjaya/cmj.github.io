@@ -1,0 +1,102 @@
+{% comment %}
+============================================================================
+Schema: Jasa Inspeksi K3 (schema--jasa-inspeksi.html)
+============================================================================
+
+@file        schema--jasa-inspeksi.html
+@path        _includes/schema/node--about/schema--jasa-inspeksi.html
+@type        Schema (Service + ItemList)
+@description Schema markup for K3 inspection services offered
+@author      arisciwek
+@created     2025-12-04
+
+Schema Types:
+-------------
+- Service: Main inspection service
+- ItemList: List of specific inspection types
+
+Usage:
+------
+{% include schema/node--about/schema--jasa-inspeksi.html %}
+
+Reference:
+----------
+https://schema.org/Service
+https://schema.org/ItemList
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "{{ site.url }}{{ site.baseurl }}/about/#jasa-inspeksi-k3",
+  "name": "Jasa Inspeksi K3",
+  "description": "Layanan pemeriksaan dan evaluasi menyeluruh terhadap kondisi keselamatan dan kesehatan kerja di suatu tempat untuk memastikan kepatuhan terhadap standar dan peraturan yang berlaku, serta meminimalkan risiko kecelakaan dan bahaya.",
+  "serviceType": "Inspeksi Keselamatan dan Kesehatan Kerja",
+  "provider": {
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Layanan Riksa Uji K3",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Riksa Uji Pesawat Angkat dan Angkut",
+          "description": "Inspeksi keselamatan untuk crane, forklift, conveyor, dan peralatan angkat angkut lainnya",
+          "url": "{{ site.url }}{{ site.baseurl }}/layanan/pesawat-angkat-angkut"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Riksa Uji Pesawat Uap dan Bejana Tekan",
+          "description": "Inspeksi keselamatan untuk boiler, pressure vessel, dan tangki timbun",
+          "url": "{{ site.url }}{{ site.baseurl }}/layanan/pesawat-uap-bejana-tekan"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Riksa Uji Pesawat Tenaga dan Produksi",
+          "description": "Inspeksi keselamatan untuk mesin produksi dan peralatan tenaga"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Riksa Uji Sarana Proteksi Kebakaran",
+          "description": "Inspeksi sistem proteksi kebakaran termasuk APAR, hydrant, dan sprinkler"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Riksa Uji Instalasi Listrik dan Penyalur Petir",
+          "description": "Inspeksi keselamatan instalasi listrik dan sistem penangkal petir"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Riksa Uji Elevator dan Eskalator",
+          "description": "Inspeksi keselamatan lift, elevator, dan eskalator"
+        }
+      }
+    ]
+  }
+}
+</script>
