@@ -1,0 +1,94 @@
+{% comment %}
+============================================================================
+Block: Blog Posts Grid (block--blog-post.html)
+============================================================================
+
+@file        block--blog-post.html
+@path        _includes/reusable/node--blog/block--blog-post.html
+@type        Block (content grid)
+@description Blog posts grid for blog archive page (no header)
+@author      arisciwek
+@created     2025-12-04
+
+Features:
+---------
+- Display blog posts in responsive card grid
+- Pagination support via paginator.posts
+- Optional CTA section
+- NO section header (uses separate block--blog-header.html)
+
+Parameters:
+-----------
+- posts: Posts collection (required, use paginator.posts)
+- show_cta: Show newsletter CTA section (default: false)
+
+Usage:
+------
+{% include reusable/node--blog/block--blog-post.html posts=paginator.posts %}
+{% include reusable/node--blog/block--blog-post.html posts=paginator.posts show_cta=true %}
+
+Schema:
+-------
+Schema handled by layout (page--blog.html):
+- node--blog/schema--blog-page.html (CollectionPage)
+- node--blog/schema--blog-post.html (ItemList + BlogPosting)
+
+============================================================================
+{% endcomment %}
+
+{% assign show_cta = include.show_cta | default: false %}
+
+{% comment %} Sort by lastmod for freshness signal {% endcomment %}
+{% assign blog_posts = include.posts | sort: "lastmod" | reverse %}
+
+<section class="block--blog-post py-5" id="block--blog-post">
+  <div class="container">
+
+    <!-- Blog Posts Grid -->
+    {% if blog_posts.size > 0 %}
+    <div class="row g-4 mb-5">
+
+      {% for post in blog_posts %}
+      {% assign post_index = forloop.index %}
+      {% assign color_index = post_index | modulo: 3 %}
+      {% if color_index == 0 %}{% assign color_index = 3 %}{% endif %}
+
+      <div class="col-md-6 col-lg-4">
+        {% include block/block--card.html post=post color_index=color_index %}
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+    {% if show_cta %}
+    <!-- Newsletter/CTA Section -->
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="card border-0 shadow bg-primary text-white">
+          <div class="card-body p-4 text-center">
+            <h4 class="mb-3"><i class="bi bi-envelope-heart me-2"></i>Ingin Update Terbaru?</h4>
+            <p class="mb-4">Hubungi kami untuk mendapatkan info terbaru seputar K3!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% else %}
+
+    <!-- No Posts Message -->
+    <div class="row">
+      <div class="col-12">
+        <div class="alert alert-info text-center py-5">
+          <i class="bi bi-info-circle fs-3 d-block mb-3"></i>
+          <h4>Belum Ada Artikel</h4>
+          <p class="mb-0">Artikel akan segera hadir. Pantau terus halaman ini untuk update terbaru!</p>
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
+
+  </div>
+</section>

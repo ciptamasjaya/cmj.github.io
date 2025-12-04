@@ -110,8 +110,8 @@ Usage in detail page:
 </script>
 {% endif %}
 
-{% if item.itemlist_post.items %}
-<!-- ItemList Schema -->
+{% if schema_mode == "detail" and item.itemlist_post.items %}
+<!-- ItemList Schema (detail mode only) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

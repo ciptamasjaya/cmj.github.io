@@ -1,18 +1,19 @@
 ---
-layout: page/page
+layout: page/page--blog
 title: Blog & Artikel
 description: Informasi, tips, dan artikel seputar riksa uji K3, keselamatan kerja,
   dan peraturan K3 terbaru.
-schema_type: CollectionPage
 pagination:
   enabled: true
   permalink: "/page/:num/"
-custom_schema:
-- schema/schema--global.html
-- schema/schema--breadcrumb.html
-- schema/schema--blog-catalog.html
 _content_refreshed_at: '2025-12-02T03:48:34+0000'
 ---
-<!-- Breadcrumb Navigation -->
 
-{% include reusable/node--front/block--blog-preview.html variant="archive" posts=paginator.posts show_cta=true %}
+<!-- Breadcrumb Navigation -->
+{% include shared/block--breadcrumb.html %}
+
+<!-- Blog Header -->
+{% include reusable/node--blog/block--blog-header.html %}
+
+<!-- Blog Posts Grid -->
+{% include reusable/node--blog/block--blog-post.html posts=paginator.posts show_cta=true %}

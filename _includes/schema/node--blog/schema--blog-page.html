@@ -1,0 +1,55 @@
+{% comment %}
+============================================================================
+Schema: Blog Page (schema--blog-page.html)
+============================================================================
+
+@file        schema--blog-page.html
+@path        _includes/schema/node--blog/schema--blog-page.html
+@type        Schema (CollectionPage)
+@description Schema markup for blog archive/listing page
+@author      arisciwek
+@created     2025-12-04
+
+Schema Types:
+-------------
+- CollectionPage: A page that represents a collection of items
+
+Block Reference:
+----------------
+- block--blog-header.html (header section)
+
+Usage:
+------
+{% include schema/node--blog/schema--blog-page.html %}
+
+Reference:
+----------
+https://schema.org/CollectionPage
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "{{ page.url | absolute_url }}#collectionpage",
+  "url": "{{ page.url | absolute_url }}",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "inLanguage": "id",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#website"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Artikel K3 dan Riksa Uji",
+    "description": "Kumpulan artikel tentang keselamatan kerja, riksa uji, dan peraturan K3 di Indonesia"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+  }
+}
+</script>

@@ -1,0 +1,55 @@
+{% comment %}
+============================================================================
+Block: Blog Header (block--blog-header.html)
+============================================================================
+
+@file        block--blog-header.html
+@path        _includes/reusable/node--blog/block--blog-header.html
+@type        Block (section header)
+@description Header section for blog archive page
+@author      arisciwek
+@created     2025-12-04
+
+Features:
+---------
+- Page title with icon
+- Subtitle/description text
+- Centered layout
+
+Parameters:
+-----------
+- title: Custom title (default: "Artikel & Berita Terbaru")
+- description: Custom description text
+- icon: Bootstrap icon class (default: "bi-journal-text")
+
+Usage:
+------
+{% include reusable/node--blog/block--blog-header.html %}
+{% include reusable/node--blog/block--blog-header.html title="Blog K3" %}
+
+Schema:
+-------
+No schema needed (semantic HTML only)
+
+============================================================================
+{% endcomment %}
+
+{% assign header_title = include.title | default: "Artikel & Berita Terbaru" %}
+{% assign header_desc = include.description | default: "Informasi terkini seputar K3, peraturan, dan tips keselamatan kerja" %}
+{% assign header_icon = include.icon | default: "bi-journal-text" %}
+
+<section class="block--blog-header py-5 bg-light" id="block--blog-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="h1 fw-bold mb-3">
+          <i class="{{ header_icon }} text-primary me-2"></i>
+          {{ header_title }}
+        </h1>
+        <p class="lead text-muted">
+          {{ header_desc }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

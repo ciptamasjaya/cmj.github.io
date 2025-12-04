@@ -1,0 +1,113 @@
+---
+layout: compress
+---
+{%- comment -%}
+============================================================================
+Page Wrapper: Blog (page--blog.html)
+============================================================================
+
+@file        page--blog.html
+@path        _layouts/page/page--blog.html
+@type        Page (wrapper - variant)
+@variant     blog (blog archive page)
+@description Blog page wrapper with schema support for each block
+@author      arisciwek
+
+Drupal-style naming: page--blog.html (variant of page.html)
+
+This is the blog page wrapper, created to support block-specific schemas
+and special layout customization for the blog archive/listing page.
+
+Related templates:
+- page.html (base page wrapper)
+- page--front.html (homepage variant)
+- page--about.html (about page variant)
+- page--contact.html (contact page variant)
+
+Used by:
+- /blog.html (blog archive page only)
+
+Block Components:
+- shared/block--breadcrumb.html              -> schema--breadcrumb.html
+- node--blog/block--blog-header.html         -> (semantic HTML)
+- node--blog/block--blog-post.html           -> schema--blog-post.html
+
+Schema Architecture:
+- schema--page.html                -> WebPage + Organization + Navigation
+- schema--breadcrumb.html          -> BreadcrumbList
+- schema--blog-page.html           -> CollectionPage
+- schema--blog-post.html           -> ItemList (BlogPosting)
+
+Usage:
+Set in /blog.html frontmatter:
+  ---
+  layout: page/page--blog
+  title: Blog & Artikel
+  ---
+
+Hierarchy:
+page--blog.html (this file - blog page wrapper)
+└── {{ content }} renders blog.html content directly
+    ├── shared/block--breadcrumb.html (breadcrumb navigation)
+    ├── node--blog/block--blog-header.html (page title + description)
+    └── node--blog/block--blog-post.html (posts grid + CTA)
+
+============================================================================
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body class="blog-page">
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
+
+  <!-- Page-specific scripts -->
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="{{ js_file | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       SCHEMA SECTION
+       ============================================================ -->
+
+  <!-- Base Schema: WebPage + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Organization Schema (LocalBusiness) -->
+  {% include schema/shared/schema--local-business.html %}
+
+  <!-- Global Schema (if defined in frontmatter) -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       BLOCK-SPECIFIC SCHEMAS (order follows block sequence)
+       ============================================================ -->
+
+  <!-- Breadcrumb Schema -->
+  {% include schema/shared/schema--breadcrumb.html %}
+
+  <!-- Blog Page Schema (CollectionPage) -->
+  {% include schema/node--blog/schema--blog-page.html %}
+
+  <!-- Blog Posts Schema (ItemList of BlogPosting) -->
+  {% include schema/node--blog/schema--blog-post.html %}
+
+</body>
+</html>

@@ -1,39 +1,54 @@
 {% comment %}
 ============================================================================
-Schema: Blog Preview (Latest Posts)
+Schema: Blog Posts (ItemList + BlogPosting)
 ============================================================================
 
-@file        schema--blog-preview.html
-@path        _includes/schema/node--front/schema--blog-preview.html
+@file        schema--blog-post.html
+@path        _includes/schema/node--blog/schema--blog-post.html
 @type        Schema (ItemList + BlogPosting)
-@description Schema for latest blog posts preview on homepage
+@description Schema for blog posts listing on blog archive page
 @author      arisciwek
+@created     2025-12-04
 
 Data Source:
 ------------
-Uses site.posts sorted by lastmod
+Uses paginator.posts or site.posts sorted by lastmod
 
 Schema Output:
 --------------
-- ItemList with 3 latest BlogPosting items
+- ItemList with full BlogPosting items (for Rich Results)
+
+Block Reference:
+----------------
+- block--blog-post.html (posts grid)
 
 Usage:
 ------
-Include in page--front.html layout via custom_schema
+{% include schema/node--blog/schema--blog-post.html %}
+
+Reference:
+----------
+https://schema.org/ItemList
+https://schema.org/BlogPosting
 
 ============================================================================
 {% endcomment %}
 
-{% assign blog_posts = site.posts | sort: "lastmod" | reverse | slice: 0, 3 %}
+{% comment %} Determine posts source {% endcomment %}
+{% if paginator.posts %}
+  {% assign blog_posts = paginator.posts | sort: "lastmod" | reverse %}
+{% else %}
+  {% assign blog_posts = site.posts | sort: "lastmod" | reverse %}
+{% endif %}
 
 {% if blog_posts.size > 0 %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "@id": "{{ site.url }}{{ site.baseurl }}/#blog-preview",
-  "name": "Artikel & Berita Terbaru",
-  "description": "Informasi terkini seputar K3, peraturan, dan tips keselamatan kerja dari {{ site.business.name }}",
+  "@id": "{{ page.url | absolute_url }}#blogposts",
+  "name": "Daftar Artikel K3",
+  "description": "Kumpulan artikel terbaru seputar K3, riksa uji, dan keselamatan kerja dari {{ site.business.name }}",
   "numberOfItems": {{ blog_posts.size }},
   "itemListElement": [
     {% for post in blog_posts %}
