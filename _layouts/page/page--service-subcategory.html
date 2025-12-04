@@ -3,18 +3,18 @@ layout: compress
 ---
 {%- comment -%}
 ============================================================================
-Page Wrapper: Subcategory Pages (page--subcategory.html)
+Page Wrapper: Service Subcategory Pages (page--service-subcategory.html)
 ============================================================================
 
-@file        page--subcategory.html
-@path        _layouts/page--subcategory.html
+@file        page--service-subcategory.html
+@path        _layouts/page/page--service-subcategory.html
 @type        Page (wrapper - variant)
-@variant     subcategory (service subcategory listing)
+@variant     service-subcategory (service subcategory listing)
 @description Subcategory page wrapper for service subcategory listing pages
 @author      arisciwek
 @date        2025-11-24
 
-Drupal-style naming: page--subcategory.html (variant of page.html)
+Drupal-style naming: page--service-subcategory.html (variant of page.html)
 
 This wrapper is specifically for subcategory listing pages that display
 multiple service types within a subcategory.
@@ -46,7 +46,7 @@ Site Structure:
 Usage:
 Set in subcategory page frontmatter:
   ---
-  layout: page--subcategory
+  layout: page/page--service-subcategory
   is_subcategory_page: true
   category: "Riksa Uji Pesawat Angkat Angkut"
   sub_category: "Riksa Uji Forklift"

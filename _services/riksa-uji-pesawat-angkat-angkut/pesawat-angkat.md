@@ -1,5 +1,5 @@
 ---
-layout: page/page--subcategory
+layout: page/page--service-subcategory
 title: Pesawat Angkat
 description: Jasa riksa tes dan pemeriksaan K3 pesawat angkat profesional meliputi
   crane, hoist, gondola, manlift, scissor lift, dan peralatan pengangkat vertikal

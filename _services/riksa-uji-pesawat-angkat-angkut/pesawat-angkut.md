@@ -1,5 +1,5 @@
 ---
-layout: page/page--subcategory
+layout: page/page--service-subcategory
 title: Pesawat Angkut
 description: Jasa riksa pengujian serta pengecekan K3 pesawat angkut profesional termasuk
   forklift, excavator, wheel loader, bulldozer, reach stacker, serta conveyor. Sertifikat

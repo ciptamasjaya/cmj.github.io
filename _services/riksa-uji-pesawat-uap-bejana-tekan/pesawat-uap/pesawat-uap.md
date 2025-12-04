@@ -1,5 +1,5 @@
 ---
-layout: page/page--subcategory
+layout: page/page--service-subcategory
 title: Pesawat Uap
 description: Jasa riksa uji serta pengecekan K3 pesawat uap profesional meliputi boiler
   pipa api, boiler pipa air, steam generator, serta thermal oil heater. Sertifikat

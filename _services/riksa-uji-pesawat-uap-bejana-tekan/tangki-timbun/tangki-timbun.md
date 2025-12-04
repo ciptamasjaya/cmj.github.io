@@ -1,5 +1,5 @@
 ---
-layout: page/page--subcategory
+layout: page/page--service-subcategory
 title: Tangki Timbun
 description: Jasa riksa tes serta inspeksi K3 tangki timbun profesional termasuk storage
   tank, LPG tank, fuel tank, serta tangki penyimpanan bahan cair atau gas bertekanan.

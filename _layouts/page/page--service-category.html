@@ -3,18 +3,18 @@ layout: compress
 ---
 {%- comment -%}
 ============================================================================
-Page Wrapper: Category Pages (page--category.html)
+Page Wrapper: Service Category Pages (page--service-category.html)
 ============================================================================
 
-@file        page--category.html
-@path        _layouts/page--category.html
+@file        page--service-category.html
+@path        _layouts/page/page--service-category.html
 @type        Page (wrapper - variant)
-@variant     category (service category listing)
+@variant     service-category (service category listing)
 @description Category page wrapper for service category listing pages
 @author      arisciwek
 @date        2025-11-24
 
-Drupal-style naming: page--category.html (variant of page.html)
+Drupal-style naming: page--service-category.html (variant of page.html)
 
 This wrapper is specifically for category listing pages that display
 multiple subcategories or services within a main category.
@@ -38,7 +38,7 @@ Site Structure:
 Usage:
 Set in category page frontmatter:
   ---
-  layout: page--category
+  layout: page/page--service-category
   is_category_page: true
   category: "Riksa Uji Pesawat Angkat Angkut"
   ---

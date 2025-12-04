@@ -1,5 +1,5 @@
 ---
-layout: page/page--subcategory
+layout: page/page--service-subcategory
 title: Bejana Tekan
 description: Jasa riksa pengujian dan pemeriksaan K3 bejana tekan profesional meliputi
   air receiver, pressure vessel, heat exchanger, autoclave, dan separator. Sertifikat

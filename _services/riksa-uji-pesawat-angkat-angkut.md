@@ -1,5 +1,5 @@
 ---
-layout: page/page--category
+layout: page/page--service-category
 title: Riksa Uji Pesawat Angkat Angkut
 description: Jasa riksa pengujian dan inspeksi K3 pesawat angkat angkut profesional
   termasuk forklift, crane, hoist, dan conveyor sesuai standar Kementerian Ketenagakerjaan
