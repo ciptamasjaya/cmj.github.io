@@ -4,7 +4,7 @@ Block: Certifications (Sertifikasi PJK3)
 ============================================================================
 
 @file        block--certifications.html
-@path        _includes/reusable/block--certifications.html
+@path        _includes/shared/block--certifications.html
 @type        Block (reusable)
 @description Displays PJK3 company and expert certifications
 @author      arisciwek
@@ -24,11 +24,11 @@ Data Source:
 Usage:
 ------
 Full mode (About page - show all categories):
-{% include reusable/block--certifications.html %}
-{% include reusable/block--certifications.html mode="full" %}
+{% include shared/block--certifications.html %}
+{% include shared/block--certifications.html mode="full" %}
 
 Single mode (Service page - show by category):
-{% include reusable/block--certifications.html mode="single" category="pesawat-angkat" %}
+{% include shared/block--certifications.html mode="single" category="pesawat-angkat" %}
 
 Parameters:
 - mode: "full" (default) or "single"

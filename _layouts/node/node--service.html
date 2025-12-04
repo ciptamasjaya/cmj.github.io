@@ -61,7 +61,7 @@ by page--service.html wrapper, NOT in this node template.
 {% endif %}
 
 <!-- Breadcrumb Navigation -->
-{% include reusable/block--breadcrumb.html %}
+{% include shared/block--breadcrumb.html %}
 
 <!-- Service Detail Block -->
 {% include reusable/services/block--service-detail.html %}
@@ -108,7 +108,7 @@ by page--service.html wrapper, NOT in this node template.
 
 <!-- Certifications Section: PJK3 (Single mode - by category) -->
 {% if site.data.certifications.certifications.size > 0 and page.certification_category %}
-{% include reusable/block--certifications.html mode="single" category=page.certification_category %}
+{% include shared/block--certifications.html mode="single" category=page.certification_category %}
 {% endif %}
 
 <!-- Service Area Section -->
