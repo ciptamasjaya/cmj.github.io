@@ -204,11 +204,21 @@ Responsive Behavior:
             <!-- Rating Column -->
             {% if show_rating %}
             <td>
-              {% if service.rating %}
+              {% comment %} Get rating from rating file (single source of truth) {% endcomment %}
+              {% if service.rating_id %}
+                {% capture rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
+                {% include {{ rating_file }} %}
+                {% assign service_rating = rating_average %}
+                {% assign service_review_count = rating_count %}
+              {% else %}
+                {% assign service_rating = nil %}
+                {% assign service_review_count = 0 %}
+              {% endif %}
+              {% if service_rating %}
                 <div class="d-flex align-items-center gap-1">
                   <div class="text-warning small">
-                    {% assign full_stars = service.rating | floor %}
-                    {% assign decimal = service.rating | minus: full_stars %}
+                    {% assign full_stars = service_rating | floor %}
+                    {% assign decimal = service_rating | minus: full_stars %}
                     {% for i in (1..5) %}
                       {% if i <= full_stars %}
                         <i class="bi bi-star-fill"></i>
@@ -219,10 +229,10 @@ Responsive Behavior:
                       {% endif %}
                     {% endfor %}
                   </div>
-                  <span class="small fw-bold">{{ service.rating }}</span>
+                  <span class="small fw-bold">{{ service_rating }}</span>
                 </div>
-                {% if service.review_count %}
-                  <span class="text-muted small">({{ service.review_count }})</span>
+                {% if service_review_count > 0 %}
+                  <span class="text-muted small">({{ service_review_count }})</span>
                 {% endif %}
               {% else %}
                 <span class="text-muted small">-</span>
@@ -295,11 +305,13 @@ Responsive Behavior:
               {% endif %}
 
               <!-- Rating -->
-              {% if show_rating and service.rating %}
+              {% if show_rating and service.rating_id %}
+              {% capture mobile_rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
+              {% include {{ mobile_rating_file }} %}
               <div class="mb-2">
                 <div class="d-flex align-items-center gap-2">
                   <div class="text-warning small">
-                    {% assign full_stars = service.rating | floor %}
+                    {% assign full_stars = rating_average | floor %}
                     {% for i in (1..5) %}
                       {% if i <= full_stars %}
                         <i class="bi bi-star-fill"></i>
@@ -308,9 +320,9 @@ Responsive Behavior:
                       {% endif %}
                     {% endfor %}
                   </div>
-                  <span class="small">{{ service.rating }}</span>
-                  {% if service.review_count %}
-                    <span class="text-muted small">({{ service.review_count }})</span>
+                  <span class="small">{{ rating_average }}</span>
+                  {% if rating_count > 0 %}
+                    <span class="text-muted small">({{ rating_count }})</span>
                   {% endif %}
                 </div>
               </div>
