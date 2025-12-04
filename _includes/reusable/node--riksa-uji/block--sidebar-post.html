@@ -34,7 +34,7 @@ Usage:
     <ul class="list-unstyled mb-0">
       {% for category in page.categories %}
       <li class="mb-2">
-        <a href="{{ '/kategori/' | append: category | slugify | relative_url }}" class="text-decoration-none text-muted d-flex align-items-center">
+        <a href="{{ category | slugify | prepend: '/category/' | append: '/' | relative_url }}" class="text-decoration-none text-muted d-flex align-items-center">
           <i class="bi bi-chevron-right me-2 small"></i>
           {{ category }}
         </a>
