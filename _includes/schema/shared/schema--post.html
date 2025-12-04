@@ -4,7 +4,7 @@ Schema: Blog Post Page (schema--post.html)
 ============================================================================
 
 @file        schema--post.html
-@path        _includes/schema/schema--post.html
+@path        _includes/schema/shared/schema--post.html
 @type        Schema (blog post - can be used in list or detail)
 @description Schema.org markup for blog post/article pages
 @author      arisciwek
@@ -21,10 +21,10 @@ Parameters:
 - post: Post object (optional, defaults to page)
 
 Usage in list (blog.html):
-{% include schema/schema--post.html post=post %}
+{% include schema/shared/schema--post.html post=post %}
 
 Usage in detail page:
-{% include schema/schema--post.html %}
+{% include schema/shared/schema--post.html %}
 
 ============================================================================
 {% endcomment %}

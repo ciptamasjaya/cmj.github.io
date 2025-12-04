@@ -4,7 +4,7 @@ Schema: Service List with @graph
 ============================================================================
 
 @file        schema--service-list.html
-@path        _includes/schema/schema--service-list.html
+@path        _includes/schema/shared/schema--service-list.html
 @type        Schema (multiple services in @graph)
 @description Generate Schema.org markup for multiple services in a list
 @author      ciptamasjaya
@@ -18,11 +18,11 @@ Usage:
 ------
 Pass array of services to render their schemas:
 
-{% include schema/schema--service-list.html services=sorted_services %}
+{% include schema/shared/schema--service-list.html services=sorted_services %}
 
 Or with limit:
 {% assign limited_services = sorted_services | slice: 0, 3 %}
-{% include schema/schema--service-list.html services=limited_services %}
+{% include schema/shared/schema--service-list.html services=limited_services %}
 
 Schema Structure:
 -----------------

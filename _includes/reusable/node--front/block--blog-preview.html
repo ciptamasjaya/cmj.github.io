@@ -92,7 +92,7 @@ Archive page:
         {% when 'node/node--riksa-uji' %}
           {% include schema/schema--riksa-uji.html post=post mode="list" %}
         {% else %}
-          {% include schema/schema--post.html post=post %}
+          {% include schema/shared/schema--post.html post=post %}
       {% endcase %}
       {% endif %}
       {% endfor %}

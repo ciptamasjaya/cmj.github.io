@@ -120,9 +120,9 @@ category: "Riksa Uji Pesawat Angkat Angkut"
       {% if post.layout == 'node--riksa-uji' %}
         {% include schema/schema--riksa-uji.html post=post mode="list" %}
       {% elsif post.layout == 'node--article' %}
-        {% include schema/schema--article.html post=post mode="list" %}
+        {% include schema/shared/schema--article.html post=post mode="list" %}
       {% else %}
-        {% include schema/schema--post.html post=post %}
+        {% include schema/shared/schema--post.html post=post %}
       {% endif %}
       {% endfor %}
     </div>

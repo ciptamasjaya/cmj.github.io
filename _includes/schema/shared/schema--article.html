@@ -4,7 +4,7 @@ Schema: Article (schema--article.html)
 ============================================================================
 
 @file        schema--article.html
-@path        _includes/schema/schema--article.html
+@path        _includes/schema/shared/schema--article.html
 @type        Schema (article - can be used in list or detail)
 @description Schema.org markup for formal/informative article pages
 @author      arisciwek
@@ -27,10 +27,10 @@ Difference from schema--post.html:
 - schema--article.html: Article (formal/informative content)
 
 Usage in list:
-{% include schema/schema--article.html post=post mode="list" %}
+{% include schema/shared/schema--article.html post=post mode="list" %}
 
 Usage in detail page:
-{% include schema/schema--article.html %}
+{% include schema/shared/schema--article.html %}
 
 ============================================================================
 {% endcomment %}

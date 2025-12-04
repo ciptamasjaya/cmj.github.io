@@ -340,7 +340,7 @@ Responsive Behavior:
 
 {% comment %} Schema.org markup for services displayed in this block (limited to first page) {% endcomment %}
 {% assign schema_services = display_services | slice: 0, schema_limit %}
-{% include schema/schema--service-list.html services=schema_services %}
+{% include schema/shared/schema--service-list.html services=schema_services %}
 
 {% endif %}
 

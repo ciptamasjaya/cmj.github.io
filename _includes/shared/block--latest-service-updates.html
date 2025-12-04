@@ -125,6 +125,6 @@ SEO Benefits:
 
 {% comment %} Schema.org markup for services displayed in this block {% endcomment %}
 {% assign displayed_services = sorted_services | slice: 0, limit %}
-{% include schema/schema--latest-service-updates.html services=displayed_services %}
+{% include schema/shared/schema--latest-service-updates.html services=displayed_services %}
 
 {% endif %}
