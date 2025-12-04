@@ -75,6 +75,7 @@ Included via rating_id from frontmatter: rating_id: "hyster-h50ft"
 {% assign review_4_featured = false %}
 
 {% comment %} === JSON OUTPUT (for JavaScript) === {% endcomment %}
+{% unless include.data_only %}
 <script id="rating-data" type="application/json">
 {
   "slug": "hyster-h50ft",
@@ -143,3 +144,4 @@ Included via rating_id from frontmatter: rating_id: "hyster-h50ft"
   ]
 }
 </script>
+{% endunless %}

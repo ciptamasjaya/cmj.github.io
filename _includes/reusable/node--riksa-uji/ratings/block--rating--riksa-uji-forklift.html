@@ -75,6 +75,7 @@ Included via rating_id from frontmatter
 {% assign review_4_featured = false %}
 
 {% comment %} === JSON OUTPUT (for JavaScript) === {% endcomment %}
+{% unless include.data_only %}
 <script id="rating-data" type="application/json">
 {
   "slug": "jasa-riksa-uji-forklift",
@@ -143,3 +144,4 @@ Included via rating_id from frontmatter
   ]
 }
 </script>
+{% endunless %}

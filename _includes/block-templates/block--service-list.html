@@ -207,7 +207,7 @@ Responsive Behavior:
               {% comment %} Get rating from rating file (single source of truth) {% endcomment %}
               {% if service.rating_id %}
                 {% capture rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
-                {% include {{ rating_file }} %}
+                {% include {{ rating_file }} data_only=true %}
                 {% assign service_rating = rating_average %}
                 {% assign service_review_count = rating_count %}
               {% else %}
@@ -307,7 +307,7 @@ Responsive Behavior:
               <!-- Rating -->
               {% if show_rating and service.rating_id %}
               {% capture mobile_rating_file %}reusable/services/ratings/block--rating--{{ service.rating_id }}.html{% endcapture %}
-              {% include {{ mobile_rating_file }} %}
+              {% include {{ mobile_rating_file }} data_only=true %}
               <div class="mb-2">
                 <div class="d-flex align-items-center gap-2">
                   <div class="text-warning small">

@@ -75,6 +75,7 @@ Included via rating_id from frontmatter: rating_id: "pjk3-terdekat"
 {% assign review_4_featured = false %}
 
 {% comment %} === JSON OUTPUT (for JavaScript) === {% endcomment %}
+{% unless include.data_only %}
 <script id="rating-data" type="application/json">
 {
   "slug": "pjk3-terdekat",
@@ -143,3 +144,4 @@ Included via rating_id from frontmatter: rating_id: "pjk3-terdekat"
   ]
 }
 </script>
+{% endunless %}

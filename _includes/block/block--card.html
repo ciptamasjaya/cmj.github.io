@@ -49,7 +49,7 @@ Usage:
       {% assign rating_file = nil %}
   {% endcase %}
   {% if rating_file %}
-    {% include {{ rating_file }} %}
+    {% include {{ rating_file }} data_only=true %}
     {% assign rating = rating_average %}
   {% else %}
     {% assign rating = 5 %}
