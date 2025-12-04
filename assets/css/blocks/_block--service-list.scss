@@ -1,0 +1,138 @@
+/**
+ * Block: Service List Styles
+ *
+ * @file     _block--service-list.scss
+ * @path     assets/css/blocks/_block--service-list.scss
+ * @description Styles for service list table and category badges
+ */
+
+/* ==========================================================================
+   Category Badges - Base & Default
+   ========================================================================== */
+
+.badge-category,
+.badge-subcategory {
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0.35em 0.65em;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+/* Default colors (lowest priority) */
+.badge-category {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.badge-subcategory {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Category Colors (higher specificity with double class)
+   ========================================================================== */
+
+/* Riksa Uji Pesawat Angkat Angkut - Orange */
+.badge-category.badge-category--riksa-uji-pesawat-angkat-angkut {
+  background-color: #e65100;
+  color: #fff;
+}
+
+/* Riksa Uji Pesawat Uap Bejana Tekan - Teal */
+.badge-category.badge-category--riksa-uji-pesawat-uap-bejana-tekan {
+  background-color: #00838f;
+  color: #fff;
+}
+
+/* Riksa Uji Instalasi Listrik - Yellow */
+.badge-category.badge-category--riksa-uji-instalasi-listrik {
+  background-color: #f9a825;
+  color: #212529;
+}
+
+/* Riksa Uji Proteksi Kebakaran - Red */
+.badge-category.badge-category--riksa-uji-proteksi-kebakaran {
+  background-color: #c62828;
+  color: #fff;
+}
+
+/* Riksa Uji Elevator - Purple */
+.badge-category.badge-category--riksa-uji-elevator {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Subcategory Colors (higher specificity with double class)
+   ========================================================================== */
+
+/* Pesawat Angkat - Light Orange */
+.badge-subcategory.badge-subcategory--pesawat-angkat {
+  background-color: #ff7043;
+  color: #fff;
+}
+
+/* Pesawat Angkut - Salmon */
+.badge-subcategory.badge-subcategory--pesawat-angkut {
+  background-color: #ff8a65;
+  color: #fff;
+}
+
+/* Bejana Tekan - Teal */
+.badge-subcategory.badge-subcategory--bejana-tekan {
+  background-color: #26a69a;
+  color: #fff;
+}
+
+/* Pesawat Uap - Light Teal */
+.badge-subcategory.badge-subcategory--pesawat-uap {
+  background-color: #4db6ac;
+  color: #fff;
+}
+
+/* Tangki Timbun - Mint */
+.badge-subcategory.badge-subcategory--tangki-timbun {
+  background-color: #80cbc4;
+  color: #212529;
+}
+
+/* Riksa Uji specific subcategories */
+.badge-subcategory.badge-subcategory--riksa-uji-boiler {
+  background-color: #4db6ac;
+  color: #fff;
+}
+
+.badge-subcategory.badge-subcategory--riksa-uji-overhead-crane {
+  background-color: #ff7043;
+  color: #fff;
+}
+
+.badge-subcategory.badge-subcategory--riksa-uji-gantry-crane {
+  background-color: #ff7043;
+  color: #fff;
+}
+
+.badge-subcategory.badge-subcategory--riksa-uji-forklift {
+  background-color: #ff8a65;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Section Header
+   ========================================================================== */
+
+.block--service-list .h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+}
+
+.block--service-list .h3 i {
+  color: #0d6efd;
+  margin-right: 0.5rem;
+}

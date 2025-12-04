@@ -191,10 +191,12 @@ Responsive Behavior:
             {% if show_category %}
             <td>
               {% if service.category %}
-                <span class="badge bg-secondary small d-block mb-1">{{ service.category }}</span>
+                {% assign cat_slug = service.category | slugify %}
+                <span class="badge badge-category badge-category--{{ cat_slug }} small d-block mb-1">{{ service.category }}</span>
               {% endif %}
               {% if service.sub_category %}
-                <span class="badge bg-primary small d-block">{{ service.sub_category }}</span>
+                {% assign subcat_slug = service.sub_category | slugify %}
+                <span class="badge badge-subcategory badge-subcategory--{{ subcat_slug }} small d-block">{{ service.sub_category }}</span>
               {% endif %}
             </td>
             {% endif %}
