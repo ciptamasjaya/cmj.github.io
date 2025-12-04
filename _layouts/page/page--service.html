@@ -101,7 +101,7 @@ Architecture Principle:
   {% endunless %}
 
   <!-- LocalBusiness Schema (ProfessionalService) -->
-  {% include schema/schema--local-business.html %}
+  {% include schema/shared/schema--local-business.html %}
 
   <!-- Certifications Schema (PJK3 Company + Expert Credentials) -->
   {% include schema/shared/schema--certifications.html %}
@@ -161,7 +161,7 @@ Architecture Principle:
 
   <!-- Breadcrumb Schema (BreadcrumbList) -->
   {% if page.show_breadcrumb_schema %}
-    {% include schema/schema--breadcrumb.html current_title=page.title %}
+    {% include schema/shared/schema--breadcrumb.html current_title=page.title %}
   {% endif %}
 </body>
 </html>

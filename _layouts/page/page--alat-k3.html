@@ -117,7 +117,7 @@ Schemas included:
 
   {% comment %} Breadcrumb Schema {% endcomment %}
   {% unless page.show_breadcrumb_schema == false %}
-    {% include schema/schema--breadcrumb.html current_title=page.title %}
+    {% include schema/shared/schema--breadcrumb.html current_title=page.title %}
   {% endunless %}
 
   {% comment %} ============================================================

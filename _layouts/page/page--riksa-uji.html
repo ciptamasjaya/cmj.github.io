@@ -159,7 +159,7 @@ Page Wrapper: Riksa Uji Article Pages (page--riksa-uji.html)
 
   <!-- Breadcrumb Schema (default: aktif, set show_breadcrumb_schema: false to disable) -->
   {% unless page.show_breadcrumb_schema == false %}
-    {% include schema/schema--breadcrumb.html current_title=page.title %}
+    {% include schema/shared/schema--breadcrumb.html current_title=page.title %}
   {% endunless %}
 
   <!-- Gallery Slider JS -->
