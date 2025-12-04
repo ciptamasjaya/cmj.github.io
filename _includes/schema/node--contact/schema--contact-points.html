@@ -1,0 +1,90 @@
+{% comment %}
+============================================================================
+Schema: Contact Points (schema--contact-points.html)
+============================================================================
+
+@file        schema--contact-points.html
+@path        _includes/schema/node--contact/schema--contact-points.html
+@type        Schema (ContactPoint)
+@description Schema markup for contact methods (WhatsApp, Phone, Email)
+@author      arisciwek
+@created     2025-12-04
+
+Schema Types:
+-------------
+- Organization with multiple ContactPoint entries
+
+Usage:
+------
+{% include schema/node--contact/schema--contact-points.html %}
+
+Reference:
+----------
+https://schema.org/ContactPoint
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ site.url }}{{ site.baseurl }}/#organization-contact",
+  "name": "{{ site.business.name }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "{{ site.business.phone }}",
+      "email": "{{ site.business.email }}",
+      "availableLanguage": ["Indonesian", "English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Indonesia"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+62-856-8258-841",
+      "url": "https://wa.me/{{ site.business.whatsapp }}",
+      "availableLanguage": ["Indonesian", "English"],
+      "hoursAvailable": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Indonesia"
+      }
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "technical support",
+      "email": "{{ site.business.email }}",
+      "availableLanguage": ["Indonesian"],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Indonesia"
+      }
+    }
+  ]
+}
+</script>

@@ -1,0 +1,115 @@
+---
+layout: compress
+---
+{%- comment -%}
+============================================================================
+Page Wrapper: Contact (page--contact.html)
+============================================================================
+
+@file        page--contact.html
+@path        _layouts/page/page--contact.html
+@type        Page (wrapper - variant)
+@variant     contact (contact us page)
+@description Contact page wrapper with schema support for each block
+@author      arisciwek
+
+Drupal-style naming: page--contact.html (variant of page.html)
+
+This is the contact page wrapper, created to support block-specific schemas
+and special layout customization for the contact/inquiry page.
+
+Related templates:
+- page.html (base page wrapper)
+- page--front.html (homepage variant)
+- page--about.html (about page variant)
+- page--layanan.html (service catalog variant)
+
+Used by:
+- /contact.html (contact page only)
+
+Block Components:
+- block--breadcrumb.html           -> schema--breadcrumb.html
+- block--contact-cards.html        -> schema--contact-points.html
+- block--quick-contact-form.html   -> (semantic HTML)
+- block--business-info.html        -> (in schema--page.html Organization)
+- block--faq-contact.html          -> schema--faq-contact.html (Rich Result!)
+
+Schema Architecture:
+- schema--page.html                -> WebPage + Organization + Navigation
+- schema--breadcrumb.html          -> BreadcrumbList
+- schema--contact-page.html        -> ContactPage
+- schema--contact-points.html      -> Organization + ContactPoint
+- schema--faq-contact.html         -> FAQPage (Rich Result!)
+
+Usage:
+Set in /contact.html frontmatter:
+  ---
+  layout: page/page--contact
+  title: Hubungi Kami
+  ---
+
+Hierarchy:
+page--contact.html (this file - contact page wrapper)
+└── {{ content }} renders contact.html content directly
+    ├── Breadcrumb navigation
+    ├── Contact cards (WhatsApp, Phone, Email)
+    ├── Quick contact form
+    ├── Business information
+    └── FAQ section
+
+============================================================================
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body class="contact-page">
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
+
+  <!-- Page-specific scripts -->
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="{{ js_file | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       SCHEMA SECTION
+       ============================================================ -->
+
+  <!-- Base Schema: WebPage + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Global Schema (if defined in frontmatter) -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       BLOCK-SPECIFIC SCHEMAS (order follows block sequence)
+       ============================================================ -->
+
+  <!-- Contact Page Schema -->
+  {% include schema/node--contact/schema--contact-page.html %}
+
+  <!-- Contact Points Schema (WhatsApp, Phone, Email) -->
+  {% include schema/node--contact/schema--contact-points.html %}
+
+  <!-- FAQ Schema (Rich Result!) -->
+  {% include schema/node--contact/schema--faq-contact.html %}
+
+</body>
+</html>
