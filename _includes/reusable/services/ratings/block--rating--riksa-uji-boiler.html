@@ -58,6 +58,7 @@ Included via schema using service slug or rating_id
 {% assign review_2_featured = true %}
 
 {% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
+{% unless include.schema_only %}
 <script id="rating-data" type="application/json">
 {
   "slug": "riksa-uji-boiler",
@@ -102,3 +103,4 @@ Included via schema using service slug or rating_id
   ]
 }
 </script>
+{% endunless %}

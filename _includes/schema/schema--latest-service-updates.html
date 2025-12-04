@@ -1,28 +1,25 @@
 {% comment %}
 ============================================================================
-Schema: Service List with @graph
+Schema: Latest Service Updates
 ============================================================================
 
-@file        schema--service-list.html
-@path        _includes/schema/schema--service-list.html
+@file        schema--latest-service-updates.html
+@path        _includes/schema/schema--latest-service-updates.html
 @type        Schema (multiple services in @graph)
-@description Generate Schema.org markup for multiple services in a list
+@description Generate Schema.org markup for latest service updates block
 @author      ciptamasjaya
-@version     1.0.0
+@version     1.0.1
 @date        2025-11-24
+@updated     2025-12-04
 
 Generates structured data for multiple services using @graph array.
-Each service gets its own Service schema entry.
+Each service gets its own Product schema entry with aggregateRating.
 
 Usage:
 ------
-Pass array of services to render their schemas:
+Used by block--latest-service-updates.html:
 
-{% include schema/schema--service-list.html services=sorted_services %}
-
-Or with limit:
-{% assign limited_services = sorted_services | slice: 0, 3 %}
-{% include schema/schema--service-list.html services=limited_services %}
+{% include schema/schema--latest-service-updates.html services=displayed_services %}
 
 Schema Structure:
 -----------------
