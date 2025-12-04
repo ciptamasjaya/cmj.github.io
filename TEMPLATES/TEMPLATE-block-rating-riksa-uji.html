@@ -79,8 +79,8 @@ Included via rating_id from frontmatter
 {% assign review_4_featured = false %}
 
 {% comment %} === JSON OUTPUT (for JavaScript) === {% endcomment %}
-{% comment %} Skip JSON output when called with schema_only=true (for schema includes) {% endcomment %}
-{% unless include.schema_only %}
+{% comment %} Skip JSON output when called with data_only=true (for cards/lists) {% endcomment %}
+{% unless include.data_only %}
 <script id="rating-data" type="application/json">
 {
   "slug": "jasa-riksa-uji-[nama-alat]",
