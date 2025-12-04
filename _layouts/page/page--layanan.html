@@ -1,0 +1,136 @@
+---
+layout: compress
+---
+{%- comment -%}
+============================================================================
+Page Wrapper: Layanan (page--layanan.html)
+============================================================================
+
+@file        page--layanan.html
+@path        _layouts/page/page--layanan.html
+@type        Page (wrapper - variant)
+@variant     layanan (service catalog page)
+@description Service catalog wrapper with schema support for each block
+@author      arisciwek
+
+Drupal-style naming: page--layanan.html (variant of page.html)
+
+This is the layanan page wrapper, created to support block-specific schemas
+and special layout customization for the service catalog page.
+
+Related templates:
+- page.html (base page wrapper)
+- page--front.html (homepage variant)
+
+Used by:
+- /layanan.html (service catalog page only)
+
+Block Components:
+- block--breadcrumb.html        → schema--breadcrumb.html
+- block--service-intro.html     → (semantic HTML)
+- block--jasa-riksa-uji-intro.html → schema--definisi-k3.html
+- block--service-list.html      → schema--service-list.html
+- block--service-features.html  → schema--service-features.html
+- block--service-coverage.html  → schema--global.html (areaServed in Organization)
+- block--cta-contact.html       → (semantic HTML)
+- block--jenis-inspeksi-k3.html → schema--jenis-inspeksi.html
+- block--jasa-riksa-uji-gallery.html → schema--image-gallery.html
+- block--pjk3-terdekat.html     → (links to city pages)
+- block--pengesahan-gambar.html → schema--pengesahan-gambar.html
+
+Schema Architecture:
+- schema--page.html             → WebPage + Organization + Navigation
+- schema--breadcrumb.html       → BreadcrumbList
+- schema--service-catalog.html  → OfferCatalog (main catalog)
+- Block-specific schemas        → Individual rich results
+
+Usage:
+Set in /layanan.html frontmatter:
+  ---
+  layout: page/page--layanan
+  title: Jasa Riksa Uji K3
+  ---
+
+Hierarchy:
+page--layanan.html (this file - layanan page wrapper)
+└── {{ content }} renders layanan.html content directly
+    ├── Breadcrumb navigation
+    ├── Service intro section
+    ├── Service list (DataTable)
+    ├── Service features
+    ├── Coverage area
+    └── Related sections
+
+============================================================================
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body class="layanan-page">
+  {% include header.html %}
+
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
+
+  <!-- Page-specific scripts -->
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="{{ js_file | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       SCHEMA SECTION
+       ============================================================ -->
+
+  <!-- Base Schema: WebPage + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/schema--page.html %}
+  {% endunless %}
+
+  <!-- Global Schema (if defined) -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       BLOCK-SPECIFIC SCHEMAS
+       ============================================================ -->
+
+  <!-- Service Features Schema (ItemList + HowTo) -->
+  {% if site.data.service_features %}
+    {% include schema/node--layanan/schema--service-features.html %}
+  {% endif %}
+
+  <!-- Definisi K3 Schema (DefinedTermSet) -->
+  {% include schema/node--layanan/schema--definisi-k3.html %}
+
+  <!-- Jenis Inspeksi K3 Schema (ItemList + DefinedTerm) -->
+  {% include schema/node--layanan/schema--jenis-inspeksi.html %}
+
+  <!-- Image Gallery Schema (ImageGallery) -->
+  {% include schema/node--layanan/schema--image-gallery.html %}
+
+  <!-- Pengesahan Gambar Schema (OfferCatalog) -->
+  {% include schema/node--layanan/schema--pengesahan-gambar.html %}
+
+  <!-- FAQ Schema (FAQPage) -->
+  {% if site.data.faq_layanan.faqs %}
+    {% include schema/reusable/schema--faq.html
+       faqs=site.data.faq_layanan.faqs
+       name=site.data.faq_layanan.header.title
+       description=site.data.faq_layanan.header.description
+       id_suffix="faq-layanan" %}
+  {% endif %}
+
+</body>
+</html>

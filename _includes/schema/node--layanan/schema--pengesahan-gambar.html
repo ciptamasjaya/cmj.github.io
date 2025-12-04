@@ -1,0 +1,166 @@
+{%- comment -%}
+============================================================================
+Schema: Pengesahan Gambar Rencana (Organization + OfferCatalog)
+============================================================================
+
+@file        schema--pengesahan-gambar.html
+@path        _includes/schema/node--layanan/schema--pengesahan-gambar.html
+@type        Schema (Organization with hasOfferCatalog)
+@description Schema.org markup for Pengesahan Gambar K3 services
+@author      arisciwek
+
+Schema Output:
+- Organization with hasOfferCatalog containing 6 Service Offers
+
+Note: Data matches block--pengesahan-gambar.html content
+      Pattern follows schema--service-categories.html
+
+============================================================================
+{%- endcomment -%}
+
+<!-- Pengesahan Gambar Schema (Organization + OfferCatalog) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ site.url }}/#organization",
+  "name": "{{ site.business.name }}",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "@id": "{{ site.url }}/layanan/#pengesahan-gambar-catalog",
+    "name": "Jasa Pengesahan Gambar K3 Kemnaker",
+    "description": "Layanan pengesahan gambar teknis peralatan K3 oleh Kementerian Ketenagakerjaan RI untuk memastikan desain memenuhi standar keselamatan kerja yang berlaku.",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pengesahan Gambar Pesawat Angkat Angkut",
+          "description": "Pengesahan gambar pesawat angkat angkut adalah proses persetujuan resmi terhadap rancangan alat angkat dan angkut agar sesuai dengan standar keselamatan kerja.",
+          "serviceType": "Pengesahan Gambar K3"
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pengesahan Gambar Pesawat Uap",
+          "description": "Pengesahan gambar pesawat uap / Boiler adalah proses verifikasi rancangan alat bertekanan agar memenuhi standar keselamatan kerja.",
+          "serviceType": "Pengesahan Gambar K3"
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pengesahan Gambar Pesawat Tenaga dan Produksi",
+          "description": "Pengesahan gambar pesawat tenaga dan produksi adalah proses penilaian rancangan alat produksi agar sesuai dengan standar keselamatan kerja.",
+          "serviceType": "Pengesahan Gambar K3"
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pengesahan Gambar Elevator",
+          "description": "Pengesahan gambar elevator / Lift adalah proses persetujuan rancangan teknis elevator agar sesuai dengan standar keselamatan kerja.",
+          "serviceType": "Pengesahan Gambar K3"
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pengesahan Gambar Bejana Tekan",
+          "description": "Pengesahan gambar bejana tekanan adalah proses persetujuan terhadap rancangan teknis bejana tekan oleh instansi berwenang agar memenuhi standar keselamatan kerja dan ketentuan peraturan yang berlaku.",
+          "serviceType": "Pengesahan Gambar K3"
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pengesahan Gambar Eskalator",
+          "description": "Pengesahan gambar eskalator / travelator adalah proses verifikasi desain eskalator untuk memastikan kesesuaiannya dengan ketentuan keselamatan kerja.",
+          "serviceType": "Pengesahan Gambar K3"
+        },
+        "seller": {
+          "@type": "Organization",
+          "@id": "{{ site.url }}/#organization"
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- Pengesahan Gambar ItemList (standalone) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ site.url }}/layanan/#pengesahan-gambar-list",
+  "name": "Daftar Layanan Pengesahan Gambar K3",
+  "description": "6 jenis layanan pengesahan gambar teknis peralatan K3 oleh Kemnaker RI",
+  "numberOfItems": 6,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Pengesahan Gambar Pesawat Angkat Angkut",
+      "description": "Proses persetujuan resmi terhadap rancangan alat angkat dan angkut agar sesuai dengan standar keselamatan kerja."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pengesahan Gambar Pesawat Uap",
+      "description": "Proses verifikasi rancangan alat bertekanan (Boiler) agar memenuhi standar keselamatan kerja."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pengesahan Gambar Pesawat Tenaga dan Produksi",
+      "description": "Proses penilaian rancangan alat produksi agar sesuai dengan standar keselamatan kerja."
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Pengesahan Gambar Elevator",
+      "description": "Proses persetujuan rancangan teknis elevator/lift agar sesuai dengan standar keselamatan kerja."
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Pengesahan Gambar Bejana Tekan",
+      "description": "Proses persetujuan terhadap rancangan teknis bejana tekan agar memenuhi standar keselamatan kerja."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Pengesahan Gambar Eskalator",
+      "description": "Proses verifikasi desain eskalator/travelator untuk memastikan kesesuaiannya dengan ketentuan keselamatan kerja."
+    }
+  ]
+}
+</script>

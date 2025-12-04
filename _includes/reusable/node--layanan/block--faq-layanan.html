@@ -1,0 +1,111 @@
+{% comment %}
+============================================================================
+FAQ Layanan Block
+============================================================================
+
+@file        _includes/reusable/block--faq-layanan.html
+@description Frequently Asked Questions untuk halaman layanan
+@version     1.0.0
+@date        2025-12-04
+@author      arisciwek (PT. Cipta Mas Jaya)
+
+Data Source:
+------------
+Data YAML berasal dari:
+- _data/faq_layanan.yml
+
+Features:
+---------
+- Data-driven FAQ dengan 8 items
+- Bootstrap accordion untuk FAQ
+- Dynamic CTA section
+- Responsive design
+
+Usage:
+------
+{% include reusable/block--faq-layanan.html %}
+
+============================================================================
+{% endcomment %}
+
+{% assign faq_data = site.data.faq_layanan %}
+
+{% if faq_data.faqs.size > 0 %}
+<section class="block--faq-layanan py-5 bg-light" id="faq">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h2 fw-bold mb-3">
+          <i class="bi {{ faq_data.header.icon }} {{ faq_data.header.icon_color }} me-2"></i>
+          {{ faq_data.header.title }}
+        </h2>
+        <p class="lead text-muted">
+          {{ faq_data.header.description }}
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="accordion" id="faqLayananAccordion">
+          {% for faq in faq_data.faqs %}
+          <div class="accordion-item border-0 shadow-sm{% unless forloop.last %} mb-3{% endunless %}">
+            <h3 class="accordion-header">
+              <button class="accordion-button{% unless faq.default_open %} collapsed{% endunless %} fw-semibold"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#{{ faq.id }}"
+                      {% if faq.default_open %}aria-expanded="true"{% endif %}>
+                <i class="bi {{ faq.icon }} {{ faq.icon_color }} me-2"></i>
+                <span>{{ faq.pertanyaan }}</span>
+              </button>
+            </h3>
+            <div id="{{ faq.id }}"
+                 class="accordion-collapse collapse{% if faq.default_open %} show{% endif %}"
+                 data-bs-parent="#faqLayananAccordion">
+              <div class="accordion-body">
+                {{ faq.jawaban }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Still Have Questions CTA -->
+        <div class="card border-0 shadow-sm mt-5 bg-primary text-white">
+          <div class="card-body p-4 text-center">
+            <h3 class="h5 fw-bold mb-3">
+              <i class="bi {{ faq_data.cta.icon }} me-2"></i>
+              {{ faq_data.cta.title }}
+            </h3>
+            <p class="mb-3 opacity-75">
+              {{ faq_data.cta.description }}
+            </p>
+            <div class="d-flex gap-2 justify-content-center flex-wrap">
+              {% for button in faq_data.cta.buttons %}
+                {% if button.type == 'whatsapp' %}
+                  <a href="https://wa.me/{{ site.business.whatsapp }}?text=Halo%20{{ site.business.name | url_encode }},%20saya%20punya%20pertanyaan%20tentang%20layanan%20riksa%20uji%20K3"
+                     class="{{ button.class }}"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    <i class="bi {{ button.icon }} me-2"></i>{{ button.text }}
+                  </a>
+                {% elsif button.type == 'phone' %}
+                  <a href="tel:{{ site.business.phone }}" class="{{ button.class }}">
+                    <i class="bi {{ button.icon }} me-2"></i>{{ button.text }}
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endif %}

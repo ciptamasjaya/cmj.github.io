@@ -132,15 +132,19 @@ Responsive Behavior:
     </div>
 
     <!-- DataTable View (Desktop/Tablet/Mobile) -->
+    {% assign schema_limit = include.schema_limit | default: 10 %}
     <div class="datatable-container">
-      <table id="service-list-table" class="table table-hover align-middle">
+      <table id="service-list-table" class="table table-hover align-middle"
+             data-per-page="{{ schema_limit }}"
+             data-sort-column="update"
+             data-sort-direction="desc">
         <thead class="table-light">
           <tr>
             {% if show_image %}<th style="width: 80px;">Icon</th>{% endif %}
             <th>Layanan</th>
             {% if show_category %}<th style="width: 200px;">Kategori</th>{% endif %}
             {% if show_rating %}<th style="width: 140px;">Rating</th>{% endif %}
-            {% if show_date %}<th style="width: 130px;">Update</th>{% endif %}
+            {% if show_date %}<th style="width: 130px;" data-column="update">Update</th>{% endif %}
             <th style="width: 100px;" class="text-center">Aksi</th>
           </tr>
         </thead>
@@ -332,8 +336,9 @@ Responsive Behavior:
   </div>
 </section>
 
-{% comment %} Schema.org markup for services displayed in this block {% endcomment %}
-{% include schema/schema--service-list.html services=display_services %}
+{% comment %} Schema.org markup for services displayed in this block (limited to first page) {% endcomment %}
+{% assign schema_services = display_services | slice: 0, schema_limit %}
+{% include schema/schema--service-list.html services=schema_services %}
 
 {% endif %}
 

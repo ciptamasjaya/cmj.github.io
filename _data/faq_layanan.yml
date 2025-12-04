@@ -1,0 +1,73 @@
+# FAQ Layanan Riksa Uji K3
+# Data untuk halaman /layanan/
+# Digunakan oleh block--faq-layanan.html dan schema--faq.html
+
+header:
+  title: "FAQ Jasa Riksa Uji K3"
+  description: "Pertanyaan yang sering diajukan seputar layanan riksa uji dan inspeksi K3"
+  icon: bi-question-circle
+  icon_color: text-primary
+
+faqs:
+  - id: faq-apa-riksa-uji
+    icon: bi-info-circle
+    icon_color: text-primary
+    pertanyaan: "Apa itu Jasa Riksa Uji K3?"
+    jawaban: "Jasa Riksa Uji K3 adalah layanan pemeriksaan dan pengujian menyeluruh terhadap peralatan industri untuk memastikan bahwa peralatan tersebut aman dan layak digunakan sesuai dengan standar keselamatan dan kesehatan kerja (K3). Layanan ini mencakup inspeksi visual, pengujian teknis, dan pengujian beban."
+    default_open: true
+
+  - id: faq-apa-pjk3
+    icon: bi-building-check
+    icon_color: text-success
+    pertanyaan: "Apa itu PJK3?"
+    jawaban: "PJK3 adalah Perusahaan Jasa Keselamatan dan Kesehatan Kerja yang ditunjuk oleh Kementerian Ketenagakerjaan RI untuk melakukan pemeriksaan dan pengujian peralatan kerja. PT. Cipta Mas Jaya adalah PJK3 resmi yang berlisensi sesuai Peraturan Menteri Tenaga Kerja Nomor 4 Tahun 1995."
+
+  - id: faq-peralatan
+    icon: bi-gear
+    icon_color: text-info
+    pertanyaan: "Peralatan apa saja yang bisa di-riksa uji?"
+    jawaban: "Kami melayani riksa uji untuk berbagai peralatan industri termasuk: Pesawat Angkat (crane, hoist, lift), Pesawat Angkut (forklift, conveyor), Bejana Tekan (pressure vessel, compressor), Pesawat Uap (boiler), Instalasi Listrik, Instalasi Penyalur Petir, dan peralatan K3 lainnya."
+
+  - id: faq-durasi
+    icon: bi-clock
+    icon_color: text-warning
+    pertanyaan: "Berapa lama proses riksa uji?"
+    jawaban: "Waktu proses riksa uji bervariasi tergantung jenis dan jumlah peralatan. Untuk satu unit peralatan standar, proses inspeksi di lapangan membutuhkan 1-2 hari. Penerbitan sertifikat resmi dari Kemnaker membutuhkan waktu 7-14 hari kerja setelah inspeksi."
+
+  - id: faq-sertifikat
+    icon: bi-patch-check
+    icon_color: text-success
+    pertanyaan: "Apakah sertifikat riksa uji berlaku nasional?"
+    jawaban: "Ya, sertifikat riksa uji yang diterbitkan oleh PJK3 resmi seperti PT. Cipta Mas Jaya berlaku secara nasional dan diakui oleh Kementerian Ketenagakerjaan RI serta instansi terkait di seluruh Indonesia."
+
+  - id: faq-biaya
+    icon: bi-cash-coin
+    icon_color: text-primary
+    pertanyaan: "Berapa biaya jasa riksa uji K3?"
+    jawaban: "Biaya riksa uji bervariasi tergantung jenis peralatan, kapasitas, dan lokasi. Kami menawarkan harga kompetitif dengan konsultasi gratis untuk estimasi biaya. Hubungi kami untuk mendapatkan penawaran harga yang sesuai kebutuhan Anda."
+
+  - id: faq-wilayah
+    icon: bi-geo-alt
+    icon_color: text-danger
+    pertanyaan: "Apakah bisa riksa uji di luar Jabodetabek?"
+    jawaban: "Ya, kami melayani riksa uji di seluruh Indonesia. Tim inspector kami siap datang ke lokasi Anda di berbagai provinsi termasuk Jawa, Sumatera, Kalimantan, Sulawesi, Bali, dan wilayah lainnya."
+
+  - id: faq-pemesanan
+    icon: bi-chat-dots
+    icon_color: text-info
+    pertanyaan: "Bagaimana cara memesan jasa riksa uji?"
+    jawaban: "Anda dapat menghubungi kami melalui WhatsApp, telepon, atau email. Tim kami akan membantu konsultasi kebutuhan, survei lokasi jika diperlukan, dan menjadwalkan inspeksi. Proses pemesanan mudah dan cepat dengan response time maksimal 24 jam."
+
+cta:
+  title: "Masih Ada Pertanyaan?"
+  description: "Tim kami siap membantu menjawab pertanyaan Anda seputar layanan riksa uji K3"
+  icon: bi-headset
+  buttons:
+    - type: whatsapp
+      text: "Chat WhatsApp"
+      icon: bi-whatsapp
+      class: btn btn-light btn-lg
+    - type: phone
+      text: "Telepon"
+      icon: bi-telephone
+      class: btn btn-outline-light btn-lg

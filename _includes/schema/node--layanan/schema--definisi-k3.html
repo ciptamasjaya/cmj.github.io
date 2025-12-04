@@ -1,0 +1,52 @@
+{%- comment -%}
+============================================================================
+Schema: Definisi K3 (DefinedTermSet)
+============================================================================
+
+@file        schema--definisi-k3.html
+@path        _includes/schema/node--layanan/schema--definisi-k3.html
+@type        Schema (DefinedTermSet)
+@description Schema.org markup for K3 terminology definitions
+@author      arisciwek
+
+Schema Output:
+- DefinedTermSet containing K3 industry terms
+- Jasa Riksa Uji K3, PJK3, Riksa Uji K3
+
+Note: Data matches block--jasa-riksa-uji-intro.html content
+
+============================================================================
+{%- endcomment -%}
+
+<!-- Definisi K3 Schema (DefinedTermSet) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "@id": "{{ site.url }}/layanan/#definisi-k3",
+  "name": "Istilah Keselamatan dan Kesehatan Kerja (K3) Indonesia",
+  "description": "Kumpulan istilah dan definisi terkait Keselamatan dan Kesehatan Kerja (K3) di Indonesia sesuai peraturan Kementerian Ketenagakerjaan RI.",
+  "url": "{{ page.url | absolute_url }}#definisi-k3",
+  "inLanguage": "id",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Jasa Riksa Uji K3",
+      "description": "Layanan pemeriksaan dan pengujian menyeluruh terhadap peralatan industri, untuk memastikan bahwa peralatan tersebut aman dan layak digunakan sesuai dengan standar keselamatan dan kesehatan kerja (K3). Layanan ini mencakup inspeksi visual, pengujian teknis, dan pengujian beban untuk mendeteksi kerusakan atau keausan pada komponen, serta untuk memastikan kepatuhan terhadap peraturan yang berlaku.",
+      "termCode": "JRUK3"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "PJK3",
+      "description": "Perusahaan Jasa Keselamatan dan Kesehatan Kerja yang menyediakan layanan inspeksi, konsultasi, dan pelatihan untuk memastikan tempat kerja memenuhi standar keselamatan dan kesehatan yang ditetapkan oleh peraturan yang berlaku.",
+      "termCode": "PJK3"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Riksa Uji K3",
+      "description": "Proses pemeriksaan dan pengujian berkala terhadap peralatan atau instalasi untuk memastikan fungsinya aman, efektif, dan sesuai dengan standar keselamatan dan Kesehatan kerja (K3) yang berlaku.",
+      "termCode": "RUK3"
+    }
+  ]
+}
+</script>

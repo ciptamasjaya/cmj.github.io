@@ -1,0 +1,90 @@
+{%- comment -%}
+============================================================================
+Schema: Image Gallery (ImageGallery)
+============================================================================
+
+@file        schema--image-gallery.html
+@path        _includes/schema/node--layanan/schema--image-gallery.html
+@type        Schema (ImageGallery)
+@description Schema.org markup for Jasa Riksa Uji K3 image gallery
+@author      arisciwek
+
+Schema Output:
+- ImageGallery containing ImageObject items
+- Each image with name, description, contentUrl
+
+Note: Data matches block--jasa-riksa-uji-gallery.html content
+
+============================================================================
+{%- endcomment -%}
+
+<!-- Image Gallery Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "{{ site.url }}/layanan/#image-gallery",
+  "name": "Galeri Jasa Riksa Uji K3",
+  "description": "Dokumentasi visual layanan riksa uji K3 oleh PT. Cipta Mas Jaya menampilkan proses inspeksi dan pemeriksaan peralatan industri sesuai standar K3.",
+  "url": "{{ page.url | absolute_url }}#gallery",
+  "author": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}/#organization"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}/#organization"
+  },
+  "image": [
+    {
+      "@type": "ImageObject",
+      "name": "Jasa Riksa Uji K3 1",
+      "description": "Jasa Riksa Uji K3 adalah layanan yang bertujuan untuk melakukan pemeriksaan dan pengujian terhadap peralatan kerja, instalasi, serta fasilitas lainnya guna memastikan bahwa semua sesuai dengan standar keselamatan dan kesehatan kerja (K3) yang berlaku.",
+      "contentUrl": "{{ site.url }}/wp-content/uploads/2024/10/jasa-riksa-uji-k3-pt-cipta-mas-jaya-01.jpg",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Jasa Riksa Uji K3 2",
+      "description": "Jasa Riksa Uji K3 adalah layanan yang menyediakan verifikasi teknis terhadap mesin, instalasi, dan alat-alat industri, memastikan bahwa setiap komponen bekerja sesuai dengan prosedur keselamatan.",
+      "contentUrl": "{{ site.url }}/wp-content/uploads/2024/10/jasa-riksa-uji-k3-pt-cipta-mas-jaya-03.jpg",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Jasa Riksa Uji K3 3",
+      "description": "Jasa Riksa Uji K3 adalah sebuah layanan yang berfokus pada pengujian dan pemeriksaan keselamatan terhadap alat-alat industri serta fasilitas kerja.",
+      "contentUrl": "{{ site.url }}/wp-content/uploads/2024/10/jasa-riksa-uji-k3-pt-cipta-mas-jaya-02.jpeg",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Jasa Riksa Uji K3 4",
+      "description": "Jasa Riksa Uji K3 adalah layanan inspeksi menyeluruh terhadap alat dan fasilitas kerja untuk menilai tingkat keamanan dan kepatuhannya terhadap peraturan K3 yang berlaku.",
+      "contentUrl": "{{ site.url }}/wp-content/uploads/2024/10/jasa-riksa-uji-k3-pt-cipta-mas-jaya-07-scaled.jpg",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Jasa Riksa Uji K3 5",
+      "description": "Jasa Riksa Uji K3 adalah solusi komprehensif untuk memastikan semua peralatan dan fasilitas yang digunakan di tempat kerja telah memenuhi persyaratan keselamatan.",
+      "contentUrl": "{{ site.url }}/wp-content/uploads/2024/10/jasa-riksa-uji-k3-pt-cipta-mas-jaya-03-1.jpg",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Jasa Riksa Uji K3 6",
+      "description": "Jasa Riksa Uji K3 adalah bentuk inspeksi yang dilakukan untuk memverifikasi apakah peralatan, instalasi, dan mesin-mesin industri sudah memenuhi syarat keamanan.",
+      "contentUrl": "{{ site.url }}/wp-content/uploads/2024/10/jasa-riksa-uji-k3-pt-cipta-mas-jaya-05.jpg",
+      "encodingFormat": "image/jpeg"
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Jasa Riksa Uji K3 7",
+      "description": "Jasa Riksa Uji K3 adalah layanan penting yang dilakukan untuk memastikan bahwa semua perangkat dan fasilitas di lingkungan kerja berada dalam kondisi aman.",
+      "contentUrl": "{{ site.url }}/wp-content/uploads/2024/10/jasa-riksa-uji-k3-pt-cipta-mas-jaya-06.jpeg",
+      "encodingFormat": "image/jpeg"
+    }
+  ]
+}
+</script>

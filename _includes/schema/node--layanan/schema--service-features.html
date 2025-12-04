@@ -1,0 +1,81 @@
+{%- comment -%}
+============================================================================
+Schema: Service Features (ItemList + HowTo)
+============================================================================
+
+@file        schema--service-features.html
+@path        _includes/schema/node--layanan/schema--service-features.html
+@type        Schema (ItemList + HowTo)
+@description Schema.org markup for service features and process flow
+@author      arisciwek
+
+Data Source:
+- site.data.service_features.features → ItemList (keunggulan layanan)
+- site.data.service_features.process  → HowTo (proses layanan)
+
+Schema Output:
+1. ItemList - List of service features/benefits
+2. HowTo - Service process flow steps
+
+============================================================================
+{%- endcomment -%}
+
+{% assign features = site.data.service_features.features %}
+{% assign process = site.data.service_features.process %}
+
+{% if features.size > 0 %}
+<!-- Service Features Schema (ItemList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ site.url }}/layanan/#service-features-list",
+  "name": "{{ site.data.service_features.header.title | default: 'Keunggulan Layanan' }}",
+  "description": "{{ site.data.service_features.header.description | strip_html | strip_newlines }}",
+  "itemListOrder": "https://schema.org/ItemListUnordered",
+  "numberOfItems": {{ features.size }},
+  "itemListElement": [
+    {%- for feature in features -%}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "Service",
+        "name": "{{ feature.title }}",
+        "description": "{{ feature.description | strip_html | strip_newlines }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}
+
+{% if process.steps.size > 0 %}
+<!-- Service Process Schema (HowTo) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ process.header.title | default: 'Proses Layanan Riksa Uji K3' }}",
+  "description": "{{ process.header.description | strip_html | strip_newlines }}",
+  "totalTime": "P7D",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "IDR",
+    "value": "0",
+    "name": "Konsultasi Gratis"
+  },
+  "step": [
+    {%- for step in process.steps -%}
+    {
+      "@type": "HowToStep",
+      "position": {{ step.number }},
+      "name": "{{ step.title }}",
+      "text": "{{ step.description | strip_html | strip_newlines }}"
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}

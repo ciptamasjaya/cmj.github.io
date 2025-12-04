@@ -16,8 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const serviceTable = document.querySelector('#service-list-table');
 
   if (serviceTable) {
-    new DataTable('#service-list-table', {
-      perPage: 10,
+    // Read options from data-attributes (synced with Liquid/schema)
+    const perPage = parseInt(serviceTable.dataset.perPage) || 10;
+    const sortColumnName = serviceTable.dataset.sortColumn || null;
+    const sortDirection = serviceTable.dataset.sortDirection || 'desc';
+
+    const dt = new DataTable('#service-list-table', {
+      perPage: perPage,
       searchable: true,
       sortable: true,
       pagination: true,
@@ -30,5 +35,23 @@ document.addEventListener('DOMContentLoaded', function() {
         info: 'Menampilkan {start} sampai {end} dari {rows} layanan'
       }
     });
+
+    // Apply default sort if specified
+    if (sortColumnName && dt.table) {
+      const headers = dt.table.querySelectorAll('thead th');
+      let sortColumnIndex = -1;
+
+      headers.forEach((th, index) => {
+        if (th.dataset.column === sortColumnName) {
+          sortColumnIndex = index;
+        }
+      });
+
+      if (sortColumnIndex >= 0) {
+        // Set initial sort direction (will be toggled by sort())
+        dt.sortDirection = sortDirection === 'desc' ? 'asc' : 'desc';
+        dt.sort(sortColumnIndex);
+      }
+    }
   }
 });

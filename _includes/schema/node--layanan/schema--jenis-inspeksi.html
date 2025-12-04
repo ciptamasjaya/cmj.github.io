@@ -1,0 +1,63 @@
+{%- comment -%}
+============================================================================
+Schema: Jenis Inspeksi K3 (ItemList + DefinedTerm)
+============================================================================
+
+@file        schema--jenis-inspeksi.html
+@path        _includes/schema/node--layanan/schema--jenis-inspeksi.html
+@type        Schema (ItemList with DefinedTerm)
+@description Schema.org markup for K3 inspection types
+@author      arisciwek
+
+Schema Output:
+- ItemList containing two DefinedTerm items for inspection types
+- Inspeksi Terencana (Planned Inspection)
+- Inspeksi Tidak Terencana (Unplanned Inspection)
+
+Note: Data matches block--jenis-inspeksi-k3.html content
+
+============================================================================
+{%- endcomment -%}
+
+<!-- Jenis Inspeksi K3 Schema (ItemList + DefinedTerm) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ site.url }}/layanan/#jenis-inspeksi-list",
+  "name": "Jenis Inspeksi K3",
+  "description": "Inspeksi K3 adalah proses pemeriksaan yang dilakukan untuk memastikan bahwa lingkungan kerja, peralatan, dan prosedur operasional mematuhi standar keselamatan dan kesehatan kerja (K3) yang berlaku.",
+  "itemListOrder": "https://schema.org/ItemListUnordered",
+  "numberOfItems": 2,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "DefinedTerm",
+        "name": "Inspeksi Terencana",
+        "description": "Inspeksi terencana adalah inspeksi yang dilakukan secara rutin sesuai jadwal yang telah ditetapkan untuk mengidentifikasi potensi bahaya dan memastikan semua peralatan serta prosedur kerja memenuhi standar keselamatan dan Kesehatan kerja.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Jenis Inspeksi K3",
+          "url": "{{ page.url | absolute_url }}#jenis-inspeksi"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "DefinedTerm",
+        "name": "Inspeksi Tidak Terencana",
+        "description": "Inspeksi tidak terencana adalah inspeksi dilakukan tanpa pemberitahuan sebelumnya, sering kali dipicu oleh insiden atau keluhan, dengan tujuan mengevaluasi situasi darurat dan mendeteksi risiko yang mungkin terlewat dalam inspeksi terencana.",
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": "Jenis Inspeksi K3",
+          "url": "{{ page.url | absolute_url }}#jenis-inspeksi"
+        }
+      }
+    }
+  ]
+}
+</script>

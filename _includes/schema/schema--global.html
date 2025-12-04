@@ -67,10 +67,14 @@ Include in head.html or page.html (once per page):
         "latitude": "{{ site.business.geo.latitude }}",
         "longitude": "{{ site.business.geo.longitude }}"
       },
-      "areaServed": {
-        "@type": "Place",
-        "name": "{{ site.business.coverage }}"
-      },
+      "areaServed": [
+        {%- for provinsi in site.data.area_pelayanan.provinsi -%}
+        {
+          "@type": "AdministrativeArea",
+          "name": "{{ provinsi.nama }}"
+        }{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ],
       "foundingDate": "{{ site.business.foundingDate }}",
       "priceRange": "{{ site.business.priceRange }}",
       "openingHoursSpecification": [

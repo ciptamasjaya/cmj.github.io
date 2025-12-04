@@ -1,0 +1,47 @@
+{%- comment -%}
+============================================================================
+Schema: Service Coverage (ItemList of AdministrativeArea)
+============================================================================
+
+@file        schema--service-coverage.html
+@path        _includes/schema/node--layanan/schema--service-coverage.html
+@type        Schema (ItemList)
+@description Schema.org markup for service coverage areas as ItemList
+@author      arisciwek
+
+Data Source:
+- site.data.area_pelayanan.provinsi → ItemList (AdministrativeArea)
+
+Note: Uses ItemList to avoid duplicate Organization @id with schema--page.html
+
+============================================================================
+{%- endcomment -%}
+
+{% assign area_data = site.data.area_pelayanan %}
+
+{% if area_data.provinsi.size > 0 %}
+<!-- Service Coverage Schema (ItemList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "{{ area_data.header.judul | default: 'Area Pelayanan Riksa Uji K3' }}",
+  "description": "{{ area_data.intro.deskripsi | strip_html | strip_newlines }}",
+  "itemListOrder": "https://schema.org/ItemListUnordered",
+  "numberOfItems": {{ area_data.provinsi.size }},
+  "itemListElement": [
+    {%- for provinsi in area_data.provinsi -%}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "AdministrativeArea",
+        "name": "{{ provinsi.nama }}",
+        "description": "Layanan riksa uji K3 di {{ provinsi.nama }} meliputi: {{ provinsi.kota | slice: 0, 5 | join: ', ' }}{% if provinsi.kota.size > 5 %} dan {{ provinsi.kota.size | minus: 5 }} kota/kabupaten lainnya{% endif %}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}
