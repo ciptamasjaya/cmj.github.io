@@ -1,0 +1,133 @@
+---
+layout: compress
+---
+{%- comment -%}
+============================================================================
+Page Wrapper: Post Category Pages (page--post-category.html)
+============================================================================
+
+@file        page--post-category.html
+@path        _layouts/page/page--post-category.html
+@type        Page (wrapper - variant)
+@variant     post-category (blog post category listing)
+@description Category page wrapper for blog post category archive pages
+@author      arisciwek
+@date        2025-12-04
+
+Drupal-style naming: page--post-category.html (variant of page.html)
+
+This wrapper is specifically for category archive pages that display
+blog posts filtered by a specific category from post frontmatter.
+
+Related templates:
+- page--blog.html (all posts listing)
+- page--service-category.html (service category listing)
+
+Used by:
+- Category archive pages (e.g., /category/layanan/)
+
+Frontmatter Required:
+- post_category: "Category Name" (category to filter posts)
+- title: "Category Title"
+- description: "Category description"
+
+Site Structure:
+- HTML doctype and lang attribute
+- head.html (meta tags, CSS, scripts)
+- header.html (logo, navigation menu)
+- main.main-content:
+  - breadcrumb navigation
+  - category header (reusable/post-category/block--category-header.html)
+  - filtered posts grid (reusable/post-category/block--category-post.html)
+- footer.html (site footer with business info)
+
+Block Components:
+- shared/block--breadcrumb.html              -> schema--breadcrumb.html
+- post-category/block--category-header.html  -> (semantic HTML)
+- post-category/block--category-post.html    -> schema--category-post.html
+
+Schema Architecture:
+- schema--page.html             -> WebPage + Organization + Navigation
+- schema--breadcrumb.html       -> BreadcrumbList
+- schema--category-page.html    -> CollectionPage (filtered)
+- schema--category-post.html    -> ItemList (BlogPosting filtered)
+
+Usage:
+Create category page (e.g., category/layanan.html):
+  ---
+  layout: page/page--post-category
+  title: Layanan
+  description: Artikel seputar layanan inspeksi dan riksa uji K3
+  post_category: Layanan
+  permalink: /category/layanan/
+  ---
+
+============================================================================
+{%- endcomment -%}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'id' }}">
+{% include head.html %}
+
+<body class="blog-page post-category-page">
+  {% comment %} Filter posts by category from frontmatter {% endcomment %}
+  {% assign filtered_posts = site.posts | where_exp: "post", "post.categories contains page.post_category" %}
+
+  {% include header.html %}
+
+  <main class="main-content">
+    <!-- Breadcrumb Navigation -->
+    {% include shared/block--breadcrumb.html %}
+
+    <!-- Category Header -->
+    {% include reusable/post-category/block--category-header.html %}
+
+    <!-- Filtered Posts Grid -->
+    {% include reusable/post-category/block--category-post.html posts=filtered_posts %}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Floating WhatsApp Button -->
+  {% include components/cta-whatsapp.html style="floating" icon_only=true %}
+
+  <!-- Page-specific scripts -->
+  {% if page.custom_js %}
+    {% for js_file in page.custom_js %}
+      <script src="{{ js_file | relative_url }}"></script>
+    {% endfor %}
+  {% endif %}
+
+  <!-- ============================================================
+       SCHEMA SECTION
+       ============================================================ -->
+
+  <!-- Base Schema: WebPage + Organization + Navigation -->
+  {% unless page.skip_page_schema %}
+    {% include schema/shared/schema--page.html %}
+  {% endunless %}
+
+  <!-- Organization Schema (LocalBusiness) -->
+  {% include schema/shared/schema--local-business.html %}
+
+  <!-- ============================================================
+       BLOCK-SPECIFIC SCHEMAS (order follows block sequence)
+       ============================================================ -->
+
+  <!-- Breadcrumb Schema -->
+  {% include schema/shared/schema--breadcrumb.html %}
+
+  <!-- Category Page Schema (CollectionPage) -->
+  {% include schema/post-category/schema--category-page.html %}
+
+  <!-- Category Posts Schema (ItemList of BlogPosting filtered) -->
+  {% include schema/post-category/schema--category-post.html posts=filtered_posts %}
+
+  <!-- Page-specific schemas -->
+  {% if page.custom_schema %}
+    {% for schema_file in page.custom_schema %}
+      {% include {{ schema_file }} %}
+    {% endfor %}
+  {% endif %}
+
+</body>
+</html>

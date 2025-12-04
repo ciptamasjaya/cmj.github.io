@@ -1,0 +1,58 @@
+{% comment %}
+============================================================================
+Schema: Category Page (schema--category-page.html)
+============================================================================
+
+@file        schema--category-page.html
+@path        _includes/schema/post-category/schema--category-page.html
+@type        Schema (CollectionPage)
+@description Schema markup for post category archive page
+@author      arisciwek
+@created     2025-12-04
+
+Schema Types:
+-------------
+- CollectionPage: A page that represents a collection of items filtered by category
+
+Block Reference:
+----------------
+- block--category-header.html (header section)
+
+Usage:
+------
+{% include schema/post-category/schema--category-page.html %}
+
+Reference:
+----------
+https://schema.org/CollectionPage
+
+============================================================================
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "{{ page.url | absolute_url }}#collectionpage",
+  "url": "{{ page.url | absolute_url }}",
+  "name": "{{ page.title }}",
+  "description": "{{ page.description | escape }}",
+  "inLanguage": "id",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#website"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "{{ page.post_category }}",
+    "description": "Kumpulan artikel dalam kategori {{ page.post_category }}"
+  },
+  "breadcrumb": {
+    "@id": "{{ page.url | absolute_url }}#breadcrumb"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+  }
+}
+</script>

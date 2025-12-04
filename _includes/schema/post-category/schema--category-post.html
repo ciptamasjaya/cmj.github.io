@@ -1,0 +1,95 @@
+{% comment %}
+============================================================================
+Schema: Category Posts (ItemList + BlogPosting)
+============================================================================
+
+@file        schema--category-post.html
+@path        _includes/schema/post-category/schema--category-post.html
+@type        Schema (ItemList + BlogPosting)
+@description Schema for filtered posts listing on category archive page
+@author      arisciwek
+@created     2025-12-04
+
+Data Source:
+------------
+Uses filtered_posts passed from layout, filtered by page.post_category
+
+Schema Output:
+--------------
+- ItemList with full BlogPosting items (for Rich Results)
+
+Parameters:
+-----------
+- posts: Filtered posts collection (required)
+
+Block Reference:
+----------------
+- block--category-post.html (posts grid)
+
+Usage:
+------
+{% include schema/post-category/schema--category-post.html posts=filtered_posts %}
+
+Reference:
+----------
+https://schema.org/ItemList
+https://schema.org/BlogPosting
+
+============================================================================
+{% endcomment %}
+
+{% comment %} Use passed posts or filter from site.posts {% endcomment %}
+{% if include.posts %}
+  {% assign category_posts = include.posts | sort: "lastmod" | reverse %}
+{% else %}
+  {% assign category_posts = site.posts | where_exp: "post", "post.categories contains page.post_category" | sort: "lastmod" | reverse %}
+{% endif %}
+
+{% if category_posts.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "{{ page.url | absolute_url }}#categoryposts",
+  "name": "Artikel Kategori {{ page.post_category }}",
+  "description": "Kumpulan artikel dalam kategori {{ page.post_category }} dari {{ site.business.name }}",
+  "numberOfItems": {{ category_posts.size }},
+  "itemListElement": [
+    {% for post in category_posts %}
+    {% comment %} Determine image: images[0] > image > default {% endcomment %}
+    {% if post.images.first %}
+      {% assign post_image = post.images.first %}
+    {% elsif post.image and post.image != '' %}
+      {% assign post_image = post.image %}
+    {% else %}
+      {% assign post_image = '/assets/images/default-blog.svg' %}
+    {% endif %}
+    {
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "BlogPosting",
+        "@id": "{{ site.url }}{{ site.baseurl }}{{ post.url }}#article",
+        "headline": "{{ post.title | escape }}",
+        "description": "{{ post.description | default: post.excerpt | strip_html | truncate: 160 | escape }}",
+        "url": "{{ site.url }}{{ site.baseurl }}{{ post.url }}",
+        "image": "{{ site.url }}{{ site.baseurl }}{{ post_image }}",
+        "datePublished": "{{ post.date | date_to_xmlschema }}",
+        "dateModified": "{{ post.lastmod | default: post.date | date_to_xmlschema }}",
+        "author": {
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+        },
+        "publisher": {
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{ site.url }}{{ site.baseurl }}{{ post.url }}"
+        }
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

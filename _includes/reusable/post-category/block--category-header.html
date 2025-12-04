@@ -1,0 +1,49 @@
+{% comment %}
+============================================================================
+Block: Category Header (block--category-header.html)
+============================================================================
+
+@file        block--category-header.html
+@path        _includes/reusable/post-category/block--category-header.html
+@type        Block (section header)
+@description Header section for post category archive page
+@author      arisciwek
+@created     2025-12-04
+
+Features:
+---------
+- Category badge
+- Page title from frontmatter
+- Description from frontmatter
+- Centered layout
+
+Parameters:
+-----------
+Uses page frontmatter:
+- page.title: Category title
+- page.description: Category description
+
+Usage:
+------
+{% include reusable/post-category/block--category-header.html %}
+
+Schema:
+-------
+No schema needed (semantic HTML only)
+
+============================================================================
+{% endcomment %}
+
+<section class="block--category-header py-5 bg-light" id="block--category-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <span class="badge bg-primary mb-3">Kategori</span>
+        <h1 class="display-5 fw-bold text-primary mb-3">{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="lead text-muted">{{ page.description }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
