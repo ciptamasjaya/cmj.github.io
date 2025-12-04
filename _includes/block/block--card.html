@@ -38,12 +38,23 @@ Usage:
 {% comment %} Auto-detect card type from layout {% endcomment %}
 {% assign card_type = post.layout | split: "/" | last | replace: "node--", "" | default: "post" %}
 
-{% comment %} Get rating from JSON data {% endcomment %}
-{% assign post_slug = post.url | split: "/" | compact | last %}
-{% assign rating_data = site.data.rating--post.ratings | where: "slug", post_slug | first %}
-{% if rating_data %}
-  {% assign rating = rating_data.average %}
-  {% assign rating_count = rating_data.total_reviews %}
+{% comment %} Get rating from rating file (single source of truth) {% endcomment %}
+{% if post.rating_id %}
+  {% case post.layout %}
+    {% when 'node/node--riksa-uji' %}
+      {% capture rating_file %}reusable/node--riksa-uji/ratings/block--rating--{{ post.rating_id }}.html{% endcapture %}
+    {% when 'node/node--pjk3-city' %}
+      {% capture rating_file %}reusable/node--pjk3-city/ratings/block--rating--{{ post.rating_id }}.html{% endcapture %}
+    {% else %}
+      {% assign rating_file = nil %}
+  {% endcase %}
+  {% if rating_file %}
+    {% include {{ rating_file }} %}
+    {% assign rating = rating_average %}
+  {% else %}
+    {% assign rating = 5 %}
+    {% assign rating_count = 0 %}
+  {% endif %}
 {% else %}
   {% assign rating = 5 %}
   {% assign rating_count = 0 %}
