@@ -56,17 +56,28 @@ tags:
 - Forklift
 image: /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
 images:
-- /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
-- /wp-content/uploads/2024/08/Riksa-Uji-Forklift-PT-Cipta-Mas-Jaya-scaled.jpg
-- /wp-content/uploads/2024/08/riksa-uji-k3-forklift-pt-cipta-mas-jaya-001.jpg
-- /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-2-scaled.jpg
-- /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-1.jpg
-- /wp-content/uploads/2022/02/pengesahan-gambar-pesawat-angkat-angkut.jpeg
-- /wp-content/uploads/2024/08/pengesahan-gambar-forklift.jpeg
-- /wp-content/uploads/2024/08/Riksa-Uji-Forklift-PT-Cipta-Mas-Jaya-1024x768.jpg
-- /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-2-1024x768.jpg
-- /wp-content/uploads/2022/02/pengesahan-gambar-pesawat-angkat-angkut-1024x683.jpeg
-- /wp-content/uploads/2024/08/pengesahan-gambar-forklift-1024x683.jpeg
+- src: /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
+  alt: "Riksa uji forklift adalah proses pemeriksaan dan pengujian pesawat angkat yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional di tempat kerja"
+- src: /wp-content/uploads/2024/08/Riksa-Uji-Forklift-PT-Cipta-Mas-Jaya-scaled.jpg
+  alt: "Teknisi K3 bersertifikat melakukan inspeksi visual pada forklift sebagai bagian dari riksa uji pesawat angkat dan angkut sesuai Permenaker nomor 8 tahun 2020"
+- src: /wp-content/uploads/2024/08/riksa-uji-k3-forklift-pt-cipta-mas-jaya-001.jpg
+  alt: "Dokumentasi kegiatan riksa uji forklift merupakan bukti pelaksanaan pemeriksaan berkala yang wajib untuk mendapatkan sertifikat laik operasi dari Kemenaker"
+- src: /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-2-scaled.jpg
+  alt: "Proses pengujian beban forklift oleh PJK3 PT Cipta Mas Jaya merupakan tahapan penting dalam riksa uji K3 pesawat angkat untuk memastikan kapasitas angkat aman"
+- src: /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-1.jpg
+  alt: "Inspeksi komponen hidrolik forklift adalah bagian dari pemeriksaan menyeluruh dalam proses riksa uji pesawat angkat dan angkut oleh tenaga ahli K3"
+- src: /wp-content/uploads/2022/02/pengesahan-gambar-pesawat-angkat-angkut.jpeg
+  alt: "Pengesahan gambar pesawat angkat angkut merupakan dokumen teknis yang diperlukan sebelum pelaksanaan riksa uji forklift sesuai regulasi Kemenaker"
+- src: /wp-content/uploads/2024/08/pengesahan-gambar-forklift.jpeg
+  alt: "Contoh dokumen pengesahan gambar forklift yang telah disetujui oleh Kemenaker sebagai syarat pelaksanaan riksa uji pesawat angkat"
+- src: /wp-content/uploads/2024/08/Riksa-Uji-Forklift-PT-Cipta-Mas-Jaya-1024x768.jpg
+  alt: "Tim teknisi PJK3 PT Cipta Mas Jaya sedang melakukan riksa uji forklift di lokasi industri untuk memastikan kepatuhan terhadap standar K3"
+- src: /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-2-1024x768.jpg
+  alt: "Pengujian sistem rem dan kemudi forklift adalah prosedur wajib dalam riksa uji K3 untuk menjamin keselamatan operator dan pekerja di sekitarnya"
+- src: /wp-content/uploads/2022/02/pengesahan-gambar-pesawat-angkat-angkut-1024x683.jpeg
+  alt: "Dokumen teknis pengesahan gambar pesawat angkat angkut yang menjadi acuan dalam pelaksanaan riksa uji forklift oleh PJK3 resmi"
+- src: /wp-content/uploads/2024/08/pengesahan-gambar-forklift-1024x683.jpeg
+  alt: "Proses pengesahan gambar forklift merupakan tahapan administratif penting sebelum unit dapat dioperasikan secara legal di tempat kerja"
 section_hero:
   title: Butuh Layanan Riksa Uji Forklift
   theme: orange

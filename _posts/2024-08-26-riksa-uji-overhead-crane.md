@@ -46,11 +46,16 @@ tags:
 - Overhead Crane
 image: /wp-content/uploads/2024/08/riksa-uji-overhead-crane-031.jpg
 images:
-- /wp-content/uploads/2024/08/riksa-uji-overhead-crane-031.jpg
-- /wp-content/uploads/2024/08/riksa-uji-k3-overhead-crane-pt-cipta-mas-jaya-004.jpg
-- /wp-content/uploads/2024/08/pengesahan-gambar-overhead-crane.png
-- /wp-content/uploads/2024/08/riksa-uji-k3-over-head-crane-pt-cipta-mas-jaya-001.png
-- /wp-content/uploads/2024/08/riksa-uji-k3-overhead-crane-pt-cipta-mas-jaya-004-1024x771.jpg
+- src: /wp-content/uploads/2024/08/riksa-uji-overhead-crane-031.jpg
+  alt: "Riksa uji overhead crane adalah proses pemeriksaan dan pengujian crane jembatan yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional di area industri"
+- src: /wp-content/uploads/2024/08/riksa-uji-k3-overhead-crane-pt-cipta-mas-jaya-004.jpg
+  alt: "Teknisi K3 bersertifikat melakukan inspeksi visual pada struktur overhead crane sebagai bagian dari riksa uji pesawat angkat sesuai Permenaker nomor 8 tahun 2020"
+- src: /wp-content/uploads/2024/08/pengesahan-gambar-overhead-crane.png
+  alt: "Pengesahan gambar overhead crane merupakan dokumen teknis yang diperlukan sebelum pelaksanaan riksa uji crane jembatan sesuai regulasi Kemenaker"
+- src: /wp-content/uploads/2024/08/riksa-uji-k3-over-head-crane-pt-cipta-mas-jaya-001.png
+  alt: "Dokumentasi kegiatan riksa uji overhead crane merupakan bukti pelaksanaan pemeriksaan berkala yang wajib untuk mendapatkan sertifikat laik operasi"
+- src: /wp-content/uploads/2024/08/riksa-uji-k3-overhead-crane-pt-cipta-mas-jaya-004-1024x771.jpg
+  alt: "Proses pengujian beban overhead crane oleh PJK3 PT Cipta Mas Jaya merupakan tahapan penting dalam riksa uji K3 pesawat angkat untuk memastikan kapasitas angkat aman"
 related_service: /layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-overhead-crane/
 lastmod: 2025-12-02T03:48:34+0000
 section_hero:

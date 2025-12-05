@@ -45,10 +45,14 @@ tags:
 - Boiler
 image: /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001-1.jpg
 images:
-- /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001-1.jpg
-- /wp-content/uploads/2024/08/riksa-uji-boiler-pt.cipta-mas-jaya-16.jpg
-- /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001.png
-- /wp-content/uploads/2024/08/riksa-uji-boiler-pt.cipta-mas-jaya-16-1024x771.jpg
+- src: /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001-1.jpg
+  alt: "Riksa uji boiler adalah proses pemeriksaan dan pengujian ketel uap yang dilakukan oleh teknisi PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker"
+- src: /wp-content/uploads/2024/08/riksa-uji-boiler-pt.cipta-mas-jaya-16.jpg
+  alt: "Teknisi K3 bersertifikat sedang melakukan inspeksi visual pada komponen boiler sebagai bagian dari proses riksa uji pesawat uap dan bejana tekan"
+- src: /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001.png
+  alt: "Dokumentasi kegiatan riksa uji boiler merupakan bukti pelaksanaan pemeriksaan berkala yang wajib dilakukan untuk mendapatkan sertifikat laik operasi"
+- src: /wp-content/uploads/2024/08/riksa-uji-boiler-pt.cipta-mas-jaya-16-1024x771.jpg
+  alt: "Proses pengujian tekanan hidrostatik boiler oleh PJK3 PT Cipta Mas Jaya merupakan tahapan penting dalam riksa uji K3 pesawat uap"
 section_hero:
   title: Butuh Layanan Riksa Uji Boiler
   theme: red

@@ -26,12 +26,18 @@ keywords: riksa uji boiler, inspeksi boiler, laporan riksa uji, john thompson bo
   uap
 image: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-05.jpg
 images:
-- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-01.jpg
-- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-02.jpg
-- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-03.jpg
-- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-04.jpg
-- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-06.jpg
-- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-07.jpg
+- src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-01.jpg
+  alt: "Riksa uji boiler John Thompson ACTOM nomor seri 74910 adalah proses inspeksi dan pengujian menyeluruh yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional boiler di sektor industri"
+- src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-02.jpg
+  alt: "Dokumentasi riksa uji boiler John Thompson seri 74910 merupakan bagian penting dari proses pemeriksaan visual dan pengujian teknis yang meliputi ketebalan dinding, kondisi sambungan pipa, dan fungsi sistem pengaman"
+- src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-03.jpg
+  alt: "Proses inspeksi boiler John Thompson ACTOM nomor seri 74910 adalah pemeriksaan komprehensif yang mencakup pengujian operasional, teknis, dan non-destruktif untuk mendeteksi kerusakan internal"
+- src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-04.jpg
+  alt: "Pengujian teknis boiler John Thompson seri 74910 merupakan evaluasi kondisi struktural dan mekanis termasuk pengukuran ketebalan dinding menggunakan alat ultrasonik"
+- src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-06.jpg
+  alt: "Tim inspeksi PT Cipta Mas Jaya melakukan riksa uji boiler John Thompson ACTOM seri 74910 yang merupakan proses pemeriksaan wajib untuk memenuhi standar keselamatan kerja K3"
+- src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-07.jpg
+  alt: "Hasil riksa uji boiler John Thompson nomor seri 74910 adalah dokumentasi lengkap pemeriksaan yang mencakup hydrotest, thickness test, dan safety valve test untuk memastikan kelayakan operasional"
 video:
   name: Video Proses Riksa Uji Boiler
   description: Dokumentasi proses inspeksi dan pengujian boiler oleh tim PT. Cipta

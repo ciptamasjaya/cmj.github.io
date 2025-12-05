@@ -26,11 +26,16 @@ keywords: riksa uji forklift, inspeksi forklift, laporan riksa uji, caterpillar 
   forklift elektrik, uji beban forklift, PJK3, inspeksi K3, pesawat angkat
 image: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-.jpg
 images:
-- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-2.jpg
-- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-3.jpg
-- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-5.jpg
-- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-4.jpg
-- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-6.jpg
+- src: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-2.jpg
+  alt: "Riksa uji forklift elektrik Caterpillar EP20 5SS25AM adalah proses inspeksi dan pengujian menyeluruh yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan kelayakan dan keselamatan operasional forklift di area industri"
+- src: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-3.jpg
+  alt: "Dokumentasi riksa uji forklift Caterpillar EP20 seri E2B00501 merupakan bagian penting dari proses pemeriksaan visual dan pengujian teknis yang meliputi sistem kelistrikan, hidrolik, dan komponen pengangkat"
+- src: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-5.jpg
+  alt: "Proses inspeksi forklift elektrik Caterpillar EP20 5SS25AM adalah pemeriksaan komprehensif yang mencakup pengujian operasional, NDT pada fork, dan uji beban untuk memastikan fungsi pengangkatan yang aman"
+- src: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-4.jpg
+  alt: "Pengujian teknis forklift Caterpillar EP20 merupakan evaluasi kondisi struktural dan mekanis termasuk pemeriksaan baterai, motor listrik, dan sistem kontrol elektrik"
+- src: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-6.jpg
+  alt: "Tim inspeksi PT Cipta Mas Jaya melakukan riksa uji forklift Caterpillar EP20 seri E2B00501 yang merupakan proses pemeriksaan wajib untuk memenuhi standar keselamatan kerja K3 pada pesawat angkat dan angkut"
 video:
   name: Video Proses Riksa Uji Forklift
   description: Dokumentasi proses inspeksi dan pengujian forklift elektrik Caterpillar
