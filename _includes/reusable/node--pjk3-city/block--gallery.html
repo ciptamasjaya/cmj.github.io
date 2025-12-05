@@ -54,8 +54,13 @@ Usage:
 
 {% if page.images and page.images.size > 0 %}
   {% for img in page.images %}
-    {% if img and img != '' %}
+    {% comment %} Support both object format (img.src) and legacy string format {% endcomment %}
+    {% if img.src %}
       {% assign has_valid_images = true %}
+      {% assign gallery_images = gallery_images | push: img %}
+    {% elsif img and img != '' %}
+      {% assign has_valid_images = true %}
+      {% assign img_obj = img | split: "|||" %}
       {% assign gallery_images = gallery_images | push: img %}
     {% endif %}
   {% endfor %}
@@ -86,11 +91,19 @@ Usage:
     <!-- Gallery Grid -->
     <div class="row g-4 gallery-grid">
       {% for img in gallery_images %}
+      {% comment %} Support both object format (img.src) and legacy string format {% endcomment %}
+      {% if img.src %}
+        {% assign img_src = img.src %}
+        {% assign img_alt = img.alt | default: page.title | append: " - Gambar " | append: forloop.index %}
+      {% else %}
+        {% assign img_src = img %}
+        {% assign img_alt = page.title | append: " - Gambar " | append: forloop.index %}
+      {% endif %}
       <div class="col-6 col-md-3">
         <div class="card card--gallery-item border-0 shadow-sm h-100 overflow-hidden">
-          <a href="{{ img | relative_url }}" class="gallery-item gallery__link" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="{{ img | relative_url }}">
-            <img src="{{ img | relative_url }}"
-                 alt="{{ page.title }} - Gambar {{ forloop.index }}"
+          <a href="{{ img_src | relative_url }}" class="gallery-item gallery__link" data-bs-toggle="modal" data-bs-target="#galleryModal" data-img="{{ img_src | relative_url }}">
+            <img src="{{ img_src | relative_url }}"
+                 alt="{{ img_alt }}"
                  class="gallery-image gallery__image card-img-top img-fluid">
             <div class="card-img-overlay gallery-overlay gallery__overlay d-flex align-items-center justify-content-center">
               <i class="bi bi-zoom-in text-white fs-2 gallery__icon"></i>

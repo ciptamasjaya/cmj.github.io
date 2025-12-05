@@ -45,7 +45,11 @@ Requires:
 {% assign has_images = false %}
 {% if images and images.size > 0 %}
   {% for img in images %}
-    {% if img and img != '' %}
+    {% comment %} Support both object format (img.src) and legacy string format {% endcomment %}
+    {% if img.src %}
+      {% assign has_images = true %}
+      {% break %}
+    {% elsif img and img != '' %}
       {% assign has_images = true %}
       {% break %}
     {% endif %}
@@ -63,13 +67,20 @@ Requires:
     <!-- Slides Track -->
     <div class="gallery-track">
       {% for i in (0..3) %}
-      {% if images[i] and images[i] != '' %}
-        {% assign img_src = images[i] %}
+      {% assign current_img = images[i] %}
+      {% comment %} Support both object format (img.src) and legacy string format {% endcomment %}
+      {% if current_img.src %}
+        {% assign img_src = current_img.src %}
+        {% assign img_alt = current_img.alt | default: page.title | append: " - Image " | append: forloop.index %}
+      {% elsif current_img and current_img != '' %}
+        {% assign img_src = current_img %}
+        {% assign img_alt = page.title | append: " - Image " | append: forloop.index %}
       {% else %}
         {% assign img_src = default_images[i] %}
+        {% assign img_alt = page.title | append: " - Image " | append: forloop.index %}
       {% endif %}
       <div class="gallery-slide">
-        <img src="{{ img_src | relative_url }}" alt="{{ page.title }} - Image {{ forloop.index }}" class="gallery-image">
+        <img src="{{ img_src | relative_url }}" alt="{{ img_alt }}" class="gallery-image">
       </div>
       {% endfor %}
     </div>
