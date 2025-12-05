@@ -100,3 +100,114 @@
   width: 70px;
   height: 70px;
 }
+
+/* ============================================================================
+   BLOCK: Riksa Uji K3 (Homepage)
+   ============================================================================ */
+.block--riksa-uji-k3 .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--riksa-uji-k3 .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--riksa-uji-k3 .card:hover .card-img-top {
+  opacity: 0.9;
+}
+
+.block--riksa-uji-k3 .card .card-img-top {
+  transition: opacity 0.3s ease;
+}
+
+/* ============================================================================
+   BLOCK: Jasa Inspeksi K3 (Homepage)
+   ============================================================================ */
+.block--jasa-inspeksi-k3 .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--jasa-inspeksi-k3 .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--jasa-inspeksi-k3 .card:hover .card-img-top {
+  opacity: 0.9;
+}
+
+.block--jasa-inspeksi-k3 .card .card-img-top {
+  transition: opacity 0.3s ease;
+}
+
+/* ============================================================================
+   BLOCK: Rating Homepage
+   ============================================================================ */
+.block--rating-homepage .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--rating-homepage .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ============================================================================
+   BLOCK: Jenis Inspeksi K3 (Layanan)
+   ============================================================================ */
+.block--jenis-inspeksi-k3 .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--jenis-inspeksi-k3 .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--jenis-inspeksi-k3 .card:hover i.display-4 {
+  transform: scale(1.1);
+}
+
+.block--jenis-inspeksi-k3 .card i.display-4 {
+  transition: transform 0.3s ease;
+}
+
+/* ============================================================================
+   BLOCK: Certifications (About)
+   ============================================================================ */
+.block--certifications .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block--certifications .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.block--certifications .card-body.bg-primary p,
+.block--certifications .card-body.bg-primary .small {
+  color: #fff !important;
+}
+
+.block--certifications .card-body.bg-primary .small {
+  opacity: 0.85;
+}
+
+.block--certifications .holder-number {
+  font-size: 0.75em;
+}
+
+.block--certifications .holder-number-sm {
+  font-size: 0.8em;
+}
+
+/* ============================================================================
+   BLOCK: Hero Section (Homepage)
+   ============================================================================ */
+.hero-section.bg-gradient-primary {
+  .lead,
+  p {
+    color: #fff !important;
+  }
+}
