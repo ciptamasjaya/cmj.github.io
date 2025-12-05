@@ -138,6 +138,11 @@ Schema: Article (not BlogPosting)
       {% include reusable/node--pjk3-city/block--conclusion.html section=page.section_conclusion %}
     {% endif %}
 
+    <!-- Reviews (from rating_id) -->
+    {% if page.rating_id %}
+      {% include reusable/node--pjk3-city/block--reviews.html %}
+    {% endif %}
+
     <!-- Additional Content (from markdown body) -->
     {% if content and content != "" %}
     <section class="article-body-content py-5">

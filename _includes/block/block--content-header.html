@@ -28,17 +28,8 @@ Usage:
 
 {% assign variant = include.variant | default: "riksa-uji" %}
 
-{% comment %} Load rating data {% endcomment %}
-{% assign post_slug = page.url | split: "/" | compact | last %}
-{% if variant == "inspection-report" %}
-  {% comment %} Rating already loaded by layout for inspection-report {% endcomment %}
-{% else %}
-  {% assign rating_data = site.data.rating--post.ratings | where: "slug", post_slug | first %}
-  {% if rating_data %}
-    {% assign rating_average = rating_data.average %}
-    {% assign rating_count = rating_data.total_reviews %}
-  {% endif %}
-{% endif %}
+{% comment %} Rating data is loaded by layout before including this block {% endcomment %}
+{% comment %} Variables available: rating_average, rating_count {% endcomment %}
 
 {% comment %} ================================================================
     VARIANT: INSPECTION-REPORT (Inspection Report Header)
@@ -179,7 +170,30 @@ Usage:
         <p class="lead mb-4">{{ page.description }}</p>
         {% endif %}
 
-        <div class="article-meta d-flex flex-wrap gap-2">
+        <div class="article-meta d-flex flex-wrap align-items-center gap-3">
+          {% if rating_average and rating_count > 0 %}
+          <a href="#block--testimonials" class="text-decoration-none d-inline-flex align-items-center">
+            <span class="post-rating__stars me-2">
+              {% assign avg = rating_average %}
+              {% assign full_stars = avg | floor %}
+              {% assign decimal = avg | minus: full_stars %}
+              {% for i in (1..5) %}
+                {% if i <= full_stars %}
+                  <i class="bi bi-star-fill text-warning"></i>
+                {% elsif decimal >= 0.3 and decimal < 0.8 and i == full_stars | plus: 1 %}
+                  <i class="bi bi-star-half text-warning"></i>
+                {% elsif decimal >= 0.8 and i == full_stars | plus: 1 %}
+                  <i class="bi bi-star-fill text-warning"></i>
+                {% else %}
+                  <i class="bi bi-star text-warning"></i>
+                {% endif %}
+              {% endfor %}
+            </span>
+            <span class="post-rating__score fw-bold me-1">{{ rating_average }}</span>
+            <span class="post-rating__count text-muted">({{ rating_count }} ulasan)</span>
+          </a>
+          <span class="text-muted">|</span>
+          {% endif %}
           <span>
             <i class="bi bi-calendar3 me-1"></i>
             <time datetime="{{ page.date | date_to_xmlschema }}">
