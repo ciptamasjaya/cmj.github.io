@@ -141,8 +141,8 @@ Usage:
     <div class="card cta--consultation border-0 shadow-sm">
       <div class="card-body text-center py-4">
         <i class="bi bi-headset mb-3 fs-1 cta__icon"></i>
-        <h3 class="h3 fw-bold mb-2 cta__title">Butuh Konsultasi?</h3>
-        <p class="mb-3 cta__description">Tim kami siap membantu Anda memilih layanan riksa uji yang tepat untuk kebutuhan bisnis Anda!</p>
+        <h3 class="h3 fw-bold mb-2 cta__title">Butuh Konsultasi tentang PJK3{% if area %} di {{ area }}{% endif %}?</h3>
+        <p class="mb-3 cta__description">Tim kami siap membantu Anda memilih layanan riksa uji K3{% if area %} di {{ area }}{% endif %} yang tepat untuk kebutuhan bisnis Anda!</p>
         <a href="https://wa.me/{{ site.business.phone | remove: '-' | remove: ' ' | remove: '+' }}?text=Halo,%20saya%20butuh%20konsultasi%20memilih%20layanan%20riksa%20uji%20K3{% if area %}%20di%20{{ area | url_encode }}{% endif %}" class="btn btn-primary px-4 cta__button" target="_blank">
           <i class="bi bi-whatsapp me-2"></i>Konsultasi Gratis
         </a>
