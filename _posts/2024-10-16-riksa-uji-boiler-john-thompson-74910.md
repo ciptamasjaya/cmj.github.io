@@ -4,7 +4,7 @@ title: Riksa Uji Boiler John Thompson - ACTOM (Pty) Ltd Nomor Seri 74910
 date: 2024-10-16
 description: Laporan hasil riksa uji boiler John Thompson - ACTOM (Pty) Ltd nomor
   seri 74910 termasuk pemeriksaan visual, uji operasional, teknis, dan NDT.
-header_bg: "#1a5276"
+header_bg: '#1a5276'
 report_number: CMJ/RU/2024/1016-001
 inspection_date: 2024-10-16
 inspector: Tim Inspeksi PT. Cipta Mas Jaya
@@ -20,13 +20,18 @@ tags:
 - Boiler
 skip_page_schema: false
 show_breadcrumb_schema: true
-rating_id: "74910"
-keywords: riksa uji boiler, inspeksi boiler, laporan riksa uji, john thompson boiler, hydrotest boiler, thickness test, safety valve test, PJK3, inspeksi K3, pesawat uap
+rating_id: '74910'
+keywords: riksa uji boiler, inspeksi boiler, laporan riksa uji, john thompson boiler,
+  hydrotest boiler, thickness test, safety valve test, PJK3, inspeksi K3, pesawat
+  uap
+image: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-05.jpg
 images:
-- ''
-- ''
-- ''
-- ''
+- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-01.jpg
+- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-02.jpg
+- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-03.jpg
+- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-04.jpg
+- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-06.jpg
+- /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-07.jpg
 video:
   name: Video Proses Riksa Uji Boiler
   description: Dokumentasi proses inspeksi dan pengujian boiler oleh tim PT. Cipta
@@ -43,13 +48,13 @@ paragraphs:
   internal yang tidak terlihat. Riksa uji ini sangat vital dilakukan secara berkala
   untuk menjaga keselamatan operator serta efisiensi operasional boiler, khususnya
   di sektor industri serta pembangkit listrik.
-- "<strong>Riksa Uji Boiler merupakan</strong> proses pemeriksaan dan pengujian komprehensif
+- <strong>Riksa Uji Boiler merupakan</strong> proses pemeriksaan dan pengujian komprehensif
   yang dimaksudkan dalam rangka memastikan bahwa boiler berfungsi sesuai dengan kriteria
   keselamatan dan operasional yang ditetapkan. Uji ini meliputi evaluasi terhadap
   berbagai aspek penting, seperti ketebalan material, kondisi sambungan pipa, efisiensi
   pembakaran, dan fungsi sistem pengaman dan kontrol otomatis. Seluruh aspek ini diuji
   dalam rangka mendeteksi potensi masalah seperti korosi, erosi, atau keausan yang
-  dapat mempengaruhi kinerja dan keamanan operasional boiler."
+  dapat mempengaruhi kinerja dan keamanan operasional boiler.
 - Proses ini juga mencakup uji non-destruktif (NDT), seperti <strong>thickness test</strong>,
   dalam rangka memeriksa ketebalan dinding dan pipa tanpa merusak bagian boiler. Selain
   itu, dilakukan juga uji operasional dalam rangka melihat apakah boiler dapat berfungsi
@@ -104,23 +109,23 @@ section_glossary:
       dan pengujian teknis yang menyeluruh untuk menjamin alat dapat berfungsi dengan
       baik dan aman.
   - term: Inspeksi
-    definition: "<strong>Inspeksi adalah</strong> proses pemeriksaan yang dilakukan
+    definition: <strong>Inspeksi adalah</strong> proses pemeriksaan yang dilakukan
       pada alat industri guna memastikan bahwa setiap bagian berfungsi sesuai dengan
       kriteria keselamatan dan tidak menimbulkan risiko bagi lingkungan kerja. Dalam
       konteks <strong>boiler</strong>, inspeksi bertujuan untuk mendeteksi adanya
       potensi kerusakan fisik, keausan, atau masalah operasional yang dapat mempengaruhi
       performa alat. Proses inspeksi melibatkan pemeriksaan visual dan pengujian teknis
       yang lebih mendalam, yang hasilnya dapat digunakan untuk menentukan langkah-langkah
-      pemeliharaan atau perbaikan yang diperlukan."
+      pemeliharaan atau perbaikan yang diperlukan.
   - term: Inspeksi K3
-    definition: "<strong>Inspeksi K3 adalah</strong> pemeriksaan yang dilakukan dalam
+    definition: <strong>Inspeksi K3 adalah</strong> pemeriksaan yang dilakukan dalam
       kerangka <strong>Keselamatan dan Kesehatan Kerja (K3)</strong> untuk memastikan
       bahwa setiap peralatan, termasuk <strong>boiler</strong>, memenuhi persyaratan
       keselamatan yang ditetapkan oleh peraturan pemerintah. Tujuan dari pengecekan
       K3 adalah untuk mengidentifikasi dan memitigasi potensi bahaya yang mungkin
       muncul selama operasional peralatan, hingga dapat mencegah terjadinya kecelakaan
       kerja dan kerugian operasional. Inspeksi ini meliputi pengecekan fisik peralatan,
-      keadaan lingkungan kerja, dan analisis performa teknis."
+      keadaan lingkungan kerja, dan analisis performa teknis.
   - term: Jasa Inspeksi K3
     definition: <strong><a href="/">Jasa Inspeksi K3</a></strong> layanan yang diberikan
       oleh perusahaan tersertifikasi seperti <strong>PT. Cipta Mas Jaya</strong> untuk
@@ -144,12 +149,12 @@ data_umum:
     nama: PT. Sentosa Abadi Makmur
     alamat: Jl. Raya Industri No. 123, Kawasan Industri Jababeka, Cikarang, Bekasi
       17530
-    telepon: "(021) 8912-XXXX"
+    telepon: (021) 8912-XXXX
     email: info@sentosaabadi.co.id
   instalatir:
     nama: CV. Teknik Mandiri Sejahtera
     alamat: Jl. Teknologi Blok B-15, Kawasan Industri MM2100, Cibitung, Bekasi 17520
-    telepon: "(021) 8934-XXXX"
+    telepon: (021) 8934-XXXX
     sertifikat: SIUJK No. 1234/SIUJK/2020
 object:
   name: Boiler
@@ -725,5 +730,5 @@ section_conclusion:
     bukan data hasil pengukuran sebenarnya.
   - Untuk informasi lebih lanjut mengenai layanan riksa uji boiler dan peralatan industri
     lainnya, silakan <a href="/contact/">hubungi kami</a>.
-lastmod: '2025-12-01T04:07:31+0000'
+lastmod: 2025-12-01T04:07:31+0000
 ---

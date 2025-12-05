@@ -19,6 +19,7 @@ tags:
 - riksa uji
 - K3
 image: "/assets/images/posts/forklift-hyster-h50ft.jpg"
+images:
 rating_id: hyster-h50ft
 section_definition:
   title: Pengertian Forklift Hyster H50FT

@@ -1,15 +1,16 @@
 ---
 layout: node/node--pjk3-city
 title: PJK3 Jakarta Selatan
-date: 2025-05-23 02:11:49.000000000 +07:00
+date: 2025-05-23 02:11:49+07:00
 author: admin
 description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa tes K3 terhadap
   wilayah Jakarta Selatan. Hubungi 08568258841 untuk seluruh kebutuhan riksa tes Anda.
 area_served: Jakarta Selatan
-rating_id: "pjk3-jakarta-selatan"
-keywords: PJK3 Jakarta Selatan, jasa riksa uji Jakarta, inspeksi K3 Jakarta, sertifikasi K3, riksa pengujian Jakarta Selatan
+rating_id: pjk3-jakarta-selatan
+keywords: PJK3 Jakarta Selatan, jasa riksa uji Jakarta, inspeksi K3 Jakarta, sertifikasi
+  K3, riksa pengujian Jakarta Selatan
 extra_js:
-- "/assets/js/gallery-modal.js"
+- /assets/js/gallery-modal.js
 categories:
 - Artikel
 tags:
@@ -20,11 +21,25 @@ tags:
 - PJK3 Riksa Uji
 - Riksa Uji
 - Riksa Uji K3
+image: /wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg
 images:
-- ''
-- ''
-- ''
-- ''
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-paa.jpg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-pubt.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-ptp.jpg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-lift.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-petir.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-alarm.jpeg
+- /wp-content/uploads/2024/10/pjk3-pt-cipta-mas-jaya-010-23.jpg
+- /wp-content/uploads/2024/09/pjk3-riksa-uji-pt-cipta-mas-jaya-1.jpeg
+- /wp-content/uploads/2024/09/riksa-uji-pt-cipta-mas-jaya-.jpg
+- /wp-content/uploads/2024/09/manager-hse-kesal-harus-melaksanakan-inspeksi-tidak-terencana-setelah-melakukan-inspeksi-terencana-menggunakan-pjk3-riksa-uji-melalui-inspeksi-k3.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-paa-771x1024.jpg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-pubt-1024x768.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-ptp-1024x771.jpg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-lift-1024x771.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-petir-1024x771.jpeg
+- /wp-content/uploads/2025/05/pjk3-jakarta-selatan-alarm-1024x768.jpeg
 section_gallery:
   title: Galeri Layanan
   area: Jakarta Selatan
@@ -397,7 +412,7 @@ section_coverage:
 section_order:
   title: Cara Pemesanan Layanan Riksa Uji
   area: Jakarta Selatan
-  phone: '08568258841'
+  phone: 08568258841
   intro: Proses pemesanan layanan riksa uji K3 di Jakarta Selatan sangat mudah dan
     praktis. PT. Cipta Mas Jaya siap melayani kebutuhan inspeksi Anda dengan prosedur
     yang efisien dan transparan.
@@ -639,5 +654,5 @@ section_conclusion:
     kami siap menjadi mitra keselamatan kerja Anda. Hubungi 08568258841 untuk konsultasi
     gratis dan penjadwalan inspeksi. Bersama PT. Cipta Mas Jaya, bangun budaya keselamatan
     kerja sejak hari ini!
-lastmod: '2025-12-01T04:07:31+0000'
+lastmod: 2025-12-01T04:07:31+0000
 ---

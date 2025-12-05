@@ -8,7 +8,8 @@ description: Riksa uji forklift adalah proses pemeriksaan dan pengujian terhadap
   potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, memastikan
   bahwa alat tersebut berfungsi dengan baik dan aman digunakan dan memastikan forklift
   memenuhi standar keselamatan yang berlaku.
-keywords: riksa uji forklift, jasa riksa uji forklift, inspeksi forklift, pesawat angkat angkut, PJK3, sertifikasi K3, uji beban forklift, inspeksi K3
+keywords: riksa uji forklift, jasa riksa uji forklift, inspeksi forklift, pesawat
+  angkat angkut, PJK3, sertifikasi K3, uji beban forklift, inspeksi K3
 content_intro:
   paragraphs:
   - Riksa uji forklift yang merupakan bagian dari <a href="/layanan/riksa-uji-pesawat-angkat-dan-angkut/">riksa
@@ -38,9 +39,9 @@ announce:
     itu, PT. Cipta Mas Jaya juga menawarkan solusi perbaikan dan pemeliharaan guna
     menjaga kinerja optimal forklift serta mencegah potensi risiko kecelakaan di lingkungan
     kerja.
-permalink: "/2024/08/26/jasa-riksa-uji-forklift/"
+permalink: /2024/08/26/jasa-riksa-uji-forklift/
 redirect_from:
-- "/blog/2024/08/26/jasa-riksa-uji-forklift/"
+- /blog/2024/08/26/jasa-riksa-uji-forklift/
 date: 2024-08-26
 last_modified_at: 2025-10-11
 author: Editor
@@ -53,11 +54,19 @@ tags:
 - Pesawat Angkat Angkut
 - Riksa Uji
 - Forklift
+image: /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
 images:
-- ''
-- ''
-- ''
-- ''
+- /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
+- /wp-content/uploads/2024/08/Riksa-Uji-Forklift-PT-Cipta-Mas-Jaya-scaled.jpg
+- /wp-content/uploads/2024/08/riksa-uji-k3-forklift-pt-cipta-mas-jaya-001.jpg
+- /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-2-scaled.jpg
+- /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-1.jpg
+- /wp-content/uploads/2022/02/pengesahan-gambar-pesawat-angkat-angkut.jpeg
+- /wp-content/uploads/2024/08/pengesahan-gambar-forklift.jpeg
+- /wp-content/uploads/2024/08/Riksa-Uji-Forklift-PT-Cipta-Mas-Jaya-1024x768.jpg
+- /wp-content/uploads/2024/08/RIksa-Uji-Forklift-PT-Cipta-Mas-Jaya-2-1024x768.jpg
+- /wp-content/uploads/2022/02/pengesahan-gambar-pesawat-angkat-angkut-1024x683.jpeg
+- /wp-content/uploads/2024/08/pengesahan-gambar-forklift-1024x683.jpeg
 section_hero:
   title: Butuh Layanan Riksa Uji Forklift
   theme: orange
@@ -88,7 +97,7 @@ section_hero:
 section_order:
   title: Cara Pemesanan Layanan Riksa Uji Forklift
   area: Seluruh Indonesia
-  phone: '08568258841'
+  phone: 08568258841
   intro: Proses pemesanan layanan riksa uji forklift sangat mudah. Ikuti 6 langkah
     sederhana berikut untuk mendapatkan sertifikat kelayakan operasi forklift Anda.
   initial_steps:
@@ -285,7 +294,7 @@ itemlist_post:
 video_post:
   name: Proses Riksa Uji Forklift
   description: Video dokumentasi proses riksa uji forklift oleh tim inspector bersertifikat
-  thumbnail: "/assets/images/posts/riksa-uji-forklift-thumb.jpg"
+  thumbnail: /assets/images/posts/riksa-uji-forklift-thumb.jpg
   src: https://www.youtube.com/watch?v=XXXXX
   duration: PT5M30S
   upload_date: '2024-08-26'
@@ -664,21 +673,21 @@ section_certification:
   title: Pengesahan Gambar Forklift
   subtitle: Verifikasi Desain & Konstruksi Resmi
   icon: bi-file-earmark-check
-  intro: 
+  intro: null
   paragraphs:
   - Pengesahan gambar forklift adalah proses verifikasi resmi yang memastikan desain
     dan konstruksi forklift memenuhi standar keselamatan dan kelayakan yang ditetapkan
     oleh peraturan perundangan. Ini adalah bagian dari pengujian dan pemeriksaan yang
     lebih luas untuk pesawat angkat dan angkut, termasuk forklift, yang bertujuan
     untuk mencegah kecelakaan dan memastikan operasi yang aman.
-  - "<a href='/layanan/''>Pengesahan gambar pesawat angkat dan angkut</a> adalah proses
+  - <a href='/layanan/''>Pengesahan gambar pesawat angkat dan angkut</a> adalah proses
     verifikasi dan persetujuan resmi terhadap gambar teknis alat angkat angkut seperti
     forklift, crane, hoist, gondola, dan sejenisnya yang dilakukan oleh instansi berwenang,
     seperti Kementerian Ketenagakerjaan. Proses ini bertujuan memastikan bahwa rancangan
     alat tersebut telah memenuhi standar keselamatan dan ketentuan teknis sesuai peraturan
     perundang-undangan K3. Pengesahan ini menjadi syarat penting sebelum alat tersebut
     dapat digunakan di lingkungan kerja, guna meminimalkan risiko kecelakaan kerja
-    serta melindungi keselamatan operator dan pekerja lainnya."
+    serta melindungi keselamatan operator dan pekerja lainnya.
   topics:
   - title: Proses Pengesahan Gambar Forklift
     icon: bi-list-check
@@ -794,12 +803,12 @@ section_permit:
 section_conclusion:
   title: Kesimpulan
   icon: bi-check2-square
-  intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa pengujian forklift</a>
+  intro: '<a href=''https://maps.app.goo.gl/KwFSALZKY9WMrK5C6''>Riksa pengujian forklift</a>
     merupakan langkah krusial untuk memastikan keselamatan dan efisiensi operasional
     dalam penggunaan alat berat ini. Proses riksa pengujian yang sistematis dan rutin,
     mulai daripada persiapan hingga dokumentasi hasil, sangat krusial untuk mengidentifikasi
     potensi masalah sebelum menjadi kecelakaan. Dengan melaksanakan riksa pengujian
-    secara berkala, perusahaan dapat:"
+    secara berkala, perusahaan dapat:'
   highlights:
   - key: Mencegah Kecelakaan Kerja
     value: Menjaga keselamatan pekerja dan menghindari cedera.
@@ -814,9 +823,9 @@ section_conclusion:
   cta:
     text: Untuk informasi lebih lanjut tentang layanan riksa uji forklift, silakan
       hubungi PT. Cipta Mas Jaya sebagai PJK3 resmi yang berpengalaman.
-    link: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/"
+    link: /layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/
     label: Hubungi Kami
     icon: bi-telephone
 related_service: /layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/
-lastmod: '2025-12-01T16:40:00+0700'
+lastmod: 2025-12-01T16:40:00+0700
 ---

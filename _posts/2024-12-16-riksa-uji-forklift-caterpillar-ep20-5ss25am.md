@@ -1,11 +1,11 @@
 ---
 layout: node/node--inspection-report
 title: Riksa Uji Forklift Caterpillar EP20 / 5SS25AM
-date: 2024-12-16 22:06:35.000000000 +07:00
+date: 2024-12-16 22:06:35+07:00
 description: Laporan temuan riksa uji forklift elektrik Caterpillar EP20 / 5SS25AM
   nomor seri E2B00501 mencakup pemeriksaan visual, pengujian operasional, teknis,
   NDT, serta uji beban.
-header_bg: "#e67e22"
+header_bg: '#e67e22'
 report_number: CMJ/RU/2024/1216-001
 inspection_date: 2024-12-16
 inspector: Tim Inspeksi PT. Cipta Mas Jaya
@@ -21,13 +21,16 @@ tags:
 - Riksa Uji Forklift
 skip_page_schema: false
 show_breadcrumb_schema: true
-rating_id: "5ss25am"
-keywords: riksa uji forklift, inspeksi forklift, laporan riksa uji, caterpillar ep20, forklift elektrik, uji beban forklift, PJK3, inspeksi K3, pesawat angkat
+rating_id: 5ss25am
+keywords: riksa uji forklift, inspeksi forklift, laporan riksa uji, caterpillar ep20,
+  forklift elektrik, uji beban forklift, PJK3, inspeksi K3, pesawat angkat
+image: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-.jpg
 images:
-- ''
-- ''
-- ''
-- ''
+- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-2.jpg
+- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-3.jpg
+- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-5.jpg
+- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-4.jpg
+- /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-6.jpg
 video:
   name: Video Proses Riksa Uji Forklift
   description: Dokumentasi proses inspeksi dan pengujian forklift elektrik Caterpillar
@@ -100,31 +103,31 @@ section_glossary:
       PT. Cipta Mas Jaya bertanggung jawab memastikan bahwa setiap alat yang diuji
       mencukupi semua persyaratan keselamatan dan kesehatan kerja (K3).
   - term: Forklift Elektrik
-    definition: "<strong>Forklift Elektrik</strong> adalah jenis forklift yang menggunakan
+    definition: <strong>Forklift Elektrik</strong> adalah jenis forklift yang menggunakan
       motor listrik serta baterai sebagai sumber tenaga penggerak, berbeda dengan
       forklift konvensional yang menggunakan mesin pembakaran internal (diesel atau
       bensin). Forklift elektrik lebih ramah lingkungan serta cocok dipakai di dalam
-      ruangan karena tidak menghasilkan emisi gas buang."
+      ruangan karena tidak menghasilkan emisi gas buang.
   - term: SLO (Surat Izin Layak Operasi)
-    definition: "<strong>SLO</strong> adalah dokumen resmi yang dikeluarkan setelah
+    definition: <strong>SLO</strong> adalah dokumen resmi yang dikeluarkan setelah
       forklift dinyatakan layak operasi berdasarkan hasil riksa uji. SLO menjadi bukti
       bahwa forklift telah mencukupi standar keselamatan dan dapat digunakan pada
-      lingkungan kerja industri."
+      lingkungan kerja industri.
   - term: NDT (Non-Destructive Testing)
-    definition: "<strong>NDT</strong> atau Pengujian Tidak Merusak adalah metode inspeksi
+    definition: <strong>NDT</strong> atau Pengujian Tidak Merusak adalah metode inspeksi
       untuk mendeteksi cacat atau kerusakan pada komponen tanpa merusak struktur komponen
       tersebut. Pada forklift, NDT biasanya dilakukan pada elemen fork/garpu untuk
-      mendeteksi retakan atau cacat struktural yang tidak terlihat secara kasat mata."
+      mendeteksi retakan atau cacat struktural yang tidak terlihat secara kasat mata.
 data_umum:
   perusahaan:
     nama: PT. Klien Industri
     alamat: Kawasan Industri, Jakarta
-    telepon: "(021) XXXX-XXXX"
+    telepon: (021) XXXX-XXXX
     email: info@klienindustri.co.id
   instalatir:
     nama: PT. Caterpillar Indonesia
     alamat: Jakarta, Indonesia
-    telepon: "(021) XXXX-XXXX"
+    telepon: (021) XXXX-XXXX
     sertifikat: Authorized Dealer Caterpillar
 object:
   name: Electric Forklift
@@ -134,7 +137,7 @@ object:
   type: Pesawat Angkat dan Angkut
   year: 2020
   capacity: 2 Ton
-  pressure: "-"
+  pressure: '-'
   location: Area Gudang
   owner: PT. Klien Industri
   specifications:
@@ -346,8 +349,8 @@ section_hydrotest:
   intro: Pengujian beban statis dijalankan untuk memverifikasi kemampuan forklift
     dalam menahan beban terhadap posisi diam dan memastikan tidak dijumpai penurunan
     atau kebocoran terhadap sistem hidrolik.
-  working_pressure: "-"
-  test_pressure: "-"
+  working_pressure: '-'
+  test_pressure: '-'
   duration: 7 Menit
   method: Pengujian dilakukan dengan cara mengangkat beban uji 574 kg terhadap ketinggian
     maksimal, kemudian menahan posisi selama 10 menit sambil memantau stabilitas tinggi
@@ -373,27 +376,27 @@ section_hydrotest:
     text: Dokumentasikan seluruh hasil pengujian termasuk foto dan catatan kondisi.
   items:
   - component: Kondisi Hidrolik Angkat
-    pressure: "-"
+    pressure: '-'
     duration: 10 menit
     result: Baik, tidak ada kebocoran
     status: lulus
   - component: Kondisi Hidrolik Ungkit
-    pressure: "-"
+    pressure: '-'
     duration: 10 menit
     result: Baik, tidak ada kebocoran
     status: lulus
   - component: Stabilitas Tinggi Angkat
-    pressure: "-"
+    pressure: '-'
     duration: 10 menit
     result: Stabil, tidak ada penurunan
     status: lulus
   - component: Silinder Pengangkat
-    pressure: "-"
+    pressure: '-'
     duration: 10 menit
     result: Tidak ada kebocoran
     status: lulus
   - component: Sistem Penguncian
-    pressure: "-"
+    pressure: '-'
     duration: 10 menit
     result: Berfungsi normal
     status: lulus
@@ -611,5 +614,5 @@ section_conclusion:
     di bidangnya, perusahaan ini dikenal memiliki tenaga ahli yang kompeten dan bersertifikasi.
   - Untuk informasi lebih lanjut mengenai layanan riksa uji forklift dan peralatan
     industri lainnya, silakan <a href="/contact/">hubungi kami</a>.
-lastmod: '2025-12-01T02:11:45+0700'
+lastmod: 2025-12-01T02:11:45+0700
 ---
