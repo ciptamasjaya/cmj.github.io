@@ -44,7 +44,9 @@ tags:
 - Pesawat Angkat Angkut
 - Riksa Uji
 - Overhead Crane
-image: /wp-content/uploads/2024/08/riksa-uji-overhead-crane-031.jpg
+image:
+  src: /wp-content/uploads/2024/08/riksa-uji-overhead-crane-031.jpg
+  alt: "Riksa uji overhead crane adalah proses pemeriksaan dan pengujian crane jembatan yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional di area industri sesuai Permenaker nomor 8 tahun 2020 tentang K3 pesawat angkat"
 images:
 - src: /wp-content/uploads/2024/08/riksa-uji-overhead-crane-031.jpg
   alt: "Riksa uji overhead crane adalah proses pemeriksaan dan pengujian crane jembatan yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional di area industri"

@@ -54,7 +54,9 @@ tags:
 - Pesawat Angkat Angkut
 - Riksa Uji
 - Forklift
-image: /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
+image:
+  src: /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
+  alt: "Riksa uji forklift adalah proses pemeriksaan dan pengujian pesawat angkat yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional di tempat kerja sesuai Permenaker nomor 8 tahun 2020 tentang K3 pesawat angkat dan angkut"
 images:
 - src: /wp-content/uploads/2024/08/riksa-uji-k3-papa-forklift-pt-cipta-mas-jaya-005.jpg
   alt: "Riksa uji forklift adalah proses pemeriksaan dan pengujian pesawat angkat yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional di tempat kerja"

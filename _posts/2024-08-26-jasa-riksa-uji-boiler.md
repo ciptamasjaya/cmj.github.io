@@ -43,7 +43,9 @@ tags:
 - Pesawat Uap
 - Riksa Uji
 - Boiler
-image: /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001-1.jpg
+image:
+  src: /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001-1.jpg
+  alt: "Riksa uji boiler adalah proses pemeriksaan dan pengujian ketel uap yang dilakukan oleh teknisi PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker dan regulasi K3 yang berlaku di Indonesia"
 images:
 - src: /wp-content/uploads/2024/08/riksa-uji-k3-boiler-pt-cipta-mas-jaya-001-1.jpg
   alt: "Riksa uji boiler adalah proses pemeriksaan dan pengujian ketel uap yang dilakukan oleh teknisi PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker"

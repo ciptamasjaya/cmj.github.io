@@ -21,7 +21,9 @@ tags:
 - PJK3 Riksa Uji
 - Riksa Uji
 - Riksa Uji K3
-image: /wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg
+image:
+  src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg
+  alt: "PJK3 Jakarta Selatan adalah layanan riksa uji K3 dari PT Cipta Mas Jaya yang melayani inspeksi elevator, genset, instalasi listrik, dan proteksi kebakaran untuk gedung perkantoran, hotel, mall, dan apartemen di kawasan SCBD, Kuningan, dan TB Simatupang"
 images:
 - src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg
   alt: "PJK3 Jakarta Selatan PT Cipta Mas Jaya melayani jasa riksa uji K3 untuk gedung perkantoran, hotel, dan apartemen di kawasan SCBD, Kuningan, dan TB Simatupang"

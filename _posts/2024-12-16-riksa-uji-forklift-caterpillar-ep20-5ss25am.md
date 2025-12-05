@@ -24,7 +24,9 @@ show_breadcrumb_schema: true
 rating_id: 5ss25am
 keywords: riksa uji forklift, inspeksi forklift, laporan riksa uji, caterpillar ep20,
   forklift elektrik, uji beban forklift, PJK3, inspeksi K3, pesawat angkat
-image: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-.jpg
+image:
+  src: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-.jpg
+  alt: "Riksa uji forklift elektrik Caterpillar EP20 5SS25AM adalah proses inspeksi dan pengujian menyeluruh yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan kelayakan dan keselamatan operasional forklift di area industri sesuai standar K3"
 images:
 - src: /wp-content/uploads/2024/12/Riksa-Uji-Forklift-Caterpillar-EP20_5SS25AM-PT-Cipta-Mas-Jaya-2.jpg
   alt: "Riksa uji forklift elektrik Caterpillar EP20 5SS25AM adalah proses inspeksi dan pengujian menyeluruh yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan kelayakan dan keselamatan operasional forklift di area industri"

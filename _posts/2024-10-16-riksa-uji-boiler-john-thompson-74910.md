@@ -24,7 +24,9 @@ rating_id: '74910'
 keywords: riksa uji boiler, inspeksi boiler, laporan riksa uji, john thompson boiler,
   hydrotest boiler, thickness test, safety valve test, PJK3, inspeksi K3, pesawat
   uap
-image: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-05.jpg
+image:
+  src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-05.jpg
+  alt: "Riksa uji boiler John Thompson ACTOM nomor seri 74910 adalah proses inspeksi dan pengujian menyeluruh yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional boiler di sektor industri sesuai standar K3 Kemenaker"
 images:
 - src: /wp-content/uploads/2024/10/riksa-uji-riksa-uji-boiler-john-thompson-actom-pty-ltd-nomor-seri-74910-01.jpg
   alt: "Riksa uji boiler John Thompson ACTOM nomor seri 74910 adalah proses inspeksi dan pengujian menyeluruh yang dilakukan oleh PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional boiler di sektor industri"
