@@ -75,7 +75,7 @@ Usage:
       "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
       "name": "{{ site.business.name }}"
     },
-    "image": "{{ page.image | default: '/assets/images/posts/default/i1.svg' | absolute_url }}"
+    "image": "{% if page.image.src %}{{ page.image.src | absolute_url }}{% elsif page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/posts/default/i1.svg' | absolute_url }}{% endif %}"
   }
 }
 </script>

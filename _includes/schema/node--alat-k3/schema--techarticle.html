@@ -59,10 +59,10 @@ Usage:
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
 
-  {% if page.image %}
+  {% if page.image.src or page.image %}
   "image": {
     "@type": "ImageObject",
-    "url": "{{ page.image | absolute_url }}",
+    "url": "{% if page.image.src %}{{ page.image.src | absolute_url }}{% else %}{{ page.image | absolute_url }}{% endif %}",
     "width": 1200,
     "height": 630
   },

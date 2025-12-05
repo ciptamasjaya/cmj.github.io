@@ -59,23 +59,27 @@ Usage:
       "height": 60
     }
   },
-  {% comment %} Primary image: image > default i1.svg {% endcomment %}
+  {% comment %} Primary image: image > default i1.svg (support object format) {% endcomment %}
   {% assign primary_image = '/assets/images/posts/default/i1.svg' %}
-  {% if page.image and page.image != '' %}
+  {% assign primary_image_alt = page.title %}
+  {% if page.image.src %}
+    {% assign primary_image = page.image.src %}
+    {% assign primary_image_alt = page.image.alt | default: page.title %}
+  {% elsif page.image and page.image != '' %}
     {% assign primary_image = page.image %}
   {% endif %}
   "image": {
     "@type": "ImageObject",
     "@id": "{{ page.url | absolute_url }}#primaryimage",
     "url": "{{ primary_image | absolute_url }}",
-    "caption": "{{ page.title | escape }}"
+    "caption": "{{ primary_image_alt | escape }}"
   },
   {% comment %} Gallery images as associatedMedia (fallback i1-i4.svg) {% endcomment %}
   {% assign default_images = "/assets/images/posts/default/i1.svg,/assets/images/posts/default/i2.svg,/assets/images/posts/default/i3.svg,/assets/images/posts/default/i4.svg" | split: "," %}
   {% assign gallery_images = page.images | default: default_images %}
   {% assign has_gallery = false %}
   {% for img in gallery_images %}
-    {% if img and img != '' %}
+    {% if img.src or img and img != '' %}
       {% assign has_gallery = true %}
       {% break %}
     {% endif %}
@@ -85,16 +89,22 @@ Usage:
   {% endif %}
   "associatedMedia": [
     {% for img in gallery_images %}
-    {% if img and img != '' %}
+    {% comment %} Support object format {src, alt} and legacy string {% endcomment %}
+    {% if img.src %}
+      {% assign img_url = img.src %}
+      {% assign img_alt = img.alt | default: page.title | append: " - Image " | append: forloop.index %}
+    {% elsif img and img != '' %}
       {% assign img_url = img %}
+      {% assign img_alt = page.title | append: " - Image " | append: forloop.index %}
     {% else %}
       {% assign img_url = default_images[forloop.index0] %}
+      {% assign img_alt = page.title | append: " - Image " | append: forloop.index %}
     {% endif %}
     {
       "@type": "ImageObject",
       "@id": "{{ page.url | absolute_url }}#image{{ forloop.index }}",
       "url": "{{ img_url | absolute_url }}",
-      "caption": "{{ page.title | escape }} - Image {{ forloop.index }}"
+      "caption": "{{ img_alt | escape }}"
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ],

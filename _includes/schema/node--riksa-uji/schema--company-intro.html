@@ -82,7 +82,7 @@ Usage:
       "@id": "{{ page.url | absolute_url }}#product",
       "name": "{{ page.title | escape }}",
       "description": "{{ page.description | escape }}",
-      "image": "{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}",
+      "image": "{% if page.image.src %}{{ page.image.src | absolute_url }}{% elsif page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/logo.svg' | absolute_url }}{% endif %}",
       "brand": {
         "@type": "Brand",
         "name": "{{ site.business.name }}"
@@ -101,7 +101,7 @@ Usage:
       "@id": "{{ page.url | absolute_url }}#product",
       "name": "{{ page.title | escape }}",
       "description": "{{ page.description | escape }}",
-      "image": "{{ page.image | default: '/assets/images/logo.svg' | absolute_url }}",
+      "image": "{% if page.image.src %}{{ page.image.src | absolute_url }}{% elsif page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/logo.svg' | absolute_url }}{% endif %}",
       "brand": {
         "@type": "Brand",
         "name": "{{ site.business.name }}"

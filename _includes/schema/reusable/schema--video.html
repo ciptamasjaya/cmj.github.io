@@ -38,10 +38,12 @@ Usage:
 {% assign video_duration = include.duration | default: "PT3M30S" %}
 {% assign id_suffix = include.id_suffix | default: "video" %}
 
-{% comment %} Thumbnail: parameter > images[0] > default {% endcomment %}
+{% comment %} Thumbnail: parameter > images[0] > default (support object format) {% endcomment %}
 {% assign video_thumb = default_thumb %}
 {% if include.thumbnail and include.thumbnail != '' %}
   {% assign video_thumb = include.thumbnail %}
+{% elsif page.images[0].src %}
+  {% assign video_thumb = page.images[0].src %}
 {% elsif page.images and page.images[0] and page.images[0] != '' %}
   {% assign video_thumb = page.images[0] %}
 {% endif %}

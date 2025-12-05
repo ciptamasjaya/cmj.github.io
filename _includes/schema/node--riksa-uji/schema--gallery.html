@@ -22,11 +22,11 @@ Usage:
 {% comment %} Default fallback images {% endcomment %}
 {% assign default_images = "/assets/images/posts/default/i1.svg,/assets/images/posts/default/i2.svg,/assets/images/posts/default/i3.svg,/assets/images/posts/default/i4.svg" | split: "," %}
 
-{% comment %} Check if images provided and has content {% endcomment %}
+{% comment %} Check if images provided and has content (support object format) {% endcomment %}
 {% assign has_images = false %}
 {% if page.images and page.images.size > 0 %}
   {% for img in page.images %}
-    {% if img and img != '' %}
+    {% if img.src or img and img != '' %}
       {% assign has_images = true %}
       {% break %}
     {% endif %}
@@ -42,16 +42,23 @@ Usage:
   "description": "Image gallery untuk {{ page.title | escape }}",
   "image": [
     {% for i in (0..3) %}
-    {% if has_images and page.images[i] and page.images[i] != '' %}
-      {% assign img_url = page.images[i] %}
+    {% assign current_img = page.images[i] %}
+    {% comment %} Support object format {src, alt} and legacy string {% endcomment %}
+    {% if has_images and current_img.src %}
+      {% assign img_url = current_img.src %}
+      {% assign img_alt = current_img.alt | default: page.title | append: " - Image " | append: forloop.index %}
+    {% elsif has_images and current_img and current_img != '' %}
+      {% assign img_url = current_img %}
+      {% assign img_alt = page.title | append: " - Image " | append: forloop.index %}
     {% else %}
       {% assign img_url = default_images[i] %}
+      {% assign img_alt = page.title | append: " - Image " | append: forloop.index %}
     {% endif %}
     {
       "@type": "ImageObject",
       "@id": "{{ page.url | absolute_url }}#gallery-image-{{ forloop.index }}",
       "url": "{{ img_url | absolute_url }}",
-      "caption": "{{ page.title | escape }} - Image {{ forloop.index }}",
+      "caption": "{{ img_alt | escape }}",
       "representativeOfPage": {% if forloop.first %}true{% else %}false{% endif %}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}

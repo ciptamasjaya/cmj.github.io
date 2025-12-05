@@ -35,7 +35,7 @@ Usage:
 {% endcomment %}
 
 {% assign service_area = include.area | default: page.area_served %}
-{% assign item_image = page.image | default: site.default_image %}
+{% if page.image.src %}{% assign item_image = page.image.src %}{% elsif page.image %}{% assign item_image = page.image %}{% else %}{% assign item_image = site.default_image %}{% endif %}
 {% assign reviews = include.reviews %}
 {% assign coverage = include.coverage %}
 

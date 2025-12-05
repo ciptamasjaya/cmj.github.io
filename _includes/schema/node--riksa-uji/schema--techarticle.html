@@ -38,7 +38,7 @@ Usage:
 {% assign article_body = article_body | strip_newlines | strip | truncate: 5000 | escape %}
 
 {% assign primary_image = '/assets/images/posts/default/i1.svg' %}
-{% if page.image and page.image != '' %}{% assign primary_image = page.image %}{% endif %}
+{% if page.image.src %}{% assign primary_image = page.image.src %}{% elsif page.image and page.image != '' %}{% assign primary_image = page.image %}{% endif %}
 
 {% comment %} Check which sections exist for hasPart {% endcomment %}
 {% assign has_parts = false %}
