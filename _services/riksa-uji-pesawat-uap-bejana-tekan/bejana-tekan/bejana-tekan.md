@@ -16,7 +16,8 @@ content_structure: 1xh1, 2xpara, h2(list-services)
 date: 2025-11-28
 last_modified_at: 2025-11-28
 show_breadcrumb_schema: true
-keywords: riksa uji bejana tekan, inspeksi pressure vessel, inspeksi air receiver, inspeksi heat exchanger, autoclave, separator, PJK3, sertifikasi K3
+keywords: riksa uji bejana tekan, inspeksi pressure vessel, inspeksi air receiver,
+  inspeksi heat exchanger, autoclave, separator, PJK3, sertifikasi K3
 intro:
   h1: Bejana Tekan - Riksa Uji Vessel dan Peralatan Bertekanan
   para_1: Bejana tekan adalah peralatan yang digunakan untuk menyimpan maupun memproses
@@ -98,7 +99,7 @@ proses:
     eksternal, pengukuran ketebalan dinding, tes NDT pada sambungan las, serta hydrostatic
     test. Setiap inspeksi didokumentasikan dalam laporan komprehensif serta dilengkapi
     sertifikat kelayakan operasional yang berlaku 1 tahun.
-_content_refreshed_at: '2025-12-02T03:48:34+0000'
+_content_refreshed_at: '2025-12-05T03:47:44+0000'
 lastmod: '2025-12-01T02:07:50+0700'
 ---
 <!-- ========================================================================== -->
