@@ -21,12 +21,15 @@ Note: AggregateRating is in separate Product schema (schema--rating.html)
 
 {% comment %} Determine primary image - from images[0] or image or fallback (support object format) {% endcomment %}
 {% assign primary_image = '/assets/images/posts/default/i1.svg' %}
+{% assign primary_image_alt = page.title %}
 {% if page.images[0].src %}
   {% assign primary_image = page.images[0].src %}
+  {% assign primary_image_alt = page.images[0].alt | default: page.title %}
 {% elsif page.images and page.images[0] and page.images[0] != '' %}
   {% assign primary_image = page.images[0] %}
 {% elsif page.image.src %}
   {% assign primary_image = page.image.src %}
+  {% assign primary_image_alt = page.image.alt | default: page.title %}
 {% elsif page.image and page.image != '' %}
   {% assign primary_image = page.image %}
 {% endif %}
@@ -101,7 +104,7 @@ Note: AggregateRating is in separate Product schema (schema--rating.html)
         "url": "{{ primary_image | absolute_url }}",
         "width": 1200,
         "height": 630,
-        "caption": "{{ page.title | escape }}"
+        "caption": "{{ primary_image_alt | escape }}"
       },
       "isPartOf": {
         "@type": "WebSite",

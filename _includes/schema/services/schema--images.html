@@ -35,7 +35,15 @@ Usage:
 ============================================================================
 {% endcomment %}
 
-{% if page.image or page.images %}
+{% if page.image.src or page.image or page.images %}
+{% comment %} Support object format for primary image {% endcomment %}
+{% if page.image.src %}
+  {% assign primary_img_url = page.image.src %}
+  {% assign primary_img_alt = page.image.alt | default: page.title %}
+{% elsif page.image %}
+  {% assign primary_img_url = page.image %}
+  {% assign primary_img_alt = page.title %}
+{% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -48,20 +56,20 @@ Usage:
     "@type": "ItemList",
     "numberOfItems": {% if page.images %}{{ page.images.size | plus: 1 }}{% else %}1{% endif %},
     "itemListElement": [
-      {% if page.image %}
+      {% if primary_img_url %}
       {
         "@type": "ListItem",
         "position": 1,
         "item": {
           "@type": "ImageObject",
           "@id": "{{ page.url | absolute_url }}#primaryimage",
-          "url": "{{ page.image | absolute_url }}",
-          "contentUrl": "{{ page.image | absolute_url }}",
-          "name": "{{ page.title | escape }} - Gambar Utama",
+          "url": "{{ primary_img_url | absolute_url }}",
+          "contentUrl": "{{ primary_img_url | absolute_url }}",
+          "name": "{{ primary_img_alt | escape }} - Gambar Utama",
           "description": "{{ page.description | escape }}",
-          "caption": "{{ page.title | escape }} - {{ site.business.name }}",
+          "caption": "{{ primary_img_alt | escape }} - {{ site.business.name }}",
           "representativeOfPage": true,
-          "encodingFormat": "{% if page.image contains '.svg' %}image/svg+xml{% elsif page.image contains '.png' %}image/png{% elsif page.image contains '.webp' %}image/webp{% else %}image/jpeg{% endif %}",
+          "encodingFormat": "{% if primary_img_url contains '.svg' %}image/svg+xml{% elsif primary_img_url contains '.png' %}image/png{% elsif primary_img_url contains '.webp' %}image/webp{% else %}image/jpeg{% endif %}",
           "creator": {
             "@type": "Organization",
             "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
@@ -80,18 +88,26 @@ Usage:
       {% endif %}
       {% if page.images %}
       {% for img in page.images %}
+      {% comment %} Support object format for gallery images {% endcomment %}
+      {% if img.src %}
+        {% assign img_url = img.src %}
+        {% assign img_alt = img.alt | default: page.title | append: " - Gambar " | append: forloop.index %}
+      {% else %}
+        {% assign img_url = img %}
+        {% assign img_alt = page.title | append: " - Gambar " | append: forloop.index %}
+      {% endif %}
       {
         "@type": "ListItem",
         "position": {{ forloop.index | plus: 1 }},
         "item": {
           "@type": "ImageObject",
           "@id": "{{ page.url | absolute_url }}#image{{ forloop.index }}",
-          "url": "{{ img | absolute_url }}",
-          "contentUrl": "{{ img | absolute_url }}",
-          "name": "{{ page.title | escape }} - Gambar {{ forloop.index | plus: 1 }}",
+          "url": "{{ img_url | absolute_url }}",
+          "contentUrl": "{{ img_url | absolute_url }}",
+          "name": "{{ img_alt | escape }}",
           "description": "Dokumentasi layanan {{ page.title | escape }}",
-          "caption": "{{ page.title | escape }} - {{ site.business.name }}",
-          "encodingFormat": "{% if img contains '.svg' %}image/svg+xml{% elsif img contains '.png' %}image/png{% elsif img contains '.webp' %}image/webp{% else %}image/jpeg{% endif %}",
+          "caption": "{{ img_alt | escape }} - {{ site.business.name }}",
+          "encodingFormat": "{% if img_url contains '.svg' %}image/svg+xml{% elsif img_url contains '.png' %}image/png{% elsif img_url contains '.webp' %}image/webp{% else %}image/jpeg{% endif %}",
           "creator": {
             "@type": "Organization",
             "@id": "{{ site.url }}{{ site.baseurl }}/#organization",

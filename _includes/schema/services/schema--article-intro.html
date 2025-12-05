@@ -99,11 +99,11 @@ Usage:
       "height": 60
     }
   },
-  {% if page.image %}
+  {% if page.image.src or page.image %}
   "image": {
     "@type": "ImageObject",
-    "url": "{{ page.image | absolute_url }}",
-    "caption": "{{ page.title | escape }}"
+    "url": "{% if page.image.src %}{{ page.image.src | absolute_url }}{% else %}{{ page.image | absolute_url }}{% endif %}",
+    "caption": "{% if page.image.alt %}{{ page.image.alt | escape }}{% else %}{{ page.title | escape }}{% endif %}"
   },
   {% endif %}
   "isPartOf": {
