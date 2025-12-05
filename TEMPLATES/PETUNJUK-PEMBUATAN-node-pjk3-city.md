@@ -157,16 +157,28 @@ TodoWrite: Mark "Section 2: Images + section_gallery" as [in_progress]
 ```
 
 ```yaml
+# Image - Format object {src, alt} untuk SEO - alt minimal 180 karakter
+# Digunakan untuk og:image dan schema primaryImage
+image:
+  src: "/assets/images/pjk3-city/featured.webp"
+  alt: "[Deskripsi SEO minimal 180 karakter - kalimat lengkap yang menjelaskan gambar, relevan dengan konten, mengandung keyword]"
+
+# Images - Gallery images, format object {src, alt} - alt minimal 180 karakter
 images:
-  - "/assets/images/pjk3-city/featured.webp"
-  - "/assets/images/pjk3-city/gallery-1.webp"
-  - "/assets/images/pjk3-city/gallery-2.webp"
-  - "/assets/images/pjk3-city/gallery-3.webp"
+  - src: "/assets/images/pjk3-city/gallery-1.webp"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/assets/images/pjk3-city/gallery-2.webp"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/assets/images/pjk3-city/gallery-3.webp"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/assets/images/pjk3-city/gallery-4.webp"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
 ```
 
 **Catatan:**
-- `images[0]`: Featured image untuk og:image, schema, thumbnail
-- `images[1-3]`: Gallery images
+- `image`: Featured image untuk og:image dan schema primaryImage
+- `images`: Gallery images
+- Format object {src, alt} - alt minimal 180 karakter
 - Jika kosong, fallback ke default i1-i4.svg
 
 ---
@@ -1062,7 +1074,8 @@ bi-credit-card      : Pembayaran
 - [ ] tags terisi (7 tags standar)
 
 ### Images & Gallery
-- [ ] images[0-3] terisi atau kosong untuk fallback
+- [ ] image - Object {src, alt} untuk og:image dan schema - alt minimal 180 karakter
+- [ ] images[0-3] - Gallery, format object {src, alt} - alt minimal 180 karakter (atau kosong untuk fallback)
 - [ ] section_gallery: title, area, description, caption terisi
 
 ### Video

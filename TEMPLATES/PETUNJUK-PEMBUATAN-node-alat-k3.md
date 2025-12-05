@@ -107,7 +107,10 @@ tags:
   - keselamatan kerja
   - inspeksi
   - riksa uji
-image: "/assets/images/posts/[nama-alat]-featured.jpg"
+# Format object untuk SEO - alt minimal 180 karakter
+image:
+  src: "/assets/images/posts/[nama-alat]-featured.jpg"
+  alt: "[Deskripsi SEO minimal 180 karakter - kalimat lengkap yang menjelaskan gambar, relevan dengan konten artikel, mengandung keyword utama]"
 theme_color: "success"
 rating_id: "[nama-alat]"
 ```
@@ -139,7 +142,7 @@ rating_id: "[nama-alat]"
 - [ ] `date` & `last_modified_at` - Format YYYY-MM-DD
 - [ ] `categories` - 2 kategori
 - [ ] `tags` - 5 tags relevan
-- [ ] `image` - Path featured image
+- [ ] `image` - Object {src, alt} - alt minimal 180 karakter
 - [ ] `theme_color` - Sesuai jenis alat
 - [ ] `rating_id` - Untuk rating system
 
@@ -278,7 +281,7 @@ section_types:
 - [ ] `intro` - 1 kalimat pengantar
 - [ ] `types` - 4 items untuk grid seimbang
 - [ ] Setiap type punya `name`, `description`, `icon`
-- [ ] `image` opsional tapi direkomendasikan
+- [ ] `image` opsional - Object {src, alt} jika ada, alt minimal 180 karakter
 
 ```
 TodoWrite: Mark "Section 4: section_types" as [completed]
@@ -550,7 +553,7 @@ section_howto_penggunaan:
 - [ ] `totalTime` - Format ISO 8601
 - [ ] `steps` - 3-5 langkah
 - [ ] Setiap step punya `name` dan `text`
-- [ ] `image` opsional tapi direkomendasikan
+- [ ] `image` opsional - Object {src, alt} jika ada, alt minimal 180 karakter
 
 ```
 TodoWrite: Mark "Section 10: section_howto_penggunaan" as [completed]

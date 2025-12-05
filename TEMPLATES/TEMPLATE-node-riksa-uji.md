@@ -29,11 +29,18 @@ tags:
 - ""
 - ""
 - ""
+image:
+  src: ""
+  alt: ""
 images:
-- ""
-- ""
-- ""
-- ""
+- src: ""
+  alt: ""
+- src: ""
+  alt: ""
+- src: ""
+  alt: ""
+- src: ""
+  alt: ""
 section_hero:
   title: ""
   theme: ""

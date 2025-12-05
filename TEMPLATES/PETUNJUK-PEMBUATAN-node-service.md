@@ -153,11 +153,17 @@ sub_category: "Riksa Uji Boiler"
 certification_category: "pesawat-uap"
 service_type: Safety Inspection
 icon: "bi-fire"
-image: "/assets/images/services/riksa-uji-boiler.jpg"
+# Format object untuk SEO - alt minimal 180 karakter
+image:
+  src: "/assets/images/services/riksa-uji-boiler.jpg"
+  alt: "[Deskripsi SEO minimal 180 karakter - kalimat lengkap yang menjelaskan gambar, relevan dengan konten, mengandung keyword]"
 images:
-  - "/assets/images/services/boiler-1.jpg"
-  - "/assets/images/services/boiler-2.jpg"
-  - "/assets/images/services/boiler-3.jpg"
+  - src: "/assets/images/services/boiler-1.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/assets/images/services/boiler-2.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/assets/images/services/boiler-3.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
 area_served: Indonesia
 content_structure: ""
 date: 2025-12-01
@@ -177,13 +183,18 @@ lastmod: '2025-12-01T16:40:00+0700'
 - `permalink`: Format /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 - `rating_id`: ID untuk menghubungkan dengan file rating (lowercase, dash-separated)
 - `lastmod`: Auto-updated oleh propagate-timestamp plugin
-- `image` & `images`: Jika tidak ada gambar khusus, gunakan fallback default:
+- `image` & `images`: Format object {src, alt} - alt minimal 180 karakter. Jika tidak ada gambar khusus, gunakan fallback default:
   ```yaml
-  image: "/assets/images/services/1.svg"
+  image:
+    src: "/assets/images/services/default.svg"
+    alt: "[Deskripsi layanan minimal 180 karakter]"
   images:
-    - "/assets/images/services/2.svg"
-    - "/assets/images/services/3.svg"
-    - "/assets/images/services/4.svg"
+    - src: "/assets/images/services/1.svg"
+      alt: "[Deskripsi gambar 1 minimal 180 karakter]"
+    - src: "/assets/images/services/2.svg"
+      alt: "[Deskripsi gambar 2 minimal 180 karakter]"
+    - src: "/assets/images/services/3.svg"
+      alt: "[Deskripsi gambar 3 minimal 180 karakter]"
   ```
 
 ```

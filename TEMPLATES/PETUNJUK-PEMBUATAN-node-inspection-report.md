@@ -111,12 +111,22 @@ show_breadcrumb_schema: true
 # SEO Keywords (spesifik per halaman)
 keywords: "riksa uji [nama alat], inspeksi [nama alat], laporan riksa uji, [merek], hydrotest, thickness test, PJK3, inspeksi K3"
 
-# Images
+# Image - Format object {src, alt} untuk SEO - alt minimal 180 karakter
+# Digunakan untuk og:image dan schema primaryImage
+image:
+  src: "/path/to/featured-image.jpg"
+  alt: "[Deskripsi SEO minimal 180 karakter - kalimat lengkap yang menjelaskan gambar, relevan dengan konten, mengandung keyword]"
+
+# Images - Gallery images, format object {src, alt} - alt minimal 180 karakter
 images:
-  - "/path/to/featured-image.jpg"
-  - "/path/to/image-2.jpg"
-  - "/path/to/image-3.jpg"
-  - "/path/to/image-4.jpg"
+  - src: "/path/to/image-1.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/path/to/image-2.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/path/to/image-3.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/path/to/image-4.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
 
 # Video Section
 video:
@@ -160,7 +170,8 @@ paragraphs:
 - [ ] `inspector` - Nama tim inspektur
 - [ ] `categories` - 2 kategori (Layanan + Kategori Induk)
 - [ ] `tags` - 6 tags relevan
-- [ ] `images` - 4 gambar
+- [ ] `image` - Object {src, alt} untuk og:image dan schema - alt minimal 180 karakter
+- [ ] `images` - 4 gambar gallery, format object {src, alt} - alt minimal 180 karakter
 - [ ] `video` - Lengkap jika ada, kosong jika tidak
 - [ ] `paragraphs` - 4 paragraf pembuka
 

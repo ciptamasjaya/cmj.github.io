@@ -20,8 +20,10 @@ tags:
 - ""
 - ""
 - ""
-# Featured image untuk social sharing
-image: ""
+# Featured image untuk social sharing (SEO object format)
+image:
+  src: ""
+  alt: ""
 
 # ============================================================================
 # SECTION: Definition (DefinedTermSet)

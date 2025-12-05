@@ -9,11 +9,16 @@ sub_category: ""
 certification_category: ""
 service_type: Safety Inspection
 icon: ""
-image: ""
+image:
+  src: ""
+  alt: ""
 images:
-  - ""
-  - ""
-  - ""
+  - src: ""
+    alt: ""
+  - src: ""
+    alt: ""
+  - src: ""
+    alt: ""
 area_served: Indonesia
 content_structure: ""
 date: ""

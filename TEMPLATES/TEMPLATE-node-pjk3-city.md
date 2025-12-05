@@ -21,15 +21,23 @@ tags:
   - Riksa Uji
   - Riksa Uji K3
 
-# Images
-# images[0] = featured image untuk og:image, schema, thumbnail
-# images[1-3] = gallery images
+# Image - Format object {src, alt} untuk SEO - alt minimal 180 karakter
+# Digunakan untuk og:image dan schema primaryImage
+image:
+  src: ""
+  alt: ""
+
+# Images - Gallery images, format object {src, alt} - alt minimal 180 karakter
 # Jika kosong, fallback ke default i1-i4.svg
 images:
-  - ""
-  - ""
-  - ""
-  - ""
+  - src: ""
+    alt: ""
+  - src: ""
+    alt: ""
+  - src: ""
+    alt: ""
+  - src: ""
+    alt: ""
 
 # Gallery Section (optional - customize gallery title/description)
 section_gallery:

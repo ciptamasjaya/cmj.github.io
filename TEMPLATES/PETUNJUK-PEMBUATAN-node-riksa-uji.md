@@ -108,12 +108,19 @@ tags:
   - [Kategori Alat]
   - Riksa Uji
   - [Nama Alat]
-image: "/path/to/featured-image.jpg"
+# Format object untuk SEO - alt minimal 180 karakter
+image:
+  src: "/path/to/featured-image.jpg"
+  alt: "[Deskripsi SEO minimal 180 karakter - kalimat lengkap yang menjelaskan gambar, relevan dengan konten artikel, mengandung keyword utama]"
 images:
-  - "/path/to/image-1.jpg"
-  - "/path/to/image-2.jpg"
-  - "/path/to/image-3.jpg"
-  - "/path/to/image-4.jpg"
+  - src: "/path/to/image-1.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/path/to/image-2.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/path/to/image-3.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
+  - src: "/path/to/image-4.jpg"
+    alt: "[Deskripsi SEO minimal 180 karakter]"
 rating_id: riksa-uji-[nama-alat]
 related_service: /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 lastmod: '2025-12-01T16:40:00+0700'
@@ -145,8 +152,8 @@ lastmod: '2025-12-01T16:40:00+0700'
 - [ ] `author` - Nama penulis
 - [ ] `categories` - 2 kategori (Layanan + Kategori Induk)
 - [ ] `tags` - 5 tags relevan
-- [ ] `image` - Featured image path
-- [ ] `images` - 4 gambar untuk gallery
+- [ ] `image` - Object {src, alt} - alt minimal 180 karakter
+- [ ] `images` - 4 gambar gallery, format object {src, alt} - alt minimal 180 karakter
 - [ ] `rating_id` - ID untuk rating system
 - [ ] `related_service` - Path ke halaman layanan
 
