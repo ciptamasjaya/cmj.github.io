@@ -63,6 +63,25 @@ clean_build() {
     print_success "Clean completed"
 }
 
+# Function to create symlink for wp-content/uploads
+create_uploads_symlink() {
+    if [ -d "_site" ]; then
+        # Create wp-content directory if not exists
+        mkdir -p "_site/wp-content"
+
+        # Remove existing uploads dir/symlink if exists
+        rm -rf "_site/wp-content/uploads"
+
+        # Create symlink to source uploads
+        if [ -d "wp-content/uploads" ]; then
+            ln -s "$(pwd)/wp-content/uploads" "_site/wp-content/uploads"
+            print_success "Symlink created: _site/wp-content/uploads -> wp-content/uploads"
+        else
+            print_warning "wp-content/uploads not found, skipping symlink"
+        fi
+    fi
+}
+
 # Function to build Jekyll site
 build_site() {
     local config_file="${1:-_config.yml}"
@@ -73,6 +92,9 @@ build_site() {
 
     if JEKYLL_ENV=production bundle exec jekyll build --config "$config_file" --future; then
         print_success "Build completed successfully!"
+
+        # Create symlink for uploads (excluded from Jekyll build)
+        create_uploads_symlink
 
         # Show build info
         if [ -d "_site" ]; then

@@ -140,6 +140,7 @@ exclude:
   - LICENSE
   - RELEASE/
   - REVIEW/
+  - wp-content/uploads/
   - PARTIAL-REVIEW/
   - TEMPLATES/
   - TODO/

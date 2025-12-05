@@ -9,3 +9,6 @@ PARTIAL-REVIEW/
 # for development Don't Ignore TODO folder
 # TODO/
 
+# WordPress media uploads (too large for git, deploy separately)
+wp-content/uploads/
+
