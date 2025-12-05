@@ -18,7 +18,7 @@ tags:
 - forklift outdoor
 - riksa uji
 - K3
-image: "/assets/images/posts/forklift-hyster-h50ft.jpg"
+image:
 images:
 rating_id: hyster-h50ft
 section_definition:

@@ -33,7 +33,18 @@ Usage:
 
 {% assign post = include.post %}
 {% assign color_index = include.color_index | default: 1 %}
-{% assign has_image = post.images[0] | strip | size | plus: 0 %}
+
+{% comment %} Use post.image (featured image) - support both object and string format {% endcomment %}
+{% if post.image.src %}
+  {% assign card_image_src = post.image.src %}
+  {% assign card_image_alt = post.image.alt | default: post.title %}
+{% elsif post.image %}
+  {% assign card_image_src = post.image %}
+  {% assign card_image_alt = post.title %}
+{% else %}
+  {% assign card_image_src = nil %}
+{% endif %}
+{% assign has_image = card_image_src | strip | size | plus: 0 %}
 
 {% comment %} Auto-detect card type from layout {% endcomment %}
 {% assign card_type = post.layout | split: "/" | last | replace: "node--", "" | default: "post" %}
@@ -64,12 +75,13 @@ Usage:
   <!-- Image: field--images -->
   {% if has_image > 0 %}
   <div class="field field--images">
-    <img src="{{ post.images[0] | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+    <img src="{{ card_image_src | relative_url }}" class="card-img-top" alt="{{ card_image_alt }}" loading="lazy">
     <div class="field--images-overlay field--images-overlay-{{ color_index }}"></div>
   </div>
   {% else %}
+  {% assign default_index = color_index | minus: 1 %}
   <div class="field field--images">
-    <img src="{{ site.default_images[color_index] | default: site.default_image }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+    <img src="{{ site.default_images[default_index] | default: site.default_image }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
     <div class="field--images-overlay field--images-overlay-{{ color_index }}"></div>
   </div>
   {% endif %}
