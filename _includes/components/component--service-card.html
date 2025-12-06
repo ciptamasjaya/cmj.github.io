@@ -70,12 +70,16 @@ Date Display Logic:
 <div class="component--service-card h-100">
   <div class="card h-100 shadow-sm border-0 hover-lift">
 
-    <!-- Service Image -->
+    <!-- Service Image (with picture tag optimization) -->
     {% if service.image %}
-      <img src="{{ service.image | relative_url }}"
+      <div class="card-img-top-wrapper" style="height: {{ image_height }}; background: #f8f9fa; overflow: hidden;">
+        {% include components/picture.html
+           src=service.image
+           alt=service.title
+           preset="service"
            class="card-img-top"
-           alt="{{ service.title }}"
-           style="height: {{ image_height }}; object-fit: contain; background: #f8f9fa; padding: 1rem;">
+        %}
+      </div>
     {% elsif service.icon %}
       <div class="card-img-top bg-light d-flex align-items-center justify-content-center"
            style="height: {{ image_height }};">
@@ -192,16 +196,4 @@ Date Display Logic:
   </div>
 </div>
 
-<style>
-.hover-lift {
-  transition: all 0.3s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2) !important;
-}
-.bg-gradient-primary {
-  background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
-}
-</style>
 {% endif %}

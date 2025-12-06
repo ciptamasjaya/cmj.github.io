@@ -1,0 +1,89 @@
+{% comment %}
+============================================================================
+Picture Component (Jekyll Picture Tag wrapper)
+============================================================================
+
+@file        _includes/components/picture.html
+@description Wrapper for jekyll_picture_tag with smart fallback
+@version     1.0.0
+@date        2025-12-07
+
+Features:
+---------
+- Auto-optimization for raster images (JPG, PNG, GIF)
+- WebP generation with original format fallback
+- Multiple preset sizes (card, thumbnail, icon, post, hero)
+- Smart fallback for SVG and external URLs
+- Preserves SEO with original URL as fallback
+
+Parameters:
+-----------
+- src: Image path (required)
+- alt: Alt text (required for accessibility)
+- preset: Size preset - "default" | "card" | "service" | "thumbnail" | "icon" | "post" | "hero" | "gallery" (default: "default")
+- class: Additional CSS classes (optional)
+- loading: "lazy" | "eager" (default: "lazy")
+
+Usage:
+------
+Basic usage:
+{% include components/picture.html
+   src="/assets/images/photo.jpg"
+   alt="Description"
+   preset="card"
+%}
+
+With custom class:
+{% include components/picture.html
+   src="/wp-content/uploads/2024/01/photo.jpg"
+   alt="Photo description"
+   preset="post"
+   class="rounded shadow"
+%}
+
+For SVG (will render normal img):
+{% include components/picture.html
+   src="/assets/images/icon.svg"
+   alt="Icon"
+%}
+
+Note:
+-----
+- SVG files are passed through as-is (already optimized vectors)
+- External URLs (http/https) are passed through as-is
+- Raster images (jpg, png, gif) are processed with jekyll_picture_tag
+
+============================================================================
+{% endcomment %}
+
+{% assign img_src = include.src %}
+{% assign img_alt = include.alt | default: "" %}
+{% assign img_preset = include.preset | default: "default" %}
+{% assign img_class = include.class %}
+{% assign img_loading = include.loading | default: "lazy" %}
+
+{% comment %} Remove leading slash for jekyll_picture_tag compatibility {% endcomment %}
+{% assign img_src_clean = img_src | remove_first: "/" %}
+
+{% comment %} Check if SVG or external URL - skip processing {% endcomment %}
+{% assign is_svg = false %}
+{% assign is_external = false %}
+
+{% if img_src contains ".svg" %}
+  {% assign is_svg = true %}
+{% endif %}
+
+{% if img_src contains "http://" or img_src contains "https://" %}
+  {% assign is_external = true %}
+{% endif %}
+
+{% if is_svg or is_external %}
+  {% comment %} Render simple img tag for SVG and external URLs {% endcomment %}
+  <img src="{{ img_src | relative_url }}"
+       alt="{{ img_alt }}"
+       {% if img_class %}class="{{ img_class }}"{% endif %}
+       loading="{{ img_loading }}">
+{% else %}
+  {% comment %} Use jekyll_picture_tag for raster images {% endcomment %}
+  {% picture {{ img_preset }} {{ img_src_clean }} --alt {{ img_alt }} %}
+{% endif %}

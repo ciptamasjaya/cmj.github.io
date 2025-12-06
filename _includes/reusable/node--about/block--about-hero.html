@@ -28,10 +28,14 @@ Usage:
 
       <!-- Left Column - Image -->
       <div class="col-lg-6 mb-4 mb-lg-0">
-        <img src="/wp-content/uploads/2024/09/jasa-inspeksi-k3-pjk3-riksa-uji-pt-cipta-mas-jaya-12.jpeg"
+        <div class="about-hero-image rounded shadow-lg overflow-hidden">
+          {% include components/picture.html
+             src="/wp-content/uploads/2024/09/jasa-inspeksi-k3-pjk3-riksa-uji-pt-cipta-mas-jaya-12.jpeg"
              alt="Jasa Inspeksi K3 PJK3 Riksa Uji PT. Cipta Mas Jaya"
-             class="img-fluid rounded shadow-lg"
-             loading="eager">
+             preset="post"
+             loading="eager"
+          %}
+        </div>
       </div>
 
       <!-- Right Column - Text -->

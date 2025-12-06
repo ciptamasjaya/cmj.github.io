@@ -10,6 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-paginate-v2"
   gem "jekyll-last-modified-at"
   gem "jekyll-redirect-from"
+  gem "jekyll_picture_tag", "~> 2.1"
 end
 
 # Performance

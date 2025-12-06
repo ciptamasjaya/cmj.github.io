@@ -1,0 +1,150 @@
+# Jekyll Picture Tag Configuration
+# https://rbuchberger.github.io/jekyll_picture_tag/
+#
+# Generate optimized images with multiple sizes and WebP format
+# for better performance while maintaining original format fallback
+
+# Media queries for responsive breakpoints
+media_queries:
+  mobile: "max-width: 576px"
+  tablet: "max-width: 992px"
+  desktop: "min-width: 993px"
+
+# Presets for different use cases
+presets:
+  # Default preset - general purpose
+  default:
+    markup: picture
+    widths: [400, 800, 1200]
+    formats: [webp, original]
+    fallback_width: 800
+    fallback_format: original
+    sizes:
+      mobile: 100vw
+      tablet: 50vw
+      desktop: 33vw
+    attributes:
+      picture:
+      img:
+        loading: lazy
+
+  # Card images - for card components
+  card:
+    markup: picture
+    widths: [300, 450, 600]
+    formats: [webp, original]
+    fallback_width: 450
+    fallback_format: original
+    sizes:
+      mobile: 100vw
+      tablet: 50vw
+      desktop: 33vw
+    attributes:
+      picture:
+        class: picture-card
+      img:
+        class: card-img-top
+        loading: lazy
+
+  # Service card - for service listing
+  service:
+    markup: picture
+    widths: [200, 400, 600]
+    formats: [webp, original]
+    fallback_width: 400
+    fallback_format: original
+    sizes:
+      mobile: 100vw
+      tablet: 50vw
+    attributes:
+      picture:
+        class: picture-service
+      img:
+        loading: lazy
+
+  # Thumbnail - small preview images
+  thumbnail:
+    markup: picture
+    widths: [150, 300]
+    formats: [webp, original]
+    fallback_width: 150
+    fallback_format: original
+    attributes:
+      img:
+        loading: lazy
+
+  # Icon - very small images
+  icon:
+    markup: img
+    widths: [32, 64, 128]
+    formats: [webp, original]
+    fallback_width: 64
+    fallback_format: original
+    attributes:
+      img:
+        loading: lazy
+
+  # Post featured image - blog post headers
+  post:
+    markup: picture
+    widths: [400, 800, 1200]
+    formats: [webp, original]
+    fallback_width: 800
+    fallback_format: original
+    sizes:
+      mobile: 100vw
+      tablet: 100vw
+      desktop: 800px
+    attributes:
+      picture:
+        class: picture-post
+      img:
+        class: img-fluid w-100
+        loading: lazy
+
+  # OpenGraph / Social sharing - fixed size
+  og:
+    markup: img
+    widths: [1200]
+    formats: [original]
+    fallback_width: 1200
+    fallback_format: original
+    attributes:
+      img:
+        loading: eager
+
+  # Hero image - full width banners
+  hero:
+    markup: picture
+    widths: [600, 1200, 1920]
+    formats: [webp, original]
+    fallback_width: 1200
+    fallback_format: original
+    sizes:
+      mobile: 100vw
+      tablet: 100vw
+      desktop: 100vw
+    attributes:
+      picture:
+        class: picture-hero
+      img:
+        class: img-fluid w-100
+        loading: eager
+
+  # Gallery - for image galleries
+  gallery:
+    markup: picture
+    widths: [300, 600, 900]
+    formats: [webp, original]
+    fallback_width: 600
+    fallback_format: original
+    sizes:
+      mobile: 100vw
+      tablet: 50vw
+      desktop: 33vw
+    attributes:
+      picture:
+        class: picture-gallery
+      img:
+        loading: lazy
+        class: img-fluid

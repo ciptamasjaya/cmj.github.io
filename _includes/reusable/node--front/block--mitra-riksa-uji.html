@@ -49,11 +49,13 @@ Usage:
       <!-- Image Column (Left) -->
       <div class="col-lg-6 mb-4 mb-lg-0">
         <figure class="mb-0">
-          <img
-            src="/wp-content/uploads/2024/09/pallet-mover-papa-pjk3-riksa-uji-pt.cipta-mas-jaya-007-1.jpg"
-            alt="PT. Cipta Mas Jaya adalah PJK3 Riksa Uji yang memiliki izin resmi dari Kementerian Ketenagakerjaan untuk melakukan pemeriksaan, pengujian, dan sertifikasi K3. Perusahaan ini berfokus pada Riksa Uji berbagai peralatan kerja seperti pesawat angkat, angkut, instalasi listrik, dan proteksi kebakaran, memastikan peralatan memenuhi standar keselamatan dan layak digunakan."
-            class="img-fluid rounded shadow-lg"
-            loading="lazy">
+          <div class="mitra-hero-image rounded shadow-lg overflow-hidden">
+            {% include components/picture.html
+               src="/wp-content/uploads/2024/09/pallet-mover-papa-pjk3-riksa-uji-pt.cipta-mas-jaya-007-1.jpg"
+               alt="PT. Cipta Mas Jaya adalah PJK3 Riksa Uji yang memiliki izin resmi dari Kementerian Ketenagakerjaan untuk melakukan pemeriksaan, pengujian, dan sertifikasi K3. Perusahaan ini berfokus pada Riksa Uji berbagai peralatan kerja seperti pesawat angkat, angkut, instalasi listrik, dan proteksi kebakaran, memastikan peralatan memenuhi standar keselamatan dan layak digunakan."
+               preset="post"
+            %}
+          </div>
           <figcaption class="text-muted small mt-2 text-center">
             Tim PJK3 Riksa Uji PT. Cipta Mas Jaya melakukan inspeksi K3 pesawat angkat dan angkut
           </figcaption>

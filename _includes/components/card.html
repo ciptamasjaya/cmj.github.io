@@ -113,7 +113,14 @@ Card with custom styling:
 
 <div class="component-card card h-100 {{ card_border }} {{ card_shadow }} {% if hover_effect %}component-card--hover{% endif %}">
   {% if card_image and image_position == "top" %}
-  <img src="{{ card_image | relative_url }}" class="component-card__image component-card__image--top card-img-top" alt="{{ image_alt }}" loading="lazy">
+  <div class="component-card__image-wrapper component-card__image-wrapper--top">
+    {% include components/picture.html
+       src=card_image
+       alt=image_alt
+       preset="card"
+       class="component-card__image component-card__image--top card-img-top"
+    %}
+  </div>
   {% endif %}
 
   {% if card_badge or card_icon %}
@@ -155,6 +162,13 @@ Card with custom styling:
   {% endif %}
 
   {% if card_image and image_position == "bottom" %}
-  <img src="{{ card_image | relative_url }}" class="component-card__image component-card__image--bottom card-img-bottom" alt="{{ image_alt }}" loading="lazy">
+  <div class="component-card__image-wrapper component-card__image-wrapper--bottom">
+    {% include components/picture.html
+       src=card_image
+       alt=image_alt
+       preset="card"
+       class="component-card__image component-card__image--bottom card-img-bottom"
+    %}
+  </div>
   {% endif %}
 </div>

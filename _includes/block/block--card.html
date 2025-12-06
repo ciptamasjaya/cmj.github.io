@@ -74,14 +74,23 @@ Usage:
 <article class="card h-100 border-0 shadow-sm block-card block-card--{{ card_type }} block-card-{{ color_index }}">
   <!-- Image: field--images -->
   {% if has_image > 0 %}
-  <div class="field field--images">
-    <img src="{{ card_image_src | relative_url }}" class="card-img-top" alt="{{ card_image_alt }}" loading="lazy">
+  <div class="field field--images block-card-image">
+    {% include components/picture.html
+       src=card_image_src
+       alt=card_image_alt
+       preset="card"
+    %}
     <div class="field--images-overlay field--images-overlay-{{ color_index }}"></div>
   </div>
   {% else %}
   {% assign default_index = color_index | minus: 1 %}
-  <div class="field field--images">
-    <img src="{{ site.default_images[default_index] | default: site.default_image }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+  {% assign default_img = site.default_images[default_index] | default: site.default_image %}
+  <div class="field field--images block-card-image">
+    {% include components/picture.html
+       src=default_img
+       alt=post.title
+       preset="card"
+    %}
     <div class="field--images-overlay field--images-overlay-{{ color_index }}"></div>
   </div>
   {% endif %}

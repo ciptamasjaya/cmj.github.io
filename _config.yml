@@ -77,6 +77,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll-last-modified-at
   - jekyll-redirect-from
+  - jekyll_picture_tag
 
 # Pagination Settings
 pagination:
@@ -127,6 +128,13 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+
+# Picture Tag Settings (image optimization)
+picture:
+  source: "."
+  output: "assets/images/generated"
+  relative_url: true
+  nomarkdown: false
 
 # Exclude
 exclude:

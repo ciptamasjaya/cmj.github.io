@@ -1,0 +1,110 @@
+// ==========================================================================
+// Component: Service Card & Service List
+// ==========================================================================
+// Styles for service card and service list components
+// @path _includes/components/component--service-card.html
+// @path _includes/shared/block--service-list.html
+
+// Service List Image (block--service-list.html)
+.service-list-image {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+
+  img,
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Riksa Uji Card Image (block--riksa-uji-k3.html)
+.riksa-uji-card-image {
+  height: 250px;
+  overflow: hidden;
+
+  img,
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Inspeksi Card Image (block--jasa-inspeksi-k3.html)
+.inspeksi-card-image {
+  height: 200px;
+  overflow: hidden;
+
+  img,
+  picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Mitra Hero Image (block--mitra-riksa-uji.html)
+.mitra-hero-image {
+  img,
+  picture img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// About Hero Image (block--about-hero.html)
+.about-hero-image {
+  img,
+  picture img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Block Card Image (block--card.html)
+.block-card-image {
+  position: relative;
+  overflow: hidden;
+
+  img,
+  picture img {
+    width: 100%;
+    height: auto;
+  }
+
+  picture {
+    display: block;
+  }
+}
+
+.component--service-card {
+  .hover-lift {
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+  }
+
+  .card-img-top-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    img,
+    picture img {
+      max-height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+}

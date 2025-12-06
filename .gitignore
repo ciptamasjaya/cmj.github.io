@@ -12,3 +12,6 @@ PARTIAL-REVIEW/
 # WordPress media uploads (too large for git, deploy separately)
 wp-content/uploads/
 
+# Generated images by jekyll_picture_tag (regenerated on build)
+assets/images/generated/
+
