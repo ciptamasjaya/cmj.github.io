@@ -156,15 +156,13 @@ Responsive Behavior:
             <td>
               {% comment %} Handle both string and object {src, alt} format {% endcomment %}
               {% if service.image.src %}
-                <img src="{{ service.image.src | relative_url }}"
-                     alt="{{ service.image.alt | default: service.title }}"
-                     class="img-thumbnail"
-                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+                <div class="img-thumbnail p-1" style="width: 60px; height: 60px; background: #f8f9fa;">
+                  {% include components/picture.html src=service.image.src alt=service.image.alt preset="icon" class="w-100 h-100" style="object-fit: contain;" %}
+                </div>
               {% elsif service.image and service.image != '' %}
-                <img src="{{ service.image | relative_url }}"
-                     alt="{{ service.title }}"
-                     class="img-thumbnail"
-                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+                <div class="img-thumbnail p-1" style="width: 60px; height: 60px; background: #f8f9fa;">
+                  {% include components/picture.html src=service.image alt=service.title preset="icon" class="w-100 h-100" style="object-fit: contain;" %}
+                </div>
               {% elsif service.icon %}
                 <div class="d-flex align-items-center justify-content-center bg-light rounded"
                      style="width: 60px; height: 60px;">
@@ -279,15 +277,13 @@ Responsive Behavior:
             <div class="flex-shrink-0">
               {% comment %} Handle both string and object {src, alt} format {% endcomment %}
               {% if service.image.src %}
-                <img src="{{ service.image.src | relative_url }}"
-                     alt="{{ service.image.alt | default: service.title }}"
-                     class="img-thumbnail"
-                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+                <div class="img-thumbnail p-1" style="width: 60px; height: 60px; background: #f8f9fa;">
+                  {% include components/picture.html src=service.image.src alt=service.image.alt preset="icon" class="w-100 h-100" style="object-fit: contain;" %}
+                </div>
               {% elsif service.image and service.image != '' %}
-                <img src="{{ service.image | relative_url }}"
-                     alt="{{ service.title }}"
-                     class="img-thumbnail"
-                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+                <div class="img-thumbnail p-1" style="width: 60px; height: 60px; background: #f8f9fa;">
+                  {% include components/picture.html src=service.image alt=service.title preset="icon" class="w-100 h-100" style="object-fit: contain;" %}
+                </div>
               {% elsif service.icon %}
                 <div class="d-flex align-items-center justify-content-center bg-light rounded"
                      style="width: 60px; height: 60px;">
