@@ -144,14 +144,14 @@ Carousel with fade effect:
              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
              style="height: {{ max_height }}; width: 100%; object-fit: contain; background-color: #f8f9fa;">
       {% else %}
-        <picture>
-          <source srcset="{{ img_src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | relative_url }}" type="image/webp">
-          <img src="{{ img_src | relative_url }}"
-               class="d-block w-100 rounded"
-               alt="{{ img_title }} - Foto {{ forloop.index }}"
-               loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
-               style="max-height: {{ max_height }}; object-fit: cover;">
-        </picture>
+        {% if forloop.first %}
+          {% assign img_loading = "eager" %}
+        {% else %}
+          {% assign img_loading = "lazy" %}
+        {% endif %}
+        <div class="carousel-image-wrapper" style="max-height: {{ max_height }}; overflow: hidden;">
+          {% include components/picture.html src=img_src alt=img_title preset="gallery" class="d-block w-100 rounded" loading=img_loading %}
+        </div>
       {% endif %}
 
       {% if img_caption or img_title %}
