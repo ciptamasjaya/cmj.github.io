@@ -14,11 +14,16 @@ sub_category: Pesawat Uap
 certification_category: pesawat-uap
 service_type: Safety Inspection
 icon: bi-fire
-image: "/assets/images/services/default-bejana-tekan.svg"
+image:
+  src: /wp-content/uploads/2024/12/riksa-uji-boiler-pt-cipta-mas-jaya-001.jpg
+  alt: "Riksa uji boiler adalah proses pemeriksaan dan pengujian keselamatan ketel uap yang dilakukan oleh teknisi PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker dan regulasi K3 pesawat uap yang berlaku di Indonesia"
 images:
-- "/assets/images/services/1.svg"
-- "/assets/images/services/2.svg"
-- "/assets/images/services/3.svg"
+- src: /wp-content/uploads/2024/12/riksa-uji-boiler-pt-cipta-mas-jaya-002.jpg
+  alt: "Proses inspeksi visual dan pemeriksaan komponen boiler oleh inspector bersertifikat PT Cipta Mas Jaya meliputi pengecekan drum uap, pipa pemanas, burner, dan komponen tekanan untuk memastikan integritas sistem"
+- src: /wp-content/uploads/2024/12/riksa-uji-boiler-pt-cipta-mas-jaya-003.jpg
+  alt: "Pemeriksaan komponen keselamatan boiler sesuai Permenaker No. 37 Tahun 2016 mencakup pengecekan safety valve, pressure gauge, water level indicator, dan sistem proteksi lainnya oleh PJK3 resmi Kemenaker"
+- src: /wp-content/uploads/2024/12/riksa-uji-boiler-pt-cipta-mas-jaya-004.jpg
+  alt: "Hydrostatic test boiler untuk memastikan kekuatan dan kebocoran pada tekanan kerja yang dilakukan oleh teknisi inspector K3 bersertifikat dari PT Cipta Mas Jaya sebagai PJK3 resmi Kementerian Ketenagakerjaan RI"
 area_served: Indonesia
 content_structure: 1xh1, 2xpara, h2(para+3xh3@2xh4), h2(para+h3@h4), h2(para), h2(para)
 date: 2025-12-01
@@ -154,7 +159,7 @@ video_riksa_uji:
   description: Video dokumentasi proses riksa uji dan inspeksi K3 boiler oleh tim
     inspector bersertifikat PT. Cipta Mas Jaya. Meliputi pemeriksaan visual, uji NDT,
     hidrostatik test, dan penerbitan sertifikat resmi.
-  thumbnail: "/assets/images/services/default-bejana-tekan.svg"
+  thumbnail: /wp-content/uploads/2024/12/riksa-uji-boiler-pt-cipta-mas-jaya-001.jpg
   src: ''
   duration: ''
   upload_date: ''

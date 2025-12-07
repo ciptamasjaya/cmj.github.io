@@ -12,11 +12,16 @@ sub_category: Pesawat Angkat
 certification_category: pesawat-angkat
 service_type: Safety Inspection
 icon: bi-arrows-vertical
-image: "/assets/images/services/1.svg"
+image:
+  src: /wp-content/uploads/2024/12/riksa-uji-gantry-crane-pt-cipta-mas-jaya-001.jpg
+  alt: "Riksa uji gantry crane adalah proses pemeriksaan dan pengujian keselamatan crane portal yang dilakukan oleh teknisi PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker dan regulasi K3 yang berlaku di Indonesia"
 images:
-- "/assets/images/services/2.svg"
-- "/assets/images/services/3.svg"
-- "/assets/images/services/4.svg"
+- src: /wp-content/uploads/2024/12/riksa-uji-gantry-crane-pt-cipta-mas-jaya-002.jpg
+  alt: "Proses inspeksi visual dan pemeriksaan struktur gantry crane oleh inspector bersertifikat PT Cipta Mas Jaya meliputi pengecekan girder, trolley, hoist, dan komponen pengangkat untuk memastikan integritas struktural"
+- src: /wp-content/uploads/2024/12/riksa-uji-gantry-crane-pt-cipta-mas-jaya-003.jpg
+  alt: "Pemeriksaan komponen keselamatan gantry crane sesuai Permenaker No. 8 Tahun 2020 mencakup pengecekan limit switch, emergency stop, anti-collision device, dan sistem keamanan lainnya oleh PJK3 resmi Kemenaker"
+- src: /wp-content/uploads/2024/12/riksa-uji-gantry-crane-pt-cipta-mas-jaya-004.jpg
+  alt: "Load test gantry crane untuk memastikan kapasitas angkat sesuai spesifikasi pabrikan dengan pengujian beban standar dan beban maksimum yang dilakukan oleh teknisi inspector K3 bersertifikat dari PT Cipta Mas Jaya"
 area_served: Indonesia
 content_structure: ''
 date: 2025-12-02
@@ -154,7 +159,7 @@ video_riksa_uji:
   name: Proses Riksa Uji Gantry Crane - PT. Cipta Mas Jaya
   description: Video dokumentasi proses riksa uji gantry crane oleh tim inspector
     bersertifikat PT. Cipta Mas Jaya.
-  thumbnail: ''
+  thumbnail: /wp-content/uploads/2024/12/riksa-uji-gantry-crane-pt-cipta-mas-jaya-001.jpg
   src: ''
   duration: ''
   upload_date: ''
