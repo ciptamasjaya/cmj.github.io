@@ -8,7 +8,7 @@ para_1: Riksa uji gantry crane adalah inspeksi dan pengujian terhadap pesawat an
   dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-gantry-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
-sub_category: Riksa Uji Gantry Crane
+sub_category: Pesawat Angkat
 certification_category: pesawat-angkat
 service_type: Safety Inspection
 icon: bi-arrows-vertical

@@ -11,7 +11,7 @@ para_1: Riksa uji overhead crane merupakan pemeriksaan serta pengujian keselamat
   berlaku.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-overhead-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
-sub_category: Riksa Uji Overhead Crane
+sub_category: Pesawat Angkat
 certification_category: pesawat-angkat
 service_type: Safety Inspection
 icon: bi-arrows-vertical

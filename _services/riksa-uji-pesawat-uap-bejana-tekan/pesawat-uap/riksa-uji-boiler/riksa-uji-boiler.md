@@ -10,7 +10,7 @@ para_1: Riksa uji boiler merupakan pemeriksaan serta tes keselamatan terhadap ke
   dengan aman serta berdasarkan standar keselamatan kerja yang berlaku.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
-sub_category: Riksa Uji Boiler
+sub_category: Pesawat Uap
 certification_category: pesawat-uap
 service_type: Safety Inspection
 icon: bi-fire

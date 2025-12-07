@@ -10,7 +10,7 @@ para_1: Riksa uji forklift merupakan pemeriksaan serta pengujian keselamatan ter
   dengan aman serta sesuai acuan keselamatan kerja yang berlaku.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/"
 category: Riksa Uji Pesawat Angkat Angkut
-sub_category: Riksa Uji Forklift
+sub_category: Pesawat Angkut
 certification_category: pesawat-angkat
 service_type: Safety Inspection
 icon: bi-box-arrow-up
