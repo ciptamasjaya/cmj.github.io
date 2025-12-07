@@ -45,14 +45,32 @@ Example dengan custom parameters:
 
 {% comment %} If page has custom image, use it as first slide {% endcomment %}
 {% if page.image and page.image != '' %}
-  {% assign carousel_images = carousel_images | push: page.image %}
+  {% comment %} Handle both string and object {src, alt} format {% endcomment %}
+  {% if page.image.src %}
+    {% assign carousel_images = carousel_images | push: page.image.src %}
+  {% else %}
+    {% assign carousel_images = carousel_images | push: page.image %}
+  {% endif %}
 {% endif %}
 
-{% comment %} Add all 4 default images {% endcomment %}
-{% assign carousel_images = carousel_images | push: "/assets/images/services/1.svg" %}
-{% assign carousel_images = carousel_images | push: "/assets/images/services/2.svg" %}
-{% assign carousel_images = carousel_images | push: "/assets/images/services/3.svg" %}
-{% assign carousel_images = carousel_images | push: "/assets/images/services/4.svg" %}
+{% comment %} Add images from page.images array {% endcomment %}
+{% if page.images and page.images.size > 0 %}
+  {% for img in page.images %}
+    {% if img.src %}
+      {% assign carousel_images = carousel_images | push: img.src %}
+    {% elsif img and img != '' %}
+      {% assign carousel_images = carousel_images | push: img %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% comment %} Add default images only if no custom images {% endcomment %}
+{% if carousel_images.size == 0 %}
+  {% assign carousel_images = carousel_images | push: "/assets/images/services/1.svg" %}
+  {% assign carousel_images = carousel_images | push: "/assets/images/services/2.svg" %}
+  {% assign carousel_images = carousel_images | push: "/assets/images/services/3.svg" %}
+  {% assign carousel_images = carousel_images | push: "/assets/images/services/4.svg" %}
+{% endif %}
 
 {% comment %} Remove duplicates if page.image is one of the defaults {% endcomment %}
 {% assign unique_images = "" | split: "" %}

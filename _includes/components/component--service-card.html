@@ -72,10 +72,18 @@ Date Display Logic:
 
     <!-- Service Image (with picture tag optimization) -->
     {% if service.image %}
+      {% comment %} Handle both string and object {src, alt} format {% endcomment %}
+      {% if service.image.src %}
+        {% assign img_src = service.image.src %}
+        {% assign img_alt = service.image.alt | default: service.title %}
+      {% else %}
+        {% assign img_src = service.image %}
+        {% assign img_alt = service.title %}
+      {% endif %}
       <div class="card-img-top-wrapper" style="height: {{ image_height }}; background: #f8f9fa; overflow: hidden;">
         {% include components/picture.html
-           src=service.image
-           alt=service.title
+           src=img_src
+           alt=img_alt
            preset="service"
            class="card-img-top"
         %}

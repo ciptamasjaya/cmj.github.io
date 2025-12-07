@@ -14,11 +14,16 @@ sub_category: Pesawat Angkut
 certification_category: pesawat-angkat
 service_type: Safety Inspection
 icon: bi-box-arrow-up
-image: "/assets/images/services/default-pesawat-angkat-angkut.svg"
+image:
+  src: /wp-content/uploads/2024/12/riksa-uji-forklift-pt-cipta-mas-jaya-001.jpg
+  alt: "Riksa uji forklift adalah proses pemeriksaan dan pengujian keselamatan forklift yang dilakukan oleh teknisi PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker dan regulasi K3 yang berlaku di Indonesia"
 images:
-- "/assets/images/services/1.svg"
-- "/assets/images/services/2.svg"
-- "/assets/images/services/3.svg"
+- src: /wp-content/uploads/2024/12/riksa-uji-forklift-pt-cipta-mas-jaya-002.jpg
+  alt: "Proses inspeksi visual dan pemeriksaan sistem hidrolik forklift oleh inspector bersertifikat PT Cipta Mas Jaya meliputi pengecekan silinder, selang, katup kontrol, dan kondisi oli hidrolik untuk memastikan fungsi lifting optimal"
+- src: /wp-content/uploads/2024/12/riksa-uji-forklift-pt-cipta-mas-jaya-003.jpg
+  alt: "Pemeriksaan komponen keselamatan forklift sesuai Permenaker No. 8 Tahun 2020 mencakup pengecekan lampu, klakson, seat belt, overhead guard, sistem pengereman, dan komponen safety device lainnya oleh PJK3 resmi"
+- src: /wp-content/uploads/2024/12/riksa-uji-forklift-pt-cipta-mas-jaya-004.jpg
+  alt: "Load test forklift untuk memastikan kapasitas angkat sesuai spesifikasi pabrikan dengan pengujian beban standar dan beban maksimum yang dilakukan oleh teknisi inspector K3 bersertifikat dari PT Cipta Mas Jaya sebagai PJK3 resmi Kemenaker"
 area_served: Indonesia
 content_structure: 1xh1, 2xpara, h2(para+3xh3@2xh4), h2(para+h3@h4), h2(para), h2(para)
 date: 2025-11-24
@@ -154,7 +159,7 @@ video_riksa_uji:
   description: Video dokumentasi proses riksa uji dan inspeksi K3 forklift oleh tim
     inspector bersertifikat PT. Cipta Mas Jaya. Meliputi pemeriksaan sistem hidrolik,
     rem, load test, dan penerbitan sertifikat resmi Disnaker setempat.
-  thumbnail: "/assets/images/services/default-pesawat-angkat-angkut.svg"
+  thumbnail: "/wp-content/uploads/2024/12/riksa-uji-forklift-pt-cipta-mas-jaya-001.jpg"
   src: "/assets/videos/service-page/riksa-uji-forklift.webm"
   duration: PT1M33S
   upload_date: '2025-11-26'
