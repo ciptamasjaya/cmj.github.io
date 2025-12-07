@@ -1,0 +1,129 @@
+{% comment %}
+============================================================================
+Block: Rating Data - Riksa Uji Crawler Crane Service
+============================================================================
+
+@file        block--rating--riksa-uji-crawler-crane.html
+@path        _includes/reusable/services/ratings/block--rating--riksa-uji-crawler-crane.html
+@type        Block (data per service)
+@description Rating data + reviews for riksa uji crawler crane service
+@author      arisciwek
+@created     2025-12-07
+
+Output:
+1. Liquid variables for schema (rating_average, rating_count, etc.)
+2. <script type="application/json"> with rating + reviews data for JS
+
+Usage:
+------
+Included via schema using service slug or rating_id
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA (edit values here) === {% endcomment %}
+{% assign rating_average = 4.7 %}
+{% assign rating_count = 3 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 2 %}
+{% assign rating_dist_4 = 1 %}
+{% assign rating_dist_3 = 0 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "2025-12-07" %}
+
+{% comment %} === REVIEW DATA (single source) === {% endcomment %}
+{% comment %} Review 1 {% endcomment %}
+{% assign review_1_nama = "Budi Setiawan" %}
+{% assign review_1_usaha = "Kontraktor Infrastruktur di Kalimantan" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Inspeksi Crawler Crane Sangat Teliti" %}
+{% assign review_1_komentar = "Tim PT. Cipta Mas Jaya sangat profesional dalam melakukan riksa uji crawler crane 100 ton kami. Pemeriksaan boom lattice dan undercarriage sangat detail. Sertifikat terbit sesuai jadwal proyek." %}
+{% assign review_1_tanggal = "2025-11-10" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 16 %}
+{% assign review_1_featured = true %}
+
+{% comment %} Review 2 {% endcomment %}
+{% assign review_2_nama = "Hendro Wibowo" %}
+{% assign review_2_usaha = "Perusahaan Konstruksi di Surabaya" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "Pelayanan Responsif dan Profesional" %}
+{% assign review_2_komentar = "Kami sangat puas dengan layanan riksa uji untuk 3 unit crawler crane sekaligus. Inspector datang tepat waktu dan proses berjalan efisien tanpa mengganggu jadwal proyek." %}
+{% assign review_2_tanggal = "2025-11-22" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 12 %}
+{% assign review_2_featured = true %}
+
+{% comment %} Review 3 (optional) {% endcomment %}
+{% assign review_3_nama = "Andi Pratama" %}
+{% assign review_3_usaha = "Perusahaan Pertambangan di Sulawesi" %}
+{% assign review_3_rating = 4 %}
+{% assign review_3_judul = "Hasil Inspeksi Memuaskan" %}
+{% assign review_3_komentar = "Proses riksa uji crawler crane berjalan lancar. Inspector memberikan penjelasan detail tentang kondisi crane dan rekomendasi maintenance yang berguna untuk operasional kami." %}
+{% assign review_3_tanggal = "2025-12-03" %}
+{% assign review_3_verified = true %}
+{% assign review_3_helpful = 8 %}
+{% assign review_3_featured = false %}
+
+{% comment %} === JSON OUTPUT (rating + reviews) === {% endcomment %}
+{% comment %} Skip JSON output when called with schema_only=true or data_only=true {% endcomment %}
+{% unless include.schema_only or include.data_only %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "riksa-uji-crawler-crane",
+  "title": "{{ page.title | default: 'Riksa Uji Crawler Crane' | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
+    },
+    {
+      "id": 2,
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
+    },
+    {
+      "id": 3,
+      "nama": "{{ review_3_nama }}",
+      "jenis_usaha": "{{ review_3_usaha }}",
+      "rating": {{ review_3_rating }},
+      "judul": "{{ review_3_judul }}",
+      "komentar": "{{ review_3_komentar }}",
+      "tanggal": "{{ review_3_tanggal }}",
+      "verified": {{ review_3_verified }},
+      "helpful_count": {{ review_3_helpful }},
+      "featured": {{ review_3_featured }}
+    }
+  ]
+}
+</script>
+{% endunless %}
