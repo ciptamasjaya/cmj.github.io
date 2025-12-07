@@ -60,7 +60,7 @@ Notes:
       "postalCode": "{{ site.business.address.postalCode }}"
     }
   },
-  "image": "{{ page.image | default: '/assets/images/services/default-pesawat-angkat-angkut.svg' | absolute_url }}",
+  "image": "{% if page.image.src %}{{ page.image.src | absolute_url }}{% elsif page.image %}{{ page.image | absolute_url }}{% else %}{{ '/assets/images/services/default-pesawat-angkat-angkut.svg' | absolute_url }}{% endif %}",
   "rating": {
     "ratingValue": "{{ page.rating | default: 4.8 }}",
     "reviewCount": "{{ page.review_count | default: 25 }}",

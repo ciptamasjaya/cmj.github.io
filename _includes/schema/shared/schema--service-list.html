@@ -68,9 +68,13 @@ Benefits:
     {% comment %} Get price from offer_riksa_uji.offers.first or default {% endcomment %}
     {% assign service_price = service.offer_riksa_uji.offers.first.price | default: 0 %}
     {% assign service_currency = service.offer_riksa_uji.offers.first.price_currency | default: 'IDR' %}
-    {% comment %} Get image from service.image or images.first or default {% endcomment %}
-    {% if service.image and service.image != '' %}
+    {% comment %} Get image from service.image or images.first or default (handle object format) {% endcomment %}
+    {% if service.image.src %}
+      {% assign service_image = service.image.src %}
+    {% elsif service.image and service.image != '' %}
       {% assign service_image = service.image %}
+    {% elsif service.images.first.src %}
+      {% assign service_image = service.images.first.src %}
     {% elsif service.images.first and service.images.first != '' %}
       {% assign service_image = service.images.first %}
     {% else %}

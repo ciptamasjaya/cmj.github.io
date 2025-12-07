@@ -154,7 +154,13 @@ Responsive Behavior:
             <!-- Image/Icon Column -->
             {% if show_image %}
             <td>
-              {% if service.image %}
+              {% comment %} Handle both string and object {src, alt} format {% endcomment %}
+              {% if service.image.src %}
+                <img src="{{ service.image.src | relative_url }}"
+                     alt="{{ service.image.alt | default: service.title }}"
+                     class="img-thumbnail"
+                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+              {% elsif service.image and service.image != '' %}
                 <img src="{{ service.image | relative_url }}"
                      alt="{{ service.title }}"
                      class="img-thumbnail"
@@ -271,7 +277,13 @@ Responsive Behavior:
             <!-- Service Image/Icon -->
             {% if show_image %}
             <div class="flex-shrink-0">
-              {% if service.image %}
+              {% comment %} Handle both string and object {src, alt} format {% endcomment %}
+              {% if service.image.src %}
+                <img src="{{ service.image.src | relative_url }}"
+                     alt="{{ service.image.alt | default: service.title }}"
+                     class="img-thumbnail"
+                     style="width: 60px; height: 60px; object-fit: contain; background: #f8f9fa;">
+              {% elsif service.image and service.image != '' %}
                 <img src="{{ service.image | relative_url }}"
                      alt="{{ service.title }}"
                      class="img-thumbnail"

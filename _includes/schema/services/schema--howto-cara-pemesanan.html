@@ -42,8 +42,8 @@ cara_pemesanan:
   "@type": "HowTo",
   "name": "{{ howto.name | escape }}",
   "description": "{{ howto.description | escape }}"{% if howto.totalTime %},
-  "totalTime": "{{ howto.totalTime }}"{% endif %}{% if page.image %},
-  "image": "{{ page.image | absolute_url }}"{% endif %},
+  "totalTime": "{{ howto.totalTime }}"{% endif %}{% if page.image.src or page.image %},
+  "image": "{% if page.image.src %}{{ page.image.src | absolute_url }}{% else %}{{ page.image | absolute_url }}{% endif %}"{% endif %},
   "step": [{% for step in howto.steps %}{% if forloop.index > 1 %},{% endif %}
     {
       "@type": "HowToStep",
