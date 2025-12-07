@@ -211,6 +211,31 @@
 }
 
 /* ============================================================================
+   CATEGORY BADGES (Service List Table)
+   ============================================================================ */
+.badge-category,
+.badge-subcategory {
+  font-weight: 500;
+  font-size: 0.75rem;
+  padding: 0.35em 0.65em;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.badge-category {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.badge-subcategory {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* ============================================================================
    SERVICE FEATURES BLOCK
    ============================================================================ */
 .block--service-features .feature-card {
