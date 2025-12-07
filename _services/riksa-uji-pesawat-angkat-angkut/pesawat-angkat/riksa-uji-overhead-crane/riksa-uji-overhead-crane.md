@@ -15,11 +15,16 @@ sub_category: Pesawat Angkat
 certification_category: pesawat-angkat
 service_type: Safety Inspection
 icon: bi-arrows-vertical
-image: "/assets/images/services/default-pesawat-angkat-angkut.svg"
+image:
+  src: /wp-content/uploads/2024/12/riksa-uji-overhead-crane-pt-cipta-mas-jaya-001.jpg
+  alt: "Riksa uji overhead crane single girder dengan tulisan Safety First di pabrik industri yang dilakukan oleh tim inspector PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker dan regulasi K3 yang berlaku di Indonesia"
 images:
-- "/assets/images/services/1.svg"
-- "/assets/images/services/2.svg"
-- "/assets/images/services/3.svg"
+- src: /wp-content/uploads/2024/12/riksa-uji-overhead-crane-pt-cipta-mas-jaya-002.jpg
+  alt: "Inspector bersertifikat PT Cipta Mas Jaya sedang melakukan pemeriksaan wire rope overhead crane menggunakan alat ukur kaliper untuk memastikan diameter dan kondisi tali kawat sesuai standar keselamatan Permenaker No. 8 Tahun 2020"
+- src: /wp-content/uploads/2024/12/riksa-uji-overhead-crane-pt-cipta-mas-jaya-003.jpg
+  alt: "Dua teknisi inspector K3 dari PT Cipta Mas Jaya sedang memeriksa komponen hook block dan sheave overhead crane untuk memastikan integritas struktural dan keamanan sistem pengangkatan sesuai standar SNI dan CMAA"
+- src: /wp-content/uploads/2024/12/riksa-uji-overhead-crane-pt-cipta-mas-jaya-004.jpg
+  alt: "Proses riksa uji overhead crane di area pabrik dengan tim inspector dan pekerja menggunakan APD lengkap memastikan operasional crane jembatan berjalan aman sesuai prosedur K3 dan regulasi Kementerian Ketenagakerjaan RI"
 area_served: Indonesia
 content_structure: 1xh1, 2xpara, h2(para+3xh3@2xh4), h2(para+h3@h4), h2(para), h2(para)
 date: 2025-12-01
@@ -157,7 +162,7 @@ video_riksa_uji:
   description: Video dokumentasi proses riksa uji dan inspeksi K3 overhead crane oleh
     tim inspector bersertifikat PT. Cipta Mas Jaya. Meliputi pemeriksaan visual, pengujian
     hoist, load test, dan penerbitan sertifikat resmi.
-  thumbnail: "/assets/images/services/default-pesawat-angkat-angkut.svg"
+  thumbnail: /wp-content/uploads/2024/12/riksa-uji-overhead-crane-pt-cipta-mas-jaya-001.jpg
   src: "/assets/videos/service-page/default-riksa-uji.webm"
   duration: PT2M00S
   upload_date: '2025-12-01'
