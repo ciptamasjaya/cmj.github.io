@@ -59,6 +59,7 @@ default_images:
 # Build Settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
+# destination: /path/to/your/public_html  # Uncomment and set for local development
 
 # SCSS/Sass Settings
 sass:
