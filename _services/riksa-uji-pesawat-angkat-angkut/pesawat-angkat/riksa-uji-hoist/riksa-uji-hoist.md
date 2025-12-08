@@ -52,7 +52,7 @@ intro:
 # ============================================================================
 # JENIS ALAT SECTION (ItemList)
 # ============================================================================
-jenis_hoist:
+jenis_alat:
   name: "Jenis Hoist yang Kami Layani"
   description: "Kami melayani riksa uji untuk berbagai jenis hoist industri dengan kapasitas beragam"
   items:

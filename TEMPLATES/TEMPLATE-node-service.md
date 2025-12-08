@@ -54,7 +54,8 @@ intro:
 # ============================================================================
 # JENIS ALAT SECTION (ItemList)
 # ============================================================================
-# Ganti "jenis_alat" dengan nama yang sesuai, contoh: jenis_boiler, jenis_forklift
+# WAJIB gunakan key "jenis_alat:" - jangan diganti dengan nama lain
+# Layout menggunakan page.jenis_alat untuk menampilkan section ini
 jenis_alat:
   name: ""
   description: ""

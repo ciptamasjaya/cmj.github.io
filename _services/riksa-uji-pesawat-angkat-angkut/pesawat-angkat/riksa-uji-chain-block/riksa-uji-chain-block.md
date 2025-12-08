@@ -52,7 +52,7 @@ intro:
 # ============================================================================
 # JENIS ALAT SECTION (ItemList)
 # ============================================================================
-jenis_chain_hoist:
+jenis_alat:
   name: "Jenis Chain Block yang Kami Layani"
   description: "Kami melayani riksa uji untuk berbagai jenis chain block dengan kapasitas 0.25 hingga 10 ton"
   items:
