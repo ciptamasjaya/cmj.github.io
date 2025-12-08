@@ -28,6 +28,7 @@ Usage:
 {% endcomment %}
 
 {% assign video = include.video %}
+{% assign video_thumbnail = video.thumbnail | default: page.image.src %}
 
 {% if video and video.src %}
 <section id="block--video-riksa-uji" class="block--video-riksa-uji py-5 bg-light">
@@ -54,7 +55,7 @@ Usage:
               class="video__player"
               controls
               preload="metadata"
-              {% if video.thumbnail %}poster="{{ video.thumbnail | relative_url }}"{% endif %}
+              {% if video_thumbnail %}poster="{{ video_thumbnail | relative_url }}"{% endif %}
               playsinline>
               <source src="{{ video.src | relative_url }}" type="video/webm">
               Browser Anda tidak mendukung tag video HTML5.

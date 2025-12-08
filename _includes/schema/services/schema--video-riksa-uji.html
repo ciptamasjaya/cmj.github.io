@@ -24,6 +24,7 @@ Usage:
 {% endcomment %}
 
 {% assign video = page.video_riksa_uji %}
+{% assign video_thumbnail = video.thumbnail | default: page.image.src %}
 
 {% if video and video.src %}
 <script type="application/ld+json">
@@ -33,7 +34,7 @@ Usage:
   "@id": "{{ page.url | absolute_url }}#video",
   "name": "{{ video.name | escape }}",
   "description": "{{ video.description | escape }}",
-  "thumbnailUrl": "{{ video.thumbnail | absolute_url }}",
+  "thumbnailUrl": "{{ video_thumbnail | absolute_url }}",
   "contentUrl": "{{ video.src | absolute_url }}",
   "embedUrl": "{{ page.url | absolute_url }}#video-{{ video.name | slugify }}",
   "uploadDate": "{{ video.upload_date }}T00:00:00+07:00",

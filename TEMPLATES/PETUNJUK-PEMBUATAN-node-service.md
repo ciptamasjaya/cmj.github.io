@@ -99,7 +99,76 @@ _services/
 
 ---
 
+## PERSIAPAN GAMBAR
+
+Sebelum mulai mengisi template, siapkan gambar terlebih dahulu dengan cara **RENAME dulu, lalu COPY**.
+
+### Langkah-langkah:
+
+1. **Rename file asli** di folder sumber (misal: Downloads):
+   ```bash
+   # Di folder sumber (contoh: /home/user/Downloads/foto-cmj/hoist/)
+   mv IMG_20240424_111239.jpg riksa-uji-hoist.jpg
+   mv IMG_20240424_111310.jpg riksa-uji-hoist-001.jpg
+   mv IMG_20240425_102735.jpg riksa-uji-hoist-002.jpg
+   mv IMG_20240425_102746.jpg riksa-uji-hoist-003.jpg
+   ```
+
+2. **Buat folder tujuan** di assets:
+   ```bash
+   mkdir -p assets/images/services/riksa-uji-[nama-alat]/
+   ```
+
+3. **Copy file yang sudah di-rename** ke folder assets:
+   ```bash
+   cp /path/sumber/riksa-uji-*.jpg assets/images/services/riksa-uji-[nama-alat]/
+   ```
+
+### Konvensi Penamaan Gambar:
+
+| File | Nama | Penggunaan |
+|------|------|------------|
+| Gambar utama | `riksa-uji-[nama-alat].jpg` | Field `image.src` |
+| Gambar tambahan 1 | `riksa-uji-[nama-alat]-001.jpg` | Field `images[0].src` |
+| Gambar tambahan 2 | `riksa-uji-[nama-alat]-002.jpg` | Field `images[1].src` |
+| Gambar tambahan 3 | `riksa-uji-[nama-alat]-003.jpg` | Field `images[2].src` |
+
+### Struktur Folder Gambar:
+```
+assets/images/services/
+├── riksa-uji-boiler/
+│   ├── riksa-uji-boiler.jpg
+│   ├── riksa-uji-boiler-001.jpg
+│   ├── riksa-uji-boiler-002.jpg
+│   └── riksa-uji-boiler-003.jpg
+├── riksa-uji-hoist/
+│   ├── riksa-uji-hoist.jpg
+│   ├── riksa-uji-hoist-001.jpg
+│   ├── riksa-uji-hoist-002.jpg
+│   └── riksa-uji-hoist-003.jpg
+└── ...
+```
+
+---
+
 ## REFERENSI NILAI
+
+### Sumber Data Category dan Sub Category
+
+**PENTING:** Nilai `category` dan `sub_category` harus sesuai dengan data di `_data/services.yml`
+
+```
+Lokasi file: _data/services.yml
+```
+
+**Cara mencari nilai yang benar:**
+```bash
+# Lihat struktur categories dan subcategories
+grep -A 5 "subcategories:" _data/services.yml
+
+# Lihat semua sub_category yang digunakan di file .md
+grep "^sub_category:" _services/**/*.md
+```
 
 ### Category Options
 ```
@@ -108,6 +177,25 @@ Riksa Uji Pesawat Angkat Angkut
 Riksa Uji Elevator
 Riksa Uji Instalasi Listrik
 ```
+
+### Sub Category Options (sesuai _data/services.yml)
+```
+# Untuk category "Riksa Uji Pesawat Uap Bejana Tekan":
+sub_category: Pesawat Uap
+sub_category: Bejana Tekan
+
+# Untuk category "Riksa Uji Pesawat Angkat Angkut":
+sub_category: Pesawat Angkat
+sub_category: Pesawat Angkut
+
+# Untuk category "Riksa Uji Elevator":
+sub_category: Elevator
+
+# Untuk category "Riksa Uji Instalasi Listrik":
+sub_category: Instalasi Listrik
+```
+
+**CATATAN:** sub_category menggunakan nama GRUP (Pesawat Angkat), BUKAN nama layanan spesifik (Riksa Uji Hoist)
 
 ### Certification Category
 ```
@@ -149,7 +237,7 @@ description: "Jasa riksa uji dan inspeksi K3 boiler profesional dengan sertifika
 para_1: "Riksa uji boiler adalah pemeriksaan dan pengujian terhadap pesawat uap sesuai dengan Permenaker No. 37 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja Bejana Tekanan dan Tangki Timbun."
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
 category: "Riksa Uji Pesawat Uap Bejana Tekan"
-sub_category: "Riksa Uji Boiler"
+sub_category: Pesawat Uap
 certification_category: "pesawat-uap"
 service_type: Safety Inspection
 icon: "bi-fire"
@@ -411,12 +499,13 @@ video_riksa_uji:
 **Catatan:**
 - `duration`: Format ISO 8601 (PT2M30S = 2 menit 30 detik)
 - Digunakan untuk Google Video rich snippet
+- **thumbnail**: Bisa dikosongkan (`thumbnail: ""`), akan otomatis fallback ke `image.src` dari front matter
 - Jika tidak ada video khusus, gunakan default video:
   ```yaml
   video_riksa_uji:
     name: "Proses Riksa Uji [Nama Alat] - PT. Cipta Mas Jaya"
     description: "Video dokumentasi proses riksa uji [nama alat] oleh tim inspector bersertifikat PT. Cipta Mas Jaya."
-    thumbnail: "/assets/images/videos/default-riksa-uji-thumb.jpg"
+    thumbnail: ""  # Kosongkan, otomatis pakai image.src
     src: "/assets/videos/service-page/riksa-uji-forklift.webm"
     duration: "PT1M30S"
     upload_date: "2025-11-26"

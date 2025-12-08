@@ -52,7 +52,7 @@ intro:
 # ============================================================================
 # JENIS CRAWLER CRANE SECTION (ItemList)
 # ============================================================================
-jenis_crawler_crane:
+jenis_alat:
   name: "Jenis Crawler Crane yang Kami Layani"
   description: "Kami melayani riksa uji untuk berbagai jenis crawler crane di berbagai sektor industri"
   items:

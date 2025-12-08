@@ -52,7 +52,7 @@ intro:
 # ============================================================================
 # JENIS MOBILE CRANE SECTION (ItemList)
 # ============================================================================
-jenis_mobile_crane:
+jenis_alat:
   name: "Jenis Mobile Crane yang Kami Layani"
   description: "Kami melayani riksa uji untuk berbagai jenis mobile crane di berbagai sektor industri"
   items:
