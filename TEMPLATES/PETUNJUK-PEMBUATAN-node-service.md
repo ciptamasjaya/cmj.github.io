@@ -279,14 +279,14 @@ lastmod: '2025-12-01T16:40:00+0700'
 - `image` & `images`: Format object {src, alt} - alt minimal 180 karakter. Jika tidak ada gambar khusus, gunakan fallback default:
   ```yaml
   image:
-    src: "/assets/images/services/default.svg"
+    src: "/assets/images/services/1.svg"
     alt: "[Deskripsi layanan minimal 180 karakter]"
   images:
-    - src: "/assets/images/services/1.svg"
-      alt: "[Deskripsi gambar 1 minimal 180 karakter]"
     - src: "/assets/images/services/2.svg"
-      alt: "[Deskripsi gambar 2 minimal 180 karakter]"
+      alt: "[Deskripsi gambar 1 minimal 180 karakter]"
     - src: "/assets/images/services/3.svg"
+      alt: "[Deskripsi gambar 2 minimal 180 karakter]"
+    - src: "/assets/images/services/4.svg"
       alt: "[Deskripsi gambar 3 minimal 180 karakter]"
   ```
 

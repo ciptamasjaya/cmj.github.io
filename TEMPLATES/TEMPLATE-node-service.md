@@ -10,15 +10,16 @@ sub_category: ""
 certification_category: ""
 service_type: Safety Inspection
 icon: ""
+# Jika belum ada foto, gunakan default: 1.svg (main), 2.svg, 3.svg, 4.svg (images)
 image:
-  src: ""
+  src: "/assets/images/services/1.svg"
   alt: ""
 images:
-  - src: ""
+  - src: "/assets/images/services/2.svg"
     alt: ""
-  - src: ""
+  - src: "/assets/images/services/3.svg"
     alt: ""
-  - src: ""
+  - src: "/assets/images/services/4.svg"
     alt: ""
 area_served: Indonesia
 content_structure: ""
