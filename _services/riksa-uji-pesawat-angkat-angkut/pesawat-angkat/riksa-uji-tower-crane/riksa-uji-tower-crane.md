@@ -1,8 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Tower Crane
-description: Jasa riksa pengujian serta pengecekan K3 tower crane profesional dengan
-  sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Riksa uji tower crane adalah pemeriksaan dan pengujian keselamatan crane
+  menara oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari Disnaker.
+  Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji tower crane adalah pemeriksaan serta pengujian terhadap pesawat
   angkat jenis menara berdasarkan dengan Permenaker No. 8 Tahun 2020 tentang Keselamatan
   serta Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.

@@ -1,9 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Forklift
-description: Jasa riksa tes dan inspeksi K3 forklift profesional dengan sertifikat
-  resmi Kementerian Ketenagakerjaan RI. Melayani semua Indonesia dengan inspector
-  bersertifikat dan alat terkalibrasi.
+description: Riksa uji forklift adalah pemeriksaan dan pengujian keselamatan forklift
+  oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari Disnaker. Layanan
+  inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji forklift merupakan pemeriksaan serta pengujian keselamatan terhadap
   forklift yang wajib dilakukan secara berkala sesuai Peraturan Menteri Ketenagakerjaan
   Nomor 8 Tahun 2020. Pemeriksaan ini bertujuan dalam rangka memastikan forklift beroperasi

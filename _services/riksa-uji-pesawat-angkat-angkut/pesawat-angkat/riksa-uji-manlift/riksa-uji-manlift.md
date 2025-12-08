@@ -1,7 +1,7 @@
 ---
 layout: node/node--service
 title: "Riksa Uji Manlift"
-description: "Jasa riksa uji dan inspeksi K3 manlift profesional dengan sertifikat resmi Kementerian Ketenagakerjaan RI untuk keselamatan operasional."
+description: "Riksa uji manlift adalah pemeriksaan dan pengujian keselamatan aerial work platform oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari Disnaker. Layanan inspeksi K3 seluruh Indonesia."
 para_1: "Riksa uji manlift adalah pemeriksaan dan pengujian terhadap pesawat angkat jenis manlift atau aerial work platform sesuai dengan Permenaker No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut."
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-manlift/"
 category: "Riksa Uji Pesawat Angkat Angkut"

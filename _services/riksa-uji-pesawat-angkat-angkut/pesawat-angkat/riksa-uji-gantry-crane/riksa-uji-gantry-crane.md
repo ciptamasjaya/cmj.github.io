@@ -1,8 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Gantry Crane
-description: Jasa riksa uji serta pengecekan K3 gantry crane profesional dengan sertifikat
-  resmi Kementerian Ketenagakerjaan RI.
+description: Riksa uji gantry crane adalah pemeriksaan dan pengujian keselamatan crane
+  portal oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari Disnaker.
+  Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji gantry crane adalah inspeksi dan pengujian terhadap pesawat angkat
   jenis portal crane sesuai dengan Permenaker No. 8 Tahun 2020 perihal Keselamatan
   dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.

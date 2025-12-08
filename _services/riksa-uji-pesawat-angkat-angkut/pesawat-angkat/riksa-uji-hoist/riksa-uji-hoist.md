@@ -1,8 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Hoist
-description: Jasa riksa uji dan pengecekan K3 hoist profesional secara sertifikat
-  resmi Kementerian Ketenagakerjaan RI untuk keselamatan operasional.
+description: Riksa uji hoist adalah pemeriksaan dan pengujian keselamatan pesawat angkat
+  jenis hoist oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari Disnaker.
+  Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji hoist adalah pemeriksaan serta pengujian terhadap pesawat angkat
   jenis hoist sesuai dengan Permenaker No. 8 Tahun 2020 perihal Keselamatan serta
   Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.

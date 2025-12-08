@@ -1,8 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Chain Block
-description: Jasa riksa uji serta inspeksi K3 chain block profesional dengan sertifikat
-  resmi Kementerian Ketenagakerjaan RI dalam rangka keselamatan operasional.
+description: Riksa uji chain block adalah pemeriksaan dan pengujian keselamatan chain
+  hoist oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari Disnaker.
+  Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji chain block adalah pemeriksaan dan tes terhadap pesawat angkat jenis
   chain block berdasarkan dengan Permenaker No. 8 Tahun 2020 tentang Keselamatan dan
   Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.

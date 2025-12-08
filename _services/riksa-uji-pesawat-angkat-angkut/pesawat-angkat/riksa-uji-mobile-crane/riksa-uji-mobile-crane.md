@@ -1,9 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Mobile Crane
-description: Jasa riksa uji dan pengecekan K3 mobile crane profesional dengan sertifikat
-  resmi Kementerian Ketenagakerjaan RI dalam rangka truck mounted crane dan rough
-  terrain crane.
+description: Riksa uji mobile crane adalah pemeriksaan dan pengujian keselamatan crane
+  bergerak oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari Disnaker.
+  Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji mobile crane adalah pemeriksaan serta tes terhadap pesawat angkat
   bergerak sesuai dengan Permenaker No. 8 Tahun 2020 tentang Keselamatan serta Kesehatan
   Kerja Pesawat Angkat serta Pesawat Angkut.

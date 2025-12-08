@@ -1,9 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Boiler
-description: Jasa riksa uji dan inspeksi K3 boiler profesional secara sertifikat resmi
-  Kementerian Ketenagakerjaan RI. Melayani semua Indonesia secara inspector bersertifikat
-  dan alat terkalibrasi.
+description: Riksa uji boiler adalah pemeriksaan dan pengujian keselamatan ketel uap
+  oleh PJK3 resmi Kemenaker untuk mendapatkan izin pemakaian pesawat uap dari Disnaker.
+  Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji boiler merupakan pemeriksaan serta tes keselamatan terhadap ketel
   uap yang wajib dilakukan secara berkala berdasarkan Peraturan Menteri Ketenagakerjaan
   Nomor 37 Tahun 2016. Pemeriksaan ini bertujuan untuk memastikan boiler beroperasi

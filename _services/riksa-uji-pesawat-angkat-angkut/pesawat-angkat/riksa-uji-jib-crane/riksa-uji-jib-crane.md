@@ -1,9 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Jib Crane
-description: Jasa riksa uji dan pengecekan K3 jib crane profesional dengan sertifikat
-  resmi Kementerian Ketenagakerjaan RI dalam rangka wall mounted, pillar mounted,
-  dan portable jib crane.
+description: Riksa uji jib crane adalah pemeriksaan dan pengujian keselamatan crane
+  lengan putar oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari
+  Disnaker. Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji jib crane adalah pemeriksaan dan pengujian terhadap pesawat angkat
   lengan putar berdasarkan dengan Permenaker No. 8 Tahun 2020 perihal Keselamatan
   dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.

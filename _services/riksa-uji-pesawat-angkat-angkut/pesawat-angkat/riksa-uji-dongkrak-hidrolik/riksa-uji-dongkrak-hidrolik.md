@@ -1,8 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Dongkrak Hidrolik
-description: Jasa riksa pengujian dan pengecekan K3 dongkrak hidrolik profesional
-  dengan sertifikat resmi Kementerian Ketenagakerjaan RI untuk keselamatan operasional.
+description: Riksa uji dongkrak hidrolik adalah pemeriksaan dan pengujian keselamatan
+  hydraulic jack oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari
+  Disnaker. Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa pengujian dongkrak hidrolik adalah pemeriksaan dan pengujian terhadap
   alat angkat jenis dongkrak hidrolik sesuai secara Permenaker No. 8 Tahun 2020 tentang
   Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.

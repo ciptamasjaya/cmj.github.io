@@ -1,9 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Crawler Crane
-description: Jasa riksa pengujian dan inspeksi K3 crawler crane profesional secara
-  sertifikat resmi Kementerian Ketenagakerjaan RI untuk lattice boom dan hydraulic
-  crawler crane.
+description: Riksa uji crawler crane adalah pemeriksaan dan pengujian keselamatan crane
+  beroda crawler oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari
+  Disnaker. Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji crawler crane adalah inspeksi dan pengujian terhadap pesawat angkat
   secara penggerak crawler sesuai secara Permenaker No. 8 Tahun 2020 tentang Keselamatan
   dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.

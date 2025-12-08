@@ -1,9 +1,9 @@
 ---
 layout: node/node--service
 title: Riksa Uji Overhead Crane
-description: Jasa riksa uji dan inspeksi K3 overhead crane profesional secara sertifikat
-  resmi Kementerian Ketenagakerjaan RI. Melayani semua Indonesia secara inspector
-  bersertifikat dan alat terkalibrasi.
+description: Riksa uji overhead crane adalah pemeriksaan dan pengujian keselamatan
+  crane jembatan oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari
+  Disnaker. Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji overhead crane merupakan pemeriksaan serta pengujian keselamatan
   terhadap crane jembatan yang wajib dilakukan dengan cara berkala sesuai Peraturan
   Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini dimaksudkan untuk memastikan
