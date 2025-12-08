@@ -1,11 +1,11 @@
 ---
 layout: node/node--service
 title: Riksa Uji Tower Crane
-description: Jasa riksa uji serta inspeksi K3 tower crane profesional dengan sertifikat
-  resmi Kementerian Ketenagakerjaan RI.
-para_1: Riksa uji tower crane adalah pemeriksaan dan pengujian terhadap pesawat angkat
-  jenis menara sesuai dengan Permenaker No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan
-  Kerja Pesawat Angkat dan Pesawat Angkut.
+description: Jasa riksa pengujian serta pengecekan K3 tower crane profesional dengan
+  sertifikat resmi Kementerian Ketenagakerjaan RI.
+para_1: Riksa uji tower crane adalah pemeriksaan serta pengujian terhadap pesawat
+  angkat jenis menara berdasarkan dengan Permenaker No. 8 Tahun 2020 tentang Keselamatan
+  serta Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-tower-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -13,51 +13,60 @@ certification_category: pesawat-angkat
 service_type: Safety Inspection
 icon: bi-building-up
 image:
-  src: /wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-001.jpg
-  alt: "Riksa uji tower crane kuning di area proyek konstruksi yang dilakukan oleh tim inspector PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional sesuai standar Kemenaker dan regulasi K3 yang berlaku di Indonesia"
+  src: "/wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-001.jpg"
+  alt: Riksa uji tower crane kuning di area proyek konstruksi yang dilakukan oleh
+    tim inspector PJK3 PT Cipta Mas Jaya untuk memastikan keselamatan operasional
+    sesuai standar Kemenaker dan regulasi K3 yang berlaku di Indonesia
 images:
-- src: /wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-002.jpg
-  alt: "Proses inspeksi tower crane dengan pekerja menggunakan APD lengkap helm safety di area konstruksi oleh tim inspector bersertifikat PT Cipta Mas Jaya sesuai standar keselamatan Permenaker No. 8 Tahun 2020"
-- src: /wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-003.jpg
-  alt: "Pemeriksaan kondisi tower crane di site proyek dengan material baja di sekitarnya oleh PJK3 resmi PT Cipta Mas Jaya untuk memastikan kelayakan operasi dan keamanan struktural crane menara"
-- src: /wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-004.jpg
-  alt: "Inspeksi detail slewing unit dan cabin operator tower crane untuk memastikan fungsi rotasi dan sistem kontrol bekerja dengan baik sesuai standar keselamatan K3 oleh teknisi inspector bersertifikat"
+- src: "/wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-002.jpg"
+  alt: Proses inspeksi tower crane dengan pekerja menggunakan APD lengkap helm safety
+    di area konstruksi oleh tim inspector bersertifikat PT Cipta Mas Jaya sesuai standar
+    keselamatan Permenaker No. 8 Tahun 2020
+- src: "/wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-003.jpg"
+  alt: Pemeriksaan kondisi tower crane di site proyek dengan material baja di sekitarnya
+    oleh PJK3 resmi PT Cipta Mas Jaya untuk memastikan kelayakan operasi dan keamanan
+    struktural crane menara
+- src: "/wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-004.jpg"
+  alt: Inspeksi detail slewing unit dan cabin operator tower crane untuk memastikan
+    fungsi rotasi dan sistem kontrol bekerja dengan baik sesuai standar keselamatan
+    K3 oleh teknisi inspector bersertifikat
 area_served: Indonesia
 content_structure: ''
 date: 2025-12-07
 last_modified_at: 2025-12-07
 show_breadcrumb_schema: true
-keywords: riksa uji tower crane, jasa riksa uji tower crane, inspeksi tower crane, crane menara, uji beban tower crane, PJK3, sertifikasi K3
+keywords: riksa uji tower crane, jasa riksa uji tower crane, inspeksi tower crane,
+  crane menara, uji beban tower crane, PJK3, sertifikasi K3
 rating_id: riksa-uji-tower-crane
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2025-12-07T10:00:00+0700'
+lastmod: '2025-12-08T03:52:06+0000'
 intro:
   name: Layanan Riksa Uji Tower Crane Profesional
-  para: PT. Cipta Mas Jaya menyediakan layanan riksa uji tower crane dengan inspector
-    bersertifikat serta berpengalaman. Kami memastikan tower crane Anda memenuhi
+  para: PT. Cipta Mas Jaya menyediakan layanan riksa uji tower crane secara inspector
+    bersertifikat serta berpengalaman. Kami memastikan tower crane Anda mencukupi
     standar keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji tower crane wajib dilakukan sesuai regulasi keselamatan kerja
+    para: Riksa uji tower crane wajib dilaksanakan sesuai regulasi keselamatan kerja
       yang berlaku di Indonesia untuk memastikan keamanan operasional di proyek konstruksi.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan dan Kesehatan Kerja
-        Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala untuk semua
-        jenis crane termasuk tower crane.
+        Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
+        semua jenis crane termasuk tower crane.
     - h4: Standar FEM dan ISO
       para: Pengujian dilakukan mengacu pada standar internasional FEM (Federation
-        Europeenne de la Manutention) dan ISO 12480 untuk crane safety serta Standar
-        Nasional Indonesia (SNI) yang berlaku.
+        Europeenne de la Manutention) dan ISO 12480 dalam rangka crane safety serta
+        Standar Nasional Indonesia (SNI) yang berlaku.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP dan telah berpengalaman
+    para: Tim inspector kami mempunyai sertifikat kompetensi dari BNSP dan telah berpengalaman
       lebih dari 10 tahun dalam bidang inspeksi pesawat angkat termasuk berbagai jenis
       tower crane untuk proyek konstruksi gedung dan infrastruktur.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani riksa uji tower crane di seluruh Indonesia, dari proyek konstruksi
       gedung bertingkat, jembatan, hingga infrastruktur besar. Tim kami siap datang
-      ke lokasi proyek Anda kapanpun dibutuhkan.
+      ke lokasi proyek Anda kapanpun diperlukan.
 jenis_alat:
   name: Jenis Tower Crane yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis tower crane konstruksi
@@ -90,31 +99,31 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Tower Crane yang Diperiksa
-  description: Inspeksi menyeluruh pada semua komponen keselamatan tower crane
+  description: Inspeksi menyeluruh pada segenap bagian keselamatan tower crane
   items:
   - name: Mast dan Tower Section
     description: Pemeriksaan struktur menara, sambungan antar section, baut pengikat,
-      dan kondisi las terhadap korosi atau deformasi.
+      dan keadaan las terhadap korosi atau deformasi.
     icon: bi-building
   - name: Slewing Unit
-    description: Inspeksi mekanisme putar termasuk slewing ring, motor slewing, dan
+    description: Inspeksi mekanisme putar mencakup slewing ring, motor slewing, dan
       sistem pengereman rotasi.
     icon: bi-arrow-repeat
   - name: Jib dan Counter-Jib
-    description: Pemeriksaan kondisi lengan horizontal, sambungan, trolley rail, dan
+    description: Pemeriksaan keadaan lengan horizontal, sambungan, trolley rail, dan
       counterweight untuk keseimbangan crane.
     icon: bi-arrows-expand
   - name: Hoisting Mechanism
     description: Inspeksi winch, drum, wire rope, hook block, dan sistem brake hoist
-      untuk memastikan fungsi pengangkatan aman.
+      dalam rangka memastikan fungsi pengangkatan aman.
     icon: bi-arrow-up-circle
   - name: Cabin dan Sistem Kontrol
     description: Pemeriksaan kondisi cabin operator, panel kontrol, joystick, display,
-      dan sistem komunikasi.
+      serta sistem komunikasi.
     icon: bi-display
   - name: Safety Devices
-    description: Pengujian load moment limiter, anemometer, anti-collision, travel
-      limit switch, dan emergency stop.
+    description: Tes load moment limiter, anemometer, anti-collision, travel limit
+      switch, dan emergency stop.
     icon: bi-shield-check
 proses_inspeksi:
   name: Proses Riksa Uji Tower Crane
@@ -125,20 +134,20 @@ proses_inspeksi:
     text: Verifikasi dokumen teknis tower crane termasuk load chart, manual operasi,
       sertifikat sebelumnya, dan catatan pemeliharaan.
   - name: Inspeksi Visual Struktur
-    text: Pemeriksaan kondisi fisik mast, jib, counter-jib, dan seluruh struktur
-      untuk mendeteksi korosi, retak, atau deformasi.
+    text: Pemeriksaan kondisi fisik mast, jib, counter-jib, dan seluruh struktur untuk
+      mendeteksi korosi, retak, atau deformasi.
   - name: Pemeriksaan Komponen Mekanis
-    text: Inspeksi slewing mechanism, hoisting system, trolley, wire rope, hook,
-      dan komponen mekanis lainnya.
+    text: Inspeksi slewing mechanism, hoisting system, trolley, wire rope, hook, dan
+      komponen mekanis lainnya.
   - name: Pengujian Sistem Elektrikal
     text: Pemeriksaan panel kontrol, motor, kabel, limit switch, dan sistem grounding
       untuk memastikan keamanan elektrikal.
   - name: Pengujian Safety Devices
-    text: Testing load moment limiter (LMI), anti-collision system, anemometer,
-      travel limits, dan emergency stop.
+    text: Testing load moment limiter (LMI), anti-collision system, anemometer, travel
+      limits, dan emergency stop.
   - name: Load Test dan Dokumentasi
-    text: Pengujian beban sesuai kapasitas crane dan penyusunan laporan inspeksi
-      lengkap dengan penerbitan sertifikat kelayakan.
+    text: Pengujian beban sesuai kapasitas crane dan penyusunan laporan inspeksi lengkap
+      dengan penerbitan sertifikat kelayakan.
 cara_pemesanan:
   name: Cara Pemesanan Riksa Uji Tower Crane
   description: Langkah-langkah mudah untuk memesan jasa riksa uji tower crane
@@ -158,9 +167,9 @@ cara_pemesanan:
       dalam 3-5 hari kerja.
 video_riksa_uji:
   name: Proses Riksa Uji Tower Crane - PT. Cipta Mas Jaya
-  description: Video dokumentasi proses riksa uji tower crane oleh tim inspector
-    bersertifikat PT. Cipta Mas Jaya.
-  thumbnail: /wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-001.jpg
+  description: Video dokumentasi proses riksa uji tower crane oleh tim inspector bersertifikat
+    PT. Cipta Mas Jaya.
+  thumbnail: "/wp-content/uploads/2024/12/riksa-uji-tower-crane-pt-cipta-mas-jaya-001.jpg"
   src: ''
   duration: ''
   upload_date: ''
@@ -244,8 +253,8 @@ faq_riksa_uji:
       seperti LMI dan anti-collision.
   - question: Berapa biaya riksa uji tower crane?
     answer: Biaya riksa uji tower crane mulai dari Rp 5.500.000 per unit untuk kapasitas
-      standar hingga 8 ton. Hubungi kami untuk penawaran khusus sesuai kebutuhan
-      proyek Anda.
+      standar hingga 8 ton. Hubungi kami untuk penawaran khusus sesuai kebutuhan proyek
+      Anda.
   - question: Apakah sertifikat riksa uji berlaku nasional?
     answer: Ya, sertifikat yang kami terbitkan diakui oleh Dinas Tenaga Kerja di seluruh
       Indonesia karena kami adalah PJK3 resmi berlisensi Kemenaker RI.

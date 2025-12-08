@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Mesin Produksi
-description: Jasa riksa uji dan inspeksi K3 mesin produksi profesional meliputi mesin
-  press, mesin potong, mesin las, mesin CNC, crusher, mesin casting, dan mesin forging.
-  Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji serta inspeksi K3 mesin produksi profesional termasuk
+  mesin press, mesin potong, mesin las, mesin CNC, crusher, mesin casting, serta mesin
+  forging. Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Mesin Produksi
@@ -20,16 +20,16 @@ keywords: riksa uji mesin produksi, inspeksi mesin press, inspeksi mesin potong,
   mesin las, inspeksi mesin CNC, inspeksi crusher, PJK3, sertifikasi K3
 intro:
   h1: Mesin Produksi - Riksa Uji Peralatan Manufaktur Industri
-  para_1: Mesin produksi adalah peralatan yang digunakan dalam proses manufaktur
-    untuk membentuk, memotong, menyambung, dan mengolah material menjadi produk
-    jadi. Kategori ini mencakup mesin press, mesin potong, mesin las, mesin CNC,
-    crusher, mesin casting, dan mesin forging yang wajib menjalani riksa uji berkala
-    sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+  para_1: Mesin produksi adalah peralatan yang digunakan dalam proses manufaktur untuk
+    membentuk, memotong, menyambung, serta mengolah material menjadi produk jadi.
+    Kategori ini meliputi mesin press, mesin potong, mesin las, mesin CNC, crusher,
+    mesin casting, serta mesin forging yang wajib menjalani riksa uji berkala sesuai
+    Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
+    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
     mesin produksi yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    inspeksi on-site di seluruh Indonesia dengan peralatan testing terkalibrasi
-    untuk memastikan keselamatan operasional peralatan Anda.
+    inspeksi on-site di seluruh Indonesia dengan alat testing terkalibrasi untuk memastikan
+    keselamatan operasional alat Anda.
 layanan_mesin_produksi:
   h2: Layanan Riksa Uji Mesin Produksi
   para: Kami melayani riksa uji untuk berbagai jenis mesin produksi sesuai kebutuhan
@@ -47,13 +47,13 @@ layanan_mesin_produksi:
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/riksa-uji-mesin-potong/"
     icon: bi-scissors
   - title: Riksa Uji Mesin Las
-    description: Inspeksi mesin las SMAW, MIG, dan TIG. Pemeriksaan sumber daya,
-      kabel, torch, sistem pendingin, dan kelistrikan.
+    description: Inspeksi mesin las SMAW, MIG, dan TIG. Pemeriksaan sumber daya, kabel,
+      torch, sistem pendingin, dan kelistrikan.
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/riksa-uji-mesin-las/"
     icon: bi-fire
   - title: Riksa Uji Mesin CNC
-    description: Inspeksi mesin CNC machining center. Pemeriksaan spindle, axis
-      drive, tool changer, sistem kontrol, dan interlock keselamatan.
+    description: Inspeksi mesin CNC machining center. Pemeriksaan spindle, axis drive,
+      tool changer, sistem kontrol, dan interlock keselamatan.
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/riksa-uji-mesin-cnc/"
     icon: bi-cpu
   - title: Riksa Uji Mesin Crusher
@@ -67,27 +67,27 @@ layanan_mesin_produksi:
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/riksa-uji-mesin-casting/"
     icon: bi-droplet-half
   - title: Riksa Uji Mesin Forging
-    description: Inspeksi mesin tempa dan forging press. Pemeriksaan hammer/ram,
-      die, sistem hidrolik/pneumatik, dan safety device.
+    description: Inspeksi mesin tempa dan forging press. Pemeriksaan hammer/ram, die,
+      sistem hidrolik/pneumatik, dan safety device.
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/riksa-uji-mesin-forging/"
     icon: bi-hammer
 mengapa_penting:
   h2: Mengapa Riksa Uji Mesin Produksi Penting?
-  para: Mesin produksi beroperasi dengan gaya besar, suhu tinggi, atau material
-    berbahaya yang memiliki risiko kecelakaan sangat tinggi. Kegagalan peralatan
-    dapat menyebabkan cedera fatal, kebakaran, atau ledakan. Riksa uji berkala
-    memastikan semua komponen kritis seperti sistem hidrolik, perangkat keselamatan,
-    emergency stop, dan interlock berfungsi optimal. Pemeriksaan ini bukan hanya
-    kewajiban legal sesuai Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan
-    yang melindungi nyawa pekerja dan aset perusahaan.
+  para: Mesin produksi beroperasi dengan gaya besar, suhu tinggi, atau material berbahaya
+    yang mempunyai risiko kecelakaan sangat tinggi. Kegagalan peralatan dapat menyebabkan
+    cedera fatal, kebakaran, atau ledakan. Riksa uji berkala memastikan semua komponen
+    kritis seperti sistem hidrolik, perangkat keselamatan, emergency stop, dan interlock
+    berfungsi optimal. Inspeksi ini bukan hanya kewajiban legal sesuai Permenaker
+    No. 38 Tahun 2016, tetapi investasi keselamatan yang melindungi nyawa pekerja
+    dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Mesin Produksi
   para: Tim inspector kami datang ke lokasi Anda dengan peralatan testing seperti
-    pressure gauge, thermal camera, dan safety device tester. Proses inspeksi
-    mencakup pemeriksaan dokumen, inspeksi visual, pengujian fungsi operasional,
-    dan verifikasi perangkat keselamatan. Setiap inspeksi didokumentasikan dalam
-    laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang
-    berlaku 1 tahun.
+    pressure gauge, thermal camera, serta safety device tester. Proses inspeksi mencakup
+    pemeriksaan dokumen, inspeksi visual, pengujian fungsi operasional, serta verifikasi
+    perangkat keselamatan. Tiap inspeksi didokumentasikan dalam laporan komprehensif
+    serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+lastmod: '2025-12-08T03:52:06+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

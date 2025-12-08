@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Mesin Perkakas
-description: Jasa riksa uji dan inspeksi K3 mesin perkakas profesional meliputi mesin
-  bubut, mesin frais, mesin bor, mesin gerinda, mesin gergaji, dan mesin shaper.
+description: Jasa riksa uji dan pengecekan K3 mesin peralatan profesional meliputi
+  mesin bubut, mesin frais, mesin bor, mesin gerinda, mesin gergaji, dan mesin shaper.
   Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -20,16 +20,16 @@ keywords: riksa uji mesin perkakas, inspeksi mesin bubut, inspeksi mesin frais, 
   mesin bor, inspeksi mesin gerinda, PJK3, sertifikasi K3
 intro:
   h1: Mesin Perkakas - Riksa Uji Machine Tools Industri
-  para_1: Mesin perkakas (machine tools) adalah peralatan yang digunakan untuk membentuk
+  para_1: Mesin perkakas (machine tools) adalah peralatan yang dipakai untuk membentuk
     dan mengerjakan benda kerja logam melalui proses pemotongan, pengeboran, penggerindaan,
     dan pembentukan lainnya. Kategori ini mencakup mesin bubut, mesin frais, mesin
     bor, mesin gerinda, mesin gergaji, dan mesin shaper yang wajib menjalani riksa
-    uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+    uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
+    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
     mesin perkakas yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    inspeksi on-site di seluruh Indonesia dengan peralatan testing terkalibrasi
-    untuk memastikan keselamatan operasional peralatan Anda.
+    inspeksi on-site di semua Indonesia dengan peralatan testing terkalibrasi untuk
+    memastikan keselamatan operasional peralatan Anda.
 layanan_mesin_perkakas:
   h2: Layanan Riksa Uji Mesin Perkakas
   para: Kami melayani riksa uji untuk berbagai jenis mesin perkakas sesuai kebutuhan
@@ -47,8 +47,8 @@ layanan_mesin_perkakas:
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/riksa-uji-mesin-frais/"
     icon: bi-grid-3x3
   - title: Riksa Uji Mesin Bor
-    description: Inspeksi mesin bor duduk dan radial. Pemeriksaan spindle, drill
-      chuck, kolom, dan sistem kelistrikan.
+    description: Inspeksi mesin bor duduk dan radial. Pemeriksaan spindle, drill chuck,
+      kolom, dan sistem kelistrikan.
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/riksa-uji-mesin-bor/"
     icon: bi-bullseye
   - title: Riksa Uji Mesin Gerinda
@@ -57,31 +57,32 @@ layanan_mesin_perkakas:
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/riksa-uji-mesin-gerinda/"
     icon: bi-disc
   - title: Riksa Uji Mesin Gergaji
-    description: Inspeksi band saw dan circular saw. Pemeriksaan blade, guide,
-      sistem pendingin, dan pelindung keselamatan.
+    description: Inspeksi band saw dan circular saw. Pemeriksaan blade, guide, sistem
+      pendingin, dan pelindung keselamatan.
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/riksa-uji-mesin-gergaji/"
     icon: bi-scissors
   - title: Riksa Uji Mesin Shaper
-    description: Inspeksi mesin sekrap dan planer. Pemeriksaan ram, clapper box,
-      meja kerja, dan sistem penggerak.
+    description: Inspeksi mesin sekrap dan planer. Pemeriksaan ram, clapper box, meja
+      kerja, dan sistem penggerak.
     url: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/riksa-uji-mesin-shaper/"
     icon: bi-arrows-move
 mengapa_penting:
   h2: Mengapa Riksa Uji Mesin Perkakas Penting?
-  para: Mesin perkakas beroperasi dengan komponen berputar berkecepatan tinggi dan
-    alat potong tajam yang memiliki risiko kecelakaan tinggi. Kegagalan peralatan
+  para: Mesin perkakas beroperasi dengan komponen berputar berkecepatan tinggi serta
+    alat potong tajam yang mempunyai risiko kecelakaan tinggi. Kegagalan peralatan
     atau pelindung keselamatan dapat menyebabkan cedera serius pada operator. Riksa
     uji berkala memastikan semua komponen kritis seperti spindle, sistem pelumasan,
-    pelindung keselamatan, dan emergency stop berfungsi optimal. Pemeriksaan ini
+    pelindung keselamatan, serta emergency stop berfungsi optimal. Pemeriksaan ini
     bukan hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, tetapi investasi
-    keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+    keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Mesin Perkakas
-  para: Tim inspector kami datang ke lokasi Anda dengan peralatan testing seperti
-    dial indicator, tachometer, dan vibration meter. Proses inspeksi mencakup
-    pemeriksaan dokumen, inspeksi visual, pengujian fungsi operasional, dan verifikasi
-    perangkat keselamatan. Setiap inspeksi didokumentasikan dalam laporan komprehensif
-    dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+  para: Tim inspector kami datang ke lokasi Anda dengan alat testing seperti dial
+    indicator, tachometer, dan vibration meter. Proses pengecekan mencakup pemeriksaan
+    dokumen, pengecekan visual, pengujian fungsi operasional, dan verifikasi perangkat
+    keselamatan. Setiap pengecekan didokumentasikan dalam laporan komprehensif dan
+    dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+lastmod: '2025-12-08T03:52:06+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
