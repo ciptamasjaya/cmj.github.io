@@ -602,5 +602,5 @@ section_conclusion:
   paragraphs:
   - PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 di wilayah Semarang.
     Hubungi 08568258841 untuk semua kebutuhan riksa uji Anda.
-lastmod: 2025-12-01T06:57:30+0700
+lastmod: '2025-12-01T06:57:30+0700'
 ---

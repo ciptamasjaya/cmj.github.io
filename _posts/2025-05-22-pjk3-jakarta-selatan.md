@@ -673,5 +673,5 @@ section_conclusion:
     kami siap menjadi mitra keselamatan kerja Anda. Hubungi 08568258841 untuk konsultasi
     gratis dan penjadwalan inspeksi. Bersama PT. Cipta Mas Jaya, bangun budaya keselamatan
     kerja sejak hari ini!
-lastmod: 2025-12-01T04:07:31+0000
+lastmod: '2025-12-01T04:07:31+0000'
 ---
