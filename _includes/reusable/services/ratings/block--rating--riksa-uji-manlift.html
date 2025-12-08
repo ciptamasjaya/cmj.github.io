@@ -1,0 +1,120 @@
+{% comment %}
+============================================================================
+Block: Rating Data - Riksa Uji Manlift Service
+============================================================================
+
+@file        block--rating--riksa-uji-manlift.html
+@path        _includes/reusable/services/ratings/block--rating--riksa-uji-manlift.html
+@type        Block (data per service)
+@description Rating data + reviews for riksa uji manlift service
+@author      arisciwek
+@created     2025-12-08
+
+============================================================================
+{% endcomment %}
+
+{% comment %} === RATING DATA === {% endcomment %}
+{% assign rating_average = 4.8 %}
+{% assign rating_count = 3 %}
+{% assign rating_best = 5 %}
+{% assign rating_worst = 1 %}
+{% assign rating_dist_5 = 2 %}
+{% assign rating_dist_4 = 1 %}
+{% assign rating_dist_3 = 0 %}
+{% assign rating_dist_2 = 0 %}
+{% assign rating_dist_1 = 0 %}
+{% assign rating_updated = "2025-12-08" %}
+
+{% comment %} === REVIEW DATA === {% endcomment %}
+{% comment %} Review 1 {% endcomment %}
+{% assign review_1_nama = "Ahmad Fauzi" %}
+{% assign review_1_usaha = "Kontraktor Konstruksi di Jakarta" %}
+{% assign review_1_rating = 5 %}
+{% assign review_1_judul = "Inspeksi Manlift Cepat dan Profesional" %}
+{% assign review_1_komentar = "Proyek kami butuh sertifikat untuk 5 unit manlift rental. Tim PT. Cipta Mas Jaya datang tepat waktu dan inspeksi selesai dalam satu hari. Sertifikat keluar cepat, proyek bisa jalan lancar!" %}
+{% assign review_1_tanggal = "2025-11-20" %}
+{% assign review_1_verified = true %}
+{% assign review_1_helpful = 15 %}
+{% assign review_1_featured = true %}
+
+{% comment %} Review 2 {% endcomment %}
+{% assign review_2_nama = "Budi Santoso" %}
+{% assign review_2_usaha = "Building Maintenance di Surabaya" %}
+{% assign review_2_rating = 5 %}
+{% assign review_2_judul = "Inspector Berpengalaman" %}
+{% assign review_2_komentar = "Inspector sangat teliti memeriksa boom lift kami. Ada temuan minor yang langsung diberi rekomendasi perbaikan. Sangat membantu untuk keselamatan tim maintenance kami." %}
+{% assign review_2_tanggal = "2025-11-28" %}
+{% assign review_2_verified = true %}
+{% assign review_2_helpful = 10 %}
+{% assign review_2_featured = true %}
+
+{% comment %} Review 3 {% endcomment %}
+{% assign review_3_nama = "Dewi Anggraini" %}
+{% assign review_3_usaha = "Rental Alat Berat di Bekasi" %}
+{% assign review_3_rating = 4 %}
+{% assign review_3_judul = "Pelayanan Memuaskan" %}
+{% assign review_3_komentar = "Perusahaan rental kami rutin pakai jasa PT. Cipta Mas Jaya untuk riksa uji manlift. Pelayanan konsisten bagus dan harga kompetitif untuk multi unit." %}
+{% assign review_3_tanggal = "2025-12-05" %}
+{% assign review_3_verified = true %}
+{% assign review_3_helpful = 7 %}
+{% assign review_3_featured = false %}
+
+{% comment %} === JSON OUTPUT === {% endcomment %}
+{% unless include.schema_only or include.data_only %}
+<script id="rating-data" type="application/json">
+{
+  "slug": "riksa-uji-manlift",
+  "title": "{{ page.title | default: 'Riksa Uji Manlift' | escape }}",
+  "average": {{ rating_average }},
+  "bestRating": {{ rating_best }},
+  "worstRating": {{ rating_worst }},
+  "total_reviews": {{ rating_count }},
+  "distribution": {
+    "5": {{ rating_dist_5 }},
+    "4": {{ rating_dist_4 }},
+    "3": {{ rating_dist_3 }},
+    "2": {{ rating_dist_2 }},
+    "1": {{ rating_dist_1 }}
+  },
+  "last_updated": "{{ rating_updated }}",
+  "reviews": [
+    {
+      "id": 1,
+      "nama": "{{ review_1_nama }}",
+      "jenis_usaha": "{{ review_1_usaha }}",
+      "rating": {{ review_1_rating }},
+      "judul": "{{ review_1_judul }}",
+      "komentar": "{{ review_1_komentar }}",
+      "tanggal": "{{ review_1_tanggal }}",
+      "verified": {{ review_1_verified }},
+      "helpful_count": {{ review_1_helpful }},
+      "featured": {{ review_1_featured }}
+    },
+    {
+      "id": 2,
+      "nama": "{{ review_2_nama }}",
+      "jenis_usaha": "{{ review_2_usaha }}",
+      "rating": {{ review_2_rating }},
+      "judul": "{{ review_2_judul }}",
+      "komentar": "{{ review_2_komentar }}",
+      "tanggal": "{{ review_2_tanggal }}",
+      "verified": {{ review_2_verified }},
+      "helpful_count": {{ review_2_helpful }},
+      "featured": {{ review_2_featured }}
+    },
+    {
+      "id": 3,
+      "nama": "{{ review_3_nama }}",
+      "jenis_usaha": "{{ review_3_usaha }}",
+      "rating": {{ review_3_rating }},
+      "judul": "{{ review_3_judul }}",
+      "komentar": "{{ review_3_komentar }}",
+      "tanggal": "{{ review_3_tanggal }}",
+      "verified": {{ review_3_verified }},
+      "helpful_count": {{ review_3_helpful }},
+      "featured": {{ review_3_featured }}
+    }
+  ]
+}
+</script>
+{% endunless %}
