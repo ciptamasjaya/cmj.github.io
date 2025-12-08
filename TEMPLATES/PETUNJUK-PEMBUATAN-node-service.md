@@ -233,7 +233,7 @@ TodoWrite: Mark "Section 1: Front Matter" as [in_progress]
 ```yaml
 layout: node/node--service
 title: "Riksa Uji Boiler"
-description: "Jasa riksa uji dan inspeksi K3 boiler profesional dengan sertifikat resmi Kementerian Ketenagakerjaan RI."
+description: "Riksa uji boiler adalah pemeriksaan dan pengujian keselamatan ketel uap oleh PJK3 resmi Kemenaker untuk mendapatkan izin pemakaian pesawat uap dari Disnaker. Layanan inspeksi K3 seluruh Indonesia."
 para_1: "Riksa uji boiler adalah pemeriksaan dan pengujian terhadap pesawat uap sesuai dengan Permenaker No. 37 Tahun 2016 tentang Keselamatan dan Kesehatan Kerja Bejana Tekanan dan Tangki Timbun."
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
 category: "Riksa Uji Pesawat Uap Bejana Tekan"
@@ -266,7 +266,12 @@ lastmod: '2025-12-01T16:40:00+0700'
 
 **Catatan:**
 - `title`: Format "Riksa Uji [Nama Alat]" (tanpa kata "Jasa")
-- `description`: 150-160 karakter, sertakan kata kunci: jasa, riksa uji, inspeksi K3, sertifikat
+- `description`: Gunakan pola berikut:
+  ```
+  Riksa uji [nama alat] adalah pemeriksaan dan pengujian keselamatan [jenis alat] oleh PJK3 resmi Kemenaker untuk mendapatkan [SIA/SILO/Suket K3 atau izin pemakaian pesawat uap] dari Disnaker. Layanan inspeksi K3 seluruh Indonesia.
+  ```
+  - Untuk pesawat uap (boiler): gunakan "izin pemakaian pesawat uap"
+  - Untuk pesawat angkat/angkut: gunakan "SIA/SILO/Suket K3"
 - `para_1`: Paragraf pembuka setelah H1, jelaskan definisi dan dasar hukum
 - `permalink`: Format /layanan/[kategori]/[subkategori]/riksa-uji-[nama-alat]/
 - `rating_id`: ID untuk menghubungkan dengan file rating (lowercase, dash-separated)

@@ -1,6 +1,7 @@
 ---
 layout: node/node--service
 title: ""
+# description: Riksa uji [nama alat] adalah pemeriksaan dan pengujian keselamatan [jenis alat] oleh PJK3 resmi Kemenaker untuk mendapatkan [SIA/SILO/Suket K3 | izin pemakaian pesawat uap] dari Disnaker. Layanan inspeksi K3 seluruh Indonesia.
 description: ""
 para_1: ""
 permalink: ""
