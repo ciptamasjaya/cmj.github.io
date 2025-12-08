@@ -69,13 +69,9 @@ SEO Benefits:
   {% assign filtered_services = filtered_services | where: "sub_category", filter_subcategory %}
 {% endif %}
 
-{% comment %} Sort by last_modified_at or date (newest first) {% endcomment %}
-{% assign sorted_services = filtered_services | sort: "last_modified_at" | reverse %}
-
-{% comment %} If no last_modified_at, sort by date {% endcomment %}
-{% if sorted_services.size == 0 %}
-  {% assign sorted_services = filtered_services | sort: "date" | reverse %}
-{% endif %}
+{% comment %} Sort by lastmod for precise datetime sorting (newest first) {% endcomment %}
+{% comment %} lastmod format: '2025-12-08T16:20:00+0700' (auto by propagate-timestamp plugin) {% endcomment %}
+{% assign sorted_services = filtered_services | sort: "lastmod" | reverse %}
 
 {% if sorted_services.size > 0 %}
 <section class="block--latest-service-updates my-5 py-4 bg-light rounded">
