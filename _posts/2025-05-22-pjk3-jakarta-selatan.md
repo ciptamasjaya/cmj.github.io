@@ -3,8 +3,8 @@ layout: node/node--pjk3-city
 title: PJK3 Jakarta Selatan
 date: 2025-05-23 02:11:49+07:00
 author: admin
-description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa tes K3 terhadap
-  wilayah Jakarta Selatan. Hubungi 08568258841 untuk seluruh kebutuhan riksa tes Anda.
+description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 terhadap
+  wilayah Jakarta Selatan. Hubungi 08568258841 untuk seluruh kebutuhan riksa uji Anda.
 area_served: Jakarta Selatan
 rating_id: pjk3-jakarta-selatan
 keywords: PJK3 Jakarta Selatan, jasa riksa uji Jakarta, inspeksi K3 Jakarta, sertifikasi

@@ -1,7 +1,7 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Angkat Angkut
-description: Jasa riksa tes dan inspeksi K3 pesawat angkat angkut profesional termasuk
+description: Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional termasuk
   forklift, crane, hoist, dan conveyor sesuai kriteria Kementerian Ketenagakerjaan
   RI. Melayani semua Indonesia secara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/"
@@ -27,7 +27,7 @@ intro:
     pada Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa tes pesawat angkat angkut yang komprehensif dengan tim
+    menyediakan layanan riksa uji pesawat angkat angkut yang komprehensif dengan tim
     inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani
     berbagai industri mencakup manufaktur, logistik, konstruksi, dan pertambangan
     dalam rangka menjamin keselamatan operasional dan compliance terhadap regulasi

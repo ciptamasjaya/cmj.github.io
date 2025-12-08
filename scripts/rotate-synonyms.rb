@@ -105,7 +105,7 @@ SYNONYM_GROUPS = [
   ["komponen", "bagian", "elemen"],
   ["peralatan", "alat", "perkakas"],
   ["pemeriksaan", "inspeksi", "pengecekan"],
-  ["pengujian", "tes", "uji"],
+  # ["pengujian", "tes", "uji"],  # DISABLED: "riksa uji" & "pengujian" adalah istilah baku K3
   ["standar", "kriteria", "acuan"],
   ["batas", "limit", "ambang"],
 

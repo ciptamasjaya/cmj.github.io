@@ -215,7 +215,7 @@ section_company_intro:
       waktu untuk mendukung kepatuhan K3 perusahaan Anda.
 section_services:
   title: Keunggulan PT. Cipta Mas Jaya
-  intro: Mengapa memilih kami dalam rangka riksa tes forklift Anda?
+  intro: Mengapa memilih kami dalam rangka riksa uji forklift Anda?
   services:
   - title: Izin Resmi Kemenaker
     description: PJK3 terdaftar dengan izin resmi dari Kementerian Ketenagakerjaan
