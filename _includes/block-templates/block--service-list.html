@@ -132,7 +132,7 @@ Responsive Behavior:
     </div>
 
     <!-- DataTable View (Desktop/Tablet/Mobile) -->
-    {% assign schema_limit = include.schema_limit | default: 10 %}
+    {% assign schema_limit = include.schema_limit | default: 5 %}
     <div class="datatable-container">
       <table id="service-list-table" class="table table-hover align-middle"
              data-per-page="{{ schema_limit }}"

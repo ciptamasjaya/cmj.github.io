@@ -52,7 +52,7 @@ class DataTable {
   constructor(selector, options = {}) {
     // Default options
     this.options = {
-      perPage: options.perPage || 10,
+      perPage: options.perPage || 5,
       perPageSelect: options.perPageSelect || [5, 10, 25, 50, 100],
       searchable: options.searchable !== false,
       sortable: options.sortable !== false,
