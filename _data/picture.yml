@@ -28,12 +28,12 @@ presets:
       img:
         loading: lazy
 
-  # Card images - for card components
+  # Card images - for card components (display: 408px)
   card:
     markup: picture
-    widths: [300, 450, 600]
+    widths: [400, 800]
     formats: [webp, original]
-    fallback_width: 450
+    fallback_width: 400
     fallback_format: original
     sizes:
       mobile: 100vw
@@ -73,10 +73,10 @@ presets:
       img:
         loading: lazy
 
-  # Icon - very small images
+  # Icon - very small images (display: 50px)
   icon:
     markup: img
-    widths: [32, 64, 128]
+    widths: [64, 128]
     formats: [webp, original]
     fallback_width: 64
     fallback_format: original
@@ -131,8 +131,8 @@ presets:
         class: img-fluid w-100
         loading: eager
 
-  # Gallery - for image galleries
-  gallery:
+  # Gallery grid - for image gallery grids (display: 306px)
+  gallery-grid:
     markup: picture
     widths: [300, 600, 900]
     formats: [webp, original]
@@ -144,7 +144,25 @@ presets:
       desktop: 33vw
     attributes:
       picture:
-        class: picture-gallery
+        class: picture-gallery-grid
+      img:
+        loading: lazy
+        class: img-fluid
+
+  # Gallery slider - for large carousel/slider (display: 1034px)
+  gallery-slider:
+    markup: picture
+    widths: [1100, 2200]
+    formats: [webp, original]
+    fallback_width: 1100
+    fallback_format: original
+    sizes:
+      mobile: 100vw
+      tablet: 100vw
+      desktop: 1100px
+    attributes:
+      picture:
+        class: picture-gallery-slider
       img:
         loading: lazy
         class: img-fluid
