@@ -95,8 +95,8 @@ categories:
     featured: true
     status: active
     order: 2
-    price_min: 2000000
-    price_max: 20000000
+    price_min: 1500000
+    price_max: 15000000
     subcategories:
       # Sub-category 1: Pesawat Angkat
       - name: "Pesawat Angkat"
@@ -348,7 +348,7 @@ categories:
     order: 4
     status: active
     price_min: 3000000
-    price_max: 15000000
+    price_max: 7000000
     subcategories:
       # Sub-category 1: Elevator
       - name: "Elevator"
@@ -419,8 +419,8 @@ categories:
     featured: true
     order: 5
     status: active
-    price_min: 2000000
-    price_max: 12000000
+    price_min: 2500000
+    price_max: 7000000
     subcategories:
       # Sub-category 1: Instalasi Listrik
       - name: "Instalasi Listrik"
@@ -503,8 +503,8 @@ categories:
     featured: true
     order: 6
     status: active
-    price_min: 1500000
-    price_max: 10000000
+    price_min: 3500000
+    price_max: 15000000
     subcategories:
       # Sub-category 1: Proteksi Aktif
       - name: "Proteksi Aktif"
