@@ -1,0 +1,83 @@
+{% comment %}
+============================================================================
+Block: Pagination Navigation (block--pagination.html)
+============================================================================
+
+@file        block--pagination.html
+@path        _includes/block/block--pagination.html
+@type        Block (navigation)
+@description Reusable pagination navigation for paginated pages
+@author      arisciwek
+@created     2025-12-09
+
+Features:
+---------
+- Previous/Next navigation buttons
+- Page number links
+- Bootstrap 5 pagination styling
+- Responsive and accessible
+
+Parameters:
+-----------
+- (none) - Uses global paginator object from jekyll-paginate-v2
+
+Usage:
+------
+{% include block/block--pagination.html %}
+
+Requirements:
+-------------
+- jekyll-paginate-v2 plugin
+- Page must have pagination enabled in frontmatter
+
+============================================================================
+{% endcomment %}
+
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Pagination" class="block--pagination">
+  <ul class="pagination justify-content-center flex-wrap">
+    <!-- Previous Page -->
+    {% if paginator.previous_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Sebelumnya">
+        <i class="bi bi-chevron-left"></i><span class="d-none d-sm-inline"> Sebelumnya</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <span class="page-link"><i class="bi bi-chevron-left"></i><span class="d-none d-sm-inline"> Sebelumnya</span></span>
+    </li>
+    {% endif %}
+
+    <!-- Page Numbers -->
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">{{ page }}</span>
+      </li>
+      {% elsif page == 1 %}
+      <li class="page-item">
+        <a class="page-link" href="{{ '/blog/' | relative_url }}">{{ page }}</a>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="{{ site.pagination.permalink | replace: ':num', page | relative_url }}">{{ page }}</a>
+      </li>
+      {% endif %}
+    {% endfor %}
+
+    <!-- Next Page -->
+    {% if paginator.next_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Selanjutnya">
+        <span class="d-none d-sm-inline">Selanjutnya </span><i class="bi bi-chevron-right"></i>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <span class="page-link"><span class="d-none d-sm-inline">Selanjutnya </span><i class="bi bi-chevron-right"></i></span>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}

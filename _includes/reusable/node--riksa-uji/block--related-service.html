@@ -51,7 +51,13 @@ Or via frontmatter:
 
           <!-- Service Image -->
           <div class="col-md-4">
-            {% if service.image %}
+            {% comment %} Handle both object {src,alt} and string format {% endcomment %}
+            {% if service.image.src %}
+            <img src="{{ service.image.src | relative_url }}"
+                 class="img-fluid rounded-start h-100"
+                 alt="{{ service.image.alt | default: service.title }}"
+                 style="object-fit: cover; min-height: 200px;">
+            {% elsif service.image %}
             <img src="{{ service.image | relative_url }}"
                  class="img-fluid rounded-start h-100"
                  alt="{{ service.title }}"

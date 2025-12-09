@@ -65,17 +65,20 @@ clean_build() {
 
 # Function to create symlink for wp-content/uploads
 create_uploads_symlink() {
-    if [ -d "_site" ]; then
+    local dest_dir="$1"
+    dest_dir="${dest_dir:-_site}"
+
+    if [ -d "$dest_dir" ]; then
         # Create wp-content directory if not exists
-        mkdir -p "_site/wp-content"
+        mkdir -p "$dest_dir/wp-content"
 
         # Remove existing uploads dir/symlink if exists
-        rm -rf "_site/wp-content/uploads"
+        rm -rf "$dest_dir/wp-content/uploads"
 
         # Create symlink to source uploads
         if [ -d "wp-content/uploads" ]; then
-            ln -s "$(pwd)/wp-content/uploads" "_site/wp-content/uploads"
-            print_success "Symlink created: _site/wp-content/uploads -> wp-content/uploads"
+            ln -s "$(pwd)/wp-content/uploads" "$dest_dir/wp-content/uploads"
+            print_success "Symlink: $dest_dir/wp-content/uploads"
         else
             print_warning "wp-content/uploads not found, skipping symlink"
         fi
@@ -93,13 +96,29 @@ build_site() {
     if JEKYLL_ENV=production bundle exec jekyll build --config "$config_file" --future; then
         print_success "Build completed successfully!"
 
+        # Get destination directory from config
+        local dest_dir=$(grep "^destination:" "$config_file" | sed 's/destination:[[:space:]]*//' | tr -d '"' | tr -d "'")
+        dest_dir="${dest_dir:-_site}"
+
         # Create symlink for uploads (excluded from Jekyll build)
-        create_uploads_symlink
+        create_uploads_symlink "$dest_dir"
+
+        # Combine post-blocks CSS files into blocks-post.css
+        if [ -d "$dest_dir/assets/css" ]; then
+            cat "$dest_dir/assets/css/post-blocks-core.css" \
+                "$dest_dir/assets/css/post-blocks-content.css" \
+                "$dest_dir/assets/css/post-blocks-sections.css" \
+                "$dest_dir/assets/css/post-blocks-extras.css" \
+                "$dest_dir/assets/css/post-blocks-riksa-uji.css" \
+                "$dest_dir/assets/css/post-blocks-responsive.css" \
+                > "$dest_dir/assets/css/blocks-post.css" 2>/dev/null && \
+            print_success "Combined CSS: blocks-post.css"
+        fi
 
         # Show build info
-        if [ -d "_site" ]; then
-            local file_count=$(find _site -type f | wc -l)
-            local size=$(du -sh _site | cut -f1)
+        if [ -d "$dest_dir" ]; then
+            local file_count=$(find "$dest_dir" -type f | wc -l)
+            local size=$(du -sh "$dest_dir" | cut -f1)
             print_info "Generated $file_count files ($size)"
         fi
     else

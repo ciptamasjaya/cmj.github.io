@@ -25,13 +25,22 @@ Usage:
 {% assign service = include.service %}
 {% assign color_index = include.color_index | default: 1 %}
 {% assign rating = service.rating | default: 5 %}
-{% assign has_image = service.image | strip | size | plus: 0 %}
+
+{% comment %} Handle both object {src,alt} and string format for image {% endcomment %}
+{% if service.image.src %}
+  {% assign img_src = service.image.src %}
+  {% assign img_alt = service.image.alt | default: service.title %}
+{% else %}
+  {% assign img_src = service.image %}
+  {% assign img_alt = service.title %}
+{% endif %}
+{% assign has_image = img_src | strip | size | plus: 0 %}
 
 <article class="card h-100 border-0 shadow-sm block-card block-card-{{ color_index }}">
   <!-- Image -->
   {% if has_image > 0 %}
   <div class="block-card-image">
-    <img src="{{ service.image | relative_url }}" class="card-img-top" alt="{{ service.title }}" loading="lazy">
+    <img src="{{ img_src | relative_url }}" class="card-img-top" alt="{{ img_alt }}" loading="lazy">
     <div class="block-card-overlay block-card-overlay-{{ color_index }}"></div>
   </div>
   {% else %}
