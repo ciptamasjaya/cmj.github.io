@@ -27,13 +27,22 @@ Usage:
 
 {% assign post = include.post %}
 {% assign color_index = include.color_index | default: 1 %}
-{% assign has_image = post.image | strip | size | plus: 0 %}
+
+{% comment %} Handle both object {src,alt} and string format for image {% endcomment %}
+{% if post.image.src %}
+  {% assign card_image = post.image.src %}
+{% elsif post.image %}
+  {% assign card_image = post.image %}
+{% else %}
+  {% assign card_image = nil %}
+{% endif %}
+{% assign has_image = card_image | strip | size | plus: 0 %}
 
 <article class="card h-100 border-0 shadow-sm block-card block-card-{{ color_index }}">
   <!-- Image -->
   {% if has_image > 0 %}
   <div class="block-card-image">
-    <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
+    <img src="{{ card_image | relative_url }}" class="card-img-top" alt="{{ post.title }}" loading="lazy">
     <div class="block-card-overlay block-card-overlay-{{ color_index }}"></div>
   </div>
   {% else %}

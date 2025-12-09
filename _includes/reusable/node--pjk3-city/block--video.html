@@ -63,8 +63,13 @@ Usage:
 
 {% if section.poster and section.poster != '' %}
   {% assign video_poster = section.poster %}
-{% elsif page.images and page.images[0] and page.images[0] != '' %}
-  {% assign video_poster = page.images[0] %}
+{% elsif page.images and page.images[0] %}
+  {% comment %} Handle both object {src,alt} and string format {% endcomment %}
+  {% if page.images[0].src %}
+    {% assign video_poster = page.images[0].src %}
+  {% elsif page.images[0] != '' %}
+    {% assign video_poster = page.images[0] %}
+  {% endif %}
 {% else %}
   {% assign video_poster = '/assets/images/posts/default/i1.svg' %}
 {% endif %}

@@ -34,7 +34,14 @@ Usage in detail page:
 {% endcomment %}
 
 {% assign item = include.post | default: page %}
-{% assign item_image = item.image | default: site.default_image %}
+{% comment %} Handle both object {src,alt} and string format for image {% endcomment %}
+{% if item.image.src %}
+  {% assign item_image = item.image.src %}
+{% elsif item.image and item.image != '' %}
+  {% assign item_image = item.image %}
+{% else %}
+  {% assign item_image = site.default_image %}
+{% endif %}
 {% assign schema_mode = include.mode | default: "detail" %}
 
 <!-- Article Schema -->

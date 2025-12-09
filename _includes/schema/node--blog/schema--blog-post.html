@@ -52,9 +52,13 @@ https://schema.org/BlogPosting
   "numberOfItems": {{ blog_posts.size }},
   "itemListElement": [
     {% for post in blog_posts %}
-    {% comment %} Determine image: images[0] > image > default {% endcomment %}
-    {% if post.images.first %}
+    {% comment %} Determine image: images[0] > image > default (support object format) {% endcomment %}
+    {% if post.images.first.src %}
+      {% assign post_image = post.images.first.src %}
+    {% elsif post.images.first %}
       {% assign post_image = post.images.first %}
+    {% elsif post.image.src %}
+      {% assign post_image = post.image.src %}
     {% elsif post.image and post.image != '' %}
       {% assign post_image = post.image %}
     {% else %}

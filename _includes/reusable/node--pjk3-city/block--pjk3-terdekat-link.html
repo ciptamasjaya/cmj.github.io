@@ -43,7 +43,14 @@ Or with custom options:
 
 {% assign area = include.area | default: page.area_served %}
 {% assign url = include.url | default: "/2025/05/20/pjk3-terdekat-08568258841/" %}
-{% assign title = include.title | default: "PJK3 Terdekat di Seluruh Indonesia" %}
+{% comment %} Dynamic title based on area {% endcomment %}
+{% if include.title %}
+  {% assign title = include.title %}
+{% elsif area and area != "Indonesia" %}
+  {% assign title = "PJK3 Terdekat di " | append: area %}
+{% else %}
+  {% assign title = "PJK3 Terdekat di Seluruh Indonesia" %}
+{% endif %}
 {% assign gradient = include.gradient | default: "cyan" %}
 {% assign icon = include.icon | default: "geo-alt-fill" %}
 {% assign cta_text = include.cta_text | default: "PJK3 Terdekat" %}

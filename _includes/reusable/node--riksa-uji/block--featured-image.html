@@ -23,12 +23,17 @@ Usage:
 ============================================================================
 {% endcomment %}
 
-{% comment %} Fallback chain: featured_image -> images[0] -> default {% endcomment %}
+{% comment %} Fallback chain: featured_image -> images[0] -> default (support object format) {% endcomment %}
 {% assign default_image = "/assets/images/posts/default/i1.svg" %}
 {% if page.featured_image and page.featured_image != "" %}
   {% assign featured_image = page.featured_image %}
 {% elsif page.images and page.images.size > 0 %}
-  {% assign featured_image = page.images[0] %}
+  {% comment %} Handle both object {src,alt} and string format {% endcomment %}
+  {% if page.images[0].src %}
+    {% assign featured_image = page.images[0].src %}
+  {% else %}
+    {% assign featured_image = page.images[0] %}
+  {% endif %}
 {% else %}
   {% assign featured_image = default_image %}
 {% endif %}
