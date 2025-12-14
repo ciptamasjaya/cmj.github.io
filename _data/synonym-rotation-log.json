@@ -119,21 +119,21 @@
     ]
   },
   "2025-05-22-pjk3-jakarta-selatan.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-14",
     "changes": 14,
     "words": [
-      "segenap→seluruh",
-      "pengujian→tes",
-      "pada→terhadap",
-      "dengan→secara",
-      "tes→uji",
-      "dan→serta",
-      "tahapan→prosedur",
       "untuk→dalam rangka",
-      "Secara→Dengan cara",
-      "atau→maupun",
+      "terhadap→kepada",
       "inspeksi→pengecekan",
-      "serta→dan"
+      "peralatan→alat",
+      "serta→dan",
+      "prosedur→proses",
+      "alat→perkakas",
+      "Dengan→Secara",
+      "daripada→dari",
+      "maupun→atau",
+      "dan→serta",
+      "Secara→Dengan cara"
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
@@ -180,18 +180,18 @@
     ]
   },
   "pesawat-angkat.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-14",
     "changes": 10,
     "words": [
-      "pengecekan→pemeriksaan",
-      "pengujian→tes",
+      "pemeriksaan→inspeksi",
+      "dan→serta",
+      "peralatan→alat",
+      "digunakan→dipakai",
+      "inspeksi→pengecekan",
       "untuk→dalam rangka",
-      "uji→pengujian",
-      "dari→daripada",
-      "melaksanakan→menjalankan",
-      "berfungsi→bekerja",
-      "memiliki→mempunyai",
-      "komponen→bagian"
+      "komponen→bagian",
+      "amat→sungguh",
+      "Proses→Tahapan"
     ]
   },
   "pesawat-angkut.md": {
@@ -326,22 +326,26 @@
     ]
   },
   "riksa-uji-overhead-crane.md": {
-    "date": "2025-12-02",
+    "date": "2025-12-14",
     "changes": 19,
     "words": [
+      "inspeksi→pengecekan",
       "seluruh→semua",
-      "dengan→secara",
-      "secara→dengan cara",
-      "bertujuan→dimaksudkan",
-      "dari→daripada",
-      "uji→pengujian",
-      "Inspeksi→Pengecekan",
-      "utama→pokok",
+      "sesuai→berdasarkan",
+      "pemeriksaan→inspeksi",
+      "daripada→dari",
       "dan→serta",
+      "pada→terhadap",
+      "semua→segenap",
+      "pokok→primer",
+      "Pengecekan→Pemeriksaan",
       "Pemeriksaan→Inspeksi",
-      "untuk→dalam rangka",
-      "memiliki→mempunyai",
-      "di→pada"
+      "serta→dan",
+      "kondisi→keadaan",
+      "memastikan→menjamin",
+      "standar→kriteria",
+      "Setiap→Tiap",
+      "berbagai→beragam"
     ]
   },
   "riksa-uji-boiler.md": {
@@ -597,16 +601,17 @@
     ]
   },
   "tanur.md": {
-    "date": "2025-12-08",
+    "date": "2025-12-14",
     "changes": 10,
     "words": [
-      "dan→serta",
+      "serta→dan",
+      "pengecekan→pemeriksaan",
+      "proses→tahapan",
+      "mencakup→meliputi",
       "inspeksi→pengecekan",
-      "untuk→dalam rangka",
-      "peralatan→alat",
-      "uji→pengujian",
-      "tetapi→akan tetapi",
-      "dengan→secara"
+      "di→pada",
+      "atau→maupun",
+      "secara→dengan cara"
     ]
   },
   "riksa-uji-gondola.md": {

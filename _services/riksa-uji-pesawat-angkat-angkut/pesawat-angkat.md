@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Angkat
-description: Jasa riksa uji dan pemeriksaan K3 pesawat angkat profesional meliputi
-  crane, hoist, gondola, manlift, scissor lift, dan peralatan pengangkat vertikal
+description: Jasa riksa uji serta inspeksi K3 pesawat angkat profesional meliputi
+  crane, hoist, gondola, manlift, scissor lift, serta peralatan pengangkat vertikal
   lainnya. Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/"
 category: Riksa Uji Pesawat Angkat Angkut
@@ -16,19 +16,19 @@ content_structure: 1xh1, 2xpara, h2(list-services)
 date: 2025-11-27
 last_modified_at: 2025-11-27
 show_breadcrumb_schema: true
-keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gondola, inspeksi manlift, scissor lift, PJK3, sertifikasi K3
+keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gondola,
+  inspeksi manlift, scissor lift, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Angkat - Riksa Uji Peralatan Pengangkat Beban Vertikal
-  para_1: Pesawat angkat adalah peralatan yang digunakan dalam rangka mengangkat serta
-    menurunkan beban secara vertikal. Kategori ini mencakup beragam jenis crane, hoist,
-    gondola, manlift, scissor lift, serta peralatan pengangkat lainnya yang wajib
-    menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor
-    8 Tahun 2020.
+  para_1: Pesawat angkat adalah alat yang dipakai dalam rangka mengangkat serta menurunkan
+    beban secara vertikal. Kategori ini mencakup beragam jenis crane, hoist, gondola,
+    manlift, scissor lift, serta alat pengangkat lainnya yang wajib menjalani riksa
+    pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     uji pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
-    inspeksi on-site di seluruh Indonesia secara peralatan testing terkalibrasi untuk
-    memastikan keselamatan operasional peralatan Anda.
+    pengecekan on-site di seluruh Indonesia secara peralatan testing terkalibrasi
+    dalam rangka memastikan keselamatan operasional peralatan Anda.
 layanan_pesawat_angkat:
   h2: Layanan Riksa Uji Pesawat Angkat
   para: Kami melayani riksa uji untuk berbagai jenis pesawat angkat sesuai kebutuhan
@@ -103,8 +103,8 @@ layanan_pesawat_angkat:
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Penting?
   para: Pesawat angkat menangani beban berat di ketinggian sehingga mempunyai risiko
-    kecelakaan yang amat tinggi. Kegagalan peralatan dapat menyebabkan beban jatuh,
-    struktur runtuh, atau operator terjatuh. Riksa uji berkala memastikan semua komponen
+    kecelakaan yang sungguh tinggi. Kegagalan peralatan dapat menyebabkan beban jatuh,
+    struktur runtuh, atau operator terjatuh. Riksa uji berkala memastikan semua bagian
     kritis seperti wire rope, brake system, limit switch, dan struktur penahan beban
     bekerja optimal. Pemeriksaan ini bukan hanya kewajiban legal berdasarkan Permenaker
     No. 8 Tahun 2020, tetapi investasi keselamatan yang melindungi nyawa pekerja dan
@@ -112,11 +112,11 @@ mengapa_penting:
 proses:
   h2: Proses Riksa Uji Pesawat Angkat
   para: Tim inspector kami datang ke lokasi Anda dengan peralatan testing portable
-    yang terkalibrasi. Proses inspeksi mencakup inspeksi dokumen, inspeksi visual
-    struktur dan bagian, tes fungsi operasional, dan load test berdasarkan kapasitas.
-    Setiap inspeksi didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
+    yang terkalibrasi. Tahapan inspeksi mencakup inspeksi dokumen, inspeksi visual
+    struktur serta bagian, tes fungsi operasional, serta load test berdasarkan kapasitas.
+    Setiap inspeksi didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2025-12-01T02:07:50+0700'
+lastmod: '2025-12-14T03:56:41+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

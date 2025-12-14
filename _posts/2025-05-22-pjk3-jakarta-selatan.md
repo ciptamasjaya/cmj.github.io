@@ -1,16 +1,17 @@
 ---
 layout: node/node--pjk3-city
 title: PJK3 Jakarta Selatan
-date: 2025-05-23 02:11:49+07:00
+date: 2025-05-23 02:11:49.000000000 +07:00
 author: admin
-description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 terhadap
-  wilayah Jakarta Selatan. Hubungi 08568258841 untuk seluruh kebutuhan riksa uji Anda.
+description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 kepada
+  wilayah Jakarta Selatan. Hubungi 08568258841 dalam rangka seluruh kebutuhan riksa
+  uji Anda.
 area_served: Jakarta Selatan
 rating_id: pjk3-jakarta-selatan
 keywords: PJK3 Jakarta Selatan, jasa riksa uji Jakarta, inspeksi K3 Jakarta, sertifikasi
   K3, riksa pengujian Jakarta Selatan
 extra_js:
-- /assets/js/gallery-modal.js
+- "/assets/js/gallery-modal.js"
 categories:
 - Artikel
 tags:
@@ -22,54 +23,74 @@ tags:
 - Riksa Uji
 - Riksa Uji K3
 image:
-  src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg
-  alt: "PJK3 Jakarta Selatan adalah layanan riksa uji K3 dari PT Cipta Mas Jaya yang melayani inspeksi elevator, genset, instalasi listrik, dan proteksi kebakaran untuk gedung perkantoran, hotel, mall, dan apartemen di kawasan SCBD, Kuningan, dan TB Simatupang"
+  src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg"
+  alt: PJK3 Jakarta Selatan adalah layanan riksa uji K3 dari PT Cipta Mas Jaya yang
+    melayani inspeksi elevator, genset, instalasi listrik, dan proteksi kebakaran
+    untuk gedung perkantoran, hotel, mall, dan apartemen di kawasan SCBD, Kuningan,
+    dan TB Simatupang
 images:
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg
-  alt: "PJK3 Jakarta Selatan PT Cipta Mas Jaya melayani jasa riksa uji K3 untuk gedung perkantoran, hotel, dan apartemen di kawasan SCBD, Kuningan, dan TB Simatupang"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-paa.jpg
-  alt: "Riksa uji pesawat angkat angkut di Jakarta Selatan meliputi inspeksi crane, forklift, dan hoist untuk proyek konstruksi dan kawasan bisnis premium"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-pubt.jpeg
-  alt: "Inspeksi pesawat uap dan bejana tekan di Jakarta Selatan oleh PJK3 PT Cipta Mas Jaya untuk hotel, rumah sakit, dan fasilitas manufaktur"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-ptp.jpg
-  alt: "Riksa uji pesawat tenaga dan produksi mencakup pemeriksaan genset, kompresor, dan mesin penggerak di gedung perkantoran Jakarta Selatan"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-lift.jpeg
-  alt: "Riksa uji elevator dan eskalator di Jakarta Selatan untuk gedung pencakar langit, mall, dan apartemen premium sesuai standar Kemenaker"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-petir.jpeg
-  alt: "Inspeksi instalasi listrik dan penyalur petir di Jakarta Selatan untuk mencegah risiko korsleting dan kebakaran pada gedung bertingkat"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-alarm.jpeg
-  alt: "Riksa uji sarana proteksi kebakaran di Jakarta Selatan meliputi pemeriksaan APAR, hydrant, sprinkler, dan sistem alarm kebakaran"
-- src: /wp-content/uploads/2024/10/pjk3-pt-cipta-mas-jaya-010-23.jpg
-  alt: "Tim teknisi PJK3 PT Cipta Mas Jaya bersertifikat Kemenaker siap melayani inspeksi K3 di seluruh wilayah Jakarta Selatan"
-- src: /wp-content/uploads/2024/09/pjk3-riksa-uji-pt-cipta-mas-jaya-1.jpeg
-  alt: "Dokumentasi kegiatan riksa uji K3 oleh PJK3 PT Cipta Mas Jaya di kawasan bisnis Jakarta Selatan"
-- src: /wp-content/uploads/2024/09/riksa-uji-pt-cipta-mas-jaya-.jpg
-  alt: "Proses inspeksi peralatan K3 oleh teknisi ahli PT Cipta Mas Jaya sesuai standar keselamatan kerja nasional"
-- src: /wp-content/uploads/2024/09/manager-hse-kesal-harus-melaksanakan-inspeksi-tidak-terencana-setelah-melakukan-inspeksi-terencana-menggunakan-pjk3-riksa-uji-melalui-inspeksi-k3.jpeg
-  alt: "HSE Manager dapat mengandalkan PJK3 PT Cipta Mas Jaya untuk inspeksi K3 terencana maupun tidak terencana di Jakarta Selatan"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-paa-771x1024.jpg
-  alt: "Inspeksi pesawat angkat angkut di Jakarta Selatan oleh PJK3 resmi untuk memastikan kelayakan operasional crane dan forklift"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-pubt-1024x768.jpeg
-  alt: "Pemeriksaan bejana tekan dan boiler di Jakarta Selatan oleh teknisi K3 bersertifikat PT Cipta Mas Jaya"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-ptp-1024x771.jpg
-  alt: "Riksa uji mesin produksi dan pesawat tenaga untuk fasilitas industri dan perkantoran di Jakarta Selatan"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-lift-1024x771.jpeg
-  alt: "Inspeksi elevator gedung bertingkat di Jakarta Selatan untuk keselamatan pengguna sesuai regulasi Kemenaker"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-petir-1024x771.jpeg
-  alt: "Pengujian sistem penyalur petir dan grounding di Jakarta Selatan untuk perlindungan gedung dari sambaran petir"
-- src: /wp-content/uploads/2025/05/pjk3-jakarta-selatan-alarm-1024x768.jpeg
-  alt: "Pemeriksaan sistem alarm kebakaran dan proteksi kebakaran di gedung komersial Jakarta Selatan"
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan.jpeg"
+  alt: PJK3 Jakarta Selatan PT Cipta Mas Jaya melayani jasa riksa uji K3 untuk gedung
+    perkantoran, hotel, dan apartemen di kawasan SCBD, Kuningan, dan TB Simatupang
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-paa.jpg"
+  alt: Riksa uji pesawat angkat angkut di Jakarta Selatan meliputi inspeksi crane,
+    forklift, dan hoist untuk proyek konstruksi dan kawasan bisnis premium
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-pubt.jpeg"
+  alt: Inspeksi pesawat uap dan bejana tekan di Jakarta Selatan oleh PJK3 PT Cipta
+    Mas Jaya untuk hotel, rumah sakit, dan fasilitas manufaktur
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-ptp.jpg"
+  alt: Riksa uji pesawat tenaga dan produksi mencakup pemeriksaan genset, kompresor,
+    dan mesin penggerak di gedung perkantoran Jakarta Selatan
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-lift.jpeg"
+  alt: Riksa uji elevator dan eskalator di Jakarta Selatan untuk gedung pencakar langit,
+    mall, dan apartemen premium sesuai standar Kemenaker
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-petir.jpeg"
+  alt: Inspeksi instalasi listrik dan penyalur petir di Jakarta Selatan untuk mencegah
+    risiko korsleting dan kebakaran pada gedung bertingkat
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-alarm.jpeg"
+  alt: Riksa uji sarana proteksi kebakaran di Jakarta Selatan meliputi pemeriksaan
+    APAR, hydrant, sprinkler, dan sistem alarm kebakaran
+- src: "/wp-content/uploads/2024/10/pjk3-pt-cipta-mas-jaya-010-23.jpg"
+  alt: Tim teknisi PJK3 PT Cipta Mas Jaya bersertifikat Kemenaker siap melayani inspeksi
+    K3 di seluruh wilayah Jakarta Selatan
+- src: "/wp-content/uploads/2024/09/pjk3-riksa-uji-pt-cipta-mas-jaya-1.jpeg"
+  alt: Dokumentasi kegiatan riksa uji K3 oleh PJK3 PT Cipta Mas Jaya di kawasan bisnis
+    Jakarta Selatan
+- src: "/wp-content/uploads/2024/09/riksa-uji-pt-cipta-mas-jaya-.jpg"
+  alt: Proses inspeksi peralatan K3 oleh teknisi ahli PT Cipta Mas Jaya sesuai standar
+    keselamatan kerja nasional
+- src: "/wp-content/uploads/2024/09/manager-hse-kesal-harus-melaksanakan-inspeksi-tidak-terencana-setelah-melakukan-inspeksi-terencana-menggunakan-pjk3-riksa-uji-melalui-inspeksi-k3.jpeg"
+  alt: HSE Manager dapat mengandalkan PJK3 PT Cipta Mas Jaya untuk inspeksi K3 terencana
+    maupun tidak terencana di Jakarta Selatan
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-paa-771x1024.jpg"
+  alt: Inspeksi pesawat angkat angkut di Jakarta Selatan oleh PJK3 resmi untuk memastikan
+    kelayakan operasional crane dan forklift
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-pubt-1024x768.jpeg"
+  alt: Pemeriksaan bejana tekan dan boiler di Jakarta Selatan oleh teknisi K3 bersertifikat
+    PT Cipta Mas Jaya
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-ptp-1024x771.jpg"
+  alt: Riksa uji mesin produksi dan pesawat tenaga untuk fasilitas industri dan perkantoran
+    di Jakarta Selatan
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-lift-1024x771.jpeg"
+  alt: Inspeksi elevator gedung bertingkat di Jakarta Selatan untuk keselamatan pengguna
+    sesuai regulasi Kemenaker
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-petir-1024x771.jpeg"
+  alt: Pengujian sistem penyalur petir dan grounding di Jakarta Selatan untuk perlindungan
+    gedung dari sambaran petir
+- src: "/wp-content/uploads/2025/05/pjk3-jakarta-selatan-alarm-1024x768.jpeg"
+  alt: Pemeriksaan sistem alarm kebakaran dan proteksi kebakaran di gedung komersial
+    Jakarta Selatan
 section_gallery:
   title: Galeri Layanan
   area: Jakarta Selatan
-  description: Dokumentasi kegiatan riksa uji K3 terhadap wilayah Jakarta Selatan
-    serta sekitarnya
+  description: Dokumentasi kegiatan riksa uji K3 kepada wilayah Jakarta Selatan dan
+    sekitarnya
   caption: Foto dokumentasi layanan PT. Cipta Mas Jaya
 video: ''
 section_video:
   title: Video Layanan
   area: Jakarta Selatan
-  description: Lihat prosedur pengecekan serta pengujian K3 oleh tim profesional kami
+  description: Lihat proses pengecekan dan pengujian K3 oleh tim profesional kami
   caption: Dokumentasi video layanan PT. Cipta Mas Jaya
   cta_text: Ingin melihat langsung proses inspeksi K3 di lokasi Anda?
   cta_button: Hubungi Kami
@@ -79,8 +100,8 @@ section_hero:
   area: Jakarta Selatan
   description: Sedang mencari jasa riksa pengujian K3 terpercaya terhadap Jakarta
     Selatan? PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    inspeksi serta pengujian peralatan K3 secara kriteria profesional untuk seluruh
-    wilayah Jakarta Selatan serta sekitarnya.
+    pengecekan serta pengujian alat K3 secara kriteria profesional untuk seluruh wilayah
+    Jakarta Selatan serta sekitarnya.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
   - Kebayoran Baru
@@ -107,7 +128,7 @@ section_company_intro:
   company_name: PT. Cipta Mas Jaya
   area: Jakarta Selatan
   intro: PT. Cipta Mas Jaya merupakan PJK3 resmi yang siap melayani kebutuhan riksa
-    uji alat kerja pada wilayah Jakarta Selatan. Dengan cara dukungan tenaga ahli
+    uji perkakas kerja pada wilayah Jakarta Selatan. Secara cara dukungan tenaga ahli
     bersertifikat dan pengalaman lapangan yang luas, perusahaan ini hadir sebagai
     mitra andal dalam rangka industri, perkantoran, properti komersial, sampai fasilitas
     publik pada kawasan urban Jakarta Selatan yang padat aktivitas.
@@ -141,9 +162,9 @@ section_company_intro:
 section_services:
   title: Keunggulan PT. Cipta Mas Jaya sebagai PJK3 Terdekat dan Profesional
   intro: Sebagai PJK3 yang melayani langsung wilayah Jakarta Selatan, PT. Cipta Mas
-    Jaya menawarkan keunggulan daripada sisi geografis maupun operasional. Kedekatan
-    lokasi memungkinkan tim teknis bergerak cepat ke lokasi klien, mengurangi waktu
-    tunggu serta biaya mobilisasi.
+    Jaya menawarkan keunggulan dari sisi geografis atau operasional. Kedekatan lokasi
+    memungkinkan tim teknis bergerak cepat ke lokasi klien, mengurangi waktu tunggu
+    serta biaya mobilisasi.
   services:
   - title: Riksa Uji Pesawat Angkat Angkut
     description: Pemeriksaan menyeluruh terhadap forklift, crane, hoist, dan sejenisnya
@@ -323,9 +344,9 @@ section_city:
 section_coverage:
   title: Area Pelayanan Riksa Uji
   area: Jakarta Selatan
-  intro: PT. Cipta Mas Jaya melayani pengecekan dan riksa uji K3 ke seluruh wilayah
-    Jakarta Selatan dan sekitarnya. Secara tim yang responsif dan berpengalaman, kami
-    siap menjangkau bermacam-macam lokasi strategis.
+  intro: PT. Cipta Mas Jaya melayani pengecekan serta riksa uji K3 ke seluruh wilayah
+    Jakarta Selatan serta sekitarnya. Dengan cara tim yang responsif serta berpengalaman,
+    kami siap menjangkau bermacam-macam lokasi strategis.
   zona_industri:
   - nama: Kawasan Bisnis Sudirman-Kuningan
     kawasan:
@@ -431,7 +452,7 @@ section_coverage:
 section_order:
   title: Cara Pemesanan Layanan Riksa Uji
   area: Jakarta Selatan
-  phone: 08568258841
+  phone: '08568258841'
   intro: Proses pemesanan layanan riksa uji K3 di Jakarta Selatan sangat mudah dan
     praktis. PT. Cipta Mas Jaya siap melayani kebutuhan inspeksi Anda dengan prosedur
     yang efisien dan transparan.
@@ -673,5 +694,5 @@ section_conclusion:
     kami siap menjadi mitra keselamatan kerja Anda. Hubungi 08568258841 untuk konsultasi
     gratis dan penjadwalan inspeksi. Bersama PT. Cipta Mas Jaya, bangun budaya keselamatan
     kerja sejak hari ini!
-lastmod: '2025-12-01T04:07:31+0000'
+lastmod: '2025-12-14T03:56:41+0000'
 ---
