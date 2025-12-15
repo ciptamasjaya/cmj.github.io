@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Penggerak Mula
-description: Jasa riksa uji dan pengecekan K3 penggerak mula profesional termasuk
-  generator set, motor bakar, turbin, dan motor listrik. Sertifikat resmi Kementerian
+description: Jasa riksa uji serta pengecekan K3 penggerak mula profesional mencakup
+  generator set, motor bakar, turbin, serta motor listrik. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/penggerak-mula/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -21,14 +21,14 @@ keywords: riksa uji penggerak mula, inspeksi genset, inspeksi motor bakar, inspe
 intro:
   h1: Penggerak Mula - Riksa Uji Mesin Penghasil Tenaga
   para_1: Penggerak mula (prime mover) adalah mesin yang dipakai untuk menghasilkan
-    tenaga mekanik atau listrik dari sumber energi primer. Kategori ini meliputi generator
-    set, motor bakar, turbin, dan motor listrik yang wajib menjalani riksa uji berkala
-    sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+    tenaga mekanik maupun listrik dari sumber energi primer. Kategori ini termasuk
+    generator set, motor bakar, turbin, dan motor listrik yang wajib menjalani riksa
+    uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    penggerak mula yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    inspeksi on-site di seluruh Indonesia dengan peralatan testing terkalibrasi untuk
-    menjamin keselamatan operasional peralatan Anda.
+    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
+    uji penggerak mula yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
+    inspeksi on-site di seluruh Indonesia dengan peralatan testing terkalibrasi dalam
+    rangka menjamin keselamatan operasional peralatan Anda.
 layanan_penggerak_mula:
   h2: Layanan Riksa Uji Penggerak Mula
   para: Kami melayani riksa uji untuk berbagai jenis penggerak mula sesuai kebutuhan
@@ -58,20 +58,21 @@ layanan_penggerak_mula:
 mengapa_penting:
   h2: Mengapa Riksa Uji Penggerak Mula Penting?
   para: Penggerak mula merupakan jantung daripada sistem produksi industri yang beroperasi
-    dalam kondisi berat dan terus-menerus. Kegagalan peralatan dapat menyebabkan gangguan
-    produksi, kebakaran, atau kecelakaan fatal. Riksa uji berkala memastikan semua
-    komponen kritis seperti sistem kelistrikan, komponen berputar, sistem pelumasan,
-    dan perangkat keselamatan berfungsi optimal. Pemeriksaan ini bukan hanya kewajiban
-    legal berdasarkan Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan yang
-    melindungi nyawa pekerja dan aset perusahaan.
+    dalam keadaan berat dan terus-menerus. Kegagalan peralatan dapat menyebabkan gangguan
+    produksi, kebakaran, atau kecelakaan fatal. Riksa uji berkala menjamin semua komponen
+    kritis seperti sistem kelistrikan, komponen berputar, sistem pelumasan, dan perangkat
+    keselamatan berfungsi optimal. Pemeriksaan ini bukan hanya kewajiban legal berdasarkan
+    Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan yang melindungi nyawa
+    pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Penggerak Mula
   para: Tim inspector kami datang ke lokasi Anda dengan peralatan testing seperti
     vibration analyzer, insulation tester, thermal imaging camera, dan power analyzer.
-    Proses inspeksi mencakup inspeksi dokumen, inspeksi visual, pengujian fungsi operasional,
-    dan load test sesuai kapasitas. Tiap inspeksi didokumentasikan dalam laporan komprehensif
-    dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2025-12-08T03:52:06+0000'
+    Tahapan inspeksi meliputi inspeksi dokumen, inspeksi visual, pengujian fungsi
+    operasional, dan load test sesuai kapasitas. Tiap inspeksi didokumentasikan dalam
+    laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku
+    1 tahun.
+lastmod: '2025-12-15T04:01:24+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
