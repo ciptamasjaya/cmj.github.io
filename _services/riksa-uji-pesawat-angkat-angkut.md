@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Angkat Angkut
-description: Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional termasuk
-  forklift, crane, hoist, dan conveyor sesuai kriteria Kementerian Ketenagakerjaan
-  RI. Melayani semua Indonesia secara sertifikat resmi.
+description: Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional mencakup
+  forklift, crane, hoist, dan conveyor sesuai acuan Kementerian Ketenagakerjaan RI.
+  Melayani semua Indonesia secara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/"
 category: Riksa Uji Pesawat Angkat Angkut
 is_category_page: true
@@ -19,19 +19,18 @@ keywords: riksa uji pesawat angkat angkut, inspeksi forklift, inspeksi crane, in
   hoist, inspeksi conveyor, PJK3, sertifikasi K3, jasa riksa uji
 intro:
   h1: Riksa Uji Pesawat Angkat Angkut - Inspeksi K3 Profesional
-  para_1: Apa yang dimaksud secara riksa uji pesawat angkat angkut? Riksa uji pesawat
-    angkat angkut adalah pemeriksaan dan tes keselamatan berkala terhadap semua jenis
-    alat angkat seperti forklift, crane, hoist, conveyor, dan lift barang yang diatur
-    dalam Peraturan Menteri Ketenagakerjaan. Pemeriksaan ini wajib dilakukan untuk
-    memastikan alat berfungsi secara aman dan berdasarkan standar K3 yang berlaku
-    pada Indonesia.
+  para_1: Apa yang dimaksud dengan cara riksa uji pesawat angkat angkut? Riksa uji
+    pesawat angkat angkut adalah pemeriksaan dan tes keselamatan berkala kepada semua
+    jenis alat angkat seperti forklift, crane, hoist, conveyor, dan lift barang yang
+    diatur dalam Peraturan Menteri Ketenagakerjaan. Pemeriksaan ini wajib dilakukan
+    untuk memastikan alat berfungsi dengan cara aman dan berdasarkan standar K3 yang
+    berlaku pada Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa uji pesawat angkat angkut yang komprehensif dengan tim
-    inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani
-    berbagai industri mencakup manufaktur, logistik, konstruksi, dan pertambangan
-    dalam rangka menjamin keselamatan operasional dan compliance terhadap regulasi
-    pemerintah.
+    Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
+    layanan riksa uji pesawat angkat angkut yang komprehensif dengan tim inspector
+    bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani berbagai
+    industri mencakup manufaktur, logistik, konstruksi, dan pertambangan dalam rangka
+    memverifikasi keselamatan operasional dan compliance terhadap regulasi pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Angkat Angkut
   para: 'Layanan riksa uji pesawat angkat angkut terbagi menjadi dua kategori utama
@@ -55,8 +54,8 @@ mengapa_penting:
   para: Riksa uji pesawat angkat angkut bukan hanya kewajiban regulasi, akan tetapi
     investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan. Kegagalan
     alat angkat dapat menyebabkan kecelakaan fatal, kerusakan material, dan kerugian
-    finansial besar. Pemeriksaan berkala memastikan segenap komponen kritis seperti
-    sistem hidrolik, rem, struktur penahan beban, dan sistem kontrol berfungsi optimal
+    finansial besar. Pemeriksaan berkala menjamin segenap komponen kritis seperti
+    sistem hidrolik, rem, struktur penahan beban, dan sistem kontrol bekerja optimal
     sesuai spesifikasi pabrikan dan kriteria keselamatan.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
@@ -65,7 +64,7 @@ proses_riksa_uji:
     lengkap dan terkalibrasi. Setiap inspeksi didokumentasikan detail dalam laporan
     komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku secara
     legal. Kami melayani seluruh Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2025-12-05T03:47:44+0000'
+lastmod: '2025-12-16T03:54:45+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

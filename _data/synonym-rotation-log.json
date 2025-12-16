@@ -105,19 +105,19 @@
     ]
   },
   "2025-05-20-pjk3-terdekat-08568258841.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-16",
     "changes": 14,
     "words": [
-      "pada→terhadap",
-      "uji→pengujian",
-      "berbagai→beragam",
-      "dengan→secara",
-      "pengujian→tes",
-      "proses→tahapan",
-      "daripada→dari",
       "seluruh→semua",
-      "dan→serta",
-      "beragam→bermacam-macam"
+      "terhadap→kepada",
+      "di→pada",
+      "beragam→bermacam-macam",
+      "pada→terhadap",
+      "serta→dan",
+      "tahapan→prosedur",
+      "inspeksi→pengecekan",
+      "sampai→sehingga",
+      "secara→dengan cara"
     ]
   },
   "2025-05-22-pjk3-jakarta-selatan.md": {
@@ -155,30 +155,34 @@
     ]
   },
   "2025-05-24-pjk3-semarang.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-16",
     "changes": 14,
     "words": [
-      "di→pada",
-      "pengujian→tes",
-      "seluruh→semua",
-      "serta→dan",
-      "proses→tahapan",
+      "untuk→dalam rangka",
+      "segenap→seluruh",
+      "peralatan→alat",
+      "inspeksi→pengecekan",
       "dan→serta",
-      "terhadap→kepada",
-      "atau→maupun"
+      "di→pada",
+      "tahapan→prosedur",
+      "serta→dan",
+      "kepada→pada",
+      "daripada→dari",
+      "mencakup→meliputi"
     ]
   },
   "riksa-uji-pesawat-angkat-angkut.md": {
-    "date": "2025-12-05",
+    "date": "2025-12-16",
     "changes": 8,
     "words": [
-      "pengujian→tes",
-      "standar→kriteria",
-      "peralatan→alat",
-      "dari→daripada",
+      "kriteria→acuan",
+      "termasuk→mencakup",
+      "terhadap→kepada",
+      "secara→dengan cara",
+      "menjamin→memverifikasi",
+      "daripada→dari",
       "memastikan→menjamin",
-      "tetapi→akan tetapi",
-      "semua→segenap"
+      "berfungsi→bekerja"
     ]
   },
   "pesawat-angkat.md": {
@@ -304,23 +308,23 @@
     ]
   },
   "riksa-uji-gantry-crane.md": {
-    "date": "2025-12-02",
+    "date": "2025-12-16",
     "changes": 19,
     "words": [
-      "dan→serta",
-      "inspeksi→pengecekan",
       "pemeriksaan→inspeksi",
-      "tentang→perihal",
-      "standar→kriteria",
-      "seluruh→semua",
-      "komponen→bagian",
-      "Pemeriksaan→Inspeksi",
-      "termasuk→mencakup",
-      "Pengujian→Tes",
+      "inspeksi→pengecekan",
+      "dan→serta",
+      "sesuai→berdasarkan",
+      "memastikan→menjamin",
+      "kriteria→acuan",
+      "semua→segenap",
       "Inspeksi→Pengecekan",
-      "berdasarkan→sesuai",
+      "terhadap→kepada",
       "untuk→dalam rangka",
-      "serta→dan"
+      "Pemeriksaan→Inspeksi",
+      "limit→ambang",
+      "berbagai→beragam",
+      "di→pada"
     ]
   },
   "riksa-uji-overhead-crane.md": {
@@ -617,20 +621,22 @@
     ]
   },
   "riksa-uji-gondola.md": {
-    "date": "2025-12-11",
+    "date": "2025-12-16",
     "changes": 19,
     "words": [
-      "seluruh→semua",
-      "dan→serta",
+      "serta→dan",
+      "untuk→dalam rangka",
+      "inspeksi→pengecekan",
+      "sesuai→berdasarkan",
+      "dengan→secara",
+      "kriteria→acuan",
       "terhadap→kepada",
-      "pemeriksaan→inspeksi",
-      "atau→maupun",
-      "standar→kriteria",
-      "pada→terhadap",
       "Inspeksi→Pengecekan",
-      "dilakukan→dilaksanakan",
-      "semua→segenap",
-      "berbagai→beragam"
+      "Pemeriksaan→Inspeksi",
+      "limit→ambang",
+      "dilaksanakan→dijalankan",
+      "dari→daripada",
+      "di→pada"
     ]
   },
   "riksa-uji-manlift.md": {
