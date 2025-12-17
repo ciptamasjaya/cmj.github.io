@@ -201,17 +201,19 @@
     ]
   },
   "pesawat-angkut.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-17",
     "changes": 10,
     "words": [
+      "termasuk→mencakup",
+      "pengecekan→pemeriksaan",
       "dan→serta",
+      "secara→dengan cara",
       "inspeksi→pengecekan",
-      "mencakup→meliputi",
-      "dari→daripada",
-      "uji→pengujian",
-      "segenap→seluruh",
-      "sesuai→berdasarkan",
-      "pengecekan→pemeriksaan"
+      "semua→segenap",
+      "kondisi→keadaan",
+      "tetapi→akan tetapi",
+      "Tahapan→Prosedur",
+      "mencakup→meliputi"
     ]
   },
   "riksa-uji-forklift.md": {
@@ -249,16 +251,17 @@
     ]
   },
   "bejana-tekan.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-17",
     "changes": 10,
     "words": [
-      "pengecekan→pemeriksaan",
-      "dari→daripada",
-      "atau→maupun",
+      "pemeriksaan→inspeksi",
       "dan→serta",
-      "di→pada",
-      "pengujian→tes",
-      "pemeriksaan→inspeksi"
+      "maupun→atau",
+      "untuk→dalam rangka",
+      "melaksanakan→menjalankan",
+      "dengan→secara",
+      "tetapi→akan tetapi",
+      "mencakup→meliputi"
     ]
   },
   "pesawat-uap.md": {
@@ -518,16 +521,17 @@
     ]
   },
   "riksa-uji-pesawat-tenaga-dan-produksi.md": {
-    "date": "2025-12-08",
+    "date": "2025-12-17",
     "changes": 8,
     "words": [
-      "seluruh→semua",
-      "dengan→secara",
-      "terhadap→kepada",
-      "standar→kriteria",
-      "menjamin→memverifikasi",
-      "tetapi→akan tetapi",
-      "dan→serta"
+      "dan→serta",
+      "inspeksi→pengecekan",
+      "perkakas→peralatan",
+      "memastikan→menjamin",
+      "kepada→pada",
+      "memverifikasi→memastikan",
+      "berfungsi→bekerja",
+      "komponen→bagian"
     ]
   },
   "mesin-perkakas.md": {
@@ -562,19 +566,18 @@
     ]
   },
   "penggerak-mula.md": {
-    "date": "2025-12-15",
+    "date": "2025-12-17",
     "changes": 10,
     "words": [
-      "dan→serta",
+      "mencakup→meliputi",
+      "pengecekan→pemeriksaan",
       "termasuk→mencakup",
-      "atau→maupun",
-      "meliputi→termasuk",
-      "dari→daripada",
-      "untuk→dalam rangka",
-      "kondisi→keadaan",
-      "memastikan→menjamin",
-      "Proses→Tahapan",
-      "mencakup→meliputi"
+      "dan→serta",
+      "peralatan→alat",
+      "di→pada",
+      "komponen→bagian",
+      "Pemeriksaan→Inspeksi",
+      "inspeksi→pengecekan"
     ]
   },
   "pompa-kompresor.md": {
