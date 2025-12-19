@@ -2,7 +2,7 @@
 layout: node/node--riksa-uji
 title: Riksa Uji Boiler
 rating_id: riksa-uji-boiler
-description: Riksa pengujian boiler adalah pemeriksaan dan pengujian keselamatan ketel
+description: Riksa pengujian boiler adalah inspeksi serta pengujian keselamatan ketel
   uap untuk memastikan operasional aman berdasarkan acuan K3 serta Permenaker.
 keywords: riksa uji boiler, jasa riksa uji boiler, inspeksi boiler, ketel uap, hydrotest
   boiler, PJK3, sertifikasi K3, pesawat uap, bejana tekan, safety valve
@@ -67,8 +67,8 @@ section_hero:
   theme: red
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    pemeriksaan serta tes boiler/ketel uap dengan cara standar profesional. Dapatkan
-    sertifikat kelayakan operasi untuk boiler Anda.
+    inspeksi dan tes boiler/ketel uap dengan cara standar profesional. Dapatkan sertifikat
+    kelayakan operasi untuk boiler Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
   - Jabodetabek
@@ -759,8 +759,8 @@ section_conclusion:
   intro: <a href="https://maps.app.goo.gl/KwFSALZKY9WMrK5C6" target="_blank" rel="noopener">Riksa
     uji boiler</a> adalah langkah penting dalam rangka menjamin keselamatan dan efisiensi
     operasional dalam penggunaan perkakas ini. Tahapan riksa uji yang sistematis dan
-    rutin, mulai dari persiapan sampai dokumentasi temuan, sangat penting dalam rangka
-    mengidentifikasi potensi masalah sebelum menjadi kecelakaan.
+    rutin, mulai daripada persiapan sehingga dokumentasi temuan, sangat penting dalam
+    rangka mengidentifikasi potensi masalah sebelum menjadi kecelakaan.
   highlights:
   - key: Mencegah Kecelakaan Kerja
     value: Menjaga keselamatan pengguna dan menghindari cedera akibat kegagalan boiler
@@ -783,5 +783,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
-lastmod: '2025-12-08T03:52:06+0000'
+lastmod: '2025-12-19T03:54:39+0000'
 ---
