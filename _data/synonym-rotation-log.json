@@ -606,17 +606,19 @@
     ]
   },
   "tanur.md": {
-    "date": "2025-12-14",
+    "date": "2025-12-20",
     "changes": 10,
     "words": [
-      "serta→dan",
-      "pengecekan→pemeriksaan",
-      "proses→tahapan",
-      "mencakup→meliputi",
-      "inspeksi→pengecekan",
-      "di→pada",
-      "atau→maupun",
-      "secara→dengan cara"
+      "dan→serta",
+      "pemeriksaan→inspeksi",
+      "digunakan→dipakai",
+      "meliputi→termasuk",
+      "melakukan→melaksanakan",
+      "alat→perkakas",
+      "beroperasi→berfungsi",
+      "berfungsi→bekerja",
+      "Setiap→Tiap",
+      "peralatan→alat"
     ]
   },
   "riksa-uji-gondola.md": {
