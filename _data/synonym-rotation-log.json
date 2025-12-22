@@ -137,19 +137,20 @@
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
-    "date": "2025-12-11",
+    "date": "2025-12-22",
     "changes": 14,
     "words": [
-      "semua→segenap",
-      "pada→terhadap",
-      "dengan→secara",
-      "dan→serta",
       "terhadap→kepada",
-      "prosedur→proses",
-      "pengecekan→pemeriksaan",
+      "segenap→seluruh",
+      "standar→kriteria",
       "alat→perkakas",
-      "inspeksi→pengecekan",
-      "mencakup→meliputi"
+      "serta→dan",
+      "kepada→pada",
+      "proses→tahapan",
+      "perkakas→peralatan",
+      "pengecekan→pemeriksaan",
+      "dan→serta",
+      "pemeriksaan→inspeksi"
     ]
   },
   "2025-05-24-pjk3-semarang.md": {
@@ -263,37 +264,35 @@
     ]
   },
   "pesawat-uap.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-22",
     "changes": 14,
     "words": [
-      "inspeksi→pengecekan",
-      "daripada→dari",
-      "sesuai→berdasarkan",
       "meliputi→termasuk",
+      "serta→dan",
+      "berdasarkan→sesuai",
+      "termasuk→mencakup",
+      "pada→terhadap",
+      "alat→perkakas",
+      "sesuai→berdasarkan",
+      "pengecekan→pemeriksaan",
+      "peralatan→alat",
+      "Setiap→Tiap",
       "dan→serta",
-      "melaksanakan→menjalankan",
-      "sangat→amat",
-      "tetapi→akan tetapi",
-      "pengujian→tes",
-      "pemeriksaan→inspeksi",
-      "berbagai→beragam",
-      "mempunyai→memiliki",
-      "Pengecekan→Pemeriksaan"
+      "Pemeriksaan→Inspeksi"
     ]
   },
   "tangki-timbun.md": {
-    "date": "2025-12-01",
+    "date": "2025-12-22",
     "changes": 10,
     "words": [
-      "dan→serta",
-      "pengujian→tes",
-      "pada→terhadap",
-      "digunakan→dipakai",
-      "dari→daripada",
       "serta→dan",
-      "uji→pengujian",
-      "memastikan→menjamin",
-      "Tiap→Masing-masing"
+      "dari→daripada",
+      "atau→maupun",
+      "untuk→dalam rangka",
+      "secara→dengan cara",
+      "Pemeriksaan→Inspeksi",
+      "pemeriksaan→inspeksi",
+      "mencakup→meliputi"
     ]
   },
   "2024-08-26-riksa-uji-overhead-crane.md": {
@@ -369,14 +368,14 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2025-12-05",
+    "date": "2025-12-22",
     "changes": 6,
     "words": [
-      "dan→serta",
-      "meliputi→termasuk",
-      "tentang→perihal",
+      "termasuk→mencakup",
       "untuk→dalam rangka",
-      "inspeksi→pengecekan"
+      "perihal→mengenai",
+      "dan→serta",
+      "serta→dan"
     ]
   },
   "riksa-uji-chain-block.md": {
@@ -577,16 +576,18 @@
     ]
   },
   "pompa-kompresor.md": {
-    "date": "2025-12-08",
+    "date": "2025-12-22",
     "changes": 10,
     "words": [
-      "inspeksi→pengecekan",
-      "meliputi→termasuk",
-      "peralatan→alat",
-      "digunakan→dipakai",
-      "memastikan→menjamin",
-      "dengan→secara",
-      "dan→serta"
+      "termasuk→mencakup",
+      "pengecekan→pemeriksaan",
+      "dan→serta",
+      "alat→perkakas",
+      "menjamin→memverifikasi",
+      "melakukan→melaksanakan",
+      "secara→dengan cara",
+      "mencakup→meliputi",
+      "dengan→secara"
     ]
   },
   "sistem-transmisi.md": {

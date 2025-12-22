@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Tangki Timbun
-description: Jasa riksa uji serta inspeksi K3 tangki timbun profesional termasuk storage
-  tank, LPG tank, fuel tank, serta tangki penyimpanan bahan cair atau gas bertekanan.
-  Sertifikat resmi dari Disnaker setempat.
+description: Jasa riksa uji dan inspeksi K3 tangki timbun profesional termasuk storage
+  tank, LPG tank, fuel tank, dan tangki penyimpanan bahan cair atau gas bertekanan.
+  Sertifikat resmi daripada Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/tangki-timbun/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Tangki Timbun
@@ -20,16 +20,16 @@ keywords: riksa uji tangki timbun, inspeksi storage tank, inspeksi LPG tank, ins
   fuel tank, tangki penyimpanan, PJK3, sertifikasi K3
 intro:
   h1: Tangki Timbun - Riksa Uji Tangki Penyimpanan Bertekanan
-  para_1: Tangki timbun adalah alat yang dipakai untuk menyimpan bahan cair atau gas
-    dalam jumlah besar, bagus terhadap tekanan atmosfer maupun bertekanan. Kategori
-    ini mencakup storage tank, LPG tank, fuel tank, chemical tank, nitrogen tank,
-    oxygen tank, dan tangki penyimpanan lainnya yang wajib menjalani riksa uji berkala
-    sesuai Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
+  para_1: Tangki timbun adalah alat yang dipakai dalam rangka menyimpan bahan cair
+    maupun gas dalam jumlah besar, bagus terhadap tekanan atmosfer maupun bertekanan.
+    Kategori ini mencakup storage tank, LPG tank, fuel tank, chemical tank, nitrogen
+    tank, oxygen tank, dan tangki penyimpanan lainnya yang wajib menjalani riksa uji
+    berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     uji tangki timbun yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    inspeksi on-site di seluruh Indonesia secara peralatan testing terkalibrasi untuk
-    memastikan keselamatan operasional peralatan Anda.
+    inspeksi on-site di seluruh Indonesia dengan cara peralatan testing terkalibrasi
+    dalam rangka memastikan keselamatan operasional peralatan Anda.
 layanan_tangki_timbun:
   h2: Layanan Riksa Uji Tangki Timbun
   para: Kami melayani riksa uji untuk berbagai jenis tangki timbun sesuai kebutuhan
@@ -47,21 +47,21 @@ mengapa_penting:
     risiko kebakaran, ledakan, pencemaran lingkungan, dan bahaya kesehatan. Korosi
     terhadap dinding tangki, kebocoran terhadap sambungan, dan kegagalan sistem keselamatan
     dapat menyebabkan kecelakaan fatal. Riksa pengujian berkala menjamin integritas
-    struktural tangki melalui pengukuran ketebalan, tes kebocoran, dan pemeriksaan
-    sistem proteksi. Pemeriksaan ini bukan hanya kewajiban legal sesuai Permenaker
-    No. 37 Tahun 2016, tetapi investasi keselamatan yang melindungi nyawa pekerja,
-    masyarakat sekitar, dan lingkungan.
+    struktural tangki melalui pengukuran ketebalan, tes kebocoran, dan inspeksi sistem
+    proteksi. Inspeksi ini bukan hanya kewajiban legal sesuai Permenaker No. 37 Tahun
+    2016, tetapi investasi keselamatan yang melindungi nyawa pekerja, masyarakat sekitar,
+    dan lingkungan.
 proses:
   h2: Proses Riksa Uji Tangki Timbun
   para: Tim inspector kami datang ke lokasi Anda secara peralatan testing seperti
     ultrasonic thickness gauge, magnetic flux leakage scanner, serta vacuum box testing
-    kit. Proses inspeksi mencakup pemeriksaan dokumen serta nameplate, inspeksi visual
+    kit. Proses inspeksi meliputi inspeksi dokumen serta nameplate, inspeksi visual
     eksternal serta internal (jika memungkinkan), pengukuran ketebalan shell serta
-    floor, pengujian kebocoran, serta pemeriksaan foundation settlement. Masing-masing
+    floor, pengujian kebocoran, serta inspeksi foundation settlement. Masing-masing
     inspeksi didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
     kelayakan operasional yang berlaku sesuai ketentuan.
-_content_refreshed_at: '2025-12-20T03:44:49+0000'
-lastmod: '2025-12-01T02:07:50+0700'
+_content_refreshed_at: '2025-12-22T04:01:09+0000'
+lastmod: '2025-12-22T04:01:09+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
