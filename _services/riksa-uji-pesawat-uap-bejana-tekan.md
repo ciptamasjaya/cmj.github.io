@@ -1,10 +1,10 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun
-description: Jasa riksa pengujian serta inspeksi K3 pesawat uap, bejana tekan, serta
+description: Jasa riksa pengujian serta pengecekan K3 pesawat uap, bejana tekan, serta
   tangki timbun profesional termasuk boiler, pressure vessel, heat exchanger, serta
   storage tank sesuai kriteria Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia
-  dengan sertifikat resmi.
+  secara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 is_category_page: true
@@ -16,22 +16,23 @@ content_structure: 1xh1, 2xpara, h2(list-subcategories), h2(para), h2(para)
 date: 2025-11-28
 last_modified_at: 2025-11-28
 show_breadcrumb_schema: true
-keywords: riksa uji pesawat uap, riksa uji bejana tekan, inspeksi boiler, inspeksi pressure vessel, inspeksi tangki timbun, PJK3, sertifikasi K3, jasa riksa uji
+keywords: riksa uji pesawat uap, riksa uji bejana tekan, inspeksi boiler, inspeksi
+  pressure vessel, inspeksi tangki timbun, PJK3, sertifikasi K3, jasa riksa uji
 intro:
   h1: Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun - Inspeksi K3 Profesional
   para_1: Apa yang dimaksud dengan riksa uji pesawat uap bejana tekan dan tangki timbun?
     Riksa uji pesawat uap bejana tekan adalah pemeriksaan dan pengujian keselamatan
     berkala kepada seluruh jenis peralatan bertekanan seperti boiler, pressure vessel,
     heat exchanger, autoclave, dan tangki penyimpanan yang diatur dalam Peraturan
-    Menteri Ketenagakerjaan. Pemeriksaan ini wajib dilakukan untuk memastikan peralatan
-    berfungsi dengan aman dan sesuai standar K3 yang berlaku di Indonesia.
+    Menteri Ketenagakerjaan. Inspeksi ini wajib dilakukan untuk memastikan peralatan
+    berfungsi dengan aman dan berdasarkan standar K3 yang berlaku di Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
     layanan riksa uji pesawat uap bejana tekan dan tangki timbun yang komprehensif
-    secara tim inspector bersertifikat dan alat testing yang terkalibrasi. Kami melayani
-    beragam industri termasuk manufaktur, petrokimia, pembangkit listrik, dan pengolahan
-    migas untuk menjamin keselamatan operasional dan compliance terhadap regulasi
-    pemerintah.
+    dengan cara tim inspector bersertifikat dan alat testing yang terkalibrasi. Kami
+    melayani beragam industri mencakup manufaktur, petrokimia, pembangkit listrik,
+    dan pengolahan migas untuk menjamin keselamatan operasional dan compliance terhadap
+    regulasi pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun
   para: 'Layanan riksa uji pesawat uap bejana tekan dan tangki timbun terbagi menjadi
@@ -61,10 +62,10 @@ mengapa_penting:
   para: Riksa uji pesawat uap bejana tekan bukan hanya kewajiban regulasi, tetapi
     investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan. Kegagalan
     peralatan bertekanan dapat menyebabkan ledakan fatal, kebakaran, kerusakan material,
-    serta kerugian finansial besar. Inspeksi berkala memastikan segenap komponen kritis
-    seperti dinding bejana, safety valve, sistem kontrol tekanan, serta welding integrity
-    bekerja optimal sesuai spesifikasi pabrikan serta standar keselamatan ASME, API,
-    serta SNI.
+    serta kerugian finansial besar. Pengecekan berkala memastikan segenap komponen
+    kritis seperti dinding bejana, safety valve, sistem kontrol tekanan, serta welding
+    integrity bekerja optimal berdasarkan spesifikasi pabrikan serta standar keselamatan
+    ASME, API, serta SNI.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
   para: Proses riksa uji kami dirancang efisien dan tidak mengganggu operasional perusahaan
@@ -73,7 +74,7 @@ proses_riksa_uji:
     terkalibrasi. Setiap inspeksi didokumentasikan detail dalam laporan komprehensif
     dan dilengkapi sertifikat kelayakan operasional yang berlaku secara legal. Kami
     melayani seluruh Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2025-12-01T02:07:50+0700'
+lastmod: '2025-12-24T03:54:43+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
