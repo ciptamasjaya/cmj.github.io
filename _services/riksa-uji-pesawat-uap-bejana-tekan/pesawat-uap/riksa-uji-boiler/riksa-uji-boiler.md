@@ -1,13 +1,13 @@
 ---
 layout: node/node--service
 title: Riksa Uji Boiler
-description: Riksa uji boiler adalah pemeriksaan serta pengujian keselamatan ketel
-  uap oleh PJK3 resmi Kemenaker untuk mendapatkan izin pemakaian pesawat uap dari
-  Disnaker. Layanan inspeksi K3 semua Indonesia.
+description: Riksa uji boiler adalah inspeksi serta pengujian keselamatan ketel uap
+  oleh PJK3 resmi Kemenaker untuk mendapatkan izin pemakaian pesawat uap dari Disnaker.
+  Layanan inspeksi K3 segenap Indonesia.
 para_1: Riksa uji boiler merupakan pemeriksaan dan tes keselamatan kepada ketel uap
   yang wajib dilakukan secara berkala berdasarkan Peraturan Menteri Ketenagakerjaan
-  Nomor 37 Tahun 2016. Pemeriksaan ini bertujuan untuk memastikan boiler beroperasi
-  dengan aman dan berdasarkan standar keselamatan kerja yang berlaku.
+  Nomor 37 Tahun 2016. Pemeriksaan ini bertujuan untuk menjamin boiler beroperasi
+  dengan aman dan berdasarkan kriteria keselamatan kerja yang berlaku.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Pesawat Uap
@@ -46,33 +46,33 @@ custom_schema:
 intro:
   name: Layanan Riksa Uji Boiler Profesional
   para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa uji boiler yang komprehensif secara tim inspector bersertifikat
+    Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
+    layanan riksa uji boiler yang komprehensif dengan cara tim inspector bersertifikat
     serta perkakas testing yang terkalibrasi.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Setiap pengecekan riksa uji boiler yang kami lakukan mengacu pada regulasi
+    para: Setiap pengecekan riksa uji boiler yang kami lakukan mengacu terhadap regulasi
       serta standar keselamatan kerja yang berlaku di Indonesia, memastikan kepatuhan
       penuh terhadap peraturan pemerintah.
     subsections:
     - h4: Permenaker No. 37 Tahun 2016
-      para: Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016 perihal Keselamatan
+      para: Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016 mengenai Keselamatan
         dan Kesehatan Kerja Bejana Tekanan dan Tangki Timbun mewajibkan setiap boiler
         menjalani riksa uji berkala untuk menjamin kelayakan operasional.
     - h4: ASME dan Standar Internasional
       para: Selain mengacu terhadap peraturan nasional, kami juga menerapkan standar
-        ASME Boiler and Pressure Vessel Code serta standar internasional lainnya dalam
+        ASME Boiler and Pressure Vessel Code dan standar internasional lainnya dalam
         rangka menjamin kualitas inspeksi terbaik.
   - h3: Tim Inspector Bersertifikat
     para: Inspector kami mempunyai sertifikasi resmi dari Kementerian Ketenagakerjaan
       RI dengan kualifikasi Ahli K3 Pesawat Uap serta pengalaman bertahun-tahun dalam
-      bidang inspeksi boiler. Setiap pemeriksaan dilaksanakan dengan profesionalisme
+      bidang inspeksi boiler. Setiap pemeriksaan dijalankan dengan profesionalisme
       tinggi serta menghasilkan sertifikat yang diakui secara nasional.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani berbagai jenis boiler termasuk fire tube boiler, water tube
-      boiler, steam generator, dan thermal oil heater pada seluruh Indonesia. Secara
-      jaringan inspector yang luas, kami siap melakukan inspeksi on-site pada lokasi
-      Anda.
+      boiler, steam generator, dan thermal oil heater terhadap seluruh Indonesia.
+      Secara jaringan inspector yang luas, kami siap melakukan inspeksi on-site terhadap
+      lokasi Anda.
 jenis_alat:
   name: Jenis Boiler yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis boiler dan pesawat uap
@@ -101,29 +101,29 @@ jenis_alat:
     customer service kami melalui telepon maupun WhatsApp untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen yang Diperiksa
-  description: Pengecekan menyeluruh terhadap semua bagian keselamatan boiler
+  description: Pengecekan menyeluruh kepada semua elemen keselamatan boiler
   items:
   - name: Drum Uap
-    description: Inspeksi integritas struktur, ketebalan dinding, dan keadaan internal
+    description: Pengecekan integritas struktur, ketebalan dinding, dan keadaan internal
       drum
     icon: bi-circle
   - name: Pipa Pemanas
-    description: Inspeksi keadaan tube, deteksi korosi, serta pengukuran ketebalan
-      dinding
+    description: Inspeksi keadaan tube, deteksi korosi, dan pengukuran ketebalan dinding
     icon: bi-diagram-3
   - name: Burner dan Pembakaran
-    description: Pengecekan fungsi burner, efisiensi pembakaran, dan sistem bahan
+    description: Pengecekan fungsi burner, efisiensi pembakaran, serta sistem bahan
       bakar
     icon: bi-fire
   - name: Katup Pengaman
-    description: Tes safety valve untuk menjamin dapat membuka pada tekanan set
+    description: Tes safety valve dalam rangka menjamin dapat membuka pada tekanan
+      set
     icon: bi-shield-check
   - name: Sistem Kontrol
-    description: Pemeriksaan manometer, termometer, level gauge, dan sistem kontrol
+    description: Pemeriksaan manometer, termometer, level gauge, serta sistem kontrol
       otomatis
     icon: bi-sliders
   - name: Sistem Isolasi
-    description: Pengecekan kondisi isolasi termal untuk efisiensi dan keselamatan
+    description: Pengecekan kondisi isolasi termal untuk efisiensi serta keselamatan
     icon: bi-box
 proses_inspeksi:
   name: Proses Riksa Uji Boiler
@@ -271,5 +271,5 @@ faq_riksa_uji:
     answer: Izin Pemakaian Pesawat Uap (Boiler) berlaku selama 2 tahun sejak tanggal
       penerbitan. Setelah masa berlaku habis, boiler wajib dilakukan riksa uji ulang
       untuk memperbarui izin pemakaian.
-lastmod: '2025-12-11T03:54:14+0000'
+lastmod: '2025-12-25T03:57:09+0000'
 ---

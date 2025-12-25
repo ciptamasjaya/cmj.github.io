@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Crawler Crane
-description: Riksa uji crawler crane adalah pemeriksaan dan pengujian keselamatan
-  crane beroda crawler oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket
-  K3 dari Disnaker. Layanan pengecekan K3 semua Indonesia.
+description: Riksa uji crawler crane adalah inspeksi dan pengujian keselamatan crane
+  beroda crawler oleh PJK3 resmi Kemenaker untuk mendapatkan SIA/SILO/Suket K3 dari
+  Disnaker. Layanan pengecekan K3 segenap Indonesia.
 para_1: Riksa uji crawler crane adalah pengecekan dan pengujian terhadap pesawat angkat
-  dengan cara penggerak crawler sesuai dengan cara Permenaker No. 8 Tahun 2020 tentang
-  Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
+  dengan cara penggerak crawler berdasarkan dengan cara Permenaker No. 8 Tahun 2020
+  perihal Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-crawler-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -42,34 +42,35 @@ keywords: riksa uji crawler crane, jasa riksa uji crawler crane, inspeksi crawle
 rating_id: riksa-uji-crawler-crane
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2025-12-15T04:01:24+0000'
+lastmod: '2025-12-25T03:57:09+0000'
 intro:
   name: Layanan Riksa Uji Crawler Crane Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji crawler crane dengan cara
-    inspector bersertifikat dan berpengalaman. Kami menjamin crawler crane Anda mencukupi
-    standar keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI.
+    inspector bersertifikat serta berpengalaman. Kami menjamin crawler crane Anda
+    mencukupi kriteria keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan
+    RI.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Riksa uji crawler crane wajib dilakukan sesuai regulasi keselamatan kerja
-      yang berlaku pada Indonesia untuk menjamin keselamatan operator dan pekerja
-      pada sekitar area operasi crane.
+      yang berlaku terhadap Indonesia untuk menjamin keselamatan operator dan pekerja
+      terhadap sekitar area operasi crane.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan serta Kesehatan
-        Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala untuk
-        semua jenis crane mencakup crawler crane.
+      para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan dan Kesehatan Kerja
+        Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala untuk semua
+        jenis crane mencakup crawler crane.
     - h4: Standar ASME dan SNI
-      para: Tes dilakukan mengacu pada standar internasional ASME B30.5 untuk Mobile
-        and Locomotive Cranes dan Standar Nasional Indonesia (SNI) yang berlaku untuk
-        pesawat angkat.
+      para: Tes dilakukan mengacu pada standar internasional ASME B30.5 dalam rangka
+        Mobile and Locomotive Cranes dan Standar Nasional Indonesia (SNI) yang berlaku
+        dalam rangka pesawat angkat.
   - h3: Tim Inspector Bersertifikat
     para: Tim inspector kami mempunyai sertifikat kompetensi dari Kemnaker RI serta
-      telah berpengalaman lebih dari 10 tahun dalam bidang inspeksi pesawat angkat
+      telah berpengalaman lebih dari 10 tahun dalam bidang pengecekan pesawat angkat
       termasuk berbagai jenis serta kapasitas crawler crane.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani riksa uji crawler crane di semua Indonesia, dari Sabang sehingga
-      Merauke. Tim kami siap datang ke lokasi proyek konstruksi, pelabuhan, atau site
-      industri Anda.
+      Merauke. Tim kami siap datang ke lokasi proyek konstruksi, pelabuhan, maupun
+      site industri Anda.
 jenis_alat:
   name: Jenis Crawler Crane yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis crawler crane di berbagai
@@ -103,31 +104,31 @@ jenis_alat:
     hubungi kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Crawler Crane yang Diperiksa
-  description: Pemeriksaan menyeluruh pada semua bagian keselamatan crawler crane
+  description: Inspeksi menyeluruh pada segenap bagian keselamatan crawler crane
   items:
   - name: Boom dan Jib
-    description: Inspeksi kondisi struktural boom lattice atau teleskopik mencakup
+    description: Inspeksi kondisi struktural boom lattice maupun teleskopik mencakup
       pin, bushing, lacing, dan sambungan boom section.
     icon: bi-diagram-3
   - name: Wire Rope dan Sheave
-    description: Pengecekan tali kawat baja untuk keausan, putus kawat, korosi, diameter,
-      serta kondisi sheave serta drum winch.
+    description: Pengecekan tali kawat baja dalam rangka keausan, putus kawat, korosi,
+      diameter, serta kondisi sheave serta drum winch.
     icon: bi-link-45deg
   - name: Hook Block
-    description: Pemeriksaan hook pokok dan auxiliary mencakup safety latch, swivel
+    description: Pemeriksaan hook pokok dan auxiliary meliputi safety latch, swivel
       bearing, dan thrust bearing.
     icon: bi-bezier2
   - name: Crawler Track dan Undercarriage
-    description: Verifikasi situasi track shoe, sprocket, idler, roller, dan sistem
+    description: Verifikasi kondisi track shoe, sprocket, idler, roller, dan sistem
       penggerak crawler untuk stabilitas operasi.
     icon: bi-gear-wide-connected
   - name: Sistem Winch dan Hidrolik
     description: Pengecekan main hoist, auxiliary hoist, boom hoist, swing mechanism,
-      dan semua sistem hidrolik crane.
+      serta semua sistem hidrolik crane.
     icon: bi-droplet-half
   - name: Load Moment Indicator
-    description: Pengujian LMI, anti two-block device, boom angle indicator, dan sistem
-      keselamatan elektronik lainnya.
+    description: Pengujian LMI, anti two-block device, boom angle indicator, serta
+      sistem keselamatan elektronik lainnya.
     icon: bi-shield-check
 proses_inspeksi:
   name: Proses Riksa Uji Crawler Crane
