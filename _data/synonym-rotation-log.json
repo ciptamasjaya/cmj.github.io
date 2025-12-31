@@ -298,23 +298,23 @@
     ]
   },
   "riksa-uji-gantry-crane.md": {
-    "date": "2025-12-16",
+    "date": "2025-12-31",
     "changes": 19,
     "words": [
-      "pemeriksaan→inspeksi",
-      "inspeksi→pengecekan",
+      "pengecekan→pemeriksaan",
+      "dari→daripada",
+      "berdasarkan→sesuai",
+      "dengan→secara",
+      "acuan→standar",
+      "menjamin→memverifikasi",
+      "pada→terhadap",
+      "segenap→seluruh",
+      "kepada→pada",
+      "Inspeksi→Pengecekan",
       "dan→serta",
       "sesuai→berdasarkan",
-      "memastikan→menjamin",
-      "kriteria→acuan",
-      "semua→segenap",
-      "Inspeksi→Pengecekan",
-      "terhadap→kepada",
-      "untuk→dalam rangka",
-      "Pemeriksaan→Inspeksi",
-      "limit→ambang",
-      "berbagai→beragam",
-      "di→pada"
+      "tentang→perihal",
+      "dibutuhkan→diperlukan"
     ]
   },
   "riksa-uji-overhead-crane.md": {
@@ -360,14 +360,13 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2025-12-22",
+    "date": "2025-12-31",
     "changes": 6,
     "words": [
-      "termasuk→mencakup",
-      "untuk→dalam rangka",
-      "perihal→mengenai",
-      "dan→serta",
-      "serta→dan"
+      "mencakup→meliputi",
+      "serta→dan",
+      "mengenai→tentang",
+      "dan→serta"
     ]
   },
   "riksa-uji-chain-block.md": {
