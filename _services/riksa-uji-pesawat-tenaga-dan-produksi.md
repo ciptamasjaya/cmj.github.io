@@ -2,8 +2,8 @@
 layout: page/page--service-category
 title: Riksa Uji Pesawat Tenaga dan Produksi
 description: Jasa riksa uji serta pengecekan K3 pesawat tenaga serta produksi profesional
-  termasuk genset, motor bakar, turbin, mesin perkakas, mesin produksi, pompa, kompresor,
-  serta tanur sesuai standar Kementerian Ketenagakerjaan RI. Melayani segenap Indonesia
+  mencakup genset, motor bakar, turbin, mesin perkakas, mesin produksi, pompa, kompresor,
+  serta tanur sesuai standar Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia
   dengan cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -23,16 +23,16 @@ intro:
   h1: Riksa Uji Pesawat Tenaga dan Produksi - Inspeksi K3 Profesional
   para_1: Apa yang dimaksud dengan riksa uji pesawat tenaga dan produksi? Riksa uji
     pesawat tenaga dan produksi adalah pemeriksaan dan pengujian keselamatan berkala
-    kepada semua jenis mesin penggerak mula, mesin peralatan, mesin produksi, pompa,
+    kepada segenap jenis mesin penggerak mula, mesin peralatan, mesin produksi, pompa,
     kompresor, dan peralatan industri lainnya yang diatur dalam Peraturan Menteri
     Ketenagakerjaan. Pemeriksaan ini wajib dilakukan untuk menjamin peralatan berfungsi
-    dengan aman dan sesuai kriteria K3 yang berlaku pada Indonesia.
+    dengan aman dan sesuai acuan K3 yang berlaku pada Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
     layanan riksa uji pesawat tenaga serta produksi yang komprehensif dengan tim inspector
     bersertifikat serta alat testing yang terkalibrasi. Kami melayani berbagai industri
     termasuk manufaktur, pertambangan, pembangkit listrik, serta pengolahan untuk
-    memastikan keselamatan operasional serta compliance pada regulasi pemerintah.
+    menjamin keselamatan operasional serta compliance terhadap regulasi pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Tenaga dan Produksi
   para: 'Layanan riksa uji pesawat tenaga dan produksi terbagi menjadi enam kategori
@@ -74,12 +74,12 @@ jenis_layanan:
     icon: bi-gear
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Tenaga dan Produksi Penting?
-  para: Riksa uji pesawat tenaga dan produksi bukan hanya kewajiban regulasi, akan
-    tetapi investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+  para: Riksa uji pesawat tenaga serta produksi bukan hanya kewajiban regulasi, akan
+    tetapi investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
     Kegagalan mesin produksi dapat menyebabkan kecelakaan fatal, kebakaran, kerusakan
-    material, dan kerugian finansial besar. Pemeriksaan berkala memastikan seluruh
-    elemen kritis seperti sistem kelistrikan, elemen bergerak, sistem pelumasan, dan
-    perangkat keselamatan bekerja optimal sesuai spesifikasi pabrikan dan standar
+    material, serta kerugian finansial besar. Pemeriksaan berkala memastikan semua
+    elemen kritis seperti sistem kelistrikan, elemen bergerak, sistem pelumasan, serta
+    perangkat keselamatan bekerja optimal sesuai spesifikasi pabrikan serta standar
     keselamatan yang berlaku.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
@@ -89,7 +89,7 @@ proses_riksa_uji:
     Setiap inspeksi didokumentasikan detail dalam laporan komprehensif dan dilengkapi
     sertifikat kelayakan operasional yang berlaku secara legal. Kami melayani seluruh
     Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2025-12-30T03:58:22+0000'
+lastmod: '2026-01-08T03:58:58+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
