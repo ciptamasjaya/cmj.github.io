@@ -1,7 +1,7 @@
 ---
 layout: page/page--service-subcategory
 title: Tanur
-description: Jasa riksa uji serta inspeksi K3 tanur profesional meliputi furnace,
+description: Jasa riksa uji serta pengecekan K3 tanur profesional termasuk furnace,
   oven industri, industrial chiller, serta cooling tower. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/tanur/"
@@ -21,14 +21,14 @@ keywords: riksa uji tanur, inspeksi furnace, inspeksi oven industri, inspeksi ch
 intro:
   h1: Tanur - Riksa Uji Peralatan Termal Industri
   para_1: Tanur adalah alat yang dipakai dalam rangka tahapan pemanasan atau pendinginan
-    dalam industri manufaktur dan pengolahan. Kategori ini termasuk furnace, oven
-    industri, industrial chiller, dan cooling tower yang wajib menjalani riksa uji
-    berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+    dalam industri manufaktur serta pengolahan. Kategori ini termasuk furnace, oven
+    industri, industrial chiller, serta cooling tower yang wajib menjalani riksa uji
+    berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
     tanur yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan pengecekan
-    on-site pada seluruh Indonesia dengan perkakas testing terkalibrasi untuk memastikan
-    keselamatan operasional perkakas Anda.
+    on-site pada seluruh Indonesia secara peralatan testing terkalibrasi untuk memastikan
+    keselamatan operasional peralatan Anda.
 layanan_tanur:
   h2: Layanan Riksa Uji Tanur
   para: Kami melayani riksa uji untuk berbagai jenis peralatan termal sesuai kebutuhan
@@ -47,22 +47,22 @@ layanan_tanur:
     icon: bi-snow
 mengapa_penting:
   h2: Mengapa Riksa Uji Tanur Penting?
-  para: Tanur dan peralatan termal bekerja pada suhu ekstrem (sangat panas maupun
-    sangat dingin) yang memiliki risiko kebakaran, ledakan, dan cedera akibat paparan
-    suhu. Kegagalan sistem kontrol maupun kebocoran refrigerant dapat menyebabkan
-    kecelakaan fatal. Riksa uji berkala memastikan semua komponen kritis seperti burner,
-    sistem kontrol temperatur, safety valve, dan sensor bekerja optimal. Pemeriksaan
-    ini bukan hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, akan tetapi
-    investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+  para: Tanur dan peralatan termal bekerja pada suhu ekstrem (sangat panas atau sangat
+    dingin) yang memiliki risiko kebakaran, ledakan, dan cedera akibat paparan suhu.
+    Kegagalan sistem kontrol atau kebocoran refrigerant dapat menyebabkan kecelakaan
+    fatal. Riksa uji berkala memastikan semua komponen kritis seperti burner, sistem
+    kontrol temperatur, safety valve, dan sensor bekerja optimal. Inspeksi ini bukan
+    hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, akan tetapi investasi
+    keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Tanur
   para: Tim inspector kami datang ke lokasi Anda dengan cara alat testing seperti
     thermal imaging camera, thermocouple, combustion analyzer, serta refrigerant leak
-    detector. Proses pengecekan mencakup pemeriksaan dokumen, pengecekan visual, pengujian
-    fungsi operasional, serta pengukuran parameter temperatur. Tiap pengecekan didokumentasikan
-    dalam laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang
-    berlaku 1 tahun.
-lastmod: '2025-12-20T03:44:49+0000'
+    detector. Proses pengecekan mencakup inspeksi dokumen, pengecekan visual, pengujian
+    fungsi operasional, serta pengukuran parameter temperatur. Masing-masing pengecekan
+    didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat kelayakan
+    operasional yang berlaku 1 tahun.
+lastmod: '2026-01-11T04:06:40+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
