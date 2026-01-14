@@ -226,17 +226,16 @@
     ]
   },
   "riksa-uji-pesawat-uap-bejana-tekan.md": {
-    "date": "2026-01-11",
+    "date": "2026-01-14",
     "changes": 8,
     "words": [
-      "pemeriksaan→inspeksi",
+      "acuan→standar",
+      "serta→dan",
       "berdasarkan→sesuai",
-      "memverifikasi→memastikan",
-      "dilakukan→dilaksanakan",
-      "kepada→pada",
-      "dengan→secara",
-      "bekerja→beroperasi",
-      "Pengecekan→Pemeriksaan"
+      "Inspeksi→Pengecekan",
+      "daripada→dari",
+      "Pemeriksaan→Inspeksi",
+      "menjamin→memverifikasi"
     ]
   },
   "bejana-tekan.md": {
@@ -273,17 +272,18 @@
     ]
   },
   "tangki-timbun.md": {
-    "date": "2025-12-22",
+    "date": "2026-01-14",
     "changes": 10,
     "words": [
-      "serta→dan",
-      "dari→daripada",
       "atau→maupun",
-      "untuk→dalam rangka",
-      "secara→dengan cara",
-      "Pemeriksaan→Inspeksi",
-      "pemeriksaan→inspeksi",
-      "mencakup→meliputi"
+      "inspeksi→pengecekan",
+      "dan→serta",
+      "bagus→baik",
+      "memastikan→menjamin",
+      "dengan→secara",
+      "tetapi→akan tetapi",
+      "sesuai→berdasarkan",
+      "peralatan→alat"
     ]
   },
   "2024-08-26-riksa-uji-overhead-crane.md": {
@@ -594,18 +594,19 @@
     ]
   },
   "sistem-transmisi.md": {
-    "date": "2025-12-24",
+    "date": "2026-01-14",
     "changes": 10,
     "words": [
-      "dan→serta",
-      "pengecekan→pemeriksaan",
-      "untuk→dalam rangka",
-      "dari→daripada",
+      "termasuk→mencakup",
+      "serta→dan",
+      "meliputi→termasuk",
+      "komponen→bagian",
+      "peralatan→alat",
+      "menjamin→memverifikasi",
+      "maupun→atau",
       "di→pada",
-      "berfungsi→bekerja",
-      "atau→maupun",
-      "mencakup→meliputi",
-      "Setiap→Tiap"
+      "dan→serta",
+      "dengan→secara"
     ]
   },
   "tanur.md": {

@@ -1,10 +1,10 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun
-description: Jasa riksa pengujian serta inspeksi K3 pesawat uap, bejana tekan, serta
-  tangki timbun profesional termasuk boiler, pressure vessel, heat exchanger, serta
-  storage tank sesuai acuan Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia
-  dengan cara sertifikat resmi.
+description: Jasa riksa pengujian dan inspeksi K3 pesawat uap, bejana tekan, dan tangki
+  timbun profesional termasuk boiler, pressure vessel, heat exchanger, dan storage
+  tank sesuai standar Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia dengan
+  cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 is_category_page: true
@@ -24,15 +24,15 @@ intro:
     Riksa uji pesawat uap bejana tekan adalah pemeriksaan dan pengujian keselamatan
     berkala kepada segenap jenis peralatan bertekanan seperti boiler, pressure vessel,
     heat exchanger, autoclave, dan tangki penyimpanan yang diatur dalam Peraturan
-    Menteri Ketenagakerjaan. Inspeksi ini wajib dilaksanakan untuk memastikan peralatan
-    berfungsi dengan aman dan berdasarkan standar K3 yang berlaku di Indonesia.
-  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa uji pesawat uap bejana tekan serta tangki timbun yang
-    komprehensif secara cara tim inspector bersertifikat serta alat testing yang terkalibrasi.
-    Kami melayani bermacam-macam industri mencakup manufaktur, petrokimia, pembangkit
-    listrik, serta pengolahan migas untuk menjamin keselamatan operasional serta compliance
-    pada regulasi pemerintah.
+    Menteri Ketenagakerjaan. Pengecekan ini wajib dilaksanakan untuk memastikan peralatan
+    berfungsi dengan aman dan sesuai standar K3 yang berlaku di Indonesia.
+  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
+    Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
+    layanan riksa uji pesawat uap bejana tekan dan tangki timbun yang komprehensif
+    secara cara tim inspector bersertifikat dan alat testing yang terkalibrasi. Kami
+    melayani bermacam-macam industri mencakup manufaktur, petrokimia, pembangkit listrik,
+    dan pengolahan migas untuk menjamin keselamatan operasional dan compliance pada
+    regulasi pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun
   para: 'Layanan riksa uji pesawat uap bejana tekan dan tangki timbun terbagi menjadi
@@ -62,10 +62,10 @@ mengapa_penting:
   para: Riksa uji pesawat uap bejana tekan bukan hanya kewajiban regulasi, tetapi
     investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan. Kegagalan
     peralatan bertekanan dapat menyebabkan ledakan fatal, kebakaran, kerusakan material,
-    serta kerugian finansial besar. Pemeriksaan berkala menjamin segenap bagian kritis
-    seperti dinding bejana, safety valve, sistem kontrol tekanan, serta welding integrity
-    beroperasi optimal sesuai spesifikasi pabrikan serta kriteria keselamatan ASME,
-    API, serta SNI.
+    serta kerugian finansial besar. Inspeksi berkala memverifikasi segenap bagian
+    kritis seperti dinding bejana, safety valve, sistem kontrol tekanan, serta welding
+    integrity beroperasi optimal sesuai spesifikasi pabrikan serta kriteria keselamatan
+    ASME, API, serta SNI.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
   para: Proses riksa uji kami dirancang efisien dan tidak mengganggu operasional perusahaan
@@ -74,7 +74,7 @@ proses_riksa_uji:
     terkalibrasi. Setiap inspeksi didokumentasikan detail dalam laporan komprehensif
     dan dilengkapi sertifikat kelayakan operasional yang berlaku secara legal. Kami
     melayani seluruh Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2026-01-11T04:06:40+0000'
+lastmod: '2026-01-14T04:05:08+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
