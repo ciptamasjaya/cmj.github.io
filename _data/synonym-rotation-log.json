@@ -299,24 +299,22 @@
     ]
   },
   "riksa-uji-gantry-crane.md": {
-    "date": "2026-01-13",
+    "date": "2026-01-16",
     "changes": 19,
     "words": [
-      "dan→serta",
-      "inspeksi→pengecekan",
-      "terhadap→kepada",
-      "perihal→mengenai",
-      "kriteria→acuan",
-      "memastikan→menjamin",
-      "Pengecekan→Pemeriksaan",
       "semua→segenap",
-      "Inspeksi→Pengecekan",
-      "serta→dan",
+      "pengecekan→pemeriksaan",
       "kepada→pada",
-      "batas→limit",
-      "di→pada",
-      "dilaksanakan→dijalankan",
-      "hingga→sampai"
+      "serta→dan",
+      "memenuhi→mencukupi",
+      "bagian→elemen",
+      "Pemeriksaan→Inspeksi",
+      "dan→serta",
+      "mencakup→meliputi",
+      "berdasarkan→sesuai",
+      "perihal→mengenai",
+      "dijalankan→dilakukan",
+      "diperlukan→dibutuhkan"
     ]
   },
   "riksa-uji-overhead-crane.md": {
@@ -340,24 +338,25 @@
     ]
   },
   "riksa-uji-boiler.md": {
-    "date": "2026-01-11",
+    "date": "2026-01-16",
     "changes": 19,
     "words": [
-      "inspeksi→pengecekan",
-      "untuk→dalam rangka",
-      "berdasarkan→sesuai",
-      "pemeriksaan→inspeksi",
-      "serta→dan",
-      "perkakas→peralatan",
+      "dari→daripada",
+      "segenap→seluruh",
+      "menjamin→memverifikasi",
       "kepada→pada",
-      "elemen→komponen",
       "dan→serta",
-      "keadaan→situasi",
-      "Pengecekan→Pemeriksaan",
+      "dengan→secara",
       "pada→terhadap",
-      "terhadap→kepada",
-      "mempunyai→memiliki",
-      "termasuk→mencakup"
+      "komponen→bagian",
+      "serta→dan",
+      "Inspeksi→Pengecekan",
+      "Pemeriksaan→Inspeksi",
+      "Setiap→Tiap",
+      "mengenai→tentang",
+      "standar→kriteria",
+      "secara→dengan cara",
+      "mencakup→meliputi"
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
