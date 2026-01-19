@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Angkat Angkut
-description: Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional mencakup
-  forklift, crane, hoist, dan conveyor sesuai standar Kementerian Ketenagakerjaan
+description: Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional meliputi
+  forklift, crane, hoist, dan conveyor sesuai kriteria Kementerian Ketenagakerjaan
   RI. Melayani segenap Indonesia secara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/"
 category: Riksa Uji Pesawat Angkat Angkut
@@ -19,18 +19,18 @@ keywords: riksa uji pesawat angkat angkut, inspeksi forklift, inspeksi crane, in
   hoist, inspeksi conveyor, PJK3, sertifikasi K3, jasa riksa uji
 intro:
   h1: Riksa Uji Pesawat Angkat Angkut - Inspeksi K3 Profesional
-  para_1: Apa yang dimaksud dengan cara riksa uji pesawat angkat angkut? Riksa uji
+  para_1: Apa yang dimaksud secara cara riksa uji pesawat angkat angkut? Riksa uji
     pesawat angkat angkut adalah pemeriksaan dan tes keselamatan berkala kepada semua
     jenis alat angkat seperti forklift, crane, hoist, conveyor, dan lift barang yang
-    diatur dalam Peraturan Menteri Ketenagakerjaan. Inspeksi ini wajib dilakukan untuk
-    menjamin alat berfungsi dengan cara aman dan berdasarkan standar K3 yang berlaku
-    pada Indonesia.
-  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
+    diatur dalam Peraturan Menteri Ketenagakerjaan. Inspeksi ini wajib dilakukan dalam
+    rangka menjamin alat berfungsi secara cara aman dan berdasarkan standar K3 yang
+    berlaku pada Indonesia.
+  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
     menyediakan layanan riksa uji pesawat angkat angkut yang komprehensif dengan tim
-    inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani
-    beragam industri mencakup manufaktur, logistik, konstruksi, dan pertambangan dalam
-    rangka memverifikasi keselamatan operasional dan compliance terhadap regulasi
+    inspector bersertifikat serta peralatan testing yang terkalibrasi. Kami melayani
+    bermacam-macam industri mencakup manufaktur, logistik, konstruksi, serta pertambangan
+    dalam rangka memverifikasi keselamatan operasional serta compliance terhadap regulasi
     pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Angkat Angkut
@@ -52,12 +52,12 @@ jenis_layanan:
     icon: bi-truck
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Angkut Penting?
-  para: Riksa uji pesawat angkat angkut bukan hanya kewajiban regulasi, akan tetapi
-    investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan. Kegagalan
-    perkakas angkat dapat menyebabkan kecelakaan fatal, kerusakan material, dan kerugian
-    finansial besar. Pemeriksaan berkala menjamin segenap bagian kritis seperti sistem
-    hidrolik, rem, struktur penahan beban, dan sistem kontrol bekerja optimal sesuai
-    spesifikasi pabrikan dan kriteria keselamatan.
+  para: Riksa uji pesawat angkat angkut bukan hanya kewajiban regulasi, akan akan
+    tetapi investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+    Kegagalan perkakas angkat dapat menyebabkan kecelakaan fatal, kerusakan material,
+    dan kerugian finansial besar. Pemeriksaan berkala menjamin segenap bagian kritis
+    seperti sistem hidrolik, rem, struktur penahan beban, dan sistem kontrol bekerja
+    optimal sesuai spesifikasi pabrikan dan acuan keselamatan.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
   para: Proses riksa uji kami dirancang efisien dan tidak mengganggu operasional perusahaan
@@ -65,7 +65,7 @@ proses_riksa_uji:
     lengkap dan terkalibrasi. Setiap inspeksi didokumentasikan detail dalam laporan
     komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku secara
     legal. Kami melayani seluruh Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2025-12-26T03:54:55+0000'
+lastmod: '2026-01-19T04:07:40+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
