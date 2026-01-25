@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Tower Crane
-description: Riksa uji tower crane adalah inspeksi dan pengujian keselamatan crane
-  menara oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 dari
-  Disnaker. Layanan inspeksi K3 segenap Indonesia.
-para_1: Riksa uji tower crane adalah pemeriksaan serta pengujian terhadap pesawat
-  angkat jenis menara berdasarkan secara Permenaker No. 8 Tahun 2020 perihal Keselamatan
-  serta Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.
+description: Riksa uji tower crane adalah pengecekan dan pengujian keselamatan crane
+  menara oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 daripada
+  Disnaker. Layanan pengecekan K3 segenap Indonesia.
+para_1: Riksa uji tower crane adalah inspeksi dan pengujian terhadap pesawat angkat
+  jenis menara berdasarkan secara Permenaker No. 8 Tahun 2020 perihal Keselamatan
+  dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-tower-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -41,32 +41,32 @@ keywords: riksa uji tower crane, jasa riksa uji tower crane, inspeksi tower cran
 rating_id: riksa-uji-tower-crane
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-01-11T04:06:40+0000'
+lastmod: '2026-01-25T04:10:14+0000'
 intro:
   name: Layanan Riksa Uji Tower Crane Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji tower crane secara inspector
-    bersertifikat serta berpengalaman. Kami menjamin tower crane Anda memenuhi acuan
-    keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI.
+    bersertifikat dan berpengalaman. Kami memverifikasi tower crane Anda memenuhi
+    acuan keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji tower crane wajib dilaksanakan sesuai regulasi keselamatan kerja
-      yang berlaku pada Indonesia untuk menjamin keamanan operasional pada proyek
+    para: Riksa uji tower crane wajib dilaksanakan berdasarkan regulasi keselamatan
+      kerja yang berlaku pada Indonesia untuk menjamin keamanan operasional pada proyek
       konstruksi.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan dan Kesehatan Kerja
+      para: Peraturan Menteri Ketenagakerjaan perihal Keselamatan dan Kesehatan Kerja
         Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
         semua jenis crane termasuk tower crane.
     - h4: Standar FEM dan ISO
-      para: Pengujian dilakukan mengacu pada standar internasional FEM (Federation
+      para: Pengujian dilakukan mengacu pada kriteria internasional FEM (Federation
         Europeenne de la Manutention) serta ISO 12480 dalam rangka crane safety serta
         Kriteria Nasional Indonesia (SNI) yang berlaku.
   - h3: Tim Inspector Bersertifikat
     para: Tim inspector kami mempunyai sertifikat kompetensi daripada BNSP dan telah
       berpengalaman lebih daripada 10 tahun dalam bidang pengecekan pesawat angkat
-      termasuk berbagai jenis tower crane untuk proyek konstruksi gedung dan infrastruktur.
+      termasuk beragam jenis tower crane untuk proyek konstruksi gedung dan infrastruktur.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji tower crane di semua Indonesia, dari proyek konstruksi
+    para: Kami melayani riksa uji tower crane pada semua Indonesia, dari proyek konstruksi
       gedung bertingkat, jembatan, hingga infrastruktur besar. Tim kami siap datang
       ke lokasi proyek Anda kapanpun dibutuhkan.
 jenis_alat:
@@ -101,30 +101,30 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Tower Crane yang Diperiksa
-  description: Pengecekan menyeluruh kepada seluruh bagian keselamatan tower crane
+  description: Pengecekan menyeluruh pada seluruh elemen keselamatan tower crane
   items:
   - name: Mast dan Tower Section
-    description: Pengecekan struktur menara, sambungan antar section, baut pengikat,
+    description: Pemeriksaan struktur menara, sambungan antar section, baut pengikat,
       dan keadaan las terhadap korosi atau deformasi.
     icon: bi-building
   - name: Slewing Unit
-    description: Pengecekan mekanisme putar mencakup slewing ring, motor slewing,
+    description: Pemeriksaan mekanisme putar mencakup slewing ring, motor slewing,
       serta sistem pengereman rotasi.
     icon: bi-arrow-repeat
   - name: Jib dan Counter-Jib
-    description: Inspeksi keadaan lengan horizontal, sambungan, trolley rail, dan
+    description: Pengecekan keadaan lengan horizontal, sambungan, trolley rail, dan
       counterweight dalam rangka keseimbangan crane.
     icon: bi-arrows-expand
   - name: Hoisting Mechanism
-    description: Inspeksi winch, drum, wire rope, hook block, dan sistem brake hoist
+    description: Inspeksi winch, drum, wire rope, hook block, serta sistem brake hoist
       dalam rangka memverifikasi fungsi pengangkatan aman.
     icon: bi-arrow-up-circle
   - name: Cabin dan Sistem Kontrol
     description: Inspeksi keadaan cabin operator, panel kontrol, joystick, display,
-      serta sistem komunikasi.
+      dan sistem komunikasi.
     icon: bi-display
   - name: Safety Devices
-    description: Tes load moment limiter, anemometer, anti-collision, travel limit
+    description: Tes load moment limiter, anemometer, anti-collision, travel ambang
       switch, dan emergency stop.
     icon: bi-shield-check
 proses_inspeksi:
