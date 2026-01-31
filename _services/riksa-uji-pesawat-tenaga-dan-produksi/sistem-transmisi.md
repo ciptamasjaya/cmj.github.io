@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Sistem Transmisi
-description: Jasa riksa uji dan pemeriksaan K3 sistem transmisi profesional mencakup
-  transmisi sabuk, transmisi rantai, dan transmisi roda gigi. Sertifikat resmi Kementerian
+description: Jasa riksa uji serta inspeksi K3 sistem transmisi profesional mencakup
+  transmisi sabuk, transmisi rantai, serta transmisi roda gigi. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/sistem-transmisi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -21,15 +21,15 @@ keywords: riksa uji sistem transmisi, inspeksi transmisi sabuk, inspeksi transmi
 intro:
   h1: Sistem Transmisi - Riksa Uji Penyaluran Tenaga Mekanik
   para_1: Sistem transmisi adalah bagian yang digunakan dalam rangka menyalurkan tenaga
-    mekanik daripada penggerak mula ke mesin produksi. Kategori ini termasuk transmisi
-    sabuk (belt), transmisi rantai (chain), dan transmisi roda gigi (gear) yang wajib
-    menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor
-    38 Tahun 2016.
+    mekanik dari penggerak mula ke mesin produksi. Kategori ini termasuk transmisi
+    sabuk (belt), transmisi rantai (chain), serta transmisi roda gigi (gear) yang
+    wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
+    Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    inspeksi on-site pada seluruh Indonesia dengan alat testing terkalibrasi dalam
-    rangka memverifikasi keselamatan operasional alat Anda.
+    sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
+    inspeksi on-site pada seluruh Indonesia dengan perkakas testing terkalibrasi dalam
+    rangka memverifikasi keselamatan operasional perkakas Anda.
 layanan_sistem_transmisi:
   h2: Layanan Riksa Uji Sistem Transmisi
   para: Kami melayani riksa uji untuk berbagai jenis sistem transmisi sesuai kebutuhan
@@ -54,21 +54,20 @@ layanan_sistem_transmisi:
 mengapa_penting:
   h2: Mengapa Riksa Uji Sistem Transmisi Penting?
   para: Sistem transmisi bekerja dengan komponen berputar berkecepatan tinggi yang
-    memiliki risiko kecelakaan tinggi jika tidak dilengkapi pelindung yang memadai.
+    mempunyai risiko kecelakaan tinggi jika tidak dilengkapi pelindung yang memadai.
     Putusnya belt atau rantai dapat menyebabkan cedera serius pada pekerja pada sekitarnya.
-    Riksa uji berkala memastikan semua komponen kritis seperti belt, rantai, gear,
-    bearing, dan pelindung keselamatan bekerja optimal. Pemeriksaan ini bukan hanya
-    kewajiban legal berdasarkan Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan
-    yang melindungi nyawa pekerja dan aset perusahaan.
+    Riksa uji berkala menjamin semua komponen kritis seperti belt, rantai, gear, bearing,
+    dan pelindung keselamatan bekerja optimal. Pemeriksaan ini bukan hanya kewajiban
+    legal berdasarkan Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan yang
+    melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Sistem Transmisi
   para: Tim inspector kami datang ke lokasi Anda secara peralatan testing seperti
-    belt tension gauge, alignment tool, stroboscope, serta vibration meter. Tahapan
+    belt tension gauge, alignment tool, stroboscope, dan vibration meter. Prosedur
     inspeksi meliputi pemeriksaan dokumen, inspeksi visual, tes fungsi operasional,
-    serta verifikasi pelindung keselamatan. Tiap inspeksi didokumentasikan dalam laporan
-    komprehensif serta dilengkapi sertifikat kelayakan operasional yang berlaku 1
-    tahun.
-lastmod: '2026-01-14T04:05:08+0000'
+    dan verifikasi pelindung keselamatan. Tiap inspeksi didokumentasikan dalam laporan
+    komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+lastmod: '2026-01-31T04:21:59+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
