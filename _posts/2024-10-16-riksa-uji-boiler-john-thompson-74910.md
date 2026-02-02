@@ -269,22 +269,22 @@ section_operational:
   - Mengevaluasi respons boiler dalam skenario beban kerja maksimum
   items:
   - parameter: Tekanan Operasional
-    result: 10.6 Bar
+    result: 10.8 Bar
     standard: 10.5 Bar (±5%)
     status: lulus
     notes: Dalam batas toleransi
   - parameter: Suhu Operasional
-    result: 375°C
+    result: 377°C
     standard: 370-380°C
     status: lulus
     notes: ''
   - parameter: Aliran Uap
-    result: 19.4 Ton/jam
+    result: 19.2 Ton/jam
     standard: Min. 18 Ton/jam
     status: lulus
     notes: 97.5% dari kapasitas
   - parameter: Efisiensi Pembakaran
-    result: 91%
+    result: 92%
     standard: Min. 85%
     status: lulus
     notes: Efisiensi baik
@@ -312,7 +312,7 @@ section_technical:
   - Pengukuran efisiensi pembakaran bahan bakar
   items:
   - component: Ketebalan Dinding Boiler
-    result: 10.6 mm
+    result: 10.7 mm
     standard: Min. 9.0 mm
     status: lulus
     notes: Kondisi baik
@@ -332,7 +332,7 @@ section_technical:
     status: lulus
     notes: Terkalibrasi
   - component: Efisiensi Pembakaran
-    result: 85%
+    result: 83%
     standard: Min. 85%
     status: lulus
     notes: ''
@@ -352,37 +352,37 @@ section_ndt:
   items:
   - component: Dinding Ruang Pembakaran
     location: Bagian bawah
-    result: '10.4'
+    result: '10.3'
     standard: '9.0'
     status: lulus
   - component: Dinding Ruang Pembakaran
     location: Bagian tengah
-    result: '10.2'
+    result: '10.3'
     standard: '9.0'
     status: lulus
   - component: Dinding Ruang Pembakaran
     location: Bagian atas
-    result: '10.7'
+    result: '10.6'
     standard: '9.0'
     status: lulus
   - component: Pipa Uap Utama
     location: Inlet
-    result: '8.0'
+    result: '7.8'
     standard: '7.0'
     status: lulus
   - component: Pipa Uap Utama
     location: Outlet
-    result: '8.1'
+    result: '8.0'
     standard: '7.0'
     status: lulus
   - component: Penukar Panas
     location: Tube bundle
-    result: '4.4'
+    result: '4.6'
     standard: '4.0'
     status: lulus
   - component: Tangki Air
     location: Dinding samping
-    result: '12.2'
+    result: '12.3'
     standard: '9.0'
     status: lulus
   summary: Segenap hasil pengukuran ketebalan berada terhadap atas acuan minimum.
@@ -393,8 +393,8 @@ section_hydrotest:
     serta kekuatan bejana tekan secara memberikan tekanan pengujian yang lebih tinggi
     dari tekanan kerja normal.
   working_pressure: 10.5 Bar
-  test_pressure: 16.8 Bar (1.5x)
-  duration: 29 Menit
+  test_pressure: 17.0 Bar (1.5x)
+  duration: 31 Menit
   method: Pengujian hidrostatik dilaksanakan dengan cara cara mengisi boiler dengan
     cara cara air hingga penuh, kemudian memberikan tekanan dengan cara cara bertahap
     hingga mencapai tekanan pengujian 1.5 kali tekanan kerja. Tekanan dipertahankan
@@ -755,5 +755,5 @@ section_conclusion:
     bukan data hasil pengukuran sebenarnya.
   - Untuk informasi lebih lanjut mengenai layanan riksa uji boiler dan peralatan industri
     lainnya, silakan <a href="/contact/">hubungi kami</a>.
-lastmod: '2026-02-01T04:56:03+0000'
+lastmod: '2026-02-02T04:52:13+0000'
 ---
