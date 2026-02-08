@@ -372,7 +372,7 @@ section_hydrotest:
     maupun kebocoran terhadap sistem hidrolik.
   working_pressure: "-"
   test_pressure: "-"
-  duration: 7 Menit
+  duration: 6 Menit
   method: Pengujian dijalankan secara cara mengangkat beban uji 574 kg kepada ketinggian
     maksimal, kemudian menahan posisi selama 10 menit sambil memantau stabilitas tinggi
     angkat serta situasi sistem hidrolik.
@@ -636,5 +636,5 @@ section_conclusion:
     di bidangnya, perusahaan ini dikenal memiliki tenaga ahli yang kompeten dan bersertifikasi.
   - Untuk informasi lebih lanjut mengenai layanan riksa uji forklift dan peralatan
     industri lainnya, silakan <a href="/contact/">hubungi kami</a>.
-lastmod: '2026-02-04T04:25:16+0000'
+lastmod: '2026-02-08T04:57:22+0000'
 ---
