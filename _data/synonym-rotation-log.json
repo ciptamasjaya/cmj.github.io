@@ -12,15 +12,15 @@
     ]
   },
   "2024-08-26-jasa-riksa-uji-forklift.md": {
-    "date": "2026-01-23",
+    "date": "2026-02-09",
     "changes": 6,
     "words": [
-      "atau→maupun",
-      "pemeriksaan→inspeksi",
-      "hingga→sampai",
-      "Secara→Dengan cara",
-      "pengecekan→pemeriksaan",
-      "standar→kriteria"
+      "secara→dengan cara",
+      "keadaan→situasi",
+      "menjalankan→melakukan",
+      "alat→perkakas",
+      "dengan→secara",
+      "pemeriksaan→inspeksi"
     ]
   },
   "2024-10-16-riksa-uji-boiler-john-thompson-74910.md": {
@@ -60,59 +60,56 @@
     ]
   },
   "2024-12-16-riksa-uji-forklift-caterpillar-ep20-5ss25am.md": {
-    "date": "2026-01-25",
+    "date": "2026-02-09",
     "changes": 43,
     "words": [
-      "dan→serta",
-      "mencakup→meliputi",
-      "tentang→perihal",
-      "proses→tahapan",
-      "Inspeksi→Pengecekan",
-      "maupun→atau",
-      "Segenap→Seluruh",
-      "Dengan→Secara",
-      "dilakukan→dilaksanakan",
-      "berfungsi→bekerja",
-      "secara→dengan cara",
-      "bekerja→beroperasi",
-      "serta→dan",
-      "bagian→elemen",
-      "utamanya→terutama",
-      "komponen→bagian",
-      "terhadap→kepada",
-      "atau→maupun",
-      "dengan→secara",
-      "dilaksanakan→dijalankan",
-      "memverifikasi→memastikan",
-      "beragam→bermacam-macam",
-      "keadaan→situasi",
-      "perihal→mengenai",
-      "memastikan→menjamin",
-      "Di→Pada",
-      "standar→kriteria",
-      "inspeksi→pengecekan",
-      "menjamin→memverifikasi",
-      "melaksanakan→menjalankan",
+      "meliputi→termasuk",
+      "temuan→outcome",
       "untuk→dalam rangka",
+      "perihal→mengenai",
+      "kepada→pada",
+      "secara→dengan cara",
+      "berfungsi→bekerja",
+      "maupun→atau",
+      "menjamin→memverifikasi",
+      "dilaksanakan→dijalankan",
+      "pada→terhadap",
+      "dengan→secara",
+      "dari→daripada",
+      "mencukupi→memenuhi",
+      "Segenap→Seluruh",
+      "elemen→komponen",
+      "digunakan→dipakai",
+      "inspeksi→pengecekan",
+      "dijumpai→terdapat",
+      "dilakukan→dilaksanakan",
+      "dijalankan→dilakukan",
+      "memastikan→menjamin",
+      "atau→maupun",
+      "proses→tahapan",
+      "dan→serta",
+      "komponen→bagian",
+      "alat→perkakas",
+      "setiap→tiap",
       "dimanfaatkan→digunakan",
-      "elemen→komponen"
+      "terhadap→kepada"
     ]
   },
   "2025-05-20-pjk3-terdekat-08568258841.md": {
-    "date": "2026-01-25",
+    "date": "2026-02-09",
     "changes": 13,
     "words": [
-      "semua→segenap",
-      "kepada→pada",
-      "terhadap→kepada",
-      "dari→daripada",
-      "inspeksi→pengecekan",
-      "proses→tahapan",
       "pada→terhadap",
-      "serta→dan",
+      "segenap→seluruh",
+      "daripada→dari",
       "dengan→secara",
-      "pengecekan→pemeriksaan",
-      "seluruh→semua"
+      "kepada→pada",
+      "tahapan→prosedur",
+      "serta→dan",
+      "pemeriksaan→inspeksi",
+      "secara→dengan cara",
+      "dan→serta",
+      "termasuk→mencakup"
     ]
   },
   "2025-05-22-pjk3-jakarta-selatan.md": {
@@ -150,19 +147,18 @@
     ]
   },
   "2025-05-24-pjk3-semarang.md": {
-    "date": "2026-01-31",
+    "date": "2026-02-09",
     "changes": 14,
     "words": [
+      "semua→segenap",
+      "terhadap→kepada",
       "seluruh→semua",
-      "pada→terhadap",
-      "perkakas→peralatan",
-      "dengan→secara",
       "dan→serta",
-      "pemeriksaan→inspeksi",
       "serta→dan",
-      "beragam→bermacam-macam",
-      "dari→daripada",
-      "termasuk→mencakup"
+      "inspeksi→pengecekan",
+      "pemeriksaan→inspeksi",
+      "atau→maupun",
+      "mencakup→meliputi"
     ]
   },
   "riksa-uji-pesawat-angkat-angkut.md": {
@@ -416,21 +412,22 @@
     ]
   },
   "riksa-uji-dongkrak-hidrolik.md": {
-    "date": "2026-01-07",
+    "date": "2026-02-09",
     "changes": 19,
     "words": [
-      "semua→segenap",
-      "dan→serta",
-      "alat→perkakas",
-      "menjamin→memverifikasi",
-      "memenuhi→mencukupi",
-      "terhadap→kepada",
-      "Pemeriksaan→Inspeksi",
+      "untuk→dalam rangka",
+      "daripada→dari",
+      "kepada→pada",
       "serta→dan",
+      "mencukupi→memenuhi",
+      "dan→serta",
       "Inspeksi→Pengecekan",
-      "Pengecekan→Pemeriksaan",
-      "dilakukan→dilaksanakan",
-      "pada→terhadap"
+      "bagian→elemen",
+      "kondisi→keadaan",
+      "dilaksanakan→dijalankan",
+      "di→pada",
+      "pengecekan→pemeriksaan",
+      "dengan→secara"
     ]
   },
   "riksa-uji-hoist.md": {
@@ -495,54 +492,52 @@
     ]
   },
   "riksa-uji-tower-crane.md": {
-    "date": "2026-01-25",
+    "date": "2026-02-09",
     "changes": 19,
     "words": [
-      "inspeksi→pengecekan",
-      "dari→daripada",
-      "pemeriksaan→inspeksi",
-      "serta→dan",
-      "menjamin→memverifikasi",
-      "bagian→elemen",
-      "kepada→pada",
-      "Pengecekan→Pemeriksaan",
-      "Inspeksi→Pengecekan",
       "dan→serta",
-      "limit→ambang",
-      "sesuai→berdasarkan",
-      "tentang→perihal",
-      "standar→kriteria",
-      "berbagai→beragam",
-      "di→pada"
+      "segenap→seluruh",
+      "inspeksi→pengecekan",
+      "secara→dengan cara",
+      "pada→terhadap",
+      "elemen→komponen",
+      "atau→maupun",
+      "Pemeriksaan→Inspeksi",
+      "keadaan→situasi",
+      "memverifikasi→memastikan",
+      "untuk→dalam rangka",
+      "perihal→mengenai",
+      "daripada→dari"
     ]
   },
   "riksa-uji-pesawat-tenaga-dan-produksi.md": {
-    "date": "2026-01-23",
+    "date": "2026-02-09",
     "changes": 8,
     "words": [
-      "seluruh→semua",
-      "mencakup→meliputi",
-      "dengan→secara",
       "sesuai→berdasarkan",
-      "alat→perkakas",
-      "terhadap→kepada",
-      "elemen→komponen",
-      "Pemeriksaan→Inspeksi"
+      "perkakas→peralatan",
+      "dilakukan→dilaksanakan",
+      "segenap→seluruh",
+      "dari→daripada",
+      "dengan→secara",
+      "tetapi→akan tetapi",
+      "serta→dan"
     ]
   },
   "mesin-perkakas.md": {
-    "date": "2026-01-31",
+    "date": "2026-02-09",
     "changes": 10,
     "words": [
+      "meliputi→termasuk",
+      "dan→serta",
+      "untuk→dalam rangka",
       "alat→perkakas",
-      "mencakup→meliputi",
-      "prosedur→proses",
-      "peralatan→alat",
-      "semua→segenap",
-      "mempunyai→memiliki",
-      "maupun→atau",
-      "pemeriksaan→inspeksi",
-      "dengan→secara"
+      "pada→terhadap",
+      "melaksanakan→menjalankan",
+      "komponen→bagian",
+      "kepada→pada",
+      "Setiap→Tiap",
+      "inspeksi→pengecekan"
     ]
   },
   "mesin-produksi.md": {
@@ -686,23 +681,25 @@
     ]
   },
   "riksa-uji-scissor-lift.md": {
-    "date": "2026-01-31",
+    "date": "2026-02-09",
     "changes": 19,
     "words": [
-      "dan→serta",
-      "daripada→dari",
-      "mengenai→tentang",
-      "maupun→atau",
-      "kriteria→acuan",
-      "untuk→dalam rangka",
-      "Inspeksi→Pengecekan",
-      "segenap→seluruh",
       "serta→dan",
+      "semua→segenap",
+      "pengecekan→pemeriksaan",
+      "secara→dengan cara",
+      "memverifikasi→memastikan",
+      "dengan→secara",
       "terhadap→kepada",
-      "mencakup→meliputi",
-      "standar→kriteria",
-      "memiliki→mempunyai",
-      "dibutuhkan→diperlukan"
+      "elemen→komponen",
+      "dan→serta",
+      "Pemeriksaan→Inspeksi",
+      "Pengecekan→Pemeriksaan",
+      "ambang→batas",
+      "dijalankan→dilakukan",
+      "segenap→seluruh",
+      "dilaksanakan→dijalankan",
+      "di→pada"
     ]
   }
 }
