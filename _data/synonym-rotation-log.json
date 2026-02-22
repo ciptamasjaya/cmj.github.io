@@ -1,14 +1,14 @@
 {
   "2024-08-26-jasa-riksa-uji-boiler.md": {
-    "date": "2026-02-21",
+    "date": "2026-02-22",
     "changes": 6,
     "words": [
-      "menjamin→memverifikasi",
-      "sesuai→berdasarkan",
-      "memverifikasi→memastikan",
-      "krusial→vital",
-      "dengan→secara",
-      "inspeksi→pengecekan"
+      "pengecekan→pemeriksaan",
+      "berdasarkan→sesuai",
+      "sungguh→sangat",
+      "daripada→dari",
+      "serta→dan",
+      "secara→dengan cara"
     ]
   },
   "2024-08-26-jasa-riksa-uji-forklift.md": {
@@ -113,19 +113,19 @@
     ]
   },
   "2025-05-22-pjk3-jakarta-selatan.md": {
-    "date": "2026-02-12",
+    "date": "2026-02-22",
     "changes": 14,
     "words": [
-      "semua→segenap",
-      "pada→terhadap",
-      "serta→dan",
-      "alat→perkakas",
-      "dan→serta",
-      "proses→tahapan",
-      "perkakas→peralatan",
-      "maupun→atau",
+      "terhadap→kepada",
       "segenap→seluruh",
-      "pemeriksaan→inspeksi"
+      "dengan→secara",
+      "serta→dan",
+      "tahapan→prosedur",
+      "dan→serta",
+      "Dengan→Secara",
+      "peralatan→alat",
+      "dari→daripada",
+      "seluruh→semua"
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
@@ -534,18 +534,19 @@
     ]
   },
   "mesin-produksi.md": {
-    "date": "2026-02-03",
+    "date": "2026-02-22",
     "changes": 10,
     "words": [
-      "inspeksi→pengecekan",
-      "serta→dan",
-      "tahapan→prosedur",
       "meliputi→termasuk",
-      "seluruh→semua",
-      "memastikan→menjamin",
-      "bekerja→beroperasi",
-      "mempunyai→memiliki",
-      "Prosedur→Proses"
+      "pengecekan→pemeriksaan",
+      "termasuk→mencakup",
+      "prosedur→proses",
+      "serta→dan",
+      "dari→daripada",
+      "semua→segenap",
+      "beroperasi→berfungsi",
+      "perkakas→peralatan",
+      "pemeriksaan→inspeksi"
     ]
   },
   "penggerak-mula.md": {
@@ -578,19 +579,18 @@
     ]
   },
   "sistem-transmisi.md": {
-    "date": "2026-02-06",
+    "date": "2026-02-22",
     "changes": 10,
     "words": [
+      "inspeksi→pengecekan",
+      "dan→serta",
       "serta→dan",
-      "mencakup→meliputi",
-      "digunakan→dipakai",
-      "bagian→elemen",
-      "memverifikasi→memastikan",
-      "dari→daripada",
-      "komponen→bagian",
-      "mempunyai→memiliki",
-      "meliputi→termasuk",
-      "Prosedur→Proses"
+      "sesuai→berdasarkan",
+      "seluruh→semua",
+      "pada→terhadap",
+      "berdasarkan→sesuai",
+      "atau→maupun",
+      "termasuk→mencakup"
     ]
   },
   "tanur.md": {
