@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Angkat Angkut
-description: Jasa riksa uji serta inspeksi K3 pesawat angkat angkut profesional meliputi
-  forklift, crane, hoist, serta conveyor berdasarkan acuan Kementerian Ketenagakerjaan
-  RI. Melayani segenap Indonesia dengan cara sertifikat resmi.
+description: Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional meliputi
+  forklift, crane, hoist, dan conveyor sesuai acuan Kementerian Ketenagakerjaan RI.
+  Melayani segenap Indonesia dengan cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/"
 category: Riksa Uji Pesawat Angkat Angkut
 is_category_page: true
@@ -20,18 +20,17 @@ keywords: riksa uji pesawat angkat angkut, inspeksi forklift, inspeksi crane, in
 intro:
   h1: Riksa Uji Pesawat Angkat Angkut - Inspeksi K3 Profesional
   para_1: Apa yang dimaksud secara cara riksa uji pesawat angkat angkut? Riksa uji
-    pesawat angkat angkut adalah pemeriksaan dan tes keselamatan berkala kepada seluruh
-    jenis perkakas angkat seperti forklift, crane, hoist, conveyor, dan lift barang
-    yang diatur dalam Peraturan Menteri Ketenagakerjaan. Inspeksi ini wajib dilakukan
-    dalam rangka menjamin perkakas berfungsi secara cara aman dan berdasarkan standar
-    K3 yang berlaku terhadap Indonesia.
-  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa uji pesawat angkat angkut yang komprehensif secara tim
-    inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani
-    bermacam-macam industri meliputi manufaktur, logistik, konstruksi, dan pertambangan
-    dalam rangka memastikan keselamatan operasional dan compliance terhadap regulasi
-    pemerintah.
+    pesawat angkat angkut adalah pemeriksaan serta tes keselamatan berkala kepada
+    seluruh jenis peralatan angkat seperti forklift, crane, hoist, conveyor, serta
+    lift barang yang diatur dalam Peraturan Menteri Ketenagakerjaan. Inspeksi ini
+    wajib dilakukan dalam rangka menjamin peralatan berfungsi secara cara aman serta
+    berdasarkan standar K3 yang berlaku terhadap Indonesia.
+  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
+    Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
+    layanan riksa uji pesawat angkat angkut yang komprehensif secara tim inspector
+    bersertifikat serta peralatan testing yang terkalibrasi. Kami melayani bermacam-macam
+    industri meliputi manufaktur, logistik, konstruksi, serta pertambangan dalam rangka
+    memastikan keselamatan operasional serta compliance terhadap regulasi pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Angkat Angkut
   para: 'Layanan riksa uji pesawat angkat angkut terbagi menjadi dua kategori utama
@@ -53,9 +52,9 @@ jenis_layanan:
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Angkut Penting?
   para: Riksa uji pesawat angkat angkut bukan hanya kewajiban regulasi, akan akan
-    tetapi investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+    akan tetapi investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
     Kegagalan perkakas angkat dapat menyebabkan kecelakaan fatal, kerusakan material,
-    dan kerugian finansial besar. Inspeksi berkala memverifikasi segenap bagian kritis
+    dan kerugian finansial besar. Inspeksi berkala memverifikasi seluruh bagian kritis
     seperti sistem hidrolik, rem, struktur penahan beban, dan sistem kontrol beroperasi
     optimal sesuai spesifikasi pabrikan dan standar keselamatan.
 proses_riksa_uji:
@@ -65,7 +64,7 @@ proses_riksa_uji:
     lengkap dan terkalibrasi. Setiap inspeksi didokumentasikan detail dalam laporan
     komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku secara
     legal. Kami melayani seluruh Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2026-02-03T04:42:01+0000'
+lastmod: '2026-02-25T04:47:48+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

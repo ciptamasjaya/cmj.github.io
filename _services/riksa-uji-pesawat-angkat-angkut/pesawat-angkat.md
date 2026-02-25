@@ -1,7 +1,7 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Angkat
-description: Jasa riksa uji dan pengecekan K3 pesawat angkat profesional mencakup
+description: Jasa riksa uji dan pemeriksaan K3 pesawat angkat profesional meliputi
   crane, hoist, gondola, manlift, scissor lift, dan alat pengangkat vertikal lainnya.
   Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/"
@@ -20,14 +20,14 @@ keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gon
   inspeksi manlift, scissor lift, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Angkat - Riksa Uji Peralatan Pengangkat Beban Vertikal
-  para_1: Pesawat angkat adalah peralatan yang dimanfaatkan dalam rangka mengangkat
-    serta menurunkan beban secara vertikal. Kategori ini meliputi bermacam-macam jenis
-    crane, hoist, gondola, manlift, scissor lift, serta peralatan pengangkat lainnya
-    yang wajib menjalani riksa pengujian berkala berdasarkan Peraturan Menteri Ketenagakerjaan
+  para_1: Pesawat angkat adalah peralatan yang digunakan dalam rangka mengangkat serta
+    menurunkan beban secara vertikal. Kategori ini meliputi bermacam-macam jenis crane,
+    hoist, gondola, manlift, scissor lift, serta peralatan pengangkat lainnya yang
+    wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
     Nomor 8 Tahun 2020.
-  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
+  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
-    uji pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap melakukan
+    uji pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
     pengecekan on-site pada semua Indonesia secara cara perkakas testing terkalibrasi
     dalam rangka memastikan keselamatan operasional perkakas Anda.
 layanan_pesawat_angkat:
@@ -103,10 +103,10 @@ layanan_pesawat_angkat:
     icon: bi-chevron-expand
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Penting?
-  para: Pesawat angkat menangani beban berat pada ketinggian sehingga memiliki risiko
+  para: Pesawat angkat menangani beban berat pada ketinggian sehingga mempunyai risiko
     kecelakaan yang sungguh tinggi. Kegagalan alat dapat menyebabkan beban jatuh,
     struktur runtuh, atau operator terjatuh. Riksa uji berkala menjamin semua elemen
-    kritis seperti wire rope, brake system, limit switch, dan struktur penahan beban
+    kritis seperti wire rope, brake system, ambang switch, dan struktur penahan beban
     beroperasi optimal. Inspeksi ini bukan hanya kewajiban legal berdasarkan Permenaker
     No. 8 Tahun 2020, akan tetapi investasi keselamatan yang melindungi nyawa pekerja
     dan aset perusahaan.
@@ -114,10 +114,10 @@ proses:
   h2: Proses Riksa Uji Pesawat Angkat
   para: Tim inspector kami datang ke lokasi Anda dengan cara peralatan testing portable
     yang terkalibrasi. Proses inspeksi mencakup inspeksi dokumen, inspeksi visual
-    struktur serta bagian, tes fungsi operasional, serta load test berdasarkan kapasitas.
-    Tiap inspeksi didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
+    struktur dan elemen, tes fungsi operasional, dan load test berdasarkan kapasitas.
+    Tiap inspeksi didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-02-12T04:52:16+0000'
+lastmod: '2026-02-25T04:47:48+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
