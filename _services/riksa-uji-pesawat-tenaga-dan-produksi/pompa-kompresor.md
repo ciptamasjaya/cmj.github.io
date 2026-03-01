@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Pompa dan Kompresor
-description: Jasa riksa uji serta inspeksi K3 pompa serta kompresor profesional mencakup
-  kompresor udara, pompa sentrifugal, pompa submersible, serta industrial blower.
-  Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji dan pengecekan K3 pompa dan kompresor profesional mencakup
+  kompresor udara, pompa sentrifugal, pompa submersible, dan industrial blower. Sertifikat
+  resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/pompa-kompresor/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Pompa dan Kompresor
@@ -20,16 +20,16 @@ keywords: riksa uji pompa, riksa uji kompresor, inspeksi kompresor udara, inspek
   pompa sentrifugal, inspeksi blower, PJK3, sertifikasi K3
 intro:
   h1: Pompa dan Kompresor - Riksa Uji Peralatan Fluida Industri
-  para_1: Pompa dan kompresor adalah perkakas yang dipakai dalam rangka memindahkan
+  para_1: Pompa dan kompresor adalah perkakas yang dimanfaatkan dalam rangka memindahkan
     dan memampatkan fluida (cairan dan gas) dalam prosedur industri. Kategori ini
-    mencakup kompresor udara dan gas, pompa sentrifugal dan submersible, dan industrial
+    meliputi kompresor udara dan gas, pompa sentrifugal dan submersible, dan industrial
     blower yang wajib menjalani riksa uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan
     Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
     pompa dan kompresor yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    inspeksi on-site pada semua Indonesia dengan cara alat testing terkalibrasi dalam
-    rangka memastikan keselamatan operasional alat Anda.
+    inspeksi on-site terhadap semua Indonesia secara cara alat testing terkalibrasi
+    dalam rangka memastikan keselamatan operasional alat Anda.
 layanan_pompa_kompresor:
   h2: Layanan Riksa Uji Pompa dan Kompresor
   para: Kami melayani riksa uji untuk berbagai jenis pompa dan kompresor sesuai kebutuhan
@@ -58,17 +58,17 @@ mengapa_penting:
     tinggi yang mempunyai risiko kegagalan mekanis. Kebocoran, getaran berlebih, maupun
     overheating dapat menyebabkan kerusakan perkakas serta kecelakaan kerja. Riksa
     uji berkala memastikan semua bagian kritis seperti bearing, seal, impeller, serta
-    safety valve berfungsi optimal. Pemeriksaan ini bukan hanya kewajiban legal sesuai
-    Permenaker No. 38 Tahun 2016, akan tetapi investasi keselamatan yang melindungi
+    safety valve berfungsi optimal. Pemeriksaan ini bukan hanya kewajiban legal berdasarkan
+    Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan yang melindungi
     nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pompa dan Kompresor
-  para: Tim inspector kami datang ke lokasi Anda secara cara alat testing seperti
-    vibration analyzer, pressure gauge, flow meter, dan thermal camera. Proses inspeksi
-    meliputi inspeksi dokumen, inspeksi visual, pengujian fungsi operasional, dan
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara alat testing seperti
+    vibration analyzer, pressure gauge, flow meter, serta thermal camera. Proses inspeksi
+    meliputi inspeksi dokumen, inspeksi visual, pengujian fungsi operasional, serta
     pengukuran parameter kinerja. Tiap inspeksi didokumentasikan dalam laporan komprehensif
-    dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-02-28T04:12:14+0000'
+    serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+lastmod: '2026-03-01T04:48:49+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
