@@ -263,21 +263,21 @@
     ]
   },
   "pesawat-uap.md": {
-    "date": "2026-02-16",
+    "date": "2026-03-05",
     "changes": 14,
     "words": [
-      "dari→daripada",
-      "pengecekan→pemeriksaan",
-      "serta→dan",
-      "meliputi→termasuk",
-      "pada→terhadap",
-      "peralatan→alat",
-      "dan→serta",
-      "mempunyai→memiliki",
-      "alat→perkakas",
-      "acuan→standar",
       "pemeriksaan→inspeksi",
-      "dengan→secara"
+      "meliputi→termasuk",
+      "dipakai→dimanfaatkan",
+      "sesuai→berdasarkan",
+      "terhadap→kepada",
+      "melakukan→melaksanakan",
+      "memiliki→mempunyai",
+      "memastikan→menjamin",
+      "perkakas→peralatan",
+      "inspeksi→pengecekan",
+      "dan→serta",
+      "Pengecekan→Pemeriksaan"
     ]
   },
   "tangki-timbun.md": {
@@ -368,12 +368,13 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2026-02-25",
+    "date": "2026-03-05",
     "changes": 6,
     "words": [
-      "termasuk→mencakup",
-      "dan→serta",
-      "perihal→mengenai"
+      "mencakup→meliputi",
+      "serta→dan",
+      "mengenai→tentang",
+      "pengecekan→pemeriksaan"
     ]
   },
   "riksa-uji-chain-block.md": {
@@ -521,17 +522,17 @@
     ]
   },
   "riksa-uji-pesawat-tenaga-dan-produksi.md": {
-    "date": "2026-02-16",
+    "date": "2026-03-05",
     "changes": 8,
     "words": [
-      "berdasarkan→sesuai",
-      "standar→kriteria",
-      "dilaksanakan→dijalankan",
-      "peralatan→alat",
-      "untuk→dalam rangka",
-      "daripada→dari",
-      "dan→serta",
-      "memastikan→menjamin"
+      "sesuai→berdasarkan",
+      "kriteria→acuan",
+      "secara→dengan cara",
+      "kepada→pada",
+      "menjamin→memverifikasi",
+      "serta→dan",
+      "tetapi→akan tetapi",
+      "bekerja→beroperasi"
     ]
   },
   "mesin-perkakas.md": {
