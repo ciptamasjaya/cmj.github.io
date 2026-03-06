@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Mesin Produksi
-description: Jasa riksa uji dan pemeriksaan K3 mesin produksi profesional termasuk
-  mesin press, mesin potong, mesin las, mesin CNC, crusher, mesin casting, dan mesin
-  forging. Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji dan inspeksi K3 mesin produksi profesional mencakup mesin
+  press, mesin potong, mesin las, mesin CNC, crusher, mesin casting, dan mesin forging.
+  Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Mesin Produksi
@@ -20,16 +20,16 @@ keywords: riksa uji mesin produksi, inspeksi mesin press, inspeksi mesin potong,
   mesin las, inspeksi mesin CNC, inspeksi crusher, PJK3, sertifikasi K3
 intro:
   h1: Mesin Produksi - Riksa Uji Peralatan Manufaktur Industri
-  para_1: Mesin produksi adalah alat yang dimanfaatkan dalam proses manufaktur dalam
+  para_1: Mesin produksi adalah alat yang digunakan dalam proses manufaktur dalam
     rangka membentuk, memotong, menyambung, serta mengolah material menjadi produk
     jadi. Kategori ini mencakup mesin press, mesin potong, mesin las, mesin CNC, crusher,
-    mesin casting, serta mesin forging yang wajib menjalani riksa uji berkala sesuai
+    mesin casting, serta mesin forging yang wajib menjalani riksa uji berkala berdasarkan
     Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     pengujian mesin produksi yang komprehensif. Tim inspector bersertifikat kami siap
-    menjalankan pengecekan on-site pada semua Indonesia dengan cara peralatan testing
-    terkalibrasi dalam rangka menjamin keselamatan operasional peralatan Anda.
+    menjalankan pemeriksaan on-site terhadap semua Indonesia dengan cara peralatan
+    testing terkalibrasi dalam rangka menjamin keselamatan operasional peralatan Anda.
 layanan_mesin_produksi:
   h2: Layanan Riksa Uji Mesin Produksi
   para: Kami melayani riksa uji untuk berbagai jenis mesin produksi sesuai kebutuhan
@@ -74,7 +74,7 @@ layanan_mesin_produksi:
 mengapa_penting:
   h2: Mengapa Riksa Uji Mesin Produksi Penting?
   para: Mesin produksi berfungsi dengan gaya besar, suhu tinggi, maupun material berbahaya
-    yang memiliki risiko kecelakaan sungguh tinggi. Kegagalan peralatan dapat menyebabkan
+    yang mempunyai risiko kecelakaan sungguh tinggi. Kegagalan alat dapat menyebabkan
     cedera fatal, kebakaran, maupun ledakan. Riksa uji berkala menjamin segenap bagian
     kritis seperti sistem hidrolik, perangkat keselamatan, emergency stop, serta interlock
     berfungsi optimal. Pengecekan ini bukan hanya kewajiban legal berdasarkan Permenaker
@@ -82,12 +82,13 @@ mengapa_penting:
     serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Mesin Produksi
-  para: Tim inspector kami datang ke lokasi Anda secara cara peralatan testing seperti
-    pressure gauge, thermal camera, serta safety device tester. Proses inspeksi termasuk
-    inspeksi dokumen, inspeksi visual, pengujian fungsi operasional, serta verifikasi
-    perangkat keselamatan. Masing-masing inspeksi didokumentasikan dalam laporan komprehensif
-    serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-02-22T04:44:29+0000'
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara peralatan testing
+    seperti pressure gauge, thermal camera, dan safety device tester. Proses inspeksi
+    termasuk inspeksi dokumen, inspeksi visual, pengujian fungsi operasional, dan
+    verifikasi perangkat keselamatan. Masing-masing inspeksi didokumentasikan dalam
+    laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku
+    1 tahun.
+lastmod: '2026-03-06T04:26:57+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
