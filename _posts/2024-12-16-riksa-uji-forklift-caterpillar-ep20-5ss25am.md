@@ -3,8 +3,8 @@ layout: node/node--inspection-report
 title: Riksa Uji Forklift Caterpillar EP20 / 5SS25AM
 date: 2024-12-16 22:06:35.000000000 +07:00
 description: Laporan outcome riksa uji forklift elektrik Caterpillar EP20 / 5SS25AM
-  nomor seri E2B00501 mencakup pemeriksaan visual, pengujian operasional, teknis,
-  NDT, serta uji beban.
+  nomor seri E2B00501 mencakup inspeksi visual, pengujian operasional, teknis, NDT,
+  dan uji beban.
 header_bg: "#e67e22"
 report_number: CMJ/RU/2024/1216-001
 inspection_date: 2024-12-16
@@ -59,8 +59,8 @@ video:
   duration: ''
 paragraphs:
 - <strong><a href="/2024/08/26/jasa-riksa-uji-forklift/">Riksa Uji Forklift</a></strong>
-  adalah tahapan pemeriksaan dan pengujian menyeluruh kepada kondisi dan kinerja forklift
-  guna memverifikasi bahwa alat tersebut bekerja secara aman dan sesuai secara kriteria
+  adalah tahapan pemeriksaan dan pengujian menyeluruh kepada keadaan dan kinerja forklift
+  untuk memverifikasi bahwa alat tersebut bekerja secara aman dan sesuai secara kriteria
   keselamatan kerja. Inspeksi ini termasuk evaluasi elemen mekanik seperti sistem
   hidrolik, rem, dan roda; struktur rangka; serta sistem kelistrikan dan penggerak.
   Pada samping itu, dilaksanakan pula uji beban untuk memverifikasi forklift mampu
@@ -68,29 +68,29 @@ paragraphs:
   Riksa uji ini bertujuan untuk mencegah kecelakaan kerja, mendeteksi potensi kerusakan
   sejak dini, dan memverifikasi kepatuhan kepada peraturan keselamatan yang berlaku
   pada tempat kerja.
-- Riksa uji forklift merupakan bagian dari <strong><a href="/2024/08/21/riksa-uji-k3-pesawat-angkat-serta-angkut/">riksa
-  uji pesawat angkat serta angkut</a></strong>, sebagaimana diatur dalam regulasi
-  keselamatan kerja yang berlaku. Forklift dikategorikan sebagai perkakas angkat-angkut
-  sebab kemampuannya dalam mengangkat, memindahkan, serta menempatkan beban secara
-  cara mekanis. Oleh sebab itu, inspeksi pada forklift mengikuti acuan teknis yang
-  sama seperti pesawat angkat-angkut lainnya, mencakup aspek struktur, mekanisme penggerak,
-  serta perangkat pengaman.
+- Riksa uji forklift merupakan bagian dari <strong><a href="/2024/08/21/riksa-uji-k3-pesawat-angkat-dan-angkut/">riksa
+  uji pesawat angkat dan angkut</a></strong>, sebagaimana diatur dalam regulasi keselamatan
+  kerja yang berlaku. Forklift dikategorikan sebagai perkakas angkat-angkut sebab
+  kemampuannya dalam mengangkat, memindahkan, dan menempatkan beban secara cara mekanis.
+  Oleh sebab itu, inspeksi terhadap forklift mengikuti acuan teknis yang sama seperti
+  pesawat angkat-angkut lainnya, mencakup aspek struktur, mekanisme penggerak, dan
+  perangkat pengaman.
 - Pada forklift elektrik seperti <strong>Caterpillar EP20 / 5SS25AM</strong> secara
-  nomor seri <strong>E2B00501</strong>, pengecekan lebih fokus pada sistem kelistrikan
-  mencakup baterai, kabel accu, situasi pengisian daya, dan sistem kontrol elektrik.
+  nomor seri <strong>E2B00501</strong>, pengecekan lebih fokus terhadap sistem kelistrikan
+  meliputi baterai, kabel accu, situasi pengisian daya, dan sistem kontrol elektrik.
   Forklift elektrik tidak mempunyai bagian mesin pembakaran internal seperti fuel
   pump, tangki solar, maupun turbo charger, hingga pengecekan disesuaikan secara karakteristik
   perkakas.
 - Tahapan riksa uji ini dilakukan oleh <strong><a href="/about/pjk3/">PJK3</a></strong>
-  yang terdaftar di Kementerian Ketenagakerjaan, memverifikasi tiap tahap pengecekan
-  dilakukan sesuai secara regulasi keselamatan kerja yang berlaku. Pengujian termasuk
-  evaluasi kinerja mekanik, pengecekan sistem hidrolik serta kelistrikan, serta pengecekan
-  bagian kritis seperti rem, roda, serta perangkat pengaman lainnya.
+  yang terdaftar di Kementerian Ketenagakerjaan, memastikan tiap tahap pengecekan
+  dilakukan berdasarkan secara regulasi keselamatan kerja yang berlaku. Pengujian
+  termasuk evaluasi kinerja mekanik, pengecekan sistem hidrolik serta kelistrikan,
+  serta pengecekan bagian kritis seperti rem, roda, serta perangkat pengaman lainnya.
 section_glossary:
   title: Istilah dan Definisi
-  intro: Sebelum membahas lebih lanjut mengenai Riksa Uji Forklift Caterpillar EP20
+  intro: Sebelum membahas lebih lanjut tentang Riksa Uji Forklift Caterpillar EP20
     / 5SS25AM nomor seri E2B00501, penting dalam rangka memahami beberapa istilah
-    yang sering digunakan dalam konteks keselamatan kerja dan tahapan inspeksi ini.
+    yang sering digunakan dalam konteks keselamatan kerja serta tahapan inspeksi ini.
   terms:
   - term: PJK3
     definition: <strong><a href="/about/pjk3/">PJK3 adalah</a></strong> singkatan
@@ -98,19 +98,19 @@ section_glossary:
       perusahaan yang berwenang dalam rangka menyediakan layanan tes, inspeksi, pelatihan,
       dan konsultasi terkait keselamatan dan kesehatan kerja (K3). Perusahaan ini,
       seperti <strong>PT. Cipta Mas Jaya</strong>, dilisensikan oleh pemerintah dalam
-      rangka melakukan riksa uji terhadap alat teknis, termasuk forklift, dan memverifikasi
+      rangka melaksanakan riksa uji terhadap alat teknis, termasuk forklift, dan memverifikasi
       alat tersebut memenuhi kriteria keselamatan yang berlaku.
   - term: Riksa Uji
     definition: <strong><a href="/about/riksa-uji/">Riksa Uji</a></strong> adalah
       prosedur inspeksi teknis secara menyeluruh kepada peralatan industri yang melibatkan
       pengujian operasional, teknis, dan visual untuk memastikan peralatan tersebut
-      dalam kondisi baik dan aman untuk dipakai. Tahapan ini penting untuk mencegah
+      dalam kondisi baik dan aman untuk dimanfaatkan. Tahapan ini penting untuk mencegah
       kegagalan fungsi dan menjaga efisiensi perkakas dalam mendukung operasional
       sehari-hari.
   - term: PJK3 Riksa Uji
     definition: <strong><a href="/about/pjk3-riksa-uji/">PJK3 Riksa Uji</a></strong>
       adalah perusahaan yang tersertifikasi oleh pemerintah dalam rangka melakukan
-      inspeksi dan pengujian teknis kepada berbagai jenis alat industri, seperti <strong>forklift</strong>.
+      inspeksi dan pengujian teknis kepada beragam jenis alat industri, seperti <strong>forklift</strong>.
       <strong>PT. Cipta Mas Jaya</strong> sebagai <strong>PJK3 Riksa Uji</strong>
       mempunyai kewenangan dalam rangka melakukan pengujian kepada alat-alat seperti
       <strong>Forklift Caterpillar EP20 / 5SS25AM nomor seri E2B00501</strong>.
@@ -119,24 +119,24 @@ section_glossary:
       sebagai <strong><a href="/">PJK3 Riksa Uji</a></strong>, yang memiliki otoritas
       dalam rangka melakukan inspeksi dan pengujian teknis pada beragam alat industri,
       termasuk <strong>forklift</strong>. Secara sertifikasi resmi dari pemerintah,
-      PT. Cipta Mas Jaya bertanggung jawab memastikan bahwa tiap alat yang diuji mencukupi
-      segenap persyaratan keselamatan dan kesehatan kerja (K3).
+      PT. Cipta Mas Jaya bertanggung jawab memastikan bahwa masing-masing alat yang
+      diuji mencukupi segenap persyaratan keselamatan dan kesehatan kerja (K3).
   - term: Forklift Elektrik
     definition: "<strong>Forklift Elektrik</strong> adalah jenis forklift yang memakai
       motor listrik dan baterai sebagai sumber tenaga penggerak, berbeda dengan cara
       forklift konvensional yang memakai mesin pembakaran internal (diesel atau bensin).
-      Forklift elektrik lebih ramah lingkungan dan cocok digunakan di dalam ruangan
+      Forklift elektrik lebih ramah lingkungan dan cocok digunakan pada dalam ruangan
       karena tidak menghasilkan emisi gas buang."
   - term: SLO (Surat Izin Layak Operasi)
     definition: "<strong>SLO</strong> adalah dokumen resmi yang dikeluarkan setelah
       forklift dinyatakan layak operasi sesuai hasil riksa uji. SLO menjadi bukti
-      bahwa forklift telah mencukupi standar keselamatan dan dapat digunakan kepada
+      bahwa forklift telah mencukupi standar keselamatan dan dapat digunakan pada
       lingkungan kerja industri."
   - term: NDT (Non-Destructive Testing)
     definition: "<strong>NDT</strong> atau Pengujian Tidak Merusak adalah metode inspeksi
       dalam rangka mendeteksi cacat atau kerusakan pada bagian tanpa merusak struktur
       bagian tersebut. Pada forklift, NDT lazimnya dilaksanakan pada komponen fork/garpu
-      dalam rangka mendeteksi retakan atau cacat struktural yang tidak terlihat dengan
+      dalam rangka mendeteksi retakan atau cacat struktural yang tidak terlihat secara
       cara kasat mata."
 data_umum:
   perusahaan:
@@ -195,10 +195,10 @@ section_intro:
   - Memberikan rekomendasi pemeliharaan dan sertifikasi laik operasi
 section_visual:
   title: Pemeriksaan Visual Forklift Caterpillar EP20 Seri E2B00501
-  intro: Pengecekan visual dilakukan pada bermacam-macam elemen forklift dalam rangka
-    mendeteksi kerusakan atau keausan yang terlihat secara cara langsung. Pada forklift
-    elektrik, pemeriksaan lebih fokus pada sistem kelistrikan, baterai, dan elemen
-    hidrolik.
+  intro: Pengecekan visual dilaksanakan pada bermacam-macam elemen forklift dalam
+    rangka mendeteksi kerusakan atau keausan yang terlihat dengan cara cara langsung.
+    Pada forklift elektrik, pemeriksaan lebih fokus pada sistem kelistrikan, baterai,
+    dan elemen hidrolik.
   items:
   - component: Struktur Bagian Bawah (Ban, Roda, Chasis)
     result: Kondisi ban depan dan belakang baik, kekencangan mur/baut roda normal,
@@ -231,13 +231,13 @@ section_visual:
     condition: baik
     notes: Kaca spion kiri dan kanan tersedia
   summary: Secara cara umum kondisi visual forklift elektrik Caterpillar EP20 / 5SS25AM
-    dalam kondisi baik. Semua komponen pokok bekerja normal tanpa terdapat kerusakan
+    dalam kondisi baik. Segenap komponen pokok bekerja normal tanpa ada kerusakan
     atau keausan yang signifikan.
 section_operational:
   title: Pengujian Operasional Forklift Caterpillar EP20 Seri E2B00501
-  intro: Pengujian operasional dijalankan untuk memastikan bahwa forklift bekerja
-    berdasarkan dengan cara spesifikasi teknis serta mampu bekerja dengan cara aman
-    kepada beragam situasi beban.
+  intro: Pengujian operasional dijalankan dalam rangka memastikan bahwa forklift bekerja
+    sesuai dengan cara spesifikasi teknis serta mampu bekerja dengan cara aman kepada
+    beragam situasi beban.
   procedure:
   - Mengoperasikan forklift pada kondisi tanpa beban untuk evaluasi fungsi dasar
   - Melakukan pengujian pada beban 50%, 75%, dan 100% dari kapasitas angkat
@@ -274,13 +274,14 @@ section_operational:
     standard: Normal
     status: lulus
     notes: Pengangkatan dan penurunan beban lancar
-  summary: Forklift mampu beroperasi secara cara baik kepada beragam tingkat beban
-    (50%, 75%, 100%). Segenap sistem kontrol dan pengaman beroperasi secara cara baik
+  summary: Forklift mampu beroperasi secara cara bagus kepada beragam tingkat beban
+    (50%, 75%, 100%). Seluruh sistem kontrol dan pengaman beroperasi secara cara bagus
     tanpa kendala.
 section_technical:
   title: Pengujian Teknis Forklift Caterpillar EP20 Seri E2B00501
-  intro: Tes teknis dilakukan dalam rangka mengevaluasi keadaan struktural serta mekanis
-    daripada forklift, mencakup sistem hidrolik, kelistrikan, serta elemen pengangkat.
+  intro: Tes teknis dilaksanakan dalam rangka mengevaluasi keadaan struktural serta
+    mekanis daripada forklift, meliputi sistem hidrolik, kelistrikan, serta elemen
+    pengangkat.
   procedure:
   - Pemeriksaan kondisi sistem hidrolik angkat dan ungkit
   - Evaluasi sistem kelistrikan dan kontrol motor
@@ -317,12 +318,12 @@ section_technical:
     standard: Normal
     status: lulus
     notes: Tidak ada kebocoran atau suara abnormal
-  summary: Seluruh komponen teknis memenuhi acuan yang diperlukan. Sistem hidrolik
-    dan kelistrikan bekerja dengan cara bagus. Tidak dijumpai masalah teknis signifikan.
+  summary: Seluruh komponen teknis memenuhi standar yang diperlukan. Sistem hidrolik
+    serta kelistrikan bekerja dengan cara bagus. Tidak dijumpai masalah teknis signifikan.
 section_ndt:
   title: Pengujian Non-Destruktif (NDT) Forklift Caterpillar EP20 Seri E2B00501
-  intro: Uji non-destruktif dilaksanakan dalam rangka memeriksa keadaan komponen kritis
-    forklift, terutama kepada komponen fork (garpu) yang langsung terlibat dalam proses
+  intro: Uji non-destruktif dijalankan dalam rangka memeriksa keadaan komponen kritis
+    forklift, terutama pada komponen fork (garpu) yang langsung terlibat dalam proses
     pengangkatan beban.
   method: Pemeriksaan menggunakan metode visual inspection dan dye penetrant test
     pada fork kanan dan kiri untuk mendeteksi retakan, deformasi, atau cacat struktural
@@ -363,20 +364,20 @@ section_ndt:
     result: Tidak ada keausan
     standard: Kondisi baik
     status: lulus
-  summary: Segenap outcome pengecekan NDT menunjukkan tidak ada cacat maupun kerusakan
+  summary: Seluruh outcome pengecekan NDT memperlihatkan tidak ada cacat maupun kerusakan
     kepada bagian kritis. Fork kanan serta kiri dalam keadaan bagus serta siap dipakai
     dalam rangka mengangkat beban berdasarkan kapasitas.
 section_hydrotest:
   title: Pengujian Beban Statis Forklift Caterpillar EP20 Seri E2B00501
-  intro: Pengujian beban statis dijalankan dalam rangka memverifikasi kemampuan forklift
-    dalam menahan beban terhadap posisi diam serta memverifikasi tidak terdapat penurunan
+  intro: Pengujian beban statis dilakukan dalam rangka memverifikasi kemampuan forklift
+    dalam menahan beban terhadap posisi diam serta memverifikasi tidak ada penurunan
     maupun kebocoran terhadap sistem hidrolik.
   working_pressure: "-"
   test_pressure: "-"
   duration: 3 Menit
-  method: Pengujian dilakukan dengan cara cara mengangkat beban uji 574 kg kepada
+  method: Pengujian dilaksanakan dengan cara cara mengangkat beban uji 574 kg kepada
     ketinggian maksimal, kemudian menahan posisi selama 10 menit sambil memantau stabilitas
-    tinggi angkat dan kondisi sistem hidrolik.
+    tinggi angkat dan keadaan sistem hidrolik.
   steps:
   - name: Persiapan Beban Uji
     text: Siapkan beban uji seberat 574 kg dan pastikan beban terdistribusi merata
@@ -450,9 +451,9 @@ section_hydrotest:
       uji forklift untuk memastikan kelayakan dan keamanan operasional alat.
 section_safety_valve:
   title: Pengujian Beban Dinamis Forklift Caterpillar EP20 Seri E2B00501
-  intro: Pengujian beban dinamis dilaksanakan dalam rangka menjamin forklift mampu
-    bekerja dengan aman saat mengangkat serta memindahkan beban pada bermacam-macam
-    tingkat kapasitas.
+  intro: Pengujian beban dinamis dijalankan dalam rangka menjamin forklift mampu beroperasi
+    dengan aman saat mengangkat serta memindahkan beban pada bermacam-macam tingkat
+    kapasitas.
   total_units: 3
   steps:
   - name: Persiapan Beban 50%
@@ -524,10 +525,10 @@ section_safety_valve:
 section_analysis:
   title: Analisis Data dan Pembahasan Laporan Riksa Uji Forklift Caterpillar EP20
     Seri E2B00501
-  intro: Setelah melakukan berbagai tes terhadap <strong>Electric Forklift Caterpillar
+  intro: Setelah melakukan beragam tes terhadap <strong>Electric Forklift Caterpillar
     EP20 / 5SS25AM nomor seri E2B00501</strong>, tahap analisis dilakukan untuk mengevaluasi
     data yang terkumpul. Analisis ini bertujuan untuk memberikan wawasan lebih dalam
-    mengenai situasi forklift, performa operasional, serta identifikasi potensi masalah
+    mengenai kondisi forklift, performa operasional, serta identifikasi potensi masalah
     maupun area yang membutuhkan pemeliharaan lebih lanjut.
   analyses:
   - title: Analisis Pemeriksaan Tenaga Penggerak pada Mesin Mati
@@ -637,5 +638,5 @@ section_conclusion:
     di bidangnya, perusahaan ini dikenal memiliki tenaga ahli yang kompeten dan bersertifikasi.
   - Untuk informasi lebih lanjut mengenai layanan riksa uji forklift dan peralatan
     industri lainnya, silakan <a href="/contact/">hubungi kami</a>.
-lastmod: '2026-03-10T04:27:12+0000'
+lastmod: '2026-03-14T04:27:42+0000'
 ---
