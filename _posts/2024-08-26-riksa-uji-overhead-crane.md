@@ -3,7 +3,8 @@ layout: node/node--riksa-uji
 title: Riksa Uji Overhead Crane
 rating_id: riksa-uji-overhead-crane
 description: Riksa pengujian overhead crane adalah pengecekan dan pengujian keselamatan
-  crane jembatan dalam rangka menjamin operasional aman berdasarkan acuan K3 dan Permenaker.
+  crane jembatan dalam rangka memverifikasi operasional aman berdasarkan standar K3
+  dan Permenaker.
 keywords: riksa uji overhead crane, jasa riksa uji crane, inspeksi crane, crane jembatan,
   pesawat angkat, PJK3, sertifikasi K3, uji beban crane
 content_intro:
@@ -68,14 +69,14 @@ images:
     tahapan penting dalam riksa uji K3 pesawat angkat untuk memastikan kapasitas angkat
     aman
 related_service: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-overhead-crane/"
-lastmod: '2026-02-21T04:23:01+0000'
+lastmod: '2026-03-16T05:08:59+0000'
 section_hero:
   title: Butuh Layanan Riksa Uji Overhead Crane
   theme: orange
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    inspeksi dan uji overhead crane dengan cara profesional. Dapatkan sertifikat kelayakan
-    operasi dalam rangka crane jembatan Anda.
+    pengecekan serta uji overhead crane dengan cara profesional. Dapatkan sertifikat
+    kelayakan operasi dalam rangka crane jembatan Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
   - Jabodetabek
@@ -713,11 +714,11 @@ section_conclusion:
   title: Kesimpulan
   icon: bi-check2-square
   intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa uji overhead crane</a>
-    merupakan langkah vital untuk menjamin keselamatan dan efisiensi operasional dalam
-    penggunaan alat angkat ini. Tahapan riksa uji yang sistematis dan rutin, mulai
-    dari persiapan sampai dokumentasi temuan, amat penting untuk mengidentifikasi
+    merupakan langkah vital untuk menjamin keselamatan serta efisiensi operasional
+    dalam penggunaan alat angkat ini. Tahapan riksa uji yang sistematis serta rutin,
+    mulai dari persiapan sampai dokumentasi temuan, amat penting untuk mengidentifikasi
     potensi masalah sebelum menyebabkan kecelakaan. Dengan melaksanakan riksa uji
-    dengan cara berkala, perusahaan dapat:"
+    secara cara berkala, perusahaan dapat:"
   highlights:
   - key: Mencegah Kecelakaan Kerja
     value: Menjaga keselamatan operator crane dan pekerja di area bawah crane dari
