@@ -98,7 +98,7 @@ proses:
     visual internal serta eksternal, pengukuran ketebalan dinding, tes NDT pada sambungan
     las, serta hydrostatic test. Tiap pengecekan didokumentasikan dalam laporan komprehensif
     serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-_content_refreshed_at: '2026-03-19T04:49:26+0000'
+_content_refreshed_at: '2026-03-21T04:23:03+0000'
 lastmod: '2026-03-14T04:27:42+0000'
 ---
 <!-- ========================================================================== -->

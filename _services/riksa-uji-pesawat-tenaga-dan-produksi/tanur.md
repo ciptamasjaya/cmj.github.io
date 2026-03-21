@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Tanur
-description: Jasa riksa uji serta inspeksi K3 tanur profesional meliputi furnace,
-  oven industri, industrial chiller, serta cooling tower. Sertifikat resmi Kementerian
+description: Jasa riksa uji dan pengecekan K3 tanur profesional meliputi furnace,
+  oven industri, industrial chiller, dan cooling tower. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/tanur/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -20,15 +20,15 @@ keywords: riksa uji tanur, inspeksi furnace, inspeksi oven industri, inspeksi ch
   inspeksi cooling tower, PJK3, sertifikasi K3
 intro:
   h1: Tanur - Riksa Uji Peralatan Termal Industri
-  para_1: Tanur adalah perkakas yang dipakai dalam rangka tahapan pemanasan atau pendinginan
-    dalam industri manufaktur dan pengolahan. Kategori ini mencakup furnace, oven
-    industri, industrial chiller, dan cooling tower yang wajib menjalani riksa uji
-    berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+  para_1: Tanur adalah perkakas yang dipakai dalam rangka prosedur pemanasan atau
+    pendinginan dalam industri manufaktur dan pengolahan. Kategori ini mencakup furnace,
+    oven industri, industrial chiller, dan cooling tower yang wajib menjalani riksa
+    uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     pengujian tanur yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    pemeriksaan on-site pada segenap Indonesia secara alat testing terkalibrasi untuk
-    menjamin keselamatan operasional alat Anda.
+    pemeriksaan on-site pada seluruh Indonesia secara alat testing terkalibrasi untuk
+    memverifikasi keselamatan operasional alat Anda.
 layanan_tanur:
   h2: Layanan Riksa Uji Tanur
   para: Kami melayani riksa uji untuk berbagai jenis peralatan termal sesuai kebutuhan
@@ -47,22 +47,23 @@ layanan_tanur:
     icon: bi-snow
 mengapa_penting:
   h2: Mengapa Riksa Uji Tanur Penting?
-  para: Tanur dan alat termal bekerja terhadap suhu ekstrem (sungguh panas atau sungguh
-    dingin) yang mempunyai risiko kebakaran, ledakan, dan cedera akibat paparan suhu.
-    Kegagalan sistem kontrol atau kebocoran refrigerant dapat menyebabkan kecelakaan
-    fatal. Riksa uji berkala memastikan semua komponen kritis seperti burner, sistem
-    kontrol temperatur, safety valve, dan sensor bekerja optimal. Pengecekan ini bukan
-    hanya kewajiban legal berdasarkan Permenaker No. 38 Tahun 2016, akan akan akan
-    akan tetapi investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+  para: Tanur serta alat termal bekerja terhadap suhu ekstrem (sungguh panas atau
+    sungguh dingin) yang mempunyai risiko kebakaran, ledakan, serta cedera akibat
+    paparan suhu. Kegagalan sistem kontrol atau kebocoran refrigerant dapat menyebabkan
+    kecelakaan fatal. Riksa uji berkala memastikan semua bagian kritis seperti burner,
+    sistem kontrol temperatur, safety valve, serta sensor bekerja optimal. Pengecekan
+    ini bukan hanya kewajiban legal berdasarkan Permenaker No. 38 Tahun 2016, akan
+    akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja serta
+    aset perusahaan.
 proses:
   h2: Proses Riksa Uji Tanur
-  para: Tim inspector kami datang ke lokasi Anda secara cara alat testing seperti
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara alat testing seperti
     thermal imaging camera, thermocouple, combustion analyzer, dan refrigerant leak
-    detector. Prosedur pengecekan mencakup pengecekan dokumen, pengecekan visual,
+    detector. Prosedur pengecekan meliputi pengecekan dokumen, pengecekan visual,
     pengujian fungsi operasional, dan pengukuran parameter temperatur. Masing-masing
     pengecekan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-03-07T04:17:52+0000'
+lastmod: '2026-03-21T04:23:03+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
