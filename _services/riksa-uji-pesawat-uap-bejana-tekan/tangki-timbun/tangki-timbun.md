@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Tangki Timbun
-description: Jasa riksa uji dan inspeksi K3 tangki timbun profesional mencakup storage
-  tank, LPG tank, fuel tank, dan tangki penyimpanan bahan cair atau gas bertekanan.
+description: Jasa riksa uji serta inspeksi K3 tangki timbun profesional mencakup storage
+  tank, LPG tank, fuel tank, serta tangki penyimpanan bahan cair maupun gas bertekanan.
   Sertifikat resmi daripada Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/tangki-timbun/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
@@ -20,15 +20,15 @@ keywords: riksa uji tangki timbun, inspeksi storage tank, inspeksi LPG tank, ins
   fuel tank, tangki penyimpanan, PJK3, sertifikasi K3
 intro:
   h1: Tangki Timbun - Riksa Uji Tangki Penyimpanan Bertekanan
-  para_1: Tangki timbun adalah perkakas yang dimanfaatkan dalam rangka menyimpan bahan
-    cair maupun gas dalam jumlah besar, bagus kepada tekanan atmosfer maupun bertekanan.
+  para_1: Tangki timbun adalah peralatan yang dimanfaatkan dalam rangka menyimpan
+    bahan cair atau gas dalam jumlah besar, bagus kepada tekanan atmosfer atau bertekanan.
     Kategori ini mencakup storage tank, LPG tank, fuel tank, chemical tank, nitrogen
     tank, oxygen tank, dan tangki penyimpanan lainnya yang wajib menjalani riksa uji
     berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
-    uji tangki timbun yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
-    pemeriksaan on-site di segenap Indonesia secara cara cara peralatan testing terkalibrasi
+    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
+    tangki timbun yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
+    inspeksi on-site di segenap Indonesia secara cara cara peralatan testing terkalibrasi
     dalam rangka menjamin keselamatan operasional peralatan Anda.
 layanan_tangki_timbun:
   h2: Layanan Riksa Uji Tangki Timbun
@@ -45,23 +45,23 @@ mengapa_penting:
   h2: Mengapa Riksa Uji Tangki Timbun Penting?
   para: Tangki timbun menyimpan bahan berbahaya dalam volume besar yang dapat menimbulkan
     risiko kebakaran, ledakan, pencemaran lingkungan, dan bahaya kesehatan. Korosi
-    kepada dinding tangki, kebocoran kepada sambungan, dan kegagalan sistem keselamatan
+    pada dinding tangki, kebocoran pada sambungan, dan kegagalan sistem keselamatan
     dapat menyebabkan kecelakaan fatal. Riksa pengujian berkala menjamin integritas
     struktural tangki melalui pengukuran ketebalan, tes kebocoran, dan inspeksi sistem
     proteksi. Pengecekan ini bukan hanya kewajiban legal sesuai Permenaker No. 37
-    Tahun 2016, akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja,
-    masyarakat sekitar, dan lingkungan.
+    Tahun 2016, akan akan akan tetapi investasi keselamatan yang melindungi nyawa
+    pekerja, masyarakat sekitar, dan lingkungan.
 proses:
   h2: Proses Riksa Uji Tangki Timbun
-  para: Tim inspector kami datang ke lokasi Anda dengan cara cara perkakas testing
+  para: Tim inspector kami datang ke lokasi Anda secara cara cara peralatan testing
     seperti ultrasonic thickness gauge, magnetic flux leakage scanner, serta vacuum
     box testing kit. Proses pemeriksaan meliputi pemeriksaan dokumen serta nameplate,
     pemeriksaan visual eksternal serta internal (jika memungkinkan), pengukuran ketebalan
     shell serta floor, pengujian kebocoran, serta pemeriksaan foundation settlement.
     Masing-masing pemeriksaan didokumentasikan dalam laporan komprehensif serta dilengkapi
     sertifikat kelayakan operasional yang berlaku berdasarkan ketentuan.
-_content_refreshed_at: '2026-03-26T05:00:34+0000'
-lastmod: '2026-03-14T04:27:42+0000'
+_content_refreshed_at: '2026-03-28T04:48:03+0000'
+lastmod: '2026-03-28T04:48:03+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
