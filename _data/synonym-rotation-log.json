@@ -192,18 +192,17 @@
     ]
   },
   "pesawat-angkut.md": {
-    "date": "2026-03-09",
+    "date": "2026-03-29",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
-      "dan→serta",
-      "dimanfaatkan→digunakan",
+      "meliputi→termasuk",
+      "pengecekan→pemeriksaan",
+      "digunakan→dipakai",
+      "daripada→dari",
       "secara→dengan cara",
-      "menjalankan→melakukan",
-      "dari→daripada",
-      "pada→terhadap",
-      "situasi→kondisi",
-      "pengecekan→pemeriksaan"
+      "serta→dan",
+      "komponen→bagian",
+      "pemeriksaan→inspeksi"
     ]
   },
   "riksa-uji-forklift.md": {
@@ -357,14 +356,14 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2026-03-22",
+    "date": "2026-03-29",
     "changes": 6,
     "words": [
+      "serta→dan",
+      "termasuk→mencakup",
+      "perihal→mengenai",
       "dan→serta",
-      "meliputi→termasuk",
-      "tentang→perihal",
-      "mencakup→meliputi",
-      "pemeriksaan→inspeksi"
+      "meliputi→termasuk"
     ]
   },
   "riksa-uji-chain-block.md": {
@@ -573,19 +572,18 @@
     ]
   },
   "pompa-kompresor.md": {
-    "date": "2026-03-17",
+    "date": "2026-03-29",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
-      "pengecekan→pemeriksaan",
-      "prosedur→proses",
-      "dimanfaatkan→digunakan",
+      "dan→serta",
+      "meliputi→termasuk",
+      "berdasarkan→sesuai",
+      "terhadap→kepada",
+      "daripada→dari",
       "memastikan→menjamin",
-      "dari→daripada",
-      "semua→segenap",
-      "maupun→atau",
-      "alat→perkakas",
-      "inspeksi→pengecekan"
+      "segenap→seluruh",
+      "serta→dan",
+      "dengan→secara"
     ]
   },
   "sistem-transmisi.md": {
