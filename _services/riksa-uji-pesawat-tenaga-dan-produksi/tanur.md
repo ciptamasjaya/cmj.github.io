@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Tanur
-description: Jasa riksa uji serta pemeriksaan K3 tanur profesional meliputi furnace,
-  oven industri, industrial chiller, serta cooling tower. Sertifikat resmi Kementerian
-  Ketenagakerjaan RI.
+description: Jasa riksa uji dan inspeksi K3 tanur profesional meliputi furnace, oven
+  industri, industrial chiller, dan cooling tower. Sertifikat resmi Kementerian Ketenagakerjaan
+  RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/tanur/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Tanur
@@ -20,14 +20,14 @@ keywords: riksa uji tanur, inspeksi furnace, inspeksi oven industri, inspeksi ch
   inspeksi cooling tower, PJK3, sertifikasi K3
 intro:
   h1: Tanur - Riksa Uji Peralatan Termal Industri
-  para_1: Tanur adalah perkakas yang dipakai dalam rangka proses pemanasan atau pendinginan
-    dalam industri manufaktur dan pengolahan. Kategori ini mencakup furnace, oven
-    industri, industrial chiller, dan cooling tower yang wajib menjalani riksa uji
-    berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
-  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
+  para_1: Tanur adalah peralatan yang dimanfaatkan dalam rangka proses pemanasan atau
+    pendinginan dalam industri manufaktur dan pengolahan. Kategori ini mencakup furnace,
+    oven industri, industrial chiller, dan cooling tower yang wajib menjalani riksa
+    uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     pengujian tanur yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    pemeriksaan on-site pada seluruh Indonesia secara perkakas testing terkalibrasi
+    pemeriksaan on-site terhadap seluruh Indonesia secara perkakas testing terkalibrasi
     untuk memastikan keselamatan operasional perkakas Anda.
 layanan_tanur:
   h2: Layanan Riksa Uji Tanur
@@ -47,23 +47,23 @@ layanan_tanur:
     icon: bi-snow
 mengapa_penting:
   h2: Mengapa Riksa Uji Tanur Penting?
-  para: Tanur serta alat termal beroperasi terhadap suhu ekstrem (sungguh panas atau
-    sungguh dingin) yang mempunyai risiko kebakaran, ledakan, serta cedera akibat
+  para: Tanur serta perkakas termal beroperasi terhadap suhu ekstrem (sungguh panas
+    atau sungguh dingin) yang mempunyai risiko kebakaran, ledakan, serta cedera akibat
     paparan suhu. Kegagalan sistem kontrol atau kebocoran refrigerant dapat menyebabkan
     kecelakaan fatal. Riksa uji berkala menjamin semua bagian kritis seperti burner,
     sistem kontrol temperatur, safety valve, serta sensor beroperasi optimal. Pengecekan
     ini bukan hanya kewajiban legal berdasarkan Permenaker No. 38 Tahun 2016, akan
-    akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja serta
-    aset perusahaan.
+    akan akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja
+    serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Tanur
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara alat testing seperti
-    thermal imaging camera, thermocouple, combustion analyzer, serta refrigerant leak
-    detector. Prosedur pengecekan termasuk pengecekan dokumen, pengecekan visual,
-    pengujian fungsi operasional, serta pengukuran parameter temperatur. Masing-masing
-    pengecekan didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
-    kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-03-26T05:00:34+0000'
+    thermal imaging camera, thermocouple, combustion analyzer, dan refrigerant leak
+    detector. Proses pengecekan termasuk pengecekan dokumen, pengecekan visual, pengujian
+    fungsi operasional, dan pengukuran parameter temperatur. Masing-masing pengecekan
+    didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat kelayakan
+    operasional yang berlaku 1 tahun.
+lastmod: '2026-03-31T05:03:35+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
