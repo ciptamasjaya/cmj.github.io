@@ -2,9 +2,9 @@
 layout: node/node--riksa-uji
 title: Riksa Uji Overhead Crane
 rating_id: riksa-uji-overhead-crane
-description: Riksa pengujian overhead crane adalah pemeriksaan dan pengujian keselamatan
-  crane jembatan dalam rangka memastikan operasional aman berdasarkan standar K3 dan
-  Permenaker.
+description: Riksa pengujian overhead crane adalah pemeriksaan serta pengujian keselamatan
+  crane jembatan dalam rangka memastikan operasional aman berdasarkan kriteria K3
+  serta Permenaker.
 keywords: riksa uji overhead crane, jasa riksa uji crane, inspeksi crane, crane jembatan,
   pesawat angkat, PJK3, sertifikasi K3, uji beban crane
 content_intro:
@@ -69,13 +69,13 @@ images:
     tahapan penting dalam riksa uji K3 pesawat angkat untuk memastikan kapasitas angkat
     aman
 related_service: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-overhead-crane/"
-lastmod: '2026-03-26T05:00:34+0000'
+lastmod: '2026-04-01T05:17:08+0000'
 section_hero:
   title: Butuh Layanan Riksa Uji Overhead Crane
   theme: orange
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    pemeriksaan serta uji overhead crane secara cara profesional. Dapatkan sertifikat
+    pemeriksaan dan uji overhead crane dengan cara cara profesional. Dapatkan sertifikat
     kelayakan operasi dalam rangka crane jembatan Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
@@ -714,9 +714,9 @@ section_conclusion:
   title: Kesimpulan
   icon: bi-check2-square
   intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa uji overhead crane</a>
-    merupakan langkah vital untuk memverifikasi keselamatan serta efisiensi operasional
+    merupakan langkah vital untuk memastikan keselamatan serta efisiensi operasional
     dalam penggunaan perkakas angkat ini. Tahapan riksa uji yang sistematis serta
-    rutin, mulai dari persiapan sampai dokumentasi temuan, amat penting untuk mengidentifikasi
+    rutin, mulai dari persiapan sampai dokumentasi temuan, sungguh penting untuk mengidentifikasi
     potensi masalah sebelum menyebabkan kecelakaan. Dengan melaksanakan riksa uji
     secara cara berkala, perusahaan dapat:"
   highlights:

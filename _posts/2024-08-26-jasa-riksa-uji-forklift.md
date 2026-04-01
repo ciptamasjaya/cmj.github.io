@@ -6,8 +6,8 @@ description: Riksa uji forklift adalah proses inspeksi dan pengujian pada situas
   teknis dan operasional forklift meliputi inspeksi elemen mekanis, sistem hidraulik,
   rem, ban, dan sistem pengangkutan beban, Tujuannya adalah dalam rangka mengidentifikasi
   potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, memastikan
-  bahwa peralatan tersebut bekerja dengan cara baik dan aman dipakai dan memastikan
-  forklift memenuhi acuan keselamatan yang berlaku.
+  bahwa peralatan tersebut bekerja dengan cara baik dan aman dimanfaatkan dan memastikan
+  forklift mencukupi acuan keselamatan yang berlaku.
 keywords: riksa uji forklift, jasa riksa uji forklift, inspeksi forklift, pesawat
   angkat angkut, PJK3, sertifikasi K3, uji beban forklift, inspeksi K3
 content_intro:
@@ -100,8 +100,8 @@ section_hero:
   theme: orange
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    inspeksi serta tes forklift secara cara cara cara kriteria profesional. Dapatkan
-    sertifikat kelayakan operasi dalam rangka forklift Anda.
+    inspeksi dan tes forklift secara cara cara cara acuan profesional. Dapatkan sertifikat
+    kelayakan operasi dalam rangka forklift Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
   - Jabodetabek
@@ -833,8 +833,8 @@ section_conclusion:
   icon: bi-check2-square
   intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa pengujian forklift</a>
     merupakan langkah krusial dalam rangka memastikan keselamatan serta efisiensi
-    operasional dalam penggunaan peralatan berat ini. Tahapan riksa pengujian yang
-    sistematis serta rutin, mulai daripada persiapan sampai dokumentasi hasil, sangat
+    operasional dalam penggunaan peralatan berat ini. Prosedur riksa pengujian yang
+    sistematis serta rutin, mulai dari persiapan sampai dokumentasi hasil, sangat
     krusial dalam rangka mengidentifikasi potensi masalah sebelum menjadi kecelakaan.
     Dengan cara cara melaksanakan riksa pengujian secara berkala, perusahaan dapat:"
   highlights:
@@ -855,5 +855,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/"
-lastmod: '2026-03-17T04:46:10+0000'
+lastmod: '2026-04-01T05:17:08+0000'
 ---
