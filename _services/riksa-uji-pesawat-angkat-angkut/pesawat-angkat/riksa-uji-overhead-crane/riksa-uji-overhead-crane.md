@@ -1,14 +1,14 @@
 ---
 layout: node/node--service
 title: Riksa Uji Overhead Crane
-description: Riksa uji overhead crane adalah pemeriksaan dan pengujian keselamatan
-  crane jembatan oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket
-  K3 daripada Disnaker. Layanan pemeriksaan K3 segenap Indonesia.
+description: Riksa uji overhead crane adalah inspeksi dan pengujian keselamatan crane
+  jembatan oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 dari
+  Disnaker. Layanan inspeksi K3 segenap Indonesia.
 para_1: Riksa uji overhead crane merupakan pengecekan serta pengujian keselamatan
-  pada crane jembatan yang wajib dijalankan dengan cara berkala sesuai Peraturan Menteri
-  Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini ditujukan dalam rangka memverifikasi
-  overhead crane beroperasi dengan aman serta sesuai standar keselamatan kerja yang
-  berlaku.
+  pada crane jembatan yang wajib dijalankan dengan cara berkala berdasarkan Peraturan
+  Menteri Ketenagakerjaan Nomor 8 Tahun 2020. Inspeksi ini ditujukan dalam rangka
+  memverifikasi overhead crane beroperasi dengan aman serta berdasarkan standar keselamatan
+  kerja yang berlaku.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-overhead-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -46,32 +46,32 @@ custom_schema:
 - schema/schema--service-reviews.html
 intro:
   name: Layanan Riksa Uji Overhead Crane Profesional
-  para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa pengujian overhead crane yang komprehensif secara cara
-    tim inspector bersertifikat serta perkakas testing yang terkalibrasi.
+  para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
+    Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
+    layanan riksa pengujian overhead crane yang komprehensif secara cara tim inspector
+    bersertifikat dan perkakas testing yang terkalibrasi.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Tiap pengecekan riksa pengujian overhead crane yang kami lakukan mengacu
-      pada regulasi dan acuan keselamatan kerja yang berlaku pada Indonesia, memastikan
+      pada regulasi serta acuan keselamatan kerja yang berlaku pada Indonesia, memastikan
       kepatuhan penuh terhadap peraturan pemerintah.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020 tentang Keselamatan
+      para: Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020 perihal Keselamatan
         dan Kesehatan Kerja Pesawat Angkat dan Angkut mewajibkan tiap overhead crane
         menjalani riksa uji berkala dalam rangka memastikan kelayakan operasional.
     - h4: SNI dan Standar Internasional
-      para: Di samping mengacu terhadap peraturan nasional, kami juga menerapkan acuan
+      para: Di samping mengacu kepada peraturan nasional, kami juga menerapkan acuan
         SNI dan referensi internasional seperti CMAA, FEM, dan ISO dalam rangka menjamin
         kualitas pengecekan terbaik.
   - h3: Tim Inspector Bersertifikat
     para: Inspector kami memiliki sertifikasi resmi dari Kementerian Ketenagakerjaan
-      RI dengan cara kualifikasi Ahli K3 Pesawat Angkat dan pengalaman bertahun-tahun
-      dalam bidang inspeksi crane. Tiap pemeriksaan dijalankan dengan cara profesionalisme
-      tinggi dan menghasilkan sertifikat yang diakui dengan cara nasional.
+      RI secara cara kualifikasi Ahli K3 Pesawat Angkat dan pengalaman bertahun-tahun
+      dalam bidang inspeksi crane. Tiap pemeriksaan dijalankan secara cara profesionalisme
+      tinggi dan menghasilkan sertifikat yang diakui secara cara nasional.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani bermacam-macam jenis overhead crane mencakup single girder,
-      double girder, gantry crane, dan semi-gantry crane terhadap seluruh Indonesia.
+      double girder, gantry crane, dan semi-gantry crane terhadap semua Indonesia.
       Secara jaringan inspector yang luas, kami siap melaksanakan pemeriksaan on-site
       terhadap lokasi Anda.
 jenis_alat:
@@ -104,25 +104,25 @@ jenis_alat:
     lebih lanjut.
 komponen_inspeksi:
   name: Komponen yang Diperiksa
-  description: Pengecekan menyeluruh pada seluruh elemen keselamatan overhead crane
+  description: Pemeriksaan menyeluruh pada semua elemen keselamatan overhead crane
   items:
   - name: Struktur Girder
-    description: Inspeksi situasi balok pokok, sambungan las, dan defleksi struktur
+    description: Inspeksi situasi balok pokok, sambungan las, serta defleksi struktur
     icon: bi-box
   - name: Hoist dan Trolley
-    description: Pemeriksaan mekanisme pengangkat, drum, gear box, serta sistem trolley
+    description: Inspeksi mekanisme pengangkat, drum, gear box, serta sistem trolley
     icon: bi-arrows-vertical
   - name: Wire Rope dan Hook
-    description: Pemeriksaan situasi tali kawat, diameter, keausan, dan situasi hook
+    description: Pemeriksaan kondisi tali kawat, diameter, keausan, dan kondisi hook
     icon: bi-link-45deg
   - name: Sistem Rem
-    description: Pengujian brake motor, holding brake, serta emergency brake
+    description: Pengujian brake motor, holding brake, dan emergency brake
     icon: bi-sign-stop
   - name: Sistem Kelistrikan
-    description: Pengecekan panel kontrol, motor, limit switch, dan sistem pengaman
+    description: Pengecekan panel kontrol, motor, ambang switch, dan sistem pengaman
     icon: bi-lightning-charge
   - name: Runway dan Rail
-    description: Inspeksi keadaan rel, alignment, end stop, dan sistem buffering
+    description: Inspeksi keadaan rel, alignment, end stop, serta sistem buffering
     icon: bi-train-front
 proses_inspeksi:
   name: Proses Riksa Uji Overhead Crane
@@ -275,5 +275,5 @@ faq_riksa_uji:
     answer: Sertifikat riksa uji overhead crane berlaku selama 1 (satu) tahun sejak
       tanggal penerbitan sesuai Permenaker No. 8 Tahun 2020. Setelah masa berlaku
       habis, overhead crane wajib dilakukan riksa uji ulang untuk memperbarui sertifikat.
-lastmod: '2026-03-17T04:46:10+0000'
+lastmod: '2026-04-03T04:59:02+0000'
 ---
