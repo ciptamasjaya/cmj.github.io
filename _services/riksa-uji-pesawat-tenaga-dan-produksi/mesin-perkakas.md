@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Mesin Perkakas
-description: Jasa riksa uji dan pemeriksaan K3 mesin peralatan profesional mencakup
-  mesin bubut, mesin frais, mesin bor, mesin gerinda, mesin gergaji, dan mesin shaper.
-  Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji dan inspeksi K3 mesin peralatan profesional meliputi mesin
+  bubut, mesin frais, mesin bor, mesin gerinda, mesin gergaji, dan mesin shaper. Sertifikat
+  resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Mesin Perkakas
@@ -20,17 +20,17 @@ keywords: riksa uji mesin perkakas, inspeksi mesin bubut, inspeksi mesin frais, 
   mesin bor, inspeksi mesin gerinda, PJK3, sertifikasi K3
 intro:
   h1: Mesin Perkakas - Riksa Uji Machine Tools Industri
-  para_1: Mesin peralatan (machine tools) adalah peralatan yang digunakan dalam rangka
-    membentuk serta mengerjakan benda kerja logam melalui proses pemotongan, pengeboran,
+  para_1: Mesin peralatan (machine tools) adalah peralatan yang dipakai dalam rangka
+    membentuk serta mengerjakan benda kerja logam melalui tahapan pemotongan, pengeboran,
     penggerindaan, serta pembentukan lainnya. Kategori ini meliputi mesin bubut, mesin
     frais, mesin bor, mesin gerinda, mesin gergaji, serta mesin shaper yang wajib
     menjalani riksa uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor
     38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
-    mesin alat yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    inspeksi on-site terhadap seluruh Indonesia dengan cara alat testing terkalibrasi
-    dalam rangka memverifikasi keselamatan operasional alat Anda.
+    mesin perkakas yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
+    inspeksi on-site terhadap seluruh Indonesia dengan cara perkakas testing terkalibrasi
+    dalam rangka memverifikasi keselamatan operasional perkakas Anda.
 layanan_mesin_perkakas:
   h2: Layanan Riksa Uji Mesin Perkakas
   para: Kami melayani riksa uji untuk berbagai jenis mesin perkakas sesuai kebutuhan
@@ -70,20 +70,20 @@ layanan_mesin_perkakas:
 mengapa_penting:
   h2: Mengapa Riksa Uji Mesin Perkakas Penting?
   para: Mesin perkakas beroperasi dengan bagian berputar berkecepatan tinggi serta
-    alat potong tajam yang mempunyai risiko kecelakaan tinggi. Kegagalan alat atau
-    pelindung keselamatan dapat menyebabkan cedera serius pada operator. Riksa uji
-    berkala menjamin seluruh bagian kritis seperti spindle, sistem pelumasan, pelindung
-    keselamatan, serta emergency stop bekerja optimal. Inspeksi ini bukan hanya kewajiban
-    legal sesuai Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan yang melindungi
-    nyawa pekerja serta aset perusahaan.
+    perkakas potong tajam yang mempunyai risiko kecelakaan tinggi. Kegagalan perkakas
+    atau pelindung keselamatan dapat menyebabkan cedera serius pada operator. Riksa
+    uji berkala menjamin seluruh bagian kritis seperti spindle, sistem pelumasan,
+    pelindung keselamatan, serta emergency stop bekerja optimal. Pengecekan ini bukan
+    hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan
+    yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Mesin Perkakas
-  para: Tim inspector kami datang ke lokasi Anda secara cara perkakas testing seperti
-    dial indicator, tachometer, dan vibration meter. Proses pemeriksaan meliputi pemeriksaan
-    dokumen, pemeriksaan visual, pengujian fungsi operasional, dan verifikasi perangkat
-    keselamatan. Masing-masing pemeriksaan didokumentasikan dalam laporan komprehensif
-    dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-03-21T04:23:03+0000'
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara perkakas testing
+    seperti dial indicator, tachometer, dan vibration meter. Tahapan pemeriksaan meliputi
+    pemeriksaan dokumen, pemeriksaan visual, pengujian fungsi operasional, dan verifikasi
+    perangkat keselamatan. Masing-masing pemeriksaan didokumentasikan dalam laporan
+    komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+lastmod: '2026-04-04T04:45:15+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
