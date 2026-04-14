@@ -220,17 +220,16 @@
     ]
   },
   "riksa-uji-pesawat-uap-bejana-tekan.md": {
-    "date": "2026-04-01",
+    "date": "2026-04-14",
     "changes": 8,
     "words": [
-      "serta→dan",
-      "termasuk→mencakup",
-      "di→pada",
-      "berfungsi→bekerja",
-      "menjamin→memverifikasi",
-      "dan→serta",
-      "tetapi→akan tetapi",
-      "memastikan→menjamin"
+      "dengan→secara",
+      "mencakup→meliputi",
+      "segenap→seluruh",
+      "kepada→pada",
+      "pada→terhadap",
+      "seluruh→semua",
+      "dan→serta"
     ]
   },
   "bejana-tekan.md": {
@@ -316,22 +315,26 @@
     ]
   },
   "riksa-uji-overhead-crane.md": {
-    "date": "2026-04-03",
+    "date": "2026-04-14",
     "changes": 19,
     "words": [
-      "daripada→dari",
-      "pemeriksaan→inspeksi",
-      "sesuai→berdasarkan",
-      "Pemeriksaan→Inspeksi",
-      "serta→dan",
-      "seluruh→semua",
-      "Pengecekan→Pemeriksaan",
+      "segenap→seluruh",
       "dan→serta",
-      "situasi→kondisi",
-      "limit→ambang",
-      "tentang→perihal",
-      "terhadap→kepada",
-      "dengan→secara"
+      "dijalankan→dilakukan",
+      "Inspeksi→Pengecekan",
+      "dari→daripada",
+      "perkakas→peralatan",
+      "semua→segenap",
+      "pada→terhadap",
+      "pokok→primer",
+      "serta→dan",
+      "Pengecekan→Pemeriksaan",
+      "keadaan→situasi",
+      "Tiap→Masing-masing",
+      "tiap→masing-masing",
+      "menjamin→memverifikasi",
+      "inspeksi→pengecekan",
+      "melaksanakan→menjalankan"
     ]
   },
   "riksa-uji-boiler.md": {
@@ -387,23 +390,21 @@
     ]
   },
   "riksa-uji-crawler-crane.md": {
-    "date": "2026-03-28",
+    "date": "2026-04-14",
     "changes": 19,
     "words": [
-      "segenap→seluruh",
-      "daripada→dari",
-      "pengecekan→pemeriksaan",
-      "dengan→secara",
-      "secara→dengan cara",
-      "kriteria→acuan",
-      "Inspeksi→Pengecekan",
+      "dari→daripada",
       "serta→dan",
-      "untuk→dalam rangka",
+      "pada→terhadap",
+      "pemeriksaan→inspeksi",
+      "dengan→secara",
+      "terhadap→kepada",
+      "seluruh→semua",
+      "Pengecekan→Pemeriksaan",
       "Pemeriksaan→Inspeksi",
-      "dan→serta",
-      "mencakup→meliputi",
-      "Standar→Kriteria",
-      "dari→daripada"
+      "keadaan→situasi",
+      "mempunyai→memiliki",
+      "sehingga→hingga"
     ]
   },
   "riksa-uji-dongkrak-hidrolik.md": {
@@ -471,23 +472,22 @@
     ]
   },
   "riksa-uji-mobile-crane.md": {
-    "date": "2026-04-03",
+    "date": "2026-04-14",
     "changes": 19,
     "words": [
-      "inspeksi→pengecekan",
-      "dan→serta",
-      "pemeriksaan→inspeksi",
-      "tentang→perihal",
       "serta→dan",
+      "segenap→seluruh",
+      "dan→serta",
       "dengan→secara",
+      "memastikan→menjamin",
+      "bagian→elemen",
+      "terhadap→kepada",
+      "utama→pokok",
       "Inspeksi→Pengecekan",
-      "pada→terhadap",
-      "untuk→dalam rangka",
-      "primer→utama",
-      "Pengecekan→Pemeriksaan",
-      "dilakukan→dilaksanakan",
-      "beragam→bermacam-macam",
-      "terhadap→kepada"
+      "Pemeriksaan→Inspeksi",
+      "mencakup→meliputi",
+      "standar→kriteria",
+      "diperlukan→dibutuhkan"
     ]
   },
   "riksa-uji-tower-crane.md": {
@@ -678,23 +678,26 @@
     ]
   },
   "riksa-uji-scissor-lift.md": {
-    "date": "2026-04-03",
+    "date": "2026-04-14",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "pemeriksaan→inspeksi",
-      "dengan→secara",
+      "dari→daripada",
+      "inspeksi→pengecekan",
       "secara→dengan cara",
-      "terhadap→kepada",
+      "mengenai→tentang",
+      "dengan→secara",
+      "mencukupi→memenuhi",
+      "semua→segenap",
+      "kepada→pada",
+      "serta→dan",
       "Pemeriksaan→Inspeksi",
-      "keadaan→situasi",
-      "Pengecekan→Pemeriksaan",
-      "Inspeksi→Pengecekan",
       "dan→serta",
-      "pada→terhadap",
-      "meliputi→termasuk",
-      "acuan→standar",
-      "sehingga→hingga"
+      "Pengecekan→Pemeriksaan",
+      "dilaksanakan→dijalankan",
+      "perihal→mengenai",
+      "terhadap→kepada",
+      "memiliki→mempunyai",
+      "pada→terhadap"
     ]
   }
 }
