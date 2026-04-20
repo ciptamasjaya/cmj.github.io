@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Angkat
-description: Jasa riksa uji serta inspeksi K3 pesawat angkat profesional termasuk
-  crane, hoist, gondola, manlift, scissor lift, serta perkakas pengangkat vertikal
-  lainnya. Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji dan inspeksi K3 pesawat angkat profesional mencakup crane,
+  hoist, gondola, manlift, scissor lift, dan perkakas pengangkat vertikal lainnya.
+  Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -20,16 +20,16 @@ keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gon
   inspeksi manlift, scissor lift, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Angkat - Riksa Uji Peralatan Pengangkat Beban Vertikal
-  para_1: Pesawat angkat adalah alat yang dimanfaatkan dalam rangka mengangkat dan
-    menurunkan beban secara vertikal. Kategori ini meliputi bermacam-macam jenis crane,
-    hoist, gondola, manlift, scissor lift, dan alat pengangkat lainnya yang wajib
-    menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor
-    8 Tahun 2020.
+  para_1: Pesawat angkat adalah perkakas yang dimanfaatkan dalam rangka mengangkat
+    dan menurunkan beban dengan cara vertikal. Kategori ini meliputi bermacam-macam
+    jenis crane, hoist, gondola, manlift, scissor lift, dan perkakas pengangkat lainnya
+    yang wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
+    Nomor 8 Tahun 2020.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
-    uji pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
+    uji pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap melakukan
     pengecekan on-site pada semua Indonesia dengan cara cara perkakas testing terkalibrasi
-    dalam rangka memverifikasi keselamatan operasional perkakas Anda.
+    dalam rangka memastikan keselamatan operasional perkakas Anda.
 layanan_pesawat_angkat:
   h2: Layanan Riksa Uji Pesawat Angkat
   para: Kami melayani riksa uji untuk berbagai jenis pesawat angkat sesuai kebutuhan
@@ -105,19 +105,19 @@ mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Penting?
   para: Pesawat angkat menangani beban berat terhadap ketinggian hingga mempunyai
     risiko kecelakaan yang sungguh tinggi. Kegagalan alat dapat menyebabkan beban
-    jatuh, struktur runtuh, atau operator terjatuh. Riksa uji berkala menjamin semua
+    jatuh, struktur runtuh, maupun operator terjatuh. Riksa uji berkala menjamin semua
     elemen kritis seperti wire rope, brake system, ambang switch, serta struktur penahan
-    beban beroperasi optimal. Inspeksi ini bukan hanya kewajiban legal sesuai Permenaker
-    No. 8 Tahun 2020, akan tetapi investasi keselamatan yang melindungi nyawa pekerja
-    serta aset perusahaan.
+    beban beroperasi optimal. Inspeksi ini bukan hanya kewajiban legal berdasarkan
+    Permenaker No. 8 Tahun 2020, akan tetapi investasi keselamatan yang melindungi
+    nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pesawat Angkat
   para: Tim inspector kami datang ke lokasi Anda dengan cara peralatan testing portable
-    yang terkalibrasi. Tahapan pemeriksaan mencakup pemeriksaan dokumen, pemeriksaan
-    visual struktur dan elemen, tes fungsi operasional, dan load test sesuai kapasitas.
+    yang terkalibrasi. Tahapan pemeriksaan meliputi pemeriksaan dokumen, pemeriksaan
+    visual struktur dan komponen, tes fungsi operasional, dan load test sesuai kapasitas.
     Tiap pemeriksaan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-04-07T05:03:33+0000'
+lastmod: '2026-04-20T05:32:58+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

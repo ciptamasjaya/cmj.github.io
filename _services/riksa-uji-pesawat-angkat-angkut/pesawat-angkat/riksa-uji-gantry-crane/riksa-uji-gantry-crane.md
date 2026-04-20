@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Gantry Crane
-description: Riksa uji gantry crane adalah inspeksi dan pengujian keselamatan crane
+description: Riksa uji gantry crane adalah pengecekan dan pengujian keselamatan crane
   portal oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 dari
-  Disnaker. Layanan inspeksi K3 seluruh Indonesia.
-para_1: Riksa uji gantry crane adalah pemeriksaan serta pengujian kepada pesawat angkat
-  jenis portal crane berdasarkan secara cara cara Permenaker No. 8 Tahun 2020 tentang
-  Keselamatan serta Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.
+  Disnaker. Layanan pengecekan K3 semua Indonesia.
+para_1: Riksa uji gantry crane adalah inspeksi serta pengujian kepada pesawat angkat
+  jenis portal crane berdasarkan dengan cara cara cara Permenaker No. 8 Tahun 2020
+  tentang Keselamatan serta Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-gantry-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -42,33 +42,34 @@ keywords: riksa uji gantry crane, jasa riksa uji crane, inspeksi gantry crane, p
 rating_id: riksa-uji-gantry-crane
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-04-19T05:22:02+0000'
+lastmod: '2026-04-20T05:32:58+0000'
 intro:
   name: Layanan Riksa Uji Gantry Crane Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji gantry crane dengan cara
-    cara inspector bersertifikat dan berpengalaman. Kami menjamin gantry crane Anda
-    memenuhi acuan keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI.
+    cara inspector bersertifikat dan berpengalaman. Kami memverifikasi gantry crane
+    Anda memenuhi standar keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan
+    RI.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji gantry crane wajib dilakukan sesuai regulasi keselamatan kerja
-      yang berlaku kepada Indonesia dalam rangka memastikan keamanan operasional.
+    para: Riksa uji gantry crane wajib dilakukan berdasarkan regulasi keselamatan
+      kerja yang berlaku kepada Indonesia dalam rangka memastikan keamanan operasional.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan mengenai Keselamatan serta Kesehatan
+      para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan serta Kesehatan
         Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
         rangka semua jenis crane mencakup gantry crane.
     - h4: Standar ASME dan SNI
       para: Pengujian dilakukan mengacu terhadap kriteria internasional ASME B30.17
-        dalam rangka Overhead and Gantry Cranes serta Acuan Nasional Indonesia (SNI)
+        dalam rangka Overhead and Gantry Cranes serta Standar Nasional Indonesia (SNI)
         yang berlaku.
   - h3: Tim Inspector Bersertifikat
     para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP serta telah
-      berpengalaman lebih dari 10 tahun dalam bidang pemeriksaan pesawat angkat meliputi
+      berpengalaman lebih dari 10 tahun dalam bidang pemeriksaan pesawat angkat termasuk
       bermacam-macam jenis gantry crane.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji gantry crane terhadap semua Indonesia, daripada
-      pelabuhan, galangan kapal, hingga kawasan industri. Tim kami siap datang ke
-      lokasi Anda kapanpun diperlukan.
+    para: Kami melayani riksa uji gantry crane terhadap semua Indonesia, dari pelabuhan,
+      galangan kapal, hingga kawasan industri. Tim kami siap datang ke lokasi Anda
+      kapanpun diperlukan.
 jenis_alat:
   name: Jenis Gantry Crane yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis gantry crane industri
@@ -101,31 +102,30 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Gantry Crane yang Diperiksa
-  description: Pemeriksaan menyeluruh terhadap seluruh komponen keselamatan gantry
-    crane
+  description: Inspeksi menyeluruh terhadap semua komponen keselamatan gantry crane
   items:
   - name: Struktur Utama (Main Frame)
-    description: Inspeksi girder, leg, serta cross beam terhadap retak, korosi, serta
+    description: Inspeksi girder, leg, dan cross beam terhadap retak, korosi, dan
       deformasi struktural.
     icon: bi-grid-3x3
   - name: Sistem Hoisting
-    description: Pengecekan hoist, wire rope, drum, serta sheave dalam rangka menjamin
+    description: Pengecekan hoist, wire rope, drum, serta sheave dalam rangka memverifikasi
       fungsi pengangkatan aman.
     icon: bi-arrow-up-circle
   - name: Trolley dan Travel Mechanism
-    description: Pemeriksaan sistem pergerakan trolley dan gantry meliputi motor,
+    description: Pemeriksaan sistem pergerakan trolley dan gantry termasuk motor,
       gearbox, dan roda.
     icon: bi-arrows-move
   - name: Hook dan Lifting Accessories
-    description: Tes hook block, swivel, serta aksesoris pengangkatan kepada keausan
+    description: Tes hook block, swivel, serta aksesoris pengangkatan pada keausan
       serta deformasi.
     icon: bi-bezier2
   - name: Sistem Kelistrikan
-    description: Pengecekan panel kontrol, kabel, festoon, dan sistem grounding dalam
+    description: Pemeriksaan panel kontrol, kabel, festoon, dan sistem grounding dalam
       rangka keamanan elektrikal.
     icon: bi-lightning
   - name: Safety Devices
-    description: Tes ambang switch, overload protection, anti-collision, serta emergency
+    description: Tes batas switch, overload protection, anti-collision, serta emergency
       stop system.
     icon: bi-shield-check
 proses_inspeksi:
