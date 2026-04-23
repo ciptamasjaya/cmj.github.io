@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Bejana Tekan
-description: Jasa riksa pengujian dan pengecekan K3 bejana tekan profesional mencakup
-  air receiver, pressure vessel, heat exchanger, autoclave, dan separator. Sertifikat
+description: Jasa riksa pengujian serta pemeriksaan K3 bejana tekan profesional mencakup
+  air receiver, pressure vessel, heat exchanger, autoclave, serta separator. Sertifikat
   resmi dari Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/bejana-tekan/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
@@ -20,17 +20,17 @@ keywords: riksa uji bejana tekan, inspeksi pressure vessel, inspeksi air receive
   inspeksi heat exchanger, autoclave, separator, PJK3, sertifikasi K3
 intro:
   h1: Bejana Tekan - Riksa Uji Vessel dan Peralatan Bertekanan
-  para_1: Bejana tekan adalah alat yang dipakai dalam rangka menyimpan maupun memproses
-    fluida (gas maupun cairan) terhadap tekanan terhadap atas maupun terhadap bawah
-    tekanan atmosfer. Kategori ini meliputi air receiver, pressure vessel, heat exchanger,
+  para_1: Bejana tekan adalah alat yang dipakai dalam rangka menyimpan atau memproses
+    fluida (gas atau cairan) terhadap tekanan terhadap atas atau terhadap bawah tekanan
+    atmosfer. Kategori ini meliputi air receiver, pressure vessel, heat exchanger,
     autoclave, deaerator, separator, dan alat bertekanan lainnya yang wajib menjalani
-    riksa pengujian berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 37
-    Tahun 2016.
+    riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun
+    2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
     bejana tekan yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    inspeksi on-site terhadap seluruh Indonesia dengan cara peralatan testing terkalibrasi
-    dalam rangka memastikan keselamatan operasional peralatan Anda.
+    pengecekan on-site terhadap seluruh Indonesia dengan cara peralatan testing terkalibrasi
+    dalam rangka menjamin keselamatan operasional peralatan Anda.
 layanan_bejana_tekan:
   h2: Layanan Riksa Uji Bejana Tekan
   para: Kami melayani riksa uji untuk berbagai jenis bejana tekan sesuai kebutuhan
@@ -84,23 +84,24 @@ layanan_bejana_tekan:
     icon: bi-battery-charging
 mengapa_penting:
   h2: Mengapa Riksa Uji Bejana Tekan Penting?
-  para: Bejana tekan menyimpan energi potensial yang sangat besar dalam bentuk tekanan
+  para: Bejana tekan menyimpan energi potensial yang amat besar dalam bentuk tekanan
     fluida. Kegagalan struktural dapat menyebabkan ledakan dahsyat dengan cara daya
-    rusak tinggi. Korosi, fatigue, serta kerusakan material adalah penyebab pokok
-    kegagalan bejana tekan. Riksa uji berkala memverifikasi integritas struktural
-    melalui tes NDT, hydrostatic test, serta pengecekan ketebalan dinding. Inspeksi
-    ini bukan hanya kewajiban legal sesuai Permenaker No. 37 Tahun 2016, akan akan
-    tetapi investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
+    rusak tinggi. Korosi, fatigue, dan kerusakan material adalah penyebab pokok kegagalan
+    bejana tekan. Riksa uji berkala memverifikasi integritas struktural melalui tes
+    NDT, hydrostatic test, dan pengecekan ketebalan dinding. Inspeksi ini bukan hanya
+    kewajiban legal sesuai Permenaker No. 37 Tahun 2016, akan akan tetapi investasi
+    keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Bejana Tekan
   para: Tim inspector kami datang ke lokasi Anda secara cara perkakas testing seperti
     ultrasonic thickness gauge, magnetic particle testing kit, serta hydrostatic test
-    pump. Tahapan pengecekan termasuk pengecekan dokumen serta nameplate, pengecekan
-    visual internal serta eksternal, pengukuran ketebalan dinding, tes NDT pada sambungan
-    las, serta hydrostatic test. Tiap pengecekan didokumentasikan dalam laporan komprehensif
-    serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-_content_refreshed_at: '2026-04-22T05:18:18+0000'
-lastmod: '2026-03-31T05:03:35+0000'
+    pump. Tahapan pengecekan mencakup pengecekan dokumen serta nameplate, pengecekan
+    visual internal serta eksternal, pengukuran ketebalan dinding, tes NDT terhadap
+    sambungan las, serta hydrostatic test. Tiap pengecekan didokumentasikan dalam
+    laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang berlaku
+    1 tahun.
+_content_refreshed_at: '2026-04-23T05:22:55+0000'
+lastmod: '2026-04-23T05:22:55+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
