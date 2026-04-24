@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Tanur
-description: Jasa riksa uji dan pengecekan K3 tanur profesional termasuk furnace,
-  oven industri, industrial chiller, dan cooling tower. Sertifikat resmi Kementerian
+description: Jasa riksa uji serta pemeriksaan K3 tanur profesional termasuk furnace,
+  oven industri, industrial chiller, serta cooling tower. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/tanur/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -20,14 +20,15 @@ keywords: riksa uji tanur, inspeksi furnace, inspeksi oven industri, inspeksi ch
   inspeksi cooling tower, PJK3, sertifikasi K3
 intro:
   h1: Tanur - Riksa Uji Peralatan Termal Industri
-  para_1: Tanur adalah peralatan yang digunakan dalam rangka tahapan pemanasan atau
-    pendinginan dalam industri manufaktur dan pengolahan. Kategori ini mencakup furnace,
-    oven industri, industrial chiller, dan cooling tower yang wajib menjalani riksa
-    uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+  para_1: Tanur adalah peralatan yang digunakan dalam rangka tahapan pemanasan maupun
+    pendinginan dalam industri manufaktur serta pengolahan. Kategori ini mencakup
+    furnace, oven industri, industrial chiller, serta cooling tower yang wajib menjalani
+    riksa uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun
+    2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
-    pengujian tanur yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
-    pemeriksaan on-site terhadap seluruh Indonesia secara perkakas testing terkalibrasi
+    pengujian tanur yang komprehensif. Tim inspector bersertifikat kami siap melakukan
+    pemeriksaan on-site kepada seluruh Indonesia secara perkakas testing terkalibrasi
     dalam rangka memastikan keselamatan operasional perkakas Anda.
 layanan_tanur:
   h2: Layanan Riksa Uji Tanur
@@ -47,23 +48,23 @@ layanan_tanur:
     icon: bi-snow
 mengapa_penting:
   h2: Mengapa Riksa Uji Tanur Penting?
-  para: Tanur serta perkakas termal beroperasi terhadap suhu ekstrem (sungguh panas
-    atau sungguh dingin) yang mempunyai risiko kebakaran, ledakan, serta cedera akibat
-    paparan suhu. Kegagalan sistem kontrol atau kebocoran refrigerant dapat menyebabkan
-    kecelakaan fatal. Riksa uji berkala menjamin semua bagian kritis seperti burner,
-    sistem kontrol temperatur, safety valve, serta sensor beroperasi optimal. Pengecekan
-    ini bukan hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, akan akan
-    akan akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja
-    serta aset perusahaan.
+  para: Tanur serta perkakas termal beroperasi kepada suhu ekstrem (sungguh panas
+    maupun sungguh dingin) yang mempunyai risiko kebakaran, ledakan, serta cedera
+    akibat paparan suhu. Kegagalan sistem kontrol maupun kebocoran refrigerant dapat
+    menyebabkan kecelakaan fatal. Riksa uji berkala menjamin semua bagian kritis seperti
+    burner, sistem kontrol temperatur, safety valve, serta sensor beroperasi optimal.
+    Pengecekan ini bukan hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016,
+    akan akan akan akan akan akan tetapi investasi keselamatan yang melindungi nyawa
+    pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Tanur
-  para: Tim inspector kami datang ke lokasi Anda dengan cara cara perkakas testing
-    seperti thermal imaging camera, thermocouple, combustion analyzer, serta refrigerant
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara peralatan testing
+    seperti thermal imaging camera, thermocouple, combustion analyzer, dan refrigerant
     leak detector. Proses pengecekan termasuk pengecekan dokumen, pengecekan visual,
-    pengujian fungsi operasional, serta pengukuran parameter temperatur. Masing-masing
-    pengecekan didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
+    pengujian fungsi operasional, dan pengukuran parameter temperatur. Masing-masing
+    pengecekan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-04-10T05:17:55+0000'
+lastmod: '2026-04-24T05:27:45+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

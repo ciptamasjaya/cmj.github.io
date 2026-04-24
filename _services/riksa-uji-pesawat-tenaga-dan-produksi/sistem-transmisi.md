@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Sistem Transmisi
-description: Jasa riksa uji serta inspeksi K3 sistem transmisi profesional mencakup
-  transmisi sabuk, transmisi rantai, serta transmisi roda gigi. Sertifikat resmi Kementerian
+description: Jasa riksa uji dan inspeksi K3 sistem transmisi profesional meliputi
+  transmisi sabuk, transmisi rantai, dan transmisi roda gigi. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/sistem-transmisi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -22,14 +22,14 @@ intro:
   h1: Sistem Transmisi - Riksa Uji Penyaluran Tenaga Mekanik
   para_1: Sistem transmisi adalah elemen yang dipakai dalam rangka menyalurkan tenaga
     mekanik daripada penggerak mula ke mesin produksi. Kategori ini mencakup transmisi
-    sabuk (belt), transmisi rantai (chain), dan transmisi roda gigi (gear) yang wajib
-    menjalani riksa pengujian berkala berdasarkan Peraturan Menteri Ketenagakerjaan
+    sabuk (belt), transmisi rantai (chain), serta transmisi roda gigi (gear) yang
+    wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
     Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    inspeksi on-site terhadap semua Indonesia dengan cara alat testing terkalibrasi
-    dalam rangka menjamin keselamatan operasional alat Anda.
+    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
+    uji sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap
+    menjalankan inspeksi on-site terhadap semua Indonesia dengan cara alat testing
+    terkalibrasi dalam rangka menjamin keselamatan operasional alat Anda.
 layanan_sistem_transmisi:
   h2: Layanan Riksa Uji Sistem Transmisi
   para: Kami melayani riksa uji untuk berbagai jenis sistem transmisi sesuai kebutuhan
@@ -53,21 +53,22 @@ layanan_sistem_transmisi:
     icon: bi-gear-fill
 mengapa_penting:
   h2: Mengapa Riksa Uji Sistem Transmisi Penting?
-  para: Sistem transmisi beroperasi secara bagian berputar berkecepatan tinggi yang
+  para: Sistem transmisi berfungsi secara bagian berputar berkecepatan tinggi yang
     memiliki risiko kecelakaan tinggi jika tidak dilengkapi pelindung yang memadai.
     Putusnya belt maupun rantai dapat menyebabkan cedera serius pada pekerja pada
-    sekitarnya. Riksa uji berkala memverifikasi semua bagian kritis seperti belt,
-    rantai, gear, bearing, serta pelindung keselamatan beroperasi optimal. Inspeksi
+    sekitarnya. Riksa uji berkala memverifikasi segenap bagian kritis seperti belt,
+    rantai, gear, bearing, serta pelindung keselamatan berfungsi optimal. Inspeksi
     ini bukan hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, akan tetapi
     investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Sistem Transmisi
   para: Tim inspector kami datang ke lokasi Anda secara alat testing seperti belt
-    tension gauge, alignment tool, stroboscope, dan vibration meter. Prosedur inspeksi
-    meliputi pemeriksaan dokumen, inspeksi visual, tes fungsi operasional, dan verifikasi
-    pelindung keselamatan. Masing-masing inspeksi didokumentasikan dalam laporan komprehensif
-    dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-04-10T05:17:55+0000'
+    tension gauge, alignment tool, stroboscope, serta vibration meter. Prosedur pengecekan
+    meliputi pemeriksaan dokumen, pengecekan visual, tes fungsi operasional, serta
+    verifikasi pelindung keselamatan. Masing-masing pengecekan didokumentasikan dalam
+    laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang berlaku
+    1 tahun.
+lastmod: '2026-04-24T05:27:45+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

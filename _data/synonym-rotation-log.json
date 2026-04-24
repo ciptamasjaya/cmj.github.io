@@ -253,21 +253,19 @@
     ]
   },
   "pesawat-uap.md": {
-    "date": "2026-04-10",
+    "date": "2026-04-24",
     "changes": 14,
     "words": [
-      "dari→daripada",
-      "termasuk→mencakup",
-      "sesuai→berdasarkan",
-      "melaksanakan→menjalankan",
-      "pada→terhadap",
-      "tetapi→akan tetapi",
-      "berfungsi→bekerja",
-      "Tahapan→Prosedur",
-      "secara→dengan cara",
+      "daripada→dari",
+      "mencakup→meliputi",
+      "dan→serta",
       "pengecekan→pemeriksaan",
-      "standar→kriteria",
-      "Pengecekan→Pemeriksaan"
+      "alat→perkakas",
+      "bekerja→beroperasi",
+      "meliputi→termasuk",
+      "kriteria→acuan",
+      "mempunyai→memiliki",
+      "serta→dan"
     ]
   },
   "tangki-timbun.md": {
@@ -358,14 +356,13 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2026-04-15",
+    "date": "2026-04-24",
     "changes": 6,
     "words": [
-      "dan→serta",
-      "mencakup→meliputi",
-      "mengenai→tentang",
-      "termasuk→mencakup",
-      "inspeksi→pengecekan"
+      "serta→dan",
+      "meliputi→termasuk",
+      "tentang→perihal",
+      "mencakup→meliputi"
     ]
   },
   "riksa-uji-chain-block.md": {
@@ -448,23 +445,23 @@
     ]
   },
   "riksa-uji-jib-crane.md": {
-    "date": "2026-04-07",
+    "date": "2026-04-24",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "semua→segenap",
-      "mengenai→tentang",
-      "sesuai→berdasarkan",
       "dan→serta",
-      "memenuhi→mencukupi",
-      "komponen→bagian",
-      "kepada→pada",
-      "memverifikasi→memastikan",
-      "mencakup→meliputi",
-      "daripada→dari",
-      "menjamin→memverifikasi",
-      "termasuk→mencakup",
-      "di→pada"
+      "segenap→seluruh",
+      "berdasarkan→sesuai",
+      "serta→dan",
+      "acuan→standar",
+      "pada→terhadap",
+      "semua→segenap",
+      "memastikan→menjamin",
+      "meliputi→termasuk",
+      "atau→maupun",
+      "pokok→primer",
+      "di→pada",
+      "tentang→perihal",
+      "mencakup→meliputi"
     ]
   },
   "riksa-uji-mobile-crane.md": {
@@ -575,34 +572,31 @@
     ]
   },
   "sistem-transmisi.md": {
-    "date": "2026-04-10",
+    "date": "2026-04-24",
     "changes": 10,
     "words": [
-      "termasuk→mencakup",
-      "dan→serta",
-      "sesuai→berdasarkan",
       "serta→dan",
-      "peralatan→alat",
-      "secara→dengan cara",
-      "dengan→secara",
-      "bekerja→beroperasi",
-      "Tahapan→Prosedur"
+      "mencakup→meliputi",
+      "berdasarkan→sesuai",
+      "dan→serta",
+      "dari→daripada",
+      "melaksanakan→menjalankan",
+      "semua→segenap",
+      "beroperasi→berfungsi",
+      "inspeksi→pengecekan"
     ]
   },
   "tanur.md": {
-    "date": "2026-04-10",
+    "date": "2026-04-24",
     "changes": 10,
     "words": [
-      "meliputi→termasuk",
-      "inspeksi→pengecekan",
-      "dimanfaatkan→digunakan",
-      "proses→tahapan",
-      "melaksanakan→menjalankan",
-      "untuk→dalam rangka",
-      "berdasarkan→sesuai",
-      "tetapi→akan tetapi",
       "dan→serta",
-      "alat→perkakas"
+      "pengecekan→pemeriksaan",
+      "atau→maupun",
+      "terhadap→kepada",
+      "menjalankan→melakukan",
+      "serta→dan",
+      "perkakas→peralatan"
     ]
   },
   "riksa-uji-gondola.md": {
