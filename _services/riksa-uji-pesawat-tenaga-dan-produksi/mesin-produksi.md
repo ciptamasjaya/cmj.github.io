@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Mesin Produksi
-description: Jasa riksa uji dan pemeriksaan K3 mesin produksi profesional termasuk
-  mesin press, mesin potong, mesin las, mesin CNC, crusher, mesin casting, dan mesin
+description: Jasa riksa uji serta inspeksi K3 mesin produksi profesional termasuk
+  mesin press, mesin potong, mesin las, mesin CNC, crusher, mesin casting, serta mesin
   forging. Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -22,13 +22,13 @@ intro:
   h1: Mesin Produksi - Riksa Uji Peralatan Manufaktur Industri
   para_1: Mesin produksi adalah peralatan yang dipakai dalam proses manufaktur dalam
     rangka membentuk, memotong, menyambung, dan mengolah material menjadi produk jadi.
-    Kategori ini meliputi mesin press, mesin potong, mesin las, mesin CNC, crusher,
-    mesin casting, dan mesin forging yang wajib menjalani riksa uji berkala sesuai
+    Kategori ini termasuk mesin press, mesin potong, mesin las, mesin CNC, crusher,
+    mesin casting, dan mesin forging yang wajib menjalani riksa uji berkala berdasarkan
     Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
-    mesin produksi yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    pemeriksaan on-site pada segenap Indonesia dengan cara peralatan testing terkalibrasi
+    mesin produksi yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
+    pemeriksaan on-site pada seluruh Indonesia dengan cara peralatan testing terkalibrasi
     dalam rangka memverifikasi keselamatan operasional peralatan Anda.
 layanan_mesin_produksi:
   h2: Layanan Riksa Uji Mesin Produksi
@@ -73,21 +73,21 @@ layanan_mesin_produksi:
     icon: bi-hammer
 mengapa_penting:
   h2: Mengapa Riksa Uji Mesin Produksi Penting?
-  para: Mesin produksi berfungsi secara gaya besar, suhu tinggi, maupun material berbahaya
-    yang mempunyai risiko kecelakaan sungguh tinggi. Kegagalan perkakas dapat menyebabkan
-    cedera fatal, kebakaran, maupun ledakan. Riksa uji berkala menjamin seluruh bagian
-    kritis seperti sistem hidrolik, perangkat keselamatan, emergency stop, serta interlock
-    berfungsi optimal. Pengecekan ini bukan hanya kewajiban legal sesuai Permenaker
-    No. 38 Tahun 2016, tetapi investasi keselamatan yang melindungi nyawa pekerja
-    serta aset perusahaan.
+  para: Mesin produksi berfungsi dengan cara gaya besar, suhu tinggi, maupun material
+    berbahaya yang mempunyai risiko kecelakaan sungguh tinggi. Kegagalan peralatan
+    dapat menyebabkan cedera fatal, kebakaran, maupun ledakan. Riksa uji berkala menjamin
+    seluruh bagian kritis seperti sistem hidrolik, perangkat keselamatan, emergency
+    stop, serta interlock berfungsi optimal. Pengecekan ini bukan hanya kewajiban
+    legal sesuai Permenaker No. 38 Tahun 2016, tetapi investasi keselamatan yang melindungi
+    nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Mesin Produksi
-  para: Tim inspector kami datang ke lokasi Anda dengan cara cara alat testing seperti
-    pressure gauge, thermal camera, dan safety device tester. Proses pemeriksaan mencakup
+  para: Tim inspector kami datang ke lokasi Anda secara cara cara alat testing seperti
+    pressure gauge, thermal camera, dan safety device tester. Proses pemeriksaan meliputi
     pemeriksaan dokumen, pemeriksaan visual, pengujian fungsi operasional, dan verifikasi
     perangkat keselamatan. Masing-masing pemeriksaan didokumentasikan dalam laporan
     komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-04-15T05:16:24+0000'
+lastmod: '2026-04-26T05:31:12+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

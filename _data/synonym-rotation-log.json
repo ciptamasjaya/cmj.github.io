@@ -269,17 +269,19 @@
     ]
   },
   "tangki-timbun.md": {
-    "date": "2026-04-19",
+    "date": "2026-04-26",
     "changes": 10,
     "words": [
-      "maupun→atau",
-      "inspeksi→pengecekan",
-      "bagus→baik",
-      "peralatan→alat",
-      "segenap→seluruh",
-      "tetapi→akan tetapi",
-      "pemeriksaan→inspeksi",
-      "secara→dengan cara"
+      "pengecekan→pemeriksaan",
+      "atau→maupun",
+      "mencakup→meliputi",
+      "berdasarkan→sesuai",
+      "menjalankan→melakukan",
+      "menjamin→memverifikasi",
+      "sesuai→berdasarkan",
+      "Pengecekan→Pemeriksaan",
+      "serta→dan",
+      "Proses→Tahapan"
     ]
   },
   "2024-08-26-riksa-uji-overhead-crane.md": {
@@ -337,22 +339,23 @@
     ]
   },
   "riksa-uji-boiler.md": {
-    "date": "2026-04-20",
+    "date": "2026-04-26",
     "changes": 19,
     "words": [
-      "dari→daripada",
-      "serta→dan",
-      "berdasarkan→sesuai",
-      "bertujuan→dimaksudkan",
-      "alat→perkakas",
-      "dan→serta",
-      "Inspeksi→Pengecekan",
+      "daripada→dari",
       "semua→segenap",
-      "terhadap→kepada",
+      "dilaksanakan→dijalankan",
       "Pemeriksaan→Inspeksi",
-      "menjamin→memverifikasi",
-      "Di→Pada",
-      "inspeksi→pengecekan"
+      "secara→dengan cara",
+      "segenap→seluruh",
+      "komponen→bagian",
+      "situasi→kondisi",
+      "serta→dan",
+      "dan→serta",
+      "memverifikasi→memastikan",
+      "Inspeksi→Pengecekan",
+      "memastikan→menjamin",
+      "seluruh→semua"
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
@@ -531,17 +534,19 @@
     ]
   },
   "mesin-produksi.md": {
-    "date": "2026-04-15",
+    "date": "2026-04-26",
     "changes": 10,
     "words": [
-      "serta→dan",
+      "pemeriksaan→inspeksi",
+      "dan→serta",
       "meliputi→termasuk",
+      "sesuai→berdasarkan",
+      "segenap→seluruh",
+      "melakukan→melaksanakan",
       "perkakas→peralatan",
-      "semua→segenap",
-      "kepada→pada",
-      "memiliki→mempunyai",
-      "alat→perkakas",
-      "termasuk→mencakup"
+      "secara→dengan cara",
+      "dengan→secara",
+      "mencakup→meliputi"
     ]
   },
   "penggerak-mula.md": {
