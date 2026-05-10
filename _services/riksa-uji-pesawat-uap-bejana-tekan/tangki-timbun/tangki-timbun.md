@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Tangki Timbun
-description: Jasa riksa uji serta pemeriksaan K3 tangki timbun profesional mencakup
-  storage tank, LPG tank, fuel tank, serta tangki penyimpanan bahan cair maupun gas
-  bertekanan. Sertifikat resmi daripada Disnaker setempat.
+description: Jasa riksa uji serta inspeksi K3 tangki timbun profesional mencakup storage
+  tank, LPG tank, fuel tank, serta tangki penyimpanan bahan cair maupun gas bertekanan.
+  Sertifikat resmi dari Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/tangki-timbun/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Tangki Timbun
@@ -21,15 +21,15 @@ keywords: riksa uji tangki timbun, inspeksi storage tank, inspeksi LPG tank, ins
 intro:
   h1: Tangki Timbun - Riksa Uji Tangki Penyimpanan Bertekanan
   para_1: Tangki timbun adalah alat yang dimanfaatkan dalam rangka menyimpan bahan
-    cair atau gas dalam jumlah besar, baik kepada tekanan atmosfer atau bertekanan.
+    cair maupun gas dalam jumlah besar, baik pada tekanan atmosfer maupun bertekanan.
     Kategori ini meliputi storage tank, LPG tank, fuel tank, chemical tank, nitrogen
     tank, oxygen tank, dan tangki penyimpanan lainnya yang wajib menjalani riksa uji
     berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
     tangki timbun yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    pengecekan on-site di seluruh Indonesia secara cara cara peralatan testing terkalibrasi
-    dalam rangka memverifikasi keselamatan operasional peralatan Anda.
+    pengecekan on-site pada seluruh Indonesia secara cara cara alat testing terkalibrasi
+    dalam rangka memverifikasi keselamatan operasional alat Anda.
 layanan_tangki_timbun:
   h2: Layanan Riksa Uji Tangki Timbun
   para: Kami melayani riksa uji untuk berbagai jenis tangki timbun sesuai kebutuhan
@@ -47,21 +47,21 @@ mengapa_penting:
     risiko kebakaran, ledakan, pencemaran lingkungan, dan bahaya kesehatan. Korosi
     pada dinding tangki, kebocoran pada sambungan, dan kegagalan sistem keselamatan
     dapat menyebabkan kecelakaan fatal. Riksa pengujian berkala menjamin integritas
-    struktural tangki melalui pengukuran ketebalan, tes kebocoran, dan pengecekan
-    sistem proteksi. Pemeriksaan ini bukan hanya kewajiban legal berdasarkan Permenaker
+    struktural tangki melalui pengukuran ketebalan, tes kebocoran, dan pemeriksaan
+    sistem proteksi. Pemeriksaan ini bukan hanya kewajiban legal sesuai Permenaker
     No. 37 Tahun 2016, akan akan akan akan tetapi investasi keselamatan yang melindungi
     nyawa pekerja, masyarakat sekitar, dan lingkungan.
 proses:
   h2: Proses Riksa Uji Tangki Timbun
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara peralatan testing
-    seperti ultrasonic thickness gauge, magnetic flux leakage scanner, dan vacuum
-    box testing kit. Tahapan inspeksi meliputi inspeksi dokumen dan nameplate, inspeksi
-    visual eksternal dan internal (jika memungkinkan), pengukuran ketebalan shell
-    dan floor, pengujian kebocoran, dan inspeksi foundation settlement. Masing-masing
-    inspeksi didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
-    kelayakan operasional yang berlaku berdasarkan ketentuan.
-_content_refreshed_at: '2026-05-06T05:49:20+0000'
-lastmod: '2026-04-26T05:31:12+0000'
+    seperti ultrasonic thickness gauge, magnetic flux leakage scanner, serta vacuum
+    box testing kit. Tahapan inspeksi meliputi inspeksi dokumen serta nameplate, inspeksi
+    visual eksternal serta internal (jika memungkinkan), pengukuran ketebalan shell
+    serta floor, pengujian kebocoran, serta inspeksi foundation settlement. Masing-masing
+    inspeksi didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
+    kelayakan operasional yang berlaku sesuai ketentuan.
+_content_refreshed_at: '2026-05-10T05:56:03+0000'
+lastmod: '2026-05-10T05:56:03+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
