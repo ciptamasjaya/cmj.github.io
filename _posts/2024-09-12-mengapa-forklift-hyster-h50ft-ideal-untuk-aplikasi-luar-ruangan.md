@@ -2,7 +2,7 @@
 layout: node/node--alat-k3
 title: Mengapa Forklift Hyster H50FT Ideal untuk Aplikasi Luar Ruangan
 description: Panduan lengkap Forklift Hyster H50FT dalam rangka aplikasi luar ruangan
-  termasuk keunggulan, spesifikasi, fitur keamanan, dan pentingnya riksa uji K3.
+  mencakup keunggulan, spesifikasi, fitur keamanan, serta pentingnya riksa uji K3.
 keywords: forklift hyster h50ft, forklift outdoor, forklift luar ruangan, riksa uji
   forklift, K3 forklift
 permalink: "/2024/09/12/mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan/"
@@ -262,8 +262,8 @@ section_risks:
 section_faq:
   title: Pertanyaan Umum
   icon: bi-question-circle
-  intro: Jawaban dalam rangka pertanyaan yang sering diajukan perihal Forklift Hyster
-    H50FT dan riksa uji.
+  intro: Jawaban dalam rangka pertanyaan yang sering diajukan mengenai Forklift Hyster
+    H50FT serta riksa uji.
   faqs:
   - question: Apa itu PJK3?
     answer: "<a href='/2024/09/02/pjk3-riksa-uji/'>PJK3</a> adalah Perusahaan Jasa
@@ -296,7 +296,7 @@ section_cta:
   headline: Butuh Riksa Uji Forklift?
   icon: bi-shield-check
   description: PT Cipta Mas Jaya adalah PJK3 Riksa Uji yang diakui sebagai penyedia
-    jasa pengecekan K3 dalam rangka Pesawat Angkat dan Angkut, meliputi forklift.
+    jasa pemeriksaan K3 dalam rangka Pesawat Angkat serta Angkut, meliputi forklift.
   benefits:
   - Inspeksi oleh tim ahli bersertifikat
   - Pengalaman menangani berbagai jenis forklift
@@ -305,5 +305,5 @@ section_cta:
   button_url: "/contact/"
   phone: ''
   whatsapp: ''
-lastmod: '2026-04-24T05:27:45+0000'
+lastmod: '2026-05-11T06:30:00+0000'
 ---

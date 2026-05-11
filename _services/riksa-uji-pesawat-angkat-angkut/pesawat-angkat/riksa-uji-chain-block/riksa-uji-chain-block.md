@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Chain Block
-description: Riksa uji chain block adalah pemeriksaan serta pengujian keselamatan
-  chain hoist oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3
-  dari Disnaker. Layanan pemeriksaan K3 segenap Indonesia.
+description: Riksa uji chain block adalah inspeksi serta pengujian keselamatan chain
+  hoist oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 daripada
+  Disnaker. Layanan inspeksi K3 segenap Indonesia.
 para_1: Riksa uji chain block adalah inspeksi dan tes kepada pesawat angkat jenis
-  chain block berdasarkan secara cara cara cara Permenaker No. 8 Tahun 2020 perihal
-  Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
+  chain block sesuai secara cara cara cara Permenaker No. 8 Tahun 2020 mengenai Keselamatan
+  dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-chain-block/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -42,35 +42,35 @@ keywords: riksa uji chain block, jasa riksa uji chain block, inspeksi chain bloc
 rating_id: riksa-uji-chain-block
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-04-29T05:46:26+0000'
+lastmod: '2026-05-11T06:30:00+0000'
 intro:
   name: Layanan Riksa Uji Chain Block Profesional
-  para: PT. Cipta Mas Jaya menyediakan layanan riksa uji chain block secara cara cara
-    inspector bersertifikat dan berpengalaman. Kami memastikan chain block Anda mencukupi
-    standar keselamatan dalam rangka operasional yang aman pada workshop, gudang,
-    dan fasilitas industri.
+  para: PT. Cipta Mas Jaya menyediakan layanan riksa uji chain block dengan cara cara
+    cara inspector bersertifikat serta berpengalaman. Kami memastikan chain block
+    Anda mencukupi standar keselamatan dalam rangka operasional yang aman pada workshop,
+    gudang, serta fasilitas industri.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Riksa uji chain block wajib dilakukan sesuai regulasi keselamatan kerja
-      yang berlaku kepada Indonesia dalam rangka melindungi pekerja dari risiko kecelakaan
+      yang berlaku pada Indonesia dalam rangka melindungi pekerja dari risiko kecelakaan
       kerja.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan perihal Keselamatan serta Kesehatan
         Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
-        rangka segenap jenis chain block yang dioperasikan terhadap tempat kerja.
+        rangka segenap jenis chain block yang dioperasikan kepada tempat kerja.
     - h4: Standar ASME B30.16 dan SNI
       para: Pengujian dilaksanakan mengacu pada standar internasional ASME B30.16
-        dalam rangka Overhead Hoists (Underhung) dan Acuan Nasional Indonesia (SNI)
+        dalam rangka Overhead Hoists (Underhung) dan Standar Nasional Indonesia (SNI)
         dalam rangka memverifikasi keselamatan optimal.
   - h3: Tim Inspector Bersertifikat
     para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP serta telah
-      berpengalaman dalam bidang pemeriksaan pesawat angkat mencakup bermacam-macam
-      jenis chain block dalam rangka industri manufaktur, pergudangan, serta bengkel.
+      berpengalaman dalam bidang inspeksi pesawat angkat mencakup bermacam-macam jenis
+      chain block dalam rangka industri manufaktur, pergudangan, serta bengkel.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji chain block terhadap seluruh Indonesia. Tim kami
-      siap datang ke lokasi Anda dalam rangka melaksanakan pemeriksaan on-site dengan
-      waktu yang fleksibel sesuai jadwal operasional.
+    para: Kami melayani riksa uji chain block kepada seluruh Indonesia. Tim kami siap
+      datang ke lokasi Anda dalam rangka melaksanakan pemeriksaan on-site dengan waktu
+      yang fleksibel sesuai jadwal operasional.
 jenis_alat:
   name: Jenis Chain Block yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis chain block dengan kapasitas
@@ -104,32 +104,32 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Chain Block yang Diperiksa
-  description: Inspeksi menyeluruh kepada seluruh bagian keselamatan chain block dengan
+  description: Inspeksi menyeluruh kepada seluruh elemen keselamatan chain block secara
     cara cara cara fokus kepada keadaan rantai
   items:
   - name: Load Chain (Rantai Beban)
-    description: Pemeriksaan elongation (perpanjangan), keausan link, deformasi, korosi,
+    description: Inspeksi elongation (perpanjangan), keausan link, deformasi, korosi,
       serta pelumasan rantai beban primer.
     icon: bi-link-45deg
   - name: Hook dan Safety Latch
-    description: Pengecekan situasi hook atas dan bawah, pengukuran bukaan hook, keausan,
-      dan fungsi safety latch pengaman.
+    description: Pengecekan situasi hook atas serta bawah, pengukuran bukaan hook,
+      keausan, serta fungsi safety latch pengaman.
     icon: bi-exclude
   - name: Chain Guide dan Sprocket
     description: Pengecekan chain guide, sprocket (gear rantai), keausan gigi, serta
-      keselarasan rantai pada mekanisme penggerak.
+      keselarasan rantai terhadap mekanisme penggerak.
     icon: bi-gear
   - name: Motor dan Brake System
     description: Pengujian motor penggerak (dalam rangka electric), sistem rem elektromagnetik,
-      serta fungsi pengereman saat beban.
+      dan fungsi pengereman saat beban.
     icon: bi-gear-fill
   - name: Pendant Control dan Limit Switch
-    description: Pengecekan fungsi tombol kontrol pendant, kabel kontrol, limit switch
+    description: Pengecekan fungsi tombol kontrol pendant, kabel kontrol, ambang switch
       atas-bawah, serta emergency stop.
     icon: bi-toggles
   - name: Chain Container/Bag
-    description: Pengecekan kondisi chain container maupun chain bag dalam rangka
-      penyimpanan rantai saat posisi hook terhadap atas.
+    description: Pengecekan kondisi chain container atau chain bag dalam rangka penyimpanan
+      rantai saat posisi hook terhadap atas.
     icon: bi-bag
 proses_inspeksi:
   name: Proses Riksa Uji Chain Block
