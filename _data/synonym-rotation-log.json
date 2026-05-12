@@ -151,30 +151,33 @@
     ]
   },
   "2025-05-24-pjk3-semarang.md": {
-    "date": "2026-05-05",
+    "date": "2026-05-12",
     "changes": 14,
     "words": [
-      "kepada→pada",
-      "segenap→seluruh",
+      "pada→terhadap",
       "seluruh→semua",
-      "kriteria→acuan",
-      "dan→serta",
-      "pemeriksaan→inspeksi",
+      "alat→perkakas",
+      "kepada→pada",
       "serta→dan",
-      "atau→maupun"
+      "prosedur→proses",
+      "dan→serta",
+      "perkakas→peralatan",
+      "dari→daripada",
+      "inspeksi→pengecekan"
     ]
   },
   "riksa-uji-pesawat-angkat-angkut.md": {
-    "date": "2026-05-05",
+    "date": "2026-05-12",
     "changes": 8,
     "words": [
-      "standar→kriteria",
-      "serta→dan",
-      "dan→serta",
-      "menjamin→memverifikasi",
-      "alat→perkakas",
-      "elemen→komponen",
-      "kriteria→acuan"
+      "sesuai→berdasarkan",
+      "pengecekan→pemeriksaan",
+      "dilakukan→dilaksanakan",
+      "terhadap→kepada",
+      "termasuk→mencakup",
+      "perkakas→peralatan",
+      "berfungsi→bekerja",
+      "Pengecekan→Pemeriksaan"
     ]
   },
   "pesawat-angkat.md": {
@@ -671,24 +674,26 @@
     ]
   },
   "riksa-uji-passenger-hoist.md": {
-    "date": "2026-04-23",
+    "date": "2026-05-12",
     "changes": 19,
     "words": [
-      "segenap→seluruh",
-      "pengecekan→pemeriksaan",
-      "serta→dan",
-      "dengan→secara",
-      "memenuhi→mencukupi",
-      "standar→kriteria",
-      "Pemeriksaan→Inspeksi",
-      "bagian→elemen",
-      "Inspeksi→Pengecekan",
-      "batas→limit",
+      "pemeriksaan→inspeksi",
+      "seluruh→semua",
       "dan→serta",
+      "tentang→perihal",
+      "kriteria→acuan",
+      "serta→dan",
+      "pada→terhadap",
+      "elemen→komponen",
+      "keadaan→situasi",
+      "Inspeksi→Pengecekan",
       "Pengecekan→Pemeriksaan",
-      "dilaksanakan→dijalankan",
-      "memiliki→mempunyai",
-      "sampai→sehingga"
+      "limit→ambang",
+      "Pemeriksaan→Inspeksi",
+      "mengenai→tentang",
+      "terhadap→kepada",
+      "mempunyai→memiliki",
+      "sehingga→hingga"
     ]
   },
   "riksa-uji-scissor-lift.md": {
