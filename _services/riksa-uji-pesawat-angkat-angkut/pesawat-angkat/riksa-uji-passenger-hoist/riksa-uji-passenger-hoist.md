@@ -1,13 +1,13 @@
 ---
 layout: node/node--service
 title: Riksa Uji Passenger Hoist
-description: Riksa uji passenger hoist adalah inspeksi serta pengujian keselamatan
-  lift barang serta penumpang konstruksi oleh PJK3 resmi Kemenaker dalam rangka mendapatkan
-  SIA/SILO/Suket K3 daripada Disnaker. Layanan inspeksi K3 semua Indonesia.
-para_1: Riksa uji passenger hoist adalah inspeksi serta pengujian terhadap pesawat
-  angkat jenis lift barang serta penumpang dalam rangka proyek konstruksi berdasarkan
-  secara cara Permenaker No. 8 Tahun 2020 perihal Keselamatan serta Kesehatan Kerja
-  Pesawat Angkat serta Pesawat Angkut.
+description: Riksa uji passenger hoist adalah inspeksi dan pengujian keselamatan lift
+  barang dan penumpang konstruksi oleh PJK3 resmi Kemenaker dalam rangka mendapatkan
+  SIA/SILO/Suket K3 daripada Disnaker. Layanan inspeksi K3 segenap Indonesia.
+para_1: Riksa uji passenger hoist adalah inspeksi serta pengujian kepada pesawat angkat
+  jenis lift barang serta penumpang dalam rangka proyek konstruksi berdasarkan secara
+  cara Permenaker No. 8 Tahun 2020 mengenai Keselamatan serta Kesehatan Kerja Pesawat
+  Angkat serta Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-passenger-hoist/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -42,34 +42,33 @@ keywords: riksa uji passenger hoist, jasa riksa uji passenger hoist, inspeksi pa
 rating_id: riksa-uji-passenger-hoist
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-05-12T05:58:48+0000'
+lastmod: '2026-05-16T05:46:20+0000'
 intro:
   name: Layanan Riksa Uji Passenger Hoist Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji passenger hoist secara inspector
-    bersertifikat dan berpengalaman. Kami memverifikasi construction hoist Anda mencukupi
-    acuan keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI dalam rangka
-    operasional yang aman terhadap proyek konstruksi.
+    bersertifikat dan berpengalaman. Kami memastikan construction hoist Anda mencukupi
+    standar keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI dalam
+    rangka operasional yang aman terhadap proyek konstruksi.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji passenger hoist wajib dijalankan sesuai regulasi keselamatan kerja
+    para: Riksa uji passenger hoist wajib dilakukan sesuai regulasi keselamatan kerja
       yang berlaku terhadap Indonesia.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan serta Kesehatan
-        Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala untuk
-        seluruh jenis construction hoist mencakup passenger hoist.
+        Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
+        rangka seluruh jenis construction hoist mencakup passenger hoist.
     - h4: Standar EN 12159 dan SNI
       para: Pengujian dijalankan mengacu kepada kriteria EN 12159 dalam rangka Builder's
-        Hoists dan Standar Nasional Indonesia (SNI) yang berlaku dalam rangka lift
+        Hoists serta Standar Nasional Indonesia (SNI) yang berlaku dalam rangka lift
         konstruksi.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP serta telah
-      berpengalaman dalam bidang pemeriksaan pesawat angkat jenis passenger hoist.
-      Tiap inspector memahami karakteristik khusus construction hoist dari beragam
-      merek serta kapasitas.
+    para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP dan telah berpengalaman
+      dalam bidang pemeriksaan pesawat angkat jenis passenger hoist. Tiap inspector
+      memahami karakteristik khusus construction hoist dari beragam merek dan kapasitas.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani riksa uji passenger hoist di segenap Indonesia, dari Sabang
-      hingga Merauke. Tim kami siap datang ke lokasi proyek konstruksi gedung bertingkat,
+      sampai Merauke. Tim kami siap datang ke lokasi proyek konstruksi gedung bertingkat,
       apartemen, hotel, dan fasilitas industri lainnya.
 jenis_alat:
   name: Jenis Passenger Hoist yang Kami Layani
@@ -104,29 +103,29 @@ jenis_alat:
     hubungi kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Passenger Hoist yang Diperiksa
-  description: Inspeksi menyeluruh terhadap semua komponen keselamatan passenger hoist
+  description: Inspeksi menyeluruh kepada segenap komponen keselamatan passenger hoist
   items:
   - name: Cage dan Landing Gate
     description: Inspeksi situasi cage, pintu cage, landing gate, interlock system,
-      dan mekanisme pengunci.
+      serta mekanisme pengunci.
     icon: bi-door-open
   - name: Mast Section
-    description: Pengecekan struktur mast, rack, sambungan antar section, dan sistem
+    description: Pemeriksaan struktur mast, rack, sambungan antar section, dan sistem
       anchoring ke bangunan.
     icon: bi-arrows-vertical
   - name: Drive Unit
-    description: Pemeriksaan motor, gearbox, pinion gear, dan sistem transmisi penggerak.
+    description: Inspeksi motor, gearbox, pinion gear, dan sistem transmisi penggerak.
     icon: bi-gear-wide-connected
   - name: Safety Device
     description: Pengujian overspeed governor, anti-fall device, final ambang switch,
-      dan emergency brake.
+      serta emergency brake.
     icon: bi-shield-check
   - name: Sistem Kontrol
-    description: Pengecekan panel kontrol, sistem komunikasi, emergency stop, serta
+    description: Pengecekan panel kontrol, sistem komunikasi, emergency stop, dan
       indikator level.
     icon: bi-cpu
   - name: Wire Rope dan Guide
-    description: Inspeksi wire rope, guide roller, counterweight system, dan buffer.
+    description: Inspeksi wire rope, guide roller, counterweight system, serta buffer.
     icon: bi-link
 proses_inspeksi:
   name: Proses Riksa Uji Passenger Hoist
