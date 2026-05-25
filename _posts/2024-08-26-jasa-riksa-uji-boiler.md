@@ -2,8 +2,8 @@
 layout: node/node--riksa-uji
 title: Riksa Uji Boiler
 rating_id: riksa-uji-boiler
-description: Riksa pengujian boiler adalah inspeksi serta pengujian keselamatan ketel
-  uap dalam rangka menjamin operasional aman sesuai acuan K3 serta Permenaker.
+description: Riksa pengujian boiler adalah pengecekan dan pengujian keselamatan ketel
+  uap dalam rangka menjamin operasional aman sesuai acuan K3 dan Permenaker.
 keywords: riksa uji boiler, jasa riksa uji boiler, inspeksi boiler, ketel uap, hydrotest
   boiler, PJK3, sertifikasi K3, pesawat uap, bejana tekan, safety valve
 content_intro:
@@ -67,8 +67,8 @@ section_hero:
   theme: red
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    pemeriksaan serta tes boiler/ketel uap dengan cara cara cara acuan profesional.
-    Dapatkan sertifikat kelayakan operasi dalam rangka boiler Anda.
+    inspeksi dan tes boiler/ketel uap dengan cara cara cara acuan profesional. Dapatkan
+    sertifikat kelayakan operasi dalam rangka boiler Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
   - Jabodetabek
@@ -759,7 +759,7 @@ section_conclusion:
   intro: <a href="https://maps.app.goo.gl/KwFSALZKY9WMrK5C6" target="_blank" rel="noopener">Riksa
     uji boiler</a> adalah langkah vital dalam rangka menjamin keselamatan serta efisiensi
     operasional dalam penggunaan alat ini. Prosedur riksa uji yang sistematis serta
-    rutin, mulai daripada persiapan hingga dokumentasi outcome, amat vital dalam rangka
+    rutin, mulai dari persiapan sampai dokumentasi outcome, amat vital dalam rangka
     mengidentifikasi potensi masalah sebelum menjadi kecelakaan.
   highlights:
   - key: Mencegah Kecelakaan Kerja
@@ -783,5 +783,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
-lastmod: '2026-05-05T05:35:01+0000'
+lastmod: '2026-05-25T07:05:07+0000'
 ---
