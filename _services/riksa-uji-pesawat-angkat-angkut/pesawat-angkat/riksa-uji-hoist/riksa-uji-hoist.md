@@ -3,9 +3,9 @@ layout: node/node--service
 title: Riksa Uji Hoist
 description: Riksa uji hoist adalah pemeriksaan dan pengujian keselamatan pesawat
   angkat jenis hoist oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket
-  K3 dari Disnaker. Layanan pemeriksaan K3 semua Indonesia.
-para_1: Riksa uji hoist adalah pemeriksaan serta pengujian kepada pesawat angkat jenis
-  hoist sesuai secara cara cara cara Permenaker No. 8 Tahun 2020 perihal Keselamatan
+  K3 daripada Disnaker. Layanan pemeriksaan K3 segenap Indonesia.
+para_1: Riksa uji hoist adalah pemeriksaan serta pengujian pada pesawat angkat jenis
+  hoist sesuai dengan cara cara cara cara Permenaker No. 8 Tahun 2020 perihal Keselamatan
   serta Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-hoist/"
 category: Riksa Uji Pesawat Angkat Angkut
@@ -41,34 +41,34 @@ keywords: riksa uji hoist, jasa riksa uji hoist, inspeksi hoist, inspeksi electr
 rating_id: riksa-uji-hoist
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-05-20T06:41:25+0000'
+lastmod: '2026-05-28T06:44:43+0000'
 intro:
   name: Layanan Riksa Uji Hoist Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji hoist secara cara cara inspector
-    bersertifikat dan berpengalaman. Kami menjamin hoist Anda memenuhi kriteria keselamatan
-    yang ditetapkan oleh Kementerian Ketenagakerjaan RI dalam rangka operasional yang
-    aman dan legal.
+    bersertifikat dan berpengalaman. Kami memverifikasi hoist Anda mencukupi kriteria
+    keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan RI dalam rangka operasional
+    yang aman dan legal.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji hoist wajib dilakukan berdasarkan regulasi keselamatan kerja yang
-      berlaku kepada Indonesia dalam rangka melindungi pekerja serta aset perusahaan.
+    para: Riksa uji hoist wajib dilaksanakan berdasarkan regulasi keselamatan kerja
+      yang berlaku kepada Indonesia dalam rangka melindungi pekerja serta aset perusahaan.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan mengenai Keselamatan dan Kesehatan Kerja
         Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
-        semua jenis hoist yang dioperasikan kepada tempat kerja.
+        segenap jenis hoist yang dioperasikan kepada tempat kerja.
     - h4: Standar ASME dan SNI
       para: Pengujian dilakukan mengacu terhadap kriteria internasional ASME B30.16
         dalam rangka Overhead Hoists dan Standar Nasional Indonesia (SNI) dalam rangka
-        memastikan keselamatan optimal.
+        menjamin keselamatan optimal.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami memiliki sertifikat kompetensi daripada BNSP dan telah
-      berpengalaman lebih daripada 10 tahun dalam bidang pemeriksaan pesawat angkat
-      meliputi beragam jenis hoist industri.
+    para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP dan telah berpengalaman
+      lebih dari 10 tahun dalam bidang pemeriksaan pesawat angkat meliputi beragam
+      jenis hoist industri.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji hoist terhadap seluruh Indonesia, dari Sabang sehingga
-      Merauke. Tim kami siap datang ke lokasi Anda dalam rangka melaksanakan pemeriksaan
-      on-site kapanpun diperlukan.
+    para: Kami melayani riksa uji hoist terhadap seluruh Indonesia, daripada Sabang
+      sehingga Merauke. Tim kami siap datang ke lokasi Anda dalam rangka melaksanakan
+      pemeriksaan on-site kapanpun diperlukan.
 jenis_alat:
   name: Jenis Hoist yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis hoist industri dengan
@@ -102,32 +102,32 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Hoist yang Diperiksa
-  description: Pengecekan menyeluruh terhadap semua elemen keselamatan hoist dalam
+  description: Pemeriksaan menyeluruh kepada semua elemen keselamatan hoist dalam
     rangka memverifikasi kelayakan operasi
   items:
   - name: Hook dan Safety Latch
-    description: Inspeksi situasi hook, pengukuran bukaan hook, keausan, deformasi,
+    description: Pengecekan situasi hook, pengukuran bukaan hook, keausan, deformasi,
       dan fungsi safety latch pengaman.
     icon: bi-exclude
   - name: Wire Rope / Rantai
-    description: Inspeksi situasi wire rope maupun rantai termasuk keausan, putus
+    description: Pengecekan situasi wire rope maupun rantai termasuk keausan, putus
       kawat, korosi, dan pelumasan.
     icon: bi-link
   - name: Drum dan Sheave
     description: Inspeksi situasi drum penggulung, sheave (pulley), keausan alur,
-      dan keretakan.
+      serta keretakan.
     icon: bi-circle
   - name: Motor dan Gearbox
-    description: Pemeriksaan motor penggerak, gearbox, kopling, dan sistem transmisi
+    description: Inspeksi motor penggerak, gearbox, kopling, dan sistem transmisi
       dalam rangka memverifikasi performa optimal.
     icon: bi-gear-fill
   - name: Sistem Rem
-    description: Pengujian fungsi rem utama dan rem darurat, pemeriksaan kampas rem
-      dan mekanisme pengereman.
+    description: Pengujian fungsi rem utama serta rem darurat, pemeriksaan kampas
+      rem serta mekanisme pengereman.
     icon: bi-sign-stop
   - name: Sistem Kontrol dan Limit Switch
-    description: Pengecekan panel kontrol, pendant, batas switch atas-bawah, dan sistem
-      keselamatan elektrikal.
+    description: Pengecekan panel kontrol, pendant, batas switch atas-bawah, serta
+      sistem keselamatan elektrikal.
     icon: bi-toggles
 proses_inspeksi:
   name: Proses Riksa Uji Hoist

@@ -2,12 +2,12 @@
 layout: node/node--service
 title: Riksa Uji Forklift
 description: Riksa uji forklift adalah pengecekan serta pengujian keselamatan forklift
-  oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 daripada Disnaker.
-  Layanan pengecekan K3 seluruh Indonesia.
+  oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 dari Disnaker.
+  Layanan pengecekan K3 semua Indonesia.
 para_1: Riksa uji forklift merupakan pengecekan dan pengujian keselamatan kepada forklift
-  yang wajib dilakukan dengan cara berkala berdasarkan Peraturan Menteri Ketenagakerjaan
-  Nomor 8 Tahun 2020. Inspeksi ini ditujukan dalam rangka memverifikasi forklift beroperasi
-  dengan cara aman dan berdasarkan acuan keselamatan kerja yang berlaku.
+  yang wajib dilakukan secara cara berkala berdasarkan Peraturan Menteri Ketenagakerjaan
+  Nomor 8 Tahun 2020. Pengecekan ini ditujukan dalam rangka memverifikasi forklift
+  beroperasi secara cara aman dan berdasarkan acuan keselamatan kerja yang berlaku.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkut
@@ -46,31 +46,31 @@ intro:
   name: Layanan Riksa Uji Forklift Profesional
   para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
-    layanan riksa pengujian forklift yang komprehensif dengan cara cara cara tim inspector
-    bersertifikat dan alat testing yang terkalibrasi.
+    layanan riksa pengujian forklift yang komprehensif secara cara cara cara tim inspector
+    bersertifikat dan perkakas testing yang terkalibrasi.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Masing-masing pengecekan riksa pengujian forklift yang kami lakukan mengacu
       terhadap regulasi serta standar keselamatan kerja yang berlaku pada Indonesia,
-      memastikan kepatuhan penuh terhadap peraturan pemerintah.
+      menjamin kepatuhan penuh terhadap peraturan pemerintah.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020 mengenai Keselamatan
-        serta Kesehatan Kerja Pesawat Angkat serta Angkut mewajibkan tiap forklift
-        menjalani riksa uji berkala dalam rangka menjamin kelayakan operasional.
+        dan Kesehatan Kerja Pesawat Angkat dan Angkut mewajibkan tiap forklift menjalani
+        riksa uji berkala dalam rangka menjamin kelayakan operasional.
     - h4: SNI dan Standar Internasional
-      para: Selain mengacu kepada peraturan nasional, kami juga menerapkan acuan SNI
-        dan referensi internasional seperti OSHA dan ANSI dalam rangka memastikan
+      para: Selain mengacu kepada peraturan nasional, kami juga menerapkan standar
+        SNI dan referensi internasional seperti OSHA dan ANSI dalam rangka memastikan
         kualitas inspeksi terbaik.
   - h3: Tim Inspector Bersertifikat
     para: Inspector kami memiliki sertifikasi resmi dari Kementerian Ketenagakerjaan
       RI serta pengalaman bertahun-tahun dalam bidang pemeriksaan K3. Masing-masing
-      pemeriksaan dijalankan dengan cara profesionalisme tinggi serta menghasilkan
-      sertifikat yang diakui dengan cara nasional.
+      pemeriksaan dijalankan secara cara profesionalisme tinggi serta menghasilkan
+      sertifikat yang diakui secara cara nasional.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani berbagai jenis forklift termasuk counterbalance, reach truck,
       serta stacker pada semua Indonesia. Dengan jaringan inspector yang luas, kami
-      siap melaksanakan pemeriksaan on-site pada lokasi Anda.
+      siap melaksanakan inspeksi on-site pada lokasi Anda.
 jenis_alat:
   name: Jenis Forklift yang Kami Layani
   description: Kami melayani riksa pengujian dalam rangka bermacam-macam jenis forklift
@@ -102,25 +102,25 @@ jenis_alat:
     lebih lanjut.
 komponen_inspeksi:
   name: Komponen yang Diperiksa
-  description: Pemeriksaan menyeluruh terhadap seluruh bagian keselamatan forklift
+  description: Pemeriksaan menyeluruh terhadap semua elemen keselamatan forklift
   items:
   - name: Sistem Hidrolik
-    description: Silinder, selang, katup kontrol, serta oli hidrolik
+    description: Silinder, selang, katup kontrol, dan oli hidrolik
     icon: bi-droplet-half
   - name: Sistem Pengereman
-    description: Service brake, parking brake, serta emergency brake
+    description: Service brake, parking brake, dan emergency brake
     icon: bi-sign-stop
   - name: Mast dan Fork
-    description: Struktur mast, rantai angkat, serta kondisi garpu
+    description: Struktur mast, rantai angkat, serta keadaan garpu
     icon: bi-arrows-vertical
   - name: Sistem Kemudi
-    description: Steering wheel, power steering, serta responsivitas
+    description: Steering wheel, power steering, dan responsivitas
     icon: bi-arrows-move
   - name: Komponen Keselamatan
-    description: Lampu, klakson, seat belt, serta overhead guard
+    description: Lampu, klakson, seat belt, dan overhead guard
     icon: bi-shield-check
   - name: Sistem Elektrikal
-    description: Baterai, kabel, serta panel kontrol
+    description: Baterai, kabel, dan panel kontrol
     icon: bi-plug
 proses_inspeksi:
   name: Proses Riksa Uji Forklift
@@ -270,5 +270,5 @@ faq_riksa_uji:
     answer: Sertifikat riksa uji forklift berlaku selama 1 (satu) tahun sejak tanggal
       penerbitan. Setelah masa berlaku habis, forklift wajib dilakukan riksa uji ulang
       untuk memperbarui sertifikat dan memastikan kelayakan operasional.
-lastmod: '2026-05-23T06:07:08+0000'
+lastmod: '2026-05-28T06:44:43+0000'
 ---
