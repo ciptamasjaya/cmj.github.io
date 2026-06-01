@@ -100,7 +100,7 @@ proses:
     sambungan las, serta hydrostatic test. Masing-masing pengecekan didokumentasikan
     dalam laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang
     berlaku 1 tahun.
-_content_refreshed_at: '2026-05-30T06:16:35+0000'
+_content_refreshed_at: '2026-06-01T08:26:52+0000'
 lastmod: '2026-05-25T07:05:08+0000'
 ---
 <!-- ========================================================================== -->

@@ -1,13 +1,13 @@
 {
   "2024-08-26-jasa-riksa-uji-boiler.md": {
-    "date": "2026-05-25",
+    "date": "2026-06-01",
     "changes": 6,
     "words": [
-      "inspeksi→pengecekan",
-      "serta→dan",
-      "hingga→sampai",
-      "daripada→dari",
-      "pemeriksaan→inspeksi"
+      "pengecekan→pemeriksaan",
+      "acuan→standar",
+      "Prosedur→Proses",
+      "outcome→hasil",
+      "inspeksi→pengecekan"
     ]
   },
   "2024-08-26-jasa-riksa-uji-forklift.md": {
@@ -22,47 +22,44 @@
     ]
   },
   "2024-10-16-riksa-uji-boiler-john-thompson-74910.md": {
-    "date": "2026-05-20",
+    "date": "2026-06-01",
     "changes": 44,
     "words": [
-      "hasil→temuan",
-      "meliputi→termasuk",
-      "tahapan→prosedur",
-      "vital→penting",
-      "terhadap→kepada",
-      "dilaksanakan→dijalankan",
-      "Secara→Dengan cara",
-      "baik→bagus",
-      "sesuai→berdasarkan",
-      "beroperasi→berfungsi",
-      "dan→serta",
-      "bagus→baik",
-      "situasi→kondisi",
       "termasuk→mencakup",
-      "mencukupi→memenuhi",
-      "bagian→elemen",
-      "memakai→memanfaatkan",
-      "Segenap→Seluruh",
-      "terdapat→ada",
-      "dari→daripada",
-      "dilakukan→dilaksanakan",
-      "maupun→atau",
-      "bekerja→beroperasi",
       "temuan→outcome",
-      "dengan→secara",
       "penting→krusial",
-      "Semua→Segenap",
-      "outcome→hasil",
-      "kondisi→keadaan",
+      "pengecekan→pemeriksaan",
       "secara→dengan cara",
-      "dimanfaatkan→digunakan",
+      "Pemeriksaan→Inspeksi",
+      "keadaan→situasi",
+      "Dengan→Secara",
+      "dan→serta",
+      "bekerja→beroperasi",
+      "dengan→secara",
+      "dijalankan→dilakukan",
       "mencakup→meliputi",
-      "acuan→standar",
-      "diuji→dites",
-      "berfungsi→bekerja",
-      "untuk→dalam rangka",
-      "komponen→bagian",
-      "memiliki→mempunyai"
+      "memenuhi→mencukupi",
+      "Seluruh→Semua",
+      "elemen→komponen",
+      "memanfaatkan→menggunakan",
+      "ada→dijumpai",
+      "outcome→hasil",
+      "daripada→dari",
+      "serta→dan",
+      "atau→maupun",
+      "dilakukan→dilaksanakan",
+      "terhadap→kepada",
+      "kepada→pada",
+      "krusial→vital",
+      "pada→terhadap",
+      "situasi→kondisi",
+      "dipakai→dimanfaatkan",
+      "Kepada→Pada",
+      "peralatan→alat",
+      "inspeksi→pengecekan",
+      "melakukan→melaksanakan",
+      "diperlukan→dibutuhkan",
+      "berfungsi→bekerja"
     ]
   },
   "2024-12-16-riksa-uji-forklift-caterpillar-ep20-5ss25am.md": {
@@ -101,38 +98,38 @@
     ]
   },
   "2025-05-20-pjk3-terdekat-08568258841.md": {
-    "date": "2026-05-23",
+    "date": "2026-06-01",
     "changes": 13,
     "words": [
-      "kepada→pada",
-      "semua→segenap",
-      "dengan→secara",
-      "dari→daripada",
-      "terhadap→kepada",
-      "inspeksi→pengecekan",
-      "proses→tahapan",
-      "hingga→sampai",
       "pada→terhadap",
+      "segenap→seluruh",
       "serta→dan",
-      "seluruh→semua",
-      "meliputi→termasuk"
+      "secara→dengan cara",
+      "kepada→pada",
+      "tahapan→prosedur",
+      "dari→daripada",
+      "pengecekan→pemeriksaan",
+      "terhadap→kepada",
+      "Kepada→Pada",
+      "termasuk→mencakup",
+      "semua→segenap"
     ]
   },
   "2025-05-22-pjk3-jakarta-selatan.md": {
-    "date": "2026-05-20",
+    "date": "2026-06-01",
     "changes": 14,
     "words": [
-      "pada→terhadap",
-      "semua→segenap",
-      "kriteria→acuan",
-      "seluruh→semua",
-      "dan→serta",
-      "prosedur→proses",
+      "segenap→seluruh",
+      "terhadap→kepada",
       "serta→dan",
-      "sehingga→hingga",
-      "atau→maupun",
+      "acuan→standar",
+      "pemeriksaan→inspeksi",
+      "proses→tahapan",
       "Secara→Dengan cara",
-      "pemeriksaan→inspeksi"
+      "daripada→dari",
+      "maupun→atau",
+      "seluruh→semua",
+      "inspeksi→pengecekan"
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
@@ -226,16 +223,16 @@
     ]
   },
   "riksa-uji-pesawat-uap-bejana-tekan.md": {
-    "date": "2026-05-06",
+    "date": "2026-06-01",
     "changes": 8,
     "words": [
-      "kriteria→acuan",
-      "seluruh→semua",
-      "dilaksanakan→dijalankan",
-      "dari→daripada",
       "dengan→secara",
-      "berdasarkan→sesuai",
-      "Pengecekan→Pemeriksaan"
+      "termasuk→mencakup",
+      "memastikan→menjamin",
+      "inspeksi→pengecekan",
+      "secara→dengan cara",
+      "alat→perkakas",
+      "semua→segenap"
     ]
   },
   "bejana-tekan.md": {
@@ -414,28 +411,23 @@
     ]
   },
   "riksa-uji-dongkrak-hidrolik.md": {
-    "date": "2026-05-05",
+    "date": "2026-06-01",
     "changes": 19,
     "words": [
-      "inspeksi→pengecekan",
-      "segenap→seluruh",
-      "mengenai→tentang",
-      "secara→dengan cara",
-      "kriteria→acuan",
-      "memverifikasi→memastikan",
-      "komponen→bagian",
-      "Pemeriksaan→Inspeksi",
-      "Pengecekan→Pemeriksaan",
-      "memastikan→menjamin",
-      "serta→dan",
-      "keadaan→situasi",
-      "situasi→kondisi",
+      "dari→daripada",
+      "seluruh→semua",
+      "berdasarkan→sesuai",
+      "kepada→pada",
+      "memenuhi→mencukupi",
       "dan→serta",
-      "dilakukan→dilaksanakan",
-      "perihal→mengenai",
-      "acuan→standar",
-      "mempunyai→memiliki",
-      "pada→terhadap"
+      "bagian→elemen",
+      "Pemeriksaan→Inspeksi",
+      "menjamin→memverifikasi",
+      "kondisi→keadaan",
+      "serta→dan",
+      "mengenai→tentang",
+      "pemeriksaan→inspeksi",
+      "terhadap→kepada"
     ]
   },
   "riksa-uji-hoist.md": {
@@ -552,19 +544,16 @@
     ]
   },
   "mesin-produksi.md": {
-    "date": "2026-05-25",
+    "date": "2026-06-01",
     "changes": 10,
     "words": [
-      "pengecekan→pemeriksaan",
-      "dan→serta",
-      "mencakup→meliputi",
-      "prosedur→proses",
       "pemeriksaan→inspeksi",
-      "alat→perkakas",
-      "atau→maupun",
-      "peralatan→alat",
-      "Tahapan→Prosedur",
-      "dengan→secara"
+      "meliputi→termasuk",
+      "dipakai→dimanfaatkan",
+      "menjalankan→melakukan",
+      "menjamin→memverifikasi",
+      "bagian→elemen",
+      "Prosedur→Proses"
     ]
   },
   "penggerak-mula.md": {
