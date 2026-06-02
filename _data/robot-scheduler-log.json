@@ -1,6 +1,6 @@
 {
   "measurement": {
-    "last_run": "2026-05-31",
+    "last_run": "2026-06-02",
     "script": "rotate-frontmatter.rb"
   },
   "synonym": {
