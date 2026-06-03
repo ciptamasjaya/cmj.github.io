@@ -3,8 +3,8 @@ layout: node/node--riksa-uji
 title: Riksa Uji Overhead Crane
 rating_id: riksa-uji-overhead-crane
 description: Riksa pengujian overhead crane adalah pengecekan serta pengujian keselamatan
-  crane jembatan dalam rangka memverifikasi operasional aman berdasarkan standar K3
-  serta Permenaker.
+  crane jembatan dalam rangka memastikan operasional aman sesuai standar K3 serta
+  Permenaker.
 keywords: riksa uji overhead crane, jasa riksa uji crane, inspeksi crane, crane jembatan,
   pesawat angkat, PJK3, sertifikasi K3, uji beban crane
 content_intro:
@@ -69,13 +69,13 @@ images:
     tahapan penting dalam riksa uji K3 pesawat angkat untuk memastikan kapasitas angkat
     aman
 related_service: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-overhead-crane/"
-lastmod: '2026-05-20T06:41:25+0000'
+lastmod: '2026-06-03T08:08:56+0000'
 section_hero:
   title: Butuh Layanan Riksa Uji Overhead Crane
   theme: orange
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    inspeksi serta uji overhead crane dengan cara cara cara cara profesional. Dapatkan
+    pengecekan dan uji overhead crane dengan cara cara cara cara profesional. Dapatkan
     sertifikat kelayakan operasi dalam rangka crane jembatan Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
@@ -714,9 +714,9 @@ section_conclusion:
   title: Kesimpulan
   icon: bi-check2-square
   intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa uji overhead crane</a>
-    merupakan langkah penting untuk menjamin keselamatan serta efisiensi operasional
+    merupakan langkah krusial untuk memverifikasi keselamatan serta efisiensi operasional
     dalam penggunaan alat angkat ini. Tahapan riksa uji yang sistematis serta rutin,
-    mulai dari persiapan sampai dokumentasi temuan, sungguh penting untuk mengidentifikasi
+    mulai dari persiapan sampai dokumentasi temuan, sungguh krusial untuk mengidentifikasi
     potensi masalah sebelum menyebabkan kecelakaan. Dengan melaksanakan riksa uji
     dengan cara cara berkala, perusahaan dapat:"
   highlights:
