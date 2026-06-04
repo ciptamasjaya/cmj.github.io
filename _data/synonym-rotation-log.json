@@ -273,18 +273,18 @@
     ]
   },
   "tangki-timbun.md": {
-    "date": "2026-05-10",
+    "date": "2026-06-04",
     "changes": 10,
     "words": [
+      "mencakup→meliputi",
+      "dari→daripada",
+      "alat→perkakas",
+      "baik→bagus",
+      "dan→serta",
+      "menjamin→memverifikasi",
       "pemeriksaan→inspeksi",
-      "daripada→dari",
-      "kepada→pada",
-      "atau→maupun",
-      "di→pada",
-      "peralatan→alat",
-      "pengecekan→pemeriksaan",
-      "berdasarkan→sesuai",
-      "dan→serta"
+      "inspeksi→pengecekan",
+      "sesuai→berdasarkan"
     ]
   },
   "2024-08-26-riksa-uji-overhead-crane.md": {
@@ -300,23 +300,23 @@
     ]
   },
   "riksa-uji-gantry-crane.md": {
-    "date": "2026-05-25",
+    "date": "2026-06-04",
     "changes": 19,
     "words": [
+      "seluruh→semua",
+      "daripada→dari",
       "dan→serta",
-      "dari→daripada",
-      "sesuai→berdasarkan",
-      "inspeksi→pengecekan",
-      "menjamin→memverifikasi",
-      "kriteria→acuan",
-      "kepada→pada",
-      "segenap→seluruh",
+      "pengecekan→pemeriksaan",
+      "memverifikasi→memastikan",
+      "bagian→elemen",
       "pada→terhadap",
-      "Pemeriksaan→Inspeksi",
-      "terhadap→kepada",
-      "serta→dan",
-      "mencakup→meliputi",
-      "Standar→Kriteria"
+      "Pengecekan→Pemeriksaan",
+      "Inspeksi→Pengecekan",
+      "berdasarkan→sesuai",
+      "segenap→seluruh",
+      "dilakukan→dilaksanakan",
+      "pemeriksaan→inspeksi",
+      "dibutuhkan→diperlukan"
     ]
   },
   "riksa-uji-overhead-crane.md": {
@@ -433,23 +433,25 @@
     ]
   },
   "riksa-uji-hoist.md": {
-    "date": "2026-05-28",
+    "date": "2026-06-04",
     "changes": 19,
     "words": [
-      "semua→segenap",
-      "dari→daripada",
-      "secara→dengan cara",
-      "kepada→pada",
-      "memenuhi→mencukupi",
-      "menjamin→memverifikasi",
-      "terhadap→kepada",
-      "Pengecekan→Pemeriksaan",
-      "Inspeksi→Pengecekan",
+      "daripada→dari",
+      "pemeriksaan→inspeksi",
+      "pada→terhadap",
+      "dengan→secara",
+      "memverifikasi→memastikan",
       "dan→serta",
-      "Pemeriksaan→Inspeksi",
-      "dilakukan→dilaksanakan",
-      "memastikan→menjamin",
-      "daripada→dari"
+      "semua→segenap",
+      "Pengecekan→Pemeriksaan",
+      "maupun→atau",
+      "situasi→kondisi",
+      "serta→dan",
+      "batas→limit",
+      "berdasarkan→sesuai",
+      "segenap→seluruh",
+      "Standar→Kriteria",
+      "sehingga→hingga"
     ]
   },
   "riksa-uji-jib-crane.md": {
