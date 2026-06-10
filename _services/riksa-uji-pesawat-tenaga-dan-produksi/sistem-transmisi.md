@@ -1,7 +1,7 @@
 ---
 layout: page/page--service-subcategory
 title: Sistem Transmisi
-description: Jasa riksa uji serta inspeksi K3 sistem transmisi profesional termasuk
+description: Jasa riksa uji serta pengecekan K3 sistem transmisi profesional mencakup
   transmisi sabuk, transmisi rantai, serta transmisi roda gigi. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/sistem-transmisi/"
@@ -20,16 +20,16 @@ keywords: riksa uji sistem transmisi, inspeksi transmisi sabuk, inspeksi transmi
   rantai, inspeksi gearbox, inspeksi roda gigi, PJK3, sertifikasi K3
 intro:
   h1: Sistem Transmisi - Riksa Uji Penyaluran Tenaga Mekanik
-  para_1: Sistem transmisi adalah elemen yang dipakai dalam rangka menyalurkan tenaga
-    mekanik dari penggerak mula ke mesin produksi. Kategori ini mencakup transmisi
+  para_1: Sistem transmisi adalah komponen yang dipakai dalam rangka menyalurkan tenaga
+    mekanik dari penggerak mula ke mesin produksi. Kategori ini meliputi transmisi
     sabuk (belt), transmisi rantai (chain), dan transmisi roda gigi (gear) yang wajib
     menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor
     38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
-    inspeksi on-site terhadap segenap Indonesia dengan cara alat testing terkalibrasi
-    dalam rangka menjamin keselamatan operasional alat Anda.
+    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
+    uji sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap
+    menjalankan inspeksi on-site terhadap segenap Indonesia dengan cara alat testing
+    terkalibrasi dalam rangka memverifikasi keselamatan operasional alat Anda.
 layanan_sistem_transmisi:
   h2: Layanan Riksa Uji Sistem Transmisi
   para: Kami melayani riksa uji untuk berbagai jenis sistem transmisi sesuai kebutuhan
@@ -56,19 +56,19 @@ mengapa_penting:
   para: Sistem transmisi berfungsi secara bagian berputar berkecepatan tinggi yang
     memiliki risiko kecelakaan tinggi jika tidak dilengkapi pelindung yang memadai.
     Putusnya belt maupun rantai dapat menyebabkan cedera serius terhadap pekerja terhadap
-    sekitarnya. Riksa uji berkala memastikan segenap bagian kritis seperti belt, rantai,
+    sekitarnya. Riksa uji berkala memastikan seluruh bagian kritis seperti belt, rantai,
     gear, bearing, serta pelindung keselamatan berfungsi optimal. Inspeksi ini bukan
-    hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, akan tetapi investasi
+    hanya kewajiban legal berdasarkan Permenaker No. 38 Tahun 2016, akan tetapi investasi
     keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Sistem Transmisi
-  para: Tim inspector kami datang ke lokasi Anda secara alat testing seperti belt
-    tension gauge, alignment tool, stroboscope, serta vibration meter. Proses pengecekan
-    meliputi inspeksi dokumen, pengecekan visual, tes fungsi operasional, serta verifikasi
-    pelindung keselamatan. Masing-masing pengecekan didokumentasikan dalam laporan
+  para: Tim inspector kami datang ke lokasi Anda secara perkakas testing seperti belt
+    tension gauge, alignment tool, stroboscope, serta vibration meter. Proses pemeriksaan
+    meliputi inspeksi dokumen, pemeriksaan visual, tes fungsi operasional, serta verifikasi
+    pelindung keselamatan. Masing-masing pemeriksaan didokumentasikan dalam laporan
     komprehensif serta dilengkapi sertifikat kelayakan operasional yang berlaku 1
     tahun.
-lastmod: '2026-05-13T06:19:15+0000'
+lastmod: '2026-06-10T07:00:15+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

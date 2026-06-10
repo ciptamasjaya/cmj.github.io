@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Jib Crane
-description: Riksa uji jib crane adalah inspeksi dan pengujian keselamatan crane lengan
-  putar oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 daripada
-  Disnaker. Layanan inspeksi K3 semua Indonesia.
-para_1: Riksa uji jib crane adalah inspeksi dan pengujian pada pesawat angkat lengan
-  putar sesuai secara cara cara Permenaker No. 8 Tahun 2020 tentang Keselamatan dan
-  Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
+description: Riksa uji jib crane adalah pengecekan serta pengujian keselamatan crane
+  lengan putar oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3
+  daripada Disnaker. Layanan pengecekan K3 semua Indonesia.
+para_1: Riksa uji jib crane adalah inspeksi dan pengujian terhadap pesawat angkat
+  lengan putar sesuai secara cara cara Permenaker No. 8 Tahun 2020 perihal Keselamatan
+  dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-jib-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -45,33 +45,33 @@ keywords: riksa uji jib crane, jasa riksa uji jib crane, inspeksi jib crane, ins
 rating_id: riksa-uji-jib-crane
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-05-28T06:44:43+0000'
+lastmod: '2026-06-10T07:00:15+0000'
 intro:
   name: Layanan Riksa Uji Jib Crane Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji jib crane dengan cara cara
-    cara cara inspector bersertifikat serta berpengalaman. Kami memastikan jib crane
-    Anda mencukupi standar keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan
+    cara cara inspector bersertifikat dan berpengalaman. Kami memastikan jib crane
+    Anda memenuhi standar keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan
     RI.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Riksa uji jib crane wajib dijalankan berdasarkan regulasi keselamatan kerja
-      yang berlaku pada Indonesia dalam rangka memastikan keselamatan operator serta
-      pekerja pada sekitar area operasi crane.
+      yang berlaku terhadap Indonesia dalam rangka memastikan keselamatan operator
+      serta pekerja terhadap sekitar area operasi crane.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan perihal Keselamatan dan Kesehatan Kerja
         Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
-        seluruh jenis crane termasuk jib crane.
+        semua jenis crane termasuk jib crane.
     - h4: Standar ASME dan SNI
       para: Pengujian dijalankan mengacu pada acuan internasional ASME B30.11 dalam
-        rangka Monorails and Underhung Cranes dan Kriteria Nasional Indonesia (SNI)
-        yang berlaku dalam rangka pesawat angkat.
+        rangka Monorails and Underhung Cranes dan Acuan Nasional Indonesia (SNI) yang
+        berlaku dalam rangka pesawat angkat.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami memiliki sertifikat kompetensi daripada Kemnaker RI serta
+    para: Tim inspector kami memiliki sertifikat kompetensi daripada Kemnaker RI dan
       telah berpengalaman lebih daripada 10 tahun dalam bidang inspeksi pesawat angkat
-      meliputi bermacam-macam jenis serta kapasitas jib crane.
+      meliputi bermacam-macam jenis dan kapasitas jib crane.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji jib crane terhadap segenap Indonesia, daripada Sabang
+    para: Kami melayani riksa uji jib crane kepada segenap Indonesia, daripada Sabang
       sehingga Merauke. Tim kami siap datang ke lokasi pabrik, workshop, maupun gudang
       Anda.
 jenis_alat:
@@ -107,30 +107,30 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Jib Crane yang Diperiksa
-  description: Pengecekan menyeluruh terhadap semua komponen keselamatan jib crane
+  description: Pengecekan menyeluruh terhadap segenap bagian keselamatan jib crane
   items:
   - name: Boom dan Struktur Lengan
-    description: Pemeriksaan situasi struktural boom jib, sambungan las, pin, serta
+    description: Pemeriksaan situasi struktural boom jib, sambungan las, pin, dan
       bushing dalam rangka menjamin integritas struktur.
     icon: bi-arrow-up-right
   - name: Tiang dan Fondasi
-    description: Pengecekan kondisi pillar, wall bracket, anchor bolt, dan fondasi
+    description: Pemeriksaan kondisi pillar, wall bracket, anchor bolt, dan fondasi
       dalam rangka memverifikasi kestabilan pemasangan crane.
     icon: bi-signpost
   - name: Hoist dan Trolley
     description: Pemeriksaan electric hoist atau chain hoist mencakup motor, brake,
-      gearbox, serta sistem trolley.
+      gearbox, dan sistem trolley.
     icon: bi-box-arrow-up
   - name: Wire Rope atau Chain
     description: Pemeriksaan tali kawat maupun rantai dalam rangka keausan, putus
-      kawat, elongasi, dan keadaan terminasi.
+      kawat, elongasi, serta keadaan terminasi.
     icon: bi-link-45deg
   - name: Hook dan Safety Latch
     description: Pemeriksaan hook utama mencakup safety latch, swivel, serta keadaan
-      bukaan hook dari deformasi.
+      bukaan hook daripada deformasi.
     icon: bi-bezier2
   - name: Sistem Elektrikal dan Kontrol
-    description: Tes panel kontrol, pendant station, limit switch, dan sistem kelistrikan
+    description: Tes panel kontrol, pendant station, ambang switch, dan sistem kelistrikan
       crane.
     icon: bi-lightning-charge
 proses_inspeksi:
