@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Angkut
-description: Jasa riksa pengujian dan pengecekan K3 pesawat angkut profesional meliputi
-  forklift, excavator, wheel loader, bulldozer, reach stacker, dan conveyor. Sertifikat
+description: Jasa riksa pengujian serta pengecekan K3 pesawat angkut profesional termasuk
+  forklift, excavator, wheel loader, bulldozer, reach stacker, serta conveyor. Sertifikat
   resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/"
 category: Riksa Uji Pesawat Angkat Angkut
@@ -21,14 +21,14 @@ keywords: riksa uji pesawat angkut, inspeksi forklift, inspeksi excavator, inspe
 intro:
   h1: Pesawat Angkut - Riksa Uji Peralatan Pemindah Beban Horizontal
   para_1: Pesawat angkut adalah peralatan yang dipakai dalam rangka memindahkan beban
-    dengan cara cara cara horizontal daripada satu tempat ke tempat lain. Kategori
-    ini mencakup forklift, excavator, wheel loader, bulldozer, reach stacker, dan
-    conveyor yang wajib menjalani riksa uji berkala sesuai Peraturan Menteri Ketenagakerjaan
+    dengan cara cara cara horizontal dari satu tempat ke tempat lain. Kategori ini
+    mencakup forklift, excavator, wheel loader, bulldozer, reach stacker, serta conveyor
+    yang wajib menjalani riksa uji berkala sesuai Peraturan Menteri Ketenagakerjaan
     Nomor 8 Tahun 2020.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     pengujian pesawat angkut yang komprehensif. Tim inspector bersertifikat kami siap
-    melakukan pengecekan on-site kepada seluruh Indonesia secara cara perkakas testing
+    melakukan pemeriksaan on-site pada seluruh Indonesia secara cara perkakas testing
     terkalibrasi.
 layanan_pesawat_angkut:
   h2: Layanan Riksa Uji Pesawat Angkut
@@ -68,19 +68,19 @@ layanan_pesawat_angkut:
     icon: bi-arrow-right-square
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkut Penting?
-  para: Pesawat angkut bekerja dalam keadaan berat serta terus-menerus memindahkan
-    beban. Riksa uji berkala menjamin seluruh komponen kritis seperti sistem hidrolik,
-    rem, steering, serta struktur bekerja optimal. Inspeksi ini bukan hanya kewajiban
+  para: Pesawat angkut beroperasi dalam keadaan berat serta terus-menerus memindahkan
+    beban. Riksa uji berkala menjamin seluruh bagian kritis seperti sistem hidrolik,
+    rem, steering, serta struktur beroperasi optimal. Inspeksi ini bukan hanya kewajiban
     legal berdasarkan Permenaker No. 8 Tahun 2020, akan akan tetapi investasi keselamatan
     yang melindungi operator, pekerja kepada sekitar, serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pesawat Angkut
   para: Tim inspector kami datang ke lokasi Anda dengan peralatan testing portable
     yang terkalibrasi. Proses pengecekan termasuk pengecekan dokumen, pengecekan visual,
-    pengujian fungsi, dan load test berdasarkan kapasitas. Tiap pengecekan didokumentasikan
+    pengujian fungsi, dan load test sesuai kapasitas. Masing-masing pengecekan didokumentasikan
     dalam laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang
     berlaku 1 tahun.
-lastmod: '2026-06-03T08:08:56+0000'
+lastmod: '2026-06-20T06:55:10+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
