@@ -2,8 +2,8 @@
 layout: page/page--service-category
 title: Riksa Uji Pesawat Tenaga dan Produksi
 description: Jasa riksa uji dan inspeksi K3 pesawat tenaga dan produksi profesional
-  termasuk genset, motor bakar, turbin, mesin peralatan, mesin produksi, pompa, kompresor,
-  dan tanur sesuai standar Kementerian Ketenagakerjaan RI. Melayani semua Indonesia
+  mencakup genset, motor bakar, turbin, mesin peralatan, mesin produksi, pompa, kompresor,
+  dan tanur sesuai standar Kementerian Ketenagakerjaan RI. Melayani segenap Indonesia
   secara cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -21,18 +21,19 @@ keywords: riksa uji pesawat tenaga, riksa uji pesawat produksi, inspeksi genset,
   uji
 intro:
   h1: Riksa Uji Pesawat Tenaga dan Produksi - Inspeksi K3 Profesional
-  para_1: Apa yang dimaksud dengan cara cara riksa uji pesawat tenaga dan produksi?
-    Riksa uji pesawat tenaga dan produksi adalah inspeksi dan pengujian keselamatan
+  para_1: Apa yang dimaksud secara cara cara riksa uji pesawat tenaga serta produksi?
+    Riksa uji pesawat tenaga serta produksi adalah inspeksi serta pengujian keselamatan
     berkala pada seluruh jenis mesin penggerak mula, mesin peralatan, mesin produksi,
-    pompa, kompresor, dan peralatan industri lainnya yang diatur dalam Peraturan Menteri
-    Ketenagakerjaan. Inspeksi ini wajib dilaksanakan untuk memastikan peralatan berfungsi
-    dengan cara cara aman dan berdasarkan standar K3 yang berlaku pada Indonesia.
+    pompa, kompresor, serta peralatan industri lainnya yang diatur dalam Peraturan
+    Menteri Ketenagakerjaan. Inspeksi ini wajib dilaksanakan untuk memastikan peralatan
+    berfungsi secara cara cara aman serta berdasarkan standar K3 yang berlaku pada
+    Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
     menyediakan layanan riksa uji pesawat tenaga serta produksi yang komprehensif
-    dengan cara tim inspector bersertifikat serta peralatan testing yang terkalibrasi.
+    secara cara tim inspector bersertifikat serta peralatan testing yang terkalibrasi.
     Kami melayani bermacam-macam industri mencakup manufaktur, pertambangan, pembangkit
-    listrik, serta pengolahan dalam rangka menjamin keselamatan operasional serta
+    listrik, serta pengolahan dalam rangka memverifikasi keselamatan operasional serta
     compliance terhadap regulasi pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Tenaga dan Produksi
@@ -75,13 +76,13 @@ jenis_layanan:
     icon: bi-gear
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Tenaga dan Produksi Penting?
-  para: Riksa uji pesawat tenaga dan produksi bukan hanya kewajiban regulasi, akan
+  para: Riksa uji pesawat tenaga serta produksi bukan hanya kewajiban regulasi, akan
     akan akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja
-    dan aset perusahaan. Kegagalan mesin produksi dapat menyebabkan kecelakaan fatal,
-    kebakaran, kerusakan material, dan kerugian finansial besar. Pengecekan berkala
+    serta aset perusahaan. Kegagalan mesin produksi dapat menyebabkan kecelakaan fatal,
+    kebakaran, kerusakan material, serta kerugian finansial besar. Pengecekan berkala
     memverifikasi seluruh bagian kritis seperti sistem kelistrikan, bagian bergerak,
-    sistem pelumasan, dan perangkat keselamatan beroperasi optimal sesuai spesifikasi
-    pabrikan dan standar keselamatan yang berlaku.
+    sistem pelumasan, serta perangkat keselamatan berfungsi optimal sesuai spesifikasi
+    pabrikan serta standar keselamatan yang berlaku.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
   para: Proses riksa uji kami dirancang efisien dan tidak mengganggu operasional perusahaan
@@ -90,7 +91,7 @@ proses_riksa_uji:
     Setiap inspeksi didokumentasikan detail dalam laporan komprehensif dan dilengkapi
     sertifikat kelayakan operasional yang berlaku secara legal. Kami melayani seluruh
     Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2026-06-11T07:23:35+0000'
+lastmod: '2026-06-22T08:51:05+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
