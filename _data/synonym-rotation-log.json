@@ -281,18 +281,16 @@
     ]
   },
   "tangki-timbun.md": {
-    "date": "2026-06-04",
+    "date": "2026-06-25",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
-      "dari→daripada",
-      "alat→perkakas",
-      "baik→bagus",
-      "dan→serta",
-      "menjamin→memverifikasi",
-      "pemeriksaan→inspeksi",
       "inspeksi→pengecekan",
-      "sesuai→berdasarkan"
+      "meliputi→termasuk",
+      "bagus→baik",
+      "dari→daripada",
+      "melakukan→melaksanakan",
+      "sesuai→berdasarkan",
+      "serta→dan"
     ]
   },
   "2024-08-26-riksa-uji-overhead-crane.md": {
@@ -454,23 +452,22 @@
     ]
   },
   "riksa-uji-jib-crane.md": {
-    "date": "2026-06-10",
+    "date": "2026-06-25",
     "changes": 19,
     "words": [
-      "dan→serta",
-      "inspeksi→pengecekan",
-      "tentang→perihal",
-      "pada→terhadap",
-      "serta→dan",
-      "mencukupi→memenuhi",
-      "komponen→bagian",
       "semua→segenap",
+      "pengecekan→pemeriksaan",
+      "secara→dengan cara",
+      "inspeksi→pengecekan",
+      "dan→serta",
+      "dengan→secara",
+      "terhadap→kepada",
       "Pengecekan→Pemeriksaan",
-      "dari→daripada",
-      "limit→ambang",
-      "seluruh→semua",
-      "Kriteria→Acuan",
-      "terhadap→kepada"
+      "Pemeriksaan→Inspeksi",
+      "atau→maupun",
+      "keadaan→situasi",
+      "serta→dan",
+      "sehingga→hingga"
     ]
   },
   "riksa-uji-mobile-crane.md": {
