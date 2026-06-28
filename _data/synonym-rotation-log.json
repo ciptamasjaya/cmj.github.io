@@ -262,22 +262,22 @@
     ]
   },
   "pesawat-uap.md": {
-    "date": "2026-06-20",
+    "date": "2026-06-28",
     "changes": 14,
     "words": [
-      "mencakup→meliputi",
-      "dan→serta",
-      "dimanfaatkan→digunakan",
-      "sesuai→berdasarkan",
-      "segenap→seluruh",
-      "dari→daripada",
-      "sampai→sehingga",
-      "komponen→bagian",
-      "termasuk→mencakup",
       "serta→dan",
+      "meliputi→termasuk",
+      "peralatan→alat",
+      "termasuk→mencakup",
+      "menjamin→memverifikasi",
       "pemeriksaan→inspeksi",
-      "perkakas→peralatan",
-      "dengan→secara"
+      "segenap→seluruh",
+      "sungguh→sangat",
+      "dengan→secara",
+      "pada→terhadap",
+      "proses→tahapan",
+      "Pemeriksaan→Inspeksi",
+      "Pengecekan→Pemeriksaan"
     ]
   },
   "tangki-timbun.md": {
@@ -363,14 +363,14 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2026-06-20",
+    "date": "2026-06-28",
     "changes": 6,
     "words": [
-      "meliputi→termasuk",
-      "dan→serta",
-      "tentang→perihal",
-      "pemeriksaan→inspeksi",
-      "termasuk→mencakup"
+      "serta→dan",
+      "termasuk→mencakup",
+      "perihal→mengenai",
+      "inspeksi→pengecekan",
+      "dan→serta"
     ]
   },
   "riksa-uji-chain-block.md": {
@@ -525,18 +525,18 @@
     ]
   },
   "mesin-perkakas.md": {
-    "date": "2026-06-14",
+    "date": "2026-06-28",
     "changes": 10,
     "words": [
-      "serta→dan",
-      "pemeriksaan→inspeksi",
-      "peralatan→alat",
-      "perkakas→peralatan",
-      "melaksanakan→menjalankan",
-      "bagian→elemen",
-      "maupun→atau",
       "inspeksi→pengecekan",
-      "dengan→secara"
+      "dan→serta",
+      "mencakup→meliputi",
+      "digunakan→dipakai",
+      "daripada→dari",
+      "terhadap→kepada",
+      "tetapi→akan tetapi",
+      "alat→perkakas",
+      "Proses→Tahapan"
     ]
   },
   "mesin-produksi.md": {
@@ -600,18 +600,17 @@
     ]
   },
   "tanur.md": {
-    "date": "2026-06-07",
+    "date": "2026-06-28",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
-      "pemeriksaan→inspeksi",
-      "berdasarkan→sesuai",
-      "prosedur→proses",
-      "secara→dengan cara",
+      "meliputi→termasuk",
+      "inspeksi→pengecekan",
+      "dan→serta",
+      "digunakan→dipakai",
+      "memastikan→menjamin",
       "perkakas→peralatan",
-      "maupun→atau",
       "serta→dan",
-      "dan→serta"
+      "dengan→secara"
     ]
   },
   "riksa-uji-gondola.md": {
