@@ -63,7 +63,7 @@ proses:
     tes NDT (Non-Destructive Testing), hydrostatic test, dan functional test safety
     device. Masing-masing pengecekan didokumentasikan dalam laporan komprehensif dan
     dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-_content_refreshed_at: '2026-06-29T07:22:18+0000'
+_content_refreshed_at: '2026-06-30T06:49:42+0000'
 lastmod: '2026-06-28T06:56:02+0000'
 ---
 <!-- ========================================================================== -->
