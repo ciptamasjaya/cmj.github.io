@@ -185,18 +185,18 @@
     ]
   },
   "pesawat-angkat.md": {
-    "date": "2026-06-07",
+    "date": "2026-07-03",
     "changes": 10,
     "words": [
-      "inspeksi→pengecekan",
+      "mencakup→meliputi",
+      "dan→serta",
       "peralatan→alat",
-      "sesuai→berdasarkan",
-      "digunakan→dipakai",
-      "pemeriksaan→inspeksi",
-      "kepada→pada",
-      "memiliki→mempunyai",
-      "elemen→komponen",
-      "komponen→bagian"
+      "melaksanakan→menjalankan",
+      "daripada→dari",
+      "berdasarkan→sesuai",
+      "tetapi→akan tetapi",
+      "Tahapan→Prosedur",
+      "dengan→secara"
     ]
   },
   "pesawat-angkut.md": {
@@ -342,22 +342,25 @@
     ]
   },
   "riksa-uji-boiler.md": {
-    "date": "2026-06-22",
+    "date": "2026-07-03",
     "changes": 19,
     "words": [
-      "pemeriksaan→inspeksi",
-      "semua→segenap",
-      "secara→dengan cara",
-      "ditujukan→bertujuan",
-      "dari→daripada",
-      "pada→terhadap",
+      "inspeksi→pengecekan",
       "dan→serta",
-      "memastikan→menjamin",
-      "serta→dan",
-      "situasi→kondisi",
-      "pengecekan→pemeriksaan",
+      "dengan→secara",
       "acuan→standar",
-      "melaksanakan→menjalankan"
+      "peralatan→alat",
+      "segenap→seluruh",
+      "komponen→bagian",
+      "situasi→kondisi",
+      "serta→dan",
+      "Pengecekan→Pemeriksaan",
+      "menjamin→memverifikasi",
+      "kondisi→keadaan",
+      "pemeriksaan→inspeksi",
+      "Pada→Terhadap",
+      "Setiap→Tiap",
+      "Secara→Dengan cara"
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
@@ -580,19 +583,18 @@
     ]
   },
   "sistem-transmisi.md": {
-    "date": "2026-06-10",
+    "date": "2026-07-03",
     "changes": 10,
     "words": [
-      "termasuk→mencakup",
-      "inspeksi→pengecekan",
-      "elemen→komponen",
+      "serta→dan",
       "mencakup→meliputi",
-      "dari→daripada",
-      "menjamin→memverifikasi",
-      "segenap→seluruh",
-      "sesuai→berdasarkan",
-      "pengecekan→pemeriksaan",
-      "alat→perkakas"
+      "dan→serta",
+      "meliputi→termasuk",
+      "daripada→dari",
+      "alat→perkakas",
+      "bagian→elemen",
+      "berfungsi→bekerja",
+      "Proses→Tahapan"
     ]
   },
   "tanur.md": {
