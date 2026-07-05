@@ -1,13 +1,13 @@
 ---
 layout: node/node--service
 title: Riksa Uji Scissor Lift
-description: Riksa uji scissor lift adalah pemeriksaan dan pengujian keselamatan platform
+description: Riksa uji scissor lift adalah inspeksi serta pengujian keselamatan platform
   kerja gunting oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket
-  K3 dari Disnaker. Layanan pemeriksaan K3 seluruh Indonesia.
+  K3 dari Disnaker. Layanan inspeksi K3 seluruh Indonesia.
 para_1: Riksa uji scissor lift adalah inspeksi dan pengujian terhadap pesawat angkat
-  jenis scissor lift atau platform kerja gunting berdasarkan secara cara cara Permenaker
-  No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat
-  Angkut.
+  jenis scissor lift maupun platform kerja gunting berdasarkan dengan cara cara cara
+  Permenaker No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat
+  dan Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-scissor-lift/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -45,34 +45,34 @@ keywords: riksa uji scissor lift, jasa riksa uji scissor lift, inspeksi scissor 
 rating_id: riksa-uji-scissor-lift
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-06-20T06:55:10+0000'
+lastmod: '2026-07-05T06:31:48+0000'
 intro:
   name: Layanan Riksa Uji Scissor Lift Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji scissor lift dengan cara
     cara cara cara inspector bersertifikat serta berpengalaman. Kami memverifikasi
-    scissor lift Anda memenuhi standar keselamatan yang ditetapkan oleh Kementerian
-    Ketenagakerjaan RI dalam rangka operasional yang aman terhadap ketinggian.
+    scissor lift Anda memenuhi kriteria keselamatan yang ditetapkan oleh Kementerian
+    Ketenagakerjaan RI dalam rangka operasional yang aman kepada ketinggian.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Riksa uji scissor lift wajib dilaksanakan berdasarkan regulasi keselamatan
-      kerja yang berlaku kepada Indonesia.
+      kerja yang berlaku pada Indonesia.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan dan Kesehatan Kerja
-        Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
-        semua jenis aerial work platform mencakup scissor lift.
+      para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan serta Kesehatan
+        Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
+        rangka semua jenis aerial work platform mencakup scissor lift.
     - h4: Standar ANSI dan SNI
-      para: Pengujian dilaksanakan mengacu pada kriteria ANSI A92.6 dalam rangka Self-Propelled
+      para: Pengujian dilaksanakan mengacu pada acuan ANSI A92.6 dalam rangka Self-Propelled
         Elevating Work Platforms serta Kriteria Nasional Indonesia (SNI) yang berlaku.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP serta telah
+    para: Tim inspector kami mempunyai sertifikat kompetensi dari BNSP serta telah
       berpengalaman dalam bidang pemeriksaan pesawat angkat jenis aerial work platform.
       Tiap inspector memahami karakteristik khusus scissor lift dari berbagai merek
       serta kapasitas.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji scissor lift pada semua Indonesia, dari Sabang hingga
-      Merauke. Tim kami siap datang ke lokasi proyek konstruksi, gudang, pabrik, atau
-      fasilitas industri Anda kapanpun dibutuhkan.
+    para: Kami melayani riksa uji scissor lift terhadap semua Indonesia, dari Sabang
+      hingga Merauke. Tim kami siap datang ke lokasi proyek konstruksi, gudang, pabrik,
+      atau fasilitas industri Anda kapanpun dibutuhkan.
 jenis_alat:
   name: Jenis Scissor Lift yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis scissor lift dan platform
@@ -106,30 +106,30 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Scissor Lift yang Diperiksa
-  description: Pengecekan menyeluruh pada semua bagian keselamatan scissor lift
+  description: Pemeriksaan menyeluruh pada semua elemen keselamatan scissor lift
   items:
   - name: Platform dan Railing
-    description: Pengecekan situasi platform kerja, pagar pengaman, pintu akses, dan
-      sistem pengunci.
+    description: Pemeriksaan situasi platform kerja, pagar pengaman, pintu akses,
+      dan sistem pengunci.
     icon: bi-grid
   - name: Mekanisme Gunting
-    description: Inspeksi struktur scissor arm, pin, bushing, dan integritas sambungan
+    description: Inspeksi struktur scissor arm, pin, bushing, serta integritas sambungan
       mekanis.
     icon: bi-arrows-vertical
   - name: Sistem Hidrolik
-    description: Pengecekan silinder hidrolik, selang, fitting, pompa, serta level
+    description: Pemeriksaan silinder hidrolik, selang, fitting, pompa, serta level
       oli hidrolik.
     icon: bi-droplet-half
   - name: Sistem Kontrol
-    description: Pengujian panel kontrol atas serta bawah, joystick, tombol emergency
-      stop, serta indikator.
+    description: Pengujian panel kontrol atas dan bawah, joystick, tombol emergency
+      stop, dan indikator.
     icon: bi-cpu
   - name: Sistem Penggerak
-    description: Pemeriksaan motor, transmisi, roda/ban, rem, serta sistem steering.
+    description: Pemeriksaan motor, transmisi, roda/ban, rem, dan sistem steering.
     icon: bi-gear
   - name: Safety Device
-    description: Pengujian ambang switch, tilt sensor, overload protection, dan alarm
-      keselamatan.
+    description: Pengujian ambang switch, tilt sensor, overload protection, serta
+      alarm keselamatan.
     icon: bi-shield-check
 proses_inspeksi:
   name: Proses Riksa Uji Scissor Lift
