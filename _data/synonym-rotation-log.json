@@ -121,20 +121,18 @@
     ]
   },
   "2025-05-22-pjk3-jakarta-selatan.md": {
-    "date": "2026-06-30",
+    "date": "2026-07-09",
     "changes": 14,
     "words": [
-      "semua→segenap",
-      "pada→terhadap",
-      "serta→dan",
-      "tahapan→prosedur",
-      "pengecekan→pemeriksaan",
+      "segenap→seluruh",
       "terhadap→kepada",
-      "perkakas→peralatan",
-      "daripada→dari",
-      "atau→maupun",
-      "Dengan→Secara",
-      "pemeriksaan→inspeksi"
+      "dengan→secara",
+      "pengecekan→pemeriksaan",
+      "dan→serta",
+      "serta→dan",
+      "prosedur→proses",
+      "kepada→pada",
+      "maupun→atau"
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
@@ -543,19 +541,18 @@
     ]
   },
   "mesin-produksi.md": {
-    "date": "2026-06-07",
+    "date": "2026-07-09",
     "changes": 10,
     "words": [
-      "termasuk→mencakup",
-      "inspeksi→pengecekan",
-      "peralatan→alat",
-      "dimanfaatkan→digunakan",
-      "melakukan→melaksanakan",
-      "memverifikasi→memastikan",
-      "dengan→secara",
-      "sungguh→sangat",
-      "Proses→Tahapan",
-      "meliputi→termasuk"
+      "mencakup→meliputi",
+      "pengecekan→pemeriksaan",
+      "dan→serta",
+      "digunakan→dipakai",
+      "seluruh→semua",
+      "Pemeriksaan→Inspeksi",
+      "maupun→atau",
+      "Tahapan→Prosedur",
+      "serta→dan"
     ]
   },
   "penggerak-mula.md": {

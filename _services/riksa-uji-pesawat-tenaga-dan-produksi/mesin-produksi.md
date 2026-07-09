@@ -1,7 +1,7 @@
 ---
 layout: page/page--service-subcategory
 title: Mesin Produksi
-description: Jasa riksa uji serta pengecekan K3 mesin produksi profesional mencakup
+description: Jasa riksa uji serta pemeriksaan K3 mesin produksi profesional meliputi
   mesin press, mesin potong, mesin las, mesin CNC, crusher, mesin casting, serta mesin
   forging. Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-produksi/"
@@ -20,15 +20,15 @@ keywords: riksa uji mesin produksi, inspeksi mesin press, inspeksi mesin potong,
   mesin las, inspeksi mesin CNC, inspeksi crusher, PJK3, sertifikasi K3
 intro:
   h1: Mesin Produksi - Riksa Uji Peralatan Manufaktur Industri
-  para_1: Mesin produksi adalah alat yang digunakan dalam proses manufaktur dalam
-    rangka membentuk, memotong, menyambung, dan mengolah material menjadi produk jadi.
+  para_1: Mesin produksi adalah alat yang dipakai dalam proses manufaktur dalam rangka
+    membentuk, memotong, menyambung, serta mengolah material menjadi produk jadi.
     Kategori ini termasuk mesin press, mesin potong, mesin las, mesin CNC, crusher,
-    mesin casting, dan mesin forging yang wajib menjalani riksa uji berkala sesuai
+    mesin casting, serta mesin forging yang wajib menjalani riksa uji berkala sesuai
     Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
-  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
+  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
     mesin produksi yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    inspeksi on-site pada seluruh Indonesia dengan cara perkakas testing terkalibrasi
+    inspeksi on-site pada semua Indonesia dengan cara perkakas testing terkalibrasi
     dalam rangka memastikan keselamatan operasional perkakas Anda.
 layanan_mesin_produksi:
   h2: Layanan Riksa Uji Mesin Produksi
@@ -73,22 +73,22 @@ layanan_mesin_produksi:
     icon: bi-hammer
 mengapa_penting:
   h2: Mengapa Riksa Uji Mesin Produksi Penting?
-  para: Mesin produksi berfungsi secara cara gaya besar, suhu tinggi, maupun material
+  para: Mesin produksi berfungsi secara cara gaya besar, suhu tinggi, atau material
     berbahaya yang memiliki risiko kecelakaan sangat tinggi. Kegagalan alat dapat
-    menyebabkan cedera fatal, kebakaran, maupun ledakan. Riksa uji berkala memverifikasi
+    menyebabkan cedera fatal, kebakaran, atau ledakan. Riksa uji berkala memverifikasi
     seluruh elemen kritis seperti sistem hidrolik, perangkat keselamatan, emergency
-    stop, serta interlock berfungsi optimal. Pemeriksaan ini bukan hanya kewajiban
-    legal sesuai Permenaker No. 38 Tahun 2016, akan tetapi investasi keselamatan yang
-    melindungi nyawa pekerja serta aset perusahaan.
+    stop, serta interlock berfungsi optimal. Inspeksi ini bukan hanya kewajiban legal
+    sesuai Permenaker No. 38 Tahun 2016, akan tetapi investasi keselamatan yang melindungi
+    nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Mesin Produksi
   para: Tim inspector kami datang ke lokasi Anda secara cara cara cara perkakas testing
-    seperti pressure gauge, thermal camera, serta safety device tester. Tahapan inspeksi
-    termasuk inspeksi dokumen, inspeksi visual, pengujian fungsi operasional, serta
+    seperti pressure gauge, thermal camera, dan safety device tester. Prosedur inspeksi
+    termasuk inspeksi dokumen, inspeksi visual, pengujian fungsi operasional, dan
     verifikasi perangkat keselamatan. Masing-masing inspeksi didokumentasikan dalam
-    laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang berlaku
+    laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku
     1 tahun.
-lastmod: '2026-06-07T06:59:47+0000'
+lastmod: '2026-07-09T06:40:21+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
