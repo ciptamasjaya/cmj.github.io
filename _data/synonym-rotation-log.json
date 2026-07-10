@@ -209,20 +209,18 @@
     ]
   },
   "riksa-uji-forklift.md": {
-    "date": "2026-06-22",
+    "date": "2026-07-10",
     "changes": 19,
     "words": [
-      "semua→segenap",
-      "daripada→dari",
-      "berdasarkan→sesuai",
-      "serta→dan",
-      "Pengecekan→Pemeriksaan",
-      "kepada→pada",
-      "dan→serta",
-      "memverifikasi→memastikan",
-      "menjamin→memverifikasi",
+      "segenap→seluruh",
       "dari→daripada",
-      "berbagai→beragam"
+      "standar→kriteria",
+      "memverifikasi→memastikan",
+      "dan→serta",
+      "Pemeriksaan→Inspeksi",
+      "serta→dan",
+      "pengecekan→pemeriksaan",
+      "kepada→pada"
     ]
   },
   "riksa-uji-pesawat-uap-bejana-tekan.md": {
@@ -253,22 +251,20 @@
     ]
   },
   "pesawat-uap.md": {
-    "date": "2026-06-28",
+    "date": "2026-07-10",
     "changes": 14,
     "words": [
-      "serta→dan",
-      "meliputi→termasuk",
-      "peralatan→alat",
-      "termasuk→mencakup",
-      "menjamin→memverifikasi",
       "pemeriksaan→inspeksi",
-      "segenap→seluruh",
-      "sungguh→sangat",
-      "dengan→secara",
-      "pada→terhadap",
-      "proses→tahapan",
-      "Pemeriksaan→Inspeksi",
-      "Pengecekan→Pemeriksaan"
+      "daripada→dari",
+      "mencakup→meliputi",
+      "dan→serta",
+      "serta→dan",
+      "secara→dengan cara",
+      "Inspeksi→Pengecekan",
+      "sesuai→berdasarkan",
+      "pengecekan→pemeriksaan",
+      "inspeksi→pengecekan",
+      "berdasarkan→sesuai"
     ]
   },
   "tangki-timbun.md": {
@@ -371,25 +367,24 @@
     ]
   },
   "riksa-uji-chain-block.md": {
-    "date": "2026-06-22",
+    "date": "2026-07-10",
     "changes": 19,
     "words": [
-      "semua→segenap",
-      "inspeksi→pengecekan",
-      "perihal→mengenai",
-      "berdasarkan→sesuai",
-      "kriteria→acuan",
-      "serta→dan",
-      "situasi→kondisi",
-      "secara→dengan cara",
-      "Inspeksi→Pengecekan",
-      "dan→serta",
-      "Pengecekan→Pemeriksaan",
-      "terhadap→kepada",
-      "pada→terhadap",
+      "dari→daripada",
       "segenap→seluruh",
-      "mempunyai→memiliki",
-      "pemeriksaan→inspeksi"
+      "mengenai→tentang",
+      "pada→terhadap",
+      "dan→serta",
+      "acuan→standar",
+      "dengan→secara",
+      "kepada→pada",
+      "utama→pokok",
+      "serta→dan",
+      "ambang→batas",
+      "maupun→atau",
+      "daripada→dari",
+      "seluruh→semua",
+      "sesuai→berdasarkan"
     ]
   },
   "riksa-uji-crawler-crane.md": {
@@ -431,23 +426,25 @@
     ]
   },
   "riksa-uji-hoist.md": {
-    "date": "2026-06-30",
+    "date": "2026-07-10",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "dari→daripada",
-      "secara→dengan cara",
-      "berdasarkan→sesuai",
-      "kepada→pada",
-      "komponen→bagian",
-      "Pemeriksaan→Inspeksi",
-      "Inspeksi→Pengecekan",
       "dan→serta",
-      "dilaksanakan→dijalankan",
-      "mengenai→tentang",
-      "kriteria→acuan",
-      "memiliki→mempunyai",
-      "pemeriksaan→inspeksi"
+      "pengecekan→pemeriksaan",
+      "dengan→secara",
+      "sesuai→berdasarkan",
+      "menjamin→memverifikasi",
+      "pada→terhadap",
+      "Pemeriksaan→Inspeksi",
+      "atau→maupun",
+      "Pengecekan→Pemeriksaan",
+      "pemeriksaan→inspeksi",
+      "limit→ambang",
+      "kepada→pada",
+      "seluruh→semua",
+      "dilakukan→dilaksanakan",
+      "daripada→dari",
+      "hingga→sampai"
     ]
   },
   "riksa-uji-jib-crane.md": {
