@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Penggerak Mula
-description: Jasa riksa uji serta pemeriksaan K3 penggerak mula profesional termasuk
-  generator set, motor bakar, turbin, serta motor listrik. Sertifikat resmi Kementerian
-  Ketenagakerjaan RI.
+description: Jasa riksa uji dan inspeksi K3 penggerak mula profesional termasuk generator
+  set, motor bakar, turbin, dan motor listrik. Sertifikat resmi Kementerian Ketenagakerjaan
+  RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/penggerak-mula/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Penggerak Mula
@@ -21,14 +21,14 @@ keywords: riksa uji penggerak mula, inspeksi genset, inspeksi motor bakar, inspe
 intro:
   h1: Penggerak Mula - Riksa Uji Mesin Penghasil Tenaga
   para_1: Penggerak mula (prime mover) adalah mesin yang dipakai dalam rangka menghasilkan
-    tenaga mekanik atau listrik daripada sumber energi pokok. Kategori ini meliputi
+    tenaga mekanik atau listrik daripada sumber energi pokok. Kategori ini termasuk
     generator set, motor bakar, turbin, dan motor listrik yang wajib menjalani riksa
-    uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+    uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    penggerak mula yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    pemeriksaan on-site kepada semua Indonesia secara cara cara alat testing terkalibrasi
-    dalam rangka memverifikasi keselamatan operasional alat Anda.
+    penggerak mula yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
+    pemeriksaan on-site kepada semua Indonesia dengan cara cara cara alat testing
+    terkalibrasi dalam rangka memverifikasi keselamatan operasional alat Anda.
 layanan_penggerak_mula:
   h2: Layanan Riksa Uji Penggerak Mula
   para: Kami melayani riksa uji untuk berbagai jenis penggerak mula sesuai kebutuhan
@@ -59,20 +59,20 @@ mengapa_penting:
   h2: Mengapa Riksa Uji Penggerak Mula Penting?
   para: Penggerak mula merupakan jantung daripada sistem produksi industri yang bekerja
     dalam situasi berat dan terus-menerus. Kegagalan peralatan dapat menyebabkan gangguan
-    produksi, kebakaran, atau kecelakaan fatal. Riksa uji berkala menjamin segenap
+    produksi, kebakaran, maupun kecelakaan fatal. Riksa uji berkala menjamin segenap
     bagian kritis seperti sistem kelistrikan, bagian berputar, sistem pelumasan, dan
     perangkat keselamatan bekerja optimal. Pengecekan ini bukan hanya kewajiban legal
-    sesuai Permenaker No. 38 Tahun 2016, akan akan akan akan akan akan tetapi investasi
-    keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+    berdasarkan Permenaker No. 38 Tahun 2016, akan akan akan akan akan akan tetapi
+    investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Penggerak Mula
   para: Tim inspector kami datang ke lokasi Anda dengan perkakas testing seperti vibration
-    analyzer, insulation tester, thermal imaging camera, serta power analyzer. Proses
-    pengecekan meliputi pengecekan dokumen, pengecekan visual, pengujian fungsi operasional,
+    analyzer, insulation tester, thermal imaging camera, serta power analyzer. Tahapan
+    pengecekan termasuk pengecekan dokumen, pengecekan visual, pengujian fungsi operasional,
     serta load test berdasarkan kapasitas. Masing-masing pengecekan didokumentasikan
     dalam laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang
     berlaku 1 tahun.
-lastmod: '2026-07-06T07:03:19+0000'
+lastmod: '2026-07-11T05:32:20+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

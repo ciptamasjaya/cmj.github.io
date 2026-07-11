@@ -314,23 +314,23 @@
     ]
   },
   "riksa-uji-overhead-crane.md": {
-    "date": "2026-07-06",
+    "date": "2026-07-11",
     "changes": 19,
     "words": [
-      "daripada→dari",
-      "dan→serta",
-      "Pengecekan→Pemeriksaan",
-      "berfungsi→bekerja",
-      "alat→perkakas",
-      "secara→dengan cara",
-      "bagian→elemen",
-      "pada→terhadap",
-      "Inspeksi→Pengecekan",
-      "kondisi→keadaan",
-      "terhadap→kepada",
+      "inspeksi→pengecekan",
+      "dari→daripada",
+      "bekerja→beroperasi",
+      "dilaksanakan→dijalankan",
       "serta→dan",
-      "menjamin→memverifikasi",
-      "dilaksanakan→dijalankan"
+      "Inspeksi→Pengecekan",
+      "seluruh→semua",
+      "dan→serta",
+      "Pemeriksaan→Inspeksi",
+      "Pengecekan→Pemeriksaan",
+      "memverifikasi→memastikan",
+      "kriteria→acuan",
+      "pengecekan→pemeriksaan",
+      "terhadap→kepada"
     ]
   },
   "riksa-uji-boiler.md": {
@@ -356,14 +356,14 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2026-07-06",
+    "date": "2026-07-11",
     "changes": 6,
     "words": [
-      "mencakup→meliputi",
-      "dan→serta",
-      "mengenai→tentang",
+      "meliputi→termasuk",
       "serta→dan",
-      "pengecekan→pemeriksaan"
+      "tentang→perihal",
+      "mencakup→meliputi",
+      "pemeriksaan→inspeksi"
     ]
   },
   "riksa-uji-chain-block.md": {
@@ -553,18 +553,18 @@
     ]
   },
   "penggerak-mula.md": {
-    "date": "2026-07-06",
+    "date": "2026-07-11",
     "changes": 10,
     "words": [
-      "dan→serta",
-      "pengecekan→pemeriksaan",
-      "digunakan→dipakai",
+      "pemeriksaan→inspeksi",
+      "serta→dan",
+      "meliputi→termasuk",
+      "berdasarkan→sesuai",
+      "secara→dengan cara",
+      "melakukan→melaksanakan",
+      "atau→maupun",
       "sesuai→berdasarkan",
-      "seluruh→semua",
-      "daripada→dari",
-      "memastikan→menjamin",
-      "tetapi→akan tetapi",
-      "inspeksi→pengecekan"
+      "Proses→Tahapan"
     ]
   },
   "pompa-kompresor.md": {
