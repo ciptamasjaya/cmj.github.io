@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Bejana Tekan
-description: Jasa riksa pengujian dan pemeriksaan K3 bejana tekan profesional mencakup
-  air receiver, pressure vessel, heat exchanger, autoclave, dan separator. Sertifikat
+description: Jasa riksa pengujian serta pemeriksaan K3 bejana tekan profesional meliputi
+  air receiver, pressure vessel, heat exchanger, autoclave, serta separator. Sertifikat
   resmi dari Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/bejana-tekan/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
@@ -20,17 +20,17 @@ keywords: riksa uji bejana tekan, inspeksi pressure vessel, inspeksi air receive
   inspeksi heat exchanger, autoclave, separator, PJK3, sertifikasi K3
 intro:
   h1: Bejana Tekan - Riksa Uji Vessel dan Peralatan Bertekanan
-  para_1: Bejana tekan adalah alat yang dipakai dalam rangka menyimpan atau memproses
-    fluida (gas atau cairan) kepada tekanan kepada atas atau kepada bawah tekanan
-    atmosfer. Kategori ini termasuk air receiver, pressure vessel, heat exchanger,
+  para_1: Bejana tekan adalah alat yang dipakai dalam rangka menyimpan maupun memproses
+    fluida (gas maupun cairan) kepada tekanan kepada atas maupun kepada bawah tekanan
+    atmosfer. Kategori ini mencakup air receiver, pressure vessel, heat exchanger,
     autoclave, deaerator, separator, dan alat bertekanan lainnya yang wajib menjalani
     riksa pengujian berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 37
     Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
     bejana tekan yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
-    pengecekan on-site terhadap seluruh Indonesia dengan cara peralatan testing terkalibrasi
-    dalam rangka menjamin keselamatan operasional peralatan Anda.
+    pengecekan on-site terhadap seluruh Indonesia secara cara peralatan testing terkalibrasi
+    dalam rangka memverifikasi keselamatan operasional peralatan Anda.
 layanan_bejana_tekan:
   h2: Layanan Riksa Uji Bejana Tekan
   para: Kami melayani riksa uji untuk berbagai jenis bejana tekan sesuai kebutuhan
@@ -87,21 +87,20 @@ mengapa_penting:
   para: Bejana tekan menyimpan energi potensial yang amat besar dalam bentuk tekanan
     fluida. Kegagalan struktural dapat menyebabkan ledakan dahsyat dengan cara daya
     rusak tinggi. Korosi, fatigue, dan kerusakan material adalah penyebab primer kegagalan
-    bejana tekan. Riksa uji berkala memastikan integritas struktural melalui tes NDT,
+    bejana tekan. Riksa uji berkala menjamin integritas struktural melalui tes NDT,
     hydrostatic test, dan pengecekan ketebalan dinding. Pengecekan ini bukan hanya
-    kewajiban legal sesuai Permenaker No. 37 Tahun 2016, akan akan akan tetapi investasi
-    keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
+    kewajiban legal berdasarkan Permenaker No. 37 Tahun 2016, akan akan akan tetapi
+    investasi keselamatan yang melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Bejana Tekan
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara peralatan testing
     seperti ultrasonic thickness gauge, magnetic particle testing kit, dan hydrostatic
-    test pump. Tahapan pemeriksaan termasuk pemeriksaan dokumen dan nameplate, pemeriksaan
-    visual internal dan eksternal, pengukuran ketebalan dinding, tes NDT terhadap
-    sambungan las, dan hydrostatic test. Masing-masing pemeriksaan didokumentasikan
-    dalam laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang
-    berlaku 1 tahun.
-_content_refreshed_at: '2026-07-11T05:32:21+0000'
-lastmod: '2026-06-29T07:22:18+0000'
+    test pump. Prosedur pemeriksaan termasuk pemeriksaan dokumen dan nameplate, pemeriksaan
+    visual internal dan eksternal, pengukuran ketebalan dinding, tes NDT kepada sambungan
+    las, dan hydrostatic test. Masing-masing pemeriksaan didokumentasikan dalam laporan
+    komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+_content_refreshed_at: '2026-07-14T05:21:31+0000'
+lastmod: '2026-07-14T05:21:31+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
