@@ -1,12 +1,13 @@
 ---
 layout: node/node--service
 title: Riksa Uji Dongkrak Hidrolik
-description: Riksa uji dongkrak hidrolik adalah pemeriksaan serta pengujian keselamatan
+description: Riksa uji dongkrak hidrolik adalah inspeksi serta pengujian keselamatan
   hydraulic jack oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket
-  K3 daripada Disnaker. Layanan pemeriksaan K3 segenap Indonesia.
-para_1: Riksa pengujian dongkrak hidrolik adalah pemeriksaan dan pengujian pada alat
-  angkat jenis dongkrak hidrolik sesuai secara cara cara Permenaker No. 8 Tahun 2020
-  tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
+  K3 dari Disnaker. Layanan inspeksi K3 segenap Indonesia.
+para_1: Riksa pengujian dongkrak hidrolik adalah pemeriksaan dan pengujian terhadap
+  alat angkat jenis dongkrak hidrolik sesuai dengan cara cara cara Permenaker No.
+  8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat
+  Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-dongkrak-hidrolik/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -28,35 +29,35 @@ keywords: riksa uji dongkrak hidrolik, jasa riksa uji dongkrak, inspeksi dongkra
 rating_id: riksa-uji-dongkrak-hidrolik
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-06-21T07:26:55+0000'
+lastmod: '2026-07-17T05:33:03+0000'
 intro:
   name: Layanan Riksa Uji Dongkrak Hidrolik Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji dongkrak hidrolik secara
     cara inspector bersertifikat serta berpengalaman. Kami memastikan dongkrak hidrolik
-    Anda mencukupi acuan keselamatan dalam rangka operasional yang aman pada bengkel,
+    Anda memenuhi acuan keselamatan dalam rangka operasional yang aman terhadap bengkel,
     workshop, serta fasilitas industri.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji dongkrak hidrolik wajib dilaksanakan berdasarkan regulasi keselamatan
+    para: Riksa uji dongkrak hidrolik wajib dilaksanakan sesuai regulasi keselamatan
       kerja yang berlaku kepada Indonesia dalam rangka melindungi pekerja dari risiko
       kecelakaan kerja.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan perihal Keselamatan dan Kesehatan Kerja
+      para: Peraturan Menteri Ketenagakerjaan mengenai Keselamatan dan Kesehatan Kerja
         Pesawat Angkat dan Pesawat Angkut mewajibkan tes berkala dalam rangka seluruh
         jenis dongkrak yang dioperasikan terhadap tempat kerja.
     - h4: Standar ASME dan SNI
       para: Pengujian dilaksanakan mengacu terhadap standar internasional ASME PALD
-        serta Standar Nasional Indonesia (SNI) dalam rangka memverifikasi keselamatan
+        serta Kriteria Nasional Indonesia (SNI) dalam rangka memverifikasi keselamatan
         optimal.
   - h3: Tim Inspector Bersertifikat
     para: Tim inspector kami memiliki sertifikat kompetensi daripada BNSP dan telah
-      berpengalaman dalam bidang inspeksi pesawat angkat meliputi berbagai jenis dongkrak
+      berpengalaman dalam bidang inspeksi pesawat angkat termasuk berbagai jenis dongkrak
       hidrolik untuk bengkel otomotif dan industri.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji dongkrak hidrolik kepada semua Indonesia. Tim kami
-      siap datang ke lokasi Anda dalam rangka melakukan inspeksi on-site secara cara
-      waktu yang fleksibel.
+    para: Kami melayani riksa uji dongkrak hidrolik kepada segenap Indonesia. Tim
+      kami siap datang ke lokasi Anda dalam rangka melakukan inspeksi on-site secara
+      cara waktu yang fleksibel.
 jenis_alat:
   name: Jenis Dongkrak Hidrolik yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis dongkrak hidrolik dengan
@@ -90,28 +91,28 @@ jenis_alat:
     hubungi kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Dongkrak Hidrolik yang Diperiksa
-  description: Inspeksi menyeluruh pada semua komponen keselamatan dongkrak hidrolik
+  description: Inspeksi menyeluruh terhadap semua bagian keselamatan dongkrak hidrolik
   items:
   - name: Silinder dan Piston
-    description: Pengecekan situasi silinder hidrolik, piston, seal, dan kebocoran
+    description: Pemeriksaan situasi silinder hidrolik, piston, seal, dan kebocoran
       oli.
     icon: bi-cylinder
   - name: Pompa Hidrolik
     description: Pengecekan pompa hidrolik, plunger, serta check valve dalam rangka
-      memverifikasi tekanan optimal.
+      memastikan tekanan optimal.
     icon: bi-gear-wide-connected
   - name: Release Valve
-    description: Pengujian fungsi katup pelepas tekanan dan kontrol penurunan beban.
+    description: Pengujian fungsi katup pelepas tekanan serta kontrol penurunan beban.
     icon: bi-toggles
   - name: Saddle dan Base Plate
-    description: Pemeriksaan situasi saddle (kepala dongkrak) dan base plate dalam
-      rangka keausan dan keretakan.
+    description: Inspeksi situasi saddle (kepala dongkrak) dan base plate dalam rangka
+      keausan dan keretakan.
     icon: bi-square
   - name: Handle dan Lever
-    description: Pemeriksaan keadaan tuas pompa, engsel, serta mekanisme pengoperasian.
+    description: Pemeriksaan keadaan tuas pompa, engsel, dan mekanisme pengoperasian.
     icon: bi-wrench
   - name: Overload Protection
-    description: Pengujian sistem proteksi beban lebih serta safety valve dalam rangka
+    description: Pengujian sistem proteksi beban lebih dan safety valve dalam rangka
       mencegah kegagalan.
     icon: bi-shield-check
 proses_inspeksi:

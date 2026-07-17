@@ -1,14 +1,14 @@
 {
   "2024-08-26-jasa-riksa-uji-boiler.md": {
-    "date": "2026-07-15",
+    "date": "2026-07-17",
     "changes": 6,
     "words": [
-      "menjamin→memverifikasi",
+      "memverifikasi→memastikan",
+      "pengecekan→pemeriksaan",
+      "dan→serta",
+      "vital→penting",
       "kriteria→acuan",
-      "alat→perkakas",
-      "amat→sungguh",
-      "pemeriksaan→inspeksi",
-      "standar→kriteria"
+      "dengan→secara"
     ]
   },
   "2024-08-26-jasa-riksa-uji-forklift.md": {
@@ -220,17 +220,16 @@
     ]
   },
   "riksa-uji-pesawat-uap-bejana-tekan.md": {
-    "date": "2026-07-06",
+    "date": "2026-07-17",
     "changes": 8,
     "words": [
-      "pengecekan→pemeriksaan",
-      "segenap→seluruh",
-      "semua→segenap",
-      "dilakukan→dilaksanakan",
-      "dengan→secara",
-      "kepada→pada",
+      "pemeriksaan→inspeksi",
+      "seluruh→semua",
+      "dilaksanakan→dijalankan",
+      "daripada→dari",
+      "pada→terhadap",
       "tetapi→akan tetapi",
-      "seluruh→semua"
+      "acuan→standar"
     ]
   },
   "bejana-tekan.md": {
@@ -295,23 +294,24 @@
     ]
   },
   "riksa-uji-gantry-crane.md": {
-    "date": "2026-07-05",
+    "date": "2026-07-17",
     "changes": 19,
     "words": [
-      "pengecekan→pemeriksaan",
+      "dari→daripada",
+      "semua→segenap",
+      "dengan→secara",
+      "berdasarkan→sesuai",
       "dan→serta",
-      "pemeriksaan→inspeksi",
-      "sesuai→berdasarkan",
-      "serta→dan",
-      "secara→dengan cara",
-      "terhadap→kepada",
+      "mencukupi→memenuhi",
+      "Inspeksi→Pengecekan",
       "Pemeriksaan→Inspeksi",
-      "Pengecekan→Pemeriksaan",
-      "memastikan→menjamin",
-      "dilakukan→dilaksanakan",
+      "menjamin→memverifikasi",
       "meliputi→termasuk",
-      "mempunyai→memiliki",
-      "diperlukan→dibutuhkan"
+      "pada→terhadap",
+      "ambang→batas",
+      "tentang→perihal",
+      "termasuk→mencakup",
+      "kepada→pada"
     ]
   },
   "riksa-uji-overhead-crane.md": {
@@ -410,20 +410,25 @@
     ]
   },
   "riksa-uji-dongkrak-hidrolik.md": {
-    "date": "2026-06-21",
+    "date": "2026-07-17",
     "changes": 19,
     "words": [
-      "semua→segenap",
-      "pengecekan→pemeriksaan",
-      "dengan→secara",
-      "kepada→pada",
-      "elemen→komponen",
-      "seluruh→semua",
-      "Inspeksi→Pengecekan",
-      "serta→dan",
-      "dan→serta",
+      "pemeriksaan→inspeksi",
       "daripada→dari",
-      "tentang→perihal"
+      "pada→terhadap",
+      "secara→dengan cara",
+      "mencukupi→memenuhi",
+      "komponen→bagian",
+      "Pengecekan→Pemeriksaan",
+      "memverifikasi→memastikan",
+      "dan→serta",
+      "Pemeriksaan→Inspeksi",
+      "serta→dan",
+      "berdasarkan→sesuai",
+      "perihal→mengenai",
+      "Standar→Kriteria",
+      "meliputi→termasuk",
+      "semua→segenap"
     ]
   },
   "riksa-uji-hoist.md": {
@@ -528,33 +533,35 @@
     ]
   },
   "mesin-perkakas.md": {
-    "date": "2026-06-28",
+    "date": "2026-07-17",
     "changes": 10,
     "words": [
-      "inspeksi→pengecekan",
-      "dan→serta",
-      "mencakup→meliputi",
-      "digunakan→dipakai",
-      "daripada→dari",
-      "terhadap→kepada",
-      "tetapi→akan tetapi",
+      "pengecekan→pemeriksaan",
+      "serta→dan",
       "alat→perkakas",
-      "Proses→Tahapan"
+      "dipakai→dimanfaatkan",
+      "memverifikasi→memastikan",
+      "menjalankan→melakukan",
+      "seluruh→semua",
+      "mempunyai→memiliki",
+      "secara→dengan cara",
+      "Tahapan→Prosedur"
     ]
   },
   "mesin-produksi.md": {
-    "date": "2026-07-09",
+    "date": "2026-07-17",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
-      "pengecekan→pemeriksaan",
-      "dan→serta",
-      "digunakan→dipakai",
-      "seluruh→semua",
-      "Pemeriksaan→Inspeksi",
-      "maupun→atau",
-      "Tahapan→Prosedur",
-      "serta→dan"
+      "meliputi→termasuk",
+      "pemeriksaan→inspeksi",
+      "termasuk→mencakup",
+      "dipakai→dimanfaatkan",
+      "serta→dan",
+      "dengan→secara",
+      "atau→maupun",
+      "alat→perkakas",
+      "inspeksi→pengecekan",
+      "perkakas→peralatan"
     ]
   },
   "penggerak-mula.md": {
@@ -573,17 +580,18 @@
     ]
   },
   "pompa-kompresor.md": {
-    "date": "2026-06-30",
+    "date": "2026-07-17",
     "changes": 10,
     "words": [
-      "inspeksi→pengecekan",
+      "meliputi→termasuk",
+      "pengecekan→pemeriksaan",
+      "digunakan→dipakai",
       "dan→serta",
-      "dimanfaatkan→digunakan",
-      "serta→dan",
-      "perkakas→peralatan",
-      "pada→terhadap",
-      "bagian→elemen",
-      "peralatan→alat"
+      "dari→daripada",
+      "melakukan→melaksanakan",
+      "secara→dengan cara",
+      "beroperasi→berfungsi",
+      "alat→perkakas"
     ]
   },
   "sistem-transmisi.md": {

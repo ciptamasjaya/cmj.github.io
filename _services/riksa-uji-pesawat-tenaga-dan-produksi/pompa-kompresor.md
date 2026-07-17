@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Pompa dan Kompresor
-description: Jasa riksa uji serta pengecekan K3 pompa serta kompresor profesional
-  meliputi kompresor udara, pompa sentrifugal, pompa submersible, serta industrial
+description: Jasa riksa uji serta pemeriksaan K3 pompa serta kompresor profesional
+  termasuk kompresor udara, pompa sentrifugal, pompa submersible, serta industrial
   blower. Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/pompa-kompresor/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -20,16 +20,17 @@ keywords: riksa uji pompa, riksa uji kompresor, inspeksi kompresor udara, inspek
   pompa sentrifugal, inspeksi blower, PJK3, sertifikasi K3
 intro:
   h1: Pompa dan Kompresor - Riksa Uji Peralatan Fluida Industri
-  para_1: Pompa dan kompresor adalah peralatan yang digunakan dalam rangka memindahkan
-    dan memampatkan fluida (cairan dan gas) dalam prosedur industri. Kategori ini
-    termasuk kompresor udara dan gas, pompa sentrifugal dan submersible, dan industrial
-    blower yang wajib menjalani riksa uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan
-    Nomor 38 Tahun 2016.
+  para_1: Pompa serta kompresor adalah peralatan yang dipakai dalam rangka memindahkan
+    serta memampatkan fluida (cairan serta gas) dalam prosedur industri. Kategori
+    ini termasuk kompresor udara serta gas, pompa sentrifugal serta submersible, serta
+    industrial blower yang wajib menjalani riksa uji berkala berdasarkan Peraturan
+    Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    pompa serta kompresor yang komprehensif. Tim inspector bersertifikat kami siap
-    melakukan pengecekan on-site terhadap segenap Indonesia dengan cara cara peralatan
-    testing terkalibrasi dalam rangka menjamin keselamatan operasional peralatan Anda.
+    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
+    uji pompa serta kompresor yang komprehensif. Tim inspector bersertifikat kami
+    siap melaksanakan pengecekan on-site terhadap segenap Indonesia dengan cara cara
+    peralatan testing terkalibrasi dalam rangka menjamin keselamatan operasional peralatan
+    Anda.
 layanan_pompa_kompresor:
   h2: Layanan Riksa Uji Pompa dan Kompresor
   para: Kami melayani riksa uji untuk berbagai jenis pompa dan kompresor sesuai kebutuhan
@@ -54,22 +55,22 @@ layanan_pompa_kompresor:
     icon: bi-fan
 mengapa_penting:
   h2: Mengapa Riksa Uji Pompa dan Kompresor Penting?
-  para: Pompa dan kompresor beroperasi terus-menerus secara cara tekanan dan kecepatan
+  para: Pompa dan kompresor berfungsi terus-menerus dengan cara cara tekanan dan kecepatan
     tinggi yang memiliki risiko kegagalan mekanis. Kebocoran, getaran berlebih, atau
     overheating dapat menyebabkan kerusakan peralatan dan kecelakaan kerja. Riksa
     uji berkala memverifikasi segenap elemen kritis seperti bearing, seal, impeller,
-    dan safety valve beroperasi optimal. Inspeksi ini bukan hanya kewajiban legal
-    sesuai Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan yang
-    melindungi nyawa pekerja dan aset perusahaan.
+    dan safety valve berfungsi optimal. Inspeksi ini bukan hanya kewajiban legal sesuai
+    Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan yang melindungi
+    nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pompa dan Kompresor
-  para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara alat testing
-    seperti vibration analyzer, pressure gauge, flow meter, dan thermal camera. Tahapan
-    pengecekan meliputi pengecekan dokumen, pengecekan visual, pengujian fungsi operasional,
-    dan pengukuran parameter kinerja. Masing-masing pengecekan didokumentasikan dalam
-    laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku
-    1 tahun.
-lastmod: '2026-06-30T06:49:42+0000'
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara perkakas testing
+    seperti vibration analyzer, pressure gauge, flow meter, serta thermal camera.
+    Tahapan pengecekan meliputi pengecekan dokumen, pengecekan visual, pengujian fungsi
+    operasional, serta pengukuran parameter kinerja. Masing-masing pengecekan didokumentasikan
+    dalam laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang
+    berlaku 1 tahun.
+lastmod: '2026-07-17T05:33:03+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
