@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Tenaga dan Produksi
-description: Jasa riksa uji serta inspeksi K3 pesawat tenaga serta produksi profesional
+description: Jasa riksa uji dan pengecekan K3 pesawat tenaga dan produksi profesional
   mencakup genset, motor bakar, turbin, mesin peralatan, mesin produksi, pompa, kompresor,
-  serta tanur sesuai standar Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia
+  dan tanur sesuai standar Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia
   secara cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -21,20 +21,20 @@ keywords: riksa uji pesawat tenaga, riksa uji pesawat produksi, inspeksi genset,
   uji
 intro:
   h1: Riksa Uji Pesawat Tenaga dan Produksi - Inspeksi K3 Profesional
-  para_1: Apa yang dimaksud secara cara cara riksa uji pesawat tenaga serta produksi?
-    Riksa uji pesawat tenaga serta produksi adalah inspeksi serta pengujian keselamatan
+  para_1: Apa yang dimaksud dengan cara cara cara riksa uji pesawat tenaga serta produksi?
+    Riksa uji pesawat tenaga serta produksi adalah pengecekan serta pengujian keselamatan
     berkala pada seluruh jenis mesin penggerak mula, mesin peralatan, mesin produksi,
     pompa, kompresor, serta peralatan industri lainnya yang diatur dalam Peraturan
     Menteri Ketenagakerjaan. Inspeksi ini wajib dijalankan untuk menjamin peralatan
-    berfungsi secara cara cara aman serta berdasarkan standar K3 yang berlaku pada
-    Indonesia.
-  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
+    berfungsi dengan cara cara cara aman serta berdasarkan standar K3 yang berlaku
+    pada Indonesia.
+  para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
-    layanan riksa uji pesawat tenaga serta produksi yang komprehensif dengan cara
-    cara tim inspector bersertifikat serta peralatan testing yang terkalibrasi. Kami
-    melayani bermacam-macam industri mencakup manufaktur, pertambangan, pembangkit
-    listrik, serta pengolahan dalam rangka memverifikasi keselamatan operasional serta
-    compliance terhadap regulasi pemerintah.
+    layanan riksa uji pesawat tenaga dan produksi yang komprehensif dengan cara cara
+    tim inspector bersertifikat dan peralatan testing yang terkalibrasi. Kami melayani
+    bermacam-macam industri meliputi manufaktur, pertambangan, pembangkit listrik,
+    dan pengolahan dalam rangka memverifikasi keselamatan operasional dan compliance
+    terhadap regulasi pemerintah.
 jenis_layanan:
   h2: Jenis Layanan Riksa Uji Pesawat Tenaga dan Produksi
   para: 'Layanan riksa uji pesawat tenaga dan produksi terbagi menjadi enam kategori
@@ -76,13 +76,13 @@ jenis_layanan:
     icon: bi-gear
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Tenaga dan Produksi Penting?
-  para: Riksa uji pesawat tenaga serta produksi bukan hanya kewajiban regulasi, akan
+  para: Riksa uji pesawat tenaga dan produksi bukan hanya kewajiban regulasi, akan
     akan akan akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja
-    serta aset perusahaan. Kegagalan mesin produksi dapat menyebabkan kecelakaan fatal,
-    kebakaran, kerusakan material, serta kerugian finansial besar. Pemeriksaan berkala
-    memverifikasi seluruh bagian kritis seperti sistem kelistrikan, bagian bergerak,
-    sistem pelumasan, serta perangkat keselamatan berfungsi optimal sesuai spesifikasi
-    pabrikan serta standar keselamatan yang berlaku.
+    dan aset perusahaan. Kegagalan mesin produksi dapat menyebabkan kecelakaan fatal,
+    kebakaran, kerusakan material, dan kerugian finansial besar. Pemeriksaan berkala
+    memastikan seluruh bagian kritis seperti sistem kelistrikan, bagian bergerak,
+    sistem pelumasan, dan perangkat keselamatan berfungsi optimal sesuai spesifikasi
+    pabrikan dan standar keselamatan yang berlaku.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
   para: Proses riksa uji kami dirancang efisien dan tidak mengganggu operasional perusahaan
@@ -91,7 +91,7 @@ proses_riksa_uji:
     Setiap inspeksi didokumentasikan detail dalam laporan komprehensif dan dilengkapi
     sertifikat kelayakan operasional yang berlaku secara legal. Kami melayani seluruh
     Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2026-07-14T05:21:31+0000'
+lastmod: '2026-07-20T06:08:45+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
