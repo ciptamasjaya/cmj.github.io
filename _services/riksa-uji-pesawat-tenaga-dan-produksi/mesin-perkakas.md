@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Mesin Perkakas
-description: Jasa riksa uji dan pemeriksaan K3 mesin perkakas profesional meliputi
-  mesin bubut, mesin frais, mesin bor, mesin gerinda, mesin gergaji, dan mesin shaper.
+description: Jasa riksa uji serta pemeriksaan K3 mesin peralatan profesional meliputi
+  mesin bubut, mesin frais, mesin bor, mesin gerinda, mesin gergaji, serta mesin shaper.
   Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/mesin-perkakas/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -21,15 +21,16 @@ keywords: riksa uji mesin perkakas, inspeksi mesin bubut, inspeksi mesin frais, 
 intro:
   h1: Mesin Perkakas - Riksa Uji Machine Tools Industri
   para_1: Mesin perkakas (machine tools) adalah perkakas yang dimanfaatkan dalam rangka
-    membentuk dan mengerjakan benda kerja logam melalui prosedur pemotongan, pengeboran,
-    penggerindaan, dan pembentukan lainnya. Kategori ini meliputi mesin bubut, mesin
-    frais, mesin bor, mesin gerinda, mesin gergaji, dan mesin shaper yang wajib menjalani
-    riksa uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
+    membentuk serta mengerjakan benda kerja logam melalui prosedur pemotongan, pengeboran,
+    penggerindaan, serta pembentukan lainnya. Kategori ini termasuk mesin bubut, mesin
+    frais, mesin bor, mesin gerinda, mesin gergaji, serta mesin shaper yang wajib
+    menjalani riksa uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38
+    Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
     mesin peralatan yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    pemeriksaan on-site kepada seluruh Indonesia secara cara peralatan testing terkalibrasi
-    dalam rangka memastikan keselamatan operasional peralatan Anda.
+    pemeriksaan on-site kepada semua Indonesia dengan cara cara peralatan testing
+    terkalibrasi dalam rangka memastikan keselamatan operasional peralatan Anda.
 layanan_mesin_perkakas:
   h2: Layanan Riksa Uji Mesin Perkakas
   para: Kami melayani riksa uji untuk berbagai jenis mesin perkakas sesuai kebutuhan
@@ -68,21 +69,21 @@ layanan_mesin_perkakas:
     icon: bi-arrows-move
 mengapa_penting:
   h2: Mengapa Riksa Uji Mesin Perkakas Penting?
-  para: Mesin peralatan beroperasi secara elemen berputar berkecepatan tinggi serta
+  para: Mesin peralatan beroperasi secara elemen berputar berkecepatan tinggi dan
     peralatan potong tajam yang memiliki risiko kecelakaan tinggi. Kegagalan peralatan
-    atau pelindung keselamatan dapat menyebabkan cedera serius kepada operator. Riksa
+    atau pelindung keselamatan dapat menyebabkan cedera serius pada operator. Riksa
     uji berkala menjamin semua elemen kritis seperti spindle, sistem pelumasan, pelindung
-    keselamatan, serta emergency stop beroperasi optimal. Pemeriksaan ini bukan hanya
+    keselamatan, dan emergency stop beroperasi optimal. Pemeriksaan ini bukan hanya
     kewajiban legal sesuai Permenaker No. 38 Tahun 2016, akan tetapi investasi keselamatan
-    yang melindungi nyawa pekerja serta aset perusahaan.
+    yang melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Mesin Perkakas
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara perkakas testing
-    seperti dial indicator, tachometer, dan vibration meter. Prosedur pengecekan termasuk
-    pengecekan dokumen, pengecekan visual, pengujian fungsi operasional, dan verifikasi
-    perangkat keselamatan. Masing-masing pengecekan didokumentasikan dalam laporan
+    seperti dial indicator, tachometer, dan vibration meter. Proses pemeriksaan termasuk
+    pemeriksaan dokumen, pemeriksaan visual, pengujian fungsi operasional, dan verifikasi
+    perangkat keselamatan. Masing-masing pemeriksaan didokumentasikan dalam laporan
     komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-07-17T05:33:03+0000'
+lastmod: '2026-07-24T05:41:23+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
