@@ -671,21 +671,22 @@
     ]
   },
   "riksa-uji-scissor-lift.md": {
-    "date": "2026-07-24",
+    "date": "2026-07-26",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "seluruh→semua",
+      "inspeksi→pengecekan",
       "dan→serta",
-      "berdasarkan→sesuai",
-      "dengan→secara",
-      "memenuhi→mencukupi",
-      "Pemeriksaan→Inspeksi",
-      "pada→terhadap",
-      "dilaksanakan→dijalankan",
+      "tentang→perihal",
+      "terhadap→kepada",
+      "kepada→pada",
+      "memverifikasi→memastikan",
       "semua→segenap",
-      "dari→daripada",
-      "terhadap→kepada"
+      "situasi→kondisi",
+      "Inspeksi→Pengecekan",
+      "serta→dan",
+      "ambang→batas",
+      "pada→terhadap",
+      "mencakup→meliputi"
     ]
   }
 }
