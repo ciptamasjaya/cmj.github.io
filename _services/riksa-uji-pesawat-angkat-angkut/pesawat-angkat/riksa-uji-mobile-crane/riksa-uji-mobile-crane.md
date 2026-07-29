@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Mobile Crane
-description: Riksa uji mobile crane adalah inspeksi dan pengujian keselamatan crane
+description: Riksa uji mobile crane adalah inspeksi serta pengujian keselamatan crane
   bergerak oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 daripada
-  Disnaker. Layanan inspeksi K3 seluruh Indonesia.
+  Disnaker. Layanan inspeksi K3 semua Indonesia.
 para_1: Riksa uji mobile crane adalah inspeksi serta tes terhadap pesawat angkat bergerak
-  berdasarkan secara cara cara Permenaker No. 8 Tahun 2020 tentang Keselamatan serta
-  Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.
+  sesuai secara cara cara Permenaker No. 8 Tahun 2020 perihal Keselamatan serta Kesehatan
+  Kerja Pesawat Angkat serta Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-mobile-crane/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -42,34 +42,34 @@ keywords: riksa uji mobile crane, jasa riksa uji mobile crane, inspeksi mobile c
 rating_id: riksa-uji-mobile-crane
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-07-18T05:16:31+0000'
+lastmod: '2026-07-29T05:42:59+0000'
 intro:
   name: Layanan Riksa Uji Mobile Crane Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji mobile crane secara cara
-    cara cara cara inspector bersertifikat serta berpengalaman. Kami menjamin mobile
-    crane Anda memenuhi kriteria keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan
+    cara cara cara inspector bersertifikat dan berpengalaman. Kami menjamin mobile
+    crane Anda memenuhi acuan keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan
     RI.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji mobile crane wajib dilakukan berdasarkan regulasi keselamatan
-      kerja yang berlaku kepada Indonesia dalam rangka menjamin keselamatan operator
-      serta pekerja kepada sekitar area operasi.
+    para: Riksa uji mobile crane wajib dilakukan sesuai regulasi keselamatan kerja
+      yang berlaku kepada Indonesia dalam rangka menjamin keselamatan operator serta
+      pekerja kepada sekitar area operasi.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan mengenai Keselamatan dan Kesehatan Kerja
-        Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
-        segenap jenis crane meliputi mobile crane.
+      para: Peraturan Menteri Ketenagakerjaan mengenai Keselamatan serta Kesehatan
+        Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
+        rangka segenap jenis crane meliputi mobile crane.
     - h4: Standar ASME dan SNI
       para: Pengujian dijalankan mengacu terhadap acuan internasional ASME B30.5 dalam
-        rangka Mobile and Locomotive Cranes dan Acuan Nasional Indonesia (SNI) yang
+        rangka Mobile and Locomotive Cranes dan Standar Nasional Indonesia (SNI) yang
         berlaku.
   - h3: Tim Inspector Bersertifikat
     para: Tim inspector kami mempunyai sertifikat kompetensi dari BNSP dan telah berpengalaman
-      lebih dari 10 tahun dalam bidang pengecekan pesawat angkat meliputi bermacam-macam
+      lebih dari 10 tahun dalam bidang pemeriksaan pesawat angkat meliputi bermacam-macam
       jenis mobile crane.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani riksa uji mobile crane pada semua Indonesia, daripada Sabang
-      sehingga Merauke. Tim kami siap datang ke lokasi proyek Anda kapanpun diperlukan.
+      hingga Merauke. Tim kami siap datang ke lokasi proyek Anda kapanpun diperlukan.
 jenis_alat:
   name: Jenis Mobile Crane yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis mobile crane di berbagai
@@ -103,30 +103,30 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Mobile Crane yang Diperiksa
-  description: Inspeksi menyeluruh pada segenap bagian keselamatan mobile crane
+  description: Inspeksi menyeluruh terhadap segenap elemen keselamatan mobile crane
   items:
   - name: Boom dan Extension
-    description: Inspeksi kondisi struktural boom primer dan extension meliputi pin,
+    description: Inspeksi kondisi struktural boom primer dan extension termasuk pin,
       bushing, dan sistem teleskopik.
     icon: bi-arrows-angle-expand
   - name: Wire Rope dan Sheave
-    description: Pengecekan tali kawat baja dalam rangka keausan, putus kawat, korosi,
+    description: Pemeriksaan tali kawat baja dalam rangka keausan, putus kawat, korosi,
       serta situasi sheave block.
     icon: bi-link-45deg
   - name: Hook Block
-    description: Pengecekan hook primer dan auxiliary meliputi safety latch, swivel,
+    description: Pengecekan hook utama dan auxiliary meliputi safety latch, swivel,
       dan bearing.
     icon: bi-bezier2
   - name: Outrigger dan Stabilizer
-    description: Verifikasi fungsi outrigger hidrolik, pad, serta sistem stabilisasi
+    description: Verifikasi fungsi outrigger hidrolik, pad, dan sistem stabilisasi
       dalam rangka keamanan operasi.
     icon: bi-arrows-fullscreen
   - name: Sistem Hidrolik
-    description: Pemeriksaan pompa, silinder, hose, fitting, serta kontrol hidrolik
-      dalam rangka kebocoran serta fungsi.
+    description: Inspeksi pompa, silinder, hose, fitting, serta kontrol hidrolik dalam
+      rangka kebocoran serta fungsi.
     icon: bi-droplet-half
   - name: Load Moment Indicator
-    description: Pengujian LMI, anti two-block device, dan sistem keselamatan elektronik
+    description: Pengujian LMI, anti two-block device, serta sistem keselamatan elektronik
       lainnya.
     icon: bi-shield-check
 proses_inspeksi:
