@@ -1,13 +1,13 @@
 ---
 layout: node/node--service
 title: Riksa Uji Boiler
-description: Riksa uji boiler adalah pengecekan serta pengujian keselamatan ketel
-  uap oleh PJK3 resmi Kemenaker dalam rangka mendapatkan izin pemakaian pesawat uap
-  dari Disnaker. Layanan pengecekan K3 segenap Indonesia.
+description: Riksa uji boiler adalah pengecekan dan pengujian keselamatan ketel uap
+  oleh PJK3 resmi Kemenaker dalam rangka mendapatkan izin pemakaian pesawat uap dari
+  Disnaker. Layanan pengecekan K3 seluruh Indonesia.
 para_1: Riksa uji boiler merupakan inspeksi serta tes keselamatan terhadap ketel uap
-  yang wajib dijalankan secara cara cara berkala berdasarkan Peraturan Menteri Ketenagakerjaan
-  Nomor 37 Tahun 2016. Inspeksi ini bertujuan dalam rangka memverifikasi boiler bekerja
-  secara cara cara aman serta berdasarkan standar keselamatan kerja yang berlaku.
+  yang wajib dijalankan secara cara cara berkala sesuai Peraturan Menteri Ketenagakerjaan
+  Nomor 37 Tahun 2016. Inspeksi ini dimaksudkan dalam rangka memverifikasi boiler
+  bekerja secara cara cara aman serta sesuai standar keselamatan kerja yang berlaku.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Pesawat Uap
@@ -45,26 +45,26 @@ custom_schema:
 - schema/schema--service-reviews.html
 intro:
   name: Layanan Riksa Uji Boiler Profesional
-  para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
+  para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa uji boiler yang komprehensif secara cara cara cara cara
-    tim inspector bersertifikat serta alat testing yang terkalibrasi.
+    menyediakan layanan riksa uji boiler yang komprehensif dengan cara cara cara cara
+    cara tim inspector bersertifikat dan alat testing yang terkalibrasi.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Masing-masing inspeksi riksa uji boiler yang kami lakukan mengacu kepada
-      regulasi serta kriteria keselamatan kerja yang berlaku di Indonesia, memverifikasi
+      regulasi serta kriteria keselamatan kerja yang berlaku di Indonesia, memastikan
       kepatuhan penuh kepada peraturan pemerintah.
     subsections:
     - h4: Permenaker No. 37 Tahun 2016
       para: Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016 perihal Keselamatan
         serta Kesehatan Kerja Bejana Tekanan serta Tangki Timbun mewajibkan masing-masing
-        boiler menjalani riksa uji berkala dalam rangka memverifikasi kelayakan operasional.
+        boiler menjalani riksa uji berkala dalam rangka memastikan kelayakan operasional.
     - h4: ASME dan Standar Internasional
       para: Terhadap samping mengacu kepada peraturan nasional, kami juga menerapkan
-        standar ASME Boiler and Pressure Vessel Code dan standar internasional lainnya
+        kriteria ASME Boiler and Pressure Vessel Code dan kriteria internasional lainnya
         dalam rangka menjamin kualitas pemeriksaan terbaik.
   - h3: Tim Inspector Bersertifikat
-    para: Inspector kami mempunyai sertifikasi resmi daripada Kementerian Ketenagakerjaan
+    para: Inspector kami memiliki sertifikasi resmi daripada Kementerian Ketenagakerjaan
       RI dengan cara cara kualifikasi Ahli K3 Pesawat Uap serta pengalaman bertahun-tahun
       dalam bidang pemeriksaan boiler. Tiap pemeriksaan dilakukan dengan cara cara
       profesionalisme tinggi serta menghasilkan sertifikat yang diakui dengan cara
@@ -72,7 +72,7 @@ intro:
   - h3: Cakupan Layanan Nasional
     para: Kami melayani bermacam-macam jenis boiler meliputi fire tube boiler, water
       tube boiler, steam generator, dan thermal oil heater kepada semua Indonesia.
-      Dengan cara cara jaringan inspector yang luas, kami siap menjalankan pengecekan
+      Dengan cara cara jaringan inspector yang luas, kami siap melakukan pengecekan
       on-site kepada lokasi Anda.
 jenis_alat:
   name: Jenis Boiler yang Kami Layani
@@ -102,30 +102,30 @@ jenis_alat:
     customer service kami melalui telepon maupun WhatsApp untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen yang Diperiksa
-  description: Pengecekan menyeluruh terhadap seluruh bagian keselamatan boiler
+  description: Pemeriksaan menyeluruh terhadap seluruh elemen keselamatan boiler
   items:
   - name: Drum Uap
-    description: Pengecekan integritas struktur, ketebalan dinding, serta kondisi
+    description: Pengecekan integritas struktur, ketebalan dinding, serta keadaan
       internal drum
     icon: bi-circle
   - name: Pipa Pemanas
-    description: Pengecekan kondisi tube, deteksi korosi, dan pengukuran ketebalan
+    description: Pengecekan keadaan tube, deteksi korosi, dan pengukuran ketebalan
       dinding
     icon: bi-diagram-3
   - name: Burner dan Pembakaran
-    description: Pemeriksaan fungsi burner, efisiensi pembakaran, serta sistem bahan
+    description: Inspeksi fungsi burner, efisiensi pembakaran, serta sistem bahan
       bakar
     icon: bi-fire
   - name: Katup Pengaman
-    description: Tes safety valve dalam rangka memverifikasi dapat membuka kepada
-      tekanan set
+    description: Tes safety valve dalam rangka memastikan dapat membuka kepada tekanan
+      set
     icon: bi-shield-check
   - name: Sistem Kontrol
-    description: Pengecekan manometer, termometer, level gauge, serta sistem kontrol
+    description: Pemeriksaan manometer, termometer, level gauge, serta sistem kontrol
       otomatis
     icon: bi-sliders
   - name: Sistem Isolasi
-    description: Inspeksi keadaan isolasi termal dalam rangka efisiensi dan keselamatan
+    description: Inspeksi situasi isolasi termal dalam rangka efisiensi dan keselamatan
     icon: bi-box
 proses_inspeksi:
   name: Proses Riksa Uji Boiler
@@ -273,5 +273,5 @@ faq_riksa_uji:
     answer: Izin Pemakaian Pesawat Uap (Boiler) berlaku selama 2 tahun sejak tanggal
       penerbitan. Setelah masa berlaku habis, boiler wajib dilakukan riksa uji ulang
       untuk memperbarui izin pemakaian.
-lastmod: '2026-07-03T06:22:44+0000'
+lastmod: '2026-08-04T05:39:50+0000'
 ---
