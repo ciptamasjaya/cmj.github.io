@@ -3,8 +3,8 @@ layout: node/node--pjk3-city
 title: PJK3 Semarang
 date: 2025-05-25 01:51:22.000000000 +07:00
 author: admin
-description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 kepada
-  wilayah Semarang. Hubungi 08568258841 dalam rangka segenap kebutuhan riksa uji Anda.
+description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 pada wilayah
+  Semarang. Hubungi 08568258841 dalam rangka seluruh kebutuhan riksa uji Anda.
 area_served: Semarang
 rating_id: pjk3-semarang
 keywords: PJK3 Semarang, jasa riksa uji Semarang, inspeksi K3 Semarang, sertifikasi
@@ -27,13 +27,13 @@ images:
 section_gallery:
   title: Galeri Layanan
   area: Semarang
-  description: Dokumentasi kegiatan riksa uji kepada wilayah Semarang dan sekitarnya
+  description: Dokumentasi kegiatan riksa uji pada wilayah Semarang serta sekitarnya
   caption: Foto dokumentasi layanan PT. Cipta Mas Jaya
 video: ''
 section_video:
   title: Video Layanan
   area: Semarang
-  description: Lihat tahapan pemeriksaan serta tes K3 oleh tim profesional kami
+  description: Lihat prosedur pemeriksaan dan tes K3 oleh tim profesional kami
   caption: Dokumentasi video layanan PT. Cipta Mas Jaya
   cta_text: Ingin melihat langsung proses inspeksi K3 di lokasi Anda?
   cta_button: Hubungi Kami
@@ -42,9 +42,9 @@ section_hero:
   theme: blue
   area: Semarang
   description: Sedang mencari jasa riksa uji K3 terpercaya pada Semarang? PT. Cipta
-    Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani pemeriksaan dan
-    tes peralatan K3 secara cara standar profesional dalam rangka seluruh wilayah
-    Semarang dan sekitarnya.
+    Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani pemeriksaan serta
+    tes peralatan K3 dengan cara cara standar profesional dalam rangka seluruh wilayah
+    Semarang serta sekitarnya.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
   - Semarang Barat
@@ -70,9 +70,9 @@ section_company_intro:
   title: 'PT. Cipta Mas Jaya: PJK3 Resmi dan Profesional di Semarang'
   company_name: PT. Cipta Mas Jaya
   area: Semarang
-  intro: PT. Cipta Mas Jaya hadir sebagai mitra terpercaya dalam jasa riksa uji kepada
-    wilayah Semarang. Sebagai PJK3 resmi yang telah terdaftar kepada Kementerian Ketenagakerjaan,
-    perusahaan ini memberikan layanan pemeriksaan serta pengujian K3 kepada bermacam-macam
+  intro: PT. Cipta Mas Jaya hadir sebagai mitra terpercaya dalam jasa riksa uji pada
+    wilayah Semarang. Sebagai PJK3 resmi yang telah terdaftar pada Kementerian Ketenagakerjaan,
+    perusahaan ini memberikan layanan pemeriksaan dan pengujian K3 pada bermacam-macam
     peralatan kerja berisiko tinggi.
   subsections:
   - title: Apa Itu PJK3 dan Mengapa Penting untuk Kota Semarang
@@ -103,9 +103,9 @@ section_company_intro:
 section_services:
   title: Keunggulan PT. Cipta Mas Jaya sebagai PJK3 Terdekat dan Profesional
   intro: Sebagai PJK3 yang melayani langsung wilayah Semarang, PT. Cipta Mas Jaya
-    menawarkan keunggulan daripada sisi geografis maupun operasional. Kedekatan lokasi
+    menawarkan keunggulan daripada sisi geografis atau operasional. Kedekatan lokasi
     memungkinkan tim teknis bergerak cepat ke lokasi klien, mengurangi waktu tunggu
-    serta biaya mobilisasi.
+    dan biaya mobilisasi.
   services:
   - title: Riksa Uji Pesawat Angkat Angkut
     description: Pengecekan menyeluruh terhadap struktur rangka, sistem penggerak,
@@ -260,7 +260,7 @@ section_city:
 section_coverage:
   title: Area Pelayanan Riksa Uji
   area: Semarang
-  intro: PT. Cipta Mas Jaya melayani inspeksi serta riksa uji K3 ke segenap wilayah
+  intro: PT. Cipta Mas Jaya melayani pengecekan serta riksa uji K3 ke seluruh wilayah
     Semarang serta sekitarnya, meliputi kawasan industri, perkantoran, komersial,
     serta fasilitas publik.
   zona_industri:
@@ -603,5 +603,5 @@ section_conclusion:
   paragraphs:
   - PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 di wilayah Semarang.
     Hubungi 08568258841 untuk semua kebutuhan riksa uji Anda.
-lastmod: '2026-07-14T05:21:31+0000'
+lastmod: '2026-08-09T04:10:59+0000'
 ---
