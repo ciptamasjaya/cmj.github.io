@@ -197,19 +197,17 @@
     ]
   },
   "pesawat-angkut.md": {
-    "date": "2026-08-13",
+    "date": "2026-08-17",
     "changes": 10,
     "words": [
-      "pemeriksaan→inspeksi",
-      "meliputi→termasuk",
-      "dimanfaatkan→digunakan",
-      "serta→dan",
+      "termasuk→mencakup",
       "dan→serta",
-      "melakukan→melaksanakan",
-      "kepada→pada",
-      "bagian→elemen",
-      "dengan→secara",
-      "termasuk→mencakup"
+      "daripada→dari",
+      "mencakup→meliputi",
+      "melaksanakan→menjalankan",
+      "berdasarkan→sesuai",
+      "berfungsi→bekerja",
+      "serta→dan"
     ]
   },
   "riksa-uji-forklift.md": {
