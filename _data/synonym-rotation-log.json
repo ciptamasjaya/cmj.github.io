@@ -62,44 +62,40 @@
     ]
   },
   "2024-12-16-riksa-uji-forklift-caterpillar-ep20-5ss25am.md": {
-    "date": "2026-08-14",
+    "date": "2026-08-22",
     "changes": 43,
     "words": [
-      "meliputi→termasuk",
-      "inspeksi→pengecekan",
+      "temuan→outcome",
       "serta→dan",
-      "perihal→mengenai",
-      "dengan→secara",
-      "Kepada→Pada",
-      "Seluruh→Semua",
-      "bekerja→beroperasi",
-      "menjamin→memverifikasi",
-      "situasi→kondisi",
-      "berfungsi→bekerja",
-      "dan→serta",
-      "dari→daripada",
-      "bagian→elemen",
-      "mencukupi→memenuhi",
-      "Semua→Segenap",
-      "dilaksanakan→dijalankan",
-      "terhadap→kepada",
-      "dipakai→dimanfaatkan",
-      "kepada→pada",
-      "ada→dijumpai",
-      "menjalankan→melakukan",
-      "ditujukan→bertujuan",
-      "peralatan→alat",
-      "beroperasi→berfungsi",
-      "mencakup→meliputi",
-      "kriteria→acuan",
-      "sampai→sehingga",
-      "sesuai→berdasarkan",
-      "termasuk→mencakup",
-      "acuan→standar",
-      "bagus→baik",
-      "pada→terhadap",
+      "mengenai→tentang",
+      "dimanfaatkan→digunakan",
+      "inspeksi→pengecekan",
       "maupun→atau",
-      "atau→maupun"
+      "kondisi→keadaan",
+      "primer→utama",
+      "berfungsi→bekerja",
+      "terhadap→kepada",
+      "Seluruh→Semua",
+      "meliputi→termasuk",
+      "dilaksanakan→dijalankan",
+      "Segenap→Seluruh",
+      "komponen→bagian",
+      "keadaan→situasi",
+      "kepada→pada",
+      "baik→bagus",
+      "memastikan→menjamin",
+      "dengan→secara",
+      "bekerja→beroperasi",
+      "untuk→dalam rangka",
+      "tentang→perihal",
+      "berdasarkan→sesuai",
+      "bertujuan→dimaksudkan",
+      "acuan→standar",
+      "dan→serta",
+      "elemen→komponen",
+      "Proses→Tahapan",
+      "melakukan→melaksanakan",
+      "lantaran→karena"
     ]
   },
   "2025-05-20-pjk3-terdekat-08568258841.md": {
@@ -315,23 +311,22 @@
     ]
   },
   "riksa-uji-overhead-crane.md": {
-    "date": "2026-08-14",
+    "date": "2026-08-22",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "semua→segenap",
-      "dijalankan→dilakukan",
-      "peralatan→alat",
-      "seluruh→semua",
-      "komponen→bagian",
-      "situasi→kondisi",
-      "Pemeriksaan→Inspeksi",
       "dan→serta",
+      "dari→daripada",
+      "berfungsi→bekerja",
+      "alat→perkakas",
+      "Pemeriksaan→Inspeksi",
+      "semua→segenap",
+      "serta→dan",
       "Inspeksi→Pengecekan",
       "Pengecekan→Pemeriksaan",
-      "standar→kriteria",
-      "menjamin→memverifikasi",
-      "pemeriksaan→inspeksi"
+      "kepada→pada",
+      "memverifikasi→memastikan",
+      "inspeksi→pengecekan",
+      "memiliki→mempunyai"
     ]
   },
   "riksa-uji-boiler.md": {
@@ -549,18 +544,19 @@
     ]
   },
   "penggerak-mula.md": {
-    "date": "2026-08-08",
+    "date": "2026-08-22",
     "changes": 10,
     "words": [
-      "inspeksi→pengecekan",
-      "serta→dan",
-      "termasuk→mencakup",
-      "atau→maupun",
-      "kepada→pada",
-      "peralatan→alat",
-      "bagian→elemen",
-      "berdasarkan→sesuai",
-      "secara→dengan cara"
+      "pengecekan→pemeriksaan",
+      "dan→serta",
+      "dimanfaatkan→digunakan",
+      "daripada→dari",
+      "pada→terhadap",
+      "alat→perkakas",
+      "menjamin→memverifikasi",
+      "dari→daripada",
+      "dengan→secara",
+      "sesuai→berdasarkan"
     ]
   },
   "pompa-kompresor.md": {
@@ -579,18 +575,18 @@
     ]
   },
   "sistem-transmisi.md": {
-    "date": "2026-08-11",
+    "date": "2026-08-22",
     "changes": 10,
     "words": [
-      "dan→serta",
-      "inspeksi→pengecekan",
-      "berdasarkan→sesuai",
-      "dimanfaatkan→digunakan",
       "serta→dan",
-      "terhadap→kepada",
-      "beroperasi→berfungsi",
-      "sesuai→berdasarkan",
-      "Proses→Tahapan"
+      "pengecekan→pemeriksaan",
+      "dan→serta",
+      "komponen→bagian",
+      "dari→daripada",
+      "dengan→secara",
+      "berdasarkan→sesuai",
+      "secara→dengan cara",
+      "alat→perkakas"
     ]
   },
   "tanur.md": {
@@ -672,25 +668,24 @@
     ]
   },
   "riksa-uji-scissor-lift.md": {
-    "date": "2026-08-11",
+    "date": "2026-08-22",
     "changes": 19,
     "words": [
-      "pemeriksaan→inspeksi",
-      "semua→segenap",
-      "maupun→atau",
-      "perihal→mengenai",
-      "pada→terhadap",
-      "serta→dan",
-      "Pengecekan→Pemeriksaan",
-      "seluruh→semua",
-      "keadaan→situasi",
-      "Pemeriksaan→Inspeksi",
-      "limit→ambang",
+      "daripada→dari",
+      "segenap→seluruh",
+      "mengenai→tentang",
+      "sesuai→berdasarkan",
       "terhadap→kepada",
-      "tentang→perihal",
-      "Kriteria→Acuan",
-      "berbagai→beragam",
-      "hingga→sampai"
+      "menjamin→memverifikasi",
+      "Pemeriksaan→Inspeksi",
+      "elemen→komponen",
+      "dan→serta",
+      "Inspeksi→Pengecekan",
+      "ambang→batas",
+      "kepada→pada",
+      "perihal→mengenai",
+      "Acuan→Standar",
+      "dari→daripada"
     ]
   }
 }
