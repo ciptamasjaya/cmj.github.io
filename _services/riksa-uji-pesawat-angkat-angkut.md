@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Angkat Angkut
-description: Jasa riksa uji dan inspeksi K3 pesawat angkat angkut profesional mencakup
-  forklift, crane, hoist, dan conveyor berdasarkan acuan Kementerian Ketenagakerjaan
+description: Jasa riksa uji serta inspeksi K3 pesawat angkat angkut profesional mencakup
+  forklift, crane, hoist, serta conveyor berdasarkan standar Kementerian Ketenagakerjaan
   RI. Melayani semua Indonesia secara cara cara cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/"
 category: Riksa Uji Pesawat Angkat Angkut
@@ -23,12 +23,12 @@ intro:
     Riksa uji pesawat angkat angkut adalah pengecekan dan tes keselamatan berkala
     pada seluruh jenis perkakas angkat seperti forklift, crane, hoist, conveyor, dan
     lift barang yang diatur dalam Peraturan Menteri Ketenagakerjaan. Pemeriksaan ini
-    wajib dilakukan dalam rangka memastikan perkakas beroperasi dengan cara cara cara
-    cara aman dan berdasarkan standar K3 yang berlaku pada Indonesia.
+    wajib dilaksanakan dalam rangka memastikan perkakas berfungsi dengan cara cara
+    cara cara aman dan berdasarkan standar K3 yang berlaku pada Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
-    menyediakan layanan riksa uji pesawat angkat angkut yang komprehensif secara cara
-    cara tim inspector bersertifikat serta alat testing yang terkalibrasi. Kami melayani
+    Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
+    layanan riksa uji pesawat angkat angkut yang komprehensif secara cara cara tim
+    inspector bersertifikat serta perkakas testing yang terkalibrasi. Kami melayani
     bermacam-macam industri meliputi manufaktur, logistik, konstruksi, serta pertambangan
     dalam rangka memverifikasi keselamatan operasional serta compliance terhadap regulasi
     pemerintah.
@@ -54,11 +54,10 @@ mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Angkut Penting?
   para: Riksa uji pesawat angkat angkut bukan hanya kewajiban regulasi, akan akan
     akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja serta
-    aset perusahaan. Kegagalan peralatan angkat dapat menyebabkan kecelakaan fatal,
-    kerusakan material, serta kerugian finansial besar. Pemeriksaan berkala menjamin
-    segenap komponen kritis seperti sistem hidrolik, rem, struktur penahan beban,
-    serta sistem kontrol beroperasi optimal sesuai spesifikasi pabrikan serta kriteria
-    keselamatan.
+    aset perusahaan. Kegagalan alat angkat dapat menyebabkan kecelakaan fatal, kerusakan
+    material, serta kerugian finansial besar. Pemeriksaan berkala menjamin segenap
+    komponen kritis seperti sistem hidrolik, rem, struktur penahan beban, serta sistem
+    kontrol berfungsi optimal sesuai spesifikasi pabrikan serta kriteria keselamatan.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
   para: Proses riksa uji kami dirancang efisien dan tidak mengganggu operasional perusahaan
@@ -66,7 +65,7 @@ proses_riksa_uji:
     lengkap dan terkalibrasi. Setiap inspeksi didokumentasikan detail dalam laporan
     komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku secara
     legal. Kami melayani seluruh Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2026-08-11T04:12:09+0000'
+lastmod: '2026-08-25T03:40:34+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
