@@ -247,20 +247,20 @@
     ]
   },
   "pesawat-uap.md": {
-    "date": "2026-08-13",
+    "date": "2026-08-26",
     "changes": 14,
     "words": [
-      "pemeriksaan→inspeksi",
-      "mencakup→meliputi",
-      "digunakan→dipakai",
-      "seluruh→semua",
-      "dan→serta",
-      "elemen→komponen",
-      "Pemeriksaan→Inspeksi",
-      "alat→perkakas",
-      "kepada→pada",
+      "meliputi→termasuk",
+      "daripada→dari",
       "proses→tahapan",
-      "serta→dan"
+      "semua→segenap",
+      "mempunyai→memiliki",
+      "seluruh→semua",
+      "inspeksi→pengecekan",
+      "dengan→secara",
+      "standar→kriteria",
+      "memiliki→mempunyai",
+      "Pemeriksaan→Inspeksi"
     ]
   },
   "tangki-timbun.md": {
@@ -366,24 +366,23 @@
     ]
   },
   "riksa-uji-chain-block.md": {
-    "date": "2026-08-14",
+    "date": "2026-08-26",
     "changes": 19,
     "words": [
-      "daripada→dari",
-      "pengecekan→pemeriksaan",
-      "secara→dengan cara",
-      "terhadap→kepada",
-      "mencukupi→memenuhi",
-      "kondisi→keadaan",
-      "elemen→komponen",
-      "pokok→primer",
+      "semua→segenap",
       "dan→serta",
-      "Pemeriksaan→Inspeksi",
+      "kepada→pada",
+      "secara→dengan cara",
+      "keadaan→situasi",
       "Pengecekan→Pemeriksaan",
-      "sesuai→berdasarkan",
-      "pada→terhadap",
-      "Standar→Kriteria",
-      "segenap→seluruh"
+      "serta→dan",
+      "Inspeksi→Pengecekan",
+      "Pemeriksaan→Inspeksi",
+      "berdasarkan→sesuai",
+      "mengenai→tentang",
+      "memverifikasi→memastikan",
+      "dari→daripada",
+      "inspeksi→pengecekan"
     ]
   },
   "riksa-uji-crawler-crane.md": {
