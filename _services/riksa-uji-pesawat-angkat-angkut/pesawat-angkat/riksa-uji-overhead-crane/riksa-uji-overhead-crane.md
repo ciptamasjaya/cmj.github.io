@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Overhead Crane
-description: Riksa uji overhead crane adalah pengecekan serta pengujian keselamatan
+description: Riksa uji overhead crane adalah pemeriksaan serta pengujian keselamatan
   crane jembatan oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket
-  K3 daripada Disnaker. Layanan pengecekan K3 seluruh Indonesia.
+  K3 dari Disnaker. Layanan pemeriksaan K3 seluruh Indonesia.
 para_1: Riksa uji overhead crane merupakan inspeksi serta pengujian keselamatan pada
   crane jembatan yang wajib dilakukan secara cara cara berkala sesuai Peraturan Menteri
-  Ketenagakerjaan Nomor 8 Tahun 2020. Pemeriksaan ini dimaksudkan dalam rangka memverifikasi
+  Ketenagakerjaan Nomor 8 Tahun 2020. Inspeksi ini ditujukan dalam rangka memverifikasi
   overhead crane bekerja secara cara aman serta sesuai standar keselamatan kerja yang
   berlaku.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-overhead-crane/"
@@ -46,32 +46,33 @@ custom_schema:
 - schema/schema--service-reviews.html
 intro:
   name: Layanan Riksa Uji Overhead Crane Profesional
-  para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
-    layanan riksa pengujian overhead crane yang komprehensif dengan cara cara cara
-    cara cara tim inspector bersertifikat dan perkakas testing yang terkalibrasi.
+  para: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
+    Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
+    menyediakan layanan riksa pengujian overhead crane yang komprehensif dengan cara
+    cara cara cara cara tim inspector bersertifikat serta perkakas testing yang terkalibrasi.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Masing-masing inspeksi riksa pengujian overhead crane yang kami lakukan
-      mengacu terhadap regulasi dan kriteria keselamatan kerja yang berlaku terhadap
+      mengacu terhadap regulasi serta kriteria keselamatan kerja yang berlaku terhadap
       Indonesia, menjamin kepatuhan penuh terhadap peraturan pemerintah.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan Nomor 8 Tahun 2020 tentang Keselamatan
-        dan Kesehatan Kerja Pesawat Angkat dan Angkut mewajibkan masing-masing overhead
-        crane menjalani riksa uji berkala dalam rangka memastikan kelayakan operasional.
+        serta Kesehatan Kerja Pesawat Angkat serta Angkut mewajibkan masing-masing
+        overhead crane menjalani riksa uji berkala dalam rangka memastikan kelayakan
+        operasional.
     - h4: SNI dan Standar Internasional
-      para: Terhadap samping mengacu terhadap peraturan nasional, kami juga menerapkan
+      para: Terhadap samping mengacu kepada peraturan nasional, kami juga menerapkan
         acuan SNI dan referensi internasional seperti CMAA, FEM, dan ISO dalam rangka
         memastikan kualitas pengecekan terbaik.
   - h3: Tim Inspector Bersertifikat
     para: Inspector kami mempunyai sertifikasi resmi daripada Kementerian Ketenagakerjaan
-      RI dengan cara cara kualifikasi Ahli K3 Pesawat Angkat serta pengalaman bertahun-tahun
+      RI dengan cara cara kualifikasi Ahli K3 Pesawat Angkat dan pengalaman bertahun-tahun
       dalam bidang inspeksi crane. Masing-masing inspeksi dilakukan dengan cara cara
-      profesionalisme tinggi serta menghasilkan sertifikat yang diakui dengan cara
-      cara nasional.
+      profesionalisme tinggi dan menghasilkan sertifikat yang diakui dengan cara cara
+      nasional.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani bermacam-macam jenis overhead crane mencakup single girder,
+    para: Kami melayani bermacam-macam jenis overhead crane meliputi single girder,
       double girder, gantry crane, dan semi-gantry crane kepada seluruh Indonesia.
       Dengan cara cara jaringan inspector yang luas, kami siap melaksanakan inspeksi
       on-site kepada lokasi Anda.
@@ -105,25 +106,25 @@ jenis_alat:
     lebih lanjut.
 komponen_inspeksi:
   name: Komponen yang Diperiksa
-  description: Inspeksi menyeluruh terhadap seluruh elemen keselamatan overhead crane
+  description: Pengecekan menyeluruh kepada seluruh elemen keselamatan overhead crane
   items:
   - name: Struktur Girder
-    description: Pemeriksaan kondisi balok utama, sambungan las, dan defleksi struktur
+    description: Pemeriksaan kondisi balok pokok, sambungan las, dan defleksi struktur
     icon: bi-box
   - name: Hoist dan Trolley
-    description: Pengecekan mekanisme pengangkat, drum, gear box, serta sistem trolley
+    description: Pengecekan mekanisme pengangkat, drum, gear box, dan sistem trolley
     icon: bi-arrows-vertical
   - name: Wire Rope dan Hook
-    description: Pengecekan kondisi tali kawat, diameter, keausan, dan kondisi hook
+    description: Pengecekan keadaan tali kawat, diameter, keausan, dan keadaan hook
     icon: bi-link-45deg
   - name: Sistem Rem
-    description: Pengujian brake motor, holding brake, serta emergency brake
+    description: Pengujian brake motor, holding brake, dan emergency brake
     icon: bi-sign-stop
   - name: Sistem Kelistrikan
-    description: Pemeriksaan panel kontrol, motor, limit switch, serta sistem pengaman
+    description: Pemeriksaan panel kontrol, motor, ambang switch, serta sistem pengaman
     icon: bi-lightning-charge
   - name: Runway dan Rail
-    description: Pemeriksaan situasi rel, alignment, end stop, serta sistem buffering
+    description: Pemeriksaan situasi rel, alignment, end stop, dan sistem buffering
     icon: bi-train-front
 proses_inspeksi:
   name: Proses Riksa Uji Overhead Crane
@@ -276,5 +277,5 @@ faq_riksa_uji:
     answer: Sertifikat riksa uji overhead crane berlaku selama 1 (satu) tahun sejak
       tanggal penerbitan sesuai Permenaker No. 8 Tahun 2020. Setelah masa berlaku
       habis, overhead crane wajib dilakukan riksa uji ulang untuk memperbarui sertifikat.
-lastmod: '2026-08-23T03:42:07+0000'
+lastmod: '2026-08-31T09:06:40+0000'
 ---
