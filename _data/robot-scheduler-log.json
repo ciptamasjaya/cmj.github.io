@@ -4,7 +4,7 @@
     "script": "rotate-frontmatter.rb"
   },
   "synonym": {
-    "last_run": "2026-09-01",
+    "last_run": "2026-09-03",
     "script": "rotate-synonyms.rb"
   }
 }
