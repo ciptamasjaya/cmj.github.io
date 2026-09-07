@@ -1,7 +1,7 @@
 ---
 layout: page/page--service-subcategory
 title: Pompa dan Kompresor
-description: Jasa riksa uji dan pemeriksaan K3 pompa dan kompresor profesional mencakup
+description: Jasa riksa uji dan inspeksi K3 pompa dan kompresor profesional meliputi
   kompresor udara, pompa sentrifugal, pompa submersible, dan industrial blower. Sertifikat
   resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/pompa-kompresor/"
@@ -20,16 +20,17 @@ keywords: riksa uji pompa, riksa uji kompresor, inspeksi kompresor udara, inspek
   pompa sentrifugal, inspeksi blower, PJK3, sertifikasi K3
 intro:
   h1: Pompa dan Kompresor - Riksa Uji Peralatan Fluida Industri
-  para_1: Pompa serta kompresor adalah peralatan yang dipakai dalam rangka memindahkan
+  para_1: Pompa serta kompresor adalah peralatan yang dimanfaatkan dalam rangka memindahkan
     serta memampatkan fluida (cairan serta gas) dalam proses industri. Kategori ini
-    mencakup kompresor udara serta gas, pompa sentrifugal serta submersible, serta
+    meliputi kompresor udara serta gas, pompa sentrifugal serta submersible, serta
     industrial blower yang wajib menjalani riksa uji berkala berdasarkan Peraturan
     Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    pompa serta kompresor yang komprehensif. Tim inspector bersertifikat kami siap
-    melakukan pemeriksaan on-site kepada seluruh Indonesia dengan cara cara cara alat
-    testing terkalibrasi dalam rangka memverifikasi keselamatan operasional alat Anda.
+    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
+    uji pompa serta kompresor yang komprehensif. Tim inspector bersertifikat kami
+    siap melakukan pemeriksaan on-site kepada seluruh Indonesia dengan cara cara cara
+    alat testing terkalibrasi dalam rangka memastikan keselamatan operasional alat
+    Anda.
 layanan_pompa_kompresor:
   h2: Layanan Riksa Uji Pompa dan Kompresor
   para: Kami melayani riksa uji untuk berbagai jenis pompa dan kompresor sesuai kebutuhan
@@ -54,22 +55,22 @@ layanan_pompa_kompresor:
     icon: bi-fan
 mengapa_penting:
   h2: Mengapa Riksa Uji Pompa dan Kompresor Penting?
-  para: Pompa dan kompresor bekerja terus-menerus dengan cara cara tekanan dan kecepatan
-    tinggi yang mempunyai risiko kegagalan mekanis. Kebocoran, getaran berlebih, atau
-    overheating dapat menyebabkan kerusakan perkakas dan kecelakaan kerja. Riksa uji
-    berkala memverifikasi seluruh komponen kritis seperti bearing, seal, impeller,
-    dan safety valve bekerja optimal. Pemeriksaan ini bukan hanya kewajiban legal
-    sesuai Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan yang
-    melindungi nyawa pekerja dan aset perusahaan.
+  para: Pompa serta kompresor bekerja terus-menerus dengan cara cara tekanan serta
+    kecepatan tinggi yang mempunyai risiko kegagalan mekanis. Kebocoran, getaran berlebih,
+    atau overheating dapat menyebabkan kerusakan peralatan serta kecelakaan kerja.
+    Riksa uji berkala memverifikasi seluruh komponen kritis seperti bearing, seal,
+    impeller, serta safety valve bekerja optimal. Pemeriksaan ini bukan hanya kewajiban
+    legal sesuai Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan
+    yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pompa dan Kompresor
-  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara cara cara alat
-    testing seperti vibration analyzer, pressure gauge, flow meter, serta thermal
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara cara cara
+    alat testing seperti vibration analyzer, pressure gauge, flow meter, dan thermal
     camera. Tahapan pemeriksaan meliputi pemeriksaan dokumen, pemeriksaan visual,
-    pengujian fungsi operasional, serta pengukuran parameter kinerja. Masing-masing
-    pemeriksaan didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
+    pengujian fungsi operasional, dan pengukuran parameter kinerja. Masing-masing
+    pemeriksaan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-08-27T13:23:51+0000'
+lastmod: '2026-09-07T07:43:03+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
