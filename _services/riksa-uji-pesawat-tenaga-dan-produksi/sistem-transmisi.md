@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Sistem Transmisi
-description: Jasa riksa uji dan pemeriksaan K3 sistem transmisi profesional mencakup
-  transmisi sabuk, transmisi rantai, dan transmisi roda gigi. Sertifikat resmi Kementerian
+description: Jasa riksa uji serta inspeksi K3 sistem transmisi profesional mencakup
+  transmisi sabuk, transmisi rantai, serta transmisi roda gigi. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/sistem-transmisi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -21,16 +21,15 @@ keywords: riksa uji sistem transmisi, inspeksi transmisi sabuk, inspeksi transmi
 intro:
   h1: Sistem Transmisi - Riksa Uji Penyaluran Tenaga Mekanik
   para_1: Sistem transmisi adalah bagian yang digunakan dalam rangka menyalurkan tenaga
-    mekanik dari penggerak mula ke mesin produksi. Kategori ini mencakup transmisi
-    sabuk (belt), transmisi rantai (chain), serta transmisi roda gigi (gear) yang
-    wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
-    Nomor 38 Tahun 2016.
+    mekanik dari penggerak mula ke mesin produksi. Kategori ini meliputi transmisi
+    sabuk (belt), transmisi rantai (chain), dan transmisi roda gigi (gear) yang wajib
+    menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor
+    38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
-    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
-    uji sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap
-    menjalankan pengecekan on-site kepada seluruh Indonesia secara cara peralatan
-    testing terkalibrasi dalam rangka memastikan keselamatan operasional peralatan
-    Anda.
+    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
+    sistem transmisi yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
+    pemeriksaan on-site kepada seluruh Indonesia secara cara peralatan testing terkalibrasi
+    dalam rangka memastikan keselamatan operasional peralatan Anda.
 layanan_sistem_transmisi:
   h2: Layanan Riksa Uji Sistem Transmisi
   para: Kami melayani riksa uji untuk berbagai jenis sistem transmisi sesuai kebutuhan
@@ -55,21 +54,21 @@ layanan_sistem_transmisi:
 mengapa_penting:
   h2: Mengapa Riksa Uji Sistem Transmisi Penting?
   para: Sistem transmisi berfungsi dengan cara bagian berputar berkecepatan tinggi
-    yang memiliki risiko kecelakaan tinggi jika tidak dilengkapi pelindung yang memadai.
+    yang mempunyai risiko kecelakaan tinggi jika tidak dilengkapi pelindung yang memadai.
     Putusnya belt maupun rantai dapat menyebabkan cedera serius terhadap pekerja terhadap
     sekitarnya. Riksa uji berkala memverifikasi seluruh bagian kritis seperti belt,
-    rantai, gear, bearing, serta pelindung keselamatan berfungsi optimal. Inspeksi
+    rantai, gear, bearing, serta pelindung keselamatan berfungsi optimal. Pengecekan
     ini bukan hanya kewajiban legal sesuai Permenaker No. 38 Tahun 2016, akan tetapi
     investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Sistem Transmisi
   para: Tim inspector kami datang ke lokasi Anda dengan cara perkakas testing seperti
     belt tension gauge, alignment tool, stroboscope, serta vibration meter. Tahapan
-    inspeksi meliputi pengecekan dokumen, inspeksi visual, tes fungsi operasional,
-    serta verifikasi pelindung keselamatan. Masing-masing inspeksi didokumentasikan
+    pengecekan termasuk pengecekan dokumen, pengecekan visual, tes fungsi operasional,
+    serta verifikasi pelindung keselamatan. Masing-masing pengecekan didokumentasikan
     dalam laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang
     berlaku 1 tahun.
-lastmod: '2026-08-22T03:34:26+0000'
+lastmod: '2026-09-12T07:29:26+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
