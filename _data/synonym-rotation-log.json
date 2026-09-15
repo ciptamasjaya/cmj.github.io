@@ -171,18 +171,18 @@
     ]
   },
   "pesawat-angkat.md": {
-    "date": "2026-09-07",
+    "date": "2026-09-15",
     "changes": 10,
     "words": [
-      "termasuk→mencakup",
-      "inspeksi→pengecekan",
-      "dengan→secara",
-      "berdasarkan→sesuai",
-      "memastikan→menjamin",
+      "mencakup→meliputi",
       "perkakas→peralatan",
-      "memiliki→mempunyai",
-      "secara→dengan cara",
-      "alat→perkakas"
+      "alat→perkakas",
+      "menjamin→memverifikasi",
+      "daripada→dari",
+      "terhadap→kepada",
+      "mempunyai→memiliki",
+      "dengan→secara",
+      "sesuai→berdasarkan"
     ]
   },
   "pesawat-angkut.md": {
@@ -310,22 +310,22 @@
     ]
   },
   "riksa-uji-overhead-crane.md": {
-    "date": "2026-08-31",
+    "date": "2026-09-15",
     "changes": 19,
     "words": [
-      "daripada→dari",
-      "pengecekan→pemeriksaan",
-      "Pemeriksaan→Inspeksi",
-      "dimaksudkan→ditujukan",
-      "dan→serta",
-      "dari→daripada",
-      "Inspeksi→Pengecekan",
-      "terhadap→kepada",
-      "utama→pokok",
       "serta→dan",
-      "kondisi→keadaan",
-      "limit→ambang",
-      "mencakup→meliputi"
+      "seluruh→semua",
+      "secara→dengan cara",
+      "ditujukan→bertujuan",
+      "daripada→dari",
+      "kepada→pada",
+      "Pemeriksaan→Inspeksi",
+      "dan→serta",
+      "Pengecekan→Pemeriksaan",
+      "ambang→batas",
+      "menjamin→memverifikasi",
+      "tentang→perihal",
+      "Dengan→Secara"
     ]
   },
   "riksa-uji-boiler.md": {
@@ -427,43 +427,43 @@
     ]
   },
   "riksa-uji-hoist.md": {
-    "date": "2026-09-07",
-    "changes": 19,
-    "words": [
-      "daripada→dari",
-      "seluruh→semua",
-      "serta→dan",
-      "pengecekan→pemeriksaan",
-      "acuan→standar",
-      "kepada→pada",
-      "semua→segenap",
-      "Pengecekan→Pemeriksaan",
-      "Pemeriksaan→Inspeksi",
-      "pemeriksaan→inspeksi",
-      "sesuai→berdasarkan",
-      "diperlukan→dibutuhkan"
-    ]
-  },
-  "riksa-uji-jib-crane.md": {
-    "date": "2026-09-12",
+    "date": "2026-09-15",
     "changes": 19,
     "words": [
       "dari→daripada",
-      "segenap→seluruh",
-      "dengan→secara",
-      "kepada→pada",
-      "standar→kriteria",
-      "secara→dengan cara",
-      "komponen→bagian",
-      "terhadap→kepada",
-      "Inspeksi→Pengecekan",
+      "pengecekan→pemeriksaan",
+      "pemeriksaan→inspeksi",
       "dan→serta",
-      "meliputi→termasuk",
+      "mencukupi→memenuhi",
       "Pemeriksaan→Inspeksi",
-      "batas→limit",
       "pada→terhadap",
-      "mencakup→meliputi",
-      "pengecekan→pemeriksaan"
+      "serta→dan",
+      "Inspeksi→Pengecekan",
+      "utama→pokok",
+      "inspeksi→pengecekan",
+      "melakukan→melaksanakan"
+    ]
+  },
+  "riksa-uji-jib-crane.md": {
+    "date": "2026-09-15",
+    "changes": 19,
+    "words": [
+      "serta→dan",
+      "seluruh→semua",
+      "pada→terhadap",
+      "berdasarkan→sesuai",
+      "dengan→secara",
+      "memastikan→menjamin",
+      "bagian→elemen",
+      "keadaan→situasi",
+      "kondisi→keadaan",
+      "atau→maupun",
+      "Pengecekan→Pemeriksaan",
+      "dari→daripada",
+      "dan→serta",
+      "perihal→mengenai",
+      "kriteria→acuan",
+      "meliputi→termasuk"
     ]
   },
   "riksa-uji-mobile-crane.md": {
@@ -638,22 +638,23 @@
     ]
   },
   "riksa-uji-manlift.md": {
-    "date": "2026-08-23",
+    "date": "2026-09-15",
     "changes": 19,
     "words": [
-      "dari→daripada",
-      "seluruh→semua",
-      "mengenai→tentang",
-      "berdasarkan→sesuai",
-      "kepada→pada",
-      "dengan→secara",
-      "segenap→seluruh",
-      "pada→terhadap",
-      "Pengecekan→Pemeriksaan",
-      "Inspeksi→Pengecekan",
-      "batas→limit",
+      "inspeksi→pengecekan",
+      "daripada→dari",
+      "tentang→perihal",
       "sesuai→berdasarkan",
-      "acuan→standar"
+      "secara→dengan cara",
+      "memenuhi→mencukupi",
+      "seluruh→semua",
+      "memverifikasi→memastikan",
+      "serta→dan",
+      "dan→serta",
+      "limit→ambang",
+      "dari→daripada",
+      "Standar→Kriteria",
+      "berdasarkan→sesuai"
     ]
   },
   "riksa-uji-passenger-hoist.md": {
