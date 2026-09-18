@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Uap
-description: Jasa riksa uji dan pengecekan K3 pesawat uap profesional mencakup boiler
-  pipa api, boiler pipa air, steam generator, dan thermal oil heater. Sertifikat resmi
-  dari Disnaker setempat.
+description: Jasa riksa uji serta pengecekan K3 pesawat uap profesional mencakup boiler
+  pipa api, boiler pipa air, steam generator, serta thermal oil heater. Sertifikat
+  resmi daripada Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Pesawat Uap
@@ -20,51 +20,51 @@ keywords: riksa uji pesawat uap, inspeksi boiler, inspeksi ketel uap, steam gene
   thermal oil heater, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Uap - Riksa Uji Ketel Uap dan Pemanas Bertekanan
-  para_1: Pesawat uap adalah peralatan yang dipakai dalam rangka menghasilkan uap
-    bertekanan melalui tahapan pemanasan air. Kategori ini mencakup bermacam-macam
-    jenis boiler, steam generator, thermal oil heater, serta pemanas bertekanan lainnya
-    yang wajib menjalani riksa uji berkala sesuai Peraturan Menteri Ketenagakerjaan
-    Nomor 37 Tahun 2016.
+  para_1: Pesawat uap adalah alat yang dipakai dalam rangka menghasilkan uap bertekanan
+    melalui prosedur pemanasan air. Kategori ini mencakup bermacam-macam jenis boiler,
+    steam generator, thermal oil heater, serta pemanas bertekanan lainnya yang wajib
+    menjalani riksa uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 37
+    Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
-    Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    pesawat uap yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
-    inspeksi on-site kepada segenap Indonesia dengan cara cara cara peralatan testing
+    Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
+    uji pesawat uap yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
+    pengecekan on-site kepada segenap Indonesia dengan cara cara cara peralatan testing
     terkalibrasi dalam rangka menjamin keselamatan operasional peralatan Anda.
 layanan_pesawat_uap:
   h2: Layanan Riksa Uji Pesawat Uap
-  para: Kami melayani riksa uji dalam rangka bermacam-macam jenis pesawat uap sesuai
+  para: Kami melayani riksa uji dalam rangka bermacam-macam jenis pesawat uap berdasarkan
     kebutuhan industri Anda. Masing-masing peralatan mempunyai tahapan pengecekan
-    khusus yang mengacu pada acuan ASME serta regulasi Kemnaker RI.
+    khusus yang mengacu terhadap acuan ASME serta regulasi Kemnaker RI.
   sub_categories:
   - title: Riksa Uji Boiler
-    description: Inspeksi ketel uap pipa api, pipa air, dan steam generator. Inspeksi
-      tube, drum, burner, safety valve, dan sistem kontrol.
+    description: Inspeksi ketel uap pipa api, pipa air, serta steam generator. Inspeksi
+      tube, drum, burner, safety valve, serta sistem kontrol.
     url: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
     icon: bi-fire
   - title: Riksa Uji Thermal Oil Heater
-    description: Inspeksi pemanas secara cara cara cara media oli thermal. Inspeksi
+    description: Inspeksi pemanas dengan cara cara cara cara media oli thermal. Inspeksi
       coil, expansion tank, pompa sirkulasi, dan sistem kontrol temperatur.
     url: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-thermal-oil-heater/"
     icon: bi-thermometer-high
 mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Uap Penting?
-  para: Pesawat uap berfungsi terhadap tekanan dan temperatur tinggi hingga memiliki
+  para: Pesawat uap bekerja terhadap tekanan dan temperatur tinggi sampai memiliki
     potensi bahaya ledakan yang sangat besar. Kegagalan peralatan dapat menyebabkan
     ledakan dahsyat, kebakaran, dan korban jiwa. Riksa uji berkala memverifikasi semua
     komponen kritis seperti tube boiler, safety valve, pressure gauge, dan sistem
-    kontrol berfungsi optimal. Inspeksi ini bukan hanya kewajiban legal berdasarkan
+    kontrol bekerja optimal. Inspeksi ini bukan hanya kewajiban legal berdasarkan
     Permenaker No. 37 Tahun 2016, akan akan akan akan akan akan tetapi investasi keselamatan
     yang melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pesawat Uap
-  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara perkakas testing
-    seperti ultrasonic thickness gauge, pressure calibrator, serta thermal imaging
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara perkakas
+    testing seperti ultrasonic thickness gauge, pressure calibrator, dan thermal imaging
     camera. Tahapan pemeriksaan meliputi pemeriksaan dokumen, pemeriksaan visual internal
-    serta eksternal, tes NDT (Non-Destructive Testing), hydrostatic test, serta functional
+    dan eksternal, tes NDT (Non-Destructive Testing), hydrostatic test, dan functional
     test safety device. Masing-masing pemeriksaan didokumentasikan dalam laporan komprehensif
-    serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-_content_refreshed_at: '2026-09-16T08:06:46+0000'
-lastmod: '2026-09-09T07:42:02+0000'
+    dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+_content_refreshed_at: '2026-09-18T07:47:34+0000'
+lastmod: '2026-09-18T07:47:34+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

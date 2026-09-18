@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-category
 title: Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun
-description: Jasa riksa pengujian serta inspeksi K3 pesawat uap, bejana tekan, serta
-  tangki timbun profesional meliputi boiler, pressure vessel, heat exchanger, serta
+description: Jasa riksa pengujian dan pengecekan K3 pesawat uap, bejana tekan, dan
+  tangki timbun profesional meliputi boiler, pressure vessel, heat exchanger, dan
   storage tank sesuai kriteria Kementerian Ketenagakerjaan RI. Melayani semua Indonesia
   dengan cara cara cara cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/"
@@ -21,16 +21,16 @@ keywords: riksa uji pesawat uap, riksa uji bejana tekan, inspeksi boiler, inspek
 intro:
   h1: Riksa Uji Pesawat Uap Bejana Tekan dan Tangki Timbun - Inspeksi K3 Profesional
   para_1: Apa yang dimaksud dengan cara riksa uji pesawat uap bejana tekan serta tangki
-    timbun? Riksa uji pesawat uap bejana tekan adalah pemeriksaan serta pengujian
-    keselamatan berkala terhadap seluruh jenis alat bertekanan seperti boiler, pressure
-    vessel, heat exchanger, autoclave, serta tangki penyimpanan yang diatur dalam
-    Peraturan Menteri Ketenagakerjaan. Inspeksi ini wajib dijalankan dalam rangka
-    memverifikasi alat beroperasi dengan cara aman serta berdasarkan kriteria K3 yang
-    berlaku terhadap Indonesia.
+    timbun? Riksa uji pesawat uap bejana tekan adalah inspeksi serta pengujian keselamatan
+    berkala terhadap seluruh jenis alat bertekanan seperti boiler, pressure vessel,
+    heat exchanger, autoclave, serta tangki penyimpanan yang diatur dalam Peraturan
+    Menteri Ketenagakerjaan. Inspeksi ini wajib dilakukan dalam rangka memverifikasi
+    alat beroperasi dengan cara aman serta berdasarkan kriteria K3 yang berlaku terhadap
+    Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) yang telah mendapat izin resmi daripada Kementerian Ketenagakerjaan RI,
     menyediakan layanan riksa uji pesawat uap bejana tekan dan tangki timbun yang
-    komprehensif dengan cara cara cara cara cara tim inspector bersertifikat dan peralatan
+    komprehensif secara cara cara cara cara cara tim inspector bersertifikat dan alat
     testing yang terkalibrasi. Kami melayani bermacam-macam industri meliputi manufaktur,
     petrokimia, pembangkit listrik, dan pengolahan migas dalam rangka menjamin keselamatan
     operasional dan compliance terhadap regulasi pemerintah.
@@ -64,9 +64,9 @@ mengapa_penting:
     akan akan akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja
     serta aset perusahaan. Kegagalan peralatan bertekanan dapat menyebabkan ledakan
     fatal, kebakaran, kerusakan material, serta kerugian finansial besar. Pengecekan
-    berkala memverifikasi semua komponen kritis seperti dinding bejana, safety valve,
-    sistem kontrol tekanan, serta welding integrity berfungsi optimal berdasarkan
-    spesifikasi pabrikan serta standar keselamatan ASME, API, serta SNI.
+    berkala memverifikasi semua bagian kritis seperti dinding bejana, safety valve,
+    sistem kontrol tekanan, serta welding integrity bekerja optimal berdasarkan spesifikasi
+    pabrikan serta standar keselamatan ASME, API, serta SNI.
 proses_riksa_uji:
   h2: Proses Riksa Uji di PT. Cipta Mas Jaya
   para: Proses riksa uji kami dirancang efisien dan tidak mengganggu operasional perusahaan
@@ -75,7 +75,7 @@ proses_riksa_uji:
     terkalibrasi. Setiap inspeksi didokumentasikan detail dalam laporan komprehensif
     dan dilengkapi sertifikat kelayakan operasional yang berlaku secara legal. Kami
     melayani seluruh Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2026-08-31T09:06:40+0000'
+lastmod: '2026-09-18T07:47:34+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
