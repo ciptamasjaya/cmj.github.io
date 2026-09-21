@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Tangki Timbun
-description: Jasa riksa uji serta pengecekan K3 tangki timbun profesional meliputi
-  storage tank, LPG tank, fuel tank, serta tangki penyimpanan bahan cair atau gas
-  bertekanan. Sertifikat resmi dari Disnaker setempat.
+description: Jasa riksa uji dan pengecekan K3 tangki timbun profesional meliputi storage
+  tank, LPG tank, fuel tank, dan tangki penyimpanan bahan cair atau gas bertekanan.
+  Sertifikat resmi daripada Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/tangki-timbun/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Tangki Timbun
@@ -20,15 +20,15 @@ keywords: riksa uji tangki timbun, inspeksi storage tank, inspeksi LPG tank, ins
   fuel tank, tangki penyimpanan, PJK3, sertifikasi K3
 intro:
   h1: Tangki Timbun - Riksa Uji Tangki Penyimpanan Bertekanan
-  para_1: Tangki timbun adalah perkakas yang dipakai dalam rangka menyimpan bahan
+  para_1: Tangki timbun adalah peralatan yang dipakai dalam rangka menyimpan bahan
     cair atau gas dalam jumlah besar, baik kepada tekanan atmosfer atau bertekanan.
     Kategori ini mencakup storage tank, LPG tank, fuel tank, chemical tank, nitrogen
-    tank, oxygen tank, serta tangki penyimpanan lainnya yang wajib menjalani riksa
-    uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
+    tank, oxygen tank, dan tangki penyimpanan lainnya yang wajib menjalani riksa uji
+    berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     uji tangki timbun yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    inspeksi on-site kepada semua Indonesia dengan cara cara cara perkakas testing
+    pengecekan on-site kepada semua Indonesia secara cara cara cara perkakas testing
     terkalibrasi dalam rangka menjamin keselamatan operasional perkakas Anda.
 layanan_tangki_timbun:
   h2: Layanan Riksa Uji Tangki Timbun
@@ -46,22 +46,22 @@ mengapa_penting:
   para: Tangki timbun menyimpan bahan berbahaya dalam volume besar yang dapat menimbulkan
     risiko kebakaran, ledakan, pencemaran lingkungan, serta bahaya kesehatan. Korosi
     terhadap dinding tangki, kebocoran terhadap sambungan, serta kegagalan sistem
-    keselamatan dapat menyebabkan kecelakaan fatal. Riksa pengujian berkala memastikan
+    keselamatan dapat menyebabkan kecelakaan fatal. Riksa pengujian berkala menjamin
     integritas struktural tangki melalui pengukuran ketebalan, tes kebocoran, serta
-    inspeksi sistem proteksi. Pemeriksaan ini bukan hanya kewajiban legal berdasarkan
+    pengecekan sistem proteksi. Pemeriksaan ini bukan hanya kewajiban legal berdasarkan
     Permenaker No. 37 Tahun 2016, akan akan akan akan akan tetapi investasi keselamatan
     yang melindungi nyawa pekerja, masyarakat sekitar, serta lingkungan.
 proses:
   h2: Proses Riksa Uji Tangki Timbun
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara perkakas
     testing seperti ultrasonic thickness gauge, magnetic flux leakage scanner, serta
-    vacuum box testing kit. Prosedur inspeksi mencakup inspeksi dokumen serta nameplate,
-    inspeksi visual eksternal serta internal (jika memungkinkan), pengukuran ketebalan
-    shell serta floor, pengujian kebocoran, serta inspeksi foundation settlement.
-    Masing-masing inspeksi didokumentasikan dalam laporan komprehensif serta dilengkapi
-    sertifikat kelayakan operasional yang berlaku sesuai ketentuan.
-_content_refreshed_at: '2026-09-18T07:47:34+0000'
-lastmod: '2026-08-27T13:23:51+0000'
+    vacuum box testing kit. Prosedur pengecekan meliputi pengecekan dokumen serta
+    nameplate, pengecekan visual eksternal serta internal (jika memungkinkan), pengukuran
+    ketebalan shell serta floor, pengujian kebocoran, serta pengecekan foundation
+    settlement. Masing-masing pengecekan didokumentasikan dalam laporan komprehensif
+    serta dilengkapi sertifikat kelayakan operasional yang berlaku sesuai ketentuan.
+_content_refreshed_at: '2026-09-21T08:23:50+0000'
+lastmod: '2026-09-21T08:23:49+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

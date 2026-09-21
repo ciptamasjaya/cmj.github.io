@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Bejana Tekan
-description: Jasa riksa pengujian serta pemeriksaan K3 bejana tekan profesional mencakup
+description: Jasa riksa pengujian serta inspeksi K3 bejana tekan profesional mencakup
   air receiver, pressure vessel, heat exchanger, autoclave, serta separator. Sertifikat
-  resmi daripada Disnaker setempat.
+  resmi dari Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/bejana-tekan/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Bejana Tekan
@@ -20,17 +20,17 @@ keywords: riksa uji bejana tekan, inspeksi pressure vessel, inspeksi air receive
   inspeksi heat exchanger, autoclave, separator, PJK3, sertifikasi K3
 intro:
   h1: Bejana Tekan - Riksa Uji Vessel dan Peralatan Bertekanan
-  para_1: Bejana tekan adalah alat yang digunakan dalam rangka menyimpan atau memproses
-    fluida (gas atau cairan) pada tekanan pada atas atau pada bawah tekanan atmosfer.
-    Kategori ini meliputi air receiver, pressure vessel, heat exchanger, autoclave,
+  para_1: Bejana tekan adalah alat yang digunakan dalam rangka menyimpan maupun memproses
+    fluida (gas maupun cairan) pada tekanan pada atas maupun pada bawah tekanan atmosfer.
+    Kategori ini termasuk air receiver, pressure vessel, heat exchanger, autoclave,
     deaerator, separator, serta alat bertekanan lainnya yang wajib menjalani riksa
     pengujian berkala berdasarkan Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun
     2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
     bejana tekan yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    pengecekan on-site pada seluruh Indonesia secara cara cara perkakas testing terkalibrasi
-    dalam rangka memastikan keselamatan operasional perkakas Anda.
+    pengecekan on-site terhadap seluruh Indonesia secara cara cara peralatan testing
+    terkalibrasi dalam rangka memastikan keselamatan operasional peralatan Anda.
 layanan_bejana_tekan:
   h2: Layanan Riksa Uji Bejana Tekan
   para: Kami melayani riksa uji untuk berbagai jenis bejana tekan sesuai kebutuhan
@@ -84,24 +84,23 @@ layanan_bejana_tekan:
     icon: bi-battery-charging
 mengapa_penting:
   h2: Mengapa Riksa Uji Bejana Tekan Penting?
-  para: Bejana tekan menyimpan energi potensial yang amat besar dalam bentuk tekanan
+  para: Bejana tekan menyimpan energi potensial yang sungguh besar dalam bentuk tekanan
     fluida. Kegagalan struktural dapat menyebabkan ledakan dahsyat dengan cara daya
     rusak tinggi. Korosi, fatigue, serta kerusakan material adalah penyebab primer
     kegagalan bejana tekan. Riksa uji berkala memverifikasi integritas struktural
     melalui tes NDT, hydrostatic test, serta pemeriksaan ketebalan dinding. Inspeksi
-    ini bukan hanya kewajiban legal berdasarkan Permenaker No. 37 Tahun 2016, akan
-    akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja serta aset
-    perusahaan.
+    ini bukan hanya kewajiban legal sesuai Permenaker No. 37 Tahun 2016, akan akan
+    akan tetapi investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Bejana Tekan
-  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara perkakas testing
+  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara peralatan testing
     seperti ultrasonic thickness gauge, magnetic particle testing kit, dan hydrostatic
-    test pump. Prosedur pemeriksaan meliputi pemeriksaan dokumen dan nameplate, pemeriksaan
+    test pump. Prosedur inspeksi meliputi inspeksi dokumen dan nameplate, inspeksi
     visual internal dan eksternal, pengukuran ketebalan dinding, tes NDT pada sambungan
-    las, dan hydrostatic test. Masing-masing pemeriksaan didokumentasikan dalam laporan
+    las, dan hydrostatic test. Masing-masing inspeksi didokumentasikan dalam laporan
     komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-_content_refreshed_at: '2026-09-18T07:47:34+0000'
-lastmod: '2026-09-07T07:43:03+0000'
+_content_refreshed_at: '2026-09-21T08:23:50+0000'
+lastmod: '2026-09-21T08:23:49+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
