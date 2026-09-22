@@ -1,13 +1,13 @@
 ---
 layout: node/node--service
 title: Riksa Uji Scissor Lift
-description: Riksa uji scissor lift adalah pengecekan serta pengujian keselamatan
+description: Riksa uji scissor lift adalah pemeriksaan serta pengujian keselamatan
   platform kerja gunting oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket
-  K3 daripada Disnaker. Layanan pengecekan K3 seluruh Indonesia.
-para_1: Riksa uji scissor lift adalah inspeksi serta pengujian pada pesawat angkat
-  jenis scissor lift maupun platform kerja gunting sesuai secara cara cara cara Permenaker
-  No. 8 Tahun 2020 tentang Keselamatan serta Kesehatan Kerja Pesawat Angkat serta
-  Pesawat Angkut.
+  K3 dari Disnaker. Layanan pemeriksaan K3 seluruh Indonesia.
+para_1: Riksa uji scissor lift adalah inspeksi dan pengujian pada pesawat angkat jenis
+  scissor lift atau platform kerja gunting sesuai secara cara cara cara Permenaker
+  No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat
+  Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-scissor-lift/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -45,34 +45,34 @@ keywords: riksa uji scissor lift, jasa riksa uji scissor lift, inspeksi scissor 
 rating_id: riksa-uji-scissor-lift
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-09-07T07:43:03+0000'
+lastmod: '2026-09-22T08:05:30+0000'
 intro:
   name: Layanan Riksa Uji Scissor Lift Profesional
-  para: PT. Cipta Mas Jaya menyediakan layanan riksa uji scissor lift secara cara
-    cara cara cara inspector bersertifikat dan berpengalaman. Kami memverifikasi scissor
-    lift Anda mencukupi standar keselamatan yang ditetapkan oleh Kementerian Ketenagakerjaan
-    RI dalam rangka operasional yang aman pada ketinggian.
+  para: PT. Cipta Mas Jaya menyediakan layanan riksa uji scissor lift dengan cara
+    cara cara cara cara inspector bersertifikat dan berpengalaman. Kami memverifikasi
+    scissor lift Anda mencukupi standar keselamatan yang ditetapkan oleh Kementerian
+    Ketenagakerjaan RI dalam rangka operasional yang aman terhadap ketinggian.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji scissor lift wajib dilakukan berdasarkan regulasi keselamatan
-      kerja yang berlaku terhadap Indonesia.
+    para: Riksa uji scissor lift wajib dilakukan sesuai regulasi keselamatan kerja
+      yang berlaku terhadap Indonesia.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan mengenai Keselamatan serta Kesehatan
-        Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
-        rangka segenap jenis aerial work platform meliputi scissor lift.
+      para: Peraturan Menteri Ketenagakerjaan mengenai Keselamatan dan Kesehatan Kerja
+        Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
+        segenap jenis aerial work platform meliputi scissor lift.
     - h4: Standar ANSI dan SNI
-      para: Pengujian dilaksanakan mengacu pada acuan ANSI A92.6 dalam rangka Self-Propelled
+      para: Pengujian dilaksanakan mengacu pada standar ANSI A92.6 dalam rangka Self-Propelled
         Elevating Work Platforms dan Standar Nasional Indonesia (SNI) yang berlaku.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami mempunyai sertifikat kompetensi daripada BNSP dan telah
+    para: Tim inspector kami memiliki sertifikat kompetensi daripada BNSP dan telah
       berpengalaman dalam bidang inspeksi pesawat angkat jenis aerial work platform.
       Tiap inspector memahami karakteristik khusus scissor lift daripada beragam merek
       dan kapasitas.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji scissor lift kepada seluruh Indonesia, daripada
-      Sabang sampai Merauke. Tim kami siap datang ke lokasi proyek konstruksi, gudang,
-      pabrik, atau fasilitas industri Anda kapanpun diperlukan.
+    para: Kami melayani riksa uji scissor lift pada seluruh Indonesia, daripada Sabang
+      sampai Merauke. Tim kami siap datang ke lokasi proyek konstruksi, gudang, pabrik,
+      atau fasilitas industri Anda kapanpun diperlukan.
 jenis_alat:
   name: Jenis Scissor Lift yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis scissor lift dan platform
@@ -106,29 +106,29 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Scissor Lift yang Diperiksa
-  description: Pengecekan menyeluruh kepada semua bagian keselamatan scissor lift
+  description: Pengecekan menyeluruh pada segenap bagian keselamatan scissor lift
   items:
   - name: Platform dan Railing
-    description: Inspeksi kondisi platform kerja, pagar pengaman, pintu akses, serta
+    description: Inspeksi kondisi platform kerja, pagar pengaman, pintu akses, dan
       sistem pengunci.
     icon: bi-grid
   - name: Mekanisme Gunting
-    description: Pengecekan struktur scissor arm, pin, bushing, dan integritas sambungan
+    description: Pemeriksaan struktur scissor arm, pin, bushing, dan integritas sambungan
       mekanis.
     icon: bi-arrows-vertical
   - name: Sistem Hidrolik
-    description: Pengecekan silinder hidrolik, selang, fitting, pompa, dan level oli
-      hidrolik.
+    description: Pemeriksaan silinder hidrolik, selang, fitting, pompa, dan level
+      oli hidrolik.
     icon: bi-droplet-half
   - name: Sistem Kontrol
-    description: Pengujian panel kontrol atas dan bawah, joystick, tombol emergency
-      stop, dan indikator.
+    description: Pengujian panel kontrol atas serta bawah, joystick, tombol emergency
+      stop, serta indikator.
     icon: bi-cpu
   - name: Sistem Penggerak
-    description: Inspeksi motor, transmisi, roda/ban, rem, dan sistem steering.
+    description: Pengecekan motor, transmisi, roda/ban, rem, dan sistem steering.
     icon: bi-gear
   - name: Safety Device
-    description: Pengujian batas switch, tilt sensor, overload protection, serta alarm
+    description: Pengujian batas switch, tilt sensor, overload protection, dan alarm
       keselamatan.
     icon: bi-shield-check
 proses_inspeksi:
