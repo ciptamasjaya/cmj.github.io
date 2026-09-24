@@ -1,7 +1,7 @@
 ---
 layout: page/page--service-subcategory
 title: Tanur
-description: Jasa riksa uji dan pengecekan K3 tanur profesional termasuk furnace,
+description: Jasa riksa uji dan pemeriksaan K3 tanur profesional mencakup furnace,
   oven industri, industrial chiller, dan cooling tower. Sertifikat resmi Kementerian
   Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/tanur/"
@@ -21,13 +21,13 @@ keywords: riksa uji tanur, inspeksi furnace, inspeksi oven industri, inspeksi ch
 intro:
   h1: Tanur - Riksa Uji Peralatan Termal Industri
   para_1: Tanur adalah alat yang digunakan dalam rangka prosedur pemanasan atau pendinginan
-    dalam industri manufaktur dan pengolahan. Kategori ini meliputi furnace, oven
-    industri, industrial chiller, dan cooling tower yang wajib menjalani riksa uji
+    dalam industri manufaktur serta pengolahan. Kategori ini termasuk furnace, oven
+    industri, industrial chiller, serta cooling tower yang wajib menjalani riksa uji
     berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa pengujian
     tanur yang komprehensif. Tim inspector bersertifikat kami siap menjalankan inspeksi
-    on-site pada semua Indonesia dengan cara peralatan testing terkalibrasi dalam
+    on-site terhadap semua Indonesia secara cara peralatan testing terkalibrasi dalam
     rangka menjamin keselamatan operasional peralatan Anda.
 layanan_tanur:
   h2: Layanan Riksa Uji Tanur
@@ -47,23 +47,23 @@ layanan_tanur:
     icon: bi-snow
 mengapa_penting:
   h2: Mengapa Riksa Uji Tanur Penting?
-  para: Tanur serta perkakas termal beroperasi pada suhu ekstrem (sungguh panas atau
-    sungguh dingin) yang mempunyai risiko kebakaran, ledakan, serta cedera akibat
+  para: Tanur serta perkakas termal beroperasi terhadap suhu ekstrem (sungguh panas
+    atau sungguh dingin) yang mempunyai risiko kebakaran, ledakan, serta cedera akibat
     paparan suhu. Kegagalan sistem kontrol atau kebocoran refrigerant dapat menyebabkan
     kecelakaan fatal. Riksa uji berkala menjamin semua bagian kritis seperti burner,
     sistem kontrol temperatur, safety valve, serta sensor beroperasi optimal. Inspeksi
     ini bukan hanya kewajiban legal berdasarkan Permenaker No. 38 Tahun 2016, akan
-    akan akan akan akan akan akan akan tetapi investasi keselamatan yang melindungi
+    akan akan akan akan akan akan akan akan tetapi investasi keselamatan yang melindungi
     nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Tanur
-  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara peralatan testing
-    seperti thermal imaging camera, thermocouple, combustion analyzer, dan refrigerant
+  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara alat testing
+    seperti thermal imaging camera, thermocouple, combustion analyzer, serta refrigerant
     leak detector. Prosedur pemeriksaan termasuk pemeriksaan dokumen, pemeriksaan
-    visual, pengujian fungsi operasional, dan pengukuran parameter temperatur. Masing-masing
-    pemeriksaan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
+    visual, pengujian fungsi operasional, serta pengukuran parameter temperatur. Masing-masing
+    pemeriksaan didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-09-09T07:42:02+0000'
+lastmod: '2026-09-24T07:59:10+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

@@ -60,7 +60,7 @@ proses:
     ketebalan shell serta floor, pengujian kebocoran, serta pengecekan foundation
     settlement. Masing-masing pengecekan didokumentasikan dalam laporan komprehensif
     serta dilengkapi sertifikat kelayakan operasional yang berlaku sesuai ketentuan.
-_content_refreshed_at: '2026-09-23T08:07:48+0000'
+_content_refreshed_at: '2026-09-24T07:59:10+0000'
 lastmod: '2026-09-21T08:23:49+0000'
 ---
 <!-- ========================================================================== -->
