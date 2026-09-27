@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Angkat
-description: Jasa riksa uji serta pengecekan K3 pesawat angkat profesional meliputi
-  crane, hoist, gondola, manlift, scissor lift, serta peralatan pengangkat vertikal
-  lainnya. Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji serta pengecekan K3 pesawat angkat profesional termasuk
+  crane, hoist, gondola, manlift, scissor lift, serta alat pengangkat vertikal lainnya.
+  Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -20,15 +20,15 @@ keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gon
   inspeksi manlift, scissor lift, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Angkat - Riksa Uji Peralatan Pengangkat Beban Vertikal
-  para_1: Pesawat angkat adalah perkakas yang dimanfaatkan dalam rangka mengangkat
-    serta menurunkan beban secara cara cara vertikal. Kategori ini meliputi bermacam-macam
-    jenis crane, hoist, gondola, manlift, scissor lift, serta perkakas pengangkat
-    lainnya yang wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri
-    Ketenagakerjaan Nomor 8 Tahun 2020.
+  para_1: Pesawat angkat adalah peralatan yang dimanfaatkan dalam rangka mengangkat
+    dan menurunkan beban secara cara cara vertikal. Kategori ini meliputi bermacam-macam
+    jenis crane, hoist, gondola, manlift, scissor lift, dan peralatan pengangkat lainnya
+    yang wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
+    Nomor 8 Tahun 2020.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
-    inspeksi on-site pada semua Indonesia secara cara cara cara peralatan testing
+    pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap melakukan
+    inspeksi on-site terhadap semua Indonesia secara cara cara cara peralatan testing
     terkalibrasi dalam rangka memverifikasi keselamatan operasional peralatan Anda.
 layanan_pesawat_angkat:
   h2: Layanan Riksa Uji Pesawat Angkat
@@ -105,19 +105,19 @@ mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Penting?
   para: Pesawat angkat menangani beban berat kepada ketinggian sehingga memiliki risiko
     kecelakaan yang sungguh tinggi. Kegagalan peralatan dapat menyebabkan beban jatuh,
-    struktur runtuh, atau operator terjatuh. Riksa uji berkala memverifikasi segenap
-    komponen kritis seperti wire rope, brake system, ambang switch, serta struktur
+    struktur runtuh, maupun operator terjatuh. Riksa uji berkala memverifikasi segenap
+    komponen kritis seperti wire rope, brake system, batas switch, serta struktur
     penahan beban berfungsi optimal. Pengecekan ini bukan hanya kewajiban legal sesuai
     Permenaker No. 8 Tahun 2020, akan akan tetapi investasi keselamatan yang melindungi
     nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pesawat Angkat
-  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara perkakas testing
-    portable yang terkalibrasi. Proses pengecekan meliputi pengecekan dokumen, pengecekan
-    visual struktur dan bagian, tes fungsi operasional, dan load test berdasarkan
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara perkakas
+    testing portable yang terkalibrasi. Proses pengecekan meliputi pengecekan dokumen,
+    pengecekan visual struktur dan bagian, tes fungsi operasional, dan load test sesuai
     kapasitas. Tiap pengecekan didokumentasikan dalam laporan komprehensif dan dilengkapi
     sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-09-15T08:13:21+0000'
+lastmod: '2026-09-27T08:45:35+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
