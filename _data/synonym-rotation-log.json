@@ -11,15 +11,15 @@
     ]
   },
   "2024-08-26-jasa-riksa-uji-forklift.md": {
-    "date": "2026-09-10",
+    "date": "2026-09-30",
     "changes": 6,
     "words": [
-      "maupun→atau",
-      "perkakas→peralatan",
-      "Secara→Dengan cara",
-      "memastikan→menjamin",
-      "dan→serta",
-      "acuan→standar"
+      "bagus→baik",
+      "terhadap→kepada",
+      "peralatan→alat",
+      "Dengan→Secara",
+      "inspeksi→pengecekan",
+      "dengan→secara"
     ]
   },
   "2024-10-16-riksa-uji-boiler-john-thompson-74910.md": {
@@ -175,19 +175,18 @@
     ]
   },
   "pesawat-angkat.md": {
-    "date": "2026-09-27",
+    "date": "2026-09-30",
     "changes": 10,
     "words": [
-      "peralatan→alat",
-      "meliputi→termasuk",
       "serta→dan",
-      "perkakas→peralatan",
-      "menjalankan→melakukan",
-      "pada→terhadap",
-      "ambang→batas",
-      "atau→maupun",
+      "alat→perkakas",
       "secara→dengan cara",
-      "berdasarkan→sesuai"
+      "dan→serta",
+      "melakukan→melaksanakan",
+      "memverifikasi→memastikan",
+      "komponen→bagian",
+      "berfungsi→bekerja",
+      "dengan→secara"
     ]
   },
   "pesawat-angkut.md": {
@@ -295,23 +294,24 @@
     ]
   },
   "riksa-uji-gantry-crane.md": {
-    "date": "2026-09-21",
+    "date": "2026-09-30",
     "changes": 19,
     "words": [
-      "dari→daripada",
-      "semua→segenap",
-      "secara→dengan cara",
-      "dan→serta",
-      "memenuhi→mencukupi",
-      "menjamin→memverifikasi",
-      "Inspeksi→Pengecekan",
-      "bagian→elemen",
-      "pada→terhadap",
+      "daripada→dari",
+      "pengecekan→pemeriksaan",
       "serta→dan",
-      "mencakup→meliputi",
+      "pada→terhadap",
+      "memverifikasi→memastikan",
+      "secara→dengan cara",
+      "terhadap→kepada",
       "Pengecekan→Pemeriksaan",
-      "dilaksanakan→dijalankan",
-      "termasuk→mencakup"
+      "dan→serta",
+      "Inspeksi→Pengecekan",
+      "meliputi→termasuk",
+      "Pemeriksaan→Inspeksi",
+      "limit→ambang",
+      "mencakup→meliputi",
+      "memiliki→mempunyai"
     ]
   },
   "riksa-uji-overhead-crane.md": {
@@ -354,14 +354,14 @@
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
-    "date": "2026-09-24",
+    "date": "2026-09-30",
     "changes": 6,
     "words": [
-      "serta→dan",
-      "meliputi→termasuk",
-      "tentang→perihal",
       "termasuk→mencakup",
-      "dan→serta"
+      "dan→serta",
+      "perihal→mengenai",
+      "mencakup→meliputi",
+      "pemeriksaan→inspeksi"
     ]
   },
   "riksa-uji-chain-block.md": {
@@ -384,24 +384,26 @@
     ]
   },
   "riksa-uji-crawler-crane.md": {
-    "date": "2026-09-21",
+    "date": "2026-09-30",
     "changes": 19,
     "words": [
-      "dari→daripada",
-      "pemeriksaan→inspeksi",
-      "terhadap→kepada",
-      "serta→dan",
-      "mencukupi→memenuhi",
-      "seluruh→semua",
-      "kepada→pada",
-      "atau→maupun",
-      "Pengecekan→Pemeriksaan",
-      "pokok→primer",
-      "keadaan→situasi",
-      "dilaksanakan→dijalankan",
       "semua→segenap",
-      "Standar→Kriteria",
-      "memiliki→mempunyai"
+      "inspeksi→pengecekan",
+      "perihal→mengenai",
+      "kepada→pada",
+      "dan→serta",
+      "menjamin→memverifikasi",
+      "pada→terhadap",
+      "Inspeksi→Pengecekan",
+      "keadaan→situasi",
+      "primer→utama",
+      "situasi→kondisi",
+      "Pemeriksaan→Inspeksi",
+      "berdasarkan→sesuai",
+      "serta→dan",
+      "terhadap→kepada",
+      "mempunyai→memiliki",
+      "maupun→atau"
     ]
   },
   "riksa-uji-dongkrak-hidrolik.md": {
@@ -566,18 +568,17 @@
     ]
   },
   "pompa-kompresor.md": {
-    "date": "2026-09-07",
+    "date": "2026-09-30",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
-      "pemeriksaan→inspeksi",
-      "dipakai→dimanfaatkan",
-      "dari→daripada",
-      "memverifikasi→memastikan",
-      "perkakas→peralatan",
       "dan→serta",
+      "inspeksi→pengecekan",
       "serta→dan",
-      "secara→dengan cara"
+      "peralatan→alat",
+      "memastikan→menjamin",
+      "memverifikasi→memastikan",
+      "dengan→secara",
+      "Tahapan→Prosedur"
     ]
   },
   "sistem-transmisi.md": {

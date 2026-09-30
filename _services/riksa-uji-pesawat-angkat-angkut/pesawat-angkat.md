@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Angkat
-description: Jasa riksa uji serta pengecekan K3 pesawat angkat profesional termasuk
-  crane, hoist, gondola, manlift, scissor lift, serta alat pengangkat vertikal lainnya.
+description: Jasa riksa uji dan pengecekan K3 pesawat angkat profesional termasuk
+  crane, hoist, gondola, manlift, scissor lift, dan perkakas pengangkat vertikal lainnya.
   Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/"
 category: Riksa Uji Pesawat Angkat Angkut
@@ -21,15 +21,15 @@ keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gon
 intro:
   h1: Pesawat Angkat - Riksa Uji Peralatan Pengangkat Beban Vertikal
   para_1: Pesawat angkat adalah peralatan yang dimanfaatkan dalam rangka mengangkat
-    dan menurunkan beban secara cara cara vertikal. Kategori ini meliputi bermacam-macam
-    jenis crane, hoist, gondola, manlift, scissor lift, dan peralatan pengangkat lainnya
-    yang wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
-    Nomor 8 Tahun 2020.
+    serta menurunkan beban dengan cara cara cara vertikal. Kategori ini meliputi bermacam-macam
+    jenis crane, hoist, gondola, manlift, scissor lift, serta peralatan pengangkat
+    lainnya yang wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri
+    Ketenagakerjaan Nomor 8 Tahun 2020.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
-    pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap melakukan
+    pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
     inspeksi on-site terhadap semua Indonesia secara cara cara cara peralatan testing
-    terkalibrasi dalam rangka memverifikasi keselamatan operasional peralatan Anda.
+    terkalibrasi dalam rangka memastikan keselamatan operasional peralatan Anda.
 layanan_pesawat_angkat:
   h2: Layanan Riksa Uji Pesawat Angkat
   para: Kami melayani riksa uji untuk berbagai jenis pesawat angkat sesuai kebutuhan
@@ -106,18 +106,18 @@ mengapa_penting:
   para: Pesawat angkat menangani beban berat kepada ketinggian sehingga memiliki risiko
     kecelakaan yang sungguh tinggi. Kegagalan peralatan dapat menyebabkan beban jatuh,
     struktur runtuh, maupun operator terjatuh. Riksa uji berkala memverifikasi segenap
-    komponen kritis seperti wire rope, brake system, batas switch, serta struktur
-    penahan beban berfungsi optimal. Pengecekan ini bukan hanya kewajiban legal sesuai
-    Permenaker No. 8 Tahun 2020, akan akan tetapi investasi keselamatan yang melindungi
-    nyawa pekerja serta aset perusahaan.
+    bagian kritis seperti wire rope, brake system, batas switch, serta struktur penahan
+    beban bekerja optimal. Pengecekan ini bukan hanya kewajiban legal sesuai Permenaker
+    No. 8 Tahun 2020, akan akan tetapi investasi keselamatan yang melindungi nyawa
+    pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pesawat Angkat
-  para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara perkakas
+  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara cara perkakas
     testing portable yang terkalibrasi. Proses pengecekan meliputi pengecekan dokumen,
-    pengecekan visual struktur dan bagian, tes fungsi operasional, dan load test sesuai
-    kapasitas. Tiap pengecekan didokumentasikan dalam laporan komprehensif dan dilengkapi
-    sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-09-27T08:45:35+0000'
+    pengecekan visual struktur serta bagian, tes fungsi operasional, serta load test
+    sesuai kapasitas. Tiap pengecekan didokumentasikan dalam laporan komprehensif
+    serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
+lastmod: '2026-09-30T09:09:51+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
