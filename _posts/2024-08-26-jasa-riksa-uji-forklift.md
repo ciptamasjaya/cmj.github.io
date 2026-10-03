@@ -5,9 +5,9 @@ rating_id: riksa-uji-forklift
 description: Riksa uji forklift adalah tahapan inspeksi serta pengujian kepada kondisi
   teknis serta operasional forklift termasuk inspeksi komponen mekanis, sistem hidraulik,
   rem, ban, serta sistem pengangkutan beban, Tujuannya adalah dalam rangka mengidentifikasi
-  potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, memastikan
-  bahwa peralatan tersebut beroperasi secara cara baik serta aman digunakan serta
-  memastikan forklift mencukupi kriteria keselamatan yang berlaku.
+  potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, menjamin
+  bahwa peralatan tersebut beroperasi secara cara bagus serta aman digunakan serta
+  menjamin forklift mencukupi kriteria keselamatan yang berlaku.
 keywords: riksa uji forklift, jasa riksa uji forklift, inspeksi forklift, pesawat
   angkat angkut, PJK3, sertifikasi K3, uji beban forklift, inspeksi K3
 content_intro:
@@ -100,7 +100,7 @@ section_hero:
   theme: orange
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    pengecekan serta tes forklift secara cara cara cara cara cara standar profesional.
+    pemeriksaan serta tes forklift dengan cara cara cara cara cara cara standar profesional.
     Dapatkan sertifikat kelayakan operasi dalam rangka forklift Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
@@ -832,11 +832,11 @@ section_conclusion:
   title: Kesimpulan
   icon: bi-check2-square
   intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa pengujian forklift</a>
-    merupakan langkah krusial dalam rangka menjamin keselamatan serta efisiensi operasional
+    merupakan langkah vital dalam rangka menjamin keselamatan serta efisiensi operasional
     dalam penggunaan alat berat ini. Prosedur riksa pengujian yang sistematis serta
-    rutin, mulai dari persiapan sampai dokumentasi hasil, amat krusial dalam rangka
+    rutin, mulai dari persiapan sampai dokumentasi hasil, amat vital dalam rangka
     mengidentifikasi potensi masalah sebelum menjadi kecelakaan. Secara cara cara
-    cara melakukan riksa pengujian secara cara berkala, perusahaan dapat:"
+    cara melaksanakan riksa pengujian secara cara berkala, perusahaan dapat:"
   highlights:
   - key: Mencegah Kecelakaan Kerja
     value: Menjaga keselamatan pekerja dan menghindari cedera.
@@ -855,5 +855,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/"
-lastmod: '2026-09-30T09:09:51+0000'
+lastmod: '2026-10-03T08:44:23+0000'
 ---
