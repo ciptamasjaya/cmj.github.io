@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Tangki Timbun
-description: Jasa riksa uji dan pemeriksaan K3 tangki timbun profesional meliputi
-  storage tank, LPG tank, fuel tank, dan tangki penyimpanan bahan cair atau gas bertekanan.
-  Sertifikat resmi dari Disnaker setempat.
+description: Jasa riksa uji serta pemeriksaan K3 tangki timbun profesional meliputi
+  storage tank, LPG tank, fuel tank, serta tangki penyimpanan bahan cair maupun gas
+  bertekanan. Sertifikat resmi dari Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/tangki-timbun/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
 sub_category: Tangki Timbun
@@ -21,14 +21,14 @@ keywords: riksa uji tangki timbun, inspeksi storage tank, inspeksi LPG tank, ins
 intro:
   h1: Tangki Timbun - Riksa Uji Tangki Penyimpanan Bertekanan
   para_1: Tangki timbun adalah peralatan yang dipakai dalam rangka menyimpan bahan
-    cair atau gas dalam jumlah besar, baik pada tekanan atmosfer atau bertekanan.
+    cair maupun gas dalam jumlah besar, baik pada tekanan atmosfer maupun bertekanan.
     Kategori ini mencakup storage tank, LPG tank, fuel tank, chemical tank, nitrogen
-    tank, oxygen tank, dan tangki penyimpanan lainnya yang wajib menjalani riksa uji
-    berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
+    tank, oxygen tank, serta tangki penyimpanan lainnya yang wajib menjalani riksa
+    uji berkala sesuai Peraturan Menteri Ketenagakerjaan Nomor 37 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
-    uji tangki timbun yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    pengecekan on-site kepada segenap Indonesia secara cara cara cara perkakas testing
+    uji tangki timbun yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
+    pengecekan on-site kepada seluruh Indonesia secara cara cara cara perkakas testing
     terkalibrasi dalam rangka menjamin keselamatan operasional perkakas Anda.
 layanan_tangki_timbun:
   h2: Layanan Riksa Uji Tangki Timbun
@@ -48,20 +48,20 @@ mengapa_penting:
     terhadap dinding tangki, kebocoran terhadap sambungan, serta kegagalan sistem
     keselamatan dapat menyebabkan kecelakaan fatal. Riksa pengujian berkala memverifikasi
     integritas struktural tangki melalui pengukuran ketebalan, tes kebocoran, serta
-    pemeriksaan sistem proteksi. Pemeriksaan ini bukan hanya kewajiban legal berdasarkan
-    Permenaker No. 37 Tahun 2016, akan akan akan akan akan tetapi investasi keselamatan
+    pemeriksaan sistem proteksi. Pemeriksaan ini bukan hanya kewajiban legal sesuai
+    Permenaker No. 37 Tahun 2016, akan akan akan akan akan akan tetapi investasi keselamatan
     yang melindungi nyawa pekerja, masyarakat sekitar, serta lingkungan.
 proses:
   h2: Proses Riksa Uji Tangki Timbun
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara perkakas
     testing seperti ultrasonic thickness gauge, magnetic flux leakage scanner, dan
-    vacuum box testing kit. Prosedur pengecekan termasuk pengecekan dokumen dan nameplate,
+    vacuum box testing kit. Proses pengecekan termasuk pengecekan dokumen dan nameplate,
     pengecekan visual eksternal dan internal (jika memungkinkan), pengukuran ketebalan
     shell dan floor, pengujian kebocoran, dan pengecekan foundation settlement. Masing-masing
     pengecekan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
-    kelayakan operasional yang berlaku sesuai ketentuan.
-_content_refreshed_at: '2026-10-03T08:44:24+0000'
-lastmod: '2026-09-27T08:45:35+0000'
+    kelayakan operasional yang berlaku berdasarkan ketentuan.
+_content_refreshed_at: '2026-10-04T09:09:35+0000'
+lastmod: '2026-10-04T09:09:35+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

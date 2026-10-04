@@ -3,8 +3,8 @@ layout: node/node--pjk3-city
 title: PJK3 Semarang
 date: 2025-05-25 01:51:22.000000000 +07:00
 author: admin
-description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 terhadap
-  wilayah Semarang. Hubungi 08568258841 dalam rangka semua kebutuhan riksa uji Anda.
+description: PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 kepada
+  wilayah Semarang. Hubungi 08568258841 dalam rangka segenap kebutuhan riksa uji Anda.
 area_served: Semarang
 rating_id: pjk3-semarang
 keywords: PJK3 Semarang, jasa riksa uji Semarang, inspeksi K3 Semarang, sertifikasi
@@ -27,13 +27,13 @@ images:
 section_gallery:
   title: Galeri Layanan
   area: Semarang
-  description: Dokumentasi kegiatan riksa uji terhadap wilayah Semarang serta sekitarnya
+  description: Dokumentasi kegiatan riksa uji kepada wilayah Semarang dan sekitarnya
   caption: Foto dokumentasi layanan PT. Cipta Mas Jaya
 video: ''
 section_video:
   title: Video Layanan
   area: Semarang
-  description: Lihat tahapan pemeriksaan serta tes K3 oleh tim profesional kami
+  description: Lihat tahapan inspeksi dan tes K3 oleh tim profesional kami
   caption: Dokumentasi video layanan PT. Cipta Mas Jaya
   cta_text: Ingin melihat langsung proses inspeksi K3 di lokasi Anda?
   cta_button: Hubungi Kami
@@ -41,9 +41,9 @@ section_hero:
   title: Butuh Layanan Riksa Uji K3
   theme: blue
   area: Semarang
-  description: Sedang mencari jasa riksa uji K3 terpercaya pada Semarang? PT. Cipta
-    Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi serta tes
-    peralatan K3 secara cara cara kriteria profesional dalam rangka seluruh wilayah
+  description: Sedang mencari jasa riksa uji K3 terpercaya terhadap Semarang? PT.
+    Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani inspeksi serta
+    tes peralatan K3 secara cara cara acuan profesional dalam rangka seluruh wilayah
     Semarang serta sekitarnya.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
@@ -70,10 +70,10 @@ section_company_intro:
   title: 'PT. Cipta Mas Jaya: PJK3 Resmi dan Profesional di Semarang'
   company_name: PT. Cipta Mas Jaya
   area: Semarang
-  intro: PT. Cipta Mas Jaya hadir sebagai mitra terpercaya dalam jasa riksa uji terhadap
-    wilayah Semarang. Sebagai PJK3 resmi yang telah terdaftar terhadap Kementerian
-    Ketenagakerjaan, perusahaan ini memberikan layanan pengecekan serta pengujian
-    K3 terhadap bermacam-macam alat kerja berisiko tinggi.
+  intro: PT. Cipta Mas Jaya hadir sebagai mitra terpercaya dalam jasa riksa uji kepada
+    wilayah Semarang. Sebagai PJK3 resmi yang telah terdaftar kepada Kementerian Ketenagakerjaan,
+    perusahaan ini memberikan layanan pengecekan dan pengujian K3 kepada bermacam-macam
+    alat kerja berisiko tinggi.
   subsections:
   - title: Apa Itu PJK3 dan Mengapa Penting untuk Kota Semarang
     paragraphs:
@@ -103,9 +103,9 @@ section_company_intro:
 section_services:
   title: Keunggulan PT. Cipta Mas Jaya sebagai PJK3 Terdekat dan Profesional
   intro: Sebagai PJK3 yang melayani langsung wilayah Semarang, PT. Cipta Mas Jaya
-    menawarkan keunggulan daripada sisi geografis maupun operasional. Kedekatan lokasi
-    memungkinkan tim teknis bergerak cepat ke lokasi klien, mengurangi waktu tunggu
-    serta biaya mobilisasi.
+    menawarkan keunggulan dari sisi geografis atau operasional. Kedekatan lokasi memungkinkan
+    tim teknis bergerak cepat ke lokasi klien, mengurangi waktu tunggu serta biaya
+    mobilisasi.
   services:
   - title: Riksa Uji Pesawat Angkat Angkut
     description: Pengecekan menyeluruh terhadap struktur rangka, sistem penggerak,
@@ -260,7 +260,7 @@ section_city:
 section_coverage:
   title: Area Pelayanan Riksa Uji
   area: Semarang
-  intro: PT. Cipta Mas Jaya melayani inspeksi dan riksa uji K3 ke seluruh wilayah
+  intro: PT. Cipta Mas Jaya melayani pengecekan dan riksa uji K3 ke semua wilayah
     Semarang dan sekitarnya, mencakup kawasan industri, perkantoran, komersial, dan
     fasilitas publik.
   zona_industri:
@@ -603,5 +603,5 @@ section_conclusion:
   paragraphs:
   - PT. Cipta Mas Jaya adalah PJK3 yang melayani jasa riksa uji K3 di wilayah Semarang.
     Hubungi 08568258841 untuk semua kebutuhan riksa uji Anda.
-lastmod: '2026-09-10T07:40:32+0000'
+lastmod: '2026-10-04T09:09:35+0000'
 ---
