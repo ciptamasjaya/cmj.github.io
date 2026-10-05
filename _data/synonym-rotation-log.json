@@ -132,35 +132,33 @@
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
-    "date": "2026-09-18",
+    "date": "2026-10-05",
     "changes": 14,
     "words": [
-      "pada→terhadap",
-      "semua→segenap",
-      "acuan→standar",
-      "seluruh→semua",
-      "dan→serta",
+      "segenap→seluruh",
       "terhadap→kepada",
-      "tahapan→prosedur",
+      "perkakas→peralatan",
+      "semua→segenap",
+      "kepada→pada",
       "serta→dan",
-      "inspeksi→pengecekan",
-      "meliputi→termasuk"
+      "pemeriksaan→inspeksi",
+      "pengecekan→pemeriksaan",
+      "termasuk→mencakup"
     ]
   },
   "2025-05-24-pjk3-semarang.md": {
-    "date": "2026-10-04",
+    "date": "2026-10-05",
     "changes": 14,
     "words": [
-      "terhadap→kepada",
-      "semua→segenap",
-      "pada→terhadap",
-      "kriteria→acuan",
+      "segenap→seluruh",
+      "kepada→pada",
+      "peralatan→alat",
       "serta→dan",
-      "pemeriksaan→inspeksi",
-      "maupun→atau",
-      "daripada→dari",
-      "seluruh→semua",
-      "inspeksi→pengecekan"
+      "dan→serta",
+      "inspeksi→pengecekan",
+      "pengecekan→pemeriksaan",
+      "atau→maupun",
+      "semua→segenap"
     ]
   },
   "riksa-uji-pesawat-angkat-angkut.md": {
@@ -339,23 +337,20 @@
     ]
   },
   "riksa-uji-boiler.md": {
-    "date": "2026-09-18",
+    "date": "2026-10-05",
     "changes": 19,
     "words": [
-      "segenap→seluruh",
-      "dan→serta",
-      "sesuai→berdasarkan",
-      "standar→kriteria",
-      "daripada→dari",
-      "dengan→secara",
-      "Inspeksi→Pengecekan",
-      "bagian→elemen",
-      "keadaan→situasi",
-      "menjamin→memverifikasi",
+      "pemeriksaan→inspeksi",
       "serta→dan",
-      "kriteria→acuan",
-      "memverifikasi→memastikan",
-      "Terhadap→Kepada"
+      "pada→terhadap",
+      "menjamin→memverifikasi",
+      "perkakas→peralatan",
+      "elemen→komponen",
+      "kepada→pada",
+      "dan→serta",
+      "terhadap→kepada",
+      "inspeksi→pengecekan",
+      "pengecekan→pemeriksaan"
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
@@ -504,25 +499,25 @@
     ]
   },
   "riksa-uji-tower-crane.md": {
-    "date": "2026-09-18",
+    "date": "2026-10-05",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "pengecekan→pemeriksaan",
-      "secara→dengan cara",
-      "sesuai→berdasarkan",
-      "memverifikasi→memastikan",
+      "seluruh→semua",
+      "pemeriksaan→inspeksi",
       "kepada→pada",
-      "semua→segenap",
-      "atau→maupun",
-      "Pemeriksaan→Inspeksi",
-      "situasi→kondisi",
-      "dan→serta",
-      "kondisi→keadaan",
-      "batas→limit",
-      "dilaksanakan→dijalankan",
+      "standar→kriteria",
+      "memenuhi→mencukupi",
+      "segenap→seluruh",
+      "pada→terhadap",
       "terhadap→kepada",
-      "daripada→dari"
+      "Inspeksi→Pengecekan",
+      "kondisi→keadaan",
+      "Pengecekan→Pemeriksaan",
+      "dan→serta",
+      "berdasarkan→sesuai",
+      "termasuk→mencakup",
+      "memiliki→mempunyai",
+      "dibutuhkan→diperlukan"
     ]
   },
   "riksa-uji-pesawat-tenaga-dan-produksi.md": {
