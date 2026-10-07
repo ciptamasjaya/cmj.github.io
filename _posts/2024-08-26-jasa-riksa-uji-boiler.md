@@ -2,8 +2,8 @@
 layout: node/node--riksa-uji
 title: Riksa Uji Boiler
 rating_id: riksa-uji-boiler
-description: Riksa pengujian boiler adalah pengecekan serta pengujian keselamatan
-  ketel uap dalam rangka memastikan operasional aman berdasarkan acuan K3 serta Permenaker.
+description: Riksa pengujian boiler adalah pengecekan dan pengujian keselamatan ketel
+  uap dalam rangka memastikan operasional aman sesuai acuan K3 dan Permenaker.
 keywords: riksa uji boiler, jasa riksa uji boiler, inspeksi boiler, ketel uap, hydrotest
   boiler, PJK3, sertifikasi K3, pesawat uap, bejana tekan, safety valve
 content_intro:
@@ -67,7 +67,7 @@ section_hero:
   theme: red
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    pemeriksaan dan tes boiler/ketel uap secara cara cara cara cara cara standar profesional.
+    inspeksi serta tes boiler/ketel uap secara cara cara cara cara cara standar profesional.
     Dapatkan sertifikat kelayakan operasi dalam rangka boiler Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
@@ -757,10 +757,10 @@ section_conclusion:
   title: Kesimpulan
   icon: bi-check2-square
   intro: <a href="https://maps.app.goo.gl/KwFSALZKY9WMrK5C6" target="_blank" rel="noopener">Riksa
-    uji boiler</a> adalah langkah krusial dalam rangka memverifikasi keselamatan dan
+    uji boiler</a> adalah langkah vital dalam rangka memverifikasi keselamatan dan
     efisiensi operasional dalam penggunaan perkakas ini. Prosedur riksa uji yang sistematis
-    dan rutin, mulai dari persiapan sehingga dokumentasi hasil, sangat krusial dalam
-    rangka mengidentifikasi potensi masalah sebelum menjadi kecelakaan.
+    dan rutin, mulai dari persiapan hingga dokumentasi hasil, sangat vital dalam rangka
+    mengidentifikasi potensi masalah sebelum menjadi kecelakaan.
   highlights:
   - key: Mencegah Kecelakaan Kerja
     value: Menjaga keselamatan pengguna dan menghindari cedera akibat kegagalan boiler
@@ -783,5 +783,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
-lastmod: '2026-09-22T08:05:30+0000'
+lastmod: '2026-10-07T09:34:19+0000'
 ---
