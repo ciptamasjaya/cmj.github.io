@@ -64,7 +64,7 @@ proses:
     functional test safety device. Masing-masing pemeriksaan didokumentasikan dalam
     laporan komprehensif dan dilengkapi sertifikat kelayakan operasional yang berlaku
     1 tahun.
-_content_refreshed_at: '2026-10-09T09:50:09+0000'
+_content_refreshed_at: '2026-10-10T09:14:28+0000'
 lastmod: '2026-10-06T09:38:17+0000'
 ---
 <!-- ========================================================================== -->

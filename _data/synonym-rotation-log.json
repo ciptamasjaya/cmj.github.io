@@ -12,15 +12,15 @@
     ]
   },
   "2024-08-26-jasa-riksa-uji-forklift.md": {
-    "date": "2026-10-03",
+    "date": "2026-10-10",
     "changes": 6,
     "words": [
-      "memastikan→menjamin",
-      "baik→bagus",
-      "melakukan→melaksanakan",
-      "krusial→vital",
-      "pengecekan→pemeriksaan",
-      "secara→dengan cara"
+      "termasuk→mencakup",
+      "inspeksi→pengecekan",
+      "Secara→Dengan cara",
+      "sampai→sehingga",
+      "pemeriksaan→inspeksi",
+      "standar→kriteria"
     ]
   },
   "2024-10-16-riksa-uji-boiler-john-thompson-74910.md": {
@@ -284,15 +284,14 @@
     ]
   },
   "2024-08-26-riksa-uji-overhead-crane.md": {
-    "date": "2026-09-21",
+    "date": "2026-10-10",
     "changes": 6,
     "words": [
-      "dan→serta",
-      "pengecekan→pemeriksaan",
-      "menjalankan→melakukan",
-      "dari→daripada",
-      "secara→dengan cara",
-      "serta→dan"
+      "serta→dan",
+      "pemeriksaan→inspeksi",
+      "vital→penting",
+      "dengan→secara",
+      "dan→serta"
     ]
   },
   "riksa-uji-gantry-crane.md": {
@@ -338,20 +337,23 @@
     ]
   },
   "riksa-uji-boiler.md": {
-    "date": "2026-10-05",
+    "date": "2026-10-10",
     "changes": 19,
     "words": [
-      "pemeriksaan→inspeksi",
-      "serta→dan",
-      "pada→terhadap",
-      "menjamin→memverifikasi",
-      "perkakas→peralatan",
-      "elemen→komponen",
-      "kepada→pada",
-      "dan→serta",
-      "terhadap→kepada",
       "inspeksi→pengecekan",
-      "pengecekan→pemeriksaan"
+      "dan→serta",
+      "Pengecekan→Pemeriksaan",
+      "dari→daripada",
+      "pada→terhadap",
+      "komponen→bagian",
+      "situasi→kondisi",
+      "memverifikasi→memastikan",
+      "Pemeriksaan→Inspeksi",
+      "serta→dan",
+      "acuan→standar",
+      "memastikan→menjamin",
+      "kriteria→acuan",
+      "semua→segenap"
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
@@ -482,22 +484,20 @@
     ]
   },
   "riksa-uji-mobile-crane.md": {
-    "date": "2026-09-21",
+    "date": "2026-10-10",
     "changes": 19,
     "words": [
-      "pemeriksaan→inspeksi",
+      "daripada→dari",
+      "inspeksi→pengecekan",
+      "kepada→pada",
       "dan→serta",
       "secara→dengan cara",
-      "mencukupi→memenuhi",
-      "menjamin→memverifikasi",
-      "semua→segenap",
-      "terhadap→kepada",
-      "keadaan→situasi",
       "Pengecekan→Pemeriksaan",
+      "Pemeriksaan→Inspeksi",
       "serta→dan",
-      "dilakukan→dilaksanakan",
-      "dijalankan→dilakukan",
-      "pada→terhadap"
+      "mencakup→meliputi",
+      "termasuk→mencakup",
+      "sampai→sehingga"
     ]
   },
   "riksa-uji-tower-crane.md": {

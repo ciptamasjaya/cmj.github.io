@@ -2,8 +2,8 @@
 layout: node/node--riksa-uji
 title: Riksa Uji Forklift
 rating_id: riksa-uji-forklift
-description: Riksa uji forklift adalah tahapan inspeksi serta pengujian kepada kondisi
-  teknis serta operasional forklift termasuk inspeksi komponen mekanis, sistem hidraulik,
+description: Riksa uji forklift adalah tahapan pengecekan serta pengujian kepada kondisi
+  teknis serta operasional forklift mencakup pengecekan komponen mekanis, sistem hidraulik,
   rem, ban, serta sistem pengangkutan beban, Tujuannya adalah dalam rangka mengidentifikasi
   potensi kerusakan atau masalah yang dapat menyebabkan kecelakaan kerja, menjamin
   bahwa peralatan tersebut beroperasi secara cara bagus serta aman digunakan serta
@@ -100,7 +100,7 @@ section_hero:
   theme: orange
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    pemeriksaan serta tes forklift dengan cara cara cara cara cara cara standar profesional.
+    inspeksi serta tes forklift dengan cara cara cara cara cara cara kriteria profesional.
     Dapatkan sertifikat kelayakan operasi dalam rangka forklift Anda.
   label_wilayah: 'Melayani Wilayah:'
   wilayah_layanan:
@@ -834,9 +834,9 @@ section_conclusion:
   intro: "<a href='https://maps.app.goo.gl/KwFSALZKY9WMrK5C6'>Riksa pengujian forklift</a>
     merupakan langkah vital dalam rangka menjamin keselamatan serta efisiensi operasional
     dalam penggunaan alat berat ini. Prosedur riksa pengujian yang sistematis serta
-    rutin, mulai dari persiapan sampai dokumentasi hasil, amat vital dalam rangka
-    mengidentifikasi potensi masalah sebelum menjadi kecelakaan. Secara cara cara
-    cara melaksanakan riksa pengujian secara cara berkala, perusahaan dapat:"
+    rutin, mulai dari persiapan sehingga dokumentasi hasil, amat vital dalam rangka
+    mengidentifikasi potensi masalah sebelum menjadi kecelakaan. Dengan cara cara
+    cara cara melaksanakan riksa pengujian secara cara berkala, perusahaan dapat:"
   highlights:
   - key: Mencegah Kecelakaan Kerja
     value: Menjaga keselamatan pekerja dan menghindari cedera.
@@ -855,5 +855,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkut/riksa-uji-forklift/"
-lastmod: '2026-10-03T08:44:23+0000'
+lastmod: '2026-10-10T09:14:28+0000'
 ---
