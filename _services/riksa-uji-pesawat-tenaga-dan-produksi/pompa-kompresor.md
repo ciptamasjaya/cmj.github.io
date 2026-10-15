@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Pompa dan Kompresor
-description: Jasa riksa uji serta pengecekan K3 pompa serta kompresor profesional
-  meliputi kompresor udara, pompa sentrifugal, pompa submersible, serta industrial
-  blower. Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji dan pemeriksaan K3 pompa dan kompresor profesional meliputi
+  kompresor udara, pompa sentrifugal, pompa submersible, dan industrial blower. Sertifikat
+  resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/pompa-kompresor/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Pompa dan Kompresor
@@ -20,16 +20,16 @@ keywords: riksa uji pompa, riksa uji kompresor, inspeksi kompresor udara, inspek
   pompa sentrifugal, inspeksi blower, PJK3, sertifikasi K3
 intro:
   h1: Pompa dan Kompresor - Riksa Uji Peralatan Fluida Industri
-  para_1: Pompa dan kompresor adalah alat yang dimanfaatkan dalam rangka memindahkan
-    dan memampatkan fluida (cairan dan gas) dalam proses industri. Kategori ini meliputi
+  para_1: Pompa dan kompresor adalah perkakas yang dimanfaatkan dalam rangka memindahkan
+    dan memampatkan fluida (cairan dan gas) dalam tahapan industri. Kategori ini meliputi
     kompresor udara dan gas, pompa sentrifugal dan submersible, dan industrial blower
     yang wajib menjalani riksa uji berkala berdasarkan Peraturan Menteri Ketenagakerjaan
     Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     uji pompa dan kompresor yang komprehensif. Tim inspector bersertifikat kami siap
-    melakukan pemeriksaan on-site kepada seluruh Indonesia dengan cara cara cara alat
-    testing terkalibrasi dalam rangka menjamin keselamatan operasional alat Anda.
+    melakukan pemeriksaan on-site kepada semua Indonesia dengan cara cara cara alat
+    testing terkalibrasi dalam rangka memverifikasi keselamatan operasional alat Anda.
 layanan_pompa_kompresor:
   h2: Layanan Riksa Uji Pompa dan Kompresor
   para: Kami melayani riksa uji untuk berbagai jenis pompa dan kompresor sesuai kebutuhan
@@ -57,19 +57,19 @@ mengapa_penting:
   para: Pompa serta kompresor bekerja terus-menerus dengan cara cara tekanan serta
     kecepatan tinggi yang mempunyai risiko kegagalan mekanis. Kebocoran, getaran berlebih,
     atau overheating dapat menyebabkan kerusakan alat serta kecelakaan kerja. Riksa
-    uji berkala memastikan seluruh komponen kritis seperti bearing, seal, impeller,
+    uji berkala menjamin seluruh komponen kritis seperti bearing, seal, impeller,
     serta safety valve bekerja optimal. Pemeriksaan ini bukan hanya kewajiban legal
-    sesuai Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan yang
-    melindungi nyawa pekerja serta aset perusahaan.
+    berdasarkan Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan
+    yang melindungi nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pompa dan Kompresor
   para: Tim inspector kami datang ke lokasi Anda secara cara cara cara cara cara cara
-    alat testing seperti vibration analyzer, pressure gauge, flow meter, dan thermal
-    camera. Prosedur pemeriksaan meliputi pemeriksaan dokumen, pemeriksaan visual,
-    pengujian fungsi operasional, dan pengukuran parameter kinerja. Masing-masing
-    pemeriksaan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
-    kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-09-30T09:09:51+0000'
+    alat testing seperti vibration analyzer, pressure gauge, flow meter, serta thermal
+    camera. Proses pemeriksaan meliputi pemeriksaan dokumen, pemeriksaan visual, pengujian
+    fungsi operasional, serta pengukuran parameter kinerja. Masing-masing pemeriksaan
+    didokumentasikan dalam laporan komprehensif serta dilengkapi sertifikat kelayakan
+    operasional yang berlaku 1 tahun.
+lastmod: '2026-10-15T07:51:40+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

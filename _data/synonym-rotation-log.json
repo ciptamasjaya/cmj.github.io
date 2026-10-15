@@ -571,17 +571,19 @@
     ]
   },
   "pompa-kompresor.md": {
-    "date": "2026-09-30",
+    "date": "2026-10-15",
     "changes": 10,
     "words": [
-      "dan→serta",
-      "inspeksi→pengecekan",
       "serta→dan",
-      "peralatan→alat",
+      "pengecekan→pemeriksaan",
+      "alat→perkakas",
+      "proses→tahapan",
+      "menjamin→memverifikasi",
+      "seluruh→semua",
+      "sesuai→berdasarkan",
       "memastikan→menjamin",
-      "memverifikasi→memastikan",
-      "dengan→secara",
-      "Tahapan→Prosedur"
+      "Prosedur→Proses",
+      "dan→serta"
     ]
   },
   "sistem-transmisi.md": {
@@ -600,17 +602,19 @@
     ]
   },
   "tanur.md": {
-    "date": "2026-09-24",
+    "date": "2026-10-15",
     "changes": 10,
     "words": [
+      "pemeriksaan→inspeksi",
+      "mencakup→meliputi",
+      "sesuai→berdasarkan",
       "termasuk→mencakup",
-      "pengecekan→pemeriksaan",
-      "dan→serta",
-      "meliputi→termasuk",
-      "pada→terhadap",
-      "dengan→secara",
-      "tetapi→akan tetapi",
-      "peralatan→alat"
+      "secara→dengan cara",
+      "inspeksi→pengecekan",
+      "beroperasi→berfungsi",
+      "sungguh→sangat",
+      "Prosedur→Proses",
+      "alat→perkakas"
     ]
   },
   "riksa-uji-gondola.md": {
@@ -652,24 +656,23 @@
     ]
   },
   "riksa-uji-passenger-hoist.md": {
-    "date": "2026-09-27",
+    "date": "2026-10-15",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "dari→daripada",
-      "kepada→pada",
-      "inspeksi→pengecekan",
-      "kriteria→acuan",
-      "mencukupi→memenuhi",
-      "pada→terhadap",
-      "komponen→bagian",
-      "situasi→kondisi",
-      "Inspeksi→Pengecekan",
-      "Pemeriksaan→Inspeksi",
       "dan→serta",
+      "inspeksi→pengecekan",
       "sesuai→berdasarkan",
-      "tentang→perihal",
-      "dijalankan→dilakukan"
+      "dengan→secara",
+      "acuan→standar",
+      "terhadap→kepada",
+      "bagian→elemen",
+      "Inspeksi→Pengecekan",
+      "ambang→batas",
+      "kepada→pada",
+      "meliputi→termasuk",
+      "dilakukan→dilaksanakan",
+      "mempunyai→memiliki",
+      "sampai→sehingga"
     ]
   },
   "riksa-uji-scissor-lift.md": {
