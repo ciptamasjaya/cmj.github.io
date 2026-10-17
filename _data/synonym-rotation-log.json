@@ -100,20 +100,18 @@
     ]
   },
   "2025-05-20-pjk3-terdekat-08568258841.md": {
-    "date": "2026-10-03",
+    "date": "2026-10-17",
     "changes": 13,
     "words": [
-      "terhadap→kepada",
-      "seluruh→semua",
-      "dari→daripada",
+      "semua→segenap",
       "kepada→pada",
       "pada→terhadap",
-      "pengecekan→pemeriksaan",
-      "serta→dan",
-      "hingga→sampai",
       "secara→dengan cara",
-      "Terhadap→Kepada",
-      "mencakup→meliputi"
+      "terhadap→kepada",
+      "dan→serta",
+      "pemeriksaan→inspeksi",
+      "sampai→sehingga",
+      "meliputi→termasuk"
     ]
   },
   "2025-05-22-pjk3-jakarta-selatan.md": {
@@ -315,22 +313,21 @@
     ]
   },
   "riksa-uji-overhead-crane.md": {
-    "date": "2026-10-14",
+    "date": "2026-10-17",
     "changes": 19,
     "words": [
-      "dan→serta",
-      "semua→segenap",
-      "dengan→secara",
-      "kriteria→acuan",
-      "perkakas→peralatan",
       "serta→dan",
-      "elemen→komponen",
-      "Pemeriksaan→Inspeksi",
-      "Pengecekan→Pemeriksaan",
-      "kepada→pada",
-      "perihal→mengenai",
+      "daripada→dari",
       "dilakukan→dilaksanakan",
-      "Secara→Dengan cara"
+      "peralatan→alat",
+      "dan→serta",
+      "terhadap→kepada",
+      "Pemeriksaan→Inspeksi",
+      "keadaan→situasi",
+      "Inspeksi→Pengecekan",
+      "acuan→standar",
+      "dilaksanakan→dijalankan",
+      "Dengan→Secara"
     ]
   },
   "riksa-uji-boiler.md": {
