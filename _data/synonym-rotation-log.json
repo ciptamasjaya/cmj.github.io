@@ -12,15 +12,15 @@
     ]
   },
   "2024-08-26-jasa-riksa-uji-forklift.md": {
-    "date": "2026-10-10",
+    "date": "2026-10-24",
     "changes": 6,
     "words": [
-      "termasuk→mencakup",
-      "inspeksi→pengecekan",
-      "Secara→Dengan cara",
-      "sampai→sehingga",
-      "pemeriksaan→inspeksi",
-      "standar→kriteria"
+      "bagus→baik",
+      "tahapan→prosedur",
+      "hasil→temuan",
+      "dari→daripada",
+      "kriteria→acuan",
+      "dengan→secara"
     ]
   },
   "2024-10-16-riksa-uji-boiler-john-thompson-74910.md": {
@@ -159,16 +159,17 @@
     ]
   },
   "riksa-uji-pesawat-angkat-angkut.md": {
-    "date": "2026-10-18",
+    "date": "2026-10-24",
     "changes": 8,
     "words": [
-      "serta→dan",
+      "dan→serta",
+      "secara→dengan cara",
+      "seluruh→semua",
       "berdasarkan→sesuai",
-      "dilaksanakan→dijalankan",
-      "daripada→dari",
-      "termasuk→mencakup",
-      "bagian→elemen",
-      "dan→serta"
+      "mencakup→meliputi",
+      "memastikan→menjamin",
+      "tetapi→akan tetapi",
+      "acuan→standar"
     ]
   },
   "pesawat-angkat.md": {
@@ -333,23 +334,24 @@
     ]
   },
   "riksa-uji-boiler.md": {
-    "date": "2026-10-10",
+    "date": "2026-10-24",
     "changes": 19,
     "words": [
-      "inspeksi→pengecekan",
-      "dan→serta",
-      "Pengecekan→Pemeriksaan",
-      "dari→daripada",
-      "pada→terhadap",
-      "komponen→bagian",
-      "situasi→kondisi",
-      "memverifikasi→memastikan",
-      "Pemeriksaan→Inspeksi",
       "serta→dan",
+      "seluruh→semua",
+      "bekerja→beroperasi",
+      "pengecekan→pemeriksaan",
+      "daripada→dari",
+      "secara→dengan cara",
+      "terhadap→kepada",
+      "bagian→elemen",
+      "kepada→pada",
+      "Inspeksi→Pengecekan",
+      "situasi→kondisi",
+      "mengenai→tentang",
       "acuan→standar",
-      "memastikan→menjamin",
-      "kriteria→acuan",
-      "semua→segenap"
+      "dengan→secara",
+      "pemeriksaan→inspeksi"
     ]
   },
   "2024-09-12-mengapa-forklift-hyster-h50ft-ideal-untuk-aplikasi-luar-ruangan.md": {
@@ -508,17 +510,16 @@
     ]
   },
   "riksa-uji-pesawat-tenaga-dan-produksi.md": {
-    "date": "2026-10-03",
+    "date": "2026-10-24",
     "changes": 8,
     "words": [
-      "semua→segenap",
-      "meliputi→termasuk",
+      "peralatan→alat",
       "pengecekan→pemeriksaan",
+      "memverifikasi→memastikan",
+      "daripada→dari",
+      "terhadap→kepada",
       "Inspeksi→Pengecekan",
-      "dengan→secara",
-      "dari→daripada",
-      "standar→kriteria",
-      "dan→serta"
+      "serta→dan"
     ]
   },
   "mesin-perkakas.md": {
