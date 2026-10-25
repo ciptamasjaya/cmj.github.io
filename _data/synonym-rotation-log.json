@@ -539,18 +539,16 @@
     ]
   },
   "mesin-produksi.md": {
-    "date": "2026-10-03",
+    "date": "2026-10-25",
     "changes": 10,
     "words": [
-      "dan→serta",
-      "pemeriksaan→inspeksi",
-      "meliputi→termasuk",
-      "tahapan→prosedur",
-      "menjalankan→melakukan",
-      "peralatan→alat",
-      "menjamin→memverifikasi",
-      "elemen→komponen",
-      "serta→dan"
+      "serta→dan",
+      "inspeksi→pengecekan",
+      "berdasarkan→sesuai",
+      "memastikan→menjamin",
+      "memverifikasi→memastikan",
+      "Tahapan→Prosedur",
+      "pemeriksaan→inspeksi"
     ]
   },
   "penggerak-mula.md": {
@@ -567,19 +565,16 @@
     ]
   },
   "pompa-kompresor.md": {
-    "date": "2026-10-15",
+    "date": "2026-10-25",
     "changes": 10,
     "words": [
+      "meliputi→termasuk",
+      "dan→serta",
+      "berdasarkan→sesuai",
+      "kepada→pada",
+      "pemeriksaan→inspeksi",
       "serta→dan",
-      "pengecekan→pemeriksaan",
-      "alat→perkakas",
-      "proses→tahapan",
-      "menjamin→memverifikasi",
-      "seluruh→semua",
-      "sesuai→berdasarkan",
-      "memastikan→menjamin",
-      "Prosedur→Proses",
-      "dan→serta"
+      "alat→perkakas"
     ]
   },
   "sistem-transmisi.md": {
