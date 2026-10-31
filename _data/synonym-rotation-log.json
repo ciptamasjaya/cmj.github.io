@@ -224,16 +224,17 @@
     ]
   },
   "riksa-uji-pesawat-uap-bejana-tekan.md": {
-    "date": "2026-10-22",
+    "date": "2026-10-31",
     "changes": 8,
     "words": [
-      "acuan→standar",
-      "meliputi→termasuk",
-      "terhadap→kepada",
-      "inspeksi→pengecekan",
-      "menjamin→memverifikasi",
-      "sesuai→berdasarkan",
-      "serta→dan"
+      "segenap→seluruh",
+      "pengecekan→pemeriksaan",
+      "secara→dengan cara",
+      "memverifikasi→memastikan",
+      "serta→dan",
+      "perkakas→peralatan",
+      "bagian→elemen",
+      "dan→serta"
     ]
   },
   "bejana-tekan.md": {
@@ -595,19 +596,19 @@
     ]
   },
   "tanur.md": {
-    "date": "2026-10-15",
+    "date": "2026-10-31",
     "changes": 10,
     "words": [
-      "pemeriksaan→inspeksi",
-      "mencakup→meliputi",
-      "sesuai→berdasarkan",
-      "termasuk→mencakup",
-      "secara→dengan cara",
       "inspeksi→pengecekan",
-      "beroperasi→berfungsi",
-      "sungguh→sangat",
-      "Prosedur→Proses",
-      "alat→perkakas"
+      "meliputi→termasuk",
+      "alat→perkakas",
+      "digunakan→dipakai",
+      "pengecekan→pemeriksaan",
+      "dengan→secara",
+      "Inspeksi→Pengecekan",
+      "menjamin→memverifikasi",
+      "perkakas→peralatan",
+      "termasuk→mencakup"
     ]
   },
   "riksa-uji-gondola.md": {
