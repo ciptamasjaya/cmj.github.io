@@ -1,12 +1,12 @@
 ---
 layout: node/node--service
 title: Riksa Uji Manlift
-description: Riksa uji manlift adalah pemeriksaan dan pengujian keselamatan aerial
+description: Riksa uji manlift adalah pemeriksaan serta pengujian keselamatan aerial
   work platform oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket
-  K3 daripada Disnaker. Layanan pemeriksaan K3 segenap Indonesia.
-para_1: Riksa uji manlift adalah inspeksi serta pengujian pada pesawat angkat jenis
-  manlift maupun aerial work platform sesuai dengan cara cara Permenaker No. 8 Tahun
-  2020 mengenai Keselamatan serta Kesehatan Kerja Pesawat Angkat serta Pesawat Angkut.
+  K3 dari Disnaker. Layanan pemeriksaan K3 segenap Indonesia.
+para_1: Riksa uji manlift adalah inspeksi dan pengujian pada pesawat angkat jenis
+  manlift atau aerial work platform sesuai dengan cara cara Permenaker No. 8 Tahun
+  2020 mengenai Keselamatan dan Kesehatan Kerja Pesawat Angkat dan Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-manlift/"
 category: Riksa Uji Pesawat Angkat Angkut
 sub_category: Pesawat Angkat
@@ -39,35 +39,35 @@ keywords: riksa uji manlift, jasa riksa uji manlift, inspeksi manlift, inspeksi 
 rating_id: riksa-uji-manlift
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-10-19T08:18:24+0000'
+lastmod: '2026-11-03T10:18:54+0000'
 intro:
   name: Layanan Riksa Uji Manlift Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji manlift secara cara cara
-    cara cara inspector bersertifikat serta berpengalaman. Kami memastikan manlift
-    serta aerial work platform Anda mencukupi standar keselamatan dalam rangka operasional
-    yang aman pada proyek konstruksi, maintenance gedung, serta fasilitas industri.
+    cara cara inspector bersertifikat dan berpengalaman. Kami memastikan manlift dan
+    aerial work platform Anda mencukupi standar keselamatan dalam rangka operasional
+    yang aman terhadap proyek konstruksi, maintenance gedung, dan fasilitas industri.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
     para: Riksa uji manlift wajib dijalankan berdasarkan regulasi keselamatan kerja
-      yang berlaku pada Indonesia dalam rangka melindungi pekerja daripada risiko
-      jatuh dan kecelakaan kerja pada ketinggian.
+      yang berlaku terhadap Indonesia dalam rangka melindungi pekerja daripada risiko
+      jatuh dan kecelakaan kerja terhadap ketinggian.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
-      para: Peraturan Menteri Ketenagakerjaan perihal Keselamatan dan Kesehatan Kerja
-        Pesawat Angkat dan Pesawat Angkut mewajibkan pengujian berkala dalam rangka
-        seluruh jenis manlift yang dioperasikan pada tempat kerja.
+      para: Peraturan Menteri Ketenagakerjaan perihal Keselamatan serta Kesehatan
+        Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
+        rangka seluruh jenis manlift yang dioperasikan pada tempat kerja.
     - h4: Standar ANSI A92 dan SNI
       para: Pengujian dijalankan mengacu terhadap standar internasional ANSI A92 dalam
-        rangka Aerial Work Platforms serta Kriteria Nasional Indonesia (SNI) dalam
-        rangka memverifikasi keselamatan optimal.
+        rangka Aerial Work Platforms serta Acuan Nasional Indonesia (SNI) dalam rangka
+        memverifikasi keselamatan optimal.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami memiliki sertifikat kompetensi daripada BNSP dan telah
-      berpengalaman dalam bidang inspeksi pesawat angkat termasuk beragam jenis manlift
-      dalam rangka proyek konstruksi, maintenance, dan industri.
+    para: Tim inspector kami memiliki sertifikat kompetensi dari BNSP dan telah berpengalaman
+      dalam bidang inspeksi pesawat angkat termasuk beragam jenis manlift dalam rangka
+      proyek konstruksi, maintenance, dan industri.
   - h3: Cakupan Layanan Nasional
     para: Kami melayani riksa uji manlift terhadap semua Indonesia. Tim kami siap
       datang ke lokasi proyek maupun fasilitas Anda dalam rangka menjalankan inspeksi
-      on-site secara cara waktu yang fleksibel sesuai jadwal operasional.
+      on-site dengan cara cara waktu yang fleksibel sesuai jadwal operasional.
 jenis_alat:
   name: Jenis Manlift yang Kami Layani
   description: Kami melayani riksa uji untuk berbagai jenis manlift dan aerial work
@@ -101,31 +101,31 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Manlift yang Diperiksa
-  description: Inspeksi menyeluruh terhadap semua elemen keselamatan manlift dalam
-    rangka menjamin kelayakan operasi
+  description: Pengecekan menyeluruh terhadap semua elemen keselamatan manlift dalam
+    rangka memverifikasi kelayakan operasi
   items:
   - name: Boom dan Struktur
-    description: Pengecekan kondisi boom, sambungan, pin, keretakan, korosi, dan integritas
-      struktural seluruh rangka.
+    description: Pengecekan kondisi boom, sambungan, pin, keretakan, korosi, serta
+      integritas struktural seluruh rangka.
     icon: bi-box
   - name: Platform/Basket
-    description: Pemeriksaan keadaan platform kerja, railing, floor plate, gate, serta
+    description: Pemeriksaan keadaan platform kerja, railing, floor plate, gate, dan
       kapasitas beban platform.
     icon: bi-grid-3x3
   - name: Sistem Hidrolik
     description: Pengecekan silinder hidrolik, hose, fitting, pompa, dan kebocoran
-      oli pada seluruh sistem.
+      oli terhadap seluruh sistem.
     icon: bi-droplet
   - name: Outrigger dan Stabilizer
-    description: Pemeriksaan fungsi outrigger, jack cylinder, pad, dan sistem leveling
+    description: Pemeriksaan fungsi outrigger, jack cylinder, pad, serta sistem leveling
       dalam rangka stabilitas unit.
     icon: bi-arrows-fullscreen
   - name: Sistem Kontrol
-    description: Pengujian fungsi kontrol ground serta platform, emergency stop, batas
+    description: Pengujian fungsi kontrol ground serta platform, emergency stop, limit
       switch, serta sistem keselamatan.
     icon: bi-toggles
   - name: Sistem Penggerak
-    description: Pengecekan engine, transmisi, steering, brake, serta sistem mobilitas
+    description: Pengecekan engine, transmisi, steering, brake, dan sistem mobilitas
       dalam rangka self-propelled unit.
     icon: bi-gear-fill
 proses_inspeksi:
