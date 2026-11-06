@@ -1,11 +1,11 @@
 ---
 layout: node/node--service
 title: Riksa Uji Gondola
-description: Riksa uji gondola adalah inspeksi serta pengujian keselamatan suspended
-  platform oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 daripada
+description: Riksa uji gondola adalah inspeksi dan pengujian keselamatan suspended
+  platform oleh PJK3 resmi Kemenaker dalam rangka mendapatkan SIA/SILO/Suket K3 dari
   Disnaker. Layanan inspeksi K3 seluruh Indonesia.
-para_1: Riksa uji gondola adalah pemeriksaan serta pengujian pada pesawat angkat jenis
-  gondola maupun suspended platform berdasarkan dengan cara cara cara cara Permenaker
+para_1: Riksa uji gondola adalah inspeksi serta pengujian pada pesawat angkat jenis
+  gondola atau suspended platform berdasarkan dengan cara cara cara cara Permenaker
   No. 8 Tahun 2020 tentang Keselamatan serta Kesehatan Kerja Pesawat Angkat serta
   Pesawat Angkut.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/riksa-uji-gondola/"
@@ -43,34 +43,34 @@ keywords: riksa uji gondola, jasa riksa uji gondola, inspeksi gondola, inspeksi 
 rating_id: riksa-uji-gondola
 custom_schema:
 - schema/schema--service-reviews.html
-lastmod: '2026-10-18T07:35:41+0000'
+lastmod: '2026-11-06T10:09:54+0000'
 intro:
   name: Layanan Riksa Uji Gondola Profesional
   para: PT. Cipta Mas Jaya menyediakan layanan riksa uji gondola dengan cara cara
-    cara cara inspector bersertifikat serta berpengalaman. Kami memverifikasi suspended
-    platform maupun Building Maintenance Unit (BMU) Anda mencukupi kriteria keselamatan
+    cara cara inspector bersertifikat serta berpengalaman. Kami memastikan suspended
+    platform atau Building Maintenance Unit (BMU) Anda mencukupi kriteria keselamatan
     yang ditetapkan oleh Kementerian Ketenagakerjaan RI dalam rangka pekerjaan terhadap
     ketinggian.
   subsections:
   - h3: Dasar Hukum dan Standar Keselamatan
-    para: Riksa uji gondola wajib dilakukan sesuai regulasi keselamatan kerja yang
-      berlaku kepada Indonesia.
+    para: Riksa uji gondola wajib dilakukan berdasarkan regulasi keselamatan kerja
+      yang berlaku kepada Indonesia.
     subsections:
     - h4: Permenaker No. 8 Tahun 2020
       para: Peraturan Menteri Ketenagakerjaan tentang Keselamatan serta Kesehatan
         Kerja Pesawat Angkat serta Pesawat Angkut mewajibkan pengujian berkala dalam
-        rangka seluruh jenis suspended platform mencakup gondola.
+        rangka semua jenis suspended platform mencakup gondola.
     - h4: Standar EN 1808 dan SNI
-      para: Pengujian dilakukan mengacu terhadap standar EN 1808 dalam rangka Suspended
+      para: Pengujian dilaksanakan mengacu terhadap standar EN 1808 dalam rangka Suspended
         Access Equipment dan Standar Nasional Indonesia (SNI) yang berlaku dalam rangka
         gondola dan BMU.
   - h3: Tim Inspector Bersertifikat
-    para: Tim inspector kami mempunyai sertifikat kompetensi daripada BNSP dan telah
-      berpengalaman dalam bidang pemeriksaan suspended platform. Masing-masing inspector
-      memahami karakteristik khusus gondola daripada bermacam-macam merek dan konfigurasi
-      davit arm.
+    para: Tim inspector kami mempunyai sertifikat kompetensi dari BNSP dan telah berpengalaman
+      dalam bidang pemeriksaan suspended platform. Masing-masing inspector memahami
+      karakteristik khusus gondola dari bermacam-macam merek dan konfigurasi davit
+      arm.
   - h3: Cakupan Layanan Nasional
-    para: Kami melayani riksa uji gondola kepada semua Indonesia, dari Sabang sampai
+    para: Kami melayani riksa uji gondola kepada semua Indonesia, dari Sabang sehingga
       Merauke. Tim kami siap datang ke gedung perkantoran, apartemen, hotel, rumah
       sakit, serta bangunan tinggi lainnya.
 jenis_alat:
@@ -106,30 +106,30 @@ jenis_alat:
     kami untuk konsultasi lebih lanjut.
 komponen_inspeksi:
   name: Komponen Gondola yang Diperiksa
-  description: Pengecekan menyeluruh pada seluruh bagian keselamatan gondola
+  description: Pemeriksaan menyeluruh pada seluruh elemen keselamatan gondola
   items:
   - name: Wire Rope dan Fitting
-    description: Pemeriksaan situasi wire rope, diameter, keausan, broken wire, dan
-      segenap fitting penghubung.
+    description: Inspeksi situasi wire rope, diameter, keausan, broken wire, dan segenap
+      fitting penghubung.
     icon: bi-link
   - name: Davit Arm dan Struktur
-    description: Pengecekan struktur davit arm, telescopic mechanism, base mounting,
+    description: Pemeriksaan struktur davit arm, telescopic mechanism, base mounting,
       serta sistem anchoring.
     icon: bi-arrows-vertical
   - name: Hoist dan Motor
-    description: Pemeriksaan hoist unit, motor penggerak, gearbox, drum, serta sistem
+    description: Pemeriksaan hoist unit, motor penggerak, gearbox, drum, dan sistem
       pengereman.
     icon: bi-gear-wide-connected
   - name: Safety Device
     description: Pengujian secondary brake, overspeed governor, overload limiter,
-      serta tilt switch.
+      dan tilt switch.
     icon: bi-shield-check
   - name: Sistem Kontrol
-    description: Inspeksi pendant control, panel kontrol, emergency stop, batas switch,
-      serta sistem kelistrikan.
+    description: Pengecekan pendant control, panel kontrol, emergency stop, batas
+      switch, serta sistem kelistrikan.
     icon: bi-cpu
   - name: Platform dan Railing
-    description: Pengecekan situasi platform, floor panel, railing, toe board, serta
+    description: Pemeriksaan situasi platform, floor panel, railing, toe board, serta
       sistem penguncian.
     icon: bi-grid
 proses_inspeksi:
