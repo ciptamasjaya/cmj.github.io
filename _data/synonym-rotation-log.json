@@ -228,49 +228,48 @@
     ]
   },
   "riksa-uji-pesawat-uap-bejana-tekan.md": {
-    "date": "2026-11-06",
+    "date": "2026-11-07",
     "changes": 8,
     "words": [
-      "dengan→secara",
-      "mencakup→meliputi",
-      "pengecekan→pemeriksaan",
-      "memastikan→menjamin",
-      "termasuk→mencakup",
-      "serta→dan",
-      "standar→kriteria"
+      "meliputi→termasuk",
+      "sesuai→berdasarkan",
+      "semua→segenap",
+      "berdasarkan→sesuai",
+      "daripada→dari",
+      "dan→serta",
+      "alat→perkakas",
+      "beroperasi→berfungsi"
     ]
   },
   "bejana-tekan.md": {
-    "date": "2026-10-27",
+    "date": "2026-11-07",
     "changes": 10,
     "words": [
-      "dari→daripada",
-      "dan→serta",
-      "berdasarkan→sesuai",
-      "perkakas→peralatan",
-      "seluruh→semua",
+      "serta→dan",
       "pengecekan→pemeriksaan",
-      "dengan→secara",
+      "digunakan→dipakai",
+      "sesuai→berdasarkan",
+      "semua→segenap",
+      "peralatan→alat",
       "tetapi→akan tetapi",
-      "termasuk→mencakup",
-      "pada→terhadap"
+      "secara→dengan cara",
+      "alat→perkakas"
     ]
   },
   "pesawat-uap.md": {
-    "date": "2026-10-27",
+    "date": "2026-11-07",
     "changes": 14,
     "words": [
-      "pemeriksaan→inspeksi",
-      "dan→serta",
       "meliputi→termasuk",
-      "proses→tahapan",
+      "dari→daripada",
+      "dipakai→dimanfaatkan",
+      "tahapan→prosedur",
+      "menjamin→memverifikasi",
+      "Inspeksi→Pengecekan",
       "serta→dan",
-      "kepada→pada",
-      "peralatan→alat",
-      "memiliki→mempunyai",
-      "termasuk→mencakup",
-      "inspeksi→pengecekan",
-      "prosedur→proses"
+      "dan→serta",
+      "mencakup→meliputi",
+      "mempunyai→memiliki"
     ]
   },
   "tangki-timbun.md": {
@@ -559,16 +558,18 @@
     ]
   },
   "penggerak-mula.md": {
-    "date": "2026-10-20",
+    "date": "2026-11-07",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
-      "serta→dan",
-      "utama→pokok",
+      "pemeriksaan→inspeksi",
       "dan→serta",
-      "melakukan→melaksanakan",
-      "peralatan→alat",
-      "perkakas→peralatan"
+      "serta→dan",
+      "berdasarkan→sesuai",
+      "pada→terhadap",
+      "komponen→bagian",
+      "Pengecekan→Pemeriksaan",
+      "sesuai→berdasarkan",
+      "Proses→Tahapan"
     ]
   },
   "pompa-kompresor.md": {

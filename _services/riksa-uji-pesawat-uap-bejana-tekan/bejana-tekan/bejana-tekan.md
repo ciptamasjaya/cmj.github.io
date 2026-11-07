@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Bejana Tekan
-description: Jasa riksa pengujian serta pengecekan K3 bejana tekan profesional termasuk
-  air receiver, pressure vessel, heat exchanger, autoclave, serta separator. Sertifikat
+description: Jasa riksa pengujian dan pemeriksaan K3 bejana tekan profesional termasuk
+  air receiver, pressure vessel, heat exchanger, autoclave, dan separator. Sertifikat
   resmi daripada Disnaker setempat.
 permalink: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/bejana-tekan/"
 category: Riksa Uji Pesawat Uap Bejana Tekan
@@ -20,17 +20,17 @@ keywords: riksa uji bejana tekan, inspeksi pressure vessel, inspeksi air receive
   inspeksi heat exchanger, autoclave, separator, PJK3, sertifikasi K3
 intro:
   h1: Bejana Tekan - Riksa Uji Vessel dan Peralatan Bertekanan
-  para_1: Bejana tekan adalah peralatan yang digunakan dalam rangka menyimpan maupun
+  para_1: Bejana tekan adalah peralatan yang dipakai dalam rangka menyimpan maupun
     memproses fluida (gas maupun cairan) terhadap tekanan terhadap atas maupun terhadap
     bawah tekanan atmosfer. Kategori ini mencakup air receiver, pressure vessel, heat
     exchanger, autoclave, deaerator, separator, dan peralatan bertekanan lainnya yang
-    wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri Ketenagakerjaan
+    wajib menjalani riksa pengujian berkala berdasarkan Peraturan Menteri Ketenagakerjaan
     Nomor 37 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi dari Kementerian Ketenagakerjaan RI menyediakan layanan riksa uji
     bejana tekan yang komprehensif. Tim inspector bersertifikat kami siap melakukan
-    pemeriksaan on-site terhadap semua Indonesia dengan cara cara cara peralatan testing
-    terkalibrasi dalam rangka menjamin keselamatan operasional peralatan Anda.
+    pemeriksaan on-site terhadap segenap Indonesia dengan cara cara cara alat testing
+    terkalibrasi dalam rangka menjamin keselamatan operasional alat Anda.
 layanan_bejana_tekan:
   h2: Layanan Riksa Uji Bejana Tekan
   para: Kami melayani riksa uji untuk berbagai jenis bejana tekan sesuai kebutuhan
@@ -89,19 +89,20 @@ mengapa_penting:
     rusak tinggi. Korosi, fatigue, serta kerusakan material adalah penyebab primer
     kegagalan bejana tekan. Riksa uji berkala memastikan integritas struktural melalui
     tes NDT, hydrostatic test, serta pemeriksaan ketebalan dinding. Pengecekan ini
-    bukan hanya kewajiban legal sesuai Permenaker No. 37 Tahun 2016, akan akan akan
-    akan tetapi investasi keselamatan yang melindungi nyawa pekerja serta aset perusahaan.
+    bukan hanya kewajiban legal berdasarkan Permenaker No. 37 Tahun 2016, akan akan
+    akan akan akan tetapi investasi keselamatan yang melindungi nyawa pekerja serta
+    aset perusahaan.
 proses:
   h2: Proses Riksa Uji Bejana Tekan
-  para: Tim inspector kami datang ke lokasi Anda secara cara cara cara alat testing
-    seperti ultrasonic thickness gauge, magnetic particle testing kit, serta hydrostatic
-    test pump. Proses inspeksi mencakup inspeksi dokumen serta nameplate, inspeksi
-    visual internal serta eksternal, pengukuran ketebalan dinding, tes NDT terhadap
-    sambungan las, serta hydrostatic test. Masing-masing inspeksi didokumentasikan
+  para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara perkakas
+    testing seperti ultrasonic thickness gauge, magnetic particle testing kit, serta
+    hydrostatic test pump. Proses inspeksi mencakup inspeksi dokumen serta nameplate,
+    inspeksi visual internal serta eksternal, pengukuran ketebalan dinding, tes NDT
+    terhadap sambungan las, serta hydrostatic test. Masing-masing inspeksi didokumentasikan
     dalam laporan komprehensif serta dilengkapi sertifikat kelayakan operasional yang
     berlaku 1 tahun.
-_content_refreshed_at: '2026-11-06T10:09:54+0000'
-lastmod: '2026-10-27T08:30:57+0000'
+_content_refreshed_at: '2026-11-07T09:27:07+0000'
+lastmod: '2026-11-07T09:27:07+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
