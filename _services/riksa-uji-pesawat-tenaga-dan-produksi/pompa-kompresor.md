@@ -1,9 +1,9 @@
 ---
 layout: page/page--service-subcategory
 title: Pompa dan Kompresor
-description: Jasa riksa uji serta inspeksi K3 pompa serta kompresor profesional mencakup
-  kompresor udara, pompa sentrifugal, pompa submersible, serta industrial blower.
-  Sertifikat resmi Kementerian Ketenagakerjaan RI.
+description: Jasa riksa uji dan pengecekan K3 pompa dan kompresor profesional mencakup
+  kompresor udara, pompa sentrifugal, pompa submersible, dan industrial blower. Sertifikat
+  resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/pompa-kompresor/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
 sub_category: Pompa dan Kompresor
@@ -20,15 +20,15 @@ keywords: riksa uji pompa, riksa uji kompresor, inspeksi kompresor udara, inspek
   pompa sentrifugal, inspeksi blower, PJK3, sertifikasi K3
 intro:
   h1: Pompa dan Kompresor - Riksa Uji Peralatan Fluida Industri
-  para_1: Pompa serta kompresor adalah peralatan yang dimanfaatkan dalam rangka memindahkan
+  para_1: Pompa serta kompresor adalah peralatan yang digunakan dalam rangka memindahkan
     serta memampatkan fluida (cairan serta gas) dalam prosedur industri. Kategori
     ini meliputi kompresor udara serta gas, pompa sentrifugal serta submersible, serta
-    industrial blower yang wajib menjalani riksa uji berkala sesuai Peraturan Menteri
-    Ketenagakerjaan Nomor 38 Tahun 2016.
+    industrial blower yang wajib menjalani riksa uji berkala berdasarkan Peraturan
+    Menteri Ketenagakerjaan Nomor 38 Tahun 2016.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan dan Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
     uji pompa dan kompresor yang komprehensif. Tim inspector bersertifikat kami siap
-    melakukan pengecekan on-site terhadap semua Indonesia dengan cara cara cara alat
+    melakukan pengecekan on-site kepada semua Indonesia secara cara cara cara alat
     testing terkalibrasi dalam rangka memverifikasi keselamatan operasional alat Anda.
 layanan_pompa_kompresor:
   h2: Layanan Riksa Uji Pompa dan Kompresor
@@ -54,22 +54,22 @@ layanan_pompa_kompresor:
     icon: bi-fan
 mengapa_penting:
   h2: Mengapa Riksa Uji Pompa dan Kompresor Penting?
-  para: Pompa dan kompresor bekerja terus-menerus dengan cara cara tekanan dan kecepatan
-    tinggi yang mempunyai risiko kegagalan mekanis. Kebocoran, getaran berlebih, atau
-    overheating dapat menyebabkan kerusakan peralatan dan kecelakaan kerja. Riksa
+  para: Pompa dan kompresor beroperasi terus-menerus dengan cara cara tekanan dan
+    kecepatan tinggi yang mempunyai risiko kegagalan mekanis. Kebocoran, getaran berlebih,
+    atau overheating dapat menyebabkan kerusakan peralatan dan kecelakaan kerja. Riksa
     uji berkala menjamin seluruh komponen kritis seperti bearing, seal, impeller,
-    dan safety valve bekerja optimal. Pemeriksaan ini bukan hanya kewajiban legal
-    sesuai Permenaker No. 38 Tahun 2016, akan akan tetapi investasi keselamatan yang
-    melindungi nyawa pekerja dan aset perusahaan.
+    dan safety valve beroperasi optimal. Pemeriksaan ini bukan hanya kewajiban legal
+    sesuai Permenaker No. 38 Tahun 2016, akan akan akan tetapi investasi keselamatan
+    yang melindungi nyawa pekerja dan aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pompa dan Kompresor
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara cara cara
     cara perkakas testing seperti vibration analyzer, pressure gauge, flow meter,
-    dan thermal camera. Proses inspeksi meliputi inspeksi dokumen, inspeksi visual,
-    pengujian fungsi operasional, dan pengukuran parameter kinerja. Masing-masing
-    inspeksi didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
+    dan thermal camera. Tahapan pengecekan meliputi pengecekan dokumen, pengecekan
+    visual, pengujian fungsi operasional, dan pengukuran parameter kinerja. Masing-masing
+    pengecekan didokumentasikan dalam laporan komprehensif dan dilengkapi sertifikat
     kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-11-03T10:18:54+0000'
+lastmod: '2026-11-10T10:37:56+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

@@ -132,36 +132,34 @@
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
-    "date": "2026-10-27",
+    "date": "2026-11-10",
     "changes": 14,
     "words": [
-      "terhadap→kepada",
-      "segenap→seluruh",
-      "standar→kriteria",
-      "serta→dan",
-      "dan→serta",
       "kepada→pada",
-      "tahapan→prosedur",
-      "pengecekan→pemeriksaan",
-      "alat→perkakas"
+      "seluruh→semua",
+      "terhadap→kepada",
+      "inspeksi→pengecekan",
+      "serta→dan",
+      "pada→terhadap",
+      "pemeriksaan→inspeksi",
+      "prosedur→proses",
+      "termasuk→mencakup"
     ]
   },
   "2025-05-24-pjk3-semarang.md": {
-    "date": "2026-10-22",
+    "date": "2026-11-10",
     "changes": 14,
     "words": [
-      "seluruh→semua",
-      "pada→terhadap",
-      "inspeksi→pengecekan",
-      "alat→perkakas",
-      "serta→dan",
-      "tahapan→prosedur",
-      "kepada→pada",
-      "pemeriksaan→inspeksi",
+      "terhadap→kepada",
+      "semua→segenap",
+      "pengecekan→pemeriksaan",
       "dan→serta",
-      "maupun→atau",
-      "mencakup→meliputi",
-      "segenap→seluruh"
+      "prosedur→proses",
+      "inspeksi→pengecekan",
+      "pada→terhadap",
+      "dari→daripada",
+      "serta→dan",
+      "seluruh→semua"
     ]
   },
   "riksa-uji-pesawat-angkat-angkut.md": {
@@ -551,16 +549,18 @@
     ]
   },
   "mesin-produksi.md": {
-    "date": "2026-10-25",
+    "date": "2026-11-10",
     "changes": 10,
     "words": [
-      "serta→dan",
-      "inspeksi→pengecekan",
-      "berdasarkan→sesuai",
+      "pengecekan→pemeriksaan",
+      "termasuk→mencakup",
+      "peralatan→alat",
+      "dan→serta",
+      "menjamin→memverifikasi",
       "memastikan→menjamin",
-      "memverifikasi→memastikan",
-      "Tahapan→Prosedur",
-      "pemeriksaan→inspeksi"
+      "perkakas→peralatan",
+      "inspeksi→pengecekan",
+      "secara→dengan cara"
     ]
   },
   "penggerak-mula.md": {
@@ -579,17 +579,18 @@
     ]
   },
   "pompa-kompresor.md": {
-    "date": "2026-11-03",
+    "date": "2026-11-10",
     "changes": 10,
     "words": [
-      "termasuk→mencakup",
-      "pemeriksaan→inspeksi",
-      "perkakas→peralatan",
-      "tahapan→prosedur",
-      "pada→terhadap",
+      "serta→dan",
       "inspeksi→pengecekan",
-      "berdasarkan→sesuai",
-      "secara→dengan cara"
+      "sesuai→berdasarkan",
+      "dimanfaatkan→digunakan",
+      "dengan→secara",
+      "terhadap→kepada",
+      "tetapi→akan tetapi",
+      "bekerja→beroperasi",
+      "Proses→Tahapan"
     ]
   },
   "sistem-transmisi.md": {
