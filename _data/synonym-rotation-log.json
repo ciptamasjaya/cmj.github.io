@@ -59,41 +59,40 @@
     ]
   },
   "2024-12-16-riksa-uji-forklift-caterpillar-ep20-5ss25am.md": {
-    "date": "2026-11-18",
+    "date": "2026-11-20",
     "changes": 43,
     "words": [
-      "hasil→temuan",
-      "pemeriksaan→inspeksi",
-      "serta→dan",
-      "dimanfaatkan→digunakan",
-      "maupun→atau",
-      "keadaan→situasi",
-      "berfungsi→bekerja",
-      "pada→terhadap",
-      "dilakukan→dilaksanakan",
       "dan→serta",
+      "temuan→outcome",
+      "digunakan→dipakai",
+      "Pada→Terhadap",
+      "baik→bagus",
+      "situasi→kondisi",
+      "serta→dan",
+      "secara→dengan cara",
+      "beroperasi→berfungsi",
+      "Seluruh→Semua",
+      "elemen→komponen",
+      "acuan→standar",
+      "dijumpai→terdapat",
+      "tahapan→prosedur",
+      "keadaan→situasi",
+      "outcome→hasil",
+      "pemeriksaan→inspeksi",
+      "terdapat→ada",
+      "atau→maupun",
+      "kepada→pada",
+      "dilakukan→dilaksanakan",
       "bekerja→beroperasi",
       "dilaksanakan→dijalankan",
-      "bagus→baik",
-      "bagian→elemen",
-      "komponen→bagian",
-      "terdapat→ada",
-      "elemen→komponen",
-      "dijalankan→dilakukan",
-      "secara→dengan cara",
-      "kepada→pada",
-      "kondisi→keadaan",
+      "pada→terhadap",
       "dengan→secara",
-      "prosedur→proses",
-      "peralatan→alat",
-      "hingga→sampai",
-      "memverifikasi→memastikan",
-      "melaksanakan→menjalankan",
-      "proses→tahapan",
+      "sampai→sehingga",
       "mempunyai→memiliki",
-      "memiliki→mempunyai",
-      "menggunakan→memakai",
-      "dipakai→dimanfaatkan"
+      "menjalankan→melakukan",
+      "meliputi→termasuk",
+      "hasil→temuan",
+      "umumnya→biasanya"
     ]
   },
   "2025-05-20-pjk3-terdekat-08568258841.md": {
@@ -127,18 +126,17 @@
     ]
   },
   "2025-05-24-pjk3-bekasi.md": {
-    "date": "2026-11-10",
+    "date": "2026-11-20",
     "changes": 14,
     "words": [
-      "kepada→pada",
-      "seluruh→semua",
-      "terhadap→kepada",
-      "inspeksi→pengecekan",
-      "serta→dan",
       "pada→terhadap",
-      "pemeriksaan→inspeksi",
-      "prosedur→proses",
-      "termasuk→mencakup"
+      "semua→segenap",
+      "pengecekan→pemeriksaan",
+      "dengan→secara",
+      "terhadap→kepada",
+      "dan→serta",
+      "proses→tahapan",
+      "inspeksi→pengecekan"
     ]
   },
   "2025-05-24-pjk3-semarang.md": {
@@ -583,17 +581,18 @@
     ]
   },
   "sistem-transmisi.md": {
-    "date": "2026-11-09",
+    "date": "2026-11-20",
     "changes": 10,
     "words": [
-      "mencakup→meliputi",
+      "meliputi→termasuk",
+      "dan→serta",
+      "sesuai→berdasarkan",
+      "daripada→dari",
+      "inspeksi→pengecekan",
       "serta→dan",
-      "dari→daripada",
-      "melakukan→melaksanakan",
-      "memastikan→menjamin",
-      "mempunyai→memiliki",
-      "tetapi→akan tetapi",
-      "inspeksi→pengecekan"
+      "elemen→komponen",
+      "seluruh→semua",
+      "termasuk→mencakup"
     ]
   },
   "tanur.md": {
@@ -612,22 +611,23 @@
     ]
   },
   "riksa-uji-gondola.md": {
-    "date": "2026-11-06",
+    "date": "2026-11-20",
     "changes": 19,
     "words": [
-      "serta→dan",
-      "daripada→dari",
-      "maupun→atau",
-      "pemeriksaan→inspeksi",
-      "memverifikasi→memastikan",
-      "Pengecekan→Pemeriksaan",
-      "bagian→elemen",
-      "Pemeriksaan→Inspeksi",
-      "Inspeksi→Pengecekan",
-      "sesuai→berdasarkan",
+      "inspeksi→pengecekan",
       "seluruh→semua",
-      "dilakukan→dilaksanakan",
-      "sampai→sehingga"
+      "atau→maupun",
+      "serta→dan",
+      "pada→terhadap",
+      "elemen→komponen",
+      "segenap→seluruh",
+      "Pemeriksaan→Inspeksi",
+      "dan→serta",
+      "batas→limit",
+      "kepada→pada",
+      "dilaksanakan→dijalankan",
+      "pemeriksaan→inspeksi",
+      "sehingga→hingga"
     ]
   },
   "riksa-uji-manlift.md": {
