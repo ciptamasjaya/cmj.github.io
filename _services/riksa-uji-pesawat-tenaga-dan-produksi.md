@@ -3,7 +3,7 @@ layout: page/page--service-category
 title: Riksa Uji Pesawat Tenaga dan Produksi
 description: Jasa riksa uji serta pemeriksaan K3 pesawat tenaga serta produksi profesional
   termasuk genset, motor bakar, turbin, mesin perkakas, mesin produksi, pompa, kompresor,
-  serta tanur berdasarkan acuan Kementerian Ketenagakerjaan RI. Melayani segenap Indonesia
+  serta tanur sesuai acuan Kementerian Ketenagakerjaan RI. Melayani seluruh Indonesia
   dengan cara cara cara sertifikat resmi.
 permalink: "/layanan/riksa-uji-pesawat-tenaga-dan-produksi/"
 category: Riksa Uji Pesawat Tenaga Dan Produksi
@@ -21,18 +21,18 @@ keywords: riksa uji pesawat tenaga, riksa uji pesawat produksi, inspeksi genset,
   uji
 intro:
   h1: Riksa Uji Pesawat Tenaga dan Produksi - Inspeksi K3 Profesional
-  para_1: Apa yang dimaksud dengan cara cara cara riksa uji pesawat tenaga serta produksi?
+  para_1: Apa yang dimaksud secara cara cara cara riksa uji pesawat tenaga serta produksi?
     Riksa uji pesawat tenaga serta produksi adalah pemeriksaan serta pengujian keselamatan
     berkala terhadap semua jenis mesin penggerak mula, mesin alat, mesin produksi,
     pompa, kompresor, serta alat industri lainnya yang diatur dalam Peraturan Menteri
-    Ketenagakerjaan. Pengecekan ini wajib dijalankan dalam rangka memastikan alat
-    berfungsi dengan cara cara cara aman serta berdasarkan kriteria K3 yang berlaku
-    terhadap Indonesia.
+    Ketenagakerjaan. Pengecekan ini wajib dijalankan dalam rangka menjamin alat berfungsi
+    secara cara cara cara aman serta berdasarkan kriteria K3 yang berlaku terhadap
+    Indonesia.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) yang telah mendapat izin resmi dari Kementerian Ketenagakerjaan RI, menyediakan
-    layanan riksa uji pesawat tenaga serta produksi yang komprehensif secara cara
-    cara tim inspector bersertifikat serta perkakas testing yang terkalibrasi. Kami
-    melayani bermacam-macam industri termasuk manufaktur, pertambangan, pembangkit
+    layanan riksa uji pesawat tenaga serta produksi yang komprehensif dengan cara
+    cara cara tim inspector bersertifikat serta perkakas testing yang terkalibrasi.
+    Kami melayani bermacam-macam industri mencakup manufaktur, pertambangan, pembangkit
     listrik, serta pengolahan dalam rangka memverifikasi keselamatan operasional serta
     compliance pada regulasi pemerintah.
 jenis_layanan:
@@ -80,7 +80,7 @@ mengapa_penting:
     akan akan akan akan akan akan akan tetapi investasi keselamatan yang melindungi
     nyawa pekerja dan aset perusahaan. Kegagalan mesin produksi dapat menyebabkan
     kecelakaan fatal, kebakaran, kerusakan material, dan kerugian finansial besar.
-    Pengecekan berkala memverifikasi segenap bagian kritis seperti sistem kelistrikan,
+    Pemeriksaan berkala memverifikasi seluruh bagian kritis seperti sistem kelistrikan,
     bagian bergerak, sistem pelumasan, dan perangkat keselamatan berfungsi optimal
     berdasarkan spesifikasi pabrikan dan kriteria keselamatan yang berlaku.
 proses_riksa_uji:
@@ -91,7 +91,7 @@ proses_riksa_uji:
     Setiap inspeksi didokumentasikan detail dalam laporan komprehensif dan dilengkapi
     sertifikat kelayakan operasional yang berlaku secara legal. Kami melayani seluruh
     Indonesia dengan standar kualitas yang sama tingginya.
-lastmod: '2026-11-01T09:55:00+0000'
+lastmod: '2026-11-22T10:32:34+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->
