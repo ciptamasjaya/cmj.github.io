@@ -1,8 +1,8 @@
 ---
 layout: page/page--service-subcategory
 title: Pesawat Angkat
-description: Jasa riksa uji serta inspeksi K3 pesawat angkat profesional meliputi
-  crane, hoist, gondola, manlift, scissor lift, serta peralatan pengangkat vertikal
+description: Jasa riksa uji dan pengecekan K3 pesawat angkat profesional meliputi
+  crane, hoist, gondola, manlift, scissor lift, dan peralatan pengangkat vertikal
   lainnya. Sertifikat resmi Kementerian Ketenagakerjaan RI.
 permalink: "/layanan/riksa-uji-pesawat-angkat-angkut/pesawat-angkat/"
 category: Riksa Uji Pesawat Angkat Angkut
@@ -20,16 +20,16 @@ keywords: riksa uji pesawat angkat, inspeksi crane, inspeksi hoist, inspeksi gon
   inspeksi manlift, scissor lift, PJK3, sertifikasi K3
 intro:
   h1: Pesawat Angkat - Riksa Uji Peralatan Pengangkat Beban Vertikal
-  para_1: Pesawat angkat adalah perkakas yang dipakai dalam rangka mengangkat serta
-    menurunkan beban secara cara cara cara vertikal. Kategori ini termasuk bermacam-macam
-    jenis crane, hoist, gondola, manlift, scissor lift, serta perkakas pengangkat
+  para_1: Pesawat angkat adalah peralatan yang dimanfaatkan dalam rangka mengangkat
+    serta menurunkan beban secara cara cara cara vertikal. Kategori ini termasuk bermacam-macam
+    jenis crane, hoist, gondola, manlift, scissor lift, serta peralatan pengangkat
     lainnya yang wajib menjalani riksa pengujian berkala sesuai Peraturan Menteri
     Ketenagakerjaan Nomor 8 Tahun 2020.
   para_2: PT. Cipta Mas Jaya sebagai PJK3 (Perusahaan Jasa Keselamatan serta Kesehatan
     Kerja) resmi daripada Kementerian Ketenagakerjaan RI menyediakan layanan riksa
-    uji pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap melaksanakan
-    pengecekan on-site kepada semua Indonesia dengan cara cara cara cara alat testing
-    terkalibrasi dalam rangka menjamin keselamatan operasional alat Anda.
+    uji pesawat angkat yang komprehensif. Tim inspector bersertifikat kami siap menjalankan
+    pengecekan on-site kepada semua Indonesia dengan cara cara cara cara perkakas
+    testing terkalibrasi dalam rangka menjamin keselamatan operasional perkakas Anda.
 layanan_pesawat_angkat:
   h2: Layanan Riksa Uji Pesawat Angkat
   para: Kami melayani riksa uji untuk berbagai jenis pesawat angkat sesuai kebutuhan
@@ -105,19 +105,20 @@ mengapa_penting:
   h2: Mengapa Riksa Uji Pesawat Angkat Penting?
   para: Pesawat angkat menangani beban berat kepada ketinggian sehingga memiliki risiko
     kecelakaan yang sangat tinggi. Kegagalan peralatan dapat menyebabkan beban jatuh,
-    struktur runtuh, maupun operator terjatuh. Riksa uji berkala memastikan segenap
+    struktur runtuh, maupun operator terjatuh. Riksa uji berkala menjamin segenap
     bagian kritis seperti wire rope, brake system, limit switch, serta struktur penahan
-    beban beroperasi optimal. Pemeriksaan ini bukan hanya kewajiban legal sesuai Permenaker
+    beban beroperasi optimal. Inspeksi ini bukan hanya kewajiban legal sesuai Permenaker
     No. 8 Tahun 2020, akan akan akan tetapi investasi keselamatan yang melindungi
     nyawa pekerja serta aset perusahaan.
 proses:
   h2: Proses Riksa Uji Pesawat Angkat
   para: Tim inspector kami datang ke lokasi Anda dengan cara cara cara cara cara perkakas
-    testing portable yang terkalibrasi. Prosedur pengecekan meliputi pengecekan dokumen,
+    testing portable yang terkalibrasi. Prosedur pengecekan termasuk pengecekan dokumen,
     pengecekan visual struktur serta bagian, tes fungsi operasional, serta load test
-    sesuai kapasitas. Masing-masing pengecekan didokumentasikan dalam laporan komprehensif
-    serta dilengkapi sertifikat kelayakan operasional yang berlaku 1 tahun.
-lastmod: '2026-11-18T10:54:48+0000'
+    berdasarkan kapasitas. Masing-masing pengecekan didokumentasikan dalam laporan
+    komprehensif serta dilengkapi sertifikat kelayakan operasional yang berlaku 1
+    tahun.
+lastmod: '2026-11-25T11:54:24+0000'
 ---
 <!-- ========================================================================== -->
 <!-- CONTENT AREA - Block-Based -->

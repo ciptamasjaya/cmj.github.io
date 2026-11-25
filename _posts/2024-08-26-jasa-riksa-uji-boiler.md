@@ -3,7 +3,8 @@ layout: node/node--riksa-uji
 title: Riksa Uji Boiler
 rating_id: riksa-uji-boiler
 description: Riksa pengujian boiler adalah pengecekan serta pengujian keselamatan
-  ketel uap dalam rangka menjamin operasional aman berdasarkan standar K3 serta Permenaker.
+  ketel uap dalam rangka memverifikasi operasional aman berdasarkan kriteria K3 serta
+  Permenaker.
 keywords: riksa uji boiler, jasa riksa uji boiler, inspeksi boiler, ketel uap, hydrotest
   boiler, PJK3, sertifikasi K3, pesawat uap, bejana tekan, safety valve
 content_intro:
@@ -67,7 +68,7 @@ section_hero:
   theme: red
   area: Seluruh Indonesia
   description: PT. Cipta Mas Jaya adalah PJK3 resmi berlisensi Kemenaker yang melayani
-    pengecekan dan tes boiler/ketel uap dengan cara cara cara cara cara cara cara
+    pemeriksaan dan tes boiler/ketel uap secara cara cara cara cara cara cara cara
     kriteria profesional. Dapatkan sertifikat kelayakan operasi dalam rangka boiler
     Anda.
   label_wilayah: 'Melayani Wilayah:'
@@ -758,9 +759,9 @@ section_conclusion:
   title: Kesimpulan
   icon: bi-check2-square
   intro: <a href="https://maps.app.goo.gl/KwFSALZKY9WMrK5C6" target="_blank" rel="noopener">Riksa
-    uji boiler</a> adalah langkah vital dalam rangka menjamin keselamatan dan efisiensi
-    operasional dalam penggunaan peralatan ini. Proses riksa uji yang sistematis dan
-    rutin, mulai dari persiapan sampai dokumentasi hasil, amat vital dalam rangka
+    uji boiler</a> adalah langkah penting dalam rangka memverifikasi keselamatan dan
+    efisiensi operasional dalam penggunaan peralatan ini. Proses riksa uji yang sistematis
+    dan rutin, mulai dari persiapan sampai dokumentasi hasil, amat penting dalam rangka
     mengidentifikasi potensi masalah sebelum menjadi kecelakaan.
   highlights:
   - key: Mencegah Kecelakaan Kerja
@@ -784,5 +785,5 @@ section_conclusion:
     label: Hubungi Kami
     icon: bi-telephone
 related_service: "/layanan/riksa-uji-pesawat-uap-bejana-tekan/pesawat-uap/riksa-uji-boiler/"
-lastmod: '2026-11-16T10:23:38+0000'
+lastmod: '2026-11-25T11:54:24+0000'
 ---
